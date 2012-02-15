@@ -14,7 +14,7 @@ namespace Events4ALL
         public FormBase(string user, string pass)
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             listBox1.Items.Add(new listItem("Inicio", 0));
             listBox1.Items.Add(new listItem("Admins", 0));
             listBox1.Items.Add(new listItem("Clientes", 0));
@@ -22,14 +22,35 @@ namespace Events4ALL
             listBox1.Items.Add(new listItem("Espectáculos", 0));
             listBox1.Items.Add(new listItem("Promociones", 0));
             listBox1.Items.Add(new listItem("Estadisticas", 0));
+            listBox1.Items.Add(new listItem("Ventas y reservas", 0));
             listBox1.Items.Add(new listItem("Logs", 0));
             listBox1.SetSelected(0, true);
             DesactivarMenus();
             inicio1.Visible = true;
         }
 
+        public void ThreadProc()
+        {
+            Application.Run(new Login());
+        }
+
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
+            //Cambiar el color de la selección de items
+            if (e.Index < 0) return;
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                e = new DrawItemEventArgs(e.Graphics,
+                                          e.Font,
+                                          e.Bounds,
+                                          e.Index,
+                                          e.State ^ DrawItemState.Selected,
+                                          e.ForeColor,
+                                          Color.SlateGray);
+            e.DrawBackground();
+            e.Graphics.DrawString(listBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+            e.DrawFocusRectangle();
+
+            //Añadir iconos a los items de la lista
             listItem item = listBox1.Items[e.Index] as listItem;
             e.DrawBackground();
 
@@ -55,6 +76,7 @@ namespace Events4ALL
             estadisticas1.Visible = false;
             promociones1.Visible = false;
             salas1.Visible = false;
+            ventas1.Visible = false;
         }
 
         private void listBox1_Click(object sender, EventArgs e)
@@ -85,6 +107,9 @@ namespace Events4ALL
                     estadisticas1.Visible = true;
                     break;
                 case 7:
+                    ventas1.Visible = true;
+                    break;
+                case 8:
                     logs1.Visible = true;
                     break;
                 default:
@@ -92,6 +117,18 @@ namespace Events4ALL
                     break;
             }
 
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+            t.Start();
+            this.Close();
         }
 
     }
