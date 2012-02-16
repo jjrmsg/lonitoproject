@@ -30,5 +30,10 @@ namespace Events4ALL
         {
 
         }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

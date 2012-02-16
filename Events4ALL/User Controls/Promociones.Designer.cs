@@ -30,21 +30,23 @@
         {
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
+            this.label_PE_Fecha = new System.Windows.Forms.Label();
+            this.dateTimePicker_PE_fecha = new System.Windows.Forms.DateTimePicker();
+            this.label_PE_Espectaculo = new System.Windows.Forms.Label();
+            this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.label_PE_PpE = new System.Windows.Forms.Label();
             this.tab_Por_cliente = new System.Windows.Forms.TabPage();
-            this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
-            this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
-            this.label_PE_Espectaculo = new System.Windows.Forms.Label();
-            this.dateTimePicker_PE_fecha = new System.Windows.Forms.DateTimePicker();
-            this.label_PE_Fecha = new System.Windows.Forms.Label();
-            this.label_PC_PpC = new System.Windows.Forms.Label();
-            this.comboBox_PC_cliente = new System.Windows.Forms.ComboBox();
-            this.label_PC_Cliente = new System.Windows.Forms.Label();
             this.dataGridView_PE_promoClientes = new System.Windows.Forms.DataGridView();
+            this.label_PC_Cliente = new System.Windows.Forms.Label();
+            this.comboBox_PC_cliente = new System.Windows.Forms.ComboBox();
+            this.label_PC_PpC = new System.Windows.Forms.Label();
+            this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             this.tab_Por_cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).BeginInit();
+            this.tab_Mediante_condiciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -76,6 +78,41 @@
             this.tab_Por_espectaculo.Text = "Por_espectaculo";
             this.tab_Por_espectaculo.UseVisualStyleBackColor = true;
             // 
+            // label_PE_Fecha
+            // 
+            this.label_PE_Fecha.AutoSize = true;
+            this.label_PE_Fecha.Location = new System.Drawing.Point(102, 145);
+            this.label_PE_Fecha.Name = "label_PE_Fecha";
+            this.label_PE_Fecha.Size = new System.Drawing.Size(40, 13);
+            this.label_PE_Fecha.TabIndex = 6;
+            this.label_PE_Fecha.Text = "Fecha:";
+            // 
+            // dateTimePicker_PE_fecha
+            // 
+            this.dateTimePicker_PE_fecha.Location = new System.Drawing.Point(177, 139);
+            this.dateTimePicker_PE_fecha.Name = "dateTimePicker_PE_fecha";
+            this.dateTimePicker_PE_fecha.Size = new System.Drawing.Size(228, 20);
+            this.dateTimePicker_PE_fecha.TabIndex = 5;
+            // 
+            // label_PE_Espectaculo
+            // 
+            this.label_PE_Espectaculo.AutoSize = true;
+            this.label_PE_Espectaculo.Location = new System.Drawing.Point(102, 92);
+            this.label_PE_Espectaculo.Name = "label_PE_Espectaculo";
+            this.label_PE_Espectaculo.Size = new System.Drawing.Size(69, 13);
+            this.label_PE_Espectaculo.TabIndex = 4;
+            this.label_PE_Espectaculo.Text = "Espectaculo:";
+            this.label_PE_Espectaculo.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // comboBox_PE_espectaculo
+            // 
+            this.comboBox_PE_espectaculo.FormattingEnabled = true;
+            this.comboBox_PE_espectaculo.Location = new System.Drawing.Point(177, 92);
+            this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
+            this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(228, 21);
+            this.comboBox_PE_espectaculo.TabIndex = 3;
+            this.comboBox_PE_espectaculo.Text = "Seleccionar espectaculo ...";
+            // 
             // label_PE_PpE
             // 
             this.label_PE_PpE.AutoSize = true;
@@ -101,68 +138,13 @@
             this.tab_Por_cliente.Text = "Por_cliente";
             this.tab_Por_cliente.UseVisualStyleBackColor = true;
             // 
-            // tab_Mediante_condiciones
+            // dataGridView_PE_promoClientes
             // 
-            this.tab_Mediante_condiciones.Location = new System.Drawing.Point(4, 22);
-            this.tab_Mediante_condiciones.Name = "tab_Mediante_condiciones";
-            this.tab_Mediante_condiciones.Size = new System.Drawing.Size(893, 606);
-            this.tab_Mediante_condiciones.TabIndex = 2;
-            this.tab_Mediante_condiciones.Text = "Mediante_condiciones";
-            this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_PE_espectaculo
-            // 
-            this.comboBox_PE_espectaculo.FormattingEnabled = true;
-            this.comboBox_PE_espectaculo.Location = new System.Drawing.Point(177, 92);
-            this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
-            this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(228, 21);
-            this.comboBox_PE_espectaculo.TabIndex = 3;
-            this.comboBox_PE_espectaculo.Text = "Seleccionar espectaculo ...";
-            // 
-            // label_PE_Espectaculo
-            // 
-            this.label_PE_Espectaculo.AutoSize = true;
-            this.label_PE_Espectaculo.Location = new System.Drawing.Point(102, 92);
-            this.label_PE_Espectaculo.Name = "label_PE_Espectaculo";
-            this.label_PE_Espectaculo.Size = new System.Drawing.Size(69, 13);
-            this.label_PE_Espectaculo.TabIndex = 4;
-            this.label_PE_Espectaculo.Text = "Espectaculo:";
-            this.label_PE_Espectaculo.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // dateTimePicker_PE_fecha
-            // 
-            this.dateTimePicker_PE_fecha.Location = new System.Drawing.Point(177, 139);
-            this.dateTimePicker_PE_fecha.Name = "dateTimePicker_PE_fecha";
-            this.dateTimePicker_PE_fecha.Size = new System.Drawing.Size(228, 20);
-            this.dateTimePicker_PE_fecha.TabIndex = 5;
-            // 
-            // label_PE_Fecha
-            // 
-            this.label_PE_Fecha.AutoSize = true;
-            this.label_PE_Fecha.Location = new System.Drawing.Point(102, 145);
-            this.label_PE_Fecha.Name = "label_PE_Fecha";
-            this.label_PE_Fecha.Size = new System.Drawing.Size(40, 13);
-            this.label_PE_Fecha.TabIndex = 6;
-            this.label_PE_Fecha.Text = "Fecha:";
-            // 
-            // label_PC_PpC
-            // 
-            this.label_PC_PpC.AutoSize = true;
-            this.label_PC_PpC.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PC_PpC.Location = new System.Drawing.Point(106, 21);
-            this.label_PC_PpC.Name = "label_PC_PpC";
-            this.label_PC_PpC.Size = new System.Drawing.Size(539, 55);
-            this.label_PC_PpC.TabIndex = 0;
-            this.label_PC_PpC.Text = "Promociones por cliente";
-            // 
-            // comboBox_PC_cliente
-            // 
-            this.comboBox_PC_cliente.FormattingEnabled = true;
-            this.comboBox_PC_cliente.Location = new System.Drawing.Point(200, 97);
-            this.comboBox_PC_cliente.Name = "comboBox_PC_cliente";
-            this.comboBox_PC_cliente.Size = new System.Drawing.Size(210, 21);
-            this.comboBox_PC_cliente.TabIndex = 1;
-            this.comboBox_PC_cliente.Text = "Seleccionar cliente ...";
+            this.dataGridView_PE_promoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_PE_promoClientes.Location = new System.Drawing.Point(116, 143);
+            this.dataGridView_PE_promoClientes.Name = "dataGridView_PE_promoClientes";
+            this.dataGridView_PE_promoClientes.Size = new System.Drawing.Size(529, 134);
+            this.dataGridView_PE_promoClientes.TabIndex = 3;
             // 
             // label_PC_Cliente
             // 
@@ -174,13 +156,45 @@
             this.label_PC_Cliente.Text = "Cliente:";
             this.label_PC_Cliente.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // dataGridView_PE_promoClientes
+            // comboBox_PC_cliente
             // 
-            this.dataGridView_PE_promoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_PE_promoClientes.Location = new System.Drawing.Point(116, 143);
-            this.dataGridView_PE_promoClientes.Name = "dataGridView_PE_promoClientes";
-            this.dataGridView_PE_promoClientes.Size = new System.Drawing.Size(529, 134);
-            this.dataGridView_PE_promoClientes.TabIndex = 3;
+            this.comboBox_PC_cliente.FormattingEnabled = true;
+            this.comboBox_PC_cliente.Location = new System.Drawing.Point(200, 97);
+            this.comboBox_PC_cliente.Name = "comboBox_PC_cliente";
+            this.comboBox_PC_cliente.Size = new System.Drawing.Size(210, 21);
+            this.comboBox_PC_cliente.TabIndex = 1;
+            this.comboBox_PC_cliente.Text = "Seleccionar cliente ...";
+            // 
+            // label_PC_PpC
+            // 
+            this.label_PC_PpC.AutoSize = true;
+            this.label_PC_PpC.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PC_PpC.Location = new System.Drawing.Point(106, 21);
+            this.label_PC_PpC.Name = "label_PC_PpC";
+            this.label_PC_PpC.Size = new System.Drawing.Size(539, 55);
+            this.label_PC_PpC.TabIndex = 0;
+            this.label_PC_PpC.Text = "Promociones por cliente";
+            // 
+            // tab_Mediante_condiciones
+            // 
+            this.tab_Mediante_condiciones.Controls.Add(this.label1);
+            this.tab_Mediante_condiciones.Location = new System.Drawing.Point(4, 22);
+            this.tab_Mediante_condiciones.Name = "tab_Mediante_condiciones";
+            this.tab_Mediante_condiciones.Size = new System.Drawing.Size(893, 606);
+            this.tab_Mediante_condiciones.TabIndex = 2;
+            this.tab_Mediante_condiciones.Text = "Mediante_condiciones";
+            this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(756, 76);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "aqui no se que poner xD";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // Promociones
             // 
@@ -195,6 +209,8 @@
             this.tab_Por_cliente.ResumeLayout(false);
             this.tab_Por_cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).EndInit();
+            this.tab_Mediante_condiciones.ResumeLayout(false);
+            this.tab_Mediante_condiciones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +230,6 @@
         private System.Windows.Forms.Label label_PC_Cliente;
         private System.Windows.Forms.ComboBox comboBox_PC_cliente;
         private System.Windows.Forms.DataGridView dataGridView_PE_promoClientes;
+        private System.Windows.Forms.Label label1;
     }
 }
