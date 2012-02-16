@@ -54,22 +54,23 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Admin_Perfil_numericUpDown_Dia = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.Admin_Perfil_numericUpDown_Ano = new System.Windows.Forms.NumericUpDown();
+            this.Admin_Perfil_numericUpDown_Mes = new System.Windows.Forms.NumericUpDown();
             this.Admin_Perfil_rButom_H = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_M = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Casado = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Soltero = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Viudo = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Divorciado = new System.Windows.Forms.RadioButton();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Perfil.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).BeginInit();
             this.SuspendLayout();
             // 
             // Listado
@@ -84,16 +85,17 @@
             // 
             // Perfil
             // 
+            this.Perfil.Controls.Add(this.comboBox2);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Viudo);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Divorciado);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Casado);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Soltero);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_M);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_H);
-            this.Perfil.Controls.Add(this.numericUpDown3);
-            this.Perfil.Controls.Add(this.numericUpDown2);
+            this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Mes);
+            this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Ano);
             this.Perfil.Controls.Add(this.comboBox1);
-            this.Perfil.Controls.Add(this.numericUpDown1);
+            this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Dia);
             this.Perfil.Controls.Add(this.textBox8);
             this.Perfil.Controls.Add(this.textBox7);
             this.Perfil.Controls.Add(this.textBox6);
@@ -284,7 +286,7 @@
             // 
             this.Admin_Perfil_Label_Idioma.AutoSize = true;
             this.Admin_Perfil_Label_Idioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Idioma.Location = new System.Drawing.Point(33, 458);
+            this.Admin_Perfil_Label_Idioma.Location = new System.Drawing.Point(33, 471);
             this.Admin_Perfil_Label_Idioma.Name = "Admin_Perfil_Label_Idioma";
             this.Admin_Perfil_Label_Idioma.Size = new System.Drawing.Size(155, 20);
             this.Admin_Perfil_Label_Idioma.TabIndex = 16;
@@ -359,13 +361,28 @@
             this.textBox8.Size = new System.Drawing.Size(278, 20);
             this.textBox8.TabIndex = 25;
             // 
-            // numericUpDown1
+            // Admin_Perfil_numericUpDown_Dia
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(37, 204);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown1.TabIndex = 26;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.Admin_Perfil_numericUpDown_Dia.Location = new System.Drawing.Point(37, 204);
+            this.Admin_Perfil_numericUpDown_Dia.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Dia.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Dia.Name = "Admin_Perfil_numericUpDown_Dia";
+            this.Admin_Perfil_numericUpDown_Dia.Size = new System.Drawing.Size(36, 20);
+            this.Admin_Perfil_numericUpDown_Dia.TabIndex = 26;
+            this.Admin_Perfil_numericUpDown_Dia.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Dia.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // comboBox1
             // 
@@ -375,19 +392,49 @@
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 27;
             // 
-            // numericUpDown2
+            // Admin_Perfil_numericUpDown_Ano
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(121, 204);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown2.TabIndex = 28;
+            this.Admin_Perfil_numericUpDown_Ano.Location = new System.Drawing.Point(121, 204);
+            this.Admin_Perfil_numericUpDown_Ano.Maximum = new decimal(new int[] {
+            2100,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Ano.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Ano.Name = "Admin_Perfil_numericUpDown_Ano";
+            this.Admin_Perfil_numericUpDown_Ano.Size = new System.Drawing.Size(71, 20);
+            this.Admin_Perfil_numericUpDown_Ano.TabIndex = 28;
+            this.Admin_Perfil_numericUpDown_Ano.Value = new decimal(new int[] {
+            2012,
+            0,
+            0,
+            0});
             // 
-            // numericUpDown3
+            // Admin_Perfil_numericUpDown_Mes
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(79, 204);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(36, 20);
-            this.numericUpDown3.TabIndex = 29;
+            this.Admin_Perfil_numericUpDown_Mes.Location = new System.Drawing.Point(79, 204);
+            this.Admin_Perfil_numericUpDown_Mes.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Mes.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.Admin_Perfil_numericUpDown_Mes.Name = "Admin_Perfil_numericUpDown_Mes";
+            this.Admin_Perfil_numericUpDown_Mes.Size = new System.Drawing.Size(36, 20);
+            this.Admin_Perfil_numericUpDown_Mes.TabIndex = 29;
+            this.Admin_Perfil_numericUpDown_Mes.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Admin_Perfil_rButom_H
             // 
@@ -455,6 +502,14 @@
             this.Admin_Perfil_rButom_Divorciado.Text = "Divorciad/a";
             this.Admin_Perfil_rButom_Divorciado.UseVisualStyleBackColor = true;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(37, 434);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(499, 21);
+            this.comboBox2.TabIndex = 36;
+            // 
             // Admins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,9 +521,9 @@
             this.Perfil.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,7 +556,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Dia;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Viudo;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Divorciado;
@@ -509,8 +564,9 @@
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Soltero;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_M;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_H;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Mes;
+        private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Ano;
+        private System.Windows.Forms.ComboBox comboBox2;
 
     }
 }
