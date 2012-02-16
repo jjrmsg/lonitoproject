@@ -59,6 +59,7 @@
             this.textBoxPass.PasswordChar = '•';
             this.textBoxPass.Size = new System.Drawing.Size(144, 20);
             this.textBoxPass.TabIndex = 2;
+            this.textBoxPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPass_KeyDown);
             // 
             // label1
             // 

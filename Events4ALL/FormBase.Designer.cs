@@ -258,6 +258,7 @@
             this.Controls.Add(this.admins1);
             this.Controls.Add(this.listBox1);
             this.Name = "FormBase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Events4ALL";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

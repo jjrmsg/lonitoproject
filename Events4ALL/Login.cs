@@ -41,5 +41,13 @@ namespace Events4ALL
                 MessageBox.Show("Los campos usuario y password no pueden estar vacios");
             }
         }
+
+        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                loginButton.PerformClick();
+            }
+        }
     }
 }
