@@ -21,7 +21,7 @@ namespace Events4ALL
             listBox1.Items.Add(new listItem("Salas", 0));
             listBox1.Items.Add(new listItem("Espectáculos", 0));
             listBox1.Items.Add(new listItem("Promociones", 0));
-            listBox1.Items.Add(new listItem("Estadisticas", 0));
+            listBox1.Items.Add(new listItem("Estadísticas", 0));
             listBox1.Items.Add(new listItem("Ventas y reservas", 0));
             listBox1.Items.Add(new listItem("Logs", 0));
             listBox1.SetSelected(0, true);
