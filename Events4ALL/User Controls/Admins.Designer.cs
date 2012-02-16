@@ -46,16 +46,16 @@
             this.Admin_Perfil_Label_Mail = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Idioma = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Domicilio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Nombre = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Tel1 = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Tel2 = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Domicilio = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Localidad = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Apellidos = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_NIF = new System.Windows.Forms.TextBox();
+            this.Admin_Perfil_txtBox_Mail = new System.Windows.Forms.TextBox();
             this.Admin_Perfil_numericUpDown_Dia = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Admin_Perfil_comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.Admin_Perfil_numericUpDown_Ano = new System.Windows.Forms.NumericUpDown();
             this.Admin_Perfil_numericUpDown_Mes = new System.Windows.Forms.NumericUpDown();
             this.Admin_Perfil_rButom_H = new System.Windows.Forms.RadioButton();
@@ -64,17 +64,39 @@
             this.Admin_Perfil_rButom_Soltero = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Viudo = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_rButom_Divorciado = new System.Windows.Forms.RadioButton();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Admin_Perfil_comboBox_Puesto = new System.Windows.Forms.ComboBox();
+            this.Admin_Perfil_Check_ESP = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_VAL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_GAL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ENG = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ITA = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_HOL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_FRA = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_CAT = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ALE = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_EUS = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_POR = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_RUS = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_boton_Buscar = new System.Windows.Forms.Button();
+            this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
+            this.Admin_Perfil_boton_Eliminar = new System.Windows.Forms.Button();
+            this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
+            this.Admin_Perfil_Label_Titulo = new System.Windows.Forms.Label();
+            this.Listado.SuspendLayout();
             this.Perfil.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Listado
             // 
+            this.Listado.Controls.Add(this.dataGridView1);
             this.Listado.Location = new System.Drawing.Point(4, 22);
             this.Listado.Name = "Listado";
             this.Listado.Padding = new System.Windows.Forms.Padding(3);
@@ -85,7 +107,25 @@
             // 
             // Perfil
             // 
-            this.Perfil.Controls.Add(this.comboBox2);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Label_Titulo);
+            this.Perfil.Controls.Add(this.Admin_Perfil_boton_Foto);
+            this.Perfil.Controls.Add(this.Admin_Perfil_boton_Guardar);
+            this.Perfil.Controls.Add(this.Admin_Perfil_boton_Eliminar);
+            this.Perfil.Controls.Add(this.Admin_Perfil_boton_Anadir);
+            this.Perfil.Controls.Add(this.Admin_Perfil_boton_Buscar);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_POR);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_RUS);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_ALE);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_EUS);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_FRA);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_CAT);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_ITA);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_HOL);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_GAL);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_ENG);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_VAL);
+            this.Perfil.Controls.Add(this.Admin_Perfil_Check_ESP);
+            this.Perfil.Controls.Add(this.Admin_Perfil_comboBox_Puesto);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Viudo);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Divorciado);
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_Casado);
@@ -94,16 +134,16 @@
             this.Perfil.Controls.Add(this.Admin_Perfil_rButom_H);
             this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Mes);
             this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Ano);
-            this.Perfil.Controls.Add(this.comboBox1);
+            this.Perfil.Controls.Add(this.Admin_Perfil_comboBox_Pais);
             this.Perfil.Controls.Add(this.Admin_Perfil_numericUpDown_Dia);
-            this.Perfil.Controls.Add(this.textBox8);
-            this.Perfil.Controls.Add(this.textBox7);
-            this.Perfil.Controls.Add(this.textBox6);
-            this.Perfil.Controls.Add(this.textBox5);
-            this.Perfil.Controls.Add(this.textBox4);
-            this.Perfil.Controls.Add(this.textBox3);
-            this.Perfil.Controls.Add(this.textBox2);
-            this.Perfil.Controls.Add(this.textBox1);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Mail);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_NIF);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Apellidos);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Localidad);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Domicilio);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Tel2);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Tel1);
+            this.Perfil.Controls.Add(this.Admin_Perfil_txtBox_Nombre);
             this.Perfil.Controls.Add(this.Admin_Perfil_Label_Domicilio);
             this.Perfil.Controls.Add(this.Admin_Perfil_Label_Idioma);
             this.Perfil.Controls.Add(this.Admin_Perfil_Label_Mail);
@@ -143,7 +183,7 @@
             // Avatar
             // 
             this.Avatar.Image = global::Events4ALL.Properties.Resources.pedobear;
-            this.Avatar.Location = new System.Drawing.Point(596, 24);
+            this.Avatar.Location = new System.Drawing.Point(606, 27);
             this.Avatar.Name = "Avatar";
             this.Avatar.Size = new System.Drawing.Size(255, 252);
             this.Avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,7 +293,7 @@
             // 
             this.Admin_Perfil_Label_Tel2.AutoSize = true;
             this.Admin_Perfil_Label_Tel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Tel2.Location = new System.Drawing.Point(579, 365);
+            this.Admin_Perfil_Label_Tel2.Location = new System.Drawing.Point(579, 400);
             this.Admin_Perfil_Label_Tel2.Name = "Admin_Perfil_Label_Tel2";
             this.Admin_Perfil_Label_Tel2.Size = new System.Drawing.Size(84, 20);
             this.Admin_Perfil_Label_Tel2.TabIndex = 10;
@@ -264,7 +304,7 @@
             // 
             this.Admin_Perfil_Label_Tel1.AutoSize = true;
             this.Admin_Perfil_Label_Tel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Tel1.Location = new System.Drawing.Point(579, 296);
+            this.Admin_Perfil_Label_Tel1.Location = new System.Drawing.Point(579, 331);
             this.Admin_Perfil_Label_Tel1.Name = "Admin_Perfil_Label_Tel1";
             this.Admin_Perfil_Label_Tel1.Size = new System.Drawing.Size(84, 20);
             this.Admin_Perfil_Label_Tel1.TabIndex = 11;
@@ -275,7 +315,7 @@
             // 
             this.Admin_Perfil_Label_Mail.AutoSize = true;
             this.Admin_Perfil_Label_Mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Mail.Location = new System.Drawing.Point(579, 438);
+            this.Admin_Perfil_Label_Mail.Location = new System.Drawing.Point(579, 473);
             this.Admin_Perfil_Label_Mail.Name = "Admin_Perfil_Label_Mail";
             this.Admin_Perfil_Label_Mail.Size = new System.Drawing.Size(140, 20);
             this.Admin_Perfil_Label_Mail.TabIndex = 12;
@@ -304,62 +344,62 @@
             this.Admin_Perfil_Label_Domicilio.Text = "Domicilio";
             this.Admin_Perfil_Label_Domicilio.Click += new System.EventHandler(this.label14_Click);
             // 
-            // textBox1
+            // Admin_Perfil_txtBox_Nombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(37, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 18;
+            this.Admin_Perfil_txtBox_Nombre.Location = new System.Drawing.Point(37, 95);
+            this.Admin_Perfil_txtBox_Nombre.Name = "Admin_Perfil_txtBox_Nombre";
+            this.Admin_Perfil_txtBox_Nombre.Size = new System.Drawing.Size(210, 20);
+            this.Admin_Perfil_txtBox_Nombre.TabIndex = 18;
             // 
-            // textBox2
+            // Admin_Perfil_txtBox_Tel1
             // 
-            this.textBox2.Location = new System.Drawing.Point(583, 331);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(278, 20);
-            this.textBox2.TabIndex = 19;
+            this.Admin_Perfil_txtBox_Tel1.Location = new System.Drawing.Point(583, 366);
+            this.Admin_Perfil_txtBox_Tel1.Name = "Admin_Perfil_txtBox_Tel1";
+            this.Admin_Perfil_txtBox_Tel1.Size = new System.Drawing.Size(278, 20);
+            this.Admin_Perfil_txtBox_Tel1.TabIndex = 19;
             // 
-            // textBox3
+            // Admin_Perfil_txtBox_Tel2
             // 
-            this.textBox3.Location = new System.Drawing.Point(583, 401);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(278, 20);
-            this.textBox3.TabIndex = 20;
+            this.Admin_Perfil_txtBox_Tel2.Location = new System.Drawing.Point(583, 436);
+            this.Admin_Perfil_txtBox_Tel2.Name = "Admin_Perfil_txtBox_Tel2";
+            this.Admin_Perfil_txtBox_Tel2.Size = new System.Drawing.Size(278, 20);
+            this.Admin_Perfil_txtBox_Tel2.TabIndex = 20;
             // 
-            // textBox4
+            // Admin_Perfil_txtBox_Domicilio
             // 
-            this.textBox4.Location = new System.Drawing.Point(37, 259);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(498, 20);
-            this.textBox4.TabIndex = 21;
+            this.Admin_Perfil_txtBox_Domicilio.Location = new System.Drawing.Point(37, 259);
+            this.Admin_Perfil_txtBox_Domicilio.Multiline = true;
+            this.Admin_Perfil_txtBox_Domicilio.Name = "Admin_Perfil_txtBox_Domicilio";
+            this.Admin_Perfil_txtBox_Domicilio.Size = new System.Drawing.Size(498, 20);
+            this.Admin_Perfil_txtBox_Domicilio.TabIndex = 21;
             // 
-            // textBox5
+            // Admin_Perfil_txtBox_Localidad
             // 
-            this.textBox5.Location = new System.Drawing.Point(378, 204);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 20);
-            this.textBox5.TabIndex = 22;
+            this.Admin_Perfil_txtBox_Localidad.Location = new System.Drawing.Point(378, 204);
+            this.Admin_Perfil_txtBox_Localidad.Name = "Admin_Perfil_txtBox_Localidad";
+            this.Admin_Perfil_txtBox_Localidad.Size = new System.Drawing.Size(158, 20);
+            this.Admin_Perfil_txtBox_Localidad.TabIndex = 22;
             // 
-            // textBox6
+            // Admin_Perfil_txtBox_Apellidos
             // 
-            this.textBox6.Location = new System.Drawing.Point(37, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(498, 20);
-            this.textBox6.TabIndex = 23;
+            this.Admin_Perfil_txtBox_Apellidos.Location = new System.Drawing.Point(37, 147);
+            this.Admin_Perfil_txtBox_Apellidos.Name = "Admin_Perfil_txtBox_Apellidos";
+            this.Admin_Perfil_txtBox_Apellidos.Size = new System.Drawing.Size(498, 20);
+            this.Admin_Perfil_txtBox_Apellidos.TabIndex = 23;
             // 
-            // textBox7
+            // Admin_Perfil_txtBox_NIF
             // 
-            this.textBox7.Location = new System.Drawing.Point(316, 95);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(219, 20);
-            this.textBox7.TabIndex = 24;
+            this.Admin_Perfil_txtBox_NIF.Location = new System.Drawing.Point(316, 95);
+            this.Admin_Perfil_txtBox_NIF.Name = "Admin_Perfil_txtBox_NIF";
+            this.Admin_Perfil_txtBox_NIF.Size = new System.Drawing.Size(219, 20);
+            this.Admin_Perfil_txtBox_NIF.TabIndex = 24;
             // 
-            // textBox8
+            // Admin_Perfil_txtBox_Mail
             // 
-            this.textBox8.Location = new System.Drawing.Point(583, 473);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(278, 20);
-            this.textBox8.TabIndex = 25;
+            this.Admin_Perfil_txtBox_Mail.Location = new System.Drawing.Point(583, 508);
+            this.Admin_Perfil_txtBox_Mail.Name = "Admin_Perfil_txtBox_Mail";
+            this.Admin_Perfil_txtBox_Mail.Size = new System.Drawing.Size(278, 20);
+            this.Admin_Perfil_txtBox_Mail.TabIndex = 25;
             // 
             // Admin_Perfil_numericUpDown_Dia
             // 
@@ -384,13 +424,13 @@
             0});
             this.Admin_Perfil_numericUpDown_Dia.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // comboBox1
+            // Admin_Perfil_comboBox_Pais
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(218, 203);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 21);
-            this.comboBox1.TabIndex = 27;
+            this.Admin_Perfil_comboBox_Pais.FormattingEnabled = true;
+            this.Admin_Perfil_comboBox_Pais.Location = new System.Drawing.Point(218, 203);
+            this.Admin_Perfil_comboBox_Pais.Name = "Admin_Perfil_comboBox_Pais";
+            this.Admin_Perfil_comboBox_Pais.Size = new System.Drawing.Size(141, 21);
+            this.Admin_Perfil_comboBox_Pais.TabIndex = 27;
             // 
             // Admin_Perfil_numericUpDown_Ano
             // 
@@ -502,13 +542,198 @@
             this.Admin_Perfil_rButom_Divorciado.Text = "Divorciad/a";
             this.Admin_Perfil_rButom_Divorciado.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // Admin_Perfil_comboBox_Puesto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(37, 434);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(499, 21);
-            this.comboBox2.TabIndex = 36;
+            this.Admin_Perfil_comboBox_Puesto.FormattingEnabled = true;
+            this.Admin_Perfil_comboBox_Puesto.Location = new System.Drawing.Point(37, 434);
+            this.Admin_Perfil_comboBox_Puesto.Name = "Admin_Perfil_comboBox_Puesto";
+            this.Admin_Perfil_comboBox_Puesto.Size = new System.Drawing.Size(499, 21);
+            this.Admin_Perfil_comboBox_Puesto.TabIndex = 36;
+            // 
+            // Admin_Perfil_Check_ESP
+            // 
+            this.Admin_Perfil_Check_ESP.AutoSize = true;
+            this.Admin_Perfil_Check_ESP.Location = new System.Drawing.Point(61, 508);
+            this.Admin_Perfil_Check_ESP.Name = "Admin_Perfil_Check_ESP";
+            this.Admin_Perfil_Check_ESP.Size = new System.Drawing.Size(64, 17);
+            this.Admin_Perfil_Check_ESP.TabIndex = 37;
+            this.Admin_Perfil_Check_ESP.Text = "Español";
+            this.Admin_Perfil_Check_ESP.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_VAL
+            // 
+            this.Admin_Perfil_Check_VAL.AutoSize = true;
+            this.Admin_Perfil_Check_VAL.Location = new System.Drawing.Point(61, 532);
+            this.Admin_Perfil_Check_VAL.Name = "Admin_Perfil_Check_VAL";
+            this.Admin_Perfil_Check_VAL.Size = new System.Drawing.Size(79, 17);
+            this.Admin_Perfil_Check_VAL.TabIndex = 38;
+            this.Admin_Perfil_Check_VAL.Text = "Valenciano";
+            this.Admin_Perfil_Check_VAL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_GAL
+            // 
+            this.Admin_Perfil_Check_GAL.AutoSize = true;
+            this.Admin_Perfil_Check_GAL.Location = new System.Drawing.Point(147, 532);
+            this.Admin_Perfil_Check_GAL.Name = "Admin_Perfil_Check_GAL";
+            this.Admin_Perfil_Check_GAL.Size = new System.Drawing.Size(62, 17);
+            this.Admin_Perfil_Check_GAL.TabIndex = 40;
+            this.Admin_Perfil_Check_GAL.Text = "Gallego";
+            this.Admin_Perfil_Check_GAL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ENG
+            // 
+            this.Admin_Perfil_Check_ENG.AutoSize = true;
+            this.Admin_Perfil_Check_ENG.Location = new System.Drawing.Point(147, 508);
+            this.Admin_Perfil_Check_ENG.Name = "Admin_Perfil_Check_ENG";
+            this.Admin_Perfil_Check_ENG.Size = new System.Drawing.Size(54, 17);
+            this.Admin_Perfil_Check_ENG.TabIndex = 39;
+            this.Admin_Perfil_Check_ENG.Text = "Inglés";
+            this.Admin_Perfil_Check_ENG.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ITA
+            // 
+            this.Admin_Perfil_Check_ITA.AutoSize = true;
+            this.Admin_Perfil_Check_ITA.Location = new System.Drawing.Point(242, 532);
+            this.Admin_Perfil_Check_ITA.Name = "Admin_Perfil_Check_ITA";
+            this.Admin_Perfil_Check_ITA.Size = new System.Drawing.Size(60, 17);
+            this.Admin_Perfil_Check_ITA.TabIndex = 42;
+            this.Admin_Perfil_Check_ITA.Text = "Italiano";
+            this.Admin_Perfil_Check_ITA.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_HOL
+            // 
+            this.Admin_Perfil_Check_HOL.AutoSize = true;
+            this.Admin_Perfil_Check_HOL.Location = new System.Drawing.Point(242, 508);
+            this.Admin_Perfil_Check_HOL.Name = "Admin_Perfil_Check_HOL";
+            this.Admin_Perfil_Check_HOL.Size = new System.Drawing.Size(71, 17);
+            this.Admin_Perfil_Check_HOL.TabIndex = 41;
+            this.Admin_Perfil_Check_HOL.Text = "Holandes";
+            this.Admin_Perfil_Check_HOL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_FRA
+            // 
+            this.Admin_Perfil_Check_FRA.AutoSize = true;
+            this.Admin_Perfil_Check_FRA.Location = new System.Drawing.Point(340, 559);
+            this.Admin_Perfil_Check_FRA.Name = "Admin_Perfil_Check_FRA";
+            this.Admin_Perfil_Check_FRA.Size = new System.Drawing.Size(64, 17);
+            this.Admin_Perfil_Check_FRA.TabIndex = 44;
+            this.Admin_Perfil_Check_FRA.Text = "Francés";
+            this.Admin_Perfil_Check_FRA.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_CAT
+            // 
+            this.Admin_Perfil_Check_CAT.AutoSize = true;
+            this.Admin_Perfil_Check_CAT.Location = new System.Drawing.Point(59, 559);
+            this.Admin_Perfil_Check_CAT.Name = "Admin_Perfil_Check_CAT";
+            this.Admin_Perfil_Check_CAT.Size = new System.Drawing.Size(62, 17);
+            this.Admin_Perfil_Check_CAT.TabIndex = 43;
+            this.Admin_Perfil_Check_CAT.Text = "Catalán";
+            this.Admin_Perfil_Check_CAT.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ALE
+            // 
+            this.Admin_Perfil_Check_ALE.AutoSize = true;
+            this.Admin_Perfil_Check_ALE.Location = new System.Drawing.Point(340, 532);
+            this.Admin_Perfil_Check_ALE.Name = "Admin_Perfil_Check_ALE";
+            this.Admin_Perfil_Check_ALE.Size = new System.Drawing.Size(61, 17);
+            this.Admin_Perfil_Check_ALE.TabIndex = 46;
+            this.Admin_Perfil_Check_ALE.Text = "Alemán";
+            this.Admin_Perfil_Check_ALE.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_EUS
+            // 
+            this.Admin_Perfil_Check_EUS.AutoSize = true;
+            this.Admin_Perfil_Check_EUS.Location = new System.Drawing.Point(147, 559);
+            this.Admin_Perfil_Check_EUS.Name = "Admin_Perfil_Check_EUS";
+            this.Admin_Perfil_Check_EUS.Size = new System.Drawing.Size(65, 17);
+            this.Admin_Perfil_Check_EUS.TabIndex = 45;
+            this.Admin_Perfil_Check_EUS.Text = "Euskera";
+            this.Admin_Perfil_Check_EUS.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_POR
+            // 
+            this.Admin_Perfil_Check_POR.AutoSize = true;
+            this.Admin_Perfil_Check_POR.Location = new System.Drawing.Point(340, 508);
+            this.Admin_Perfil_Check_POR.Name = "Admin_Perfil_Check_POR";
+            this.Admin_Perfil_Check_POR.Size = new System.Drawing.Size(74, 17);
+            this.Admin_Perfil_Check_POR.TabIndex = 48;
+            this.Admin_Perfil_Check_POR.Text = "Portugues";
+            this.Admin_Perfil_Check_POR.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_RUS
+            // 
+            this.Admin_Perfil_Check_RUS.AutoSize = true;
+            this.Admin_Perfil_Check_RUS.Location = new System.Drawing.Point(242, 559);
+            this.Admin_Perfil_Check_RUS.Name = "Admin_Perfil_Check_RUS";
+            this.Admin_Perfil_Check_RUS.Size = new System.Drawing.Size(51, 17);
+            this.Admin_Perfil_Check_RUS.TabIndex = 47;
+            this.Admin_Perfil_Check_RUS.Text = "Ruso";
+            this.Admin_Perfil_Check_RUS.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_boton_Buscar
+            // 
+            this.Admin_Perfil_boton_Buscar.Location = new System.Drawing.Point(606, 573);
+            this.Admin_Perfil_boton_Buscar.Name = "Admin_Perfil_boton_Buscar";
+            this.Admin_Perfil_boton_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Admin_Perfil_boton_Buscar.TabIndex = 49;
+            this.Admin_Perfil_boton_Buscar.Text = "Buscar";
+            this.Admin_Perfil_boton_Buscar.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_boton_Anadir
+            // 
+            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(583, 544);
+            this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
+            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(123, 23);
+            this.Admin_Perfil_boton_Anadir.TabIndex = 50;
+            this.Admin_Perfil_boton_Anadir.Text = "Nuevo Administrador";
+            this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_boton_Eliminar
+            // 
+            this.Admin_Perfil_boton_Eliminar.Location = new System.Drawing.Point(761, 573);
+            this.Admin_Perfil_boton_Eliminar.Name = "Admin_Perfil_boton_Eliminar";
+            this.Admin_Perfil_boton_Eliminar.Size = new System.Drawing.Size(75, 23);
+            this.Admin_Perfil_boton_Eliminar.TabIndex = 51;
+            this.Admin_Perfil_boton_Eliminar.Text = "Eliminar";
+            this.Admin_Perfil_boton_Eliminar.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_boton_Guardar
+            // 
+            this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(741, 544);
+            this.Admin_Perfil_boton_Guardar.Name = "Admin_Perfil_boton_Guardar";
+            this.Admin_Perfil_boton_Guardar.Size = new System.Drawing.Size(120, 23);
+            this.Admin_Perfil_boton_Guardar.TabIndex = 52;
+            this.Admin_Perfil_boton_Guardar.Text = "Guardar Cambios";
+            this.Admin_Perfil_boton_Guardar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(854, 562);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Admin_Perfil_boton_Foto
+            // 
+            this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(692, 285);
+            this.Admin_Perfil_boton_Foto.Name = "Admin_Perfil_boton_Foto";
+            this.Admin_Perfil_boton_Foto.Size = new System.Drawing.Size(90, 23);
+            this.Admin_Perfil_boton_Foto.TabIndex = 53;
+            this.Admin_Perfil_boton_Foto.Text = "Establecer Foto";
+            this.Admin_Perfil_boton_Foto.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Label_Titulo
+            // 
+            this.Admin_Perfil_Label_Titulo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Admin_Perfil_Label_Titulo.AutoSize = true;
+            this.Admin_Perfil_Label_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Perfil_Label_Titulo.Location = new System.Drawing.Point(104, 17);
+            this.Admin_Perfil_Label_Titulo.Name = "Admin_Perfil_Label_Titulo";
+            this.Admin_Perfil_Label_Titulo.Size = new System.Drawing.Size(366, 32);
+            this.Admin_Perfil_Label_Titulo.TabIndex = 54;
+            this.Admin_Perfil_Label_Titulo.Text = "Gestión de Administradores";
             // 
             // Admins
             // 
@@ -517,6 +742,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Admins";
             this.Size = new System.Drawing.Size(907, 635);
+            this.Listado.ResumeLayout(false);
             this.Perfil.ResumeLayout(false);
             this.Perfil.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -524,6 +750,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -548,16 +775,16 @@
         private System.Windows.Forms.Label Admin_Perfil_Label_Puesto;
         private System.Windows.Forms.Label Admin_Perfil_Label_Localidad;
         private System.Windows.Forms.Label Admin_Perfil_Label_Pais;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Mail;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_NIF;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Apellidos;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Localidad;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Domicilio;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Tel2;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Tel1;
+        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Nombre;
         private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Dia;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Admin_Perfil_comboBox_Pais;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Viudo;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Divorciado;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Casado;
@@ -566,7 +793,26 @@
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_H;
         private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Mes;
         private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Ano;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Admin_Perfil_comboBox_Puesto;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_POR;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_RUS;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_ALE;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_EUS;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_FRA;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_CAT;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_ITA;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_HOL;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_GAL;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_ENG;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_VAL;
+        private System.Windows.Forms.CheckBox Admin_Perfil_Check_ESP;
+        private System.Windows.Forms.Button Admin_Perfil_boton_Guardar;
+        private System.Windows.Forms.Button Admin_Perfil_boton_Eliminar;
+        private System.Windows.Forms.Button Admin_Perfil_boton_Anadir;
+        private System.Windows.Forms.Button Admin_Perfil_boton_Buscar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Admin_Perfil_boton_Foto;
+        private System.Windows.Forms.Label Admin_Perfil_Label_Titulo;
 
     }
 }
