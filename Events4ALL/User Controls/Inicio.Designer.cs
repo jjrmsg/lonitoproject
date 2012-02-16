@@ -45,7 +45,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(788, 516);
+            this.tabControl1.Size = new System.Drawing.Size(901, 632);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -53,7 +53,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(780, 490);
+            this.tabPage1.Size = new System.Drawing.Size(893, 606);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Inicio";
-            this.Size = new System.Drawing.Size(794, 519);
+            this.Size = new System.Drawing.Size(907, 635);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

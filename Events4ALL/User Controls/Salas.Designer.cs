@@ -46,7 +46,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(788, 516);
+            this.tabControl1.Size = new System.Drawing.Size(901, 632);
             this.tabControl1.TabIndex = 1;
             // 
             // tabAñadirSala
@@ -55,7 +55,7 @@
             this.tabAñadirSala.Location = new System.Drawing.Point(4, 22);
             this.tabAñadirSala.Name = "tabAñadirSala";
             this.tabAñadirSala.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAñadirSala.Size = new System.Drawing.Size(780, 490);
+            this.tabAñadirSala.Size = new System.Drawing.Size(893, 606);
             this.tabAñadirSala.TabIndex = 0;
             this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Name = "Salas";
-            this.Size = new System.Drawing.Size(794, 519);
+            this.Size = new System.Drawing.Size(907, 635);
             this.tabControl1.ResumeLayout(false);
             this.tabAñadirSala.ResumeLayout(false);
             this.tabAñadirSala.PerformLayout();
