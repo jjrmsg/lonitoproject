@@ -88,7 +88,7 @@ namespace Events4ALL
                                   new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 1,
                                   e.Bounds.Top));
 
-            listBox1_Click(sender, e);
+            //listBox1_Click(sender, e);
         }
 
 
