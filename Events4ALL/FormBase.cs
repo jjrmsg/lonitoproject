@@ -20,7 +20,7 @@ namespace Events4ALL
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
 
-            if(lang=="es")
+            if(lang=="es" || lang==" ")
             {
                 listBox1.Items.Add(new listItem("Inicio", 0));
                 listBox1.Items.Add(new listItem("Admins", 0));

@@ -39,6 +39,8 @@
             this.logoutButton = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.ventas1 = new Events4ALL.Ventas();
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
@@ -48,15 +50,18 @@
             this.espectaculos1 = new Events4ALL.Espectaculos();
             this.clientes1 = new Events4ALL.Clientes();
             this.admins1 = new Events4ALL.Admins();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.exitButton.SuspendLayout();
             this.logoutButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Name = "listBox1";
@@ -71,16 +76,17 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.BackColor = System.Drawing.Color.OliveDrab;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Name = "label1";
             // 
             // exitButton
@@ -117,6 +123,21 @@
             this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Name = "panel2";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label4.Name = "label4";
             // 
             // ventas1
             // 
@@ -163,11 +184,18 @@
             resources.ApplyResources(this.admins1, "admins1");
             this.admins1.Name = "admins1";
             // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label5.Name = "label5";
+            // 
             // FormBase
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
@@ -181,6 +209,7 @@
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.admins1);
             this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.panel2);
             this.Name = "FormBase";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -189,6 +218,8 @@
             this.logoutButton.ResumeLayout(false);
             this.logoutButton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -213,6 +244,9 @@
         private System.Windows.Forms.Panel logoutButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

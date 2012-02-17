@@ -22,6 +22,7 @@ namespace Events4ALL
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");  
             InitializeComponent();
+            comboBox1.Text = "Español";
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             comboBox1.DrawItem += new DrawItemEventHandler(comboBox1_DrawItem);
             comboBox1.Items.Add(new ComboFlags("Español", 0));
@@ -58,7 +59,7 @@ namespace Events4ALL
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (textBoxUser.Text != "" && textBoxPass.Text != "")
+            if (textBoxUser.Text != "" && textBoxPass.Text != "" && comboBox1.Text != "")
             {
                 user = textBoxUser.Text;
                 pass = textBoxPass.Text;
@@ -69,7 +70,7 @@ namespace Events4ALL
             }
             else
             {
-                MessageBox.Show("Los campos usuario y password no pueden estar vacios");
+                MessageBox.Show("Los campos usuario, password e idioma no pueden estar vacios");
             }
         }
 

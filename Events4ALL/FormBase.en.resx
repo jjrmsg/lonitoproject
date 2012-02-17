@@ -122,18 +122,18 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADe
-        AwAAAk1TRnQBSQFMAwEBAAHoAQIB6AECARQBAAEUAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABUAMA
-        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABGwEAAf8DVQGxAwEBAv8AMQADVgG2
-        AQAB3AEdAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
-        AZn/ACkAA1YBswEAAdUBHgH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
-        IgABiAEAAf8BEwH8Ab0B/wESAf8BwQH/AQcB/wG8Af8BAAH/AbYB/wEAAfgBpwH/AQABlgEAAf8DRQF/
-        /wAdAANFAX0BAAHVAR0B/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wENAf8BvwH/AQAB/wG3Af8BAAH3
+        AwAAAk1TRnQBSQFMAwEBAAEIAQMBCAEDARQBAAEUAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABUAMA
+        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABFwEAAf8DVQGxAwEBAv8AMQADVgG2
+        AQAB3AEZAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
+        AZn/ACkAA1YBswEAAdUBGgH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
+        IgABiAEAAf8BDwH8Ab0B/wEOAf8BwQH/AQMB/wG8Af8BAAH/AbYB/wEAAfgBpwH/AQABlgEAAf8DRQF/
+        /wAdAANFAX0BAAHVARkB/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wEJAf8BvwH/AQAB/wG3Af8BAAH3
         AacB/wEAAZUBAAH/A0EBcgMCAQP/ABUAAUABjAFAAf0BqgH+AdoB/wEAAbsBAAH/AU8BUAFPAZsBVwFa
-        AVcBxQEAAbsBAAH/AQUB+wG3Af8BAAH/AbMB/wEAAfcBpQH/AQABkQEAAf8DPAFn/wARAAMtAUUBAAHP
-        ARAB/wEAAcABAAH/A0oBjQgAATABMQEwAU0BMgFNASkB+gEAAegBlAH/AQAB/wGtAf8BAAH3AaIB/wEy
+        AVcBxQEAAbsBAAH/AQEB+wG3Af8BAAH/AbMB/wEAAfcBpQH/AQABkQEAAf8DPAFn/wARAAMtAUUBAAHP
+        AQwB/wEAAcABAAH/A0oBjQgAATABMQEwAU0BMgFNASkB+gEAAegBlAH/AQAB/wGtAf8BAAH3AaIB/wEy
         AV8BJwH7AzcBWwMAAQH/AAoAAYMBAAH/AQABxQEAAf8BTgFPAU4BlxQAAVQBYQFUAe4BAAHNAQAB/wEA
         Af8BpAH/AQAB9wGhAf8BAAGOAQAB/wMyAVD/AAkAA0gBhQE/AUABPwFvHAADOQFfAQABqAEAAf8BAAHz
-        AZcB/wEAAfcBoAH/AUIBWQFCAfUDLQFG/wAxAAFXAV8BVwHoAQAB4AETAf8BAAH4AaMB/wEAAZABAAH/
+        AZcB/wEAAfcBoAH/AUIBWQFCAfUDLQFG/wAxAAFXAV8BVwHoAQAB4AEPAf8BAAH4AaMB/wEAAZABAAH/
         AygBPf8AMQADQAFxAQABugEAAf8BAAHwAZ8B/wNdAe0DIgEy/wAxAAMFAQcBAAGZAQAB/wEAAdUBAAH/
         AVABUgFQAaP/ADkAAzgBXP8A/wD/AP8AvAABQgFNAT4HAAE+AwABKAMAAVADAAEUAwABAQEAAQEFAAHw
         FwAD/wEAAv8B8AkAAv8B8AkAAfwB/wHwCQAB+AF/AfAJAAH4AT8B8AkAAfgBPwHwCQAB8AEPAfAJAAHw
@@ -141,11 +141,24 @@
         CQAB/wH+ARAJAAL/AbAJAAL/AfAJAAL/AfAJAAL/AfAJAAs=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>
