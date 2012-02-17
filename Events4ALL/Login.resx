@@ -117,4 +117,379 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Usuario:</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBoxPass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 38</value>
+  </data>
+  <data name="textBoxUser.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 12</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;textBoxPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxPass.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 69</value>
+  </data>
+  <data name="&gt;&gt;textBoxPass.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 32</value>
+  </data>
+  <data name="&gt;&gt;textBoxUser.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 57</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="loginButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;idiomas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 12</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;loginButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 122</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBoxUser.Name" xml:space="preserve">
+    <value>textBoxUser</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="idiomas.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACm
+        CwAAAk1TRnQBSQFMAgEBAgEAARgBAAEgAQABFAEAAQwBAAT/ARkBEAj/AUIBTQE2BwABNgMAASgDAAFQ
+        AwABDAMAAQEBAAEYBQABQAELEgABGgE5AfoBHgE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8
+        AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8AfoBHQE8
+        AfoBHQE8AfoBHgE9AfsBGgE5AfUBsAG2Af8BTwFYAfUBdwFzAdYBlgFpAWQBfAE4ARsBcAEtARkBdQE0
+        ASIBegE2ARkBlgGGAbgBLgE6AfgBNAE/AfoBmwGEAacBdwEyARcBdQE0ASEBbgEqARcBdQE1ASIBsAGJ
+        AXoB+gHzAesBygHMAfsBXgFnAfV4AAEhATwB+gEnAUEB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEm
+        AUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEmAUAB+gEm
+        AUAB+gEmAUAB+gEnAUEB+wEiATsB9QHxAeYB2gHyAfYB/wGKAZIB/wFbAWUB+wGRAYMBvQGZAWUBTwF5
+        ATcBHgF9ATsBHwGbAYsBuwE3AUMB+QE9AUgB+gGfAYoBqwF5ATYBGwF0ATMBIAGdAW4BXwHsAd4B0gHx
+        AfQB/wGCAYoB/QFgAWoB/QGbAY8BxHgAAScBWAH7AS4BXgH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7
+        AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7AS0BXQH7
+        AS0BXQH7AS0BXQH7AS4BXgH8AScBWAH2AXwBQAEuAcABoAGTAfwB9wHuAc8B0wH/AW4BeAH+AXUBegHv
+        AaIBhwGaAZIBVwE1AZwBiwG3AT4BSgH5AUQBTwH7AZ8BiAGnAY0BVQE8Ac8BtwGtAvwB/gGyAbcB/wFh
+        AWsB+gGHAYYB4gGuAYwBhwGDAUUBKngAATIB5gH8ATsB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8
+        AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8AToB5wH8
+        AToB5wH8AToB5wH8ATsB6AH9ATMB4gH3AY0BVAE+AYwBUwE+AaEBcwFfAegB1gHEAv8B/gG1AbkB/AF0
+        AX4B/wGsAaYB2wG6AbUB4AFEAU0B8wFHAVAB8wHIAcEB4AH7AfYB7AHvAfMB/wGIAY4B9wGCAYgB9gG+
+        AawBvAGqAXkBWgGPAVYBPQGLAVUBQHgAAToB8AH8AUYB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8
+        AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8AUQB8QH8
+        AUQB8QH8AUQB8QH8AUYB8gH9ATsB7AH3AdMB0AHtAdYB0wHuAdEBzQHnAdEBzQHoAeAB4QH8AegB6QH9
+        AdQB1QH7AckBzQH/AbIBtgH8AUwBVAHvAU8BVgHwAcABxAH+AeEB5AH/AdIB1AH7AcgBygH7AeIB4wH7
+        AdcB0gHmAdIBzQHoAdYB0wHuAc8BzAHoeAABQwHuAfwBUQHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHv
+        AfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHvAfwBTwHv
+        AfwBTwHvAfwBTwHvAfwBUQHwAf0BRAHqAfcBUgFbAfQBXwFoAfUBXgFmAfUBXQFlAfQBWwFjAfIBWwFj
+        AfEBXgFlAfIBXwFmAfIBXAFjAfEBXAFjAfIBXAFjAfIBWwFjAfEBWwFjAfEBXQFkAfIBXwFmAfIBXAFk
+        AfIBXQFlAfUBXgFmAfUBXwFoAfYBUwFcAfB4AAFLAe8B/AFdAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFa
+        AfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFaAfAB/AFa
+        AfAB/AFaAfAB/AFaAfAB/AFcAfEB/QFNAesB9wFYAV8B8wFoAW4B9AFlAWwB9AFlAWwB9AFlAWsB8gFm
+        AW0B8gFlAWsB8gFkAWoB8gFlAWsB8gFmAW0B8gFmAW0B8gFlAWsB8gFmAWwB8gFlAWwB8gFkAWoB8gFk
+        AWsB8gFlAWwB9AFlAWwB9AFnAW4B9QFZAWAB73gAAVMB8gH8AWcB8wH8AWQB8wH8AWQB8wH8AWQB8wH8
+        AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8AWQB8wH8
+        AWQB8wH8AWQB8wH8AWQB8wH8AWcB9AH9AVYB7gH3AdoB2QH3At4B9wHbAdkB8wHgAd4B8wHiAeMB/QHT
+        AdUB+wHcAd0B/AHjAeUB/wHAAcMB/AFrAXEB8gFuAXQB8wHGAckB/QHXAdoB/wHfAeAB/AHnAegB/QHh
+        AeIB/AHaAdgB8gHbAdoB9ALeAfgC1gHyeAABWwHsAfwBcQHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHu
+        Af0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHuAf0BbgHu
+        Af0BbgHuAf0BbgHuAf0BcQHvAf4BXgHoAfgBrQGEAXIBtwGSAX4ByAGoAZMBzQHEAdkBoQGmAfoBuwG+
+        AfsD/wH9AfcB7wHQAcwB6wF0AXsB9gF4AX8B9gHXAdIB6QHIAcYB7AGhAacB/wHVAdcB/AP/Ae4B4gHW
+        Ab4BnQGOAbQBjwF+AawBhgF0eAABYAGHAfsBeQGaAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGX
+        AfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGXAfwBdQGX
+        AfwBdQGXAfwBeAGaAf0BYwGIAfcBowF0AV8BxQGxAbMCpwHsAZkBnwH7AdUB2QP/Af4B3QHNAccBtQGP
+        AX4BvQGyAdABgAGJAfsBhAGMAfwBwAGxAcUBuQGTAX8BwQG0AckBngGkAfoBpQGsAf0B6QHrAf8B+AHy
+        AesBzAGzAaoBmAFrAV14AAFpAXoB+wGEAZMB/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGA
+        AY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGAAY8B/AGA
+        AY8B/AGEAZIB/QFsAX0B9wG0AasB1gGgAagB/wG+AcME/wH2AfAB6AHHAa0BpAGuAYkBfQG0AY4BfQHF
+        Ab0B2AGMAZMB+wGPAZcB/AHIAbwBzwGxAYwBewG0AY8BfgHJAbABpQG7AbgB5QGfAagB/wHFAcoE/wHp
+        AdsBz3gAAVsBcgH7AXMBhgH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8
+        AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AW8BgwH8AXIBhgH9
+        AV4BdAH3AZkBnwH8AuwB/QH6AfUB7gHBAaMBmAGgAXUBZwGdAXABYgGhAXYBaAGlAXcBYwG4Aa0BzwFx
+        AXkB+wF1AX4B/AG7AawBwwGiAXUBYQGhAXUBaAGeAXEBYgGoAXwBaAG2AZgBlwGnAaUB5wGGAY0B+QHJ
+        Ac0B/XgAAUIBTQE+BwABPgMAASgDAAFQAwABDAMAAQEBAAEBBQABkBcAA/+nAAs=
+</value>
+  </data>
+  <data name="comboBox1.ItemHeight" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Agency FB, 20.25pt</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Name" xml:space="preserve">
+    <value>loginButton</value>
+  </data>
+  <data name="&gt;&gt;textBoxUser.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="loginButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>_________________</value>
+  </data>
+  <data name="textBoxPass.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>•</value>
+  </data>
+  <data name="loginButton.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Events4ALL!</value>
+  </data>
+  <data name="loginButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="loginButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 88</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 18</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxPass.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;loginButton.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>96, 64</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;textBoxPass.Name" xml:space="preserve">
+    <value>textBoxPass</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Contraseña:</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 15</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Events4ALL Login</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 41</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 27</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, -3</value>
+  </data>
+  <data name="textBoxUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 20</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 48</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>265, 169</value>
+  </data>
+  <data name="&gt;&gt;idiomas.Name" xml:space="preserve">
+    <value>idiomas</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxUser.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <metadata name="idiomas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

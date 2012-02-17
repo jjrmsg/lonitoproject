@@ -6,27 +6,51 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Threading; 
 
 namespace Events4ALL
 {
     public partial class FormBase : Form
     {
-        public FormBase(string user, string pass)
+        public FormBase(string user, string pass, string lang)
         {
-            InitializeComponent();
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            listBox1.Items.Add(new listItem("Inicio", 0));
-            listBox1.Items.Add(new listItem("Admins", 0));
-            listBox1.Items.Add(new listItem("Clientes", 0));
-            listBox1.Items.Add(new listItem("Salas", 0));
-            listBox1.Items.Add(new listItem("Espectáculos", 0));
-            listBox1.Items.Add(new listItem("Promociones", 0));
-            listBox1.Items.Add(new listItem("Estadísticas", 0));
-            listBox1.Items.Add(new listItem("Ventas y reservas", 0));
-            listBox1.Items.Add(new listItem("Logs", 0));
-            listBox1.SetSelected(0, true);
+            if(lang=="en")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            InitializeComponent();
+
+            if(lang=="es")
+            {
+                listBox1.Items.Add(new listItem("Inicio", 0));
+                listBox1.Items.Add(new listItem("Admins", 0));
+                listBox1.Items.Add(new listItem("Clientes", 0));
+                listBox1.Items.Add(new listItem("Salas", 0));
+                listBox1.Items.Add(new listItem("Espectáculos", 0));
+                listBox1.Items.Add(new listItem("Promociones", 0));
+                listBox1.Items.Add(new listItem("Estadísticas", 0));
+                listBox1.Items.Add(new listItem("Ventas y reservas", 0));
+                listBox1.Items.Add(new listItem("Logs", 0));
+                listBox1.SetSelected(0, true);
+            }
+            else if (lang == "en")
+            { 
+                listBox1.Items.Add(new listItem("Main", 0));
+                listBox1.Items.Add(new listItem("Admins", 0));
+                listBox1.Items.Add(new listItem("Customers", 0));
+                listBox1.Items.Add(new listItem("Rooms", 0));
+                listBox1.Items.Add(new listItem("Shows", 0));
+                listBox1.Items.Add(new listItem("Promotions", 0));
+                listBox1.Items.Add(new listItem("Statistics", 0));
+                listBox1.Items.Add(new listItem("Sales and reservations", 0));
+                listBox1.Items.Add(new listItem("Logs", 0));
+                listBox1.SetSelected(0, true);
+            }
+
             DesactivarMenus();
             inicio1.Visible = true;
+
+            
         }
 
         public void ThreadProc()

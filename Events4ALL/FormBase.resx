@@ -117,34 +117,490 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 32</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Events4ALL</value>
+  </data>
+  <data name="admins1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="&gt;&gt;listBox1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 624</value>
+  </data>
+  <data name="&gt;&gt;salas1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ventas1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;exitButton.Name" xml:space="preserve">
+    <value>exitButton</value>
+  </data>
+  <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;inicio1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>exitButton</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;clientes1.Name" xml:space="preserve">
+    <value>clientes1</value>
+  </data>
+  <data name="exitButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 37</value>
+  </data>
+  <data name="promociones1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;logs1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="listBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 12pt</value>
+  </data>
+  <data name="promociones1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;inicio1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="espectaculos1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 34</value>
+  </data>
+  <data name="&gt;&gt;ventas1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;clientes1.Type" xml:space="preserve">
+    <value>Events4ALL.Clientes, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="ventas1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;promociones1.Name" xml:space="preserve">
+    <value>promociones1</value>
+  </data>
+  <data name="&gt;&gt;admins1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="inicio1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;inicio1.Name" xml:space="preserve">
+    <value>inicio1</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;espectaculos1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="inicio1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="&gt;&gt;admins1.Name" xml:space="preserve">
+    <value>admins1</value>
+  </data>
+  <data name="salas1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;ventas1.Type" xml:space="preserve">
+    <value>Events4ALL.Ventas, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ventas1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="clientes1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;logs1.Type" xml:space="preserve">
+    <value>Events4ALL.Logs, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="logoutButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 583</value>
+  </data>
+  <data name="ventas1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 34</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 6</value>
+  </data>
+  <data name="estadisticas1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;salas1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="admins1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="&gt;&gt;logs1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="logs1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 491</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="admins1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;salas1.Name" xml:space="preserve">
+    <value>salas1</value>
+  </data>
+  <data name="&gt;&gt;espectaculos1.Name" xml:space="preserve">
+    <value>espectaculos1</value>
+  </data>
+  <data name="exitButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="estadisticas1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="espectaculos1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="listBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="clientes1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="logs1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="salas1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;estadisticas1.Name" xml:space="preserve">
+    <value>estadisticas1</value>
+  </data>
   <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADe
-        AwAAAk1TRnQBSQFMAwEBAAHYAQIB2AECARQBAAEUAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABUAMA
-        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABHQEAAf8DVQGxAwEBAv8AMQADVgG2
-        AQAB3AEfAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
-        AZn/ACkAA1YBswEAAdUBIAH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
-        IgABiAEAAf8BFQH8Ab0B/wEUAf8BwQH/AQkB/wG8Af8BAAH/AbYB/wEAAfgBpwH/AQABlgEAAf8DRQF/
-        /wAdAANFAX0BAAHVAR8B/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wEPAf8BvwH/AQAB/wG3Af8BAAH3
+        AwAAAk1TRnQBSQFMAwEBAAHgAQIB5AECARQBAAEUAQAE/wEhARAI/wFCAU0BNgcAATYDAAEoAwABUAMA
+        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABHAEAAf8DVQGxAwEBAv8AMQADVgG2
+        AQAB3AEeAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
+        AZn/ACkAA1YBswEAAdUBHwH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
+        IgABiAEAAf8BFAH8Ab0B/wETAf8BwQH/AQgB/wG8Af8BAAH/AbYB/wEAAfgBpwH/AQABlgEAAf8DRQF/
+        /wAdAANFAX0BAAHVAR4B/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wEOAf8BvwH/AQAB/wG3Af8BAAH3
         AacB/wEAAZUBAAH/A0EBcgMCAQP/ABUAAUABjAFAAf0BqgH+AdoB/wEAAbsBAAH/AU8BUAFPAZsBVwFa
-        AVcBxQEAAbsBAAH/AQcB+wG3Af8BAAH/AbMB/wEAAfcBpQH/AQABkQEAAf8DPAFn/wARAAMtAUUBAAHP
-        ARIB/wEAAcABAAH/A0oBjQgAATABMQEwAU0BMgFNASkB+gEAAegBlAH/AQAB/wGtAf8BAAH3AaIB/wEy
-        AV8BJwH7AzcBWwMAAQH/AAoAAYMBAAH/AQABxQEAAf8BTgFPAU4BlxQAAVQBYQFUAe4BAAHNAQEB/wEA
+        AVcBxQEAAbsBAAH/AQYB+wG3Af8BAAH/AbMB/wEAAfcBpQH/AQABkQEAAf8DPAFn/wARAAMtAUUBAAHP
+        AREB/wEAAcABAAH/A0oBjQgAATABMQEwAU0BMgFNASkB+gEAAegBlAH/AQAB/wGtAf8BAAH3AaIB/wEy
+        AV8BJwH7AzcBWwMAAQH/AAoAAYMBAAH/AQABxQEAAf8BTgFPAU4BlxQAAVQBYQFUAe4BAAHNAQAB/wEA
         Af8BpAH/AQAB9wGhAf8BAAGOAQAB/wMyAVD/AAkAA0gBhQE/AUABPwFvHAADOQFfAQABqAEAAf8BAAHz
-        AZcB/wEAAfcBoAH/AUIBWQFCAfUDLQFG/wAxAAFXAV8BVwHoAQAB4AEVAf8BAAH4AaMB/wEAAZABAAH/
+        AZcB/wEAAfcBoAH/AUIBWQFCAfUDLQFG/wAxAAFXAV8BVwHoAQAB4AEUAf8BAAH4AaMB/wEAAZABAAH/
         AygBPf8AMQADQAFxAQABugEAAf8BAAHwAZ8B/wNdAe0DIgEy/wAxAAMFAQcBAAGZAQAB/wEAAdUBAAH/
         AVABUgFQAaP/ADkAAzgBXP8A/wD/AP8AvAABQgFNAT4HAAE+AwABKAMAAVADAAEUAwABAQEAAQEFAAHw
         FwAD/wEAAv8B8AkAAv8B8AkAAfwB/wHwCQAB+AF/AfAJAAH4AT8B8AkAAfgBPwHwCQAB8AEPAfAJAAHw
         AQ8B8AkAAeABAwHwCQAB4AEDAfAJAAHDAQAB8AkAAccBwAHwCQABzwHgAXAJAAH/AfgBMAkAAf8B/AEQ
-        CQAB/wH+ARAJAAL/AbAJAAL/AfAJAAL/AfAJAAL/AfAJAAs=
+        CQAB/wH+ARAJAAL/AbAJAAL/AfAJAAL/AfAJAAL/AfAfAAs=
 </value>
+  </data>
+  <data name="&gt;&gt;promociones1.Type" xml:space="preserve">
+    <value>Events4ALL.Promociones, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;espectaculos1.Type" xml:space="preserve">
+    <value>Events4ALL.Espectaculos, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="espectaculos1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>logoutButton</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 33</value>
+  </data>
+  <data name="&gt;&gt;ventas1.Name" xml:space="preserve">
+    <value>ventas1</value>
+  </data>
+  <data name="&gt;&gt;logoutButton.Name" xml:space="preserve">
+    <value>logoutButton</value>
+  </data>
+  <data name="&gt;&gt;clientes1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="inicio1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;inicio1.Type" xml:space="preserve">
+    <value>Events4ALL.Inicio, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="estadisticas1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ventas1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>907, 635</value>
+  </data>
+  <data name="&gt;&gt;admins1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="espectaculos1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;exitButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;exitButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;promociones1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="estadisticas1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="logs1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormBase</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 25</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="admins1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="inicio1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="promociones1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="&gt;&gt;exitButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 73</value>
+  </data>
+  <data name="&gt;&gt;estadisticas1.Type" xml:space="preserve">
+    <value>Events4ALL.Estadisticas, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1074, 12</value>
+  </data>
+  <data name="&gt;&gt;salas1.Type" xml:space="preserve">
+    <value>Events4ALL.Salas, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1119, 673</value>
+  </data>
+  <data name="salas1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 11</value>
+  </data>
+  <data name="&gt;&gt;espectaculos1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="logoutButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;estadisticas1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="listBox1.ItemHeight" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="logs1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>906, 635</value>
+  </data>
+  <data name="&gt;&gt;logs1.Name" xml:space="preserve">
+    <value>logs1</value>
+  </data>
+  <data name="logoutButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 35</value>
+  </data>
+  <data name="clientes1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;estadisticas1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="salas1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 34</value>
+  </data>
+  <data name="logoutButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
+    <value>imageList1</value>
+  </data>
+  <data name="&gt;&gt;promociones1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
+    <value>listBox1</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;admins1.Type" xml:space="preserve">
+    <value>Events4ALL.Admins, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;clientes1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="promociones1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="clientes1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>
