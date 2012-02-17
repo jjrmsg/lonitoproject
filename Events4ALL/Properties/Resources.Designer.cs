@@ -60,9 +60,9 @@ namespace Events4ALL.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Image1 {
+        internal static System.Drawing.Bitmap update {
             get {
-                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                object obj = ResourceManager.GetObject("update", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
