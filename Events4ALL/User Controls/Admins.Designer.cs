@@ -182,7 +182,6 @@
             // 
             // Avatar
             // 
-            this.Avatar.Image = global::Events4ALL.Properties.Resources.pedobear;
             this.Avatar.Location = new System.Drawing.Point(606, 27);
             this.Avatar.Name = "Avatar";
             this.Avatar.Size = new System.Drawing.Size(255, 252);
