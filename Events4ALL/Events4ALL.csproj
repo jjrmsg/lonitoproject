@@ -171,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imgs\Events4All.gif" />
-    <Content Include="pedobear.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

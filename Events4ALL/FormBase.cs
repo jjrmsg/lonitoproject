@@ -63,6 +63,8 @@ namespace Events4ALL
             e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(e.ForeColor),
                                   new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 1,
                                   e.Bounds.Top));
+
+            listBox1_Click(sender, e);
         }
 
 
