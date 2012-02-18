@@ -35,15 +35,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ventas1 = new Events4ALL.Ventas();
@@ -57,10 +57,10 @@
             this.admins1 = new Events4ALL.Admins();
             this.panel1.SuspendLayout();
             this.exitButton.SuspendLayout();
-            this.logoutButton.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.logoutButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -92,11 +92,11 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.OliveDrab;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label1
@@ -115,6 +115,13 @@
             this.exitButton.Name = "exitButton";
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // pictureBox4
+            // 
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Image = global::Events4ALL.Properties.Resources.arrow_right;
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
@@ -129,6 +136,13 @@
             this.logoutButton.Controls.Add(this.label2);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources._lock;
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
             // 
             // label2
             // 
@@ -145,6 +159,13 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Name = "panel2";
             // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.tools;
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
@@ -157,27 +178,6 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.OliveDrab;
             this.label4.Name = "label4";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Events4ALL.Properties.Resources._lock;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Events4ALL.Properties.Resources.arrow_right;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.tools;
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -263,12 +263,12 @@
             this.panel1.PerformLayout();
             this.exitButton.ResumeLayout(false);
             this.exitButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.logoutButton.ResumeLayout(false);
             this.logoutButton.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
