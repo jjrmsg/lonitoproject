@@ -23,14 +23,14 @@ namespace Events4ALL
             if(lang=="es" || lang==" ")
             {
                 listBox1.Items.Add(new listItem("Inicio", 0));
-                listBox1.Items.Add(new listItem("Admins", 0));
-                listBox1.Items.Add(new listItem("Clientes", 0));
-                listBox1.Items.Add(new listItem("Salas", 0));
-                listBox1.Items.Add(new listItem("Espectáculos", 0));
-                listBox1.Items.Add(new listItem("Promociones", 0));
-                listBox1.Items.Add(new listItem("Estadísticas", 0));
-                listBox1.Items.Add(new listItem("Ventas y reservas", 0));
-                listBox1.Items.Add(new listItem("Logs", 0));
+                listBox1.Items.Add(new listItem("Admins", 1));
+                listBox1.Items.Add(new listItem("Clientes", 2));
+                listBox1.Items.Add(new listItem("Salas", 3));
+                listBox1.Items.Add(new listItem("Espectáculos", 4));
+                listBox1.Items.Add(new listItem("Promociones", 5));
+                listBox1.Items.Add(new listItem("Estadísticas", 6));
+                listBox1.Items.Add(new listItem("Ventas y reservas", 7));
+                listBox1.Items.Add(new listItem("Logs", 8));
                 listBox1.SetSelected(0, true);
             }
             else if (lang == "en")

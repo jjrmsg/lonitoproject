@@ -38,10 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.ventas1 = new Events4ALL.Ventas();
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
@@ -54,8 +58,12 @@
             this.panel1.SuspendLayout();
             this.exitButton.SuspendLayout();
             this.logoutButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -72,7 +80,15 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "ok.png");
+            this.imageList1.Images.SetKeyName(0, "home.png");
+            this.imageList1.Images.SetKeyName(1, "credit_card.png");
+            this.imageList1.Images.SetKeyName(2, "friends_group.png");
+            this.imageList1.Images.SetKeyName(3, "stop.png");
+            this.imageList1.Images.SetKeyName(4, "star.png");
+            this.imageList1.Images.SetKeyName(5, "tag_orange.png");
+            this.imageList1.Images.SetKeyName(6, "pie-chart_graph.png");
+            this.imageList1.Images.SetKeyName(7, "shopping_cart.png");
+            this.imageList1.Images.SetKeyName(8, "copy.png");
             // 
             // panel1
             // 
@@ -94,6 +110,7 @@
             resources.ApplyResources(this.exitButton, "exitButton");
             this.exitButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.exitButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.exitButton.Controls.Add(this.pictureBox4);
             this.exitButton.Controls.Add(this.label3);
             this.exitButton.Name = "exitButton";
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -108,6 +125,7 @@
             resources.ApplyResources(this.logoutButton, "logoutButton");
             this.logoutButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.logoutButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.logoutButton.Controls.Add(this.pictureBox3);
             this.logoutButton.Controls.Add(this.label2);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
@@ -117,17 +135,11 @@
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -145,6 +157,43 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.OliveDrab;
             this.label4.Name = "label4";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources._lock;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Events4ALL.Properties.Resources.arrow_right;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.tools;
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.logoutButton);
+            this.panel3.Controls.Add(this.exitButton);
+            this.panel3.Name = "panel3";
             // 
             // ventas1
             // 
@@ -196,8 +245,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.logoutButton);
-            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ventas1);
             this.Controls.Add(this.salas1);
@@ -210,6 +257,7 @@
             this.Controls.Add(this.admins1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Name = "FormBase";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -217,9 +265,13 @@
             this.exitButton.PerformLayout();
             this.logoutButton.ResumeLayout(false);
             this.logoutButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -247,6 +299,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

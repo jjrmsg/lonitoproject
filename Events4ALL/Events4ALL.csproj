@@ -178,9 +178,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imgs\akira.jpg" />
+    <Content Include="imgs\arrow_right.png" />
+    <Content Include="imgs\copy.png" />
+    <Content Include="imgs\credit_card.png" />
     <Content Include="imgs\Events4All.gif" />
+    <Content Include="imgs\friends_group.png" />
+    <Content Include="imgs\home.png" />
     <Content Include="imgs\idioma.png" />
+    <Content Include="imgs\lock.png" />
     <Content Include="imgs\login.png" />
+    <Content Include="imgs\tools.png" />
+    <Content Include="imgs\pie-chart_graph.png" />
+    <Content Include="imgs\shopping_cart.png" />
+    <Content Include="imgs\star.png" />
+    <Content Include="imgs\stop.png" />
+    <Content Include="imgs\tag_orange.png" />
     <None Include="imgs\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
