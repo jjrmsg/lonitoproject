@@ -36,14 +36,14 @@ namespace Events4ALL
             else if (lang == "en")
             { 
                 listBox1.Items.Add(new listItem("Main", 0));
-                listBox1.Items.Add(new listItem("Admins", 0));
-                listBox1.Items.Add(new listItem("Customers", 0));
-                listBox1.Items.Add(new listItem("Rooms", 0));
-                listBox1.Items.Add(new listItem("Shows", 0));
-                listBox1.Items.Add(new listItem("Promotions", 0));
-                listBox1.Items.Add(new listItem("Statistics", 0));
-                listBox1.Items.Add(new listItem("Sales and reservations", 0));
-                listBox1.Items.Add(new listItem("Logs", 0));
+                listBox1.Items.Add(new listItem("Admins", 1));
+                listBox1.Items.Add(new listItem("Customers", 2));
+                listBox1.Items.Add(new listItem("Rooms", 3));
+                listBox1.Items.Add(new listItem("Shows", 4));
+                listBox1.Items.Add(new listItem("Promotions", 5));
+                listBox1.Items.Add(new listItem("Statistics", 6));
+                listBox1.Items.Add(new listItem("Sales and reservations", 7));
+                listBox1.Items.Add(new listItem("Logs", 8));
                 listBox1.SetSelected(0, true);
             }
 
