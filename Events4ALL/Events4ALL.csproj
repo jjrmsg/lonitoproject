@@ -177,6 +177,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\Events4All.gif" />
     <None Include="imgs\update.png" />
   </ItemGroup>

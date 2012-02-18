@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ventas1 = new Events4ALL.Ventas();
             this.salas1 = new Events4ALL.Salas();
@@ -50,7 +51,6 @@
             this.espectaculos1 = new Events4ALL.Espectaculos();
             this.clientes1 = new Events4ALL.Clientes();
             this.admins1 = new Events4ALL.Admins();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.exitButton.SuspendLayout();
             this.logoutButton.SuspendLayout();
@@ -133,6 +133,13 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Name = "panel2";
             // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label5.Name = "label5";
+            // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
@@ -183,13 +190,6 @@
             // 
             resources.ApplyResources(this.admins1, "admins1");
             this.admins1.Name = "admins1";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label5.Name = "label5";
             // 
             // FormBase
             // 
