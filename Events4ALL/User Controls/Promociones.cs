@@ -35,5 +35,10 @@ namespace Events4ALL
         {
 
         }
+
+        private void dataGridView_PE_listado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -30,8 +30,14 @@
         {
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
-            this.label_PE_Fecha = new System.Windows.Forms.Label();
-            this.dateTimePicker_PE_fecha = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView_PE_listado = new System.Windows.Forms.DataGridView();
+            this.FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HORA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.POBLACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PROVINCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LUGAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_PE_Espectaculo = new System.Windows.Forms.Label();
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.label_PE_PpE = new System.Windows.Forms.Label();
@@ -41,12 +47,11 @@
             this.comboBox_PC_cliente = new System.Windows.Forms.ComboBox();
             this.label_PC_PpC = new System.Windows.Forms.Label();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_listado)).BeginInit();
             this.tab_Por_cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).BeginInit();
-            this.tab_Mediante_condiciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -65,8 +70,7 @@
             // 
             // tab_Por_espectaculo
             // 
-            this.tab_Por_espectaculo.Controls.Add(this.label_PE_Fecha);
-            this.tab_Por_espectaculo.Controls.Add(this.dateTimePicker_PE_fecha);
+            this.tab_Por_espectaculo.Controls.Add(this.dataGridView_PE_listado);
             this.tab_Por_espectaculo.Controls.Add(this.label_PE_Espectaculo);
             this.tab_Por_espectaculo.Controls.Add(this.comboBox_PE_espectaculo);
             this.tab_Por_espectaculo.Controls.Add(this.label_PE_PpE);
@@ -78,21 +82,62 @@
             this.tab_Por_espectaculo.Text = "Por_espectaculo";
             this.tab_Por_espectaculo.UseVisualStyleBackColor = true;
             // 
-            // label_PE_Fecha
+            // dataGridView_PE_listado
             // 
-            this.label_PE_Fecha.AutoSize = true;
-            this.label_PE_Fecha.Location = new System.Drawing.Point(102, 145);
-            this.label_PE_Fecha.Name = "label_PE_Fecha";
-            this.label_PE_Fecha.Size = new System.Drawing.Size(40, 13);
-            this.label_PE_Fecha.TabIndex = 6;
-            this.label_PE_Fecha.Text = "Fecha:";
+            this.dataGridView_PE_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_PE_listado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FECHA,
+            this.HORA,
+            this.POBLACION,
+            this.PROVINCIA,
+            this.LUGAR,
+            this.DESCUENTO,
+            this.DESCRIPCION});
+            this.dataGridView_PE_listado.Location = new System.Drawing.Point(6, 119);
+            this.dataGridView_PE_listado.Name = "dataGridView_PE_listado";
+            this.dataGridView_PE_listado.Size = new System.Drawing.Size(881, 481);
+            this.dataGridView_PE_listado.TabIndex = 7;
+            this.dataGridView_PE_listado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_PE_listado_CellContentClick);
             // 
-            // dateTimePicker_PE_fecha
+            // FECHA
             // 
-            this.dateTimePicker_PE_fecha.Location = new System.Drawing.Point(177, 139);
-            this.dateTimePicker_PE_fecha.Name = "dateTimePicker_PE_fecha";
-            this.dateTimePicker_PE_fecha.Size = new System.Drawing.Size(228, 20);
-            this.dateTimePicker_PE_fecha.TabIndex = 5;
+            this.FECHA.HeaderText = "FECHA";
+            this.FECHA.Name = "FECHA";
+            this.FECHA.ReadOnly = true;
+            // 
+            // HORA
+            // 
+            this.HORA.HeaderText = "HORA";
+            this.HORA.Name = "HORA";
+            this.HORA.ReadOnly = true;
+            // 
+            // POBLACION
+            // 
+            this.POBLACION.HeaderText = "POBLACION";
+            this.POBLACION.Name = "POBLACION";
+            this.POBLACION.ReadOnly = true;
+            // 
+            // PROVINCIA
+            // 
+            this.PROVINCIA.HeaderText = "PROVINCIA";
+            this.PROVINCIA.Name = "PROVINCIA";
+            this.PROVINCIA.ReadOnly = true;
+            // 
+            // LUGAR
+            // 
+            this.LUGAR.HeaderText = "LUGAR";
+            this.LUGAR.Name = "LUGAR";
+            this.LUGAR.ReadOnly = true;
+            // 
+            // DESCUENTO
+            // 
+            this.DESCUENTO.HeaderText = "DESCUENTO";
+            this.DESCUENTO.Name = "DESCUENTO";
+            // 
+            // DESCRIPCION
+            // 
+            this.DESCRIPCION.HeaderText = "DESCRIPCION";
+            this.DESCRIPCION.Name = "DESCRIPCION";
             // 
             // label_PE_Espectaculo
             // 
@@ -141,9 +186,9 @@
             // dataGridView_PE_promoClientes
             // 
             this.dataGridView_PE_promoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_PE_promoClientes.Location = new System.Drawing.Point(116, 143);
+            this.dataGridView_PE_promoClientes.Location = new System.Drawing.Point(116, 124);
             this.dataGridView_PE_promoClientes.Name = "dataGridView_PE_promoClientes";
-            this.dataGridView_PE_promoClientes.Size = new System.Drawing.Size(529, 134);
+            this.dataGridView_PE_promoClientes.Size = new System.Drawing.Size(678, 26);
             this.dataGridView_PE_promoClientes.TabIndex = 3;
             // 
             // label_PC_Cliente
@@ -177,24 +222,12 @@
             // 
             // tab_Mediante_condiciones
             // 
-            this.tab_Mediante_condiciones.Controls.Add(this.label1);
             this.tab_Mediante_condiciones.Location = new System.Drawing.Point(4, 22);
             this.tab_Mediante_condiciones.Name = "tab_Mediante_condiciones";
             this.tab_Mediante_condiciones.Size = new System.Drawing.Size(893, 606);
             this.tab_Mediante_condiciones.TabIndex = 2;
             this.tab_Mediante_condiciones.Text = "Mediante_condiciones";
             this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(756, 76);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "aqui no se que poner xD";
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // Promociones
             // 
@@ -206,11 +239,10 @@
             this.tabControl_promociones.ResumeLayout(false);
             this.tab_Por_espectaculo.ResumeLayout(false);
             this.tab_Por_espectaculo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_listado)).EndInit();
             this.tab_Por_cliente.ResumeLayout(false);
             this.tab_Por_cliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).EndInit();
-            this.tab_Mediante_condiciones.ResumeLayout(false);
-            this.tab_Mediante_condiciones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,12 +256,17 @@
         private System.Windows.Forms.TabPage tab_Mediante_condiciones;
         private System.Windows.Forms.Label label_PE_Espectaculo;
         private System.Windows.Forms.ComboBox comboBox_PE_espectaculo;
-        private System.Windows.Forms.Label label_PE_Fecha;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_PE_fecha;
         private System.Windows.Forms.Label label_PC_PpC;
         private System.Windows.Forms.Label label_PC_Cliente;
         private System.Windows.Forms.ComboBox comboBox_PC_cliente;
         private System.Windows.Forms.DataGridView dataGridView_PE_promoClientes;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView_PE_listado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HORA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn POBLACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PROVINCIA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LUGAR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCUENTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DESCRIPCION;
     }
 }
