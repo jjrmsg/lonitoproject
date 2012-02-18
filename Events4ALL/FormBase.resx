@@ -158,12 +158,12 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADe
-        AwAAAk1TRnQBSQFMAwEBAAGwAQMBsAEDARQBAAEUAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABUAMA
-        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABAwEAAf8DVQGxAwEBAv8AMQADVgG2
-        AQAB3AEFAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
-        AZn/ACkAA1YBswEAAdUBBgH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
+        AwAAAk1TRnQBSQFMAwEBAAHAAQMBwAEDARQBAAEUAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABUAMA
+        ARQDAAEBAQABIAYAARn/AP8ArAADDQESAwcBCv8ANQADGAEhAQABAQEAAf8DVQGxAwEBAv8AMQADVgG2
+        AQAB3AEDAf8BAAGYAQAB/wNPAaUDBwEK/wAuAAGMAQAB/wEAAf8BqwH/AQAB+gGiAf8BAAGZAQAB/wNO
+        AZn/ACkAA1YBswEAAdUBBAH/AQAB/wG2Af8BAAH/AbIB/wEAAfkBpgH/AQABlwEAAf8DSgGLAwQBBv8A
         IgABiAEAAf8BAAH8Ab0B/wEAAf8BwQH/AQAB/wG8Af8BAAH/AbYB/wEAAfgBpwH/AQABlgEAAf8DRQF/
-        /wAdAANFAX0BAAHVAQUB/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wEAAf8BvwH/AQAB/wG3Af8BAAH3
+        /wAdAANFAX0BAAHVAQMB/wGIAfwByQH/AQABtwEAAf8BAAHcAYUB/wEAAf8BvwH/AQAB/wG3Af8BAAH3
         AacB/wEAAZUBAAH/A0EBcgMCAQP/ABUAAUABjAFAAf0BqgH+AdoB/wEAAbsBAAH/AU8BUAFPAZsBVwFa
         AVcBxQEAAbsBAAH/AQAB+wG3Af8BAAH/AbMB/wEAAfcBpQH/AQABkQEAAf8DPAFn/wARAAMtAUUBAAHP
         AQAB/wEAAcABAAH/A0oBjQgAATABMQEwAU0BMgFNASkB+gEAAegBlAH/AQAB/wGtAf8BAAH3AaIB/wEy
@@ -196,7 +196,7 @@
     <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Menu</value>
+    <value>Menú</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -374,6 +374,9 @@
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Agency FB, 9.75pt, style=Bold</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 18</value>
@@ -680,6 +683,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1119, 675</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

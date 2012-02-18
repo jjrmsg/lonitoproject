@@ -179,6 +179,8 @@
   <ItemGroup>
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\Events4All.gif" />
+    <Content Include="imgs\idioma.png" />
+    <Content Include="imgs\login.png" />
     <None Include="imgs\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

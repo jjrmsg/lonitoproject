@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
-using System.Threading; 
+using System.Threading;
+using System.IO; 
 
 namespace Events4ALL
 {
@@ -17,16 +18,19 @@ namespace Events4ALL
         string user;
         string pass;
         string lang;
+        const string fic = "user.txt";
 
         public Login()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");  
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");  
             InitializeComponent();
-            comboBox1.Text = "Español";
+            comboBox1.Text = "Es";
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             comboBox1.DrawItem += new DrawItemEventHandler(comboBox1_DrawItem);
-            comboBox1.Items.Add(new ComboFlags("Español", 0));
-            comboBox1.Items.Add(new ComboFlags("Inglés", 1));
+            comboBox1.Items.Add(new ComboFlags("Es", 0));
+            comboBox1.Items.Add(new ComboFlags("En", 1));
+
+            LoadUser();
         }
 
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -47,23 +51,45 @@ namespace Events4ALL
 
         private void miIdioma()
         {
-            if (comboBox1.Text == "Español" || comboBox1.Text == "Spanish")
+            if (comboBox1.Text == "Es" || comboBox1.Text == "Es")
             {
                 lang = "es";
             }
-            else if (comboBox1.Text == "Inglés" || comboBox1.Text == "English")
+            else if (comboBox1.Text == "En" || comboBox1.Text == "En")
             {
                 lang = "en";
             }
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (textBoxUser.Text != "" && textBoxPass.Text != "" && comboBox1.Text != "")
+                {
+                    user = textBoxUser.Text;
+                    pass = textBoxPass.Text;
+                    miIdioma();
+                    Recordar();
+                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                    t.Start();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Los campos usuario, password e idioma no pueden estar vacios");
+                }
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (textBoxUser.Text != "" && textBoxPass.Text != "" && comboBox1.Text != "")
             {
                 user = textBoxUser.Text;
                 pass = textBoxPass.Text;
                 miIdioma();
+                Recordar();
                 System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
                 t.Start();
                 this.Close();
@@ -74,11 +100,49 @@ namespace Events4ALL
             }
         }
 
-        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
+        private void Recordar()
         {
-            if(e.KeyCode==Keys.Enter)
+            if (checkSave.Checked)
             {
-                loginButton.PerformClick();
+                if (File.Exists(fic))
+                {
+                    File.Delete(fic);
+                }
+
+                FileStream stream = new FileStream(fic, FileMode.OpenOrCreate, FileAccess.Write);
+                StreamWriter writer = new StreamWriter(stream);
+
+                writer.WriteLine(user + "\n");
+                writer.WriteLine(pass);
+                writer.Close();
+            }
+            else
+            {
+                if (File.Exists(fic))
+                {
+                    File.Delete(fic);
+                }
+            }
+        }
+
+        private void LoadUser()
+        {
+            if (File.Exists(fic))
+            {
+                checkSave.Checked = true;
+                int i = 0;
+                FileStream stream = new FileStream(fic, FileMode.Open, FileAccess.Read);
+                StreamReader reader = new StreamReader(stream);
+
+                while (reader.Peek() > -1)
+                {
+                    if (i == 0)
+                        textBoxUser.Text = reader.ReadLine();
+                    else
+                        textBoxPass.Text = reader.ReadLine();
+                    i++;
+                }
+                reader.Close();
             }
         }
     }
