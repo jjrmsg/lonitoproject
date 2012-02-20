@@ -95,5 +95,22 @@ namespace Events4ALL
         {
 
         }
+
+        private void Avatar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            grupEstadoCivil.Visible = false;
+            
+            
+        }
+
+        private void Admin_Perfil_comboBox_Puesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
