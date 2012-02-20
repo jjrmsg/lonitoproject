@@ -88,6 +88,13 @@ namespace Events4ALL.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Events4All {
+            get {
+                object obj = ResourceManager.GetObject("Events4All", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap idioma {
             get {
                 object obj = ResourceManager.GetObject("idioma", resourceCulture);
