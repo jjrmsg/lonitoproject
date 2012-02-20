@@ -24,6 +24,13 @@ namespace Events4ALL
         {
             //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");  
             InitializeComponent();
+
+            System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+            privateFonts.AddFontFile("fonts/AGENCYR.TTF");
+            System.Drawing.Font font = new Font(privateFonts.Families[0], 20);
+            label3.Font = font;
+
+
             comboBox1.Text = "Es";
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             comboBox1.DrawItem += new DrawItemEventHandler(comboBox1_DrawItem);

@@ -20,6 +20,15 @@ namespace Events4ALL
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
 
+
+            System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
+            privateFonts.AddFontFile("fonts/AGENCYR.TTF");
+            System.Drawing.Font font = new Font(privateFonts.Families[0], 20);
+            label4.Font = font;
+
+            System.Drawing.Font font2 = new Font(privateFonts.Families[0], 10);
+            label5.Font = font2;
+
             if(lang=="es" || lang==" ")
             {
                 listBox1.Items.Add(new listItem("Inicio", 0));
