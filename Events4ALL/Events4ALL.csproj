@@ -179,6 +179,7 @@
   <ItemGroup>
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
+    <Content Include="imgs\baron.jpg" />
     <Content Include="imgs\copy.png" />
     <Content Include="imgs\credit_card.png" />
     <Content Include="imgs\Events4All.gif" />
