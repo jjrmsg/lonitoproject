@@ -117,5 +117,25 @@ namespace Events4ALL
         {
 
         }
+
+        private void Admin_Perfil_txtBox_NIF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Perfil_txtBox_Apellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Foto_Perfil_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
