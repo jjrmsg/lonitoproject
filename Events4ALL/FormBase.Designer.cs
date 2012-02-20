@@ -140,7 +140,7 @@
             // pictureBox3
             // 
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Image = global::Events4ALL.Properties.Resources._lock;
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.bloqueo;
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
             // 

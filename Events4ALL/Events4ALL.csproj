@@ -190,6 +190,7 @@
     <Content Include="imgs\idioma.png" />
     <Content Include="imgs\lock.png" />
     <Content Include="imgs\login.png" />
+    <Content Include="imgs\Pantalla.png" />
     <Content Include="imgs\tools.png" />
     <Content Include="imgs\pie-chart_graph.png" />
     <Content Include="imgs\shopping_cart.png" />
