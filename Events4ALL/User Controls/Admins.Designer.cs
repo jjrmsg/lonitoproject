@@ -31,31 +31,34 @@
             this.Listado = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Admin_Foto_Perfil = new System.Windows.Forms.TabPage();
+            this.groupBoxIdiomas = new System.Windows.Forms.GroupBox();
+            this.Admin_Perfil_Check_ALE = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ESP = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_VAL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ENG = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_GAL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_HOL = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_ITA = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_CAT = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_FRA = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_POR = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_EUS = new System.Windows.Forms.CheckBox();
+            this.Admin_Perfil_Check_RUS = new System.Windows.Forms.CheckBox();
+            this.groupBoxSexo = new System.Windows.Forms.GroupBox();
+            this.Admin_Perfil_rButom_H = new System.Windows.Forms.RadioButton();
+            this.Admin_Perfil_rButom_M = new System.Windows.Forms.RadioButton();
+            this.grupEstadoCivil = new System.Windows.Forms.GroupBox();
+            this.Admin_Perfil_rButom_Divorciado = new System.Windows.Forms.RadioButton();
+            this.Admin_Perfil_rButom_Soltero = new System.Windows.Forms.RadioButton();
+            this.Admin_Perfil_rButom_Casado = new System.Windows.Forms.RadioButton();
+            this.Admin_Perfil_rButom_Viudo = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_Label_Titulo = new System.Windows.Forms.Label();
             this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Eliminar = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Buscar = new System.Windows.Forms.Button();
-            this.Admin_Perfil_Check_POR = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_RUS = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_ALE = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_EUS = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_FRA = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_CAT = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_ITA = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_HOL = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_GAL = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_ENG = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_VAL = new System.Windows.Forms.CheckBox();
-            this.Admin_Perfil_Check_ESP = new System.Windows.Forms.CheckBox();
             this.Admin_Perfil_comboBox_Puesto = new System.Windows.Forms.ComboBox();
-            this.Admin_Perfil_rButom_Viudo = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_Divorciado = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_Casado = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_Soltero = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_M = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_H = new System.Windows.Forms.RadioButton();
             this.Admin_Perfil_numericUpDown_Mes = new System.Windows.Forms.NumericUpDown();
             this.Admin_Perfil_numericUpDown_Ano = new System.Windows.Forms.NumericUpDown();
             this.Admin_Perfil_comboBox_Pais = new System.Windows.Forms.ComboBox();
@@ -74,6 +77,7 @@
             this.Admin_Perfil_Label_Tel1 = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Tel2 = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Sexo = new System.Windows.Forms.Label();
+            this.Admin_Perfil_Label_EstCivil = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_NIF = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_FecNacimiento = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Puesto = new System.Windows.Forms.Label();
@@ -81,23 +85,19 @@
             this.Admin_Perfil_Label_Pais = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Apellidos = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Nombre = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Admin_Perfil_Foto = new System.Windows.Forms.PictureBox();
-            this.grupEstadoCivil = new System.Windows.Forms.GroupBox();
-            this.Admin_Perfil_Label_EstCivil = new System.Windows.Forms.Label();
-            this.groupBoxSexo = new System.Windows.Forms.GroupBox();
-            this.groupBoxIdiomas = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Listado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Admin_Foto_Perfil.SuspendLayout();
+            this.groupBoxIdiomas.SuspendLayout();
+            this.groupBoxSexo.SuspendLayout();
+            this.grupEstadoCivil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).BeginInit();
-            this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).BeginInit();
-            this.grupEstadoCivil.SuspendLayout();
-            this.groupBoxSexo.SuspendLayout();
-            this.groupBoxIdiomas.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Listado
@@ -167,6 +167,235 @@
             this.Admin_Foto_Perfil.Text = "Perfil";
             this.Admin_Foto_Perfil.UseVisualStyleBackColor = true;
             // 
+            // groupBoxIdiomas
+            // 
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ALE);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ESP);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_VAL);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ENG);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_GAL);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_HOL);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ITA);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_CAT);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_FRA);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_POR);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_EUS);
+            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_RUS);
+            this.groupBoxIdiomas.Location = new System.Drawing.Point(37, 497);
+            this.groupBoxIdiomas.Name = "groupBoxIdiomas";
+            this.groupBoxIdiomas.Size = new System.Drawing.Size(378, 99);
+            this.groupBoxIdiomas.TabIndex = 57;
+            this.groupBoxIdiomas.TabStop = false;
+            // 
+            // Admin_Perfil_Check_ALE
+            // 
+            this.Admin_Perfil_Check_ALE.AutoSize = true;
+            this.Admin_Perfil_Check_ALE.Location = new System.Drawing.Point(295, 47);
+            this.Admin_Perfil_Check_ALE.Name = "Admin_Perfil_Check_ALE";
+            this.Admin_Perfil_Check_ALE.Size = new System.Drawing.Size(60, 17);
+            this.Admin_Perfil_Check_ALE.TabIndex = 46;
+            this.Admin_Perfil_Check_ALE.Text = "Alemán";
+            this.Admin_Perfil_Check_ALE.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ESP
+            // 
+            this.Admin_Perfil_Check_ESP.AutoSize = true;
+            this.Admin_Perfil_Check_ESP.Location = new System.Drawing.Point(16, 21);
+            this.Admin_Perfil_Check_ESP.Name = "Admin_Perfil_Check_ESP";
+            this.Admin_Perfil_Check_ESP.Size = new System.Drawing.Size(63, 17);
+            this.Admin_Perfil_Check_ESP.TabIndex = 37;
+            this.Admin_Perfil_Check_ESP.Text = "Español";
+            this.Admin_Perfil_Check_ESP.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_VAL
+            // 
+            this.Admin_Perfil_Check_VAL.AutoSize = true;
+            this.Admin_Perfil_Check_VAL.Location = new System.Drawing.Point(16, 47);
+            this.Admin_Perfil_Check_VAL.Name = "Admin_Perfil_Check_VAL";
+            this.Admin_Perfil_Check_VAL.Size = new System.Drawing.Size(78, 17);
+            this.Admin_Perfil_Check_VAL.TabIndex = 38;
+            this.Admin_Perfil_Check_VAL.Text = "Valenciano";
+            this.Admin_Perfil_Check_VAL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ENG
+            // 
+            this.Admin_Perfil_Check_ENG.AutoSize = true;
+            this.Admin_Perfil_Check_ENG.Location = new System.Drawing.Point(102, 21);
+            this.Admin_Perfil_Check_ENG.Name = "Admin_Perfil_Check_ENG";
+            this.Admin_Perfil_Check_ENG.Size = new System.Drawing.Size(53, 17);
+            this.Admin_Perfil_Check_ENG.TabIndex = 39;
+            this.Admin_Perfil_Check_ENG.Text = "Inglés";
+            this.Admin_Perfil_Check_ENG.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_GAL
+            // 
+            this.Admin_Perfil_Check_GAL.AutoSize = true;
+            this.Admin_Perfil_Check_GAL.Location = new System.Drawing.Point(102, 47);
+            this.Admin_Perfil_Check_GAL.Name = "Admin_Perfil_Check_GAL";
+            this.Admin_Perfil_Check_GAL.Size = new System.Drawing.Size(61, 17);
+            this.Admin_Perfil_Check_GAL.TabIndex = 40;
+            this.Admin_Perfil_Check_GAL.Text = "Gallego";
+            this.Admin_Perfil_Check_GAL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_HOL
+            // 
+            this.Admin_Perfil_Check_HOL.AutoSize = true;
+            this.Admin_Perfil_Check_HOL.Location = new System.Drawing.Point(197, 21);
+            this.Admin_Perfil_Check_HOL.Name = "Admin_Perfil_Check_HOL";
+            this.Admin_Perfil_Check_HOL.Size = new System.Drawing.Size(70, 17);
+            this.Admin_Perfil_Check_HOL.TabIndex = 41;
+            this.Admin_Perfil_Check_HOL.Text = "Holandes";
+            this.Admin_Perfil_Check_HOL.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_ITA
+            // 
+            this.Admin_Perfil_Check_ITA.AutoSize = true;
+            this.Admin_Perfil_Check_ITA.Location = new System.Drawing.Point(197, 47);
+            this.Admin_Perfil_Check_ITA.Name = "Admin_Perfil_Check_ITA";
+            this.Admin_Perfil_Check_ITA.Size = new System.Drawing.Size(59, 17);
+            this.Admin_Perfil_Check_ITA.TabIndex = 42;
+            this.Admin_Perfil_Check_ITA.Text = "Italiano";
+            this.Admin_Perfil_Check_ITA.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_CAT
+            // 
+            this.Admin_Perfil_Check_CAT.AutoSize = true;
+            this.Admin_Perfil_Check_CAT.Location = new System.Drawing.Point(16, 72);
+            this.Admin_Perfil_Check_CAT.Name = "Admin_Perfil_Check_CAT";
+            this.Admin_Perfil_Check_CAT.Size = new System.Drawing.Size(61, 17);
+            this.Admin_Perfil_Check_CAT.TabIndex = 43;
+            this.Admin_Perfil_Check_CAT.Text = "Catalán";
+            this.Admin_Perfil_Check_CAT.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_FRA
+            // 
+            this.Admin_Perfil_Check_FRA.AutoSize = true;
+            this.Admin_Perfil_Check_FRA.Location = new System.Drawing.Point(295, 72);
+            this.Admin_Perfil_Check_FRA.Name = "Admin_Perfil_Check_FRA";
+            this.Admin_Perfil_Check_FRA.Size = new System.Drawing.Size(63, 17);
+            this.Admin_Perfil_Check_FRA.TabIndex = 44;
+            this.Admin_Perfil_Check_FRA.Text = "Francés";
+            this.Admin_Perfil_Check_FRA.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_POR
+            // 
+            this.Admin_Perfil_Check_POR.AutoSize = true;
+            this.Admin_Perfil_Check_POR.Location = new System.Drawing.Point(295, 21);
+            this.Admin_Perfil_Check_POR.Name = "Admin_Perfil_Check_POR";
+            this.Admin_Perfil_Check_POR.Size = new System.Drawing.Size(73, 17);
+            this.Admin_Perfil_Check_POR.TabIndex = 48;
+            this.Admin_Perfil_Check_POR.Text = "Portugues";
+            this.Admin_Perfil_Check_POR.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_EUS
+            // 
+            this.Admin_Perfil_Check_EUS.AutoSize = true;
+            this.Admin_Perfil_Check_EUS.Location = new System.Drawing.Point(102, 72);
+            this.Admin_Perfil_Check_EUS.Name = "Admin_Perfil_Check_EUS";
+            this.Admin_Perfil_Check_EUS.Size = new System.Drawing.Size(64, 17);
+            this.Admin_Perfil_Check_EUS.TabIndex = 45;
+            this.Admin_Perfil_Check_EUS.Text = "Euskera";
+            this.Admin_Perfil_Check_EUS.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_Check_RUS
+            // 
+            this.Admin_Perfil_Check_RUS.AutoSize = true;
+            this.Admin_Perfil_Check_RUS.Location = new System.Drawing.Point(197, 72);
+            this.Admin_Perfil_Check_RUS.Name = "Admin_Perfil_Check_RUS";
+            this.Admin_Perfil_Check_RUS.Size = new System.Drawing.Size(50, 17);
+            this.Admin_Perfil_Check_RUS.TabIndex = 47;
+            this.Admin_Perfil_Check_RUS.Text = "Ruso";
+            this.Admin_Perfil_Check_RUS.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxSexo
+            // 
+            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_H);
+            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_M);
+            this.groupBoxSexo.Location = new System.Drawing.Point(37, 319);
+            this.groupBoxSexo.Name = "groupBoxSexo";
+            this.groupBoxSexo.Size = new System.Drawing.Size(83, 76);
+            this.groupBoxSexo.TabIndex = 56;
+            this.groupBoxSexo.TabStop = false;
+            // 
+            // Admin_Perfil_rButom_H
+            // 
+            this.Admin_Perfil_rButom_H.AutoSize = true;
+            this.Admin_Perfil_rButom_H.Location = new System.Drawing.Point(11, 19);
+            this.Admin_Perfil_rButom_H.Name = "Admin_Perfil_rButom_H";
+            this.Admin_Perfil_rButom_H.Size = new System.Drawing.Size(61, 17);
+            this.Admin_Perfil_rButom_H.TabIndex = 30;
+            this.Admin_Perfil_rButom_H.TabStop = true;
+            this.Admin_Perfil_rButom_H.Text = "Hombre";
+            this.Admin_Perfil_rButom_H.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_rButom_M
+            // 
+            this.Admin_Perfil_rButom_M.AutoSize = true;
+            this.Admin_Perfil_rButom_M.Location = new System.Drawing.Point(11, 45);
+            this.Admin_Perfil_rButom_M.Name = "Admin_Perfil_rButom_M";
+            this.Admin_Perfil_rButom_M.Size = new System.Drawing.Size(50, 17);
+            this.Admin_Perfil_rButom_M.TabIndex = 31;
+            this.Admin_Perfil_rButom_M.TabStop = true;
+            this.Admin_Perfil_rButom_M.Text = "Mujer";
+            this.Admin_Perfil_rButom_M.UseVisualStyleBackColor = true;
+            // 
+            // grupEstadoCivil
+            // 
+            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Divorciado);
+            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Soltero);
+            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Casado);
+            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Viudo);
+            this.grupEstadoCivil.Location = new System.Drawing.Point(172, 318);
+            this.grupEstadoCivil.Name = "grupEstadoCivil";
+            this.grupEstadoCivil.Size = new System.Drawing.Size(200, 78);
+            this.grupEstadoCivil.TabIndex = 55;
+            this.grupEstadoCivil.TabStop = false;
+            this.grupEstadoCivil.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // Admin_Perfil_rButom_Divorciado
+            // 
+            this.Admin_Perfil_rButom_Divorciado.AutoSize = true;
+            this.Admin_Perfil_rButom_Divorciado.Location = new System.Drawing.Point(101, 19);
+            this.Admin_Perfil_rButom_Divorciado.Name = "Admin_Perfil_rButom_Divorciado";
+            this.Admin_Perfil_rButom_Divorciado.Size = new System.Drawing.Size(80, 17);
+            this.Admin_Perfil_rButom_Divorciado.TabIndex = 34;
+            this.Admin_Perfil_rButom_Divorciado.TabStop = true;
+            this.Admin_Perfil_rButom_Divorciado.Text = "Divorciad/a";
+            this.Admin_Perfil_rButom_Divorciado.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_rButom_Soltero
+            // 
+            this.Admin_Perfil_rButom_Soltero.AutoSize = true;
+            this.Admin_Perfil_rButom_Soltero.Location = new System.Drawing.Point(16, 19);
+            this.Admin_Perfil_rButom_Soltero.Name = "Admin_Perfil_rButom_Soltero";
+            this.Admin_Perfil_rButom_Soltero.Size = new System.Drawing.Size(68, 17);
+            this.Admin_Perfil_rButom_Soltero.TabIndex = 32;
+            this.Admin_Perfil_rButom_Soltero.TabStop = true;
+            this.Admin_Perfil_rButom_Soltero.Text = "Soltero/a";
+            this.Admin_Perfil_rButom_Soltero.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_rButom_Casado
+            // 
+            this.Admin_Perfil_rButom_Casado.AutoSize = true;
+            this.Admin_Perfil_rButom_Casado.Location = new System.Drawing.Point(16, 45);
+            this.Admin_Perfil_rButom_Casado.Name = "Admin_Perfil_rButom_Casado";
+            this.Admin_Perfil_rButom_Casado.Size = new System.Drawing.Size(71, 17);
+            this.Admin_Perfil_rButom_Casado.TabIndex = 33;
+            this.Admin_Perfil_rButom_Casado.TabStop = true;
+            this.Admin_Perfil_rButom_Casado.Text = "Casado/a";
+            this.Admin_Perfil_rButom_Casado.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_rButom_Viudo
+            // 
+            this.Admin_Perfil_rButom_Viudo.AutoSize = true;
+            this.Admin_Perfil_rButom_Viudo.Location = new System.Drawing.Point(101, 45);
+            this.Admin_Perfil_rButom_Viudo.Name = "Admin_Perfil_rButom_Viudo";
+            this.Admin_Perfil_rButom_Viudo.Size = new System.Drawing.Size(62, 17);
+            this.Admin_Perfil_rButom_Viudo.TabIndex = 35;
+            this.Admin_Perfil_rButom_Viudo.TabStop = true;
+            this.Admin_Perfil_rButom_Viudo.Text = "Viudo/a";
+            this.Admin_Perfil_rButom_Viudo.UseVisualStyleBackColor = true;
+            // 
             // Admin_Perfil_Label_Titulo
             // 
             this.Admin_Perfil_Label_Titulo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -223,126 +452,6 @@
             this.Admin_Perfil_boton_Buscar.Text = "Buscar";
             this.Admin_Perfil_boton_Buscar.UseVisualStyleBackColor = true;
             // 
-            // Admin_Perfil_Check_POR
-            // 
-            this.Admin_Perfil_Check_POR.AutoSize = true;
-            this.Admin_Perfil_Check_POR.Location = new System.Drawing.Point(295, 21);
-            this.Admin_Perfil_Check_POR.Name = "Admin_Perfil_Check_POR";
-            this.Admin_Perfil_Check_POR.Size = new System.Drawing.Size(74, 17);
-            this.Admin_Perfil_Check_POR.TabIndex = 48;
-            this.Admin_Perfil_Check_POR.Text = "Portugues";
-            this.Admin_Perfil_Check_POR.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_RUS
-            // 
-            this.Admin_Perfil_Check_RUS.AutoSize = true;
-            this.Admin_Perfil_Check_RUS.Location = new System.Drawing.Point(197, 72);
-            this.Admin_Perfil_Check_RUS.Name = "Admin_Perfil_Check_RUS";
-            this.Admin_Perfil_Check_RUS.Size = new System.Drawing.Size(51, 17);
-            this.Admin_Perfil_Check_RUS.TabIndex = 47;
-            this.Admin_Perfil_Check_RUS.Text = "Ruso";
-            this.Admin_Perfil_Check_RUS.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_ALE
-            // 
-            this.Admin_Perfil_Check_ALE.AutoSize = true;
-            this.Admin_Perfil_Check_ALE.Location = new System.Drawing.Point(295, 47);
-            this.Admin_Perfil_Check_ALE.Name = "Admin_Perfil_Check_ALE";
-            this.Admin_Perfil_Check_ALE.Size = new System.Drawing.Size(61, 17);
-            this.Admin_Perfil_Check_ALE.TabIndex = 46;
-            this.Admin_Perfil_Check_ALE.Text = "Alemán";
-            this.Admin_Perfil_Check_ALE.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_EUS
-            // 
-            this.Admin_Perfil_Check_EUS.AutoSize = true;
-            this.Admin_Perfil_Check_EUS.Location = new System.Drawing.Point(102, 72);
-            this.Admin_Perfil_Check_EUS.Name = "Admin_Perfil_Check_EUS";
-            this.Admin_Perfil_Check_EUS.Size = new System.Drawing.Size(65, 17);
-            this.Admin_Perfil_Check_EUS.TabIndex = 45;
-            this.Admin_Perfil_Check_EUS.Text = "Euskera";
-            this.Admin_Perfil_Check_EUS.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_FRA
-            // 
-            this.Admin_Perfil_Check_FRA.AutoSize = true;
-            this.Admin_Perfil_Check_FRA.Location = new System.Drawing.Point(295, 72);
-            this.Admin_Perfil_Check_FRA.Name = "Admin_Perfil_Check_FRA";
-            this.Admin_Perfil_Check_FRA.Size = new System.Drawing.Size(64, 17);
-            this.Admin_Perfil_Check_FRA.TabIndex = 44;
-            this.Admin_Perfil_Check_FRA.Text = "Francés";
-            this.Admin_Perfil_Check_FRA.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_CAT
-            // 
-            this.Admin_Perfil_Check_CAT.AutoSize = true;
-            this.Admin_Perfil_Check_CAT.Location = new System.Drawing.Point(16, 72);
-            this.Admin_Perfil_Check_CAT.Name = "Admin_Perfil_Check_CAT";
-            this.Admin_Perfil_Check_CAT.Size = new System.Drawing.Size(62, 17);
-            this.Admin_Perfil_Check_CAT.TabIndex = 43;
-            this.Admin_Perfil_Check_CAT.Text = "Catalán";
-            this.Admin_Perfil_Check_CAT.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_ITA
-            // 
-            this.Admin_Perfil_Check_ITA.AutoSize = true;
-            this.Admin_Perfil_Check_ITA.Location = new System.Drawing.Point(197, 47);
-            this.Admin_Perfil_Check_ITA.Name = "Admin_Perfil_Check_ITA";
-            this.Admin_Perfil_Check_ITA.Size = new System.Drawing.Size(60, 17);
-            this.Admin_Perfil_Check_ITA.TabIndex = 42;
-            this.Admin_Perfil_Check_ITA.Text = "Italiano";
-            this.Admin_Perfil_Check_ITA.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_HOL
-            // 
-            this.Admin_Perfil_Check_HOL.AutoSize = true;
-            this.Admin_Perfil_Check_HOL.Location = new System.Drawing.Point(197, 21);
-            this.Admin_Perfil_Check_HOL.Name = "Admin_Perfil_Check_HOL";
-            this.Admin_Perfil_Check_HOL.Size = new System.Drawing.Size(71, 17);
-            this.Admin_Perfil_Check_HOL.TabIndex = 41;
-            this.Admin_Perfil_Check_HOL.Text = "Holandes";
-            this.Admin_Perfil_Check_HOL.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_GAL
-            // 
-            this.Admin_Perfil_Check_GAL.AutoSize = true;
-            this.Admin_Perfil_Check_GAL.Location = new System.Drawing.Point(102, 47);
-            this.Admin_Perfil_Check_GAL.Name = "Admin_Perfil_Check_GAL";
-            this.Admin_Perfil_Check_GAL.Size = new System.Drawing.Size(62, 17);
-            this.Admin_Perfil_Check_GAL.TabIndex = 40;
-            this.Admin_Perfil_Check_GAL.Text = "Gallego";
-            this.Admin_Perfil_Check_GAL.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_ENG
-            // 
-            this.Admin_Perfil_Check_ENG.AutoSize = true;
-            this.Admin_Perfil_Check_ENG.Location = new System.Drawing.Point(102, 21);
-            this.Admin_Perfil_Check_ENG.Name = "Admin_Perfil_Check_ENG";
-            this.Admin_Perfil_Check_ENG.Size = new System.Drawing.Size(54, 17);
-            this.Admin_Perfil_Check_ENG.TabIndex = 39;
-            this.Admin_Perfil_Check_ENG.Text = "Inglés";
-            this.Admin_Perfil_Check_ENG.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_VAL
-            // 
-            this.Admin_Perfil_Check_VAL.AutoSize = true;
-            this.Admin_Perfil_Check_VAL.Location = new System.Drawing.Point(16, 47);
-            this.Admin_Perfil_Check_VAL.Name = "Admin_Perfil_Check_VAL";
-            this.Admin_Perfil_Check_VAL.Size = new System.Drawing.Size(79, 17);
-            this.Admin_Perfil_Check_VAL.TabIndex = 38;
-            this.Admin_Perfil_Check_VAL.Text = "Valenciano";
-            this.Admin_Perfil_Check_VAL.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_Check_ESP
-            // 
-            this.Admin_Perfil_Check_ESP.AutoSize = true;
-            this.Admin_Perfil_Check_ESP.Location = new System.Drawing.Point(16, 21);
-            this.Admin_Perfil_Check_ESP.Name = "Admin_Perfil_Check_ESP";
-            this.Admin_Perfil_Check_ESP.Size = new System.Drawing.Size(64, 17);
-            this.Admin_Perfil_Check_ESP.TabIndex = 37;
-            this.Admin_Perfil_Check_ESP.Text = "Español";
-            this.Admin_Perfil_Check_ESP.UseVisualStyleBackColor = true;
-            // 
             // Admin_Perfil_comboBox_Puesto
             // 
             this.Admin_Perfil_comboBox_Puesto.FormattingEnabled = true;
@@ -358,72 +467,6 @@
             this.Admin_Perfil_comboBox_Puesto.Size = new System.Drawing.Size(499, 21);
             this.Admin_Perfil_comboBox_Puesto.TabIndex = 36;
             this.Admin_Perfil_comboBox_Puesto.SelectedIndexChanged += new System.EventHandler(this.Admin_Perfil_comboBox_Puesto_SelectedIndexChanged);
-            // 
-            // Admin_Perfil_rButom_Viudo
-            // 
-            this.Admin_Perfil_rButom_Viudo.AutoSize = true;
-            this.Admin_Perfil_rButom_Viudo.Location = new System.Drawing.Point(101, 45);
-            this.Admin_Perfil_rButom_Viudo.Name = "Admin_Perfil_rButom_Viudo";
-            this.Admin_Perfil_rButom_Viudo.Size = new System.Drawing.Size(63, 17);
-            this.Admin_Perfil_rButom_Viudo.TabIndex = 35;
-            this.Admin_Perfil_rButom_Viudo.TabStop = true;
-            this.Admin_Perfil_rButom_Viudo.Text = "Viudo/a";
-            this.Admin_Perfil_rButom_Viudo.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_rButom_Divorciado
-            // 
-            this.Admin_Perfil_rButom_Divorciado.AutoSize = true;
-            this.Admin_Perfil_rButom_Divorciado.Location = new System.Drawing.Point(101, 19);
-            this.Admin_Perfil_rButom_Divorciado.Name = "Admin_Perfil_rButom_Divorciado";
-            this.Admin_Perfil_rButom_Divorciado.Size = new System.Drawing.Size(81, 17);
-            this.Admin_Perfil_rButom_Divorciado.TabIndex = 34;
-            this.Admin_Perfil_rButom_Divorciado.TabStop = true;
-            this.Admin_Perfil_rButom_Divorciado.Text = "Divorciad/a";
-            this.Admin_Perfil_rButom_Divorciado.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_rButom_Casado
-            // 
-            this.Admin_Perfil_rButom_Casado.AutoSize = true;
-            this.Admin_Perfil_rButom_Casado.Location = new System.Drawing.Point(16, 45);
-            this.Admin_Perfil_rButom_Casado.Name = "Admin_Perfil_rButom_Casado";
-            this.Admin_Perfil_rButom_Casado.Size = new System.Drawing.Size(72, 17);
-            this.Admin_Perfil_rButom_Casado.TabIndex = 33;
-            this.Admin_Perfil_rButom_Casado.TabStop = true;
-            this.Admin_Perfil_rButom_Casado.Text = "Casado/a";
-            this.Admin_Perfil_rButom_Casado.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_rButom_Soltero
-            // 
-            this.Admin_Perfil_rButom_Soltero.AutoSize = true;
-            this.Admin_Perfil_rButom_Soltero.Location = new System.Drawing.Point(16, 19);
-            this.Admin_Perfil_rButom_Soltero.Name = "Admin_Perfil_rButom_Soltero";
-            this.Admin_Perfil_rButom_Soltero.Size = new System.Drawing.Size(69, 17);
-            this.Admin_Perfil_rButom_Soltero.TabIndex = 32;
-            this.Admin_Perfil_rButom_Soltero.TabStop = true;
-            this.Admin_Perfil_rButom_Soltero.Text = "Soltero/a";
-            this.Admin_Perfil_rButom_Soltero.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_rButom_M
-            // 
-            this.Admin_Perfil_rButom_M.AutoSize = true;
-            this.Admin_Perfil_rButom_M.Location = new System.Drawing.Point(11, 45);
-            this.Admin_Perfil_rButom_M.Name = "Admin_Perfil_rButom_M";
-            this.Admin_Perfil_rButom_M.Size = new System.Drawing.Size(51, 17);
-            this.Admin_Perfil_rButom_M.TabIndex = 31;
-            this.Admin_Perfil_rButom_M.TabStop = true;
-            this.Admin_Perfil_rButom_M.Text = "Mujer";
-            this.Admin_Perfil_rButom_M.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_rButom_H
-            // 
-            this.Admin_Perfil_rButom_H.AutoSize = true;
-            this.Admin_Perfil_rButom_H.Location = new System.Drawing.Point(11, 19);
-            this.Admin_Perfil_rButom_H.Name = "Admin_Perfil_rButom_H";
-            this.Admin_Perfil_rButom_H.Size = new System.Drawing.Size(62, 17);
-            this.Admin_Perfil_rButom_H.TabIndex = 30;
-            this.Admin_Perfil_rButom_H.TabStop = true;
-            this.Admin_Perfil_rButom_H.Text = "Hombre";
-            this.Admin_Perfil_rButom_H.UseVisualStyleBackColor = true;
             // 
             // Admin_Perfil_numericUpDown_Mes
             // 
@@ -840,6 +883,17 @@
             this.Admin_Perfil_Label_Sexo.Text = "Sexo";
             this.Admin_Perfil_Label_Sexo.Click += new System.EventHandler(this.label7_Click);
             // 
+            // Admin_Perfil_Label_EstCivil
+            // 
+            this.Admin_Perfil_Label_EstCivil.AutoSize = true;
+            this.Admin_Perfil_Label_EstCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Admin_Perfil_Label_EstCivil.Location = new System.Drawing.Point(168, 296);
+            this.Admin_Perfil_Label_EstCivil.Name = "Admin_Perfil_Label_EstCivil";
+            this.Admin_Perfil_Label_EstCivil.Size = new System.Drawing.Size(91, 20);
+            this.Admin_Perfil_Label_EstCivil.TabIndex = 8;
+            this.Admin_Perfil_Label_EstCivil.Text = "Estado Civil";
+            this.Admin_Perfil_Label_EstCivil.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Admin_Perfil_Label_NIF
             // 
             this.Admin_Perfil_Label_NIF.AutoSize = true;
@@ -917,6 +971,17 @@
             this.Admin_Perfil_Label_Nombre.Text = "Nombre";
             this.Admin_Perfil_Label_Nombre.Click += new System.EventHandler(this.Admin_Perfil_Label_Nombre_Click);
             // 
+            // Admin_Perfil_Foto
+            // 
+            this.Admin_Perfil_Foto.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
+            this.Admin_Perfil_Foto.Location = new System.Drawing.Point(606, 27);
+            this.Admin_Perfil_Foto.Name = "Admin_Perfil_Foto";
+            this.Admin_Perfil_Foto.Size = new System.Drawing.Size(255, 252);
+            this.Admin_Perfil_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Admin_Perfil_Foto.TabIndex = 0;
+            this.Admin_Perfil_Foto.TabStop = false;
+            this.Admin_Perfil_Foto.Click += new System.EventHandler(this.Avatar_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -930,71 +995,6 @@
             this.tabControl1.Size = new System.Drawing.Size(901, 632);
             this.tabControl1.TabIndex = 0;
             // 
-            // Admin_Perfil_Foto
-            // 
-            this.Admin_Perfil_Foto.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
-            this.Admin_Perfil_Foto.Location = new System.Drawing.Point(606, 27);
-            this.Admin_Perfil_Foto.Name = "Admin_Perfil_Foto";
-            this.Admin_Perfil_Foto.Size = new System.Drawing.Size(255, 252);
-            this.Admin_Perfil_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Admin_Perfil_Foto.TabIndex = 0;
-            this.Admin_Perfil_Foto.TabStop = false;
-            this.Admin_Perfil_Foto.Click += new System.EventHandler(this.Avatar_Click);
-            // 
-            // grupEstadoCivil
-            // 
-            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Divorciado);
-            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Soltero);
-            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Casado);
-            this.grupEstadoCivil.Controls.Add(this.Admin_Perfil_rButom_Viudo);
-            this.grupEstadoCivil.Location = new System.Drawing.Point(172, 318);
-            this.grupEstadoCivil.Name = "grupEstadoCivil";
-            this.grupEstadoCivil.Size = new System.Drawing.Size(200, 78);
-            this.grupEstadoCivil.TabIndex = 55;
-            this.grupEstadoCivil.TabStop = false;
-            this.grupEstadoCivil.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // Admin_Perfil_Label_EstCivil
-            // 
-            this.Admin_Perfil_Label_EstCivil.AutoSize = true;
-            this.Admin_Perfil_Label_EstCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_EstCivil.Location = new System.Drawing.Point(168, 296);
-            this.Admin_Perfil_Label_EstCivil.Name = "Admin_Perfil_Label_EstCivil";
-            this.Admin_Perfil_Label_EstCivil.Size = new System.Drawing.Size(91, 20);
-            this.Admin_Perfil_Label_EstCivil.TabIndex = 8;
-            this.Admin_Perfil_Label_EstCivil.Text = "Estado Civil";
-            this.Admin_Perfil_Label_EstCivil.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // groupBoxSexo
-            // 
-            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_H);
-            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_M);
-            this.groupBoxSexo.Location = new System.Drawing.Point(37, 319);
-            this.groupBoxSexo.Name = "groupBoxSexo";
-            this.groupBoxSexo.Size = new System.Drawing.Size(83, 76);
-            this.groupBoxSexo.TabIndex = 56;
-            this.groupBoxSexo.TabStop = false;
-            // 
-            // groupBoxIdiomas
-            // 
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ALE);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ESP);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_VAL);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ENG);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_GAL);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_HOL);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_ITA);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_CAT);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_FRA);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_POR);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_EUS);
-            this.groupBoxIdiomas.Controls.Add(this.Admin_Perfil_Check_RUS);
-            this.groupBoxIdiomas.Location = new System.Drawing.Point(37, 497);
-            this.groupBoxIdiomas.Name = "groupBoxIdiomas";
-            this.groupBoxIdiomas.Size = new System.Drawing.Size(378, 99);
-            this.groupBoxIdiomas.TabIndex = 57;
-            this.groupBoxIdiomas.TabStop = false;
-            // 
             // Admins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1006,17 +1006,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Admin_Foto_Perfil.ResumeLayout(false);
             this.Admin_Foto_Perfil.PerformLayout();
+            this.groupBoxIdiomas.ResumeLayout(false);
+            this.groupBoxIdiomas.PerformLayout();
+            this.groupBoxSexo.ResumeLayout(false);
+            this.groupBoxSexo.PerformLayout();
+            this.grupEstadoCivil.ResumeLayout(false);
+            this.grupEstadoCivil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Mes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Dia)).EndInit();
-            this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).EndInit();
-            this.grupEstadoCivil.ResumeLayout(false);
-            this.grupEstadoCivil.PerformLayout();
-            this.groupBoxSexo.ResumeLayout(false);
-            this.groupBoxSexo.PerformLayout();
-            this.groupBoxIdiomas.ResumeLayout(false);
-            this.groupBoxIdiomas.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -95,6 +95,13 @@ namespace Events4ALL.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap foto_usuario_defectojpg {
+            get {
+                object obj = ResourceManager.GetObject("foto_usuario_defectojpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap idioma {
             get {
                 object obj = ResourceManager.GetObject("idioma", resourceCulture);
