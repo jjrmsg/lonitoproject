@@ -38,12 +38,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.idiomas = new System.Windows.Forms.ImageList(this.components);
+            this.checkSave = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkSave = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.idiomas = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -104,19 +104,11 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // comboBox1
+            // checkSave
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            // 
-            // idiomas
-            // 
-            this.idiomas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("idiomas.ImageStream")));
-            this.idiomas.TransparentColor = System.Drawing.Color.Transparent;
-            this.idiomas.Images.SetKeyName(0, "Spain.png");
-            this.idiomas.Images.SetKeyName(1, "United_Kingdom.png");
+            resources.ApplyResources(this.checkSave, "checkSave");
+            this.checkSave.Name = "checkSave";
+            this.checkSave.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -143,11 +135,19 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // checkSave
+            // comboBox1
             // 
-            resources.ApplyResources(this.checkSave, "checkSave");
-            this.checkSave.Name = "checkSave";
-            this.checkSave.UseVisualStyleBackColor = true;
+            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // idiomas
+            // 
+            this.idiomas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("idiomas.ImageStream")));
+            this.idiomas.TransparentColor = System.Drawing.Color.Transparent;
+            this.idiomas.Images.SetKeyName(0, "Spain.png");
+            this.idiomas.Images.SetKeyName(1, "United_Kingdom.png");
             // 
             // Login
             // 

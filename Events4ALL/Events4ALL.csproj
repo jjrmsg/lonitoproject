@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -189,6 +190,7 @@
     <Content Include="imgs\friends_group.png" />
     <Content Include="imgs\home.png" />
     <Content Include="imgs\idioma.png" />
+    <None Include="imgs\image-default.png" />
     <Content Include="imgs\lock.png" />
     <Content Include="imgs\login.png" />
     <Content Include="imgs\Pantalla.png" />

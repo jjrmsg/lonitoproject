@@ -238,16 +238,16 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 27</value>
+    <value>10, 29</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 13</value>
+    <value>115, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>____________________</value>
+    <value>__________________</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -265,16 +265,16 @@
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Agency FB, 20.25pt</value>
+    <value>Segoe UI, 20.25pt</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 12</value>
+    <value>124, 12</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 32</value>
+    <value>159, 37</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -298,7 +298,7 @@
     <value>-3, -3</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 57</value>
+    <value>274, 57</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -322,7 +322,7 @@
     <value>153, 100</value>
   </data>
   <data name="checkSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
+    <value>70, 17</value>
   </data>
   <data name="checkSave.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -524,9 +524,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>270, 201</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
