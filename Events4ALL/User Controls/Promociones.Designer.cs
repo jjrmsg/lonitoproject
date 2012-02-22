@@ -30,66 +30,57 @@
         {
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
+            this.pictureBox_PE_imagEspec = new System.Windows.Forms.PictureBox();
+            this.groupBox_PE_promoGen = new System.Windows.Forms.GroupBox();
+            this.checkBox_PE_descParado = new System.Windows.Forms.CheckBox();
+            this.checkBox_PE_descJubilado = new System.Windows.Forms.CheckBox();
+            this.checkBox_PE_descEstudiante = new System.Windows.Forms.CheckBox();
+            this.checkBox_PE_descCliente = new System.Windows.Forms.CheckBox();
+            this.checkBox_PE_mayor65 = new System.Windows.Forms.CheckBox();
+            this.checkBox_PE_menor25 = new System.Windows.Forms.CheckBox();
+            this.groupBox_PE_promoEvent = new System.Windows.Forms.GroupBox();
+            this.radioButton_PE_IVA = new System.Windows.Forms.RadioButton();
+            this.radioButton_PE_otroDesc = new System.Windows.Forms.RadioButton();
+            this.textBox_PE_TOtroDesc = new System.Windows.Forms.TextBox();
+            this.radioButton_PE_50 = new System.Windows.Forms.RadioButton();
+            this.radioButton_PE_10 = new System.Windows.Forms.RadioButton();
+            this.radioButton_PE_20 = new System.Windows.Forms.RadioButton();
+            this.radioButton_PE_5 = new System.Windows.Forms.RadioButton();
+            this.groupBox_PE_DatosEspec = new System.Windows.Forms.GroupBox();
+            this.label_PE_SAsig = new System.Windows.Forms.Label();
+            this.label_PE_TSAsig = new System.Windows.Forms.Label();
+            this.label_PE_Precio = new System.Windows.Forms.Label();
+            this.label_PE_TPrecio = new System.Windows.Forms.Label();
+            this.label_PE_TDescripcion = new System.Windows.Forms.Label();
+            this.label_PE_Descripcion = new System.Windows.Forms.Label();
+            this.label_PE_fecha = new System.Windows.Forms.Label();
+            this.label_PE_titulo = new System.Windows.Forms.Label();
+            this.label_PE_TTitulo = new System.Windows.Forms.Label();
+            this.label_PE_TFecha = new System.Windows.Forms.Label();
             this.label_PE_Espectaculo = new System.Windows.Forms.Label();
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
-            this.tab_Por_cliente = new System.Windows.Forms.TabPage();
-            this.dataGridView_PE_promoClientes = new System.Windows.Forms.DataGridView();
-            this.PC_FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_HORA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_POBLACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_PROVINCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_LUGAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_DESCUENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PC_DESCRIPCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label_PC_Cliente = new System.Windows.Forms.Label();
-            this.comboBox_PC_cliente = new System.Windows.Forms.ComboBox();
-            this.label_PC_Titulo = new System.Windows.Forms.Label();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
-            this.button_MC_eliminarC = new System.Windows.Forms.Button();
-            this.button_MC_modificarC = new System.Windows.Forms.Button();
-            this.button_MC_agregarC = new System.Windows.Forms.Button();
+            this.checkBox_MC_ActPromo = new System.Windows.Forms.CheckBox();
+            this.label_MC_ActPromo = new System.Windows.Forms.Label();
+            this.button_MC_Nueva = new System.Windows.Forms.Button();
+            this.label_MC_Descripcion = new System.Windows.Forms.Label();
+            this.textBox_MC_NomPromo = new System.Windows.Forms.TextBox();
+            this.label_MC_Nombre = new System.Windows.Forms.Label();
+            this.textBox_MC_Descripcion = new System.Windows.Forms.TextBox();
+            this.button_MC_Eliminar = new System.Windows.Forms.Button();
+            this.button_MC_Guardar = new System.Windows.Forms.Button();
             this.label_MC_ClientesAfectados = new System.Windows.Forms.Label();
-            this.dataGridView_MC_ClientesAfectados = new System.Windows.Forms.DataGridView();
+            this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox_PE_Datos = new System.Windows.Forms.GroupBox();
-            this.label_PE_titulo = new System.Windows.Forms.Label();
-            this.label_PE_fecha = new System.Windows.Forms.Label();
-            this.label_PE_hora = new System.Windows.Forms.Label();
-            this.label_PE_poblacion = new System.Windows.Forms.Label();
-            this.label_PE_provincia = new System.Windows.Forms.Label();
-            this.label_PE_lugar = new System.Windows.Forms.Label();
-            this.label_PE_Ctitulo = new System.Windows.Forms.Label();
-            this.label_PE_Cfecha = new System.Windows.Forms.Label();
-            this.label_PE_Chora = new System.Windows.Forms.Label();
-            this.label_PE_Cpoblacion = new System.Windows.Forms.Label();
-            this.label_PE_Cprovincia = new System.Windows.Forms.Label();
-            this.label_PE_Clugar = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
-            this.tab_Por_cliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
+            this.groupBox_PE_promoGen.SuspendLayout();
+            this.groupBox_PE_promoEvent.SuspendLayout();
+            this.groupBox_PE_DatosEspec.SuspendLayout();
             this.tab_Mediante_condiciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ClientesAfectados)).BeginInit();
-            this.groupBox_PE_Datos.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -98,7 +89,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_promociones.Controls.Add(this.tab_Por_espectaculo);
-            this.tabControl_promociones.Controls.Add(this.tab_Por_cliente);
             this.tabControl_promociones.Controls.Add(this.tab_Mediante_condiciones);
             this.tabControl_promociones.Location = new System.Drawing.Point(3, 1);
             this.tabControl_promociones.Name = "tabControl_promociones";
@@ -108,9 +98,10 @@
             // 
             // tab_Por_espectaculo
             // 
-            this.tab_Por_espectaculo.Controls.Add(this.groupBox2);
-            this.tab_Por_espectaculo.Controls.Add(this.groupBox1);
-            this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_Datos);
+            this.tab_Por_espectaculo.Controls.Add(this.pictureBox_PE_imagEspec);
+            this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_promoGen);
+            this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_promoEvent);
+            this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_DatosEspec);
             this.tab_Por_espectaculo.Controls.Add(this.label_PE_Espectaculo);
             this.tab_Por_espectaculo.Controls.Add(this.comboBox_PE_espectaculo);
             this.tab_Por_espectaculo.Location = new System.Drawing.Point(4, 22);
@@ -118,8 +109,312 @@
             this.tab_Por_espectaculo.Padding = new System.Windows.Forms.Padding(3);
             this.tab_Por_espectaculo.Size = new System.Drawing.Size(893, 606);
             this.tab_Por_espectaculo.TabIndex = 0;
-            this.tab_Por_espectaculo.Text = "Por espectaculo";
+            this.tab_Por_espectaculo.Text = "Espectáculo";
             this.tab_Por_espectaculo.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox_PE_imagEspec
+            // 
+            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
+            this.pictureBox_PE_imagEspec.Name = "pictureBox_PE_imagEspec";
+            this.pictureBox_PE_imagEspec.Size = new System.Drawing.Size(537, 305);
+            this.pictureBox_PE_imagEspec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_PE_imagEspec.TabIndex = 8;
+            this.pictureBox_PE_imagEspec.TabStop = false;
+            // 
+            // groupBox_PE_promoGen
+            // 
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descParado);
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descJubilado);
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descEstudiante);
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descCliente);
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_mayor65);
+            this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_menor25);
+            this.groupBox_PE_promoGen.Location = new System.Drawing.Point(9, 441);
+            this.groupBox_PE_promoGen.Name = "groupBox_PE_promoGen";
+            this.groupBox_PE_promoGen.Size = new System.Drawing.Size(335, 159);
+            this.groupBox_PE_promoGen.TabIndex = 7;
+            this.groupBox_PE_promoGen.TabStop = false;
+            this.groupBox_PE_promoGen.Text = "Promociones generales";
+            // 
+            // checkBox_PE_descParado
+            // 
+            this.checkBox_PE_descParado.AutoSize = true;
+            this.checkBox_PE_descParado.Location = new System.Drawing.Point(167, 109);
+            this.checkBox_PE_descParado.Name = "checkBox_PE_descParado";
+            this.checkBox_PE_descParado.Size = new System.Drawing.Size(65, 17);
+            this.checkBox_PE_descParado.TabIndex = 5;
+            this.checkBox_PE_descParado.Text = "Parados";
+            this.checkBox_PE_descParado.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_PE_descJubilado
+            // 
+            this.checkBox_PE_descJubilado.AutoSize = true;
+            this.checkBox_PE_descJubilado.Location = new System.Drawing.Point(167, 71);
+            this.checkBox_PE_descJubilado.Name = "checkBox_PE_descJubilado";
+            this.checkBox_PE_descJubilado.Size = new System.Drawing.Size(70, 17);
+            this.checkBox_PE_descJubilado.TabIndex = 4;
+            this.checkBox_PE_descJubilado.Text = "Jubilados";
+            this.checkBox_PE_descJubilado.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_PE_descEstudiante
+            // 
+            this.checkBox_PE_descEstudiante.AutoSize = true;
+            this.checkBox_PE_descEstudiante.Location = new System.Drawing.Point(167, 33);
+            this.checkBox_PE_descEstudiante.Name = "checkBox_PE_descEstudiante";
+            this.checkBox_PE_descEstudiante.Size = new System.Drawing.Size(81, 17);
+            this.checkBox_PE_descEstudiante.TabIndex = 3;
+            this.checkBox_PE_descEstudiante.Text = "Estudiantes";
+            this.checkBox_PE_descEstudiante.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_PE_descCliente
+            // 
+            this.checkBox_PE_descCliente.AutoSize = true;
+            this.checkBox_PE_descCliente.Location = new System.Drawing.Point(27, 109);
+            this.checkBox_PE_descCliente.Name = "checkBox_PE_descCliente";
+            this.checkBox_PE_descCliente.Size = new System.Drawing.Size(58, 17);
+            this.checkBox_PE_descCliente.TabIndex = 2;
+            this.checkBox_PE_descCliente.Text = "Cliente";
+            this.checkBox_PE_descCliente.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_PE_mayor65
+            // 
+            this.checkBox_PE_mayor65.AutoSize = true;
+            this.checkBox_PE_mayor65.Location = new System.Drawing.Point(27, 71);
+            this.checkBox_PE_mayor65.Name = "checkBox_PE_mayor65";
+            this.checkBox_PE_mayor65.Size = new System.Drawing.Size(96, 17);
+            this.checkBox_PE_mayor65.TabIndex = 1;
+            this.checkBox_PE_mayor65.Text = "Mayores de 65";
+            this.checkBox_PE_mayor65.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_PE_menor25
+            // 
+            this.checkBox_PE_menor25.AutoSize = true;
+            this.checkBox_PE_menor25.Location = new System.Drawing.Point(27, 33);
+            this.checkBox_PE_menor25.Name = "checkBox_PE_menor25";
+            this.checkBox_PE_menor25.Size = new System.Drawing.Size(97, 17);
+            this.checkBox_PE_menor25.TabIndex = 0;
+            this.checkBox_PE_menor25.Text = "Menores de 25";
+            this.checkBox_PE_menor25.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_PE_promoEvent
+            // 
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_IVA);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_otroDesc);
+            this.groupBox_PE_promoEvent.Controls.Add(this.textBox_PE_TOtroDesc);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_50);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_10);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_20);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_5);
+            this.groupBox_PE_promoEvent.Location = new System.Drawing.Point(9, 295);
+            this.groupBox_PE_promoEvent.Name = "groupBox_PE_promoEvent";
+            this.groupBox_PE_promoEvent.Size = new System.Drawing.Size(335, 140);
+            this.groupBox_PE_promoEvent.TabIndex = 6;
+            this.groupBox_PE_promoEvent.TabStop = false;
+            this.groupBox_PE_promoEvent.Text = "Promociones eventuales";
+            // 
+            // radioButton_PE_IVA
+            // 
+            this.radioButton_PE_IVA.AutoSize = true;
+            this.radioButton_PE_IVA.Location = new System.Drawing.Point(167, 66);
+            this.radioButton_PE_IVA.Name = "radioButton_PE_IVA";
+            this.radioButton_PE_IVA.Size = new System.Drawing.Size(106, 17);
+            this.radioButton_PE_IVA.TabIndex = 7;
+            this.radioButton_PE_IVA.TabStop = true;
+            this.radioButton_PE_IVA.Text = "Dia sin IVA (18%)";
+            this.radioButton_PE_IVA.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_PE_otroDesc
+            // 
+            this.radioButton_PE_otroDesc.AutoSize = true;
+            this.radioButton_PE_otroDesc.Location = new System.Drawing.Point(167, 97);
+            this.radioButton_PE_otroDesc.Name = "radioButton_PE_otroDesc";
+            this.radioButton_PE_otroDesc.Size = new System.Drawing.Size(48, 17);
+            this.radioButton_PE_otroDesc.TabIndex = 6;
+            this.radioButton_PE_otroDesc.TabStop = true;
+            this.radioButton_PE_otroDesc.Text = "Otro:";
+            this.radioButton_PE_otroDesc.UseVisualStyleBackColor = true;
+            // 
+            // textBox_PE_TOtroDesc
+            // 
+            this.textBox_PE_TOtroDesc.Location = new System.Drawing.Point(218, 97);
+            this.textBox_PE_TOtroDesc.Name = "textBox_PE_TOtroDesc";
+            this.textBox_PE_TOtroDesc.Size = new System.Drawing.Size(57, 20);
+            this.textBox_PE_TOtroDesc.TabIndex = 5;
+            // 
+            // radioButton_PE_50
+            // 
+            this.radioButton_PE_50.AutoSize = true;
+            this.radioButton_PE_50.Location = new System.Drawing.Point(167, 36);
+            this.radioButton_PE_50.Name = "radioButton_PE_50";
+            this.radioButton_PE_50.Size = new System.Drawing.Size(45, 17);
+            this.radioButton_PE_50.TabIndex = 3;
+            this.radioButton_PE_50.TabStop = true;
+            this.radioButton_PE_50.Text = "50%";
+            this.radioButton_PE_50.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_PE_10
+            // 
+            this.radioButton_PE_10.AutoSize = true;
+            this.radioButton_PE_10.Location = new System.Drawing.Point(27, 66);
+            this.radioButton_PE_10.Name = "radioButton_PE_10";
+            this.radioButton_PE_10.Size = new System.Drawing.Size(45, 17);
+            this.radioButton_PE_10.TabIndex = 2;
+            this.radioButton_PE_10.TabStop = true;
+            this.radioButton_PE_10.Text = "10%";
+            this.radioButton_PE_10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_PE_20
+            // 
+            this.radioButton_PE_20.AutoSize = true;
+            this.radioButton_PE_20.Location = new System.Drawing.Point(27, 98);
+            this.radioButton_PE_20.Name = "radioButton_PE_20";
+            this.radioButton_PE_20.Size = new System.Drawing.Size(45, 17);
+            this.radioButton_PE_20.TabIndex = 1;
+            this.radioButton_PE_20.TabStop = true;
+            this.radioButton_PE_20.Text = "25%";
+            this.radioButton_PE_20.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_PE_5
+            // 
+            this.radioButton_PE_5.AutoSize = true;
+            this.radioButton_PE_5.Location = new System.Drawing.Point(27, 36);
+            this.radioButton_PE_5.Name = "radioButton_PE_5";
+            this.radioButton_PE_5.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_PE_5.TabIndex = 0;
+            this.radioButton_PE_5.TabStop = true;
+            this.radioButton_PE_5.Text = "5%";
+            this.radioButton_PE_5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_PE_DatosEspec
+            // 
+            this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_SAsig);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TSAsig);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_Precio);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TPrecio);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TDescripcion);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_Descripcion);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fecha);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_titulo);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TTitulo);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TFecha);
+            this.groupBox_PE_DatosEspec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_PE_DatosEspec.Location = new System.Drawing.Point(9, 48);
+            this.groupBox_PE_DatosEspec.Name = "groupBox_PE_DatosEspec";
+            this.groupBox_PE_DatosEspec.Size = new System.Drawing.Size(878, 241);
+            this.groupBox_PE_DatosEspec.TabIndex = 5;
+            this.groupBox_PE_DatosEspec.TabStop = false;
+            this.groupBox_PE_DatosEspec.Text = "Datos";
+            // 
+            // label_PE_SAsig
+            // 
+            this.label_PE_SAsig.AutoSize = true;
+            this.label_PE_SAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_SAsig.Location = new System.Drawing.Point(24, 142);
+            this.label_PE_SAsig.Name = "label_PE_SAsig";
+            this.label_PE_SAsig.Size = new System.Drawing.Size(91, 13);
+            this.label_PE_SAsig.TabIndex = 12;
+            this.label_PE_SAsig.Text = "Sala asignada:";
+            // 
+            // label_PE_TSAsig
+            // 
+            this.label_PE_TSAsig.AutoSize = true;
+            this.label_PE_TSAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TSAsig.Location = new System.Drawing.Point(130, 142);
+            this.label_PE_TSAsig.Name = "label_PE_TSAsig";
+            this.label_PE_TSAsig.Size = new System.Drawing.Size(35, 13);
+            this.label_PE_TSAsig.TabIndex = 13;
+            this.label_PE_TSAsig.Text = "label8";
+            // 
+            // label_PE_Precio
+            // 
+            this.label_PE_Precio.AutoSize = true;
+            this.label_PE_Precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_Precio.Location = new System.Drawing.Point(24, 192);
+            this.label_PE_Precio.Name = "label_PE_Precio";
+            this.label_PE_Precio.Size = new System.Drawing.Size(47, 13);
+            this.label_PE_Precio.TabIndex = 10;
+            this.label_PE_Precio.Text = "Precio:";
+            // 
+            // label_PE_TPrecio
+            // 
+            this.label_PE_TPrecio.AutoSize = true;
+            this.label_PE_TPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TPrecio.Location = new System.Drawing.Point(130, 192);
+            this.label_PE_TPrecio.Name = "label_PE_TPrecio";
+            this.label_PE_TPrecio.Size = new System.Drawing.Size(35, 13);
+            this.label_PE_TPrecio.TabIndex = 11;
+            this.label_PE_TPrecio.Text = "label8";
+            // 
+            // label_PE_TDescripcion
+            // 
+            this.label_PE_TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_PE_TDescripcion.AutoSize = true;
+            this.label_PE_TDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TDescripcion.Location = new System.Drawing.Point(330, 38);
+            this.label_PE_TDescripcion.Name = "label_PE_TDescripcion";
+            this.label_PE_TDescripcion.Size = new System.Drawing.Size(541, 26);
+            this.label_PE_TDescripcion.TabIndex = 9;
+            this.label_PE_TDescripcion.Text = "label8label8label8label8label8label8label8label8label8label8label8label8label8lab" +
+    "el8label8label8l8labelljkjj5555667\r\nssssssssssssssssssssssssssssssssssssssssssss" +
+    "sssssssss";
+            // 
+            // label_PE_Descripcion
+            // 
+            this.label_PE_Descripcion.AutoSize = true;
+            this.label_PE_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_Descripcion.Location = new System.Drawing.Point(246, 38);
+            this.label_PE_Descripcion.Name = "label_PE_Descripcion";
+            this.label_PE_Descripcion.Size = new System.Drawing.Size(78, 13);
+            this.label_PE_Descripcion.TabIndex = 8;
+            this.label_PE_Descripcion.Text = "Descripción:";
+            // 
+            // label_PE_fecha
+            // 
+            this.label_PE_fecha.AutoSize = true;
+            this.label_PE_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_fecha.Location = new System.Drawing.Point(24, 89);
+            this.label_PE_fecha.Name = "label_PE_fecha";
+            this.label_PE_fecha.Size = new System.Drawing.Size(46, 13);
+            this.label_PE_fecha.TabIndex = 1;
+            this.label_PE_fecha.Text = "Fecha:";
+            // 
+            // label_PE_titulo
+            // 
+            this.label_PE_titulo.AutoSize = true;
+            this.label_PE_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_titulo.Location = new System.Drawing.Point(24, 38);
+            this.label_PE_titulo.Name = "label_PE_titulo";
+            this.label_PE_titulo.Size = new System.Drawing.Size(45, 13);
+            this.label_PE_titulo.TabIndex = 0;
+            this.label_PE_titulo.Text = "Título:";
+            this.label_PE_titulo.Click += new System.EventHandler(this.label1_Click_4);
+            // 
+            // label_PE_TTitulo
+            // 
+            this.label_PE_TTitulo.AutoSize = true;
+            this.label_PE_TTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TTitulo.Location = new System.Drawing.Point(130, 38);
+            this.label_PE_TTitulo.Name = "label_PE_TTitulo";
+            this.label_PE_TTitulo.Size = new System.Drawing.Size(35, 13);
+            this.label_PE_TTitulo.TabIndex = 6;
+            this.label_PE_TTitulo.Text = "label7";
+            // 
+            // label_PE_TFecha
+            // 
+            this.label_PE_TFecha.AutoSize = true;
+            this.label_PE_TFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TFecha.Location = new System.Drawing.Point(130, 89);
+            this.label_PE_TFecha.Name = "label_PE_TFecha";
+            this.label_PE_TFecha.Size = new System.Drawing.Size(35, 13);
+            this.label_PE_TFecha.TabIndex = 7;
+            this.label_PE_TFecha.Text = "label8";
             // 
             // label_PE_Espectaculo
             // 
@@ -141,161 +436,127 @@
             this.comboBox_PE_espectaculo.TabIndex = 3;
             this.comboBox_PE_espectaculo.Text = "Seleccionar espectaculo ...";
             // 
-            // tab_Por_cliente
-            // 
-            this.tab_Por_cliente.Controls.Add(this.dataGridView_PE_promoClientes);
-            this.tab_Por_cliente.Controls.Add(this.label_PC_Cliente);
-            this.tab_Por_cliente.Controls.Add(this.comboBox_PC_cliente);
-            this.tab_Por_cliente.Controls.Add(this.label_PC_Titulo);
-            this.tab_Por_cliente.Location = new System.Drawing.Point(4, 22);
-            this.tab_Por_cliente.Name = "tab_Por_cliente";
-            this.tab_Por_cliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Por_cliente.Size = new System.Drawing.Size(893, 606);
-            this.tab_Por_cliente.TabIndex = 1;
-            this.tab_Por_cliente.Text = "Por cliente";
-            this.tab_Por_cliente.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_PE_promoClientes
-            // 
-            this.dataGridView_PE_promoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_PE_promoClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PC_FECHA,
-            this.PC_HORA,
-            this.PC_POBLACION,
-            this.PC_PROVINCIA,
-            this.PC_LUGAR,
-            this.PC_DESCUENTO,
-            this.PC_DESCRIPCION});
-            this.dataGridView_PE_promoClientes.Location = new System.Drawing.Point(6, 124);
-            this.dataGridView_PE_promoClientes.Name = "dataGridView_PE_promoClientes";
-            this.dataGridView_PE_promoClientes.Size = new System.Drawing.Size(881, 476);
-            this.dataGridView_PE_promoClientes.TabIndex = 3;
-            // 
-            // PC_FECHA
-            // 
-            this.PC_FECHA.HeaderText = "FECHA";
-            this.PC_FECHA.Name = "PC_FECHA";
-            // 
-            // PC_HORA
-            // 
-            this.PC_HORA.HeaderText = "HORA";
-            this.PC_HORA.Name = "PC_HORA";
-            // 
-            // PC_POBLACION
-            // 
-            this.PC_POBLACION.HeaderText = "POBLACION";
-            this.PC_POBLACION.Name = "PC_POBLACION";
-            // 
-            // PC_PROVINCIA
-            // 
-            this.PC_PROVINCIA.HeaderText = "PROVINCIA";
-            this.PC_PROVINCIA.Name = "PC_PROVINCIA";
-            // 
-            // PC_LUGAR
-            // 
-            this.PC_LUGAR.HeaderText = "LUGAR";
-            this.PC_LUGAR.Name = "PC_LUGAR";
-            // 
-            // PC_DESCUENTO
-            // 
-            this.PC_DESCUENTO.HeaderText = "DESCUENTO";
-            this.PC_DESCUENTO.Name = "PC_DESCUENTO";
-            // 
-            // PC_DESCRIPCION
-            // 
-            this.PC_DESCRIPCION.HeaderText = "DESCRIPCION";
-            this.PC_DESCRIPCION.Name = "PC_DESCRIPCION";
-            // 
-            // label_PC_Cliente
-            // 
-            this.label_PC_Cliente.AutoSize = true;
-            this.label_PC_Cliente.Location = new System.Drawing.Point(113, 97);
-            this.label_PC_Cliente.Name = "label_PC_Cliente";
-            this.label_PC_Cliente.Size = new System.Drawing.Size(42, 13);
-            this.label_PC_Cliente.TabIndex = 2;
-            this.label_PC_Cliente.Text = "Cliente:";
-            this.label_PC_Cliente.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // comboBox_PC_cliente
-            // 
-            this.comboBox_PC_cliente.FormattingEnabled = true;
-            this.comboBox_PC_cliente.Location = new System.Drawing.Point(200, 97);
-            this.comboBox_PC_cliente.Name = "comboBox_PC_cliente";
-            this.comboBox_PC_cliente.Size = new System.Drawing.Size(210, 21);
-            this.comboBox_PC_cliente.TabIndex = 1;
-            this.comboBox_PC_cliente.Text = "Seleccionar cliente ...";
-            // 
-            // label_PC_Titulo
-            // 
-            this.label_PC_Titulo.AutoSize = true;
-            this.label_PC_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PC_Titulo.Location = new System.Drawing.Point(106, 21);
-            this.label_PC_Titulo.Name = "label_PC_Titulo";
-            this.label_PC_Titulo.Size = new System.Drawing.Size(562, 55);
-            this.label_PC_Titulo.TabIndex = 0;
-            this.label_PC_Titulo.Text = "Promociones por cliente";
-            // 
             // tab_Mediante_condiciones
             // 
-            this.tab_Mediante_condiciones.Controls.Add(this.textBox2);
-            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_eliminarC);
-            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_modificarC);
-            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_agregarC);
+            this.tab_Mediante_condiciones.Controls.Add(this.checkBox_MC_ActPromo);
+            this.tab_Mediante_condiciones.Controls.Add(this.label_MC_ActPromo);
+            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_Nueva);
+            this.tab_Mediante_condiciones.Controls.Add(this.label_MC_Descripcion);
+            this.tab_Mediante_condiciones.Controls.Add(this.textBox_MC_NomPromo);
+            this.tab_Mediante_condiciones.Controls.Add(this.label_MC_Nombre);
+            this.tab_Mediante_condiciones.Controls.Add(this.textBox_MC_Descripcion);
+            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_Eliminar);
+            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_Guardar);
             this.tab_Mediante_condiciones.Controls.Add(this.label_MC_ClientesAfectados);
-            this.tab_Mediante_condiciones.Controls.Add(this.dataGridView_MC_ClientesAfectados);
+            this.tab_Mediante_condiciones.Controls.Add(this.dataGridView_MC_ListaPromosCond);
             this.tab_Mediante_condiciones.Location = new System.Drawing.Point(4, 22);
             this.tab_Mediante_condiciones.Name = "tab_Mediante_condiciones";
             this.tab_Mediante_condiciones.Size = new System.Drawing.Size(893, 606);
             this.tab_Mediante_condiciones.TabIndex = 2;
-            this.tab_Mediante_condiciones.Text = "Mediante condiciones";
+            this.tab_Mediante_condiciones.Text = "Condiciones especiales";
             this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
             // 
-            // button_MC_eliminarC
+            // checkBox_MC_ActPromo
             // 
-            this.button_MC_eliminarC.Location = new System.Drawing.Point(756, 185);
-            this.button_MC_eliminarC.Name = "button_MC_eliminarC";
-            this.button_MC_eliminarC.Size = new System.Drawing.Size(134, 23);
-            this.button_MC_eliminarC.TabIndex = 11;
-            this.button_MC_eliminarC.Text = "Eliminar";
-            this.button_MC_eliminarC.UseVisualStyleBackColor = true;
+            this.checkBox_MC_ActPromo.AutoSize = true;
+            this.checkBox_MC_ActPromo.Location = new System.Drawing.Point(608, 250);
+            this.checkBox_MC_ActPromo.Name = "checkBox_MC_ActPromo";
+            this.checkBox_MC_ActPromo.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_MC_ActPromo.TabIndex = 18;
+            this.checkBox_MC_ActPromo.UseVisualStyleBackColor = true;
             // 
-            // button_MC_modificarC
+            // label_MC_ActPromo
             // 
-            this.button_MC_modificarC.Location = new System.Drawing.Point(598, 185);
-            this.button_MC_modificarC.Name = "button_MC_modificarC";
-            this.button_MC_modificarC.Size = new System.Drawing.Size(134, 23);
-            this.button_MC_modificarC.TabIndex = 10;
-            this.button_MC_modificarC.Text = "Modificar";
-            this.button_MC_modificarC.UseVisualStyleBackColor = true;
+            this.label_MC_ActPromo.AutoSize = true;
+            this.label_MC_ActPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MC_ActPromo.Location = new System.Drawing.Point(448, 250);
+            this.label_MC_ActPromo.Name = "label_MC_ActPromo";
+            this.label_MC_ActPromo.Size = new System.Drawing.Size(127, 13);
+            this.label_MC_ActPromo.TabIndex = 17;
+            this.label_MC_ActPromo.Text = "¿Activar promoción?:";
             // 
-            // button_MC_agregarC
+            // button_MC_Nueva
             // 
-            this.button_MC_agregarC.Location = new System.Drawing.Point(448, 185);
-            this.button_MC_agregarC.Name = "button_MC_agregarC";
-            this.button_MC_agregarC.Size = new System.Drawing.Size(134, 23);
-            this.button_MC_agregarC.TabIndex = 9;
-            this.button_MC_agregarC.Text = "Agregar";
-            this.button_MC_agregarC.UseVisualStyleBackColor = true;
+            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 313);
+            this.button_MC_Nueva.Name = "button_MC_Nueva";
+            this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Nueva.TabIndex = 16;
+            this.button_MC_Nueva.Text = "Nueva";
+            this.button_MC_Nueva.UseVisualStyleBackColor = true;
+            // 
+            // label_MC_Descripcion
+            // 
+            this.label_MC_Descripcion.AutoSize = true;
+            this.label_MC_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MC_Descripcion.Location = new System.Drawing.Point(445, 123);
+            this.label_MC_Descripcion.Name = "label_MC_Descripcion";
+            this.label_MC_Descripcion.Size = new System.Drawing.Size(78, 13);
+            this.label_MC_Descripcion.TabIndex = 15;
+            this.label_MC_Descripcion.Text = "Descripción:";
+            // 
+            // textBox_MC_NomPromo
+            // 
+            this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
+            this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
+            this.textBox_MC_NomPromo.Size = new System.Drawing.Size(442, 20);
+            this.textBox_MC_NomPromo.TabIndex = 14;
+            // 
+            // label_MC_Nombre
+            // 
+            this.label_MC_Nombre.AutoSize = true;
+            this.label_MC_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MC_Nombre.Location = new System.Drawing.Point(445, 26);
+            this.label_MC_Nombre.Name = "label_MC_Nombre";
+            this.label_MC_Nombre.Size = new System.Drawing.Size(148, 13);
+            this.label_MC_Nombre.TabIndex = 13;
+            this.label_MC_Nombre.Text = "Nombre de la promoción:";
+            // 
+            // textBox_MC_Descripcion
+            // 
+            this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 139);
+            this.textBox_MC_Descripcion.Multiline = true;
+            this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
+            this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 108);
+            this.textBox_MC_Descripcion.TabIndex = 12;
+            // 
+            // button_MC_Eliminar
+            // 
+            this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 313);
+            this.button_MC_Eliminar.Name = "button_MC_Eliminar";
+            this.button_MC_Eliminar.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Eliminar.TabIndex = 11;
+            this.button_MC_Eliminar.Text = "Eliminar";
+            this.button_MC_Eliminar.UseVisualStyleBackColor = true;
+            // 
+            // button_MC_Guardar
+            // 
+            this.button_MC_Guardar.Location = new System.Drawing.Point(608, 313);
+            this.button_MC_Guardar.Name = "button_MC_Guardar";
+            this.button_MC_Guardar.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Guardar.TabIndex = 9;
+            this.button_MC_Guardar.Text = "Guardar";
+            this.button_MC_Guardar.UseVisualStyleBackColor = true;
             // 
             // label_MC_ClientesAfectados
             // 
             this.label_MC_ClientesAfectados.AutoSize = true;
+            this.label_MC_ClientesAfectados.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_MC_ClientesAfectados.Location = new System.Drawing.Point(3, 10);
             this.label_MC_ClientesAfectados.Name = "label_MC_ClientesAfectados";
-            this.label_MC_ClientesAfectados.Size = new System.Drawing.Size(216, 13);
+            this.label_MC_ClientesAfectados.Size = new System.Drawing.Size(258, 13);
             this.label_MC_ClientesAfectados.TabIndex = 5;
             this.label_MC_ClientesAfectados.Text = "Lista de promociones mediante condiciones:";
             // 
-            // dataGridView_MC_ClientesAfectados
+            // dataGridView_MC_ListaPromosCond
             // 
-            this.dataGridView_MC_ClientesAfectados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MC_ClientesAfectados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MC_NOMBRE,
             this.Estado});
-            this.dataGridView_MC_ClientesAfectados.Location = new System.Drawing.Point(3, 26);
-            this.dataGridView_MC_ClientesAfectados.Name = "dataGridView_MC_ClientesAfectados";
-            this.dataGridView_MC_ClientesAfectados.Size = new System.Drawing.Size(439, 577);
-            this.dataGridView_MC_ClientesAfectados.TabIndex = 1;
+            this.dataGridView_MC_ListaPromosCond.Location = new System.Drawing.Point(3, 26);
+            this.dataGridView_MC_ListaPromosCond.Name = "dataGridView_MC_ListaPromosCond";
+            this.dataGridView_MC_ListaPromosCond.Size = new System.Drawing.Size(439, 577);
+            this.dataGridView_MC_ListaPromosCond.TabIndex = 1;
             // 
             // MC_NOMBRE
             // 
@@ -303,327 +564,10 @@
             this.MC_NOMBRE.Name = "MC_NOMBRE";
             this.MC_NOMBRE.ReadOnly = true;
             // 
-            // groupBox_PE_Datos
-            // 
-            this.groupBox_PE_Datos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Clugar);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_lugar);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_provincia);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Cprovincia);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_poblacion);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_hora);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Cpoblacion);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_fecha);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Chora);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_titulo);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Ctitulo);
-            this.groupBox_PE_Datos.Controls.Add(this.label_PE_Cfecha);
-            this.groupBox_PE_Datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_PE_Datos.Location = new System.Drawing.Point(9, 48);
-            this.groupBox_PE_Datos.Name = "groupBox_PE_Datos";
-            this.groupBox_PE_Datos.Size = new System.Drawing.Size(335, 241);
-            this.groupBox_PE_Datos.TabIndex = 5;
-            this.groupBox_PE_Datos.TabStop = false;
-            this.groupBox_PE_Datos.Text = "Datos";
-            // 
-            // label_PE_titulo
-            // 
-            this.label_PE_titulo.AutoSize = true;
-            this.label_PE_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_titulo.Location = new System.Drawing.Point(24, 38);
-            this.label_PE_titulo.Name = "label_PE_titulo";
-            this.label_PE_titulo.Size = new System.Drawing.Size(45, 13);
-            this.label_PE_titulo.TabIndex = 0;
-            this.label_PE_titulo.Text = "Título:";
-            this.label_PE_titulo.Click += new System.EventHandler(this.label1_Click_4);
-            // 
-            // label_PE_fecha
-            // 
-            this.label_PE_fecha.AutoSize = true;
-            this.label_PE_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_fecha.Location = new System.Drawing.Point(24, 69);
-            this.label_PE_fecha.Name = "label_PE_fecha";
-            this.label_PE_fecha.Size = new System.Drawing.Size(46, 13);
-            this.label_PE_fecha.TabIndex = 1;
-            this.label_PE_fecha.Text = "Fecha:";
-            // 
-            // label_PE_hora
-            // 
-            this.label_PE_hora.AutoSize = true;
-            this.label_PE_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_hora.Location = new System.Drawing.Point(24, 100);
-            this.label_PE_hora.Name = "label_PE_hora";
-            this.label_PE_hora.Size = new System.Drawing.Size(38, 13);
-            this.label_PE_hora.TabIndex = 2;
-            this.label_PE_hora.Text = "Hora:";
-            // 
-            // label_PE_poblacion
-            // 
-            this.label_PE_poblacion.AutoSize = true;
-            this.label_PE_poblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_poblacion.Location = new System.Drawing.Point(24, 131);
-            this.label_PE_poblacion.Name = "label_PE_poblacion";
-            this.label_PE_poblacion.Size = new System.Drawing.Size(67, 13);
-            this.label_PE_poblacion.TabIndex = 3;
-            this.label_PE_poblacion.Text = "Población:";
-            // 
-            // label_PE_provincia
-            // 
-            this.label_PE_provincia.AutoSize = true;
-            this.label_PE_provincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_provincia.Location = new System.Drawing.Point(24, 163);
-            this.label_PE_provincia.Name = "label_PE_provincia";
-            this.label_PE_provincia.Size = new System.Drawing.Size(64, 13);
-            this.label_PE_provincia.TabIndex = 4;
-            this.label_PE_provincia.Text = "Provincia:";
-            // 
-            // label_PE_lugar
-            // 
-            this.label_PE_lugar.AutoSize = true;
-            this.label_PE_lugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_lugar.Location = new System.Drawing.Point(24, 194);
-            this.label_PE_lugar.Name = "label_PE_lugar";
-            this.label_PE_lugar.Size = new System.Drawing.Size(43, 13);
-            this.label_PE_lugar.TabIndex = 5;
-            this.label_PE_lugar.Text = "Lugar:";
-            // 
-            // label_PE_Ctitulo
-            // 
-            this.label_PE_Ctitulo.AutoSize = true;
-            this.label_PE_Ctitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Ctitulo.Location = new System.Drawing.Point(130, 38);
-            this.label_PE_Ctitulo.Name = "label_PE_Ctitulo";
-            this.label_PE_Ctitulo.Size = new System.Drawing.Size(35, 13);
-            this.label_PE_Ctitulo.TabIndex = 6;
-            this.label_PE_Ctitulo.Text = "label7";
-            // 
-            // label_PE_Cfecha
-            // 
-            this.label_PE_Cfecha.AutoSize = true;
-            this.label_PE_Cfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Cfecha.Location = new System.Drawing.Point(130, 69);
-            this.label_PE_Cfecha.Name = "label_PE_Cfecha";
-            this.label_PE_Cfecha.Size = new System.Drawing.Size(35, 13);
-            this.label_PE_Cfecha.TabIndex = 7;
-            this.label_PE_Cfecha.Text = "label8";
-            // 
-            // label_PE_Chora
-            // 
-            this.label_PE_Chora.AutoSize = true;
-            this.label_PE_Chora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Chora.Location = new System.Drawing.Point(130, 100);
-            this.label_PE_Chora.Name = "label_PE_Chora";
-            this.label_PE_Chora.Size = new System.Drawing.Size(35, 13);
-            this.label_PE_Chora.TabIndex = 8;
-            this.label_PE_Chora.Text = "label9";
-            // 
-            // label_PE_Cpoblacion
-            // 
-            this.label_PE_Cpoblacion.AutoSize = true;
-            this.label_PE_Cpoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Cpoblacion.Location = new System.Drawing.Point(130, 131);
-            this.label_PE_Cpoblacion.Name = "label_PE_Cpoblacion";
-            this.label_PE_Cpoblacion.Size = new System.Drawing.Size(41, 13);
-            this.label_PE_Cpoblacion.TabIndex = 9;
-            this.label_PE_Cpoblacion.Text = "label10";
-            // 
-            // label_PE_Cprovincia
-            // 
-            this.label_PE_Cprovincia.AutoSize = true;
-            this.label_PE_Cprovincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Cprovincia.Location = new System.Drawing.Point(130, 163);
-            this.label_PE_Cprovincia.Name = "label_PE_Cprovincia";
-            this.label_PE_Cprovincia.Size = new System.Drawing.Size(41, 13);
-            this.label_PE_Cprovincia.TabIndex = 10;
-            this.label_PE_Cprovincia.Text = "label11";
-            // 
-            // label_PE_Clugar
-            // 
-            this.label_PE_Clugar.AutoSize = true;
-            this.label_PE_Clugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_Clugar.Location = new System.Drawing.Point(130, 194);
-            this.label_PE_Clugar.Name = "label_PE_Clugar";
-            this.label_PE_Clugar.Size = new System.Drawing.Size(41, 13);
-            this.label_PE_Clugar.TabIndex = 11;
-            this.label_PE_Clugar.Text = "label12";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton6);
-            this.groupBox1.Controls.Add(this.radioButton5);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.radioButton4);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(9, 295);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 140);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Promociones eventuales";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(27, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "5%";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(27, 98);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(45, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "25%";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(27, 66);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(45, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "10%";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(167, 36);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(45, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "50%";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(218, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(167, 97);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(48, 17);
-            this.radioButton5.TabIndex = 6;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Otro:";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(167, 66);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(106, 17);
-            this.radioButton6.TabIndex = 7;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Dia sin IVA (18%)";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.checkBox6);
-            this.groupBox2.Controls.Add(this.checkBox5);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(9, 441);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(335, 159);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Promociones generales";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(27, 33);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(97, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Menores de 25";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(27, 71);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Mayores de 65";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(27, 109);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(58, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Cliente";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(167, 33);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(81, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Estudiantes";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(167, 71);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(70, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Jubilados";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(167, 109);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(65, 17);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Parados";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
             // Estado
             // 
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(448, 71);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(442, 108);
-            this.textBox2.TabIndex = 12;
             // 
             // Promociones
             // 
@@ -635,18 +579,16 @@
             this.tabControl_promociones.ResumeLayout(false);
             this.tab_Por_espectaculo.ResumeLayout(false);
             this.tab_Por_espectaculo.PerformLayout();
-            this.tab_Por_cliente.ResumeLayout(false);
-            this.tab_Por_cliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_PE_promoClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).EndInit();
+            this.groupBox_PE_promoGen.ResumeLayout(false);
+            this.groupBox_PE_promoGen.PerformLayout();
+            this.groupBox_PE_promoEvent.ResumeLayout(false);
+            this.groupBox_PE_promoEvent.PerformLayout();
+            this.groupBox_PE_DatosEspec.ResumeLayout(false);
+            this.groupBox_PE_DatosEspec.PerformLayout();
             this.tab_Mediante_condiciones.ResumeLayout(false);
             this.tab_Mediante_condiciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ClientesAfectados)).EndInit();
-            this.groupBox_PE_Datos.ResumeLayout(false);
-            this.groupBox_PE_Datos.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -655,56 +597,48 @@
 
         private System.Windows.Forms.TabControl tabControl_promociones;
         private System.Windows.Forms.TabPage tab_Por_espectaculo;
-        private System.Windows.Forms.TabPage tab_Por_cliente;
         private System.Windows.Forms.TabPage tab_Mediante_condiciones;
         private System.Windows.Forms.Label label_PE_Espectaculo;
         private System.Windows.Forms.ComboBox comboBox_PE_espectaculo;
-        private System.Windows.Forms.Label label_PC_Titulo;
-        private System.Windows.Forms.Label label_PC_Cliente;
-        private System.Windows.Forms.ComboBox comboBox_PC_cliente;
-        private System.Windows.Forms.DataGridView dataGridView_PE_promoClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_FECHA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_HORA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_POBLACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_PROVINCIA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_LUGAR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_DESCUENTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PC_DESCRIPCION;
-        private System.Windows.Forms.Button button_MC_eliminarC;
-        private System.Windows.Forms.Button button_MC_modificarC;
-        private System.Windows.Forms.Button button_MC_agregarC;
+        private System.Windows.Forms.Button button_MC_Eliminar;
+        private System.Windows.Forms.Button button_MC_Guardar;
         private System.Windows.Forms.Label label_MC_ClientesAfectados;
-        private System.Windows.Forms.DataGridView dataGridView_MC_ClientesAfectados;
+        private System.Windows.Forms.DataGridView dataGridView_MC_ListaPromosCond;
         private System.Windows.Forms.DataGridViewTextBoxColumn MC_NOMBRE;
-        private System.Windows.Forms.GroupBox groupBox_PE_Datos;
-        private System.Windows.Forms.Label label_PE_provincia;
-        private System.Windows.Forms.Label label_PE_poblacion;
-        private System.Windows.Forms.Label label_PE_hora;
+        private System.Windows.Forms.GroupBox groupBox_PE_DatosEspec;
         private System.Windows.Forms.Label label_PE_fecha;
         private System.Windows.Forms.Label label_PE_titulo;
-        private System.Windows.Forms.Label label_PE_Ctitulo;
-        private System.Windows.Forms.Label label_PE_lugar;
-        private System.Windows.Forms.Label label_PE_Clugar;
-        private System.Windows.Forms.Label label_PE_Cprovincia;
-        private System.Windows.Forms.Label label_PE_Cpoblacion;
-        private System.Windows.Forms.Label label_PE_Chora;
-        private System.Windows.Forms.Label label_PE_Cfecha;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label_PE_TTitulo;
+        private System.Windows.Forms.Label label_PE_TFecha;
+        private System.Windows.Forms.GroupBox groupBox_PE_promoEvent;
+        private System.Windows.Forms.RadioButton radioButton_PE_20;
+        private System.Windows.Forms.RadioButton radioButton_PE_5;
+        private System.Windows.Forms.GroupBox groupBox_PE_promoGen;
+        private System.Windows.Forms.CheckBox checkBox_PE_descParado;
+        private System.Windows.Forms.CheckBox checkBox_PE_descJubilado;
+        private System.Windows.Forms.CheckBox checkBox_PE_descEstudiante;
+        private System.Windows.Forms.CheckBox checkBox_PE_descCliente;
+        private System.Windows.Forms.CheckBox checkBox_PE_mayor65;
+        private System.Windows.Forms.CheckBox checkBox_PE_menor25;
+        private System.Windows.Forms.RadioButton radioButton_PE_IVA;
+        private System.Windows.Forms.RadioButton radioButton_PE_otroDesc;
+        private System.Windows.Forms.TextBox textBox_PE_TOtroDesc;
+        private System.Windows.Forms.RadioButton radioButton_PE_50;
+        private System.Windows.Forms.RadioButton radioButton_PE_10;
+        private System.Windows.Forms.TextBox textBox_MC_Descripcion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
+        private System.Windows.Forms.Label label_PE_TDescripcion;
+        private System.Windows.Forms.Label label_PE_Descripcion;
+        private System.Windows.Forms.Label label_PE_SAsig;
+        private System.Windows.Forms.Label label_PE_TSAsig;
+        private System.Windows.Forms.Label label_PE_Precio;
+        private System.Windows.Forms.Label label_PE_TPrecio;
+        private System.Windows.Forms.PictureBox pictureBox_PE_imagEspec;
+        private System.Windows.Forms.Button button_MC_Nueva;
+        private System.Windows.Forms.Label label_MC_Descripcion;
+        private System.Windows.Forms.TextBox textBox_MC_NomPromo;
+        private System.Windows.Forms.Label label_MC_Nombre;
+        private System.Windows.Forms.CheckBox checkBox_MC_ActPromo;
+        private System.Windows.Forms.Label label_MC_ActPromo;
     }
 }
