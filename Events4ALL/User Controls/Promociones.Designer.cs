@@ -73,6 +73,9 @@
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
+            this.label_MC_CartelPromo = new System.Windows.Forms.Label();
+            this.button_MC_SubirFoto = new System.Windows.Forms.Button();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -81,6 +84,7 @@
             this.groupBox_PE_DatosEspec.SuspendLayout();
             this.tab_Mediante_condiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -114,7 +118,8 @@
             // 
             // pictureBox_PE_imagEspec
             // 
-            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.image_default;
@@ -127,6 +132,8 @@
             // 
             // groupBox_PE_promoGen
             // 
+            this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descParado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descJubilado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descEstudiante);
@@ -146,7 +153,7 @@
             this.checkBox_PE_descParado.Location = new System.Drawing.Point(167, 109);
             this.checkBox_PE_descParado.Name = "checkBox_PE_descParado";
             this.checkBox_PE_descParado.Size = new System.Drawing.Size(65, 17);
-            this.checkBox_PE_descParado.TabIndex = 5;
+            this.checkBox_PE_descParado.TabIndex = 14;
             this.checkBox_PE_descParado.Text = "Parados";
             this.checkBox_PE_descParado.UseVisualStyleBackColor = true;
             // 
@@ -156,7 +163,7 @@
             this.checkBox_PE_descJubilado.Location = new System.Drawing.Point(167, 71);
             this.checkBox_PE_descJubilado.Name = "checkBox_PE_descJubilado";
             this.checkBox_PE_descJubilado.Size = new System.Drawing.Size(70, 17);
-            this.checkBox_PE_descJubilado.TabIndex = 4;
+            this.checkBox_PE_descJubilado.TabIndex = 13;
             this.checkBox_PE_descJubilado.Text = "Jubilados";
             this.checkBox_PE_descJubilado.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +173,7 @@
             this.checkBox_PE_descEstudiante.Location = new System.Drawing.Point(167, 33);
             this.checkBox_PE_descEstudiante.Name = "checkBox_PE_descEstudiante";
             this.checkBox_PE_descEstudiante.Size = new System.Drawing.Size(81, 17);
-            this.checkBox_PE_descEstudiante.TabIndex = 3;
+            this.checkBox_PE_descEstudiante.TabIndex = 12;
             this.checkBox_PE_descEstudiante.Text = "Estudiantes";
             this.checkBox_PE_descEstudiante.UseVisualStyleBackColor = true;
             // 
@@ -176,7 +183,7 @@
             this.checkBox_PE_descCliente.Location = new System.Drawing.Point(27, 109);
             this.checkBox_PE_descCliente.Name = "checkBox_PE_descCliente";
             this.checkBox_PE_descCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkBox_PE_descCliente.TabIndex = 2;
+            this.checkBox_PE_descCliente.TabIndex = 11;
             this.checkBox_PE_descCliente.Text = "Cliente";
             this.checkBox_PE_descCliente.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +193,7 @@
             this.checkBox_PE_mayor65.Location = new System.Drawing.Point(27, 71);
             this.checkBox_PE_mayor65.Name = "checkBox_PE_mayor65";
             this.checkBox_PE_mayor65.Size = new System.Drawing.Size(96, 17);
-            this.checkBox_PE_mayor65.TabIndex = 1;
+            this.checkBox_PE_mayor65.TabIndex = 10;
             this.checkBox_PE_mayor65.Text = "Mayores de 65";
             this.checkBox_PE_mayor65.UseVisualStyleBackColor = true;
             // 
@@ -196,7 +203,7 @@
             this.checkBox_PE_menor25.Location = new System.Drawing.Point(27, 33);
             this.checkBox_PE_menor25.Name = "checkBox_PE_menor25";
             this.checkBox_PE_menor25.Size = new System.Drawing.Size(97, 17);
-            this.checkBox_PE_menor25.TabIndex = 0;
+            this.checkBox_PE_menor25.TabIndex = 9;
             this.checkBox_PE_menor25.Text = "Menores de 25";
             this.checkBox_PE_menor25.UseVisualStyleBackColor = true;
             // 
@@ -221,10 +228,10 @@
             this.radioButton_PE_IVA.AutoSize = true;
             this.radioButton_PE_IVA.Location = new System.Drawing.Point(167, 66);
             this.radioButton_PE_IVA.Name = "radioButton_PE_IVA";
-            this.radioButton_PE_IVA.Size = new System.Drawing.Size(106, 17);
-            this.radioButton_PE_IVA.TabIndex = 7;
+            this.radioButton_PE_IVA.Size = new System.Drawing.Size(108, 17);
+            this.radioButton_PE_IVA.TabIndex = 6;
             this.radioButton_PE_IVA.TabStop = true;
-            this.radioButton_PE_IVA.Text = "Dia sin IVA (18%)";
+            this.radioButton_PE_IVA.Text = "Día sin IVA (18%)";
             this.radioButton_PE_IVA.UseVisualStyleBackColor = true;
             // 
             // radioButton_PE_otroDesc
@@ -233,7 +240,7 @@
             this.radioButton_PE_otroDesc.Location = new System.Drawing.Point(167, 97);
             this.radioButton_PE_otroDesc.Name = "radioButton_PE_otroDesc";
             this.radioButton_PE_otroDesc.Size = new System.Drawing.Size(48, 17);
-            this.radioButton_PE_otroDesc.TabIndex = 6;
+            this.radioButton_PE_otroDesc.TabIndex = 7;
             this.radioButton_PE_otroDesc.TabStop = true;
             this.radioButton_PE_otroDesc.Text = "Otro:";
             this.radioButton_PE_otroDesc.UseVisualStyleBackColor = true;
@@ -243,7 +250,7 @@
             this.textBox_PE_TOtroDesc.Location = new System.Drawing.Point(218, 97);
             this.textBox_PE_TOtroDesc.Name = "textBox_PE_TOtroDesc";
             this.textBox_PE_TOtroDesc.Size = new System.Drawing.Size(57, 20);
-            this.textBox_PE_TOtroDesc.TabIndex = 5;
+            this.textBox_PE_TOtroDesc.TabIndex = 8;
             // 
             // radioButton_PE_50
             // 
@@ -251,7 +258,7 @@
             this.radioButton_PE_50.Location = new System.Drawing.Point(167, 36);
             this.radioButton_PE_50.Name = "radioButton_PE_50";
             this.radioButton_PE_50.Size = new System.Drawing.Size(45, 17);
-            this.radioButton_PE_50.TabIndex = 3;
+            this.radioButton_PE_50.TabIndex = 5;
             this.radioButton_PE_50.TabStop = true;
             this.radioButton_PE_50.Text = "50%";
             this.radioButton_PE_50.UseVisualStyleBackColor = true;
@@ -262,7 +269,7 @@
             this.radioButton_PE_10.Location = new System.Drawing.Point(27, 66);
             this.radioButton_PE_10.Name = "radioButton_PE_10";
             this.radioButton_PE_10.Size = new System.Drawing.Size(45, 17);
-            this.radioButton_PE_10.TabIndex = 2;
+            this.radioButton_PE_10.TabIndex = 3;
             this.radioButton_PE_10.TabStop = true;
             this.radioButton_PE_10.Text = "10%";
             this.radioButton_PE_10.UseVisualStyleBackColor = true;
@@ -273,7 +280,7 @@
             this.radioButton_PE_20.Location = new System.Drawing.Point(27, 98);
             this.radioButton_PE_20.Name = "radioButton_PE_20";
             this.radioButton_PE_20.Size = new System.Drawing.Size(45, 17);
-            this.radioButton_PE_20.TabIndex = 1;
+            this.radioButton_PE_20.TabIndex = 4;
             this.radioButton_PE_20.TabStop = true;
             this.radioButton_PE_20.Text = "25%";
             this.radioButton_PE_20.UseVisualStyleBackColor = true;
@@ -284,7 +291,7 @@
             this.radioButton_PE_5.Location = new System.Drawing.Point(27, 36);
             this.radioButton_PE_5.Name = "radioButton_PE_5";
             this.radioButton_PE_5.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_PE_5.TabIndex = 0;
+            this.radioButton_PE_5.TabIndex = 2;
             this.radioButton_PE_5.TabStop = true;
             this.radioButton_PE_5.Text = "5%";
             this.radioButton_PE_5.UseVisualStyleBackColor = true;
@@ -424,7 +431,7 @@
             this.label_PE_Espectaculo.Name = "label_PE_Espectaculo";
             this.label_PE_Espectaculo.Size = new System.Drawing.Size(81, 13);
             this.label_PE_Espectaculo.TabIndex = 4;
-            this.label_PE_Espectaculo.Text = "Espectaculo:";
+            this.label_PE_Espectaculo.Text = "Espectáculo:";
             this.label_PE_Espectaculo.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox_PE_espectaculo
@@ -433,11 +440,14 @@
             this.comboBox_PE_espectaculo.Location = new System.Drawing.Point(93, 12);
             this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
             this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(251, 21);
-            this.comboBox_PE_espectaculo.TabIndex = 3;
-            this.comboBox_PE_espectaculo.Text = "Seleccionar espectaculo ...";
+            this.comboBox_PE_espectaculo.TabIndex = 1;
+            this.comboBox_PE_espectaculo.Text = "Seleccionar espectáculo ...";
             // 
             // tab_Mediante_condiciones
             // 
+            this.tab_Mediante_condiciones.Controls.Add(this.button_MC_SubirFoto);
+            this.tab_Mediante_condiciones.Controls.Add(this.label_MC_CartelPromo);
+            this.tab_Mediante_condiciones.Controls.Add(this.pictureBox_MC_CartelPromo);
             this.tab_Mediante_condiciones.Controls.Add(this.checkBox_MC_ActPromo);
             this.tab_Mediante_condiciones.Controls.Add(this.label_MC_ActPromo);
             this.tab_Mediante_condiciones.Controls.Add(this.button_MC_Nueva);
@@ -462,7 +472,7 @@
             this.checkBox_MC_ActPromo.Location = new System.Drawing.Point(608, 250);
             this.checkBox_MC_ActPromo.Name = "checkBox_MC_ActPromo";
             this.checkBox_MC_ActPromo.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_MC_ActPromo.TabIndex = 18;
+            this.checkBox_MC_ActPromo.TabIndex = 4;
             this.checkBox_MC_ActPromo.UseVisualStyleBackColor = true;
             // 
             // label_MC_ActPromo
@@ -477,10 +487,11 @@
             // 
             // button_MC_Nueva
             // 
-            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 313);
+            this.button_MC_Nueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 580);
             this.button_MC_Nueva.Name = "button_MC_Nueva";
             this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Nueva.TabIndex = 16;
+            this.button_MC_Nueva.TabIndex = 6;
             this.button_MC_Nueva.Text = "Nueva";
             this.button_MC_Nueva.UseVisualStyleBackColor = true;
             // 
@@ -496,10 +507,12 @@
             // 
             // textBox_MC_NomPromo
             // 
+            this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
             this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
             this.textBox_MC_NomPromo.Size = new System.Drawing.Size(442, 20);
-            this.textBox_MC_NomPromo.TabIndex = 14;
+            this.textBox_MC_NomPromo.TabIndex = 2;
             // 
             // label_MC_Nombre
             // 
@@ -513,28 +526,32 @@
             // 
             // textBox_MC_Descripcion
             // 
+            this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 139);
             this.textBox_MC_Descripcion.Multiline = true;
             this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
             this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 108);
-            this.textBox_MC_Descripcion.TabIndex = 12;
+            this.textBox_MC_Descripcion.TabIndex = 3;
             // 
             // button_MC_Eliminar
             // 
-            this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 313);
+            this.button_MC_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 580);
             this.button_MC_Eliminar.Name = "button_MC_Eliminar";
             this.button_MC_Eliminar.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Eliminar.TabIndex = 11;
+            this.button_MC_Eliminar.TabIndex = 8;
             this.button_MC_Eliminar.Text = "Eliminar";
             this.button_MC_Eliminar.UseVisualStyleBackColor = true;
             // 
             // button_MC_Guardar
             // 
-            this.button_MC_Guardar.Location = new System.Drawing.Point(608, 313);
+            this.button_MC_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Guardar.Location = new System.Drawing.Point(608, 580);
             this.button_MC_Guardar.Name = "button_MC_Guardar";
             this.button_MC_Guardar.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Guardar.TabIndex = 9;
-            this.button_MC_Guardar.Text = "Guardar";
+            this.button_MC_Guardar.TabIndex = 7;
+            this.button_MC_Guardar.Text = "Guardar cambios";
             this.button_MC_Guardar.UseVisualStyleBackColor = true;
             // 
             // label_MC_ClientesAfectados
@@ -549,6 +566,8 @@
             // 
             // dataGridView_MC_ListaPromosCond
             // 
+            this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MC_NOMBRE,
@@ -568,6 +587,39 @@
             // 
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
+            // 
+            // pictureBox_MC_CartelPromo
+            // 
+            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 303);
+            this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
+            this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 272);
+            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_MC_CartelPromo.TabIndex = 18;
+            this.pictureBox_MC_CartelPromo.TabStop = false;
+            // 
+            // label_MC_CartelPromo
+            // 
+            this.label_MC_CartelPromo.AutoSize = true;
+            this.label_MC_CartelPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MC_CartelPromo.Location = new System.Drawing.Point(448, 278);
+            this.label_MC_CartelPromo.Name = "label_MC_CartelPromo";
+            this.label_MC_CartelPromo.Size = new System.Drawing.Size(138, 13);
+            this.label_MC_CartelPromo.TabIndex = 19;
+            this.label_MC_CartelPromo.Text = "Cartel de la promoción:";
+            // 
+            // button_MC_SubirFoto
+            // 
+            this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 273);
+            this.button_MC_SubirFoto.Name = "button_MC_SubirFoto";
+            this.button_MC_SubirFoto.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_SubirFoto.TabIndex = 5;
+            this.button_MC_SubirFoto.Text = "Seleccionar imágen";
+            this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
             // 
             // Promociones
             // 
@@ -589,6 +641,7 @@
             this.tab_Mediante_condiciones.ResumeLayout(false);
             this.tab_Mediante_condiciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -640,5 +693,8 @@
         private System.Windows.Forms.Label label_MC_Nombre;
         private System.Windows.Forms.CheckBox checkBox_MC_ActPromo;
         private System.Windows.Forms.Label label_MC_ActPromo;
+        private System.Windows.Forms.Button button_MC_SubirFoto;
+        private System.Windows.Forms.Label label_MC_CartelPromo;
+        private System.Windows.Forms.PictureBox pictureBox_MC_CartelPromo;
     }
 }
