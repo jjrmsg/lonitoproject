@@ -41,11 +41,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.clockLabel = new System.Windows.Forms.Label();
+            this.messagePicture = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
             this.ventas1 = new Events4ALL.Ventas();
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
@@ -61,7 +65,7 @@
             this.logoutButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -154,18 +158,34 @@
             // 
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.clockLabel);
+            this.panel2.Controls.Add(this.messagePicture);
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Name = "panel2";
             // 
-            // pictureBox2
+            // clockLabel
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.tools;
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            resources.ApplyResources(this.clockLabel, "clockLabel");
+            this.clockLabel.ForeColor = System.Drawing.Color.OliveDrab;
+            this.clockLabel.Name = "clockLabel";
+            // 
+            // messagePicture
+            // 
+            resources.ApplyResources(this.messagePicture, "messagePicture");
+            this.messagePicture.Image = global::Events4ALL.Properties.Resources.carta;
+            this.messagePicture.Name = "messagePicture";
+            this.messagePicture.TabStop = false;
+            this.messagePicture.Click += new System.EventHandler(this.messagePicture_Click);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label7.Name = "label7";
             // 
             // label5
             // 
@@ -195,6 +215,15 @@
             this.panel3.Controls.Add(this.logoutButton);
             this.panel3.Controls.Add(this.exitButton);
             this.panel3.Name = "panel3";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // mensajes1
+            // 
+            resources.ApplyResources(this.mensajes1, "mensajes1");
+            this.mensajes1.Name = "mensajes1";
             // 
             // ventas1
             // 
@@ -246,6 +275,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.mensajes1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ventas1);
             this.Controls.Add(this.salas1);
@@ -260,6 +290,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "FormBase";
+            this.Load += new System.EventHandler(this.FormBase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.exitButton.ResumeLayout(false);
@@ -270,7 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -300,10 +331,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox messagePicture;
+        private System.Windows.Forms.Label clockLabel;
+        private System.Windows.Forms.Timer timer1;
+        private User_Controls.Mensajes mensajes1;
     }
 }
 

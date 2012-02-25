@@ -39,7 +39,8 @@ namespace Events4ALL
                 listBox1.Items.Add(new listItem("Promociones", 5));
                 listBox1.Items.Add(new listItem("Estadísticas", 6));
                 listBox1.Items.Add(new listItem("Ventas y reservas", 7));
-                listBox1.Items.Add(new listItem("Logs", 8));
+                listBox1.Items.Add(new listItem("Mensajes", 8));
+                //listBox1.Items.Add(new listItem("Logs", 8));
                 listBox1.SetSelected(0, true);
             }
             else if (lang == "en")
@@ -52,7 +53,7 @@ namespace Events4ALL
                 listBox1.Items.Add(new listItem("Promotions", 5));
                 listBox1.Items.Add(new listItem("Statistics", 6));
                 listBox1.Items.Add(new listItem("Sales and reservations", 7));
-                listBox1.Items.Add(new listItem("Logs", 8));
+                listBox1.Items.Add(new listItem("Messages", 8));
                 listBox1.SetSelected(0, true);
             }
 
@@ -112,6 +113,7 @@ namespace Events4ALL
             promociones1.Visible = false;
             salas1.Visible = false;
             ventas1.Visible = false;
+            mensajes1.Visible = false;
         }
 
         private void listBox1_Click(object sender, EventArgs e)
@@ -145,7 +147,7 @@ namespace Events4ALL
                     ventas1.Visible = true;
                     break;
                 case 8:
-                    logs1.Visible = true;
+                    mensajes1.Visible = true;
                     break;
                 default:
                     inicio1.Visible = true;
@@ -166,6 +168,20 @@ namespace Events4ALL
             this.Close();
         }
 
+        private void messagePicture_Click(object sender, EventArgs e)
+        {
+            DesactivarMenus();
+            mensajes1.Visible = true;
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            clockLabel.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void FormBase_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }

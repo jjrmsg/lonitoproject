@@ -99,6 +99,12 @@
       <DependentUpon>Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="User Controls\Mensajes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\Mensajes.Designer.cs">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\Promociones.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <EmbeddedResource Include="User Controls\Logs.resx">
       <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Mensajes.resx">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Promociones.resx">
       <DependentUpon>Promociones.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,8 +191,10 @@
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
     <Content Include="imgs\baron.jpg" />
+    <Content Include="imgs\carta.png" />
     <Content Include="imgs\copy.png" />
     <Content Include="imgs\credit_card.png" />
+    <Content Include="imgs\delete.png" />
     <Content Include="imgs\Events4All.gif" />
     <Content Include="imgs\Events4All.png" />
     <Content Include="imgs\foto_usuario_defectojpg.jpg" />
