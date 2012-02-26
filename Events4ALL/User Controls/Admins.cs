@@ -137,5 +137,20 @@ namespace Events4ALL
         {
 
         }
+
+        private void textBox_Nombre_Busqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
