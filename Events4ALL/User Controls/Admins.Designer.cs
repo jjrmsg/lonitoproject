@@ -794,6 +794,7 @@
             // Admin_Perfil_boton_Foto
             // 
             this.Admin_Perfil_boton_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Admin_Perfil_boton_Foto.Image = global::Events4ALL.Properties.Resources.photo;
             this.Admin_Perfil_boton_Foto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(676, 292);
             this.Admin_Perfil_boton_Foto.Name = "Admin_Perfil_boton_Foto";
@@ -808,6 +809,7 @@
             // 
             this.Admin_Perfil_boton_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Admin_Perfil_boton_Guardar.Enabled = false;
+            this.Admin_Perfil_boton_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.Admin_Perfil_boton_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(706, 458);
             this.Admin_Perfil_boton_Guardar.Name = "Admin_Perfil_boton_Guardar";
@@ -820,6 +822,7 @@
             // Admin_Perfil_boton_Anadir
             // 
             this.Admin_Perfil_boton_Anadir.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Admin_Perfil_boton_Anadir.Image = global::Events4ALL.Properties.Resources.clear_2;
             this.Admin_Perfil_boton_Anadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(706, 489);
             this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
