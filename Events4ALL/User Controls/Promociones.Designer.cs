@@ -60,6 +60,9 @@
             this.label_PE_Espectaculo = new System.Windows.Forms.Label();
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
+            this.button_MC_SubirFoto = new System.Windows.Forms.Button();
+            this.label_MC_CartelPromo = new System.Windows.Forms.Label();
+            this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
             this.checkBox_MC_ActPromo = new System.Windows.Forms.CheckBox();
             this.label_MC_ActPromo = new System.Windows.Forms.Label();
             this.button_MC_Nueva = new System.Windows.Forms.Button();
@@ -73,9 +76,6 @@
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
-            this.label_MC_CartelPromo = new System.Windows.Forms.Label();
-            this.button_MC_SubirFoto = new System.Windows.Forms.Button();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -83,8 +83,8 @@
             this.groupBox_PE_promoEvent.SuspendLayout();
             this.groupBox_PE_DatosEspec.SuspendLayout();
             this.tab_Mediante_condiciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -466,6 +466,39 @@
             this.tab_Mediante_condiciones.Text = "Condiciones especiales";
             this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
             // 
+            // button_MC_SubirFoto
+            // 
+            this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 273);
+            this.button_MC_SubirFoto.Name = "button_MC_SubirFoto";
+            this.button_MC_SubirFoto.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_SubirFoto.TabIndex = 5;
+            this.button_MC_SubirFoto.Text = "Seleccionar imágen";
+            this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
+            // 
+            // label_MC_CartelPromo
+            // 
+            this.label_MC_CartelPromo.AutoSize = true;
+            this.label_MC_CartelPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MC_CartelPromo.Location = new System.Drawing.Point(448, 278);
+            this.label_MC_CartelPromo.Name = "label_MC_CartelPromo";
+            this.label_MC_CartelPromo.Size = new System.Drawing.Size(138, 13);
+            this.label_MC_CartelPromo.TabIndex = 19;
+            this.label_MC_CartelPromo.Text = "Cartel de la promoción:";
+            // 
+            // pictureBox_MC_CartelPromo
+            // 
+            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 303);
+            this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
+            this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 272);
+            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_MC_CartelPromo.TabIndex = 18;
+            this.pictureBox_MC_CartelPromo.TabStop = false;
+            // 
             // checkBox_MC_ActPromo
             // 
             this.checkBox_MC_ActPromo.AutoSize = true;
@@ -568,6 +601,7 @@
             // 
             this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_MC_ListaPromosCond.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MC_NOMBRE,
@@ -588,39 +622,6 @@
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
             // 
-            // pictureBox_MC_CartelPromo
-            // 
-            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
-            this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 303);
-            this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
-            this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 272);
-            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox_MC_CartelPromo.TabIndex = 18;
-            this.pictureBox_MC_CartelPromo.TabStop = false;
-            // 
-            // label_MC_CartelPromo
-            // 
-            this.label_MC_CartelPromo.AutoSize = true;
-            this.label_MC_CartelPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MC_CartelPromo.Location = new System.Drawing.Point(448, 278);
-            this.label_MC_CartelPromo.Name = "label_MC_CartelPromo";
-            this.label_MC_CartelPromo.Size = new System.Drawing.Size(138, 13);
-            this.label_MC_CartelPromo.TabIndex = 19;
-            this.label_MC_CartelPromo.Text = "Cartel de la promoción:";
-            // 
-            // button_MC_SubirFoto
-            // 
-            this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 273);
-            this.button_MC_SubirFoto.Name = "button_MC_SubirFoto";
-            this.button_MC_SubirFoto.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_SubirFoto.TabIndex = 5;
-            this.button_MC_SubirFoto.Text = "Seleccionar imágen";
-            this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
-            // 
             // Promociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,8 +641,8 @@
             this.groupBox_PE_DatosEspec.PerformLayout();
             this.tab_Mediante_condiciones.ResumeLayout(false);
             this.tab_Mediante_condiciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             this.ResumeLayout(false);
 
         }
