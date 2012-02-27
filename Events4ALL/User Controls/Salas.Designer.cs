@@ -98,6 +98,8 @@
             this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBuscarSala = new System.Windows.Forms.GroupBox();
+            this.checkLibre = new System.Windows.Forms.CheckBox();
+            this.labelSalasLibres = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textAforoBusquedaMax = new System.Windows.Forms.TextBox();
             this.labelAforo2 = new System.Windows.Forms.Label();
@@ -107,8 +109,6 @@
             this.labelBuscarTipoSala = new System.Windows.Forms.Label();
             this.labelBuscarIdSala = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelSalasLibres = new System.Windows.Forms.Label();
-            this.checkLibre = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             this.groupBoxSecciones.SuspendLayout();
@@ -804,6 +804,24 @@
             this.groupBuscarSala.TabStop = false;
             this.groupBuscarSala.Text = "Busqueda de Sala";
             // 
+            // checkLibre
+            // 
+            this.checkLibre.AutoSize = true;
+            this.checkLibre.Location = new System.Drawing.Point(84, 119);
+            this.checkLibre.Name = "checkLibre";
+            this.checkLibre.Size = new System.Drawing.Size(15, 14);
+            this.checkLibre.TabIndex = 18;
+            this.checkLibre.UseVisualStyleBackColor = true;
+            // 
+            // labelSalasLibres
+            // 
+            this.labelSalasLibres.AutoSize = true;
+            this.labelSalasLibres.Location = new System.Drawing.Point(6, 119);
+            this.labelSalasLibres.Name = "labelSalasLibres";
+            this.labelSalasLibres.Size = new System.Drawing.Size(71, 13);
+            this.labelSalasLibres.TabIndex = 17;
+            this.labelSalasLibres.Text = "Buscar Libres";
+            // 
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -816,7 +834,7 @@
             // 
             // textAforoBusquedaMax
             // 
-            this.textAforoBusquedaMax.Location = new System.Drawing.Point(153, 86);
+            this.textAforoBusquedaMax.Location = new System.Drawing.Point(133, 86);
             this.textAforoBusquedaMax.Name = "textAforoBusquedaMax";
             this.textAforoBusquedaMax.Size = new System.Drawing.Size(25, 20);
             this.textAforoBusquedaMax.TabIndex = 16;
@@ -824,7 +842,7 @@
             // labelAforo2
             // 
             this.labelAforo2.AutoSize = true;
-            this.labelAforo2.Location = new System.Drawing.Point(135, 89);
+            this.labelAforo2.Location = new System.Drawing.Point(115, 89);
             this.labelAforo2.Name = "labelAforo2";
             this.labelAforo2.Size = new System.Drawing.Size(12, 13);
             this.labelAforo2.TabIndex = 15;
@@ -832,7 +850,7 @@
             // 
             // textAforoBusquedaMin
             // 
-            this.textAforoBusquedaMin.Location = new System.Drawing.Point(104, 86);
+            this.textAforoBusquedaMin.Location = new System.Drawing.Point(84, 86);
             this.textAforoBusquedaMin.Name = "textAforoBusquedaMin";
             this.textAforoBusquedaMin.Size = new System.Drawing.Size(25, 20);
             this.textAforoBusquedaMin.TabIndex = 14;
@@ -840,7 +858,7 @@
             // labelAforo
             // 
             this.labelAforo.AutoSize = true;
-            this.labelAforo.Location = new System.Drawing.Point(39, 89);
+            this.labelAforo.Location = new System.Drawing.Point(6, 89);
             this.labelAforo.Name = "labelAforo";
             this.labelAforo.Size = new System.Drawing.Size(59, 13);
             this.labelAforo.TabIndex = 13;
@@ -855,7 +873,7 @@
             "Cine",
             "Teatro",
             "Concierto"});
-            this.comboBuscarTipoSala.Location = new System.Drawing.Point(104, 58);
+            this.comboBuscarTipoSala.Location = new System.Drawing.Point(84, 58);
             this.comboBuscarTipoSala.Name = "comboBuscarTipoSala";
             this.comboBuscarTipoSala.Size = new System.Drawing.Size(74, 21);
             this.comboBuscarTipoSala.TabIndex = 12;
@@ -863,7 +881,7 @@
             // labelBuscarTipoSala
             // 
             this.labelBuscarTipoSala.AutoSize = true;
-            this.labelBuscarTipoSala.Location = new System.Drawing.Point(70, 61);
+            this.labelBuscarTipoSala.Location = new System.Drawing.Point(6, 61);
             this.labelBuscarTipoSala.Name = "labelBuscarTipoSala";
             this.labelBuscarTipoSala.Size = new System.Drawing.Size(28, 13);
             this.labelBuscarTipoSala.TabIndex = 11;
@@ -872,7 +890,7 @@
             // labelBuscarIdSala
             // 
             this.labelBuscarIdSala.AutoSize = true;
-            this.labelBuscarIdSala.Location = new System.Drawing.Point(55, 35);
+            this.labelBuscarIdSala.Location = new System.Drawing.Point(6, 35);
             this.labelBuscarIdSala.Name = "labelBuscarIdSala";
             this.labelBuscarIdSala.Size = new System.Drawing.Size(43, 13);
             this.labelBuscarIdSala.TabIndex = 0;
@@ -880,28 +898,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 32);
+            this.textBox1.Location = new System.Drawing.Point(84, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 1;
-            // 
-            // labelSalasLibres
-            // 
-            this.labelSalasLibres.AutoSize = true;
-            this.labelSalasLibres.Location = new System.Drawing.Point(27, 119);
-            this.labelSalasLibres.Name = "labelSalasLibres";
-            this.labelSalasLibres.Size = new System.Drawing.Size(71, 13);
-            this.labelSalasLibres.TabIndex = 17;
-            this.labelSalasLibres.Text = "Buscar Libres";
-            // 
-            // checkLibre
-            // 
-            this.checkLibre.AutoSize = true;
-            this.checkLibre.Location = new System.Drawing.Point(104, 119);
-            this.checkLibre.Name = "checkLibre";
-            this.checkLibre.Size = new System.Drawing.Size(15, 14);
-            this.checkLibre.TabIndex = 18;
-            this.checkLibre.UseVisualStyleBackColor = true;
             // 
             // Salas
             // 
