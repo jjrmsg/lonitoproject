@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.Buscar = new System.Windows.Forms.TabPage();
-            this.textBox_Loc1_BA = new System.Windows.Forms.TextBox();
-            this.comboBox_Pais_BA = new System.Windows.Forms.ComboBox();
-            this.label_CP_Busqueda = new System.Windows.Forms.Label();
-            this.label_Edad_Ba = new System.Windows.Forms.Label();
-            this.textBox_CP_Busqueda = new System.Windows.Forms.TextBox();
-            this.numericUpDown_Fec1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_Fec2 = new System.Windows.Forms.NumericUpDown();
-            this.label_CP_BA = new System.Windows.Forms.Label();
-            this.label_Y = new System.Windows.Forms.Label();
             this.groupBox_Busqueda = new System.Windows.Forms.GroupBox();
-            this.buttom_Buscar = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label_Edad_Ba = new System.Windows.Forms.Label();
+            this.comboBox_Pais_BA = new System.Windows.Forms.ComboBox();
+            this.numericUpDown_Fec1 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown_Fec2 = new System.Windows.Forms.NumericUpDown();
+            this.label_Y = new System.Windows.Forms.Label();
+            this.label_CP_Busqueda = new System.Windows.Forms.Label();
+            this.textBox_Loc1_BA = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_CP_Busqueda = new System.Windows.Forms.TextBox();
+            this.label_CP_BA = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_Sol_EC = new System.Windows.Forms.RadioButton();
             this.radioButton_Divo_EC = new System.Windows.Forms.RadioButton();
@@ -53,7 +55,24 @@
             this.textBox_Nombre_Busqueda = new System.Windows.Forms.TextBox();
             this.label_Nombre_Busqueda = new System.Windows.Forms.Label();
             this.Resultados_Busqueda = new System.Windows.Forms.DataGridView();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttom_Buscar = new System.Windows.Forms.Button();
             this.Admin_Foto_Perfil = new System.Windows.Forms.TabPage();
+            this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
+            this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
+            this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
+            this.Admin_Perfil_Foto = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Admin_Perfil_Label_Tel1 = new System.Windows.Forms.Label();
             this.Admin_Perfil_Label_Tel2 = new System.Windows.Forms.Label();
@@ -61,7 +80,6 @@
             this.Admin_Perfil_txtBox_Tel1 = new System.Windows.Forms.TextBox();
             this.Admin_Perfil_txtBox_Tel2 = new System.Windows.Forms.TextBox();
             this.Admin_Perfil_txtBox_Mail = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_CP_Perfil = new System.Windows.Forms.TextBox();
             this.label_CP_Perfil = new System.Windows.Forms.Label();
@@ -90,40 +108,22 @@
             this.Admin_Perfil_Label_EstCivil = new System.Windows.Forms.Label();
             this.Admin_Perfil_txtBox_NIF = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
-            this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
-            this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
-            this.Admin_Perfil_Foto = new System.Windows.Forms.PictureBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Buscar.SuspendLayout();
+            this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec2)).BeginInit();
-            this.groupBox_Busqueda.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox_Sexo_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resultados_Busqueda)).BeginInit();
             this.Admin_Foto_Perfil.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBoxSexo.SuspendLayout();
             this.grupEstadoCivil.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -140,12 +140,103 @@
             this.Buscar.UseVisualStyleBackColor = true;
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
-            // textBox_Loc1_BA
+            // groupBox_Busqueda
             // 
-            this.textBox_Loc1_BA.Location = new System.Drawing.Point(198, 90);
-            this.textBox_Loc1_BA.Name = "textBox_Loc1_BA";
-            this.textBox_Loc1_BA.Size = new System.Drawing.Size(106, 20);
-            this.textBox_Loc1_BA.TabIndex = 13;
+            this.groupBox_Busqueda.Controls.Add(this.comboBox2);
+            this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
+            this.groupBox_Busqueda.Controls.Add(this.comboBox_Pais_BA);
+            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec1);
+            this.groupBox_Busqueda.Controls.Add(this.label3);
+            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec2);
+            this.groupBox_Busqueda.Controls.Add(this.label_Y);
+            this.groupBox_Busqueda.Controls.Add(this.label_CP_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_Loc1_BA);
+            this.groupBox_Busqueda.Controls.Add(this.label1);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_CP_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_CP_BA);
+            this.groupBox_Busqueda.Controls.Add(this.groupBox4);
+            this.groupBox_Busqueda.Controls.Add(this.groupBox_Sexo_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_Apellidos_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_Apellidos_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_Nombre_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_Nombre_Busqueda);
+            this.groupBox_Busqueda.Location = new System.Drawing.Point(20, 19);
+            this.groupBox_Busqueda.Name = "groupBox_Busqueda";
+            this.groupBox_Busqueda.Size = new System.Drawing.Size(637, 183);
+            this.groupBox_Busqueda.TabIndex = 1;
+            this.groupBox_Busqueda.TabStop = false;
+            this.groupBox_Busqueda.Text = "Búsqueda";
+            this.groupBox_Busqueda.Enter += new System.EventHandler(this.groupBox_Busqueda_Enter);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "",
+            "Álava",
+            "Albacete",
+            "Alicante",
+            "Almería",
+            "Asturias",
+            "Avila",
+            "Badajoz",
+            "Barcelona",
+            "Burgos",
+            "Cáceres",
+            "Cádiz",
+            "Cantabria",
+            "Castellón",
+            "Ceuta",
+            "Ciudad Real",
+            "Córdoba",
+            "Cuenca",
+            "Gerona",
+            "Granada",
+            "Guadalajara",
+            "Huelva",
+            "Huesca",
+            "Islas Baleares",
+            "Jaén ",
+            "La Coruña",
+            "La Rioja",
+            "Las Palmas",
+            "León",
+            "Lérida",
+            "Lugo",
+            "Madrid",
+            "Málaga",
+            "Melilla",
+            "Murcia",
+            "Navarra",
+            "Orense",
+            "Palencia",
+            "Pontevedra",
+            "S.C. De Tenerife",
+            "Salamanca",
+            "Segovia",
+            "Sevilla",
+            "Soria",
+            "Tarragona",
+            "Teruel",
+            "Toledo",
+            "Valencia",
+            "Valladolid",
+            "Vizcaya",
+            "Zamora",
+            "Zaragoza"});
+            this.comboBox2.Location = new System.Drawing.Point(198, 40);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(106, 21);
+            this.comboBox2.TabIndex = 63;
+            // 
+            // label_Edad_Ba
+            // 
+            this.label_Edad_Ba.AutoSize = true;
+            this.label_Edad_Ba.Location = new System.Drawing.Point(319, 113);
+            this.label_Edad_Ba.Name = "label_Edad_Ba";
+            this.label_Edad_Ba.Size = new System.Drawing.Size(68, 13);
+            this.label_Edad_Ba.TabIndex = 0;
+            this.label_Edad_Ba.Text = "Edad :  entre";
             // 
             // comboBox_Pais_BA
             // 
@@ -372,31 +463,6 @@
             this.comboBox_Pais_BA.Size = new System.Drawing.Size(106, 21);
             this.comboBox_Pais_BA.TabIndex = 12;
             // 
-            // label_CP_Busqueda
-            // 
-            this.label_CP_Busqueda.AutoSize = true;
-            this.label_CP_Busqueda.Location = new System.Drawing.Point(195, 118);
-            this.label_CP_Busqueda.Name = "label_CP_Busqueda";
-            this.label_CP_Busqueda.Size = new System.Drawing.Size(21, 13);
-            this.label_CP_Busqueda.TabIndex = 2;
-            this.label_CP_Busqueda.Text = "CP";
-            // 
-            // label_Edad_Ba
-            // 
-            this.label_Edad_Ba.AutoSize = true;
-            this.label_Edad_Ba.Location = new System.Drawing.Point(319, 113);
-            this.label_Edad_Ba.Name = "label_Edad_Ba";
-            this.label_Edad_Ba.Size = new System.Drawing.Size(68, 13);
-            this.label_Edad_Ba.TabIndex = 0;
-            this.label_Edad_Ba.Text = "Edad :  entre";
-            // 
-            // textBox_CP_Busqueda
-            // 
-            this.textBox_CP_Busqueda.Location = new System.Drawing.Point(198, 134);
-            this.textBox_CP_Busqueda.Name = "textBox_CP_Busqueda";
-            this.textBox_CP_Busqueda.Size = new System.Drawing.Size(106, 20);
-            this.textBox_CP_Busqueda.TabIndex = 3;
-            // 
             // numericUpDown_Fec1
             // 
             this.numericUpDown_Fec1.Location = new System.Drawing.Point(390, 111);
@@ -418,6 +484,15 @@
             0,
             0,
             0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(195, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Localidad";
             // 
             // numericUpDown_Fec2
             // 
@@ -441,15 +516,6 @@
             0,
             0});
             // 
-            // label_CP_BA
-            // 
-            this.label_CP_BA.AutoSize = true;
-            this.label_CP_BA.Location = new System.Drawing.Point(325, 25);
-            this.label_CP_BA.Name = "label_CP_BA";
-            this.label_CP_BA.Size = new System.Drawing.Size(29, 13);
-            this.label_CP_BA.TabIndex = 11;
-            this.label_CP_BA.Text = "País";
-            // 
             // label_Y
             // 
             this.label_Y.AutoSize = true;
@@ -459,42 +525,46 @@
             this.label_Y.TabIndex = 4;
             this.label_Y.Text = "y";
             // 
-            // groupBox_Busqueda
+            // label_CP_Busqueda
             // 
-            this.groupBox_Busqueda.Controls.Add(this.comboBox2);
-            this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
-            this.groupBox_Busqueda.Controls.Add(this.comboBox_Pais_BA);
-            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec1);
-            this.groupBox_Busqueda.Controls.Add(this.label3);
-            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec2);
-            this.groupBox_Busqueda.Controls.Add(this.label_Y);
-            this.groupBox_Busqueda.Controls.Add(this.label_CP_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.textBox_Loc1_BA);
-            this.groupBox_Busqueda.Controls.Add(this.label1);
-            this.groupBox_Busqueda.Controls.Add(this.textBox_CP_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.label_CP_BA);
-            this.groupBox_Busqueda.Controls.Add(this.groupBox4);
-            this.groupBox_Busqueda.Controls.Add(this.groupBox_Sexo_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.textBox_Apellidos_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.label_Apellidos_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.textBox_Nombre_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.label_Nombre_Busqueda);
-            this.groupBox_Busqueda.Location = new System.Drawing.Point(20, 19);
-            this.groupBox_Busqueda.Name = "groupBox_Busqueda";
-            this.groupBox_Busqueda.Size = new System.Drawing.Size(637, 183);
-            this.groupBox_Busqueda.TabIndex = 1;
-            this.groupBox_Busqueda.TabStop = false;
-            this.groupBox_Busqueda.Text = "Búsqueda";
-            this.groupBox_Busqueda.Enter += new System.EventHandler(this.groupBox_Busqueda_Enter);
+            this.label_CP_Busqueda.AutoSize = true;
+            this.label_CP_Busqueda.Location = new System.Drawing.Point(195, 118);
+            this.label_CP_Busqueda.Name = "label_CP_Busqueda";
+            this.label_CP_Busqueda.Size = new System.Drawing.Size(21, 13);
+            this.label_CP_Busqueda.TabIndex = 2;
+            this.label_CP_Busqueda.Text = "CP";
             // 
-            // buttom_Buscar
+            // textBox_Loc1_BA
             // 
-            this.buttom_Buscar.Location = new System.Drawing.Point(684, 19);
-            this.buttom_Buscar.Name = "buttom_Buscar";
-            this.buttom_Buscar.Size = new System.Drawing.Size(190, 183);
-            this.buttom_Buscar.TabIndex = 8;
-            this.buttom_Buscar.Text = "Buscar";
-            this.buttom_Buscar.UseVisualStyleBackColor = true;
+            this.textBox_Loc1_BA.Location = new System.Drawing.Point(198, 90);
+            this.textBox_Loc1_BA.Name = "textBox_Loc1_BA";
+            this.textBox_Loc1_BA.Size = new System.Drawing.Size(106, 20);
+            this.textBox_Loc1_BA.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(195, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Provincia";
+            // 
+            // textBox_CP_Busqueda
+            // 
+            this.textBox_CP_Busqueda.Location = new System.Drawing.Point(198, 134);
+            this.textBox_CP_Busqueda.Name = "textBox_CP_Busqueda";
+            this.textBox_CP_Busqueda.Size = new System.Drawing.Size(106, 20);
+            this.textBox_CP_Busqueda.TabIndex = 3;
+            // 
+            // label_CP_BA
+            // 
+            this.label_CP_BA.AutoSize = true;
+            this.label_CP_BA.Location = new System.Drawing.Point(325, 25);
+            this.label_CP_BA.Name = "label_CP_BA";
+            this.label_CP_BA.Size = new System.Drawing.Size(29, 13);
+            this.label_CP_BA.TabIndex = 11;
+            this.label_CP_BA.Text = "País";
             // 
             // groupBox4
             // 
@@ -640,6 +710,71 @@
             this.Resultados_Busqueda.TabIndex = 0;
             this.Resultados_Busqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // NIF
+            // 
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.Width = 70;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 120;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.Width = 170;
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.Width = 80;
+            // 
+            // Localidad
+            // 
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.Width = 80;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Width = 90;
+            // 
+            // Mail
+            // 
+            this.Mail.HeaderText = "Correo Electrónico";
+            this.Mail.Name = "Mail";
+            this.Mail.Width = 150;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "E";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.baron;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 25;
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "X";
+            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Width = 25;
+            // 
+            // buttom_Buscar
+            // 
+            this.buttom_Buscar.Location = new System.Drawing.Point(684, 19);
+            this.buttom_Buscar.Name = "buttom_Buscar";
+            this.buttom_Buscar.Size = new System.Drawing.Size(190, 183);
+            this.buttom_Buscar.TabIndex = 8;
+            this.buttom_Buscar.Text = "Buscar";
+            this.buttom_Buscar.UseVisualStyleBackColor = true;
+            // 
             // Admin_Foto_Perfil
             // 
             this.Admin_Foto_Perfil.Controls.Add(this.Admin_Perfil_boton_Foto);
@@ -655,6 +790,165 @@
             this.Admin_Foto_Perfil.Text = "Perfil";
             this.Admin_Foto_Perfil.UseVisualStyleBackColor = true;
             this.Admin_Foto_Perfil.Click += new System.EventHandler(this.Admin_Foto_Perfil_Click);
+            // 
+            // Admin_Perfil_boton_Foto
+            // 
+            this.Admin_Perfil_boton_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Admin_Perfil_boton_Foto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(676, 292);
+            this.Admin_Perfil_boton_Foto.Name = "Admin_Perfil_boton_Foto";
+            this.Admin_Perfil_boton_Foto.Size = new System.Drawing.Size(110, 23);
+            this.Admin_Perfil_boton_Foto.TabIndex = 53;
+            this.Admin_Perfil_boton_Foto.Text = "Seleccionar Foto";
+            this.Admin_Perfil_boton_Foto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Admin_Perfil_boton_Foto.UseVisualStyleBackColor = true;
+            this.Admin_Perfil_boton_Foto.Click += new System.EventHandler(this.Admin_Perfil_boton_Foto_Click);
+            // 
+            // Admin_Perfil_boton_Guardar
+            // 
+            this.Admin_Perfil_boton_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Admin_Perfil_boton_Guardar.Enabled = false;
+            this.Admin_Perfil_boton_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(706, 458);
+            this.Admin_Perfil_boton_Guardar.Name = "Admin_Perfil_boton_Guardar";
+            this.Admin_Perfil_boton_Guardar.Size = new System.Drawing.Size(70, 25);
+            this.Admin_Perfil_boton_Guardar.TabIndex = 52;
+            this.Admin_Perfil_boton_Guardar.Text = "Guardar";
+            this.Admin_Perfil_boton_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Admin_Perfil_boton_Guardar.UseVisualStyleBackColor = true;
+            // 
+            // Admin_Perfil_boton_Anadir
+            // 
+            this.Admin_Perfil_boton_Anadir.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Admin_Perfil_boton_Anadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(706, 489);
+            this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
+            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(70, 28);
+            this.Admin_Perfil_boton_Anadir.TabIndex = 50;
+            this.Admin_Perfil_boton_Anadir.Text = "Limpiar";
+            this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Admin_Perfil_boton_Anadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
+            this.Admin_Perfil_boton_Anadir.Click += new System.EventHandler(this.Admin_Perfil_boton_Anadir_Click);
+            // 
+            // Admin_Perfil_Foto
+            // 
+            this.Admin_Perfil_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Admin_Perfil_Foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Admin_Perfil_Foto.Image = global::Events4ALL.Properties.Resources.Events4All;
+            this.Admin_Perfil_Foto.Location = new System.Drawing.Point(604, 34);
+            this.Admin_Perfil_Foto.Name = "Admin_Perfil_Foto";
+            this.Admin_Perfil_Foto.Size = new System.Drawing.Size(255, 252);
+            this.Admin_Perfil_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Admin_Perfil_Foto.TabIndex = 0;
+            this.Admin_Perfil_Foto.TabStop = false;
+            this.Admin_Perfil_Foto.Click += new System.EventHandler(this.Avatar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox_CP_Perfil);
+            this.groupBox1.Controls.Add(this.label_CP_Perfil);
+            this.groupBox1.Controls.Add(this.comboBoxDirec);
+            this.groupBox1.Controls.Add(this.groupBoxSexo);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Nombre);
+            this.groupBox1.Controls.Add(this.grupEstadoCivil);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Nombre);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Apellidos);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Pais);
+            this.groupBox1.Controls.Add(this.Label_Localidad);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_FecNacimiento);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_NIF);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Domicilio);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Domicilio);
+            this.groupBox1.Controls.Add(this.txtBox_Localidad);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_comboBox_Pais);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Sexo);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Apellidos);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_EstCivil);
+            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_NIF);
+            this.groupBox1.Location = new System.Drawing.Point(35, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(545, 543);
+            this.groupBox1.TabIndex = 58;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos Personales";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "",
+            "Álava",
+            "Albacete",
+            "Alicante",
+            "Almería",
+            "Asturias",
+            "Avila",
+            "Badajoz",
+            "Barcelona",
+            "Burgos",
+            "Cáceres",
+            "Cádiz",
+            "Cantabria",
+            "Castellón",
+            "Ceuta",
+            "Ciudad Real",
+            "Córdoba",
+            "Cuenca",
+            "Gerona",
+            "Granada",
+            "Guadalajara",
+            "Huelva",
+            "Huesca",
+            "Islas Baleares",
+            "Jaén ",
+            "La Coruña",
+            "La Rioja",
+            "Las Palmas",
+            "León",
+            "Lérida",
+            "Lugo",
+            "Madrid",
+            "Málaga",
+            "Melilla",
+            "Murcia",
+            "Navarra",
+            "Orense",
+            "Palencia",
+            "Pontevedra",
+            "S.C. De Tenerife",
+            "Salamanca",
+            "Segovia",
+            "Sevilla",
+            "Soria",
+            "Tarragona",
+            "Teruel",
+            "Toledo",
+            "Valencia",
+            "Valladolid",
+            "Vizcaya",
+            "Zamora",
+            "Zaragoza"});
+            this.comboBox1.Location = new System.Drawing.Point(34, 168);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(181, 21);
+            this.comboBox1.TabIndex = 62;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 113);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
+            this.dateTimePicker1.TabIndex = 61;
             // 
             // groupBox2
             // 
@@ -728,43 +1022,6 @@
             this.Admin_Perfil_txtBox_Mail.Size = new System.Drawing.Size(218, 20);
             this.Admin_Perfil_txtBox_Mail.TabIndex = 25;
             this.Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox_CP_Perfil);
-            this.groupBox1.Controls.Add(this.label_CP_Perfil);
-            this.groupBox1.Controls.Add(this.comboBoxDirec);
-            this.groupBox1.Controls.Add(this.groupBoxSexo);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Nombre);
-            this.groupBox1.Controls.Add(this.grupEstadoCivil);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Nombre);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Apellidos);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Pais);
-            this.groupBox1.Controls.Add(this.Label_Localidad);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_FecNacimiento);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_NIF);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Domicilio);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Domicilio);
-            this.groupBox1.Controls.Add(this.txtBox_Localidad);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_comboBox_Pais);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_Sexo);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_Apellidos);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_Label_EstCivil);
-            this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_NIF);
-            this.groupBox1.Location = new System.Drawing.Point(35, 34);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 543);
-            this.groupBox1.TabIndex = 58;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Personales";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // label2
             // 
@@ -1269,74 +1526,6 @@
             this.tabControl1.Size = new System.Drawing.Size(901, 632);
             this.tabControl1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Provincia";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(195, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Localidad";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 113);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
-            this.dateTimePicker1.TabIndex = 61;
-            // 
-            // NIF
-            // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.Width = 70;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 120;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.Width = 170;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 80;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 80;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 90;
-            // 
-            // Mail
-            // 
-            this.Mail.HeaderText = "Correo Electrónico";
-            this.Mail.Name = "Mail";
-            this.Mail.Width = 150;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "E";
@@ -1351,198 +1540,6 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 25;
             // 
-            // Admin_Perfil_boton_Foto
-            // 
-            this.Admin_Perfil_boton_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Admin_Perfil_boton_Foto.Image = global::Events4ALL.Properties.Resources.photo;
-            this.Admin_Perfil_boton_Foto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(676, 292);
-            this.Admin_Perfil_boton_Foto.Name = "Admin_Perfil_boton_Foto";
-            this.Admin_Perfil_boton_Foto.Size = new System.Drawing.Size(110, 23);
-            this.Admin_Perfil_boton_Foto.TabIndex = 53;
-            this.Admin_Perfil_boton_Foto.Text = "Seleccionar Foto";
-            this.Admin_Perfil_boton_Foto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Admin_Perfil_boton_Foto.UseVisualStyleBackColor = true;
-            this.Admin_Perfil_boton_Foto.Click += new System.EventHandler(this.Admin_Perfil_boton_Foto_Click);
-            // 
-            // Admin_Perfil_boton_Guardar
-            // 
-            this.Admin_Perfil_boton_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Admin_Perfil_boton_Guardar.Enabled = false;
-            this.Admin_Perfil_boton_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
-            this.Admin_Perfil_boton_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(706, 458);
-            this.Admin_Perfil_boton_Guardar.Name = "Admin_Perfil_boton_Guardar";
-            this.Admin_Perfil_boton_Guardar.Size = new System.Drawing.Size(70, 25);
-            this.Admin_Perfil_boton_Guardar.TabIndex = 52;
-            this.Admin_Perfil_boton_Guardar.Text = "Guardar";
-            this.Admin_Perfil_boton_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Admin_Perfil_boton_Guardar.UseVisualStyleBackColor = true;
-            // 
-            // Admin_Perfil_boton_Anadir
-            // 
-            this.Admin_Perfil_boton_Anadir.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Admin_Perfil_boton_Anadir.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.Admin_Perfil_boton_Anadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(706, 489);
-            this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
-            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(70, 28);
-            this.Admin_Perfil_boton_Anadir.TabIndex = 50;
-            this.Admin_Perfil_boton_Anadir.Text = "Limpiar";
-            this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Admin_Perfil_boton_Anadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
-            this.Admin_Perfil_boton_Anadir.Click += new System.EventHandler(this.Admin_Perfil_boton_Anadir_Click);
-            // 
-            // Admin_Perfil_Foto
-            // 
-            this.Admin_Perfil_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Admin_Perfil_Foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Admin_Perfil_Foto.Image = global::Events4ALL.Properties.Resources.Events4All;
-            this.Admin_Perfil_Foto.Location = new System.Drawing.Point(604, 34);
-            this.Admin_Perfil_Foto.Name = "Admin_Perfil_Foto";
-            this.Admin_Perfil_Foto.Size = new System.Drawing.Size(255, 252);
-            this.Admin_Perfil_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Admin_Perfil_Foto.TabIndex = 0;
-            this.Admin_Perfil_Foto.TabStop = false;
-            this.Admin_Perfil_Foto.Click += new System.EventHandler(this.Avatar_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "E";
-            this.Editar.Image = global::Events4ALL.Properties.Resources.baron;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 25;
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "X";
-            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 25;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "",
-            "Álava",
-            "Albacete",
-            "Alicante",
-            "Almería",
-            "Asturias",
-            "Avila",
-            "Badajoz",
-            "Barcelona",
-            "Burgos",
-            "Cáceres",
-            "Cádiz",
-            "Cantabria",
-            "Castellón",
-            "Ceuta",
-            "Ciudad Real",
-            "Córdoba",
-            "Cuenca",
-            "Gerona",
-            "Granada",
-            "Guadalajara",
-            "Huelva",
-            "Huesca",
-            "Islas Baleares",
-            "Jaén ",
-            "La Coruña",
-            "La Rioja",
-            "Las Palmas",
-            "León",
-            "Lérida",
-            "Lugo",
-            "Madrid",
-            "Málaga",
-            "Melilla",
-            "Murcia",
-            "Navarra",
-            "Orense",
-            "Palencia",
-            "Pontevedra",
-            "S.C. De Tenerife",
-            "Salamanca",
-            "Segovia",
-            "Sevilla",
-            "Soria",
-            "Tarragona",
-            "Teruel",
-            "Toledo",
-            "Valencia",
-            "Valladolid",
-            "Vizcaya",
-            "Zamora",
-            "Zaragoza"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 62;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "",
-            "Álava",
-            "Albacete",
-            "Alicante",
-            "Almería",
-            "Asturias",
-            "Avila",
-            "Badajoz",
-            "Barcelona",
-            "Burgos",
-            "Cáceres",
-            "Cádiz",
-            "Cantabria",
-            "Castellón",
-            "Ceuta",
-            "Ciudad Real",
-            "Córdoba",
-            "Cuenca",
-            "Gerona",
-            "Granada",
-            "Guadalajara",
-            "Huelva",
-            "Huesca",
-            "Islas Baleares",
-            "Jaén ",
-            "La Coruña",
-            "La Rioja",
-            "Las Palmas",
-            "León",
-            "Lérida",
-            "Lugo",
-            "Madrid",
-            "Málaga",
-            "Melilla",
-            "Murcia",
-            "Navarra",
-            "Orense",
-            "Palencia",
-            "Pontevedra",
-            "S.C. De Tenerife",
-            "Salamanca",
-            "Segovia",
-            "Sevilla",
-            "Soria",
-            "Tarragona",
-            "Teruel",
-            "Toledo",
-            "Valencia",
-            "Valladolid",
-            "Vizcaya",
-            "Zamora",
-            "Zaragoza"});
-            this.comboBox2.Location = new System.Drawing.Point(198, 40);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(106, 21);
-            this.comboBox2.TabIndex = 63;
-            // 
             // Admins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1551,26 +1548,26 @@
             this.Name = "Admins";
             this.Size = new System.Drawing.Size(907, 635);
             this.Buscar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec2)).EndInit();
             this.groupBox_Busqueda.ResumeLayout(false);
             this.groupBox_Busqueda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox_Sexo_Busqueda.ResumeLayout(false);
             this.groupBox_Sexo_Busqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resultados_Busqueda)).EndInit();
             this.Admin_Foto_Perfil.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBoxSexo.ResumeLayout(false);
             this.groupBoxSexo.PerformLayout();
             this.grupEstadoCivil.ResumeLayout(false);
             this.grupEstadoCivil.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).EndInit();
             this.ResumeLayout(false);
 
         }

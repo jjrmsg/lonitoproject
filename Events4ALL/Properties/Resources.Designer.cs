@@ -60,6 +60,13 @@ namespace Events4ALL.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap add_save {
+            get {
+                object obj = ResourceManager.GetObject("add_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static byte[] AGENCYR {
             get {
                 object obj = ResourceManager.GetObject("AGENCYR", resourceCulture);
@@ -105,6 +112,20 @@ namespace Events4ALL.Properties {
         internal static System.Drawing.Bitmap claqueta {
             get {
                 object obj = ResourceManager.GetObject("claqueta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap clean {
+            get {
+                object obj = ResourceManager.GetObject("clean", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap clear_2 {
+            get {
+                object obj = ResourceManager.GetObject("clear 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +224,13 @@ namespace Events4ALL.Properties {
         internal static System.Drawing.Bitmap Pantalla {
             get {
                 object obj = ResourceManager.GetObject("Pantalla", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap photo {
+            get {
+                object obj = ResourceManager.GetObject("photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

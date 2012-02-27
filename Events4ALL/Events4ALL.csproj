@@ -191,12 +191,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="imgs\add_save.png" />
     <Content Include="imgs\admins.png" />
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
     <Content Include="imgs\baron.jpg" />
     <Content Include="imgs\carta.png" />
     <Content Include="imgs\claqueta.jpg" />
+    <None Include="imgs\clean.png" />
+    <None Include="imgs\clear 2.png" />
     <Content Include="imgs\clientes.png" />
     <Content Include="imgs\concierto.jpg" />
     <Content Include="imgs\copy.png" />
@@ -213,6 +216,7 @@
     <Content Include="imgs\idioma.png" />
     <Content Include="imgs\logout.png" />
     <Content Include="imgs\mensajes.png" />
+    <None Include="imgs\photo.png" />
     <Content Include="imgs\promociones.png" />
     <Content Include="imgs\salas.png" />
     <Content Include="imgs\teatro.jpg" />
