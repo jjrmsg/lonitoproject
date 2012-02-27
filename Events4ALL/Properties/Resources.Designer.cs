@@ -165,6 +165,13 @@ namespace Events4ALL.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap mensajes {
+            get {
+                object obj = ResourceManager.GetObject("mensajes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Pantalla {
             get {
                 object obj = ResourceManager.GetObject("Pantalla", resourceCulture);

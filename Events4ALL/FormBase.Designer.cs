@@ -33,18 +33,13 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.exitButton = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.logoutButton = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.clockLabel = new System.Windows.Forms.Label();
-            this.messagePicture = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -55,6 +50,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.messagePicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
             this.ventas1 = new Events4ALL.Ventas();
             this.salas1 = new Events4ALL.Salas();
@@ -66,16 +66,16 @@
             this.clientes1 = new Events4ALL.Clientes();
             this.admins1 = new Events4ALL.Admins();
             this.exitButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.logoutButton.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -113,13 +113,6 @@
             this.exitButton.Name = "exitButton";
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Events4ALL.Properties.Resources.exit;
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.TabStop = false;
-            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
@@ -135,13 +128,6 @@
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.logout;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -150,7 +136,7 @@
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.clockLabel);
             this.panel2.Controls.Add(this.messagePicture);
             this.panel2.Controls.Add(this.label7);
@@ -162,49 +148,27 @@
             // clockLabel
             // 
             resources.ApplyResources(this.clockLabel, "clockLabel");
-            this.clockLabel.ForeColor = System.Drawing.Color.OliveDrab;
+            this.clockLabel.ForeColor = System.Drawing.Color.DimGray;
             this.clockLabel.Name = "clockLabel";
-            // 
-            // messagePicture
-            // 
-            resources.ApplyResources(this.messagePicture, "messagePicture");
-            this.messagePicture.Image = global::Events4ALL.Properties.Resources.carta;
-            this.messagePicture.Name = "messagePicture";
-            this.messagePicture.TabStop = false;
-            this.messagePicture.Click += new System.EventHandler(this.messagePicture_Click);
             // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
             this.label7.Name = "label7";
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Name = "label5";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.logo;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
             // 
             // panel3
             // 
             resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.logoutButton);
             this.panel3.Controls.Add(this.exitButton);
@@ -265,6 +229,42 @@
             resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
+            // 
+            // messagePicture
+            // 
+            resources.ApplyResources(this.messagePicture, "messagePicture");
+            this.messagePicture.Image = global::Events4ALL.Properties.Resources.mensajes;
+            this.messagePicture.Name = "messagePicture";
+            this.messagePicture.TabStop = false;
+            this.messagePicture.Click += new System.EventHandler(this.messagePicture_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.logo;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.logout;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Events4ALL.Properties.Resources.exit;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
             // 
             // mensajes1
             // 
@@ -339,19 +339,19 @@
             this.Load += new System.EventHandler(this.FormBase_Load);
             this.exitButton.ResumeLayout(false);
             this.exitButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.logoutButton.ResumeLayout(false);
             this.logoutButton.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
