@@ -79,7 +79,7 @@ namespace Events4ALL
                                           e.Index,
                                           e.State ^ DrawItemState.Selected,
                                           e.ForeColor,
-                                          Color.SlateGray);
+                                          Color.Gainsboro);
             e.DrawBackground();
             e.Graphics.DrawString(listBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             e.DrawFocusRectangle();
@@ -94,7 +94,7 @@ namespace Events4ALL
                                      new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
-            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(e.ForeColor),
+            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Gray),
                                   new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
                                   e.Bounds.Top+5));
 
