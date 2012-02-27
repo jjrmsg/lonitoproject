@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
+            this.bottonLimpiar = new System.Windows.Forms.Button();
+            this.labelDescripcion = new System.Windows.Forms.Label();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.labelTipo = new System.Windows.Forms.Label();
             this.groupBoxSecciones = new System.Windows.Forms.GroupBox();
@@ -89,30 +92,29 @@
             this.labelNumSeccion = new System.Windows.Forms.Label();
             this.labelIdSala = new System.Windows.Forms.Label();
             this.tabBusquedaSala = new System.Windows.Forms.TabPage();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.labelDescripcion = new System.Windows.Forms.Label();
-            this.bottonLimpiar = new System.Windows.Forms.Button();
-            this.labelBuscarIdSala = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBuscarSala = new System.Windows.Forms.GroupBox();
-            this.comboBuscarTipoSala = new System.Windows.Forms.ComboBox();
-            this.labelBuscarTipoSala = new System.Windows.Forms.Label();
-            this.labelAforo = new System.Windows.Forms.Label();
-            this.textAforoBusquedaMin = new System.Windows.Forms.TextBox();
-            this.labelAforo2 = new System.Windows.Forms.Label();
-            this.textAforoBusquedaMax = new System.Windows.Forms.TextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
             this.dataGridBuscarSala = new System.Windows.Forms.DataGridView();
             this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBuscarSala = new System.Windows.Forms.GroupBox();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.textAforoBusquedaMax = new System.Windows.Forms.TextBox();
+            this.labelAforo2 = new System.Windows.Forms.Label();
+            this.textAforoBusquedaMin = new System.Windows.Forms.TextBox();
+            this.labelAforo = new System.Windows.Forms.Label();
+            this.comboBuscarTipoSala = new System.Windows.Forms.ComboBox();
+            this.labelBuscarTipoSala = new System.Windows.Forms.Label();
+            this.labelBuscarIdSala = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelSalasLibres = new System.Windows.Forms.Label();
+            this.checkLibre = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             this.groupBoxSecciones.SuspendLayout();
             this.tabBusquedaSala.SuspendLayout();
-            this.groupBuscarSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).BeginInit();
+            this.groupBuscarSala.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,6 +151,35 @@
             this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
             // 
+            // bottonLimpiar
+            // 
+            this.bottonLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bottonLimpiar.Location = new System.Drawing.Point(731, 545);
+            this.bottonLimpiar.Name = "bottonLimpiar";
+            this.bottonLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.bottonLimpiar.TabIndex = 15;
+            this.bottonLimpiar.Text = "Limpiar";
+            this.bottonLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // labelDescripcion
+            // 
+            this.labelDescripcion.AutoSize = true;
+            this.labelDescripcion.Location = new System.Drawing.Point(225, 25);
+            this.labelDescripcion.Name = "labelDescripcion";
+            this.labelDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.labelDescripcion.TabIndex = 14;
+            this.labelDescripcion.Text = "Descripción";
+            // 
+            // textDescripcion
+            // 
+            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDescripcion.Location = new System.Drawing.Point(228, 44);
+            this.textDescripcion.Multiline = true;
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.Size = new System.Drawing.Size(447, 80);
+            this.textDescripcion.TabIndex = 13;
+            // 
             // comboTipo
             // 
             this.comboTipo.DisplayMember = "1;2";
@@ -166,7 +197,7 @@
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(49, 73);
+            this.labelTipo.Location = new System.Drawing.Point(17, 73);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(28, 13);
             this.labelTipo.TabIndex = 9;
@@ -653,6 +684,7 @@
             // 
             // bottonAñadirSala
             // 
+            this.bottonAñadirSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bottonAñadirSala.Location = new System.Drawing.Point(812, 545);
             this.bottonAñadirSala.Name = "bottonAñadirSala";
             this.bottonAñadirSala.Size = new System.Drawing.Size(75, 23);
@@ -676,7 +708,7 @@
             "8",
             "9",
             "10"});
-            this.comboNumSeccion.Location = new System.Drawing.Point(95, 103);
+            this.comboNumSeccion.Location = new System.Drawing.Point(95, 97);
             this.comboNumSeccion.Name = "comboNumSeccion";
             this.comboNumSeccion.Size = new System.Drawing.Size(57, 21);
             this.comboNumSeccion.TabIndex = 3;
@@ -685,7 +717,7 @@
             // labelNumSeccion
             // 
             this.labelNumSeccion.AutoSize = true;
-            this.labelNumSeccion.Location = new System.Drawing.Point(17, 106);
+            this.labelNumSeccion.Location = new System.Drawing.Point(17, 100);
             this.labelNumSeccion.Name = "labelNumSeccion";
             this.labelNumSeccion.Size = new System.Drawing.Size(72, 13);
             this.labelNumSeccion.TabIndex = 2;
@@ -694,7 +726,7 @@
             // labelIdSala
             // 
             this.labelIdSala.AutoSize = true;
-            this.labelIdSala.Location = new System.Drawing.Point(33, 47);
+            this.labelIdSala.Location = new System.Drawing.Point(17, 47);
             this.labelIdSala.Name = "labelIdSala";
             this.labelIdSala.Size = new System.Drawing.Size(43, 13);
             this.labelIdSala.TabIndex = 1;
@@ -712,51 +744,50 @@
             this.tabBusquedaSala.Text = "Busqueda";
             this.tabBusquedaSala.UseVisualStyleBackColor = true;
             // 
-            // textDescripcion
+            // dataGridBuscarSala
             // 
-            this.textDescripcion.Location = new System.Drawing.Point(228, 44);
-            this.textDescripcion.Multiline = true;
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(447, 80);
-            this.textDescripcion.TabIndex = 13;
+            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridBuscarSala.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridBuscarSala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numSala,
+            this.tipoSala,
+            this.aforoSala,
+            this.numSecciones});
+            this.dataGridBuscarSala.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 206);
+            this.dataGridBuscarSala.Name = "dataGridBuscarSala";
+            this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 394);
+            this.dataGridBuscarSala.TabIndex = 3;
             // 
-            // labelDescripcion
+            // numSala
             // 
-            this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(225, 25);
-            this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.labelDescripcion.TabIndex = 14;
-            this.labelDescripcion.Text = "Descripción";
+            this.numSala.HeaderText = "NºSala";
+            this.numSala.Name = "numSala";
             // 
-            // bottonLimpiar
+            // tipoSala
             // 
-            this.bottonLimpiar.Location = new System.Drawing.Point(731, 545);
-            this.bottonLimpiar.Name = "bottonLimpiar";
-            this.bottonLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.bottonLimpiar.TabIndex = 15;
-            this.bottonLimpiar.Text = "Limpiar";
-            this.bottonLimpiar.UseVisualStyleBackColor = true;
+            this.tipoSala.HeaderText = "Tipo Sala";
+            this.tipoSala.Name = "tipoSala";
             // 
-            // labelBuscarIdSala
+            // aforoSala
             // 
-            this.labelBuscarIdSala.AutoSize = true;
-            this.labelBuscarIdSala.Location = new System.Drawing.Point(55, 35);
-            this.labelBuscarIdSala.Name = "labelBuscarIdSala";
-            this.labelBuscarIdSala.Size = new System.Drawing.Size(43, 13);
-            this.labelBuscarIdSala.TabIndex = 0;
-            this.labelBuscarIdSala.Text = "Nº Sala";
+            this.aforoSala.HeaderText = "Aforo Sala";
+            this.aforoSala.Name = "aforoSala";
             // 
-            // textBox1
+            // numSecciones
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
-            this.textBox1.TabIndex = 1;
+            this.numSecciones.HeaderText = "Nº Secciones";
+            this.numSecciones.Name = "numSecciones";
             // 
             // groupBuscarSala
             // 
-            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBuscarSala.Controls.Add(this.checkLibre);
+            this.groupBuscarSala.Controls.Add(this.labelSalasLibres);
             this.groupBuscarSala.Controls.Add(this.buttonBuscar);
             this.groupBuscarSala.Controls.Add(this.textAforoBusquedaMax);
             this.groupBuscarSala.Controls.Add(this.labelAforo2);
@@ -768,10 +799,52 @@
             this.groupBuscarSala.Controls.Add(this.textBox1);
             this.groupBuscarSala.Location = new System.Drawing.Point(6, 28);
             this.groupBuscarSala.Name = "groupBuscarSala";
-            this.groupBuscarSala.Size = new System.Drawing.Size(881, 135);
+            this.groupBuscarSala.Size = new System.Drawing.Size(881, 172);
             this.groupBuscarSala.TabIndex = 2;
             this.groupBuscarSala.TabStop = false;
             this.groupBuscarSala.Text = "Busqueda de Sala";
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonBuscar.Location = new System.Drawing.Point(800, 143);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.TabIndex = 3;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            // 
+            // textAforoBusquedaMax
+            // 
+            this.textAforoBusquedaMax.Location = new System.Drawing.Point(153, 86);
+            this.textAforoBusquedaMax.Name = "textAforoBusquedaMax";
+            this.textAforoBusquedaMax.Size = new System.Drawing.Size(25, 20);
+            this.textAforoBusquedaMax.TabIndex = 16;
+            // 
+            // labelAforo2
+            // 
+            this.labelAforo2.AutoSize = true;
+            this.labelAforo2.Location = new System.Drawing.Point(135, 89);
+            this.labelAforo2.Name = "labelAforo2";
+            this.labelAforo2.Size = new System.Drawing.Size(12, 13);
+            this.labelAforo2.TabIndex = 15;
+            this.labelAforo2.Text = "y";
+            // 
+            // textAforoBusquedaMin
+            // 
+            this.textAforoBusquedaMin.Location = new System.Drawing.Point(104, 86);
+            this.textAforoBusquedaMin.Name = "textAforoBusquedaMin";
+            this.textAforoBusquedaMin.Size = new System.Drawing.Size(25, 20);
+            this.textAforoBusquedaMin.TabIndex = 14;
+            // 
+            // labelAforo
+            // 
+            this.labelAforo.AutoSize = true;
+            this.labelAforo.Location = new System.Drawing.Point(39, 89);
+            this.labelAforo.Name = "labelAforo";
+            this.labelAforo.Size = new System.Drawing.Size(59, 13);
+            this.labelAforo.TabIndex = 13;
+            this.labelAforo.Text = "Aforo entre";
             // 
             // comboBuscarTipoSala
             // 
@@ -796,81 +869,39 @@
             this.labelBuscarTipoSala.TabIndex = 11;
             this.labelBuscarTipoSala.Text = "Tipo";
             // 
-            // labelAforo
+            // labelBuscarIdSala
             // 
-            this.labelAforo.AutoSize = true;
-            this.labelAforo.Location = new System.Drawing.Point(39, 89);
-            this.labelAforo.Name = "labelAforo";
-            this.labelAforo.Size = new System.Drawing.Size(59, 13);
-            this.labelAforo.TabIndex = 13;
-            this.labelAforo.Text = "Aforo entre";
+            this.labelBuscarIdSala.AutoSize = true;
+            this.labelBuscarIdSala.Location = new System.Drawing.Point(55, 35);
+            this.labelBuscarIdSala.Name = "labelBuscarIdSala";
+            this.labelBuscarIdSala.Size = new System.Drawing.Size(43, 13);
+            this.labelBuscarIdSala.TabIndex = 0;
+            this.labelBuscarIdSala.Text = "Nº Sala";
             // 
-            // textAforoBusquedaMin
+            // textBox1
             // 
-            this.textAforoBusquedaMin.Location = new System.Drawing.Point(104, 86);
-            this.textAforoBusquedaMin.Name = "textAforoBusquedaMin";
-            this.textAforoBusquedaMin.Size = new System.Drawing.Size(25, 20);
-            this.textAforoBusquedaMin.TabIndex = 14;
+            this.textBox1.Location = new System.Drawing.Point(104, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(25, 20);
+            this.textBox1.TabIndex = 1;
             // 
-            // labelAforo2
+            // labelSalasLibres
             // 
-            this.labelAforo2.AutoSize = true;
-            this.labelAforo2.Location = new System.Drawing.Point(135, 89);
-            this.labelAforo2.Name = "labelAforo2";
-            this.labelAforo2.Size = new System.Drawing.Size(12, 13);
-            this.labelAforo2.TabIndex = 15;
-            this.labelAforo2.Text = "y";
+            this.labelSalasLibres.AutoSize = true;
+            this.labelSalasLibres.Location = new System.Drawing.Point(27, 119);
+            this.labelSalasLibres.Name = "labelSalasLibres";
+            this.labelSalasLibres.Size = new System.Drawing.Size(71, 13);
+            this.labelSalasLibres.TabIndex = 17;
+            this.labelSalasLibres.Text = "Buscar Libres";
             // 
-            // textAforoBusquedaMax
+            // checkLibre
             // 
-            this.textAforoBusquedaMax.Location = new System.Drawing.Point(153, 86);
-            this.textAforoBusquedaMax.Name = "textAforoBusquedaMax";
-            this.textAforoBusquedaMax.Size = new System.Drawing.Size(25, 20);
-            this.textAforoBusquedaMax.TabIndex = 16;
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Location = new System.Drawing.Point(800, 106);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.buttonBuscar.TabIndex = 3;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            // 
-            // dataGridBuscarSala
-            // 
-            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBuscarSala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numSala,
-            this.tipoSala,
-            this.aforoSala,
-            this.numSecciones});
-            this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 183);
-            this.dataGridBuscarSala.Name = "dataGridBuscarSala";
-            this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 417);
-            this.dataGridBuscarSala.TabIndex = 3;
-            // 
-            // numSala
-            // 
-            this.numSala.HeaderText = "NºSala";
-            this.numSala.Name = "numSala";
-            // 
-            // tipoSala
-            // 
-            this.tipoSala.HeaderText = "Tipo Sala";
-            this.tipoSala.Name = "tipoSala";
-            // 
-            // aforoSala
-            // 
-            this.aforoSala.HeaderText = "Aforo Sala";
-            this.aforoSala.Name = "aforoSala";
-            // 
-            // numSecciones
-            // 
-            this.numSecciones.HeaderText = "Nº Secciones";
-            this.numSecciones.Name = "numSecciones";
+            this.checkLibre.AutoSize = true;
+            this.checkLibre.Location = new System.Drawing.Point(104, 119);
+            this.checkLibre.Name = "checkLibre";
+            this.checkLibre.Size = new System.Drawing.Size(15, 14);
+            this.checkLibre.TabIndex = 18;
+            this.checkLibre.UseVisualStyleBackColor = true;
             // 
             // Salas
             // 
@@ -885,9 +916,9 @@
             this.groupBoxSecciones.ResumeLayout(false);
             this.groupBoxSecciones.PerformLayout();
             this.tabBusquedaSala.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).EndInit();
             this.groupBuscarSala.ResumeLayout(false);
             this.groupBuscarSala.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -973,5 +1004,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn aforoSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn numSecciones;
+        private System.Windows.Forms.CheckBox checkLibre;
+        private System.Windows.Forms.Label labelSalasLibres;
     }
 }
