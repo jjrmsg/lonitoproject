@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
+            this.pictureTipo = new System.Windows.Forms.PictureBox();
             this.bottonLimpiar = new System.Windows.Forms.Button();
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.textDescripcion = new System.Windows.Forms.TextBox();
@@ -111,6 +112,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
             this.groupBoxSecciones.SuspendLayout();
             this.tabBusquedaSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).BeginInit();
@@ -132,6 +134,7 @@
             // 
             // tabAñadirSala
             // 
+            this.tabAñadirSala.Controls.Add(this.pictureTipo);
             this.tabAñadirSala.Controls.Add(this.bottonLimpiar);
             this.tabAñadirSala.Controls.Add(this.labelDescripcion);
             this.tabAñadirSala.Controls.Add(this.textDescripcion);
@@ -151,6 +154,19 @@
             this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
             // 
+            // pictureTipo
+            // 
+            this.pictureTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureTipo.Image = global::Events4ALL.Properties.Resources.Events4All;
+            this.pictureTipo.InitialImage = global::Events4ALL.Properties.Resources.Events4All;
+            this.pictureTipo.Location = new System.Drawing.Point(676, 19);
+            this.pictureTipo.Name = "pictureTipo";
+            this.pictureTipo.Size = new System.Drawing.Size(186, 159);
+            this.pictureTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureTipo.TabIndex = 16;
+            this.pictureTipo.TabStop = false;
+            // 
             // bottonLimpiar
             // 
             this.bottonLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -163,8 +179,10 @@
             // 
             // labelDescripcion
             // 
+            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(225, 25);
+            this.labelDescripcion.Location = new System.Drawing.Point(225, 19);
             this.labelDescripcion.Name = "labelDescripcion";
             this.labelDescripcion.Size = new System.Drawing.Size(63, 13);
             this.labelDescripcion.TabIndex = 14;
@@ -174,10 +192,10 @@
             // 
             this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDescripcion.Location = new System.Drawing.Point(228, 44);
+            this.textDescripcion.Location = new System.Drawing.Point(228, 35);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(447, 80);
+            this.textDescripcion.Size = new System.Drawing.Size(395, 78);
             this.textDescripcion.TabIndex = 13;
             // 
             // comboTipo
@@ -189,15 +207,16 @@
             "Cine",
             "Teatro",
             "Concierto"});
-            this.comboTipo.Location = new System.Drawing.Point(95, 70);
+            this.comboTipo.Location = new System.Drawing.Point(95, 61);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(57, 21);
+            this.comboTipo.Size = new System.Drawing.Size(77, 21);
             this.comboTipo.TabIndex = 10;
+            this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
             // labelTipo
             // 
             this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(17, 73);
+            this.labelTipo.Location = new System.Drawing.Point(17, 64);
             this.labelTipo.Name = "labelTipo";
             this.labelTipo.Size = new System.Drawing.Size(28, 13);
             this.labelTipo.TabIndex = 9;
@@ -677,9 +696,9 @@
             // 
             // textIdSala
             // 
-            this.textIdSala.Location = new System.Drawing.Point(95, 44);
+            this.textIdSala.Location = new System.Drawing.Point(95, 35);
             this.textIdSala.Name = "textIdSala";
-            this.textIdSala.Size = new System.Drawing.Size(57, 20);
+            this.textIdSala.Size = new System.Drawing.Size(77, 20);
             this.textIdSala.TabIndex = 7;
             // 
             // bottonAñadirSala
@@ -708,16 +727,16 @@
             "8",
             "9",
             "10"});
-            this.comboNumSeccion.Location = new System.Drawing.Point(95, 97);
+            this.comboNumSeccion.Location = new System.Drawing.Point(95, 92);
             this.comboNumSeccion.Name = "comboNumSeccion";
-            this.comboNumSeccion.Size = new System.Drawing.Size(57, 21);
+            this.comboNumSeccion.Size = new System.Drawing.Size(77, 21);
             this.comboNumSeccion.TabIndex = 3;
             this.comboNumSeccion.SelectedIndexChanged += new System.EventHandler(this.comboNumMat_SelectedIndexChanged);
             // 
             // labelNumSeccion
             // 
             this.labelNumSeccion.AutoSize = true;
-            this.labelNumSeccion.Location = new System.Drawing.Point(17, 100);
+            this.labelNumSeccion.Location = new System.Drawing.Point(17, 95);
             this.labelNumSeccion.Name = "labelNumSeccion";
             this.labelNumSeccion.Size = new System.Drawing.Size(72, 13);
             this.labelNumSeccion.TabIndex = 2;
@@ -726,7 +745,7 @@
             // labelIdSala
             // 
             this.labelIdSala.AutoSize = true;
-            this.labelIdSala.Location = new System.Drawing.Point(17, 47);
+            this.labelIdSala.Location = new System.Drawing.Point(17, 38);
             this.labelIdSala.Name = "labelIdSala";
             this.labelIdSala.Size = new System.Drawing.Size(43, 13);
             this.labelIdSala.TabIndex = 1;
@@ -913,6 +932,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabAñadirSala.ResumeLayout(false);
             this.tabAñadirSala.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).EndInit();
             this.groupBoxSecciones.ResumeLayout(false);
             this.groupBoxSecciones.PerformLayout();
             this.tabBusquedaSala.ResumeLayout(false);
@@ -1006,5 +1026,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numSecciones;
         private System.Windows.Forms.CheckBox checkLibre;
         private System.Windows.Forms.Label labelSalasLibres;
+        private System.Windows.Forms.PictureBox pictureTipo;
     }
 }

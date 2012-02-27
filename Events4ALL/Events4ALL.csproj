@@ -196,7 +196,9 @@
     <Content Include="imgs\arrow_right.png" />
     <Content Include="imgs\baron.jpg" />
     <Content Include="imgs\carta.png" />
+    <Content Include="imgs\claqueta.jpg" />
     <Content Include="imgs\clientes.png" />
+    <Content Include="imgs\concierto.jpg" />
     <Content Include="imgs\copy.png" />
     <Content Include="imgs\credit_card.png" />
     <Content Include="imgs\delete.png" />
@@ -213,6 +215,7 @@
     <Content Include="imgs\mensajes.png" />
     <Content Include="imgs\promociones.png" />
     <Content Include="imgs\salas.png" />
+    <Content Include="imgs\teatro.jpg" />
     <Content Include="imgs\ventas.png" />
     <Content Include="Properties\logo.png" />
     <None Include="imgs\image-default.png" />

@@ -148,6 +148,9 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="concierto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\concierto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="image-default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\image-default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +160,17 @@
   <data name="akira" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\akira.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="concierto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\concierto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Events4All" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\Events4All.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teatro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\teatro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mensajes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\mensajes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,13 +178,16 @@
   <data name="foto_usuario_defectojpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\foto_usuario_defectojpg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Events4All1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\Events4All.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="idioma" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\idioma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imgs\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mensajes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imgs\mensajes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="claqueta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imgs\claqueta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

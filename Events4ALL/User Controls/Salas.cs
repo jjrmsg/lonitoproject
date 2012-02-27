@@ -141,5 +141,25 @@ namespace Events4ALL
 
             }
         }
+
+        private void comboTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboTipo.Text=="Cine")
+            {
+                pictureTipo.Image = Events4ALL.Properties.Resources.claqueta;
+            }
+            else if(comboTipo.Text=="Teatro")
+            {
+                pictureTipo.Image = Events4ALL.Properties.Resources.teatro;
+            }
+            else if (comboTipo.Text == "Concierto")
+            {
+                pictureTipo.Image = Events4ALL.Properties.Resources.concierto;
+            }
+            else
+            {
+                pictureTipo.Image = Events4ALL.Properties.Resources.Events4All;
+            }
+        }
     }
 }
