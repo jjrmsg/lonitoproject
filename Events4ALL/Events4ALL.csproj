@@ -201,9 +201,11 @@
     <Content Include="imgs\friends_group.png" />
     <Content Include="imgs\home.png" />
     <Content Include="imgs\idioma.png" />
+    <Content Include="Properties\logo.png" />
     <None Include="imgs\image-default.png" />
     <Content Include="imgs\lock.png" />
     <Content Include="imgs\login.png" />
+    <Content Include="imgs\logo.png" />
     <Content Include="imgs\Pantalla.png" />
     <Content Include="imgs\tools.png" />
     <Content Include="imgs\pie-chart_graph.png" />

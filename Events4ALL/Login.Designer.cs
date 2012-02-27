@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkSave = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,11 +43,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.idiomas = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxUser
@@ -75,8 +76,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -85,12 +86,6 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.ForeColor = System.Drawing.Color.OliveDrab;
             this.label4.Name = "label4";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label3.Name = "label3";
             // 
             // panel2
             // 
@@ -149,6 +144,13 @@
             this.idiomas.Images.SetKeyName(0, "Spain.png");
             this.idiomas.Images.SetKeyName(1, "United_Kingdom.png");
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.logo;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
@@ -165,6 +167,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,7 +180,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ImageList idiomas;
@@ -185,5 +187,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox checkSave;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
