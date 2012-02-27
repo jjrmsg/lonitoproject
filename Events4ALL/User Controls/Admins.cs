@@ -152,5 +152,25 @@ namespace Events4ALL
         {
 
         }
+
+        private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox_Busqueda_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
