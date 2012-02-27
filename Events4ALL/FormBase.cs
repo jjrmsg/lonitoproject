@@ -94,7 +94,7 @@ namespace Events4ALL
                                      new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
-            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Gray),
+            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
                                   new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
                                   e.Bounds.Top+5));
 

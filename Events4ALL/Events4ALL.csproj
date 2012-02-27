@@ -196,6 +196,8 @@
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
     <Content Include="imgs\baron.jpg" />
+    <None Include="imgs\bg.png" />
+    <None Include="imgs\bg1.png" />
     <Content Include="imgs\carta.png" />
     <Content Include="imgs\claqueta.jpg" />
     <None Include="imgs\clean.png" />
@@ -214,10 +216,14 @@
     <Content Include="imgs\friends_group.png" />
     <Content Include="imgs\home.png" />
     <Content Include="imgs\idioma.png" />
+    <None Include="imgs\login_icon.png" />
     <Content Include="imgs\logout.png" />
+    <None Include="imgs\log_bg.png" />
+    <None Include="imgs\logout_img.png" />
     <Content Include="imgs\mensajes.png" />
     <None Include="imgs\photo.png" />
     <Content Include="imgs\promociones.png" />
+    <None Include="imgs\quit_icon.png" />
     <Content Include="imgs\salas.png" />
     <Content Include="imgs\teatro.jpg" />
     <Content Include="imgs\ventas.png" />
