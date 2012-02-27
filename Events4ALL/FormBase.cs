@@ -91,12 +91,12 @@ namespace Events4ALL
             if (item.ImageIndex >= 0 && item.ImageIndex < imageList1.Images.Count)
             {
                 e.Graphics.DrawImage(imageList1.Images[item.ImageIndex],
-                                     new PointF(e.Bounds.Left, e.Bounds.Top));
+                                     new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
             e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(e.ForeColor),
-                                  new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 1,
-                                  e.Bounds.Top));
+                                  new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
+                                  e.Bounds.Top+5));
 
             //listBox1_Click(sender, e);
         }

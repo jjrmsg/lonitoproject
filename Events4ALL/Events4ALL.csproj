@@ -164,6 +164,9 @@
     <EmbeddedResource Include="User Controls\Logs.resx">
       <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Mensajes.en.resx">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,19 +191,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\admins.png" />
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
     <Content Include="imgs\baron.jpg" />
     <Content Include="imgs\carta.png" />
+    <Content Include="imgs\clientes.png" />
     <Content Include="imgs\copy.png" />
     <Content Include="imgs\credit_card.png" />
     <Content Include="imgs\delete.png" />
+    <Content Include="imgs\espectaculos.png" />
+    <Content Include="imgs\estadisticas.png" />
     <Content Include="imgs\Events4All.gif" />
     <Content Include="imgs\Events4All.png" />
+    <Content Include="imgs\exit.png" />
     <Content Include="imgs\foto_usuario_defectojpg.jpg" />
     <Content Include="imgs\friends_group.png" />
     <Content Include="imgs\home.png" />
     <Content Include="imgs\idioma.png" />
+    <Content Include="imgs\logout.png" />
+    <Content Include="imgs\mensajes.png" />
+    <Content Include="imgs\promociones.png" />
+    <Content Include="imgs\salas.png" />
+    <Content Include="imgs\ventas.png" />
     <Content Include="Properties\logo.png" />
     <None Include="imgs\image-default.png" />
     <Content Include="imgs\lock.png" />
