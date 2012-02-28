@@ -24,8 +24,9 @@ namespace Events4ALL
                 comboBox_MC_VC_Comparacion2.Enabled = true;
                 comboBox_MC_VC_Tcondicion2.Enabled = true;
                 radioButton_MC_TE2_Cine.Enabled = true;
-                radioButton_MC_TE2_Espectaculo.Enabled = true;
+                radioButton_MC_TE2_Concierto.Enabled = true;
                 radioButton_MC_TE2_Teatro.Enabled = true;
+                radioButton_MC_TE_Todos2.Enabled = true;
             }
             else
             {
@@ -33,8 +34,9 @@ namespace Events4ALL
                 comboBox_MC_VC_Comparacion2.Enabled = false;
                 comboBox_MC_VC_Tcondicion2.Enabled = false;
                 radioButton_MC_TE2_Cine.Enabled = false;
-                radioButton_MC_TE2_Espectaculo.Enabled = false;
+                radioButton_MC_TE2_Concierto.Enabled = false;
                 radioButton_MC_TE2_Teatro.Enabled = false;
+                radioButton_MC_TE_Todos2.Enabled = false;
             }
         }
 
@@ -46,8 +48,9 @@ namespace Events4ALL
                 comboBox_MC_VC_Comparacion3.Enabled = true;
                 comboBox_MC_VC_Tcondicion3.Enabled = true;
                 radioButton_MC_TE3_Cine.Enabled = true;
-                radioButton_MC_TE3_Espectaculo.Enabled = true;
+                radioButton_MC_TE3_Concierto.Enabled = true;
                 radioButton_MC_TE3_Teatro.Enabled = true;
+                radioButton_MC_TE_Todos3.Enabled = true;
             }
             else
             {
@@ -55,8 +58,9 @@ namespace Events4ALL
                 comboBox_MC_VC_Comparacion3.Enabled = false;
                 comboBox_MC_VC_Tcondicion3.Enabled = false;
                 radioButton_MC_TE3_Cine.Enabled = false;
-                radioButton_MC_TE3_Espectaculo.Enabled = false;
+                radioButton_MC_TE3_Concierto.Enabled = false;
                 radioButton_MC_TE3_Teatro.Enabled = false;
+                radioButton_MC_TE_Todos3.Enabled = false;
             }
         }
 
