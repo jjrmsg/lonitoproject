@@ -225,6 +225,7 @@
     <Content Include="imgs\promociones.png" />
     <None Include="imgs\quit_icon.png" />
     <Content Include="imgs\salas.png" />
+    <None Include="imgs\search_icon.png" />
     <Content Include="imgs\teatro.jpg" />
     <Content Include="imgs\ventas.png" />
     <Content Include="Properties\logo.png" />

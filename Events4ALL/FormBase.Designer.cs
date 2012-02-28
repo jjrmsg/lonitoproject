@@ -69,7 +69,7 @@
             // listBox1
             // 
             resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.listBox1.BackColor = System.Drawing.Color.White;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.listBox1.ForeColor = System.Drawing.Color.Black;
