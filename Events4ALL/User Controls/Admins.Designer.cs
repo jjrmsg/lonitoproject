@@ -137,7 +137,6 @@
             this.Buscar.TabIndex = 1;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = true;
-            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // groupBox_Busqueda
             // 
@@ -166,7 +165,6 @@
             this.groupBox_Busqueda.TabIndex = 1;
             this.groupBox_Busqueda.TabStop = false;
             this.groupBox_Busqueda.Text = "Búsqueda";
-            this.groupBox_Busqueda.Enter += new System.EventHandler(this.groupBox_Busqueda_Enter);
             // 
             // comboBox2
             // 
@@ -578,7 +576,6 @@
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estado Civil";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // radioButton_Sol_EC
             // 
@@ -679,7 +676,6 @@
             this.textBox_Nombre_Busqueda.Name = "textBox_Nombre_Busqueda";
             this.textBox_Nombre_Busqueda.Size = new System.Drawing.Size(162, 20);
             this.textBox_Nombre_Busqueda.TabIndex = 3;
-            this.textBox_Nombre_Busqueda.TextChanged += new System.EventHandler(this.textBox_Nombre_Busqueda_TextChanged);
             // 
             // label_Nombre_Busqueda
             // 
@@ -708,7 +704,6 @@
             this.Resultados_Busqueda.Name = "Resultados_Busqueda";
             this.Resultados_Busqueda.Size = new System.Drawing.Size(854, 362);
             this.Resultados_Busqueda.TabIndex = 0;
-            this.Resultados_Busqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttom_Buscar
             // 
@@ -736,7 +731,6 @@
             this.Admin_Foto_Perfil.TabIndex = 0;
             this.Admin_Foto_Perfil.Text = "Perfil";
             this.Admin_Foto_Perfil.UseVisualStyleBackColor = true;
-            this.Admin_Foto_Perfil.Click += new System.EventHandler(this.Admin_Foto_Perfil_Click);
             // 
             // Admin_Perfil_boton_Foto
             // 
@@ -750,7 +744,6 @@
             this.Admin_Perfil_boton_Foto.Text = "Seleccionar Foto";
             this.Admin_Perfil_boton_Foto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Admin_Perfil_boton_Foto.UseVisualStyleBackColor = true;
-            this.Admin_Perfil_boton_Foto.Click += new System.EventHandler(this.Admin_Perfil_boton_Foto_Click);
             // 
             // Admin_Perfil_boton_Guardar
             // 
@@ -779,7 +772,6 @@
             this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Admin_Perfil_boton_Anadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
-            this.Admin_Perfil_boton_Anadir.Click += new System.EventHandler(this.Admin_Perfil_boton_Anadir_Click);
             // 
             // Admin_Perfil_Foto
             // 
@@ -792,7 +784,6 @@
             this.Admin_Perfil_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Admin_Perfil_Foto.TabIndex = 0;
             this.Admin_Perfil_Foto.TabStop = false;
-            this.Admin_Perfil_Foto.Click += new System.EventHandler(this.Avatar_Click);
             // 
             // groupBox1
             // 
@@ -829,7 +820,6 @@
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // comboBox1
             // 
@@ -925,7 +915,6 @@
             this.Admin_Perfil_Label_Tel1.Size = new System.Drawing.Size(49, 13);
             this.Admin_Perfil_Label_Tel1.TabIndex = 11;
             this.Admin_Perfil_Label_Tel1.Text = "Teléfono";
-            this.Admin_Perfil_Label_Tel1.Click += new System.EventHandler(this.label9_Click);
             // 
             // Admin_Perfil_Label_Tel2
             // 
@@ -936,7 +925,6 @@
             this.Admin_Perfil_Label_Tel2.Size = new System.Drawing.Size(32, 13);
             this.Admin_Perfil_Label_Tel2.TabIndex = 10;
             this.Admin_Perfil_Label_Tel2.Text = "Móvil";
-            this.Admin_Perfil_Label_Tel2.Click += new System.EventHandler(this.label8_Click);
             // 
             // Admin_Perfil_Label_Mail
             // 
@@ -947,7 +935,6 @@
             this.Admin_Perfil_Label_Mail.Size = new System.Drawing.Size(94, 13);
             this.Admin_Perfil_Label_Mail.TabIndex = 12;
             this.Admin_Perfil_Label_Mail.Text = "Correo Eléctronico";
-            this.Admin_Perfil_Label_Mail.Click += new System.EventHandler(this.Admin_Perfil_Label_Mail_Click);
             // 
             // Admin_Perfil_txtBox_Tel1
             // 
@@ -1063,7 +1050,6 @@
             this.grupEstadoCivil.Size = new System.Drawing.Size(200, 78);
             this.grupEstadoCivil.TabIndex = 55;
             this.grupEstadoCivil.TabStop = false;
-            this.grupEstadoCivil.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Admin_Perfil_rButom_Divorciado
             // 
@@ -1118,7 +1104,6 @@
             this.Admin_Perfil_Label_Nombre.Size = new System.Drawing.Size(44, 13);
             this.Admin_Perfil_Label_Nombre.TabIndex = 1;
             this.Admin_Perfil_Label_Nombre.Text = "Nombre";
-            this.Admin_Perfil_Label_Nombre.Click += new System.EventHandler(this.Admin_Perfil_Label_Nombre_Click);
             // 
             // Admin_Perfil_Label_Apellidos
             // 
@@ -1129,7 +1114,6 @@
             this.Admin_Perfil_Label_Apellidos.Size = new System.Drawing.Size(49, 13);
             this.Admin_Perfil_Label_Apellidos.TabIndex = 2;
             this.Admin_Perfil_Label_Apellidos.Text = "Apellidos";
-            this.Admin_Perfil_Label_Apellidos.Click += new System.EventHandler(this.Admin_Perfil_Label_Apellidos_Click);
             // 
             // Admin_Perfil_Label_Pais
             // 
@@ -1140,7 +1124,6 @@
             this.Admin_Perfil_Label_Pais.Size = new System.Drawing.Size(29, 13);
             this.Admin_Perfil_Label_Pais.TabIndex = 3;
             this.Admin_Perfil_Label_Pais.Text = "País";
-            this.Admin_Perfil_Label_Pais.Click += new System.EventHandler(this.label1_Click);
             // 
             // Label_Localidad
             // 
@@ -1151,7 +1134,6 @@
             this.Label_Localidad.Size = new System.Drawing.Size(53, 13);
             this.Label_Localidad.TabIndex = 4;
             this.Label_Localidad.Text = "Localidad";
-            this.Label_Localidad.Click += new System.EventHandler(this.label2_Click);
             // 
             // Admin_Perfil_Label_FecNacimiento
             // 
@@ -1162,7 +1144,6 @@
             this.Admin_Perfil_Label_FecNacimiento.Size = new System.Drawing.Size(108, 13);
             this.Admin_Perfil_Label_FecNacimiento.TabIndex = 6;
             this.Admin_Perfil_Label_FecNacimiento.Text = "Fecha de Nacimiento";
-            this.Admin_Perfil_Label_FecNacimiento.Click += new System.EventHandler(this.label4_Click);
             // 
             // Admin_Perfil_Label_NIF
             // 
@@ -1173,7 +1154,6 @@
             this.Admin_Perfil_Label_NIF.Size = new System.Drawing.Size(24, 13);
             this.Admin_Perfil_Label_NIF.TabIndex = 7;
             this.Admin_Perfil_Label_NIF.Text = "NIF";
-            this.Admin_Perfil_Label_NIF.Click += new System.EventHandler(this.label5_Click);
             // 
             // Admin_Perfil_Label_Domicilio
             // 
@@ -1184,7 +1164,6 @@
             this.Admin_Perfil_Label_Domicilio.Size = new System.Drawing.Size(49, 13);
             this.Admin_Perfil_Label_Domicilio.TabIndex = 17;
             this.Admin_Perfil_Label_Domicilio.Text = "Domicilio";
-            this.Admin_Perfil_Label_Domicilio.Click += new System.EventHandler(this.label14_Click);
             // 
             // Admin_Perfil_txtBox_Domicilio
             // 
@@ -1434,7 +1413,6 @@
             this.Admin_Perfil_Label_Sexo.Size = new System.Drawing.Size(31, 13);
             this.Admin_Perfil_Label_Sexo.TabIndex = 9;
             this.Admin_Perfil_Label_Sexo.Text = "Sexo";
-            this.Admin_Perfil_Label_Sexo.Click += new System.EventHandler(this.label7_Click);
             // 
             // Admin_Perfil_txtBox_Apellidos
             // 
@@ -1442,7 +1420,6 @@
             this.Admin_Perfil_txtBox_Apellidos.Name = "Admin_Perfil_txtBox_Apellidos";
             this.Admin_Perfil_txtBox_Apellidos.Size = new System.Drawing.Size(196, 20);
             this.Admin_Perfil_txtBox_Apellidos.TabIndex = 23;
-            this.Admin_Perfil_txtBox_Apellidos.TextChanged += new System.EventHandler(this.Admin_Perfil_txtBox_Apellidos_TextChanged);
             // 
             // Admin_Perfil_Label_EstCivil
             // 
@@ -1453,7 +1430,6 @@
             this.Admin_Perfil_Label_EstCivil.Size = new System.Drawing.Size(62, 13);
             this.Admin_Perfil_Label_EstCivil.TabIndex = 8;
             this.Admin_Perfil_Label_EstCivil.Text = "Estado Civil";
-            this.Admin_Perfil_Label_EstCivil.Click += new System.EventHandler(this.label6_Click);
             // 
             // Admin_Perfil_txtBox_NIF
             // 
@@ -1461,7 +1437,6 @@
             this.Admin_Perfil_txtBox_NIF.Name = "Admin_Perfil_txtBox_NIF";
             this.Admin_Perfil_txtBox_NIF.Size = new System.Drawing.Size(75, 20);
             this.Admin_Perfil_txtBox_NIF.TabIndex = 24;
-            this.Admin_Perfil_txtBox_NIF.TextChanged += new System.EventHandler(this.Admin_Perfil_txtBox_NIF_TextChanged);
             // 
             // tabControl1
             // 
