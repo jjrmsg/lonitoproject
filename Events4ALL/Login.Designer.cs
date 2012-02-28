@@ -35,22 +35,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkSave = new System.Windows.Forms.CheckBox();
-            this.idiomas = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkSave = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.idiomas = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxUser
@@ -87,42 +87,6 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // checkSave
-            // 
-            resources.ApplyResources(this.checkSave, "checkSave");
-            this.checkSave.Name = "checkSave";
-            this.checkSave.UseVisualStyleBackColor = true;
-            // 
-            // idiomas
-            // 
-            this.idiomas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("idiomas.ImageStream")));
-            this.idiomas.TransparentColor = System.Drawing.Color.Transparent;
-            this.idiomas.Images.SetKeyName(0, "Spain.png");
-            this.idiomas.Images.SetKeyName(1, "United_Kingdom.png");
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Events4ALL.Properties.Resources.bg;
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label4);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.logo;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Name = "label4";
-            // 
             // button1
             // 
             this.button1.Image = global::Events4ALL.Properties.Resources.login_icon;
@@ -130,6 +94,12 @@
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // checkSave
+            // 
+            resources.ApplyResources(this.checkSave, "checkSave");
+            this.checkSave.Name = "checkSave";
+            this.checkSave.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -166,6 +136,36 @@
             resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
             // 
+            // idiomas
+            // 
+            this.idiomas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("idiomas.ImageStream")));
+            this.idiomas.TransparentColor = System.Drawing.Color.Transparent;
+            this.idiomas.Images.SetKeyName(0, "Spain.png");
+            this.idiomas.Images.SetKeyName(1, "United_Kingdom.png");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::Events4ALL.Properties.Resources.bg;
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.label4);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.logo;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Name = "label4";
+            // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
@@ -177,12 +177,12 @@
             this.Name = "Login";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }

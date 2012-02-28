@@ -48,7 +48,7 @@ namespace Events4ALL
                 listBox1.Items.Add(new listItem("Main", 0));
                 listBox1.Items.Add(new listItem("Admins", 1));
                 listBox1.Items.Add(new listItem("Customers", 2));
-                listBox1.Items.Add(new listItem("Rooms", 3));
+                listBox1.Items.Add(new listItem("Halls", 3));
                 listBox1.Items.Add(new listItem("Shows", 4));
                 listBox1.Items.Add(new listItem("Promotions", 5));
                 listBox1.Items.Add(new listItem("Statistics", 6));
