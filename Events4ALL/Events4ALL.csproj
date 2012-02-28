@@ -220,6 +220,7 @@
     <Content Include="imgs\logout.png" />
     <None Include="imgs\log_bg.png" />
     <None Include="imgs\logout_img.png" />
+    <None Include="imgs\mas.png" />
     <Content Include="imgs\mensajes.png" />
     <None Include="imgs\photo.png" />
     <Content Include="imgs\promociones.png" />

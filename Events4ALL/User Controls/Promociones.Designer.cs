@@ -60,12 +60,32 @@
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
             this.groupBox_MC_TipoDeCond = new System.Windows.Forms.GroupBox();
-            this.textBox_MC_MinEspectaculos = new System.Windows.Forms.TextBox();
-            this.textBox_MC_DineroGastado = new System.Windows.Forms.TextBox();
-            this.textBox_MC_NumEntradas = new System.Windows.Forms.TextBox();
-            this.checkBox_MC_MinEspectaculos = new System.Windows.Forms.CheckBox();
-            this.checkBox_MC_DineroGastado = new System.Windows.Forms.CheckBox();
-            this.checkBox_MumEntradas = new System.Windows.Forms.CheckBox();
+            this.checkBox_MC_ActivarCond2 = new System.Windows.Forms.CheckBox();
+            this.checkBox_MC_ActivarCond1 = new System.Windows.Forms.CheckBox();
+            this.groupBox_MC_TipoEvent2 = new System.Windows.Forms.GroupBox();
+            this.radioButton_MC_TE2_Espectaculo = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE2_Teatro = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE2_Cine = new System.Windows.Forms.RadioButton();
+            this.groupBox_MC_TipoEvent3 = new System.Windows.Forms.GroupBox();
+            this.radioButton_MC_TE3_Espectaculo = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE3_Teatro = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE3_Cine = new System.Windows.Forms.RadioButton();
+            this.groupBox_MC_TipoEvent1 = new System.Windows.Forms.GroupBox();
+            this.radioButton_MC_TE1_Espectaculo = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE1_Teatro = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE1_Cine = new System.Windows.Forms.RadioButton();
+            this.comboBox_MC_VC_Tcondicion3 = new System.Windows.Forms.ComboBox();
+            this.comboBox_MC_VC_Tcondicion2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_MC_VC_Tcondicion1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_MC_VC_Comparacion3 = new System.Windows.Forms.ComboBox();
+            this.comboBox_MC_VC_Comparacion2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_MC_VC_Comparacion1 = new System.Windows.Forms.ComboBox();
+            this.textBox_MC_VC_Valor3 = new System.Windows.Forms.TextBox();
+            this.textBox_MC_VC_Valor2 = new System.Windows.Forms.TextBox();
+            this.textBox_MC_VC_Valor1 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Valor3 = new System.Windows.Forms.Label();
+            this.label_MC_VC_Valor2 = new System.Windows.Forms.Label();
+            this.label_MC_VC_Valor1 = new System.Windows.Forms.Label();
             this.label_MC_CartelPromo = new System.Windows.Forms.Label();
             this.checkBox_MC_ActPromo = new System.Windows.Forms.CheckBox();
             this.label_MC_ActPromo = new System.Windows.Forms.Label();
@@ -77,11 +97,11 @@
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button_MC_Nueva = new System.Windows.Forms.Button();
             this.button_PE_Guardar = new System.Windows.Forms.Button();
             this.pictureBox_PE_imagEspec = new System.Windows.Forms.PictureBox();
             this.button_MC_SubirFoto = new System.Windows.Forms.Button();
             this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
+            this.button_MC_Nueva = new System.Windows.Forms.Button();
             this.button_MC_Eliminar = new System.Windows.Forms.Button();
             this.button_MC_Guardar = new System.Windows.Forms.Button();
             this.tabControl_promociones.SuspendLayout();
@@ -91,6 +111,9 @@
             this.groupBox_PE_DatosEspec.SuspendLayout();
             this.tab_Mediante_condiciones.SuspendLayout();
             this.groupBox_MC_TipoDeCond.SuspendLayout();
+            this.groupBox_MC_TipoEvent2.SuspendLayout();
+            this.groupBox_MC_TipoEvent3.SuspendLayout();
+            this.groupBox_MC_TipoEvent1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
@@ -362,11 +385,10 @@
             this.label_PE_TDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_PE_TDescripcion.Location = new System.Drawing.Point(330, 38);
             this.label_PE_TDescripcion.Name = "label_PE_TDescripcion";
-            this.label_PE_TDescripcion.Size = new System.Drawing.Size(720, 13);
+            this.label_PE_TDescripcion.Size = new System.Drawing.Size(607, 13);
             this.label_PE_TDescripcion.TabIndex = 9;
-            this.label_PE_TDescripcion.Text = "xsvvsdvsdfgf bfg bgf b grfb gfb eg bertbb tb tebetbrtb rtb tbt br btrb rt btbtrtr" +
-    " b trbtrbrtb trbtr btbtrb rtbtrgbtrbtrgbtbtrg btrgbtrgbtrgbrtrtbrtgbrtbtrb b4rtb" +
-    "tr brtb";
+            this.label_PE_TDescripcion.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+    "aaaaaaaaaaaaaaaaaaa";
             // 
             // label_PE_Descripcion
             // 
@@ -397,7 +419,6 @@
             this.label_PE_titulo.Size = new System.Drawing.Size(45, 13);
             this.label_PE_titulo.TabIndex = 0;
             this.label_PE_titulo.Text = "Título:";
-            this.label_PE_titulo.Click += new System.EventHandler(this.label1_Click_4);
             // 
             // label_PE_TTitulo
             // 
@@ -428,7 +449,6 @@
             this.label_PE_Espectaculo.Size = new System.Drawing.Size(81, 13);
             this.label_PE_Espectaculo.TabIndex = 4;
             this.label_PE_Espectaculo.Text = "Espectáculo:";
-            this.label_PE_Espectaculo.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox_PE_espectaculo
             // 
@@ -467,69 +487,324 @@
             // 
             this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_MinEspectaculos);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_DineroGastado);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_NumEntradas);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_MinEspectaculos);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_DineroGastado);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MumEntradas);
-            this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 253);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Tcondicion3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Tcondicion2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Tcondicion1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor1);
+            this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 151);
             this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
-            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 148);
+            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 250);
             this.groupBox_MC_TipoDeCond.TabIndex = 20;
             this.groupBox_MC_TipoDeCond.TabStop = false;
-            this.groupBox_MC_TipoDeCond.Text = "Tipo de condición:";
+            this.groupBox_MC_TipoDeCond.Text = "Valores de condición:";
             // 
-            // textBox_MC_MinEspectaculos
+            // checkBox_MC_ActivarCond2
             // 
-            this.textBox_MC_MinEspectaculos.Location = new System.Drawing.Point(296, 113);
-            this.textBox_MC_MinEspectaculos.Name = "textBox_MC_MinEspectaculos";
-            this.textBox_MC_MinEspectaculos.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_MinEspectaculos.TabIndex = 5;
+            this.checkBox_MC_ActivarCond2.AutoSize = true;
+            this.checkBox_MC_ActivarCond2.Location = new System.Drawing.Point(6, 222);
+            this.checkBox_MC_ActivarCond2.Name = "checkBox_MC_ActivarCond2";
+            this.checkBox_MC_ActivarCond2.Size = new System.Drawing.Size(108, 17);
+            this.checkBox_MC_ActivarCond2.TabIndex = 18;
+            this.checkBox_MC_ActivarCond2.Text = "Activar condición";
+            this.checkBox_MC_ActivarCond2.UseVisualStyleBackColor = true;
+            this.checkBox_MC_ActivarCond2.CheckedChanged += new System.EventHandler(this.checkBox_MC_ActivarCond2_CheckedChanged);
             // 
-            // textBox_MC_DineroGastado
+            // checkBox_MC_ActivarCond1
             // 
-            this.textBox_MC_DineroGastado.Location = new System.Drawing.Point(296, 74);
-            this.textBox_MC_DineroGastado.Name = "textBox_MC_DineroGastado";
-            this.textBox_MC_DineroGastado.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_DineroGastado.TabIndex = 4;
+            this.checkBox_MC_ActivarCond1.AutoSize = true;
+            this.checkBox_MC_ActivarCond1.Location = new System.Drawing.Point(6, 146);
+            this.checkBox_MC_ActivarCond1.Name = "checkBox_MC_ActivarCond1";
+            this.checkBox_MC_ActivarCond1.Size = new System.Drawing.Size(108, 17);
+            this.checkBox_MC_ActivarCond1.TabIndex = 17;
+            this.checkBox_MC_ActivarCond1.Text = "Activar condición";
+            this.checkBox_MC_ActivarCond1.UseVisualStyleBackColor = true;
+            this.checkBox_MC_ActivarCond1.CheckedChanged += new System.EventHandler(this.checkBox_MC_ActivarCond1_CheckedChanged);
             // 
-            // textBox_MC_NumEntradas
+            // groupBox_MC_TipoEvent2
             // 
-            this.textBox_MC_NumEntradas.Location = new System.Drawing.Point(296, 32);
-            this.textBox_MC_NumEntradas.Name = "textBox_MC_NumEntradas";
-            this.textBox_MC_NumEntradas.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_NumEntradas.TabIndex = 3;
+            this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Espectaculo);
+            this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Teatro);
+            this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Cine);
+            this.groupBox_MC_TipoEvent2.Location = new System.Drawing.Point(290, 105);
+            this.groupBox_MC_TipoEvent2.Name = "groupBox_MC_TipoEvent2";
+            this.groupBox_MC_TipoEvent2.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent2.TabIndex = 16;
+            this.groupBox_MC_TipoEvent2.TabStop = false;
+            this.groupBox_MC_TipoEvent2.Text = "Tipo de evento";
             // 
-            // checkBox_MC_MinEspectaculos
+            // radioButton_MC_TE2_Espectaculo
             // 
-            this.checkBox_MC_MinEspectaculos.AutoSize = true;
-            this.checkBox_MC_MinEspectaculos.Location = new System.Drawing.Point(6, 116);
-            this.checkBox_MC_MinEspectaculos.Name = "checkBox_MC_MinEspectaculos";
-            this.checkBox_MC_MinEspectaculos.Size = new System.Drawing.Size(285, 17);
-            this.checkBox_MC_MinEspectaculos.TabIndex = 2;
-            this.checkBox_MC_MinEspectaculos.Text = "Número mínimo de espéctaculos diferentes comprados";
-            this.checkBox_MC_MinEspectaculos.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE2_Espectaculo.AutoSize = true;
+            this.radioButton_MC_TE2_Espectaculo.Enabled = false;
+            this.radioButton_MC_TE2_Espectaculo.Location = new System.Drawing.Point(6, 40);
+            this.radioButton_MC_TE2_Espectaculo.Name = "radioButton_MC_TE2_Espectaculo";
+            this.radioButton_MC_TE2_Espectaculo.Size = new System.Drawing.Size(84, 17);
+            this.radioButton_MC_TE2_Espectaculo.TabIndex = 5;
+            this.radioButton_MC_TE2_Espectaculo.TabStop = true;
+            this.radioButton_MC_TE2_Espectaculo.Text = "Espectáculo";
+            this.radioButton_MC_TE2_Espectaculo.UseVisualStyleBackColor = true;
             // 
-            // checkBox_MC_DineroGastado
+            // radioButton_MC_TE2_Teatro
             // 
-            this.checkBox_MC_DineroGastado.AutoSize = true;
-            this.checkBox_MC_DineroGastado.Location = new System.Drawing.Point(6, 76);
-            this.checkBox_MC_DineroGastado.Name = "checkBox_MC_DineroGastado";
-            this.checkBox_MC_DineroGastado.Size = new System.Drawing.Size(157, 17);
-            this.checkBox_MC_DineroGastado.TabIndex = 1;
-            this.checkBox_MC_DineroGastado.Text = "Dinero gastado en entradas";
-            this.checkBox_MC_DineroGastado.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE2_Teatro.AutoSize = true;
+            this.radioButton_MC_TE2_Teatro.Enabled = false;
+            this.radioButton_MC_TE2_Teatro.Location = new System.Drawing.Point(58, 19);
+            this.radioButton_MC_TE2_Teatro.Name = "radioButton_MC_TE2_Teatro";
+            this.radioButton_MC_TE2_Teatro.Size = new System.Drawing.Size(56, 17);
+            this.radioButton_MC_TE2_Teatro.TabIndex = 4;
+            this.radioButton_MC_TE2_Teatro.TabStop = true;
+            this.radioButton_MC_TE2_Teatro.Text = "Teatro";
+            this.radioButton_MC_TE2_Teatro.UseVisualStyleBackColor = true;
             // 
-            // checkBox_MumEntradas
+            // radioButton_MC_TE2_Cine
             // 
-            this.checkBox_MumEntradas.AutoSize = true;
-            this.checkBox_MumEntradas.Location = new System.Drawing.Point(6, 34);
-            this.checkBox_MumEntradas.Name = "checkBox_MumEntradas";
-            this.checkBox_MumEntradas.Size = new System.Drawing.Size(214, 17);
-            this.checkBox_MumEntradas.TabIndex = 0;
-            this.checkBox_MumEntradas.Text = "Número mínimo de entradas compradas";
-            this.checkBox_MumEntradas.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE2_Cine.AutoSize = true;
+            this.radioButton_MC_TE2_Cine.Enabled = false;
+            this.radioButton_MC_TE2_Cine.Location = new System.Drawing.Point(6, 19);
+            this.radioButton_MC_TE2_Cine.Name = "radioButton_MC_TE2_Cine";
+            this.radioButton_MC_TE2_Cine.Size = new System.Drawing.Size(46, 17);
+            this.radioButton_MC_TE2_Cine.TabIndex = 3;
+            this.radioButton_MC_TE2_Cine.TabStop = true;
+            this.radioButton_MC_TE2_Cine.Text = "Cine";
+            this.radioButton_MC_TE2_Cine.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_MC_TipoEvent3
+            // 
+            this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Espectaculo);
+            this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Teatro);
+            this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Cine);
+            this.groupBox_MC_TipoEvent3.Location = new System.Drawing.Point(290, 181);
+            this.groupBox_MC_TipoEvent3.Name = "groupBox_MC_TipoEvent3";
+            this.groupBox_MC_TipoEvent3.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent3.TabIndex = 16;
+            this.groupBox_MC_TipoEvent3.TabStop = false;
+            this.groupBox_MC_TipoEvent3.Text = "Tipo de evento";
+            // 
+            // radioButton_MC_TE3_Espectaculo
+            // 
+            this.radioButton_MC_TE3_Espectaculo.AutoSize = true;
+            this.radioButton_MC_TE3_Espectaculo.Enabled = false;
+            this.radioButton_MC_TE3_Espectaculo.Location = new System.Drawing.Point(6, 40);
+            this.radioButton_MC_TE3_Espectaculo.Name = "radioButton_MC_TE3_Espectaculo";
+            this.radioButton_MC_TE3_Espectaculo.Size = new System.Drawing.Size(84, 17);
+            this.radioButton_MC_TE3_Espectaculo.TabIndex = 5;
+            this.radioButton_MC_TE3_Espectaculo.TabStop = true;
+            this.radioButton_MC_TE3_Espectaculo.Text = "Espectáculo";
+            this.radioButton_MC_TE3_Espectaculo.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_MC_TE3_Teatro
+            // 
+            this.radioButton_MC_TE3_Teatro.AutoSize = true;
+            this.radioButton_MC_TE3_Teatro.Enabled = false;
+            this.radioButton_MC_TE3_Teatro.Location = new System.Drawing.Point(58, 19);
+            this.radioButton_MC_TE3_Teatro.Name = "radioButton_MC_TE3_Teatro";
+            this.radioButton_MC_TE3_Teatro.Size = new System.Drawing.Size(56, 17);
+            this.radioButton_MC_TE3_Teatro.TabIndex = 4;
+            this.radioButton_MC_TE3_Teatro.TabStop = true;
+            this.radioButton_MC_TE3_Teatro.Text = "Teatro";
+            this.radioButton_MC_TE3_Teatro.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_MC_TE3_Cine
+            // 
+            this.radioButton_MC_TE3_Cine.AutoSize = true;
+            this.radioButton_MC_TE3_Cine.Enabled = false;
+            this.radioButton_MC_TE3_Cine.Location = new System.Drawing.Point(6, 19);
+            this.radioButton_MC_TE3_Cine.Name = "radioButton_MC_TE3_Cine";
+            this.radioButton_MC_TE3_Cine.Size = new System.Drawing.Size(46, 17);
+            this.radioButton_MC_TE3_Cine.TabIndex = 3;
+            this.radioButton_MC_TE3_Cine.TabStop = true;
+            this.radioButton_MC_TE3_Cine.Text = "Cine";
+            this.radioButton_MC_TE3_Cine.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_MC_TipoEvent1
+            // 
+            this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Espectaculo);
+            this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Teatro);
+            this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Cine);
+            this.groupBox_MC_TipoEvent1.Location = new System.Drawing.Point(290, 31);
+            this.groupBox_MC_TipoEvent1.Name = "groupBox_MC_TipoEvent1";
+            this.groupBox_MC_TipoEvent1.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent1.TabIndex = 15;
+            this.groupBox_MC_TipoEvent1.TabStop = false;
+            this.groupBox_MC_TipoEvent1.Text = "Tipo de evento";
+            // 
+            // radioButton_MC_TE1_Espectaculo
+            // 
+            this.radioButton_MC_TE1_Espectaculo.AutoSize = true;
+            this.radioButton_MC_TE1_Espectaculo.Location = new System.Drawing.Point(6, 40);
+            this.radioButton_MC_TE1_Espectaculo.Name = "radioButton_MC_TE1_Espectaculo";
+            this.radioButton_MC_TE1_Espectaculo.Size = new System.Drawing.Size(84, 17);
+            this.radioButton_MC_TE1_Espectaculo.TabIndex = 2;
+            this.radioButton_MC_TE1_Espectaculo.TabStop = true;
+            this.radioButton_MC_TE1_Espectaculo.Text = "Espectáculo";
+            this.radioButton_MC_TE1_Espectaculo.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_MC_TE1_Teatro
+            // 
+            this.radioButton_MC_TE1_Teatro.AutoSize = true;
+            this.radioButton_MC_TE1_Teatro.Location = new System.Drawing.Point(58, 19);
+            this.radioButton_MC_TE1_Teatro.Name = "radioButton_MC_TE1_Teatro";
+            this.radioButton_MC_TE1_Teatro.Size = new System.Drawing.Size(56, 17);
+            this.radioButton_MC_TE1_Teatro.TabIndex = 1;
+            this.radioButton_MC_TE1_Teatro.TabStop = true;
+            this.radioButton_MC_TE1_Teatro.Text = "Teatro";
+            this.radioButton_MC_TE1_Teatro.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_MC_TE1_Cine
+            // 
+            this.radioButton_MC_TE1_Cine.AutoSize = true;
+            this.radioButton_MC_TE1_Cine.Location = new System.Drawing.Point(6, 19);
+            this.radioButton_MC_TE1_Cine.Name = "radioButton_MC_TE1_Cine";
+            this.radioButton_MC_TE1_Cine.Size = new System.Drawing.Size(46, 17);
+            this.radioButton_MC_TE1_Cine.TabIndex = 0;
+            this.radioButton_MC_TE1_Cine.TabStop = true;
+            this.radioButton_MC_TE1_Cine.Text = "Cine";
+            this.radioButton_MC_TE1_Cine.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_MC_VC_Tcondicion3
+            // 
+            this.comboBox_MC_VC_Tcondicion3.Enabled = false;
+            this.comboBox_MC_VC_Tcondicion3.FormattingEnabled = true;
+            this.comboBox_MC_VC_Tcondicion3.Items.AddRange(new object[] {
+            "Dinero gastado",
+            "Entradas",
+            "Espectáculos"});
+            this.comboBox_MC_VC_Tcondicion3.Location = new System.Drawing.Point(187, 181);
+            this.comboBox_MC_VC_Tcondicion3.Name = "comboBox_MC_VC_Tcondicion3";
+            this.comboBox_MC_VC_Tcondicion3.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion3.TabIndex = 14;
+            this.comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
+            // 
+            // comboBox_MC_VC_Tcondicion2
+            // 
+            this.comboBox_MC_VC_Tcondicion2.Enabled = false;
+            this.comboBox_MC_VC_Tcondicion2.FormattingEnabled = true;
+            this.comboBox_MC_VC_Tcondicion2.Items.AddRange(new object[] {
+            "Dinero gastado",
+            "Entradas",
+            "Espectáculos"});
+            this.comboBox_MC_VC_Tcondicion2.Location = new System.Drawing.Point(187, 105);
+            this.comboBox_MC_VC_Tcondicion2.Name = "comboBox_MC_VC_Tcondicion2";
+            this.comboBox_MC_VC_Tcondicion2.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion2.TabIndex = 13;
+            this.comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
+            // 
+            // comboBox_MC_VC_Tcondicion1
+            // 
+            this.comboBox_MC_VC_Tcondicion1.FormattingEnabled = true;
+            this.comboBox_MC_VC_Tcondicion1.Items.AddRange(new object[] {
+            "Dinero gastado",
+            "Entradas",
+            "Espectáculos"});
+            this.comboBox_MC_VC_Tcondicion1.Location = new System.Drawing.Point(187, 32);
+            this.comboBox_MC_VC_Tcondicion1.Name = "comboBox_MC_VC_Tcondicion1";
+            this.comboBox_MC_VC_Tcondicion1.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion1.TabIndex = 12;
+            this.comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
+            // 
+            // comboBox_MC_VC_Comparacion3
+            // 
+            this.comboBox_MC_VC_Comparacion3.Enabled = false;
+            this.comboBox_MC_VC_Comparacion3.FormattingEnabled = true;
+            this.comboBox_MC_VC_Comparacion3.Items.AddRange(new object[] {
+            "Mayor",
+            "Menor",
+            "Igual"});
+            this.comboBox_MC_VC_Comparacion3.Location = new System.Drawing.Point(94, 182);
+            this.comboBox_MC_VC_Comparacion3.Name = "comboBox_MC_VC_Comparacion3";
+            this.comboBox_MC_VC_Comparacion3.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion3.TabIndex = 10;
+            this.comboBox_MC_VC_Comparacion3.Text = "Comparación";
+            // 
+            // comboBox_MC_VC_Comparacion2
+            // 
+            this.comboBox_MC_VC_Comparacion2.Enabled = false;
+            this.comboBox_MC_VC_Comparacion2.FormattingEnabled = true;
+            this.comboBox_MC_VC_Comparacion2.Items.AddRange(new object[] {
+            "Mayor",
+            "Menor",
+            "Igual"});
+            this.comboBox_MC_VC_Comparacion2.Location = new System.Drawing.Point(94, 105);
+            this.comboBox_MC_VC_Comparacion2.Name = "comboBox_MC_VC_Comparacion2";
+            this.comboBox_MC_VC_Comparacion2.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion2.TabIndex = 9;
+            this.comboBox_MC_VC_Comparacion2.Text = "Comparación";
+            // 
+            // comboBox_MC_VC_Comparacion1
+            // 
+            this.comboBox_MC_VC_Comparacion1.FormattingEnabled = true;
+            this.comboBox_MC_VC_Comparacion1.Items.AddRange(new object[] {
+            "Mayor",
+            "Menor",
+            "Igual"});
+            this.comboBox_MC_VC_Comparacion1.Location = new System.Drawing.Point(94, 31);
+            this.comboBox_MC_VC_Comparacion1.Name = "comboBox_MC_VC_Comparacion1";
+            this.comboBox_MC_VC_Comparacion1.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion1.TabIndex = 8;
+            this.comboBox_MC_VC_Comparacion1.Text = "Comparación";
+            // 
+            // textBox_MC_VC_Valor3
+            // 
+            this.textBox_MC_VC_Valor3.Enabled = false;
+            this.textBox_MC_VC_Valor3.Location = new System.Drawing.Point(39, 182);
+            this.textBox_MC_VC_Valor3.Name = "textBox_MC_VC_Valor3";
+            this.textBox_MC_VC_Valor3.Size = new System.Drawing.Size(49, 20);
+            this.textBox_MC_VC_Valor3.TabIndex = 6;
+            // 
+            // textBox_MC_VC_Valor2
+            // 
+            this.textBox_MC_VC_Valor2.Enabled = false;
+            this.textBox_MC_VC_Valor2.Location = new System.Drawing.Point(39, 105);
+            this.textBox_MC_VC_Valor2.Name = "textBox_MC_VC_Valor2";
+            this.textBox_MC_VC_Valor2.Size = new System.Drawing.Size(49, 20);
+            this.textBox_MC_VC_Valor2.TabIndex = 5;
+            // 
+            // textBox_MC_VC_Valor1
+            // 
+            this.textBox_MC_VC_Valor1.Location = new System.Drawing.Point(39, 32);
+            this.textBox_MC_VC_Valor1.Name = "textBox_MC_VC_Valor1";
+            this.textBox_MC_VC_Valor1.Size = new System.Drawing.Size(49, 20);
+            this.textBox_MC_VC_Valor1.TabIndex = 4;
+            // 
+            // label_MC_VC_Valor3
+            // 
+            this.label_MC_VC_Valor3.AutoSize = true;
+            this.label_MC_VC_Valor3.Location = new System.Drawing.Point(3, 185);
+            this.label_MC_VC_Valor3.Name = "label_MC_VC_Valor3";
+            this.label_MC_VC_Valor3.Size = new System.Drawing.Size(31, 13);
+            this.label_MC_VC_Valor3.TabIndex = 2;
+            this.label_MC_VC_Valor3.Text = "Valor";
+            // 
+            // label_MC_VC_Valor2
+            // 
+            this.label_MC_VC_Valor2.AutoSize = true;
+            this.label_MC_VC_Valor2.Location = new System.Drawing.Point(3, 108);
+            this.label_MC_VC_Valor2.Name = "label_MC_VC_Valor2";
+            this.label_MC_VC_Valor2.Size = new System.Drawing.Size(31, 13);
+            this.label_MC_VC_Valor2.TabIndex = 1;
+            this.label_MC_VC_Valor2.Text = "Valor";
+            // 
+            // label_MC_VC_Valor1
+            // 
+            this.label_MC_VC_Valor1.AutoSize = true;
+            this.label_MC_VC_Valor1.Location = new System.Drawing.Point(3, 35);
+            this.label_MC_VC_Valor1.Name = "label_MC_VC_Valor1";
+            this.label_MC_VC_Valor1.Size = new System.Drawing.Size(31, 13);
+            this.label_MC_VC_Valor1.TabIndex = 0;
+            this.label_MC_VC_Valor1.Text = "Valor";
             // 
             // label_MC_CartelPromo
             // 
@@ -564,7 +839,7 @@
             // 
             this.label_MC_Descripcion.AutoSize = true;
             this.label_MC_Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MC_Descripcion.Location = new System.Drawing.Point(445, 123);
+            this.label_MC_Descripcion.Location = new System.Drawing.Point(445, 65);
             this.label_MC_Descripcion.Name = "label_MC_Descripcion";
             this.label_MC_Descripcion.Size = new System.Drawing.Size(78, 13);
             this.label_MC_Descripcion.TabIndex = 15;
@@ -593,10 +868,10 @@
             // 
             this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 139);
+            this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 81);
             this.textBox_MC_Descripcion.Multiline = true;
             this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
-            this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 108);
+            this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 64);
             this.textBox_MC_Descripcion.TabIndex = 3;
             // 
             // label_MC_ClientesAfectados
@@ -613,6 +888,7 @@
             // 
             this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_MC_ListaPromosCond.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView_MC_ListaPromosCond.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -628,22 +904,13 @@
             this.MC_NOMBRE.HeaderText = "NOMBRE";
             this.MC_NOMBRE.Name = "MC_NOMBRE";
             this.MC_NOMBRE.ReadOnly = true;
+            this.MC_NOMBRE.Width = 79;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
-            // 
-            // button_MC_Nueva
-            // 
-            this.button_MC_Nueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_MC_Nueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 580);
-            this.button_MC_Nueva.Name = "button_MC_Nueva";
-            this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Nueva.TabIndex = 6;
-            this.button_MC_Nueva.Text = "Nueva";
-            this.button_MC_Nueva.UseVisualStyleBackColor = true;
+            this.Estado.Width = 67;
             // 
             // button_PE_Guardar
             // 
@@ -698,6 +965,18 @@
             this.pictureBox_MC_CartelPromo.TabIndex = 18;
             this.pictureBox_MC_CartelPromo.TabStop = false;
             // 
+            // button_MC_Nueva
+            // 
+            this.button_MC_Nueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Nueva.Image = global::Events4ALL.Properties.Resources.mas;
+            this.button_MC_Nueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 580);
+            this.button_MC_Nueva.Name = "button_MC_Nueva";
+            this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Nueva.TabIndex = 6;
+            this.button_MC_Nueva.Text = "Nueva";
+            this.button_MC_Nueva.UseVisualStyleBackColor = true;
+            // 
             // button_MC_Eliminar
             // 
             this.button_MC_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -743,6 +1022,12 @@
             this.tab_Mediante_condiciones.PerformLayout();
             this.groupBox_MC_TipoDeCond.ResumeLayout(false);
             this.groupBox_MC_TipoDeCond.PerformLayout();
+            this.groupBox_MC_TipoEvent2.ResumeLayout(false);
+            this.groupBox_MC_TipoEvent2.PerformLayout();
+            this.groupBox_MC_TipoEvent3.ResumeLayout(false);
+            this.groupBox_MC_TipoEvent3.PerformLayout();
+            this.groupBox_MC_TipoEvent1.ResumeLayout(false);
+            this.groupBox_MC_TipoEvent1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
@@ -801,12 +1086,32 @@
         private System.Windows.Forms.Label label_MC_CartelPromo;
         private System.Windows.Forms.PictureBox pictureBox_MC_CartelPromo;
         private System.Windows.Forms.GroupBox groupBox_MC_TipoDeCond;
-        private System.Windows.Forms.CheckBox checkBox_MC_MinEspectaculos;
-        private System.Windows.Forms.CheckBox checkBox_MC_DineroGastado;
-        private System.Windows.Forms.CheckBox checkBox_MumEntradas;
-        private System.Windows.Forms.TextBox textBox_MC_MinEspectaculos;
-        private System.Windows.Forms.TextBox textBox_MC_DineroGastado;
-        private System.Windows.Forms.TextBox textBox_MC_NumEntradas;
         private System.Windows.Forms.Button button_PE_Guardar;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion3;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion2;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion1;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Valor3;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Valor2;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Valor1;
+        private System.Windows.Forms.Label label_MC_VC_Valor3;
+        private System.Windows.Forms.Label label_MC_VC_Valor2;
+        private System.Windows.Forms.Label label_MC_VC_Valor1;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion3;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion2;
+        private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion1;
+        private System.Windows.Forms.GroupBox groupBox_MC_TipoEvent2;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE2_Espectaculo;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE2_Teatro;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE2_Cine;
+        private System.Windows.Forms.GroupBox groupBox_MC_TipoEvent3;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE3_Espectaculo;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE3_Teatro;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE3_Cine;
+        private System.Windows.Forms.GroupBox groupBox_MC_TipoEvent1;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE1_Espectaculo;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE1_Teatro;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE1_Cine;
+        private System.Windows.Forms.CheckBox checkBox_MC_ActivarCond2;
+        private System.Windows.Forms.CheckBox checkBox_MC_ActivarCond1;
     }
 }
