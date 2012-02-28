@@ -30,7 +30,6 @@
         {
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
-            this.pictureBox_PE_imagEspec = new System.Windows.Forms.PictureBox();
             this.groupBox_PE_promoGen = new System.Windows.Forms.GroupBox();
             this.checkBox_PE_descParado = new System.Windows.Forms.CheckBox();
             this.checkBox_PE_descJubilado = new System.Windows.Forms.CheckBox();
@@ -60,39 +59,41 @@
             this.label_PE_Espectaculo = new System.Windows.Forms.Label();
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
-            this.button_MC_SubirFoto = new System.Windows.Forms.Button();
+            this.groupBox_MC_TipoDeCond = new System.Windows.Forms.GroupBox();
+            this.textBox_MC_MinEspectaculos = new System.Windows.Forms.TextBox();
+            this.textBox_MC_DineroGastado = new System.Windows.Forms.TextBox();
+            this.textBox_MC_NumEntradas = new System.Windows.Forms.TextBox();
+            this.checkBox_MC_MinEspectaculos = new System.Windows.Forms.CheckBox();
+            this.checkBox_MC_DineroGastado = new System.Windows.Forms.CheckBox();
+            this.checkBox_MumEntradas = new System.Windows.Forms.CheckBox();
             this.label_MC_CartelPromo = new System.Windows.Forms.Label();
-            this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
             this.checkBox_MC_ActPromo = new System.Windows.Forms.CheckBox();
             this.label_MC_ActPromo = new System.Windows.Forms.Label();
-            this.button_MC_Nueva = new System.Windows.Forms.Button();
             this.label_MC_Descripcion = new System.Windows.Forms.Label();
             this.textBox_MC_NomPromo = new System.Windows.Forms.TextBox();
             this.label_MC_Nombre = new System.Windows.Forms.Label();
             this.textBox_MC_Descripcion = new System.Windows.Forms.TextBox();
-            this.button_MC_Eliminar = new System.Windows.Forms.Button();
-            this.button_MC_Guardar = new System.Windows.Forms.Button();
             this.label_MC_ClientesAfectados = new System.Windows.Forms.Label();
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox_MC_TipoDeCond = new System.Windows.Forms.GroupBox();
-            this.checkBox_MumEntradas = new System.Windows.Forms.CheckBox();
-            this.checkBox_MC_DineroGastado = new System.Windows.Forms.CheckBox();
-            this.checkBox_MC_MinEspectaculos = new System.Windows.Forms.CheckBox();
-            this.textBox_MC_NumEntradas = new System.Windows.Forms.TextBox();
-            this.textBox_MC_DineroGastado = new System.Windows.Forms.TextBox();
-            this.textBox_MC_MinEspectaculos = new System.Windows.Forms.TextBox();
+            this.button_MC_Nueva = new System.Windows.Forms.Button();
+            this.button_PE_Guardar = new System.Windows.Forms.Button();
+            this.pictureBox_PE_imagEspec = new System.Windows.Forms.PictureBox();
+            this.button_MC_SubirFoto = new System.Windows.Forms.Button();
+            this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
+            this.button_MC_Eliminar = new System.Windows.Forms.Button();
+            this.button_MC_Guardar = new System.Windows.Forms.Button();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
             this.groupBox_PE_promoGen.SuspendLayout();
             this.groupBox_PE_promoEvent.SuspendLayout();
             this.groupBox_PE_DatosEspec.SuspendLayout();
             this.tab_Mediante_condiciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             this.groupBox_MC_TipoDeCond.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -110,6 +111,7 @@
             // 
             // tab_Por_espectaculo
             // 
+            this.tab_Por_espectaculo.Controls.Add(this.button_PE_Guardar);
             this.tab_Por_espectaculo.Controls.Add(this.pictureBox_PE_imagEspec);
             this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_promoGen);
             this.tab_Por_espectaculo.Controls.Add(this.groupBox_PE_promoEvent);
@@ -124,20 +126,6 @@
             this.tab_Por_espectaculo.Text = "Espectáculo";
             this.tab_Por_espectaculo.UseVisualStyleBackColor = true;
             // 
-            // pictureBox_PE_imagEspec
-            // 
-            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.image_default;
-            this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
-            this.pictureBox_PE_imagEspec.Name = "pictureBox_PE_imagEspec";
-            this.pictureBox_PE_imagEspec.Size = new System.Drawing.Size(537, 305);
-            this.pictureBox_PE_imagEspec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox_PE_imagEspec.TabIndex = 8;
-            this.pictureBox_PE_imagEspec.TabStop = false;
-            // 
             // groupBox_PE_promoGen
             // 
             this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -150,7 +138,7 @@
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_menor25);
             this.groupBox_PE_promoGen.Location = new System.Drawing.Point(9, 441);
             this.groupBox_PE_promoGen.Name = "groupBox_PE_promoGen";
-            this.groupBox_PE_promoGen.Size = new System.Drawing.Size(335, 159);
+            this.groupBox_PE_promoGen.Size = new System.Drawing.Size(335, 121);
             this.groupBox_PE_promoGen.TabIndex = 7;
             this.groupBox_PE_promoGen.TabStop = false;
             this.groupBox_PE_promoGen.Text = "Promociones generales";
@@ -158,7 +146,7 @@
             // checkBox_PE_descParado
             // 
             this.checkBox_PE_descParado.AutoSize = true;
-            this.checkBox_PE_descParado.Location = new System.Drawing.Point(167, 109);
+            this.checkBox_PE_descParado.Location = new System.Drawing.Point(167, 95);
             this.checkBox_PE_descParado.Name = "checkBox_PE_descParado";
             this.checkBox_PE_descParado.Size = new System.Drawing.Size(65, 17);
             this.checkBox_PE_descParado.TabIndex = 14;
@@ -168,7 +156,7 @@
             // checkBox_PE_descJubilado
             // 
             this.checkBox_PE_descJubilado.AutoSize = true;
-            this.checkBox_PE_descJubilado.Location = new System.Drawing.Point(167, 71);
+            this.checkBox_PE_descJubilado.Location = new System.Drawing.Point(167, 57);
             this.checkBox_PE_descJubilado.Name = "checkBox_PE_descJubilado";
             this.checkBox_PE_descJubilado.Size = new System.Drawing.Size(70, 17);
             this.checkBox_PE_descJubilado.TabIndex = 13;
@@ -178,7 +166,7 @@
             // checkBox_PE_descEstudiante
             // 
             this.checkBox_PE_descEstudiante.AutoSize = true;
-            this.checkBox_PE_descEstudiante.Location = new System.Drawing.Point(167, 33);
+            this.checkBox_PE_descEstudiante.Location = new System.Drawing.Point(167, 19);
             this.checkBox_PE_descEstudiante.Name = "checkBox_PE_descEstudiante";
             this.checkBox_PE_descEstudiante.Size = new System.Drawing.Size(81, 17);
             this.checkBox_PE_descEstudiante.TabIndex = 12;
@@ -188,7 +176,7 @@
             // checkBox_PE_descCliente
             // 
             this.checkBox_PE_descCliente.AutoSize = true;
-            this.checkBox_PE_descCliente.Location = new System.Drawing.Point(27, 109);
+            this.checkBox_PE_descCliente.Location = new System.Drawing.Point(27, 95);
             this.checkBox_PE_descCliente.Name = "checkBox_PE_descCliente";
             this.checkBox_PE_descCliente.Size = new System.Drawing.Size(58, 17);
             this.checkBox_PE_descCliente.TabIndex = 11;
@@ -198,7 +186,7 @@
             // checkBox_PE_mayor65
             // 
             this.checkBox_PE_mayor65.AutoSize = true;
-            this.checkBox_PE_mayor65.Location = new System.Drawing.Point(27, 71);
+            this.checkBox_PE_mayor65.Location = new System.Drawing.Point(27, 57);
             this.checkBox_PE_mayor65.Name = "checkBox_PE_mayor65";
             this.checkBox_PE_mayor65.Size = new System.Drawing.Size(96, 17);
             this.checkBox_PE_mayor65.TabIndex = 10;
@@ -208,7 +196,7 @@
             // checkBox_PE_menor25
             // 
             this.checkBox_PE_menor25.AutoSize = true;
-            this.checkBox_PE_menor25.Location = new System.Drawing.Point(27, 33);
+            this.checkBox_PE_menor25.Location = new System.Drawing.Point(27, 19);
             this.checkBox_PE_menor25.Name = "checkBox_PE_menor25";
             this.checkBox_PE_menor25.Size = new System.Drawing.Size(97, 17);
             this.checkBox_PE_menor25.TabIndex = 9;
@@ -475,14 +463,73 @@
             this.tab_Mediante_condiciones.Text = "Condiciones especiales";
             this.tab_Mediante_condiciones.UseVisualStyleBackColor = true;
             // 
-            // button_MC_SubirFoto
+            // groupBox_MC_TipoDeCond
             // 
-            this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 432);
-            this.button_MC_SubirFoto.Name = "button_MC_SubirFoto";
-            this.button_MC_SubirFoto.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_SubirFoto.TabIndex = 5;
-            this.button_MC_SubirFoto.Text = "Seleccionar imágen";
-            this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
+            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_MinEspectaculos);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_DineroGastado);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_NumEntradas);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_MinEspectaculos);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_DineroGastado);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MumEntradas);
+            this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 253);
+            this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
+            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 148);
+            this.groupBox_MC_TipoDeCond.TabIndex = 20;
+            this.groupBox_MC_TipoDeCond.TabStop = false;
+            this.groupBox_MC_TipoDeCond.Text = "Tipo de condición:";
+            // 
+            // textBox_MC_MinEspectaculos
+            // 
+            this.textBox_MC_MinEspectaculos.Location = new System.Drawing.Point(296, 113);
+            this.textBox_MC_MinEspectaculos.Name = "textBox_MC_MinEspectaculos";
+            this.textBox_MC_MinEspectaculos.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MC_MinEspectaculos.TabIndex = 5;
+            // 
+            // textBox_MC_DineroGastado
+            // 
+            this.textBox_MC_DineroGastado.Location = new System.Drawing.Point(296, 74);
+            this.textBox_MC_DineroGastado.Name = "textBox_MC_DineroGastado";
+            this.textBox_MC_DineroGastado.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MC_DineroGastado.TabIndex = 4;
+            // 
+            // textBox_MC_NumEntradas
+            // 
+            this.textBox_MC_NumEntradas.Location = new System.Drawing.Point(296, 32);
+            this.textBox_MC_NumEntradas.Name = "textBox_MC_NumEntradas";
+            this.textBox_MC_NumEntradas.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MC_NumEntradas.TabIndex = 3;
+            // 
+            // checkBox_MC_MinEspectaculos
+            // 
+            this.checkBox_MC_MinEspectaculos.AutoSize = true;
+            this.checkBox_MC_MinEspectaculos.Location = new System.Drawing.Point(6, 116);
+            this.checkBox_MC_MinEspectaculos.Name = "checkBox_MC_MinEspectaculos";
+            this.checkBox_MC_MinEspectaculos.Size = new System.Drawing.Size(285, 17);
+            this.checkBox_MC_MinEspectaculos.TabIndex = 2;
+            this.checkBox_MC_MinEspectaculos.Text = "Número mínimo de espéctaculos diferentes comprados";
+            this.checkBox_MC_MinEspectaculos.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_MC_DineroGastado
+            // 
+            this.checkBox_MC_DineroGastado.AutoSize = true;
+            this.checkBox_MC_DineroGastado.Location = new System.Drawing.Point(6, 76);
+            this.checkBox_MC_DineroGastado.Name = "checkBox_MC_DineroGastado";
+            this.checkBox_MC_DineroGastado.Size = new System.Drawing.Size(157, 17);
+            this.checkBox_MC_DineroGastado.TabIndex = 1;
+            this.checkBox_MC_DineroGastado.Text = "Dinero gastado en entradas";
+            this.checkBox_MC_DineroGastado.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_MumEntradas
+            // 
+            this.checkBox_MumEntradas.AutoSize = true;
+            this.checkBox_MumEntradas.Location = new System.Drawing.Point(6, 34);
+            this.checkBox_MumEntradas.Name = "checkBox_MumEntradas";
+            this.checkBox_MumEntradas.Size = new System.Drawing.Size(214, 17);
+            this.checkBox_MumEntradas.TabIndex = 0;
+            this.checkBox_MumEntradas.Text = "Número mínimo de entradas compradas";
+            this.checkBox_MumEntradas.UseVisualStyleBackColor = true;
             // 
             // label_MC_CartelPromo
             // 
@@ -493,20 +540,6 @@
             this.label_MC_CartelPromo.Size = new System.Drawing.Size(138, 13);
             this.label_MC_CartelPromo.TabIndex = 19;
             this.label_MC_CartelPromo.Text = "Cartel de la promoción:";
-            // 
-            // pictureBox_MC_CartelPromo
-            // 
-            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
-            this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 461);
-            this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
-            this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 114);
-            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox_MC_CartelPromo.TabIndex = 18;
-            this.pictureBox_MC_CartelPromo.TabStop = false;
             // 
             // checkBox_MC_ActPromo
             // 
@@ -526,16 +559,6 @@
             this.label_MC_ActPromo.Size = new System.Drawing.Size(127, 13);
             this.label_MC_ActPromo.TabIndex = 17;
             this.label_MC_ActPromo.Text = "¿Activar promoción?:";
-            // 
-            // button_MC_Nueva
-            // 
-            this.button_MC_Nueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 580);
-            this.button_MC_Nueva.Name = "button_MC_Nueva";
-            this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Nueva.TabIndex = 6;
-            this.button_MC_Nueva.Text = "Nueva";
-            this.button_MC_Nueva.UseVisualStyleBackColor = true;
             // 
             // label_MC_Descripcion
             // 
@@ -576,26 +599,6 @@
             this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 108);
             this.textBox_MC_Descripcion.TabIndex = 3;
             // 
-            // button_MC_Eliminar
-            // 
-            this.button_MC_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 580);
-            this.button_MC_Eliminar.Name = "button_MC_Eliminar";
-            this.button_MC_Eliminar.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Eliminar.TabIndex = 8;
-            this.button_MC_Eliminar.Text = "Eliminar";
-            this.button_MC_Eliminar.UseVisualStyleBackColor = true;
-            // 
-            // button_MC_Guardar
-            // 
-            this.button_MC_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button_MC_Guardar.Location = new System.Drawing.Point(608, 580);
-            this.button_MC_Guardar.Name = "button_MC_Guardar";
-            this.button_MC_Guardar.Size = new System.Drawing.Size(125, 23);
-            this.button_MC_Guardar.TabIndex = 7;
-            this.button_MC_Guardar.Text = "Guardar cambios";
-            this.button_MC_Guardar.UseVisualStyleBackColor = true;
-            // 
             // label_MC_ClientesAfectados
             // 
             this.label_MC_ClientesAfectados.AutoSize = true;
@@ -631,73 +634,94 @@
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
             // 
-            // groupBox_MC_TipoDeCond
+            // button_MC_Nueva
             // 
-            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.button_MC_Nueva.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Nueva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_MC_Nueva.Location = new System.Drawing.Point(448, 580);
+            this.button_MC_Nueva.Name = "button_MC_Nueva";
+            this.button_MC_Nueva.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Nueva.TabIndex = 6;
+            this.button_MC_Nueva.Text = "Nueva";
+            this.button_MC_Nueva.UseVisualStyleBackColor = true;
+            // 
+            // button_PE_Guardar
+            // 
+            this.button_PE_Guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_PE_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.button_PE_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_PE_Guardar.Location = new System.Drawing.Point(104, 577);
+            this.button_PE_Guardar.Name = "button_PE_Guardar";
+            this.button_PE_Guardar.Size = new System.Drawing.Size(120, 23);
+            this.button_PE_Guardar.TabIndex = 9;
+            this.button_PE_Guardar.Text = "Guardar cambios";
+            this.button_PE_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_PE_Guardar.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox_PE_imagEspec
+            // 
+            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_MinEspectaculos);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_DineroGastado);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_NumEntradas);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_MinEspectaculos);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_DineroGastado);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MumEntradas);
-            this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 253);
-            this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
-            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 148);
-            this.groupBox_MC_TipoDeCond.TabIndex = 20;
-            this.groupBox_MC_TipoDeCond.TabStop = false;
-            this.groupBox_MC_TipoDeCond.Text = "Tipo de condición:";
+            this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
+            this.pictureBox_PE_imagEspec.Name = "pictureBox_PE_imagEspec";
+            this.pictureBox_PE_imagEspec.Size = new System.Drawing.Size(537, 305);
+            this.pictureBox_PE_imagEspec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_PE_imagEspec.TabIndex = 8;
+            this.pictureBox_PE_imagEspec.TabStop = false;
             // 
-            // checkBox_MumEntradas
+            // button_MC_SubirFoto
             // 
-            this.checkBox_MumEntradas.AutoSize = true;
-            this.checkBox_MumEntradas.Location = new System.Drawing.Point(6, 34);
-            this.checkBox_MumEntradas.Name = "checkBox_MumEntradas";
-            this.checkBox_MumEntradas.Size = new System.Drawing.Size(214, 17);
-            this.checkBox_MumEntradas.TabIndex = 0;
-            this.checkBox_MumEntradas.Text = "Número mínimo de entradas compradas";
-            this.checkBox_MumEntradas.UseVisualStyleBackColor = true;
+            this.button_MC_SubirFoto.Image = global::Events4ALL.Properties.Resources.photo;
+            this.button_MC_SubirFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 432);
+            this.button_MC_SubirFoto.Name = "button_MC_SubirFoto";
+            this.button_MC_SubirFoto.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_SubirFoto.TabIndex = 5;
+            this.button_MC_SubirFoto.Text = "Seleccionar imágen";
+            this.button_MC_SubirFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
             // 
-            // checkBox_MC_DineroGastado
+            // pictureBox_MC_CartelPromo
             // 
-            this.checkBox_MC_DineroGastado.AutoSize = true;
-            this.checkBox_MC_DineroGastado.Location = new System.Drawing.Point(6, 76);
-            this.checkBox_MC_DineroGastado.Name = "checkBox_MC_DineroGastado";
-            this.checkBox_MC_DineroGastado.Size = new System.Drawing.Size(157, 17);
-            this.checkBox_MC_DineroGastado.TabIndex = 1;
-            this.checkBox_MC_DineroGastado.Text = "Dinero gastado en entradas";
-            this.checkBox_MC_DineroGastado.UseVisualStyleBackColor = true;
+            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 461);
+            this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
+            this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 114);
+            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_MC_CartelPromo.TabIndex = 18;
+            this.pictureBox_MC_CartelPromo.TabStop = false;
             // 
-            // checkBox_MC_MinEspectaculos
+            // button_MC_Eliminar
             // 
-            this.checkBox_MC_MinEspectaculos.AutoSize = true;
-            this.checkBox_MC_MinEspectaculos.Location = new System.Drawing.Point(6, 116);
-            this.checkBox_MC_MinEspectaculos.Name = "checkBox_MC_MinEspectaculos";
-            this.checkBox_MC_MinEspectaculos.Size = new System.Drawing.Size(285, 17);
-            this.checkBox_MC_MinEspectaculos.TabIndex = 2;
-            this.checkBox_MC_MinEspectaculos.Text = "Número mínimo de espéctaculos diferentes comprados";
-            this.checkBox_MC_MinEspectaculos.UseVisualStyleBackColor = true;
+            this.button_MC_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.button_MC_Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 580);
+            this.button_MC_Eliminar.Name = "button_MC_Eliminar";
+            this.button_MC_Eliminar.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Eliminar.TabIndex = 8;
+            this.button_MC_Eliminar.Text = "Eliminar";
+            this.button_MC_Eliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox_MC_NumEntradas
+            // button_MC_Guardar
             // 
-            this.textBox_MC_NumEntradas.Location = new System.Drawing.Point(296, 32);
-            this.textBox_MC_NumEntradas.Name = "textBox_MC_NumEntradas";
-            this.textBox_MC_NumEntradas.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_NumEntradas.TabIndex = 3;
-            // 
-            // textBox_MC_DineroGastado
-            // 
-            this.textBox_MC_DineroGastado.Location = new System.Drawing.Point(296, 74);
-            this.textBox_MC_DineroGastado.Name = "textBox_MC_DineroGastado";
-            this.textBox_MC_DineroGastado.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_DineroGastado.TabIndex = 4;
-            // 
-            // textBox_MC_MinEspectaculos
-            // 
-            this.textBox_MC_MinEspectaculos.Location = new System.Drawing.Point(296, 113);
-            this.textBox_MC_MinEspectaculos.Name = "textBox_MC_MinEspectaculos";
-            this.textBox_MC_MinEspectaculos.Size = new System.Drawing.Size(100, 20);
-            this.textBox_MC_MinEspectaculos.TabIndex = 5;
+            this.button_MC_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.button_MC_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_MC_Guardar.Location = new System.Drawing.Point(608, 580);
+            this.button_MC_Guardar.Name = "button_MC_Guardar";
+            this.button_MC_Guardar.Size = new System.Drawing.Size(125, 23);
+            this.button_MC_Guardar.TabIndex = 7;
+            this.button_MC_Guardar.Text = "Guardar cambios";
+            this.button_MC_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_MC_Guardar.UseVisualStyleBackColor = true;
             // 
             // Promociones
             // 
@@ -709,7 +733,6 @@
             this.tabControl_promociones.ResumeLayout(false);
             this.tab_Por_espectaculo.ResumeLayout(false);
             this.tab_Por_espectaculo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).EndInit();
             this.groupBox_PE_promoGen.ResumeLayout(false);
             this.groupBox_PE_promoGen.PerformLayout();
             this.groupBox_PE_promoEvent.ResumeLayout(false);
@@ -718,10 +741,11 @@
             this.groupBox_PE_DatosEspec.PerformLayout();
             this.tab_Mediante_condiciones.ResumeLayout(false);
             this.tab_Mediante_condiciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             this.groupBox_MC_TipoDeCond.ResumeLayout(false);
             this.groupBox_MC_TipoDeCond.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -783,5 +807,6 @@
         private System.Windows.Forms.TextBox textBox_MC_MinEspectaculos;
         private System.Windows.Forms.TextBox textBox_MC_DineroGastado;
         private System.Windows.Forms.TextBox textBox_MC_NumEntradas;
+        private System.Windows.Forms.Button button_PE_Guardar;
     }
 }
