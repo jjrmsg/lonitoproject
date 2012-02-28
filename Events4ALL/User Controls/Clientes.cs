@@ -45,5 +45,15 @@ namespace Events4ALL
         {
 
         }
+
+        private void Admin_Perfil_rButom_Divorciado_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Perfil_Label_Mail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
