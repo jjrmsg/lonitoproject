@@ -32,6 +32,7 @@
             this.groupBox_Busqueda = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label_Edad_Ba = new System.Windows.Forms.Label();
+            this.buttom_Buscar = new System.Windows.Forms.Button();
             this.comboBox_Pais_BA = new System.Windows.Forms.ComboBox();
             this.numericUpDown_Fec1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.textBox_Nombre_Busqueda = new System.Windows.Forms.TextBox();
             this.label_Nombre_Busqueda = new System.Windows.Forms.Label();
             this.Resultados_Busqueda = new System.Windows.Forms.DataGridView();
-            this.buttom_Buscar = new System.Windows.Forms.Button();
             this.Admin_Foto_Perfil = new System.Windows.Forms.TabPage();
             this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
@@ -101,15 +101,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -135,11 +135,13 @@
             this.Buscar.Padding = new System.Windows.Forms.Padding(3);
             this.Buscar.Size = new System.Drawing.Size(893, 606);
             this.Buscar.TabIndex = 1;
-            this.Buscar.Text = "Buscar";
+            this.Buscar.Text = "Búsqueda";
             this.Buscar.UseVisualStyleBackColor = true;
             // 
             // groupBox_Busqueda
             // 
+            this.groupBox_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_Busqueda.Controls.Add(this.comboBox2);
             this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
             this.groupBox_Busqueda.Controls.Add(this.buttom_Buscar);
@@ -235,6 +237,19 @@
             this.label_Edad_Ba.Size = new System.Drawing.Size(68, 13);
             this.label_Edad_Ba.TabIndex = 0;
             this.label_Edad_Ba.Text = "Edad :  entre";
+            // 
+            // buttom_Buscar
+            // 
+            this.buttom_Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttom_Buscar.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.buttom_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttom_Buscar.Location = new System.Drawing.Point(777, 154);
+            this.buttom_Buscar.Name = "buttom_Buscar";
+            this.buttom_Buscar.Size = new System.Drawing.Size(71, 23);
+            this.buttom_Buscar.TabIndex = 8;
+            this.buttom_Buscar.Text = "Buscar";
+            this.buttom_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttom_Buscar.UseVisualStyleBackColor = true;
             // 
             // comboBox_Pais_BA
             // 
@@ -688,6 +703,9 @@
             // 
             // Resultados_Busqueda
             // 
+            this.Resultados_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Resultados_Busqueda.BackgroundColor = System.Drawing.SystemColors.Window;
             this.Resultados_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Resultados_Busqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -704,18 +722,6 @@
             this.Resultados_Busqueda.Name = "Resultados_Busqueda";
             this.Resultados_Busqueda.Size = new System.Drawing.Size(854, 362);
             this.Resultados_Busqueda.TabIndex = 0;
-            // 
-            // buttom_Buscar
-            // 
-            this.buttom_Buscar.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.buttom_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttom_Buscar.Location = new System.Drawing.Point(757, 139);
-            this.buttom_Buscar.Name = "buttom_Buscar";
-            this.buttom_Buscar.Size = new System.Drawing.Size(71, 27);
-            this.buttom_Buscar.TabIndex = 8;
-            this.buttom_Buscar.Text = "Buscar";
-            this.buttom_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttom_Buscar.UseVisualStyleBackColor = true;
             // 
             // Admin_Foto_Perfil
             // 
@@ -737,7 +743,7 @@
             this.Admin_Perfil_boton_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Admin_Perfil_boton_Foto.Image = global::Events4ALL.Properties.Resources.photo;
             this.Admin_Perfil_boton_Foto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(676, 292);
+            this.Admin_Perfil_boton_Foto.Location = new System.Drawing.Point(673, 292);
             this.Admin_Perfil_boton_Foto.Name = "Admin_Perfil_boton_Foto";
             this.Admin_Perfil_boton_Foto.Size = new System.Drawing.Size(110, 23);
             this.Admin_Perfil_boton_Foto.TabIndex = 53;
@@ -751,9 +757,9 @@
             this.Admin_Perfil_boton_Guardar.Enabled = false;
             this.Admin_Perfil_boton_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.Admin_Perfil_boton_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(706, 458);
+            this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(789, 554);
             this.Admin_Perfil_boton_Guardar.Name = "Admin_Perfil_boton_Guardar";
-            this.Admin_Perfil_boton_Guardar.Size = new System.Drawing.Size(70, 25);
+            this.Admin_Perfil_boton_Guardar.Size = new System.Drawing.Size(70, 23);
             this.Admin_Perfil_boton_Guardar.TabIndex = 52;
             this.Admin_Perfil_boton_Guardar.Text = "Guardar";
             this.Admin_Perfil_boton_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -764,9 +770,9 @@
             this.Admin_Perfil_boton_Anadir.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Admin_Perfil_boton_Anadir.Image = global::Events4ALL.Properties.Resources.clear_2;
             this.Admin_Perfil_boton_Anadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(706, 489);
+            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(713, 554);
             this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
-            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(70, 28);
+            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(70, 23);
             this.Admin_Perfil_boton_Anadir.TabIndex = 50;
             this.Admin_Perfil_boton_Anadir.Text = "Limpiar";
             this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -776,7 +782,7 @@
             // Admin_Perfil_Foto
             // 
             this.Admin_Perfil_Foto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Admin_Perfil_Foto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Admin_Perfil_Foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Admin_Perfil_Foto.Image = global::Events4ALL.Properties.Resources.Events4All;
             this.Admin_Perfil_Foto.Location = new System.Drawing.Point(604, 34);
             this.Admin_Perfil_Foto.Name = "Admin_Perfil_Foto";
@@ -787,9 +793,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -816,7 +822,7 @@
             this.groupBox1.Controls.Add(this.Admin_Perfil_txtBox_NIF);
             this.groupBox1.Location = new System.Drawing.Point(35, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 543);
+            this.groupBox1.Size = new System.Drawing.Size(543, 543);
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -901,7 +907,7 @@
             this.groupBox2.Controls.Add(this.Admin_Perfil_txtBox_Mail);
             this.groupBox2.Location = new System.Drawing.Point(34, 381);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 142);
+            this.groupBox2.Size = new System.Drawing.Size(474, 142);
             this.groupBox2.TabIndex = 59;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto";
@@ -1440,9 +1446,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.Admin_Foto_Perfil);
             this.tabControl1.Controls.Add(this.Buscar);
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
@@ -1465,61 +1471,70 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 25;
             // 
-            // NIF
+            // Borrar
             // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.Width = 70;
+            this.Borrar.FillWeight = 29.188F;
+            this.Borrar.HeaderText = "X";
+            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Width = 26;
             // 
-            // Nombre
+            // Editar
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 120;
+            this.Editar.FillWeight = 26.46787F;
+            this.Editar.HeaderText = "E";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.update;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 24;
             // 
-            // Apellidos
+            // Mail
             // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.Width = 170;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 80;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 80;
+            this.Mail.FillWeight = 168.8144F;
+            this.Mail.HeaderText = "Correo Electrónico";
+            this.Mail.Name = "Mail";
+            this.Mail.Width = 152;
             // 
             // Telefono
             // 
+            this.Telefono.FillWeight = 99.61344F;
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.Name = "Telefono";
             this.Telefono.Width = 90;
             // 
-            // Mail
+            // Localidad
             // 
-            this.Mail.HeaderText = "Correo Electrónico";
-            this.Mail.Name = "Mail";
-            this.Mail.Width = 150;
+            this.Localidad.FillWeight = 85.68197F;
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.Width = 77;
             // 
-            // Editar
+            // Provincia
             // 
-            this.Editar.HeaderText = "E";
-            this.Editar.Image = global::Events4ALL.Properties.Resources.update;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 25;
+            this.Provincia.FillWeight = 82.50529F;
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.Width = 75;
             // 
-            // Borrar
+            // Apellidos
             // 
-            this.Borrar.HeaderText = "X";
-            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 25;
+            this.Apellidos.FillWeight = 191.3995F;
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.Width = 172;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 138.6476F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // NIF
+            // 
+            this.NIF.FillWeight = 77.68187F;
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.Width = 70;
             // 
             // Admins
             // 

@@ -121,9 +121,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabAñadirSala);
             this.tabControl1.Controls.Add(this.tabBusquedaSala);
             this.tabControl1.Location = new System.Drawing.Point(3, 0);
@@ -179,8 +179,8 @@
             // 
             // labelDescripcion
             // 
-            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDescripcion.AutoSize = true;
             this.labelDescripcion.Location = new System.Drawing.Point(225, 19);
             this.labelDescripcion.Name = "labelDescripcion";
@@ -190,8 +190,8 @@
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textDescripcion.Location = new System.Drawing.Point(228, 35);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -224,8 +224,8 @@
             // 
             // groupBoxSecciones
             // 
-            this.groupBoxSecciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSecciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSecciones.Controls.Add(this.labelColumna10);
             this.groupBoxSecciones.Controls.Add(this.labelSeccion10);
             this.groupBoxSecciones.Controls.Add(this.textColumna10);
@@ -765,9 +765,10 @@
             // 
             // dataGridBuscarSala
             // 
-            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridBuscarSala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridBuscarSala.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridBuscarSala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -776,9 +777,9 @@
             this.aforoSala,
             this.numSecciones});
             this.dataGridBuscarSala.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 206);
+            this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 175);
             this.dataGridBuscarSala.Name = "dataGridBuscarSala";
-            this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 394);
+            this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 425);
             this.dataGridBuscarSala.TabIndex = 3;
             // 
             // numSala
@@ -803,8 +804,8 @@
             // 
             // groupBuscarSala
             // 
-            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBuscarSala.Controls.Add(this.checkLibre);
             this.groupBuscarSala.Controls.Add(this.labelSalasLibres);
             this.groupBuscarSala.Controls.Add(this.buttonBuscar);
@@ -816,9 +817,9 @@
             this.groupBuscarSala.Controls.Add(this.labelBuscarTipoSala);
             this.groupBuscarSala.Controls.Add(this.labelBuscarIdSala);
             this.groupBuscarSala.Controls.Add(this.textBox1);
-            this.groupBuscarSala.Location = new System.Drawing.Point(6, 28);
+            this.groupBuscarSala.Location = new System.Drawing.Point(6, 6);
             this.groupBuscarSala.Name = "groupBuscarSala";
-            this.groupBuscarSala.Size = new System.Drawing.Size(881, 172);
+            this.groupBuscarSala.Size = new System.Drawing.Size(881, 163);
             this.groupBuscarSala.TabIndex = 2;
             this.groupBuscarSala.TabStop = false;
             this.groupBuscarSala.Text = "Busqueda de Sala";
@@ -844,7 +845,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonBuscar.Location = new System.Drawing.Point(800, 143);
+            this.buttonBuscar.Location = new System.Drawing.Point(800, 134);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
             this.buttonBuscar.TabIndex = 3;
