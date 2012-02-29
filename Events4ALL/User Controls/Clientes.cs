@@ -14,6 +14,7 @@ namespace Events4ALL
         public Clientes()
         {
             InitializeComponent();
+            dataGridView1.Rows.Add("igyuyugi");
         }
 
         private void label1_Click(object sender, EventArgs e)

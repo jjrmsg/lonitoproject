@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.FormCliente = new System.Windows.Forms.TabControl();
             this.FichaCliente = new System.Windows.Forms.TabPage();
             this.buttonLimpiarCliente = new System.Windows.Forms.Button();
@@ -74,13 +73,6 @@
             this.textBoxNombreC = new System.Windows.Forms.TextBox();
             this.BuscarCliente = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.comboBoxProvinciaBusquedaCli = new System.Windows.Forms.ComboBox();
@@ -100,6 +92,13 @@
             this.labelApellidosBusquedaCli = new System.Windows.Forms.Label();
             this.textboxNombreBusquedaCli = new System.Windows.Forms.TextBox();
             this.labelNombreBusquedaCli = new System.Windows.Forms.Label();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
             this.FormCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -590,6 +589,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -606,54 +606,10 @@
             this.VerPerfil});
             this.dataGridView1.Location = new System.Drawing.Point(20, 235);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(849, 353);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // NIF
-            // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 126;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.Width = 200;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 150;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 120;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.Width = 50;
-            // 
-            // VerPerfil
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.VerPerfil.DefaultCellStyle = dataGridViewCellStyle10;
-            this.VerPerfil.HeaderText = "Ver perfil";
-            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.photo;
-            this.VerPerfil.Name = "VerPerfil";
-            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerPerfil.Width = 60;
             // 
             // groupBoxBusquedaCliente
             // 
@@ -931,6 +887,50 @@
             this.labelNombreBusquedaCli.Size = new System.Drawing.Size(57, 16);
             this.labelNombreBusquedaCli.TabIndex = 2;
             this.labelNombreBusquedaCli.Text = "Nombre";
+            // 
+            // NIF
+            // 
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 126;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.Width = 200;
+            // 
+            // Localidad
+            // 
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.Width = 150;
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.Width = 120;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.Width = 50;
+            // 
+            // VerPerfil
+            // 
+            this.VerPerfil.HeaderText = "Ver perfil";
+            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.VerPerfil.Name = "VerPerfil";
+            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerPerfil.Width = 60;
             // 
             // Clientes
             // 
