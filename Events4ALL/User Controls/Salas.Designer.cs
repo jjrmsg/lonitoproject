@@ -31,7 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
             this.pictureTipo = new System.Windows.Forms.PictureBox();
-            this.bottonLimpiar = new System.Windows.Forms.Button();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.textDescripcion = new System.Windows.Forms.TextBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
@@ -88,16 +88,12 @@
             this.textFila1 = new System.Windows.Forms.TextBox();
             this.labelFila1 = new System.Windows.Forms.Label();
             this.textIdSala = new System.Windows.Forms.TextBox();
-            this.bottonAñadirSala = new System.Windows.Forms.Button();
+            this.buttonAñadirSala = new System.Windows.Forms.Button();
             this.comboNumSeccion = new System.Windows.Forms.ComboBox();
             this.labelNumSeccion = new System.Windows.Forms.Label();
             this.labelIdSala = new System.Windows.Forms.Label();
             this.tabBusquedaSala = new System.Windows.Forms.TabPage();
             this.dataGridBuscarSala = new System.Windows.Forms.DataGridView();
-            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBuscarSala = new System.Windows.Forms.GroupBox();
             this.checkLibre = new System.Windows.Forms.CheckBox();
             this.labelSalasLibres = new System.Windows.Forms.Label();
@@ -110,6 +106,13 @@
             this.labelBuscarTipoSala = new System.Windows.Forms.Label();
             this.labelBuscarIdSala = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Espectaculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -121,9 +124,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabAñadirSala);
             this.tabControl1.Controls.Add(this.tabBusquedaSala);
             this.tabControl1.Location = new System.Drawing.Point(3, 0);
@@ -135,14 +138,14 @@
             // tabAñadirSala
             // 
             this.tabAñadirSala.Controls.Add(this.pictureTipo);
-            this.tabAñadirSala.Controls.Add(this.bottonLimpiar);
+            this.tabAñadirSala.Controls.Add(this.buttonLimpiar);
             this.tabAñadirSala.Controls.Add(this.labelDescripcion);
             this.tabAñadirSala.Controls.Add(this.textDescripcion);
             this.tabAñadirSala.Controls.Add(this.comboTipo);
             this.tabAñadirSala.Controls.Add(this.labelTipo);
             this.tabAñadirSala.Controls.Add(this.groupBoxSecciones);
             this.tabAñadirSala.Controls.Add(this.textIdSala);
-            this.tabAñadirSala.Controls.Add(this.bottonAñadirSala);
+            this.tabAñadirSala.Controls.Add(this.buttonAñadirSala);
             this.tabAñadirSala.Controls.Add(this.comboNumSeccion);
             this.tabAñadirSala.Controls.Add(this.labelNumSeccion);
             this.tabAñadirSala.Controls.Add(this.labelIdSala);
@@ -160,27 +163,30 @@
             this.pictureTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureTipo.Image = global::Events4ALL.Properties.Resources.Events4All;
             this.pictureTipo.InitialImage = global::Events4ALL.Properties.Resources.Events4All;
-            this.pictureTipo.Location = new System.Drawing.Point(676, 19);
+            this.pictureTipo.Location = new System.Drawing.Point(692, 19);
             this.pictureTipo.Name = "pictureTipo";
-            this.pictureTipo.Size = new System.Drawing.Size(186, 159);
+            this.pictureTipo.Size = new System.Drawing.Size(173, 146);
             this.pictureTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureTipo.TabIndex = 16;
             this.pictureTipo.TabStop = false;
             // 
-            // bottonLimpiar
+            // buttonLimpiar
             // 
-            this.bottonLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bottonLimpiar.Location = new System.Drawing.Point(731, 545);
-            this.bottonLimpiar.Name = "bottonLimpiar";
-            this.bottonLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.bottonLimpiar.TabIndex = 15;
-            this.bottonLimpiar.Text = "Limpiar";
-            this.bottonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLimpiar.Location = new System.Drawing.Point(744, 577);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(62, 23);
+            this.buttonLimpiar.TabIndex = 15;
+            this.buttonLimpiar.Text = "Limpiar";
+            this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
             // 
             // labelDescripcion
             // 
-            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDescripcion.AutoSize = true;
             this.labelDescripcion.Location = new System.Drawing.Point(225, 19);
             this.labelDescripcion.Name = "labelDescripcion";
@@ -190,8 +196,8 @@
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textDescripcion.Location = new System.Drawing.Point(228, 35);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -224,8 +230,8 @@
             // 
             // groupBoxSecciones
             // 
-            this.groupBoxSecciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxSecciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxSecciones.Controls.Add(this.labelColumna10);
             this.groupBoxSecciones.Controls.Add(this.labelSeccion10);
             this.groupBoxSecciones.Controls.Add(this.textColumna10);
@@ -701,15 +707,18 @@
             this.textIdSala.Size = new System.Drawing.Size(77, 20);
             this.textIdSala.TabIndex = 7;
             // 
-            // bottonAñadirSala
+            // buttonAñadirSala
             // 
-            this.bottonAñadirSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bottonAñadirSala.Location = new System.Drawing.Point(812, 545);
-            this.bottonAñadirSala.Name = "bottonAñadirSala";
-            this.bottonAñadirSala.Size = new System.Drawing.Size(75, 23);
-            this.bottonAñadirSala.TabIndex = 6;
-            this.bottonAñadirSala.Text = "Guardar";
-            this.bottonAñadirSala.UseVisualStyleBackColor = true;
+            this.buttonAñadirSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAñadirSala.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.buttonAñadirSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAñadirSala.Location = new System.Drawing.Point(812, 577);
+            this.buttonAñadirSala.Name = "buttonAñadirSala";
+            this.buttonAñadirSala.Size = new System.Drawing.Size(75, 23);
+            this.buttonAñadirSala.TabIndex = 6;
+            this.buttonAñadirSala.Text = "Guardar";
+            this.buttonAñadirSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAñadirSala.UseVisualStyleBackColor = true;
             // 
             // comboNumSeccion
             // 
@@ -765,9 +774,8 @@
             // 
             // dataGridBuscarSala
             // 
-            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridBuscarSala.AllowUserToAddRows = false;
+            this.dataGridBuscarSala.AllowUserToOrderColumns = true;
             this.dataGridBuscarSala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridBuscarSala.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -775,37 +783,21 @@
             this.numSala,
             this.tipoSala,
             this.aforoSala,
-            this.numSecciones});
+            this.numSecciones,
+            this.Espectaculo,
+            this.Editar,
+            this.Eliminar});
             this.dataGridBuscarSala.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 175);
             this.dataGridBuscarSala.Name = "dataGridBuscarSala";
+            this.dataGridBuscarSala.ReadOnly = true;
             this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 425);
             this.dataGridBuscarSala.TabIndex = 3;
             // 
-            // numSala
-            // 
-            this.numSala.HeaderText = "NºSala";
-            this.numSala.Name = "numSala";
-            // 
-            // tipoSala
-            // 
-            this.tipoSala.HeaderText = "Tipo Sala";
-            this.tipoSala.Name = "tipoSala";
-            // 
-            // aforoSala
-            // 
-            this.aforoSala.HeaderText = "Aforo Sala";
-            this.aforoSala.Name = "aforoSala";
-            // 
-            // numSecciones
-            // 
-            this.numSecciones.HeaderText = "Nº Secciones";
-            this.numSecciones.Name = "numSecciones";
-            // 
             // groupBuscarSala
             // 
-            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBuscarSala.Controls.Add(this.checkLibre);
             this.groupBuscarSala.Controls.Add(this.labelSalasLibres);
             this.groupBuscarSala.Controls.Add(this.buttonBuscar);
@@ -845,11 +837,14 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonBuscar.Location = new System.Drawing.Point(800, 134);
+            this.buttonBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscar.Location = new System.Drawing.Point(811, 134);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(64, 23);
             this.buttonBuscar.TabIndex = 3;
             this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBuscar.UseVisualStyleBackColor = true;
             // 
             // textAforoBusquedaMax
@@ -923,6 +918,56 @@
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // numSala
+            // 
+            this.numSala.FillWeight = 50F;
+            this.numSala.HeaderText = "NºSala";
+            this.numSala.Name = "numSala";
+            this.numSala.ReadOnly = true;
+            // 
+            // tipoSala
+            // 
+            this.tipoSala.FillWeight = 101.8613F;
+            this.tipoSala.HeaderText = "Tipo Sala";
+            this.tipoSala.Name = "tipoSala";
+            this.tipoSala.ReadOnly = true;
+            // 
+            // aforoSala
+            // 
+            this.aforoSala.FillWeight = 101.8613F;
+            this.aforoSala.HeaderText = "Aforo Sala";
+            this.aforoSala.Name = "aforoSala";
+            this.aforoSala.ReadOnly = true;
+            // 
+            // numSecciones
+            // 
+            this.numSecciones.FillWeight = 101.8613F;
+            this.numSecciones.HeaderText = "Nº Secciones";
+            this.numSecciones.Name = "numSecciones";
+            this.numSecciones.ReadOnly = true;
+            // 
+            // Espectaculo
+            // 
+            this.Espectaculo.FillWeight = 101.8613F;
+            this.Espectaculo.HeaderText = "Espectaculo";
+            this.Espectaculo.Name = "Espectaculo";
+            this.Espectaculo.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 30F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 30F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -952,7 +997,7 @@
         private System.Windows.Forms.ComboBox comboNumSeccion;
         private System.Windows.Forms.Label labelNumSeccion;
         private System.Windows.Forms.Label labelIdSala;
-        private System.Windows.Forms.Button bottonAñadirSala;
+        private System.Windows.Forms.Button buttonAñadirSala;
         private System.Windows.Forms.TextBox textIdSala;
         private System.Windows.Forms.GroupBox groupBoxSecciones;
         private System.Windows.Forms.Label labelColumna10;
@@ -1009,7 +1054,7 @@
         private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.TextBox textDescripcion;
-        private System.Windows.Forms.Button bottonLimpiar;
+        private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelBuscarIdSala;
         private System.Windows.Forms.GroupBox groupBuscarSala;
@@ -1021,12 +1066,15 @@
         private System.Windows.Forms.Label labelAforo;
         private System.Windows.Forms.ComboBox comboBuscarTipoSala;
         private System.Windows.Forms.Label labelBuscarTipoSala;
+        private System.Windows.Forms.CheckBox checkLibre;
+        private System.Windows.Forms.Label labelSalasLibres;
+        private System.Windows.Forms.PictureBox pictureTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn numSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn aforoSala;
         private System.Windows.Forms.DataGridViewTextBoxColumn numSecciones;
-        private System.Windows.Forms.CheckBox checkLibre;
-        private System.Windows.Forms.Label labelSalasLibres;
-        private System.Windows.Forms.PictureBox pictureTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Espectaculo;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }
