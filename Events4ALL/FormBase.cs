@@ -16,7 +16,7 @@ namespace Events4ALL
 
         //------------VARIABLES---------------
         int actualOption=2;
-
+        int numImages;
 
 
         public FormBase(string user, string pass, string lang)
@@ -25,15 +25,7 @@ namespace Events4ALL
             if(lang=="en")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
-
-
-            /*System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-            privateFonts.AddFontFile("fonts/AGENCYR.TTF");
-            System.Drawing.Font font = new Font(privateFonts.Families[0], 20);
-            label4.Font = font;
-
-            System.Drawing.Font font2 = new Font(privateFonts.Families[0], 10);
-            label5.Font = font2;*/
+            numImages = imageList1.Images.Count;
 
             if(lang=="es" || lang==" ")
             {
@@ -86,25 +78,30 @@ namespace Events4ALL
                                           e.State ^ DrawItemState.Selected,
                                           e.ForeColor,
                                           Color.Gainsboro);
-            e.DrawBackground();
-            e.Graphics.DrawString(listBox1.Items[e.Index].ToString(), e.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
-            e.DrawFocusRectangle();
 
             //Añadir iconos a los items de la lista
             listItem item = listBox1.Items[e.Index] as listItem;
             e.DrawBackground();
 
-            if (item.ImageIndex >= 0 && item.ImageIndex < imageList1.Images.Count)
+            if (item.ImageIndex >= 0 && item.ImageIndex < numImages)
             {
                 e.Graphics.DrawImage(imageList1.Images[item.ImageIndex],
                                      new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
-            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
-                                  new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
-                                  e.Bounds.Top+5));
-
-            //listBox1_Click(sender, e);
+            if (e.Index == listBox1.SelectedIndex)
+            {
+                e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.White),
+                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
+                      e.Bounds.Top + 5));
+                e.DrawFocusRectangle();
+            }
+            else
+            {
+                e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
+                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
+                      e.Bounds.Top + 5));
+            }
         }
 
 
@@ -135,35 +132,43 @@ namespace Events4ALL
                 {
                     case 0:
                         inicio1.Visible = true;
+                        inicio1.focusBox.Focus();
                         break;
                     case 1:
                         admins1.Visible = true;
                         admins1.Admin_Perfil_txtBox_Nombre.Focus();
-
                         break;
                     case 2:
                         clientes1.Visible = true;
+                        clientes1.textBoxNombreC.Focus();
                         break;
                     case 3:
                         salas1.Visible = true;
+                        salas1.textIdSala.Focus();
                         break;
                     case 4:
                         espectaculos1.Visible = true;
+                        espectaculos1.textBox5.Focus();
                         break;
                     case 5:
                         promociones1.Visible = true;
+                        promociones1.comboBox_PE_espectaculo.Focus();
                         break;
                     case 6:
                         estadisticas1.Visible = true;
+                        estadisticas1.textBox1.Focus();
                         break;
                     case 7:
                         ventas1.Visible = true;
+                        ventas1.textBox1.Focus();
                         break;
                     case 8:
                         mensajes1.Visible = true;
+                        mensajes1.responseText.Focus();
                         break;
                     default:
                         inicio1.Visible = true;
+                        inicio1.focusBox.Focus();
                         break;
                 }
                 actualOption = optionMenu;

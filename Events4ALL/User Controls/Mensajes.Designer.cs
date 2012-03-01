@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mensajes));
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.prueba = new System.Windows.Forms.Button();
             this.statusLabel = new System.Windows.Forms.Label();
             this.mailButton = new System.Windows.Forms.Button();
             this.responseText = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.X = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.prueba = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,13 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // prueba
+            // 
+            resources.ApplyResources(this.prueba, "prueba");
+            this.prueba.Name = "prueba";
+            this.prueba.UseVisualStyleBackColor = true;
+            this.prueba.Click += new System.EventHandler(this.prueba_Click);
             // 
             // statusLabel
             // 
@@ -187,13 +194,6 @@
             this.dataGridViewImageColumn1.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
-            // prueba
-            // 
-            resources.ApplyResources(this.prueba, "prueba");
-            this.prueba.Name = "prueba";
-            this.prueba.UseVisualStyleBackColor = true;
-            this.prueba.Click += new System.EventHandler(this.prueba_Click);
-            // 
             // Mensajes
             // 
             resources.ApplyResources(this, "$this");
@@ -216,7 +216,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button mailButton;
-        private System.Windows.Forms.TextBox responseText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
@@ -231,5 +230,6 @@
         private System.Windows.Forms.DataGridViewImageColumn X;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button prueba;
+        public System.Windows.Forms.TextBox responseText;
     }
 }

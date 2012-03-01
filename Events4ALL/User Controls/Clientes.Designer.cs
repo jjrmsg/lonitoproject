@@ -73,6 +73,13 @@
             this.textBoxNombreC = new System.Windows.Forms.TextBox();
             this.BuscarCliente = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.comboBoxProvinciaBusquedaCli = new System.Windows.Forms.ComboBox();
@@ -92,13 +99,6 @@
             this.labelApellidosBusquedaCli = new System.Windows.Forms.Label();
             this.textboxNombreBusquedaCli = new System.Windows.Forms.TextBox();
             this.labelNombreBusquedaCli = new System.Windows.Forms.Label();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
             this.FormCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -117,9 +117,9 @@
             // FormCliente
             // 
             this.FormCliente.AccessibleDescription = "Formulario Cliente";
-            this.FormCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.FormCliente.Controls.Add(this.FichaCliente);
             this.FormCliente.Controls.Add(this.BuscarCliente);
             this.FormCliente.Location = new System.Drawing.Point(3, 1);
@@ -197,8 +197,8 @@
             // 
             // datosPersonalesClientes
             // 
-            this.datosPersonalesClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datosPersonalesClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.datosPersonalesClientes.Controls.Add(this.dateTimePicker1);
             this.datosPersonalesClientes.Controls.Add(this.groupContactoCliente);
             this.datosPersonalesClientes.Controls.Add(this.grupoEstadoCivilCli);
@@ -591,9 +591,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -611,10 +611,61 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // NIF
+            // 
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 126;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 200;
+            // 
+            // Localidad
+            // 
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.ReadOnly = true;
+            this.Localidad.Width = 150;
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            this.Provincia.Width = 120;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
+            // 
+            // VerPerfil
+            // 
+            this.VerPerfil.HeaderText = "Ver perfil";
+            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.VerPerfil.Name = "VerPerfil";
+            this.VerPerfil.ReadOnly = true;
+            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerPerfil.Width = 60;
+            // 
             // groupBoxBusquedaCliente
             // 
-            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxBusquedaCliente.Controls.Add(this.buttonBuscarCliente);
             this.groupBoxBusquedaCliente.Controls.Add(this.comboBoxProvinciaBusquedaCli);
             this.groupBoxBusquedaCliente.Controls.Add(this.labelEdadBusquedaCli);
@@ -888,50 +939,6 @@
             this.labelNombreBusquedaCli.TabIndex = 2;
             this.labelNombreBusquedaCli.Text = "Nombre";
             // 
-            // NIF
-            // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 126;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.Width = 200;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 150;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 120;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.Width = 50;
-            // 
-            // VerPerfil
-            // 
-            this.VerPerfil.HeaderText = "Ver perfil";
-            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.VerPerfil.Name = "VerPerfil";
-            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerPerfil.Width = 60;
-            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -968,7 +975,6 @@
         private System.Windows.Forms.TabPage FichaCliente;
         private System.Windows.Forms.TabPage BuscarCliente;
         private System.Windows.Forms.Label labelNombreCliente;
-        private System.Windows.Forms.TextBox textBoxNombreC;
         private System.Windows.Forms.TextBox textBoxNifC;
         private System.Windows.Forms.Label labelNifCliente;
         private System.Windows.Forms.GroupBox datosPersonalesClientes;
@@ -1035,5 +1041,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewImageColumn VerPerfil;
+        public System.Windows.Forms.TextBox textBoxNombreC;
     }
 }
