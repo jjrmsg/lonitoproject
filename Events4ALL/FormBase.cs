@@ -71,13 +71,10 @@ namespace Events4ALL
             //Cambiar el color de la selección de items
             if (e.Index < 0) return;
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-                e = new DrawItemEventArgs(e.Graphics,
-                                          e.Font,
-                                          e.Bounds,
-                                          e.Index,
-                                          e.State ^ DrawItemState.Selected,
-                                          e.ForeColor,
+            {
+                e = new DrawItemEventArgs(e.Graphics, e.Font, e.Bounds, e.Index, e.State ^ DrawItemState.Selected, e.ForeColor,
                                           Color.Gainsboro);
+            }
 
             //Añadir iconos a los items de la lista
             listItem item = listBox1.Items[e.Index] as listItem;
@@ -85,22 +82,19 @@ namespace Events4ALL
 
             if (item.ImageIndex >= 0 && item.ImageIndex < numImages)
             {
-                e.Graphics.DrawImage(imageList1.Images[item.ImageIndex],
-                                     new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
+                e.Graphics.DrawImage(imageList1.Images[item.ImageIndex], new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
             if (e.Index == listBox1.SelectedIndex)
             {
                 e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.White),
-                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
-                      e.Bounds.Top + 5));
+                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
                 e.DrawFocusRectangle();
             }
             else
             {
                 e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
-                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20,
-                      e.Bounds.Top + 5));
+                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
             }
         }
 
