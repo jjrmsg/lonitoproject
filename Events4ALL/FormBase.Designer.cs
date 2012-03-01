@@ -75,6 +75,7 @@
             this.listBox1.ForeColor = System.Drawing.Color.Black;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Name = "listBox1";
+            this.listBox1.TabStop = false;
             this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             this.listBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox1_DrawItem);
             // 

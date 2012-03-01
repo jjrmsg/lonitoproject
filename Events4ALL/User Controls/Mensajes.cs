@@ -55,6 +55,10 @@ namespace Events4ALL.User_Controls
         {
             statusLabel.Text = "Enviado";
         }
+
+        private void prueba_Click(object sender, EventArgs e)
+        {
+        }
     }
 
     public delegate void MailCallback(string res);

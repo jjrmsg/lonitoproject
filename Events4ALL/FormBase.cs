@@ -13,6 +13,12 @@ namespace Events4ALL
 {
     public partial class FormBase : Form
     {
+
+        //------------VARIABLES---------------
+        int actualOption=2;
+
+
+
         public FormBase(string user, string pass, string lang)
         {
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -116,49 +122,58 @@ namespace Events4ALL
             mensajes1.Visible = false;
         }
 
+
+
         private void listBox1_Click(object sender, EventArgs e)
         {
             int optionMenu = listBox1.SelectedIndex;
-            DesactivarMenus();
-            switch (optionMenu)
+
+            if (actualOption != optionMenu)
             {
-                case 0:
-                    inicio1.Visible = true;
-                    break;
-                case 1:
-                    admins1.Visible = true;
-                    break;
-                case 2:
-                    clientes1.Visible = true;
-                    break;
-                case 3:
-                    salas1.Visible = true;
-                    break;
-                case 4:
-                    espectaculos1.Visible = true;
-                    break;
-                case 5:
-                    promociones1.Visible = true;
-                    break;
-                case 6:
-                    estadisticas1.Visible = true;
-                    break;
-                case 7:
-                    ventas1.Visible = true;
-                    break;
-                case 8:
-                    mensajes1.Visible = true;
-                    break;
-                default:
-                    inicio1.Visible = true;
-                    break;
+                DesactivarMenus();
+                switch (optionMenu)
+                {
+                    case 0:
+                        inicio1.Visible = true;
+                        break;
+                    case 1:
+                        admins1.Visible = true;
+                        admins1.Admin_Perfil_txtBox_Nombre.Focus();
+
+                        break;
+                    case 2:
+                        clientes1.Visible = true;
+                        break;
+                    case 3:
+                        salas1.Visible = true;
+                        break;
+                    case 4:
+                        espectaculos1.Visible = true;
+                        break;
+                    case 5:
+                        promociones1.Visible = true;
+                        break;
+                    case 6:
+                        estadisticas1.Visible = true;
+                        break;
+                    case 7:
+                        ventas1.Visible = true;
+                        break;
+                    case 8:
+                        mensajes1.Visible = true;
+                        break;
+                    default:
+                        inicio1.Visible = true;
+                        break;
+                }
+                actualOption = optionMenu;
             }
 
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void logoutButton_Click(object sender, EventArgs e)

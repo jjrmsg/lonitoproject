@@ -56,6 +56,15 @@
             this.textBox_Nombre_Busqueda = new System.Windows.Forms.TextBox();
             this.label_Nombre_Busqueda = new System.Windows.Forms.Label();
             this.Resultados_Busqueda = new System.Windows.Forms.DataGridView();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Admin_Foto_Perfil = new System.Windows.Forms.TabPage();
             this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
@@ -101,15 +110,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -140,8 +140,8 @@
             // 
             // groupBox_Busqueda
             // 
-            this.groupBox_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_Busqueda.Controls.Add(this.comboBox2);
             this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
             this.groupBox_Busqueda.Controls.Add(this.buttom_Buscar);
@@ -703,9 +703,9 @@
             // 
             // Resultados_Busqueda
             // 
-            this.Resultados_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Resultados_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.Resultados_Busqueda.BackgroundColor = System.Drawing.SystemColors.Window;
             this.Resultados_Busqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Resultados_Busqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -722,6 +722,71 @@
             this.Resultados_Busqueda.Name = "Resultados_Busqueda";
             this.Resultados_Busqueda.Size = new System.Drawing.Size(854, 362);
             this.Resultados_Busqueda.TabIndex = 0;
+            // 
+            // NIF
+            // 
+            this.NIF.FillWeight = 77.68187F;
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.Width = 70;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 138.6476F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.FillWeight = 191.3995F;
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.Width = 172;
+            // 
+            // Provincia
+            // 
+            this.Provincia.FillWeight = 82.50529F;
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.Width = 75;
+            // 
+            // Localidad
+            // 
+            this.Localidad.FillWeight = 85.68197F;
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.Width = 77;
+            // 
+            // Telefono
+            // 
+            this.Telefono.FillWeight = 99.61344F;
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.Width = 90;
+            // 
+            // Mail
+            // 
+            this.Mail.FillWeight = 168.8144F;
+            this.Mail.HeaderText = "Correo Electrónico";
+            this.Mail.Name = "Mail";
+            this.Mail.Width = 152;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 26.46787F;
+            this.Editar.HeaderText = "E";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.update;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 24;
+            // 
+            // Borrar
+            // 
+            this.Borrar.FillWeight = 29.188F;
+            this.Borrar.HeaderText = "X";
+            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Width = 26;
             // 
             // Admin_Foto_Perfil
             // 
@@ -793,9 +858,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -1446,9 +1511,9 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.Admin_Foto_Perfil);
             this.tabControl1.Controls.Add(this.Buscar);
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
@@ -1470,71 +1535,6 @@
             this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 25;
-            // 
-            // Borrar
-            // 
-            this.Borrar.FillWeight = 29.188F;
-            this.Borrar.HeaderText = "X";
-            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 26;
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 26.46787F;
-            this.Editar.HeaderText = "E";
-            this.Editar.Image = global::Events4ALL.Properties.Resources.update;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 24;
-            // 
-            // Mail
-            // 
-            this.Mail.FillWeight = 168.8144F;
-            this.Mail.HeaderText = "Correo Electrónico";
-            this.Mail.Name = "Mail";
-            this.Mail.Width = 152;
-            // 
-            // Telefono
-            // 
-            this.Telefono.FillWeight = 99.61344F;
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.Width = 90;
-            // 
-            // Localidad
-            // 
-            this.Localidad.FillWeight = 85.68197F;
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.Width = 77;
-            // 
-            // Provincia
-            // 
-            this.Provincia.FillWeight = 82.50529F;
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.Width = 75;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.FillWeight = 191.3995F;
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.Width = 172;
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 138.6476F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // NIF
-            // 
-            this.NIF.FillWeight = 77.68187F;
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.Width = 70;
             // 
             // Admins
             // 
@@ -1572,7 +1572,6 @@
 
         private System.Windows.Forms.TabPage Buscar;
         private System.Windows.Forms.TabPage Admin_Foto_Perfil;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label Admin_Perfil_Label_Apellidos;
         private System.Windows.Forms.Label Admin_Perfil_Label_Nombre;
         private System.Windows.Forms.Label Admin_Perfil_Label_Domicilio;
@@ -1591,7 +1590,6 @@
         private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Domicilio;
         private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Tel2;
         private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Tel1;
-        private System.Windows.Forms.TextBox Admin_Perfil_txtBox_Nombre;
         private System.Windows.Forms.ComboBox Admin_Perfil_comboBox_Pais;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Viudo;
         private System.Windows.Forms.RadioButton Admin_Perfil_rButom_Divorciado;
@@ -1652,6 +1650,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mail;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
+        public System.Windows.Forms.TextBox Admin_Perfil_txtBox_Nombre;
+        private System.Windows.Forms.TabControl tabControl1;
 
     }
 }
