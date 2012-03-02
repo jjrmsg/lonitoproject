@@ -17,14 +17,16 @@ namespace Events4ALL
         //------------VARIABLES---------------
         int actualOption=2;
         int numImages;
-
+        int update = 0;
 
         public FormBase(string user, string pass, string lang)
         {
-            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            DoubleBuffered = true;
+
             if(lang=="en")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
+          
             numImages = imageList1.Images.Count;
 
             if(lang=="es" || lang==" ")
@@ -85,17 +87,11 @@ namespace Events4ALL
                 e.Graphics.DrawImage(imageList1.Images[item.ImageIndex], new PointF(e.Bounds.Left+8, e.Bounds.Top+5));
             }
 
-            if (e.Index == listBox1.SelectedIndex)
-            {
-                e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.White),
+            e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
                       new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
-                e.DrawFocusRectangle();
-            }
-            else
-            {
-                e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
-                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
-            }
+            
+                
+            
         }
 
 
@@ -126,43 +122,43 @@ namespace Events4ALL
                 {
                     case 0:
                         inicio1.Visible = true;
-                        inicio1.focusBox.Focus();
+                        //inicio1.focusBox.Focus();
                         break;
                     case 1:
                         admins1.Visible = true;
-                        admins1.Admin_Perfil_txtBox_Nombre.Focus();
+                        //admins1.Admin_Perfil_txtBox_Nombre.Focus();
                         break;
                     case 2:
                         clientes1.Visible = true;
-                        clientes1.textBoxNombreC.Focus();
+                        //clientes1.textBoxNombreC.Focus();
                         break;
                     case 3:
                         salas1.Visible = true;
-                        salas1.textIdSala.Focus();
+                        //salas1.textIdSala.Focus();
                         break;
                     case 4:
                         espectaculos1.Visible = true;
-                        espectaculos1.textBox5.Focus();
+                        //espectaculos1.textBox5.Focus();
                         break;
                     case 5:
                         promociones1.Visible = true;
-                        promociones1.comboBox_PE_espectaculo.Focus();
+                        //promociones1.comboBox_PE_espectaculo.Focus();
                         break;
                     case 6:
                         estadisticas1.Visible = true;
-                        estadisticas1.textBox1.Focus();
+                        //estadisticas1.textBox1.Focus();
                         break;
                     case 7:
                         ventas1.Visible = true;
-                        ventas1.textBox1.Focus();
+                        //ventas1.textBox1.Focus();
                         break;
                     case 8:
                         mensajes1.Visible = true;
-                        mensajes1.responseText.Focus();
+                        //mensajes1.responseText.Focus();
                         break;
                     default:
                         inicio1.Visible = true;
-                        inicio1.focusBox.Focus();
+                        //inicio1.focusBox.Focus();
                         break;
                 }
                 actualOption = optionMenu;
