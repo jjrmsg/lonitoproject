@@ -15,7 +15,7 @@ namespace Events4ALL
     {
 
         //------------VARIABLES---------------
-        int actualOption=2;
+        int actualOption=-1;
         int numImages;
         int update = 0;
 

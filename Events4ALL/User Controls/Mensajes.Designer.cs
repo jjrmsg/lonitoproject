@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mensajes));
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.prueba = new System.Windows.Forms.Button();
             this.statusLabel = new System.Windows.Forms.Label();
             this.mailButton = new System.Windows.Forms.Button();
             this.responseText = new System.Windows.Forms.TextBox();
@@ -60,7 +59,6 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.prueba);
             this.groupBox1.Controls.Add(this.statusLabel);
             this.groupBox1.Controls.Add(this.mailButton);
             this.groupBox1.Controls.Add(this.responseText);
@@ -75,13 +73,6 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            // 
-            // prueba
-            // 
-            resources.ApplyResources(this.prueba, "prueba");
-            this.prueba.Name = "prueba";
-            this.prueba.UseVisualStyleBackColor = true;
-            this.prueba.Click += new System.EventHandler(this.prueba_Click);
             // 
             // statusLabel
             // 
@@ -229,7 +220,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
         private System.Windows.Forms.DataGridViewImageColumn X;
         private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Button prueba;
         public System.Windows.Forms.TextBox responseText;
     }
 }

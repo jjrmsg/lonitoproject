@@ -156,30 +156,6 @@
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
   </data>
-  <data name="prueba.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 583</value>
-  </data>
-  <data name="prueba.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 23</value>
-  </data>
-  <data name="prueba.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="prueba.Text" xml:space="preserve">
-    <value>Prueba Button</value>
-  </data>
-  <data name="&gt;&gt;prueba.Name" xml:space="preserve">
-    <value>prueba</value>
-  </data>
-  <data name="&gt;&gt;prueba.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;prueba.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;prueba.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="statusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -208,7 +184,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;statusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="mailButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -235,7 +211,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;mailButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="responseText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -262,7 +238,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;responseText.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -292,7 +268,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -319,7 +295,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="textBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
@@ -356,7 +332,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="textBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -383,7 +359,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -410,7 +386,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -437,7 +413,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="textBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -464,7 +440,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -491,7 +467,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="textBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -518,7 +494,7 @@ Gracias.</value>
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>379, 7</value>

@@ -703,6 +703,7 @@
             // 
             // Resultados_Busqueda
             // 
+            this.Resultados_Busqueda.AllowUserToAddRows = false;
             this.Resultados_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -1035,7 +1036,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 147);
+            this.label2.Location = new System.Drawing.Point(30, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 59;
@@ -1052,7 +1053,7 @@
             // 
             this.label_CP_Perfil.AutoSize = true;
             this.label_CP_Perfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CP_Perfil.Location = new System.Drawing.Point(238, 147);
+            this.label_CP_Perfil.Location = new System.Drawing.Point(235, 153);
             this.label_CP_Perfil.Name = "label_CP_Perfil";
             this.label_CP_Perfil.Size = new System.Drawing.Size(21, 13);
             this.label_CP_Perfil.TabIndex = 57;
@@ -1170,7 +1171,7 @@
             // 
             this.Admin_Perfil_Label_Nombre.AutoSize = true;
             this.Admin_Perfil_Label_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Nombre.Location = new System.Drawing.Point(30, 31);
+            this.Admin_Perfil_Label_Nombre.Location = new System.Drawing.Point(31, 38);
             this.Admin_Perfil_Label_Nombre.Name = "Admin_Perfil_Label_Nombre";
             this.Admin_Perfil_Label_Nombre.Size = new System.Drawing.Size(44, 13);
             this.Admin_Perfil_Label_Nombre.TabIndex = 1;
@@ -1180,7 +1181,7 @@
             // 
             this.Admin_Perfil_Label_Apellidos.AutoSize = true;
             this.Admin_Perfil_Label_Apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Apellidos.Location = new System.Drawing.Point(314, 31);
+            this.Admin_Perfil_Label_Apellidos.Location = new System.Drawing.Point(311, 38);
             this.Admin_Perfil_Label_Apellidos.Name = "Admin_Perfil_Label_Apellidos";
             this.Admin_Perfil_Label_Apellidos.Size = new System.Drawing.Size(49, 13);
             this.Admin_Perfil_Label_Apellidos.TabIndex = 2;
@@ -1190,7 +1191,7 @@
             // 
             this.Admin_Perfil_Label_Pais.AutoSize = true;
             this.Admin_Perfil_Label_Pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Pais.Location = new System.Drawing.Point(310, 90);
+            this.Admin_Perfil_Label_Pais.Location = new System.Drawing.Point(310, 97);
             this.Admin_Perfil_Label_Pais.Name = "Admin_Perfil_Label_Pais";
             this.Admin_Perfil_Label_Pais.Size = new System.Drawing.Size(29, 13);
             this.Admin_Perfil_Label_Pais.TabIndex = 3;
@@ -1200,7 +1201,7 @@
             // 
             this.Label_Localidad.AutoSize = true;
             this.Label_Localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Localidad.Location = new System.Drawing.Point(310, 147);
+            this.Label_Localidad.Location = new System.Drawing.Point(311, 154);
             this.Label_Localidad.Name = "Label_Localidad";
             this.Label_Localidad.Size = new System.Drawing.Size(53, 13);
             this.Label_Localidad.TabIndex = 4;
@@ -1210,7 +1211,7 @@
             // 
             this.Admin_Perfil_Label_FecNacimiento.AutoSize = true;
             this.Admin_Perfil_Label_FecNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_FecNacimiento.Location = new System.Drawing.Point(130, 90);
+            this.Admin_Perfil_Label_FecNacimiento.Location = new System.Drawing.Point(130, 97);
             this.Admin_Perfil_Label_FecNacimiento.Name = "Admin_Perfil_Label_FecNacimiento";
             this.Admin_Perfil_Label_FecNacimiento.Size = new System.Drawing.Size(108, 13);
             this.Admin_Perfil_Label_FecNacimiento.TabIndex = 6;
@@ -1220,7 +1221,7 @@
             // 
             this.Admin_Perfil_Label_NIF.AutoSize = true;
             this.Admin_Perfil_Label_NIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_NIF.Location = new System.Drawing.Point(30, 90);
+            this.Admin_Perfil_Label_NIF.Location = new System.Drawing.Point(30, 97);
             this.Admin_Perfil_Label_NIF.Name = "Admin_Perfil_Label_NIF";
             this.Admin_Perfil_Label_NIF.Size = new System.Drawing.Size(24, 13);
             this.Admin_Perfil_Label_NIF.TabIndex = 7;
@@ -1230,7 +1231,7 @@
             // 
             this.Admin_Perfil_Label_Domicilio.AutoSize = true;
             this.Admin_Perfil_Label_Domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_Label_Domicilio.Location = new System.Drawing.Point(30, 205);
+            this.Admin_Perfil_Label_Domicilio.Location = new System.Drawing.Point(30, 210);
             this.Admin_Perfil_Label_Domicilio.Name = "Admin_Perfil_Label_Domicilio";
             this.Admin_Perfil_Label_Domicilio.Size = new System.Drawing.Size(49, 13);
             this.Admin_Perfil_Label_Domicilio.TabIndex = 17;

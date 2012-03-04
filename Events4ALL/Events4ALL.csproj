@@ -215,6 +215,7 @@
     <Content Include="imgs\foto_usuario_defectojpg.jpg" />
     <Content Include="imgs\friends_group.png" />
     <Content Include="imgs\home.png" />
+    <Content Include="imgs\Icono Events4All.ico" />
     <Content Include="imgs\idioma.png" />
     <None Include="imgs\login_icon.png" />
     <Content Include="imgs\logout.png" />

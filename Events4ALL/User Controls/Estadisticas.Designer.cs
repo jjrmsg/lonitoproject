@@ -957,7 +957,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.label31);
             this.panel2.Location = new System.Drawing.Point(317, 50);
             this.panel2.Name = "panel2";

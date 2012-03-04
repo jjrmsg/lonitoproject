@@ -49,6 +49,8 @@
             this.radioButton_PE_20 = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_5 = new System.Windows.Forms.RadioButton();
             this.groupBox_PE_DatosEspec = new System.Windows.Forms.GroupBox();
+            this.label_PE_fechaFin = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label_PE_SAsig = new System.Windows.Forms.Label();
             this.label_PE_TSAsig = new System.Windows.Forms.Label();
             this.label_PE_Precio = new System.Windows.Forms.Label();
@@ -108,8 +110,6 @@
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label_PE_fechaFin = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -127,9 +127,9 @@
             // 
             // tabControl_promociones
             // 
-            this.tabControl_promociones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl_promociones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_promociones.Controls.Add(this.tab_Por_espectaculo);
             this.tabControl_promociones.Controls.Add(this.tab_Mediante_condiciones);
             this.tabControl_promociones.Location = new System.Drawing.Point(3, 1);
@@ -170,9 +170,9 @@
             // 
             // pictureBox_PE_imagEspec
             // 
-            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.akira;
             this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
@@ -184,8 +184,8 @@
             // 
             // groupBox_PE_promoGen
             // 
-            this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descParado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descJubilado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descEstudiante);
@@ -350,8 +350,8 @@
             // 
             // groupBox_PE_DatosEspec
             // 
-            this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fechaFin);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label2);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_SAsig);
@@ -371,6 +371,26 @@
             this.groupBox_PE_DatosEspec.TabIndex = 5;
             this.groupBox_PE_DatosEspec.TabStop = false;
             this.groupBox_PE_DatosEspec.Text = "Datos";
+            // 
+            // label_PE_fechaFin
+            // 
+            this.label_PE_fechaFin.AutoSize = true;
+            this.label_PE_fechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_fechaFin.Location = new System.Drawing.Point(24, 128);
+            this.label_PE_fechaFin.Name = "label_PE_fechaFin";
+            this.label_PE_fechaFin.Size = new System.Drawing.Size(82, 13);
+            this.label_PE_fechaFin.TabIndex = 14;
+            this.label_PE_fechaFin.Text = "Fecha de fin:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(130, 128);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "21/12/2012";
             // 
             // label_PE_SAsig
             // 
@@ -414,8 +434,8 @@
             // 
             // label_PE_TDescripcion
             // 
-            this.label_PE_TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_PE_TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.label_PE_TDescripcion.AutoEllipsis = true;
             this.label_PE_TDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_PE_TDescripcion.Location = new System.Drawing.Point(330, 16);
@@ -519,8 +539,8 @@
             // 
             // groupBox_MC_TipoDeCond
             // 
-            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent2);
@@ -902,9 +922,9 @@
             // 
             // pictureBox_MC_CartelPromo
             // 
-            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
             this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 461);
@@ -957,8 +977,8 @@
             // 
             // textBox_MC_NomPromo
             // 
-            this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
             this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
             this.textBox_MC_NomPromo.Size = new System.Drawing.Size(442, 20);
@@ -976,8 +996,8 @@
             // 
             // textBox_MC_Descripcion
             // 
-            this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 81);
             this.textBox_MC_Descripcion.Multiline = true;
             this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
@@ -1021,9 +1041,9 @@
             // 
             // dataGridView_MC_ListaPromosCond
             // 
-            this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView_MC_ListaPromosCond.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_MC_ListaPromosCond.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_MC_ListaPromosCond.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1039,33 +1059,11 @@
             this.MC_NOMBRE.HeaderText = "NOMBRE";
             this.MC_NOMBRE.Name = "MC_NOMBRE";
             this.MC_NOMBRE.ReadOnly = true;
-            this.MC_NOMBRE.Width = 79;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
-            this.Estado.Width = 67;
-            // 
-            // label_PE_fechaFin
-            // 
-            this.label_PE_fechaFin.AutoSize = true;
-            this.label_PE_fechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_fechaFin.Location = new System.Drawing.Point(24, 128);
-            this.label_PE_fechaFin.Name = "label_PE_fechaFin";
-            this.label_PE_fechaFin.Size = new System.Drawing.Size(82, 13);
-            this.label_PE_fechaFin.TabIndex = 14;
-            this.label_PE_fechaFin.Text = "Fecha de fin:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(130, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "21/12/2012";
             // 
             // Promociones
             // 

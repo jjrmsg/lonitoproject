@@ -89,6 +89,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -106,31 +107,26 @@
             // 
             this.Column1.HeaderText = "Nombre cliente";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "DNI";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Título espectaculo";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Tipo";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Fecha de venta";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 160;
             // 
             // groupBox1
             // 
