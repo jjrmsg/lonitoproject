@@ -113,6 +113,7 @@
             this.labelBuscarTipoSala = new System.Windows.Forms.Label();
             this.labelBuscarIdSala = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonLimpiarBusquedaSala = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -776,6 +777,8 @@
             // 
             this.dataGridBuscarSala.AllowUserToAddRows = false;
             this.dataGridBuscarSala.AllowUserToOrderColumns = true;
+            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridBuscarSala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridBuscarSala.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -848,6 +851,7 @@
             // 
             this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBuscarSala.Controls.Add(this.buttonLimpiarBusquedaSala);
             this.groupBuscarSala.Controls.Add(this.checkLibre);
             this.groupBuscarSala.Controls.Add(this.labelSalasLibres);
             this.groupBuscarSala.Controls.Add(this.buttonBuscar);
@@ -968,6 +972,19 @@
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // buttonLimpiarBusquedaSala
+            // 
+            this.buttonLimpiarBusquedaSala.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonLimpiarBusquedaSala.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.buttonLimpiarBusquedaSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLimpiarBusquedaSala.Location = new System.Drawing.Point(741, 134);
+            this.buttonLimpiarBusquedaSala.Name = "buttonLimpiarBusquedaSala";
+            this.buttonLimpiarBusquedaSala.Size = new System.Drawing.Size(64, 23);
+            this.buttonLimpiarBusquedaSala.TabIndex = 19;
+            this.buttonLimpiarBusquedaSala.Text = "Limpiar";
+            this.buttonLimpiarBusquedaSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLimpiarBusquedaSala.UseVisualStyleBackColor = true;
+            // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1076,5 +1093,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         public System.Windows.Forms.TextBox textIdSala;
+        private System.Windows.Forms.Button buttonLimpiarBusquedaSala;
     }
 }
