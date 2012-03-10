@@ -88,7 +88,7 @@ namespace Events4ALL
             }
 
             e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
-                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));   
+                      new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
         }
 
 
