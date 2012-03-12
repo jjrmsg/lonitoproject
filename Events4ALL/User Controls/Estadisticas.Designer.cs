@@ -191,6 +191,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.prueba = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -919,6 +920,7 @@
             // groupBox9
             // 
             this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.prueba);
             this.groupBox9.Controls.Add(this.label30);
             this.groupBox9.Controls.Add(this.label35);
             this.groupBox9.Controls.Add(this.panel2);
@@ -1146,6 +1148,15 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "ID:";
             // 
+            // prueba
+            // 
+            this.prueba.AutoSize = true;
+            this.prueba.Location = new System.Drawing.Point(80, 164);
+            this.prueba.Name = "prueba";
+            this.prueba.Size = new System.Drawing.Size(41, 13);
+            this.prueba.TabIndex = 11;
+            this.prueba.Text = "label38";
+            // 
             // Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1257,5 +1268,6 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label prueba;
     }
 }
