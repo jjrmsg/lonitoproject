@@ -127,9 +127,9 @@
             // 
             // tabControl_promociones
             // 
-            this.tabControl_promociones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl_promociones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_promociones.Controls.Add(this.tab_Por_espectaculo);
             this.tabControl_promociones.Controls.Add(this.tab_Mediante_condiciones);
             this.tabControl_promociones.Location = new System.Drawing.Point(3, 1);
@@ -157,7 +157,7 @@
             // 
             // button_PE_Guardar
             // 
-            this.button_PE_Guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_PE_Guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_PE_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.button_PE_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_PE_Guardar.Location = new System.Drawing.Point(767, 577);
@@ -170,9 +170,9 @@
             // 
             // pictureBox_PE_imagEspec
             // 
-            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_PE_imagEspec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.akira;
             this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
@@ -184,8 +184,8 @@
             // 
             // groupBox_PE_promoGen
             // 
-            this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox_PE_promoGen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descParado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descJubilado);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descEstudiante);
@@ -350,8 +350,8 @@
             // 
             // groupBox_PE_DatosEspec
             // 
-            this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fechaFin);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label2);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_SAsig);
@@ -434,8 +434,8 @@
             // 
             // label_PE_TDescripcion
             // 
-            this.label_PE_TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_PE_TDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_PE_TDescripcion.AutoEllipsis = true;
             this.label_PE_TDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_PE_TDescripcion.Location = new System.Drawing.Point(330, 16);
@@ -539,8 +539,8 @@
             // 
             // groupBox_MC_TipoDeCond
             // 
-            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent2);
@@ -558,6 +558,7 @@
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor3);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor1);
+            this.groupBox_MC_TipoDeCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 151);
             this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
             this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 250);
@@ -567,6 +568,7 @@
             // 
             // checkBox_MC_ActivarCond2
             // 
+            this.checkBox_MC_ActivarCond2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox_MC_ActivarCond2.AutoSize = true;
             this.checkBox_MC_ActivarCond2.Location = new System.Drawing.Point(6, 222);
             this.checkBox_MC_ActivarCond2.Name = "checkBox_MC_ActivarCond2";
@@ -578,6 +580,7 @@
             // 
             // checkBox_MC_ActivarCond1
             // 
+            this.checkBox_MC_ActivarCond1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox_MC_ActivarCond1.AutoSize = true;
             this.checkBox_MC_ActivarCond1.Location = new System.Drawing.Point(6, 146);
             this.checkBox_MC_ActivarCond1.Name = "checkBox_MC_ActivarCond1";
@@ -589,6 +592,7 @@
             // 
             // groupBox_MC_TipoEvent2
             // 
+            this.groupBox_MC_TipoEvent2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE_Todos2);
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Concierto);
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Teatro);
@@ -650,6 +654,7 @@
             // 
             // groupBox_MC_TipoEvent3
             // 
+            this.groupBox_MC_TipoEvent3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE_Todos3);
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Concierto);
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Teatro);
@@ -711,6 +716,7 @@
             // 
             // groupBox_MC_TipoEvent1
             // 
+            this.groupBox_MC_TipoEvent1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE_Todos1);
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Concierto);
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Teatro);
@@ -768,6 +774,7 @@
             // 
             // comboBox_MC_VC_Tcondicion3
             // 
+            this.comboBox_MC_VC_Tcondicion3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Tcondicion3.Enabled = false;
             this.comboBox_MC_VC_Tcondicion3.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion3.Items.AddRange(new object[] {
@@ -782,6 +789,7 @@
             // 
             // comboBox_MC_VC_Tcondicion2
             // 
+            this.comboBox_MC_VC_Tcondicion2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Tcondicion2.Enabled = false;
             this.comboBox_MC_VC_Tcondicion2.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion2.Items.AddRange(new object[] {
@@ -796,6 +804,7 @@
             // 
             // comboBox_MC_VC_Tcondicion1
             // 
+            this.comboBox_MC_VC_Tcondicion1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Tcondicion1.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion1.Items.AddRange(new object[] {
             "Dinero gastado",
@@ -809,6 +818,7 @@
             // 
             // comboBox_MC_VC_Comparacion3
             // 
+            this.comboBox_MC_VC_Comparacion3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Comparacion3.Enabled = false;
             this.comboBox_MC_VC_Comparacion3.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion3.Items.AddRange(new object[] {
@@ -823,6 +833,7 @@
             // 
             // comboBox_MC_VC_Comparacion2
             // 
+            this.comboBox_MC_VC_Comparacion2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Comparacion2.Enabled = false;
             this.comboBox_MC_VC_Comparacion2.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion2.Items.AddRange(new object[] {
@@ -837,6 +848,7 @@
             // 
             // comboBox_MC_VC_Comparacion1
             // 
+            this.comboBox_MC_VC_Comparacion1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBox_MC_VC_Comparacion1.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion1.Items.AddRange(new object[] {
             "Mayor",
@@ -850,6 +862,7 @@
             // 
             // textBox_MC_VC_Valor3
             // 
+            this.textBox_MC_VC_Valor3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox_MC_VC_Valor3.Enabled = false;
             this.textBox_MC_VC_Valor3.Location = new System.Drawing.Point(233, 182);
             this.textBox_MC_VC_Valor3.Name = "textBox_MC_VC_Valor3";
@@ -858,6 +871,7 @@
             // 
             // textBox_MC_VC_Valor2
             // 
+            this.textBox_MC_VC_Valor2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox_MC_VC_Valor2.Enabled = false;
             this.textBox_MC_VC_Valor2.Location = new System.Drawing.Point(233, 105);
             this.textBox_MC_VC_Valor2.Name = "textBox_MC_VC_Valor2";
@@ -866,6 +880,7 @@
             // 
             // textBox_MC_VC_Valor1
             // 
+            this.textBox_MC_VC_Valor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox_MC_VC_Valor1.Location = new System.Drawing.Point(233, 31);
             this.textBox_MC_VC_Valor1.Name = "textBox_MC_VC_Valor1";
             this.textBox_MC_VC_Valor1.Size = new System.Drawing.Size(49, 20);
@@ -873,6 +888,7 @@
             // 
             // label_MC_VC_Valor3
             // 
+            this.label_MC_VC_Valor3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_MC_VC_Valor3.AutoSize = true;
             this.label_MC_VC_Valor3.Location = new System.Drawing.Point(197, 185);
             this.label_MC_VC_Valor3.Name = "label_MC_VC_Valor3";
@@ -882,6 +898,7 @@
             // 
             // label_MC_VC_Valor2
             // 
+            this.label_MC_VC_Valor2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_MC_VC_Valor2.AutoSize = true;
             this.label_MC_VC_Valor2.Location = new System.Drawing.Point(197, 108);
             this.label_MC_VC_Valor2.Name = "label_MC_VC_Valor2";
@@ -891,6 +908,7 @@
             // 
             // label_MC_VC_Valor1
             // 
+            this.label_MC_VC_Valor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_MC_VC_Valor1.AutoSize = true;
             this.label_MC_VC_Valor1.Location = new System.Drawing.Point(197, 34);
             this.label_MC_VC_Valor1.Name = "label_MC_VC_Valor1";
@@ -922,9 +940,9 @@
             // 
             // pictureBox_MC_CartelPromo
             // 
-            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_MC_CartelPromo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_MC_CartelPromo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_MC_CartelPromo.Image = global::Events4ALL.Properties.Resources.image_default;
             this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 461);
@@ -977,8 +995,8 @@
             // 
             // textBox_MC_NomPromo
             // 
-            this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
             this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
             this.textBox_MC_NomPromo.Size = new System.Drawing.Size(442, 20);
@@ -996,8 +1014,8 @@
             // 
             // textBox_MC_Descripcion
             // 
-            this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 81);
             this.textBox_MC_Descripcion.Multiline = true;
             this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
@@ -1041,8 +1059,8 @@
             // 
             // dataGridView_MC_ListaPromosCond
             // 
-            this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_MC_ListaPromosCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_MC_ListaPromosCond.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_MC_ListaPromosCond.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
