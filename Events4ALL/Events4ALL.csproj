@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboFlags.cs" />
+    <Compile Include="EN\SalasEN.cs" />
     <Compile Include="User Controls\Admins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +244,9 @@
     <Content Include="imgs\stop.png" />
     <Content Include="imgs\tag_orange.png" />
     <None Include="imgs\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CAD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

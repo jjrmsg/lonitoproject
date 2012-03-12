@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
             this.pictureTipo = new System.Windows.Forms.PictureBox();
@@ -102,6 +103,7 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBuscarSala = new System.Windows.Forms.GroupBox();
+            this.buttonLimpiarBusquedaSala = new System.Windows.Forms.Button();
             this.checkLibre = new System.Windows.Forms.CheckBox();
             this.labelSalasLibres = new System.Windows.Forms.Label();
             this.buttonBuscar = new System.Windows.Forms.Button();
@@ -113,7 +115,8 @@
             this.labelBuscarTipoSala = new System.Windows.Forms.Label();
             this.labelBuscarIdSala = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonLimpiarBusquedaSala = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -121,6 +124,8 @@
             this.tabBusquedaSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).BeginInit();
             this.groupBuscarSala.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -720,6 +725,7 @@
             this.buttonAñadirSala.Text = "Guardar";
             this.buttonAñadirSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAñadirSala.UseVisualStyleBackColor = true;
+            this.buttonAñadirSala.Click += new System.EventHandler(this.buttonAñadirSala_Click);
             // 
             // comboNumSeccion
             // 
@@ -870,6 +876,19 @@
             this.groupBuscarSala.TabStop = false;
             this.groupBuscarSala.Text = "Busqueda de Sala";
             // 
+            // buttonLimpiarBusquedaSala
+            // 
+            this.buttonLimpiarBusquedaSala.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonLimpiarBusquedaSala.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.buttonLimpiarBusquedaSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLimpiarBusquedaSala.Location = new System.Drawing.Point(741, 134);
+            this.buttonLimpiarBusquedaSala.Name = "buttonLimpiarBusquedaSala";
+            this.buttonLimpiarBusquedaSala.Size = new System.Drawing.Size(64, 23);
+            this.buttonLimpiarBusquedaSala.TabIndex = 19;
+            this.buttonLimpiarBusquedaSala.Text = "Limpiar";
+            this.buttonLimpiarBusquedaSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLimpiarBusquedaSala.UseVisualStyleBackColor = true;
+            // 
             // checkLibre
             // 
             this.checkLibre.AutoSize = true;
@@ -972,18 +991,13 @@
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // buttonLimpiarBusquedaSala
+            // errorProvider1
             // 
-            this.buttonLimpiarBusquedaSala.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonLimpiarBusquedaSala.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.buttonLimpiarBusquedaSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiarBusquedaSala.Location = new System.Drawing.Point(741, 134);
-            this.buttonLimpiarBusquedaSala.Name = "buttonLimpiarBusquedaSala";
-            this.buttonLimpiarBusquedaSala.Size = new System.Drawing.Size(64, 23);
-            this.buttonLimpiarBusquedaSala.TabIndex = 19;
-            this.buttonLimpiarBusquedaSala.Text = "Limpiar";
-            this.buttonLimpiarBusquedaSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLimpiarBusquedaSala.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
             // 
             // Salas
             // 
@@ -1002,6 +1016,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarSala)).EndInit();
             this.groupBuscarSala.ResumeLayout(false);
             this.groupBuscarSala.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1094,5 +1110,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         public System.Windows.Forms.TextBox textIdSala;
         private System.Windows.Forms.Button buttonLimpiarBusquedaSala;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

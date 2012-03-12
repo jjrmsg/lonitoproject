@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Events4ALL
 {
@@ -14,6 +15,7 @@ namespace Events4ALL
         public Salas()
         {
             InitializeComponent();
+           
         }
 
         private void ocultarTodo()
@@ -160,6 +162,34 @@ namespace Events4ALL
             {
                 pictureTipo.Image = Events4ALL.Properties.Resources.Events4All;
             }
+        }
+
+        private void buttonAñadirSala_Click(object sender, EventArgs e)
+        {
+            bool validado;
+            //ocualtar todos los error provider
+            errorProvider1.Clear();
+            errorProvider2.Clear();
+            validado=validar();
+            //Si validado==falso saltara una excepcion
+        }
+
+        private bool validar()
+        {
+            bool validado = true;
+            if (comboTipo.Text == "")
+            {
+                //errorProvider1.SetIconPadding.
+                errorProvider1.SetError(comboTipo, "Seleccione un campo");
+                validado=false;
+            }
+            if (comboNumSeccion.Text == "")
+            {
+                //errorProvider1.SetIconPadding.
+                errorProvider2.SetError(comboNumSeccion, "Seleccione un valor");
+                validado=false;
+            }
+            return validado;
         }
     }
 }
