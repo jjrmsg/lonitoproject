@@ -15,7 +15,8 @@ namespace Events4ALL
         public Salas()
         {
             InitializeComponent();
-           
+            //Aqui hacer una consulta con un count salas y añadir +1
+            //Ese valor se le asignara a textIdSala
         }
 
         private void ocultarTodo()
@@ -179,17 +180,50 @@ namespace Events4ALL
             bool validado = true;
             if (comboTipo.Text == "")
             {
-                //errorProvider1.SetIconPadding.
                 errorProvider1.SetError(comboTipo, "Seleccione un campo");
                 validado=false;
             }
             if (comboNumSeccion.Text == "")
             {
-                //errorProvider1.SetIconPadding.
                 errorProvider2.SetError(comboNumSeccion, "Seleccione un valor");
                 validado=false;
             }
             return validado;
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            ControlCollection a = textIdSala.Parent.Controls;
+            foreach (System.Windows.Forms.Control ctrl in a)
+            {
+               //MessageBox.Show(ctrl.ToString());
+                if (ctrl is TextBox || ctrl is ComboBox)
+                    ctrl.Text = "";
+                else
+                {
+                    if (ctrl is GroupBox)
+                    {
+                        ControlCollection b = textFila7.Parent.Controls;
+                        foreach (System.Windows.Forms.Control ctrl2 in b)
+                        {
+                            if (ctrl2 is TextBox)
+                                ctrl2.Text = "";
+                        }
+                    }
+                }
+            }
+            groupBoxSecciones.Visible = false;
+        }
+
+        private void buttonLimpiarBusquedaSala_Click(object sender, EventArgs e)
+        {
+            ControlCollection a = textBox1.Parent.Controls;
+            foreach (System.Windows.Forms.Control ctrl in a)
+            {
+                //MessageBox.Show(ctrl.ToString());
+                if (ctrl is TextBox || ctrl is ComboBox)
+                    ctrl.Text = "";
+            }
         }
     }
 }

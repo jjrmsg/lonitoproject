@@ -188,6 +188,7 @@
             this.buttonLimpiar.Text = "Limpiar";
             this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // labelDescripcion
             // 
@@ -708,6 +709,7 @@
             // 
             // textIdSala
             // 
+            this.textIdSala.Enabled = false;
             this.textIdSala.Location = new System.Drawing.Point(95, 35);
             this.textIdSala.Name = "textIdSala";
             this.textIdSala.Size = new System.Drawing.Size(77, 20);
@@ -888,6 +890,7 @@
             this.buttonLimpiarBusquedaSala.Text = "Limpiar";
             this.buttonLimpiarBusquedaSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiarBusquedaSala.UseVisualStyleBackColor = true;
+            this.buttonLimpiarBusquedaSala.Click += new System.EventHandler(this.buttonLimpiarBusquedaSala_Click);
             // 
             // checkLibre
             // 
