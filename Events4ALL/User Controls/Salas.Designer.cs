@@ -214,6 +214,7 @@
             // comboTipo
             // 
             this.comboTipo.DisplayMember = "1;2";
+            this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Items.AddRange(new object[] {
             "",
@@ -732,6 +733,7 @@
             // comboNumSeccion
             // 
             this.comboNumSeccion.DisplayMember = "1;2";
+            this.comboNumSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNumSeccion.FormattingEnabled = true;
             this.comboNumSeccion.Items.AddRange(new object[] {
             "",
@@ -958,6 +960,7 @@
             // comboBuscarTipoSala
             // 
             this.comboBuscarTipoSala.DisplayMember = "1;2";
+            this.comboBuscarTipoSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBuscarTipoSala.FormattingEnabled = true;
             this.comboBuscarTipoSala.Items.AddRange(new object[] {
             "",

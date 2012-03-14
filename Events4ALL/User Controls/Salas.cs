@@ -172,7 +172,9 @@ namespace Events4ALL
             errorProvider1.Clear();
             errorProvider2.Clear();
             validado=validar();
-            //Si validado==falso saltara una excepcion
+            if (validado == false)
+                MessageBox.Show("Datos incorrectos", "Error");
+                //Si validado==falso saltara una excepcion
         }
 
         private bool validar()
@@ -188,6 +190,19 @@ namespace Events4ALL
                 errorProvider2.SetError(comboNumSeccion, "Seleccione un valor");
                 validado=false;
             }
+            ControlCollection a = textFila1.Parent.Controls;
+            foreach(System.Windows.Forms.Control ctrl in a)
+            {
+                if (ctrl is TextBox && ctrl.Visible==true)
+                {
+                    if (ctrl.Text == "" || (Convert.ToInt16(ctrl.Text)<1 || Convert.ToInt16(ctrl.Text)>999))
+                    {
+                        validado = false;
+                        errorProvider2.SetError(ctrl,"Formato incorrecto");
+                    }
+                }
+            }
+
             return validado;
         }
 
