@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auxiliares\BD.cs" />
+    <Compile Include="Auxiliares\Validaciones.cs" />
     <Compile Include="ComboFlags.cs" />
     <Compile Include="EN\SalasEN.cs" />
     <Compile Include="User Controls\Admins.cs">

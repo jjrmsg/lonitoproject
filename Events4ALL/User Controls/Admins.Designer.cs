@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Buscar = new System.Windows.Forms.TabPage();
             this.groupBox_Busqueda = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -110,6 +111,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.errorProviderNif = new System.Windows.Forms.ErrorProvider(this.components);
+            this.test1 = new System.Windows.Forms.Label();
+            this.test2 = new System.Windows.Forms.Label();
+            this.test3 = new System.Windows.Forms.Label();
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -124,6 +129,7 @@
             this.groupBoxSexo.SuspendLayout();
             this.grupEstadoCivil.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNif)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -862,6 +868,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.test3);
+            this.groupBox1.Controls.Add(this.test2);
+            this.groupBox1.Controls.Add(this.test1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -1509,6 +1518,7 @@
             this.Admin_Perfil_txtBox_NIF.Name = "Admin_Perfil_txtBox_NIF";
             this.Admin_Perfil_txtBox_NIF.Size = new System.Drawing.Size(75, 20);
             this.Admin_Perfil_txtBox_NIF.TabIndex = 24;
+            this.Admin_Perfil_txtBox_NIF.Leave += new System.EventHandler(this.CompruebaNif);
             // 
             // tabControl1
             // 
@@ -1536,6 +1546,37 @@
             this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 25;
+            // 
+            // errorProviderNif
+            // 
+            this.errorProviderNif.ContainerControl = this;
+            // 
+            // test1
+            // 
+            this.test1.AutoSize = true;
+            this.test1.Location = new System.Drawing.Point(447, 268);
+            this.test1.Name = "test1";
+            this.test1.Size = new System.Drawing.Size(35, 13);
+            this.test1.TabIndex = 63;
+            this.test1.Text = "label4";
+            // 
+            // test2
+            // 
+            this.test2.AutoSize = true;
+            this.test2.Location = new System.Drawing.Point(450, 285);
+            this.test2.Name = "test2";
+            this.test2.Size = new System.Drawing.Size(35, 13);
+            this.test2.TabIndex = 64;
+            this.test2.Text = "label5";
+            // 
+            // test3
+            // 
+            this.test3.AutoSize = true;
+            this.test3.Location = new System.Drawing.Point(450, 303);
+            this.test3.Name = "test3";
+            this.test3.Size = new System.Drawing.Size(35, 13);
+            this.test3.TabIndex = 65;
+            this.test3.Text = "label4";
             // 
             // Admins
             // 
@@ -1565,6 +1606,7 @@
             this.grupEstadoCivil.ResumeLayout(false);
             this.grupEstadoCivil.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1653,6 +1695,10 @@
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
         public System.Windows.Forms.TextBox Admin_Perfil_txtBox_Nombre;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.ErrorProvider errorProviderNif;
+        private System.Windows.Forms.Label test2;
+        private System.Windows.Forms.Label test1;
+        private System.Windows.Forms.Label test3;
 
     }
 }
