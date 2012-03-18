@@ -72,6 +72,9 @@
             this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
             this.Admin_Perfil_Foto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.test3 = new System.Windows.Forms.Label();
+            this.test2 = new System.Windows.Forms.Label();
+            this.test1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -81,7 +84,7 @@
             this.Admin_Perfil_txtBox_Tel1 = new System.Windows.Forms.TextBox();
             this.Admin_Perfil_txtBox_Tel2 = new System.Windows.Forms.TextBox();
             this.Admin_Perfil_txtBox_Mail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Label_Provincia_Perfil = new System.Windows.Forms.Label();
             this.textBox_CP_Perfil = new System.Windows.Forms.TextBox();
             this.label_CP_Perfil = new System.Windows.Forms.Label();
             this.comboBoxDirec = new System.Windows.Forms.ComboBox();
@@ -112,9 +115,19 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.errorProviderNif = new System.Windows.Forms.ErrorProvider(this.components);
-            this.test1 = new System.Windows.Forms.Label();
-            this.test2 = new System.Windows.Forms.Label();
-            this.test3 = new System.Windows.Forms.Label();
+            this.errorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderApellidos = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPais = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLocalidad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCP = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderProvincia = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDomicilo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderSexo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEC = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTEL = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMov = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFNAC = new System.Windows.Forms.ErrorProvider(this.components);
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -130,6 +143,19 @@
             this.grupEstadoCivil.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLocalidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProvincia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDomicilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSexo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTEL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -826,7 +852,6 @@
             // Admin_Perfil_boton_Guardar
             // 
             this.Admin_Perfil_boton_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Admin_Perfil_boton_Guardar.Enabled = false;
             this.Admin_Perfil_boton_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.Admin_Perfil_boton_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Admin_Perfil_boton_Guardar.Location = new System.Drawing.Point(789, 554);
@@ -836,6 +861,7 @@
             this.Admin_Perfil_boton_Guardar.Text = "Guardar";
             this.Admin_Perfil_boton_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Admin_Perfil_boton_Guardar.UseVisualStyleBackColor = true;
+            this.Admin_Perfil_boton_Guardar.Click += new System.EventHandler(this.Admin_Perfil_boton_Guardar_Click);
             // 
             // Admin_Perfil_boton_Anadir
             // 
@@ -850,6 +876,7 @@
             this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Admin_Perfil_boton_Anadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
+            this.Admin_Perfil_boton_Anadir.Click += new System.EventHandler(this.Admin_Perfil_boton_Anadir_Click);
             // 
             // Admin_Perfil_Foto
             // 
@@ -874,7 +901,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.Label_Provincia_Perfil);
             this.groupBox1.Controls.Add(this.textBox_CP_Perfil);
             this.groupBox1.Controls.Add(this.label_CP_Perfil);
             this.groupBox1.Controls.Add(this.comboBoxDirec);
@@ -901,6 +928,30 @@
             this.groupBox1.TabIndex = 58;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // test3
+            // 
+            this.test3.AutoSize = true;
+            this.test3.Location = new System.Drawing.Point(450, 303);
+            this.test3.Name = "test3";
+            this.test3.Size = new System.Drawing.Size(0, 13);
+            this.test3.TabIndex = 65;
+            // 
+            // test2
+            // 
+            this.test2.AutoSize = true;
+            this.test2.Location = new System.Drawing.Point(450, 285);
+            this.test2.Name = "test2";
+            this.test2.Size = new System.Drawing.Size(0, 13);
+            this.test2.TabIndex = 64;
+            // 
+            // test1
+            // 
+            this.test1.AutoSize = true;
+            this.test1.Location = new System.Drawing.Point(447, 268);
+            this.test1.Name = "test1";
+            this.test1.Size = new System.Drawing.Size(0, 13);
+            this.test1.TabIndex = 63;
             // 
             // comboBox1
             // 
@@ -967,9 +1018,12 @@
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(133, 113);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
             this.dateTimePicker1.TabIndex = 61;
+            this.dateTimePicker1.Value = new System.DateTime(2012, 1, 1, 0, 0, 0, 0);
             // 
             // groupBox2
             // 
@@ -1024,6 +1078,7 @@
             this.Admin_Perfil_txtBox_Tel1.Size = new System.Drawing.Size(86, 20);
             this.Admin_Perfil_txtBox_Tel1.TabIndex = 19;
             this.Admin_Perfil_txtBox_Tel1.Text = "000 00 00 00";
+            this.Admin_Perfil_txtBox_Tel1.Leave += new System.EventHandler(this.CompruebaTelefono);
             // 
             // Admin_Perfil_txtBox_Tel2
             // 
@@ -1032,6 +1087,7 @@
             this.Admin_Perfil_txtBox_Tel2.Size = new System.Drawing.Size(77, 20);
             this.Admin_Perfil_txtBox_Tel2.TabIndex = 20;
             this.Admin_Perfil_txtBox_Tel2.Text = "000 00 00 00";
+            this.Admin_Perfil_txtBox_Tel2.Leave += new System.EventHandler(this.CompruebaMovil);
             // 
             // Admin_Perfil_txtBox_Mail
             // 
@@ -1040,16 +1096,17 @@
             this.Admin_Perfil_txtBox_Mail.Size = new System.Drawing.Size(218, 20);
             this.Admin_Perfil_txtBox_Mail.TabIndex = 25;
             this.Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
+            this.Admin_Perfil_txtBox_Mail.Leave += new System.EventHandler(this.CompruebaMail);
             // 
-            // label2
+            // Label_Provincia_Perfil
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Provincia";
+            this.Label_Provincia_Perfil.AutoSize = true;
+            this.Label_Provincia_Perfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Provincia_Perfil.Location = new System.Drawing.Point(30, 152);
+            this.Label_Provincia_Perfil.Name = "Label_Provincia_Perfil";
+            this.Label_Provincia_Perfil.Size = new System.Drawing.Size(51, 13);
+            this.Label_Provincia_Perfil.TabIndex = 59;
+            this.Label_Provincia_Perfil.Text = "Provincia";
             // 
             // textBox_CP_Perfil
             // 
@@ -1119,6 +1176,7 @@
             this.Admin_Perfil_txtBox_Nombre.Name = "Admin_Perfil_txtBox_Nombre";
             this.Admin_Perfil_txtBox_Nombre.Size = new System.Drawing.Size(255, 20);
             this.Admin_Perfil_txtBox_Nombre.TabIndex = 18;
+            this.Admin_Perfil_txtBox_Nombre.Leave += new System.EventHandler(this.CompruebaNombre);
             // 
             // grupEstadoCivil
             // 
@@ -1140,6 +1198,7 @@
             this.Admin_Perfil_rButom_Divorciado.Size = new System.Drawing.Size(81, 17);
             this.Admin_Perfil_rButom_Divorciado.TabIndex = 34;
             this.Admin_Perfil_rButom_Divorciado.TabStop = true;
+            this.Admin_Perfil_rButom_Divorciado.Tag = "";
             this.Admin_Perfil_rButom_Divorciado.Text = "Divorciad/a";
             this.Admin_Perfil_rButom_Divorciado.UseVisualStyleBackColor = true;
             // 
@@ -1260,6 +1319,7 @@
             this.txtBox_Localidad.Name = "txtBox_Localidad";
             this.txtBox_Localidad.Size = new System.Drawing.Size(196, 20);
             this.txtBox_Localidad.TabIndex = 22;
+            this.txtBox_Localidad.Leave += new System.EventHandler(this.CompruebaLocalidad);
             // 
             // Admin_Perfil_comboBox_Pais
             // 
@@ -1501,6 +1561,7 @@
             this.Admin_Perfil_txtBox_Apellidos.Name = "Admin_Perfil_txtBox_Apellidos";
             this.Admin_Perfil_txtBox_Apellidos.Size = new System.Drawing.Size(196, 20);
             this.Admin_Perfil_txtBox_Apellidos.TabIndex = 23;
+            this.Admin_Perfil_txtBox_Apellidos.Leave += new System.EventHandler(this.CompruebaApellidos);
             // 
             // Admin_Perfil_Label_EstCivil
             // 
@@ -1551,32 +1612,57 @@
             // 
             this.errorProviderNif.ContainerControl = this;
             // 
-            // test1
+            // errorProviderNombre
             // 
-            this.test1.AutoSize = true;
-            this.test1.Location = new System.Drawing.Point(447, 268);
-            this.test1.Name = "test1";
-            this.test1.Size = new System.Drawing.Size(35, 13);
-            this.test1.TabIndex = 63;
-            this.test1.Text = "label4";
+            this.errorProviderNombre.ContainerControl = this;
             // 
-            // test2
+            // errorProviderApellidos
             // 
-            this.test2.AutoSize = true;
-            this.test2.Location = new System.Drawing.Point(450, 285);
-            this.test2.Name = "test2";
-            this.test2.Size = new System.Drawing.Size(35, 13);
-            this.test2.TabIndex = 64;
-            this.test2.Text = "label5";
+            this.errorProviderApellidos.ContainerControl = this;
             // 
-            // test3
+            // errorProviderPais
             // 
-            this.test3.AutoSize = true;
-            this.test3.Location = new System.Drawing.Point(450, 303);
-            this.test3.Name = "test3";
-            this.test3.Size = new System.Drawing.Size(35, 13);
-            this.test3.TabIndex = 65;
-            this.test3.Text = "label4";
+            this.errorProviderPais.ContainerControl = this;
+            // 
+            // errorProviderLocalidad
+            // 
+            this.errorProviderLocalidad.ContainerControl = this;
+            // 
+            // errorProviderCP
+            // 
+            this.errorProviderCP.ContainerControl = this;
+            // 
+            // errorProviderProvincia
+            // 
+            this.errorProviderProvincia.ContainerControl = this;
+            // 
+            // errorProviderDomicilo
+            // 
+            this.errorProviderDomicilo.ContainerControl = this;
+            // 
+            // errorProviderSexo
+            // 
+            this.errorProviderSexo.ContainerControl = this;
+            // 
+            // errorProviderEC
+            // 
+            this.errorProviderEC.ContainerControl = this;
+            // 
+            // errorProviderTEL
+            // 
+            this.errorProviderTEL.ContainerControl = this;
+            // 
+            // errorProviderMov
+            // 
+            this.errorProviderMov.ContainerControl = this;
+            // 
+            // errorProviderMail
+            // 
+            this.errorProviderMail.ContainerControl = this;
+            // 
+            // errorProviderFNAC
+            // 
+            this.errorProviderFNAC.ContainerControl = this;
             // 
             // Admins
             // 
@@ -1607,6 +1693,19 @@
             this.grupEstadoCivil.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLocalidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProvincia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDomicilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSexo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTEL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1653,7 +1752,7 @@
         private System.Windows.Forms.TextBox textBox_CP_Perfil;
         private System.Windows.Forms.Label label_CP_Perfil;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Label_Provincia_Perfil;
         private System.Windows.Forms.Label label_Edad_Ba;
         private System.Windows.Forms.GroupBox groupBox_Sexo_Busqueda;
         private System.Windows.Forms.RadioButton radioButton_Hombre_Sexo;
@@ -1699,6 +1798,19 @@
         private System.Windows.Forms.Label test2;
         private System.Windows.Forms.Label test1;
         private System.Windows.Forms.Label test3;
+        private System.Windows.Forms.ErrorProvider errorProviderNombre;
+        private System.Windows.Forms.ErrorProvider errorProviderApellidos;
+        private System.Windows.Forms.ErrorProvider errorProviderPais;
+        private System.Windows.Forms.ErrorProvider errorProviderLocalidad;
+        private System.Windows.Forms.ErrorProvider errorProviderCP;
+        private System.Windows.Forms.ErrorProvider errorProviderProvincia;
+        private System.Windows.Forms.ErrorProvider errorProviderDomicilo;
+        private System.Windows.Forms.ErrorProvider errorProviderSexo;
+        private System.Windows.Forms.ErrorProvider errorProviderEC;
+        private System.Windows.Forms.ErrorProvider errorProviderTEL;
+        private System.Windows.Forms.ErrorProvider errorProviderMov;
+        private System.Windows.Forms.ErrorProvider errorProviderMail;
+        private System.Windows.Forms.ErrorProvider errorProviderFNAC;
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Text;
 
 namespace Events4ALL.Auxiliares
@@ -58,5 +59,26 @@ namespace Events4ALL.Auxiliares
             return "TRWAGMYFPDXBNJZSQVHLCKET"[indice];
         }
 
+        public bool CompruebaCP(string cp)
+        {
+            // definicion de la expresion regular
+            Regex recp = new Regex("^[0-9]{5}$");
+
+            return recp.IsMatch(cp);
+        }
+
+        public bool CompruebaMail(string mail)
+        {
+            Regex ermail = new Regex("");
+
+            return ermail.IsMatch(mail);
+        }
+
+        public bool CompruebaTelefono(string tel)
+        {
+            Regex ertel = new Regex("");
+
+            return ertel.IsMatch(tel);
+        }
     }
 }
