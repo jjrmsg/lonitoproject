@@ -303,6 +303,7 @@
             this.textBox_PE_TOtroDesc.Name = "textBox_PE_TOtroDesc";
             this.textBox_PE_TOtroDesc.Size = new System.Drawing.Size(57, 20);
             this.textBox_PE_TOtroDesc.TabIndex = 8;
+            this.textBox_PE_TOtroDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_PE_TOtroDesc_KeyPress);
             // 
             // radioButton_PE_50
             // 
@@ -511,7 +512,6 @@
             this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
             this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(251, 21);
             this.comboBox_PE_espectaculo.TabIndex = 1;
-            this.comboBox_PE_espectaculo.Text = "Seleccionar espectáculo ...";
             // 
             // tab_Mediante_condiciones
             // 
@@ -868,6 +868,7 @@
             this.textBox_MC_VC_Valor3.Name = "textBox_MC_VC_Valor3";
             this.textBox_MC_VC_Valor3.Size = new System.Drawing.Size(49, 20);
             this.textBox_MC_VC_Valor3.TabIndex = 6;
+            this.textBox_MC_VC_Valor3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor3_KeyPress);
             // 
             // textBox_MC_VC_Valor2
             // 
@@ -877,6 +878,7 @@
             this.textBox_MC_VC_Valor2.Name = "textBox_MC_VC_Valor2";
             this.textBox_MC_VC_Valor2.Size = new System.Drawing.Size(49, 20);
             this.textBox_MC_VC_Valor2.TabIndex = 5;
+            this.textBox_MC_VC_Valor2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor2_KeyPress);
             // 
             // textBox_MC_VC_Valor1
             // 
@@ -885,6 +887,7 @@
             this.textBox_MC_VC_Valor1.Name = "textBox_MC_VC_Valor1";
             this.textBox_MC_VC_Valor1.Size = new System.Drawing.Size(49, 20);
             this.textBox_MC_VC_Valor1.TabIndex = 4;
+            this.textBox_MC_VC_Valor1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor1_KeyPress);
             // 
             // label_MC_VC_Valor3
             // 

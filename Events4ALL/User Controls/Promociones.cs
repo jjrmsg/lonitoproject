@@ -64,5 +64,44 @@ namespace Events4ALL
             }
         }
 
+        public bool isCaracterValido(Char c)
+        {
+            if ((c >= '0' && c <= '9') || (Char)Keys.Back==c)
+            {
+                return true;
+            }
+            return false;
+        }
+        private void textBox_PE_TOtroDesc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             if (!isCaracterValido (e.KeyChar))
+             {
+                e.Handled = true;
+             }
+        }
+
+        private void textBox_MC_VC_Valor1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isCaracterValido(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_MC_VC_Valor2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isCaracterValido(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_MC_VC_Valor3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!isCaracterValido(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
