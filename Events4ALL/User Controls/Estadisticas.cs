@@ -29,9 +29,7 @@ namespace Events4ALL
                 {
                     prueba.Text = dr["Nombre"].ToString();
                 }
-
                 dr.Close();
-                c.Close();
             }
             catch
             {
@@ -39,7 +37,7 @@ namespace Events4ALL
             }
             finally
             {
-           
+                c.Close();
             }
         }
     }
