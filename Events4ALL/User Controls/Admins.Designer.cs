@@ -75,7 +75,7 @@
             this.test3 = new System.Windows.Forms.Label();
             this.test2 = new System.Windows.Forms.Label();
             this.test1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Provincia = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Admin_Perfil_Label_Tel1 = new System.Windows.Forms.Label();
@@ -898,7 +898,7 @@
             this.groupBox1.Controls.Add(this.test3);
             this.groupBox1.Controls.Add(this.test2);
             this.groupBox1.Controls.Add(this.test1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox_Provincia);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.Label_Provincia_Perfil);
@@ -953,10 +953,10 @@
             this.test1.Size = new System.Drawing.Size(0, 13);
             this.test1.TabIndex = 63;
             // 
-            // comboBox1
+            // comboBox_Provincia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_Provincia.FormattingEnabled = true;
+            this.comboBox_Provincia.Items.AddRange(new object[] {
             "",
             "Álava",
             "Albacete",
@@ -1009,10 +1009,11 @@
             "Vizcaya",
             "Zamora",
             "Zaragoza"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 62;
+            this.comboBox_Provincia.Location = new System.Drawing.Point(34, 168);
+            this.comboBox_Provincia.Name = "comboBox_Provincia";
+            this.comboBox_Provincia.Size = new System.Drawing.Size(181, 21);
+            this.comboBox_Provincia.TabIndex = 62;
+            this.comboBox_Provincia.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // dateTimePicker1
             // 
@@ -1077,7 +1078,8 @@
             this.Admin_Perfil_txtBox_Tel1.Name = "Admin_Perfil_txtBox_Tel1";
             this.Admin_Perfil_txtBox_Tel1.Size = new System.Drawing.Size(86, 20);
             this.Admin_Perfil_txtBox_Tel1.TabIndex = 19;
-            this.Admin_Perfil_txtBox_Tel1.Text = "000 00 00 00";
+            this.Admin_Perfil_txtBox_Tel1.Text = "000 000000";
+            this.Admin_Perfil_txtBox_Tel1.Enter += new System.EventHandler(this.LimpiaTelefono);
             this.Admin_Perfil_txtBox_Tel1.Leave += new System.EventHandler(this.CompruebaTelefono);
             // 
             // Admin_Perfil_txtBox_Tel2
@@ -1086,7 +1088,8 @@
             this.Admin_Perfil_txtBox_Tel2.Name = "Admin_Perfil_txtBox_Tel2";
             this.Admin_Perfil_txtBox_Tel2.Size = new System.Drawing.Size(77, 20);
             this.Admin_Perfil_txtBox_Tel2.TabIndex = 20;
-            this.Admin_Perfil_txtBox_Tel2.Text = "000 00 00 00";
+            this.Admin_Perfil_txtBox_Tel2.Text = "000 000000";
+            this.Admin_Perfil_txtBox_Tel2.Enter += new System.EventHandler(this.LimpiaMovil);
             this.Admin_Perfil_txtBox_Tel2.Leave += new System.EventHandler(this.CompruebaMovil);
             // 
             // Admin_Perfil_txtBox_Mail
@@ -1096,6 +1099,7 @@
             this.Admin_Perfil_txtBox_Mail.Size = new System.Drawing.Size(218, 20);
             this.Admin_Perfil_txtBox_Mail.TabIndex = 25;
             this.Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
+            this.Admin_Perfil_txtBox_Mail.Enter += new System.EventHandler(this.LimpiaMail);
             this.Admin_Perfil_txtBox_Mail.Leave += new System.EventHandler(this.CompruebaMail);
             // 
             // Label_Provincia_Perfil
@@ -1114,6 +1118,7 @@
             this.textBox_CP_Perfil.Name = "textBox_CP_Perfil";
             this.textBox_CP_Perfil.Size = new System.Drawing.Size(51, 20);
             this.textBox_CP_Perfil.TabIndex = 58;
+            this.textBox_CP_Perfil.Leave += new System.EventHandler(this.CompruebaCP);
             // 
             // label_CP_Perfil
             // 
@@ -1147,6 +1152,7 @@
             this.groupBoxSexo.Size = new System.Drawing.Size(83, 76);
             this.groupBoxSexo.TabIndex = 56;
             this.groupBoxSexo.TabStop = false;
+            this.groupBoxSexo.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_rButom_H
             // 
@@ -1189,6 +1195,7 @@
             this.grupEstadoCivil.Size = new System.Drawing.Size(200, 78);
             this.grupEstadoCivil.TabIndex = 55;
             this.grupEstadoCivil.TabStop = false;
+            this.grupEstadoCivil.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_rButom_Divorciado
             // 
@@ -1261,9 +1268,9 @@
             this.Admin_Perfil_Label_Pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Admin_Perfil_Label_Pais.Location = new System.Drawing.Point(310, 97);
             this.Admin_Perfil_Label_Pais.Name = "Admin_Perfil_Label_Pais";
-            this.Admin_Perfil_Label_Pais.Size = new System.Drawing.Size(29, 13);
+            this.Admin_Perfil_Label_Pais.Size = new System.Drawing.Size(100, 13);
             this.Admin_Perfil_Label_Pais.TabIndex = 3;
-            this.Admin_Perfil_Label_Pais.Text = "País";
+            this.Admin_Perfil_Label_Pais.Text = "País de Nacimiento";
             // 
             // Label_Localidad
             // 
@@ -1307,11 +1314,12 @@
             // 
             // Admin_Perfil_txtBox_Domicilio
             // 
-            this.Admin_Perfil_txtBox_Domicilio.Location = new System.Drawing.Point(107, 228);
+            this.Admin_Perfil_txtBox_Domicilio.Location = new System.Drawing.Point(107, 226);
             this.Admin_Perfil_txtBox_Domicilio.Multiline = true;
             this.Admin_Perfil_txtBox_Domicilio.Name = "Admin_Perfil_txtBox_Domicilio";
             this.Admin_Perfil_txtBox_Domicilio.Size = new System.Drawing.Size(403, 20);
             this.Admin_Perfil_txtBox_Domicilio.TabIndex = 21;
+            this.Admin_Perfil_txtBox_Domicilio.Leave += new System.EventHandler(this.CompruebaDomicilio);
             // 
             // txtBox_Localidad
             // 
@@ -1544,6 +1552,7 @@
             this.Admin_Perfil_comboBox_Pais.Name = "Admin_Perfil_comboBox_Pais";
             this.Admin_Perfil_comboBox_Pais.Size = new System.Drawing.Size(196, 21);
             this.Admin_Perfil_comboBox_Pais.TabIndex = 27;
+            this.Admin_Perfil_comboBox_Pais.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_Label_Sexo
             // 
@@ -1781,7 +1790,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_Provincia;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

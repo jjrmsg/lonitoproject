@@ -11,6 +11,8 @@ namespace Events4ALL.Auxiliares
         public Validaciones() 
         { }
 
+        #region Valida NIF
+
         public bool CompruebaNIF(string nif)
         {
             bool error = false;
@@ -59,6 +61,8 @@ namespace Events4ALL.Auxiliares
             return "TRWAGMYFPDXBNJZSQVHLCKET"[indice];
         }
 
+        #endregion
+
         public bool CompruebaCP(string cp)
         {
             // definicion de la expresion regular
@@ -69,14 +73,14 @@ namespace Events4ALL.Auxiliares
 
         public bool CompruebaMail(string mail)
         {
-            Regex ermail = new Regex("");
+            Regex ermail = new Regex("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
 
             return ermail.IsMatch(mail);
         }
 
         public bool CompruebaTelefono(string tel)
         {
-            Regex ertel = new Regex("");
+            Regex ertel = new Regex("[0-9]{2,3}-? ?[0-9]{6,7}$");
 
             return ertel.IsMatch(tel);
         }

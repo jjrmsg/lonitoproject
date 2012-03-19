@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using Events4ALL.Auxiliares;
 
 namespace Events4ALL
@@ -14,19 +15,20 @@ namespace Events4ALL
     {
         private Validaciones validar;
 
+        #region Variables
+
         private bool nif;
         private bool nombre;
         private bool apellidos;
-        private bool pais;
         private bool CP;
         private bool domicilio;
-        private bool provincia;
         private bool localidad;
         private bool telefono;
         private bool movil;
         private bool mail;
-        private bool fnac;
-        
+
+        #endregion
+
         public Admins()
         {
             InitializeComponent();
@@ -35,20 +37,22 @@ namespace Events4ALL
             validar = new Validaciones();
 
             // inicializo todos los booleanos que indican si son o no correctos sus parametros
-            nif = nombre = apellidos = pais = CP = domicilio = provincia = false;
-            localidad = telefono = movil = mail = fnac = false;
+            nif = nombre = apellidos = CP = domicilio = false;
+            localidad = telefono = movil = mail = false;
         }
 
         private bool ValidaFormulario()
         {
-            if (nif && nombre && apellidos && pais && CP && domicilio && provincia && localidad
-                 && telefono && movil && fnac)
+            if ( nif && nombre && apellidos && CP && domicilio && localidad && telefono && movil && CompruebaSexo() 
+                && CompruebaEC() )
             {
                 return true;
             }
             else
                 return false;
         }
+
+        #region Comprobaciones
 
         private void CompruebaNif(object sender, EventArgs e)
         {
@@ -123,7 +127,7 @@ namespace Events4ALL
         }
 
         private void CompruebaCP(object sender, EventArgs e)
-        { 
+        {
             // campo vacio
             if(textBox_CP_Perfil.Text.Length == 0)
             {
@@ -131,7 +135,7 @@ namespace Events4ALL
                 errorProviderCP.Clear();
             }
             // campo erroneo
-            else if( validar.CompruebaCP(label_CP_Perfil.Text) )
+            else if( !validar.CompruebaCP(textBox_CP_Perfil.Text) )
             {
                 CP = false;
                 errorProviderCP.SetError(label_CP_Perfil, "CP incorrecto.");
@@ -171,6 +175,7 @@ namespace Events4ALL
             if (Admin_Perfil_txtBox_Mail.Text.Length == 0)
             {
                 mail = false;
+                Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
                 errorProviderMail.Clear();
             }
             // mail muy largo
@@ -180,7 +185,7 @@ namespace Events4ALL
                 errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Mail demasiado largo. Máximo 50 carácteres.");
             }
             // mail incorrecto
-            else if ( validar.CompruebaMail(Admin_Perfil_txtBox_Mail.Text))
+            else if ( !validar.CompruebaMail(Admin_Perfil_txtBox_Mail.Text))
             {
                 mail = false;
                 errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Mail incorrecto.");
@@ -198,10 +203,11 @@ namespace Events4ALL
             if (Admin_Perfil_txtBox_Tel1.Text.Length == 0)
             {
                 telefono = false;
+                Admin_Perfil_txtBox_Tel1.Text = "000 000000";
                 errorProviderTEL.Clear();
             }
             // no tiene 9 numeros o esta mal.
-            else if (Admin_Perfil_txtBox_Tel1.Text.Length != 9 && validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel1.Text))
+            else if ( !validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel1.Text))
             {
                 telefono = false;
                 errorProviderTEL.SetError(Admin_Perfil_Label_Tel1, "Teléfono incorrecto.");
@@ -218,14 +224,15 @@ namespace Events4ALL
             // vacio
             if (Admin_Perfil_txtBox_Tel2.Text.Length == 0)
             {
+                Admin_Perfil_txtBox_Tel2.Text = "000 000000";
                 movil = false;
                 errorProviderMov.Clear();
             }
             // no tiene 9 numeros o esta mal.
-            else if (Admin_Perfil_txtBox_Tel2.Text.Length != 9 && validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel2.Text))
+            else if (!validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel2.Text))
             {
                 movil = false;
-                errorProviderMov.SetError(Admin_Perfil_Label_Tel2, "Teléfono incorrecto.");
+                errorProviderMov.SetError(Admin_Perfil_Label_Tel2, "Móvil incorrecto.");
             }
             else
             {
@@ -233,7 +240,93 @@ namespace Events4ALL
                 errorProviderMov.Clear();
             }
         }
-       
+
+        private void CompruebaDomicilio(object sender, EventArgs e)
+        { 
+            // vacio
+            if( Admin_Perfil_txtBox_Domicilio.Text.Length == 0 )
+            {
+                domicilio = false;
+                errorProviderDomicilo.Clear();
+            }
+            // Demasiado largo
+            else if (Admin_Perfil_txtBox_Domicilio.Text.Length > 42)
+            {
+                domicilio = false;
+                errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Dirección demasiado larga.");
+            }
+            // ok
+            else
+            {
+                domicilio = true;
+                errorProviderDomicilo.Clear();
+            }
+        }
+
+        private bool CompruebaSexo()
+        {
+            if (Admin_Perfil_rButom_H.Checked == false && Admin_Perfil_rButom_M.Checked == false)
+                return false;
+            else
+                return true;
+        }
+
+        private bool CompruebaEC()
+        {
+            if (Admin_Perfil_rButom_Soltero.Checked == false &&
+                Admin_Perfil_rButom_Viudo.Checked == false &&
+                Admin_Perfil_rButom_Divorciado.Checked == false &&
+                Admin_Perfil_rButom_Casado.Checked == false)
+                return false;
+            else
+                return true;
+        }
+
+        #endregion
+
+        #region Limpiadores
+
+        private void LimpiaTelefono(object sender, EventArgs e)
+        {
+            if(Admin_Perfil_txtBox_Tel1.Text == "000 000000")
+                Admin_Perfil_txtBox_Tel1.Text = "";
+        }
+
+        private void LimpiaMovil(object sender, EventArgs e)
+        {
+            if(Admin_Perfil_txtBox_Tel2.Text == "000 000000")
+                Admin_Perfil_txtBox_Tel2.Text = "";
+        }
+
+        private void LimpiaMail(object sender, EventArgs e)
+        {
+            if (Admin_Perfil_txtBox_Mail.Text == "usuario@event4all.es")
+                Admin_Perfil_txtBox_Mail.Text = "";
+        }
+
+        public void LimpiaError(object sender, EventArgs e)
+        {
+            // limpia el error de sexo
+            if (CompruebaSexo())
+                errorProviderSexo.Clear();
+
+            // limpia el error de EC
+            if (CompruebaEC())
+                errorProviderEC.Clear();
+
+            // limpia el error de provincia
+            if (comboBox_Provincia.Text != "")
+                errorProviderProvincia.Clear();
+
+            // limpia el error de pais
+            if (Admin_Perfil_comboBox_Pais.Text != "")
+                errorProviderPais.Clear();
+        }
+
+        #endregion
+
+        #region Accion Botones
+
         private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
         {
             // borra nif
@@ -252,17 +345,17 @@ namespace Events4ALL
             apellidos = false;
             
             // borra telefono
-            Admin_Perfil_txtBox_Tel1.Text = "";
+            Admin_Perfil_txtBox_Tel1.Text = "000 000000";
             errorProviderTEL.Clear();
             telefono = false;
             
             // borra movil
-            Admin_Perfil_txtBox_Tel2.Text = "";
+            Admin_Perfil_txtBox_Tel2.Text = "000 000000";
             errorProviderMov.Clear();
             movil = false;
             
             // borra mail
-            Admin_Perfil_txtBox_Mail.Text = "";
+            Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
             errorProviderMail.Clear();
             mail = false;
 
@@ -299,13 +392,25 @@ namespace Events4ALL
         private void Admin_Perfil_boton_Guardar_Click(object sender, EventArgs e)
         {
             // Comrpuebo que todos los campos estan rellenos
-            if ( ValidaFormulario() )
+            if (ValidaFormulario() && Admin_Perfil_comboBox_Pais.Text != "" && comboBox_Provincia.Text != "")
             {
                 // creo el EN y toda la pedazo de basura posterior
                 MessageBox.Show("Todo Ok");
             }
             else
-            { 
+            {
+                if(comboBox_Provincia.Text == "")
+                    errorProviderProvincia.SetError(Label_Provincia_Perfil, "Debe seleccionar una provincia.");
+
+                if (Admin_Perfil_comboBox_Pais.Text == "")
+                    errorProviderPais.SetError(Admin_Perfil_Label_Pais,"Debe seleccionar su país de nacimiento.");
+
+                if (!CompruebaEC() )
+                    errorProviderEC.SetError(Admin_Perfil_Label_EstCivil, "Debe seleccionar un Estado Civil.");
+
+                if (!CompruebaSexo())
+                    errorProviderSexo.SetError(Admin_Perfil_Label_Sexo, "Debe seleccionar un sexo.");
+
                 if( !nif )
                     errorProviderNif.SetError(Admin_Perfil_Label_NIF,"Debe de rellenar el NIF.");
                
@@ -317,9 +422,6 @@ namespace Events4ALL
                 
                 if( !apellidos )
                     errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Debe de rellenar los Apellidos.");
-                
-                if( !pais )
-                    errorProviderPais.SetError(Admin_Perfil_Label_Pais, "Seleccione un País.");
                 
                 if( !CP )
                     errorProviderCP.SetError(label_CP_Perfil, "Debe de introducir un Código Postal.");
@@ -333,9 +435,6 @@ namespace Events4ALL
                     && !Admin_Perfil_rButom_Divorciado.Checked )
                     errorProviderEC.SetError(Admin_Perfil_Label_EstCivil, "Seleccione un Estado Civil.");
                 
-                if( !provincia )
-                    errorProviderProvincia.SetError(Label_Provincia_Perfil, "Debe introducir una Provincia.");
-                
                 if( !localidad )
                     errorProviderLocalidad.SetError(Label_Localidad, "Debe introducir una Localidad.");
                 
@@ -347,10 +446,9 @@ namespace Events4ALL
                 
                 if( !mail )
                     errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Debe de introducir un E-Mail de contacto.");
-                
-                if (!fnac)
-                    errorProviderFNAC.SetError(Admin_Perfil_Label_FecNacimiento, "Introduzca una Fecha de Nacimiento.");
             }
         }
+
+        #endregion
     }
 }
