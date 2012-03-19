@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Events4ALL.EN;
+using Events4ALL.CAD;
 using System.Collections;
 
 namespace Events4ALL
@@ -15,6 +17,8 @@ namespace Events4ALL
         public Salas()
         {
             InitializeComponent();
+            SalasCAD cadIdSala = new SalasCAD();
+            textIdSala.Text = cadIdSala.SacarIdSala().ToString();
             //Aqui hacer una consulta con un count salas y añadir +1
             //Ese valor se le asignara a textIdSala
         }
@@ -171,10 +175,16 @@ namespace Events4ALL
             //ocualtar todos los error provider
             errorProvider1.Clear();
             errorProvider2.Clear();
+
             validado=validar();
             if (validado == false)
                 MessageBox.Show("Datos incorrectos", "Error");
-                //Si validado==falso saltara una excepcion
+            //Si validado==falso saltara una excepcion
+            else
+            {
+                //formamos el SalasEN con su constructor sobrecargado
+                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text);
+            }
         }
 
         private bool validar()

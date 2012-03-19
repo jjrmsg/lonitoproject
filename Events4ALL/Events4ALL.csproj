@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Auxiliares\BD.cs" />
     <Compile Include="Auxiliares\Validaciones.cs" />
+    <Compile Include="CAD\SalasCAD.cs" />
     <Compile Include="ComboFlags.cs" />
     <Compile Include="EN\CondicionEN.cs" />
     <Compile Include="EN\PromocionEN.cs" />
@@ -268,9 +269,7 @@
     <Content Include="imgs\tag_orange.png" />
     <None Include="imgs\update.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CAD\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
