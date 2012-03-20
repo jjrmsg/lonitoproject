@@ -18,7 +18,7 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("select count(*) from salas", c);
+                SqlCommand com = new SqlCommand("select count(*) from Sala", c);
                 SqlDataReader dr = com.ExecuteReader();
                 dr.Read();
                 newID = Convert.ToInt16(dr[0].ToString())+1;

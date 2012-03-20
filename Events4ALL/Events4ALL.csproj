@@ -217,6 +217,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imgs\add_save.png" />
+    <Content Include="Events4AllDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Events4AllDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Events4AllDB.mdf</DependentUpon>
+    </Content>
     <Content Include="imgs\admins.png" />
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />

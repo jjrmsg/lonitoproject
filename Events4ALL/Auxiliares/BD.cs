@@ -16,7 +16,7 @@ namespace Events4ALL.Auxiliares
 
         public SqlConnection Connect()
         {
-            string dbDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName + @"\Events4ALL\Events4ALL\Events4AllDB.mdf";
+            string dbDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Events4ALL\Events4AllDB.mdf";
             string s = "Data Source=.\\SQLEXPRESS;AttachDbFilename=" + dbDirectory + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
             SqlConnection c = new SqlConnection(s);
             return c;
