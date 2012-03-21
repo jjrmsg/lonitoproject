@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
-using System.IO; 
+using System.IO;
+using Events4ALL.Auxiliares;
+using System.Data.SqlClient;
 
 namespace Events4ALL
 {
@@ -19,17 +21,12 @@ namespace Events4ALL
         string pass;
         string lang;
         const string fic = "user.txt";
+        SqlConnection c;
 
         public Login()
         {
             //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");  
             InitializeComponent();
-
-            /*System.Drawing.Text.PrivateFontCollection privateFonts = new System.Drawing.Text.PrivateFontCollection();
-            privateFonts.AddFontFile("fonts/AGENCYR.TTF");
-            System.Drawing.Font font = new Font(privateFonts.Families[0], 20);
-            label3.Font = font;*/
-
 
             comboBox1.Text = "Es";
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -38,6 +35,9 @@ namespace Events4ALL
             comboBox1.Items.Add(new ComboFlags("En", 1));
 
             LoadUser();
+
+            BD bd = new BD();
+            c = bd.Connect();
         }
 
         private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -95,11 +95,35 @@ namespace Events4ALL
             {
                 user = textBoxUser.Text;
                 pass = textBoxPass.Text;
-                miIdioma();
-                Recordar();
-                System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
-                t.Start();
-                this.Close();
+                int count = 0;
+                //Comprobar user en la BD
+                try
+                {
+                    c.Open();
+                    SqlCommand com = new SqlCommand("select count(*) from Administrador where Usuario='" + user + "' and Pass='" + pass + "'", c);
+                    count = (int)com.ExecuteScalar();
+
+                    if (count == 1)
+                    {
+                        miIdioma();
+                        Recordar();
+                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                        t.Start();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario o password son erroneos");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error al conectar a la Base de Datos");
+                }
+                finally
+                {
+                    c.Close();
+                }
             }
             else
             {
