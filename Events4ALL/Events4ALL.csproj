@@ -68,12 +68,16 @@
   <ItemGroup>
     <Compile Include="Auxiliares\BD.cs" />
     <Compile Include="Auxiliares\Validaciones.cs" />
+    <Compile Include="CAD\EspectaculosCAD.cs" />
     <Compile Include="CAD\SalasCAD.cs" />
+    <Compile Include="CAD\VentasCAD.cs" />
     <Compile Include="ComboFlags.cs" />
     <Compile Include="EN\CondicionEN.cs" />
+    <Compile Include="EN\EspectaculosEN.cs" />
     <Compile Include="EN\PromocionEN.cs" />
     <Compile Include="EN\AdminEN.cs" />
     <Compile Include="EN\SalasEN.cs" />
+    <Compile Include="EN\VentasEN.cs" />
     <Compile Include="User Controls\Admins.cs">
       <SubType>UserControl</SubType>
     </Compile>
