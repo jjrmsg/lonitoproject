@@ -88,12 +88,12 @@
             this.comboBox_MC_VC_Comparacion3 = new System.Windows.Forms.ComboBox();
             this.comboBox_MC_VC_Comparacion2 = new System.Windows.Forms.ComboBox();
             this.comboBox_MC_VC_Comparacion1 = new System.Windows.Forms.ComboBox();
-            this.textBox_MC_VC_Valor3 = new System.Windows.Forms.TextBox();
-            this.textBox_MC_VC_Valor2 = new System.Windows.Forms.TextBox();
-            this.textBox_MC_VC_Valor1 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Valor3 = new System.Windows.Forms.Label();
-            this.label_MC_VC_Valor2 = new System.Windows.Forms.Label();
-            this.label_MC_VC_Valor1 = new System.Windows.Forms.Label();
+            this.textBox_MC_VC_Cantidad3 = new System.Windows.Forms.TextBox();
+            this.textBox_MC_VC_Cantida2 = new System.Windows.Forms.TextBox();
+            this.textBox_MC_VC_Cantidad1 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Cantidad3 = new System.Windows.Forms.Label();
+            this.label_MC_VC_Cantidad2 = new System.Windows.Forms.Label();
+            this.label_MC_VC_Cantidad1 = new System.Windows.Forms.Label();
             this.button_MC_SubirFoto = new System.Windows.Forms.Button();
             this.label_MC_CartelPromo = new System.Windows.Forms.Label();
             this.pictureBox_MC_CartelPromo = new System.Windows.Forms.PictureBox();
@@ -110,6 +110,12 @@
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.textBox_MC_VC_Descuento1 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento1 = new System.Windows.Forms.Label();
+            this.textBox_MC_VC_Descuento2 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento2 = new System.Windows.Forms.Label();
+            this.textBox_MC_VC_Descuento3 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento3 = new System.Windows.Forms.Label();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -541,6 +547,12 @@
             // 
             this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.groupBox_MC_TipoEvent2);
@@ -552,16 +564,16 @@
             this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion3);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion1);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor3);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor2);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Valor1);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor3);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor2);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Valor1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantidad3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantida2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantidad1);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad3);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad1);
             this.groupBox_MC_TipoDeCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 151);
             this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
-            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 250);
+            this.groupBox_MC_TipoDeCond.Size = new System.Drawing.Size(439, 261);
             this.groupBox_MC_TipoDeCond.TabIndex = 20;
             this.groupBox_MC_TipoDeCond.TabStop = false;
             this.groupBox_MC_TipoDeCond.Text = "Valores de condición:";
@@ -570,7 +582,7 @@
             // 
             this.checkBox_MC_ActivarCond2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox_MC_ActivarCond2.AutoSize = true;
-            this.checkBox_MC_ActivarCond2.Location = new System.Drawing.Point(6, 222);
+            this.checkBox_MC_ActivarCond2.Location = new System.Drawing.Point(6, 238);
             this.checkBox_MC_ActivarCond2.Name = "checkBox_MC_ActivarCond2";
             this.checkBox_MC_ActivarCond2.Size = new System.Drawing.Size(108, 17);
             this.checkBox_MC_ActivarCond2.TabIndex = 18;
@@ -582,7 +594,7 @@
             // 
             this.checkBox_MC_ActivarCond1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.checkBox_MC_ActivarCond1.AutoSize = true;
-            this.checkBox_MC_ActivarCond1.Location = new System.Drawing.Point(6, 146);
+            this.checkBox_MC_ActivarCond1.Location = new System.Drawing.Point(6, 159);
             this.checkBox_MC_ActivarCond1.Name = "checkBox_MC_ActivarCond1";
             this.checkBox_MC_ActivarCond1.Size = new System.Drawing.Size(108, 17);
             this.checkBox_MC_ActivarCond1.TabIndex = 17;
@@ -783,7 +795,7 @@
             "Espectáculos"});
             this.comboBox_MC_VC_Tcondicion3.Location = new System.Drawing.Point(6, 182);
             this.comboBox_MC_VC_Tcondicion3.Name = "comboBox_MC_VC_Tcondicion3";
-            this.comboBox_MC_VC_Tcondicion3.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion3.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion3.TabIndex = 14;
             this.comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
             // 
@@ -798,7 +810,7 @@
             "Espectáculos"});
             this.comboBox_MC_VC_Tcondicion2.Location = new System.Drawing.Point(6, 105);
             this.comboBox_MC_VC_Tcondicion2.Name = "comboBox_MC_VC_Tcondicion2";
-            this.comboBox_MC_VC_Tcondicion2.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion2.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion2.TabIndex = 13;
             this.comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
             // 
@@ -812,7 +824,7 @@
             "Espectáculos"});
             this.comboBox_MC_VC_Tcondicion1.Location = new System.Drawing.Point(6, 30);
             this.comboBox_MC_VC_Tcondicion1.Name = "comboBox_MC_VC_Tcondicion1";
-            this.comboBox_MC_VC_Tcondicion1.Size = new System.Drawing.Size(97, 21);
+            this.comboBox_MC_VC_Tcondicion1.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion1.TabIndex = 12;
             this.comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
             // 
@@ -825,9 +837,9 @@
             "Mayor",
             "Menor",
             "Igual"});
-            this.comboBox_MC_VC_Comparacion3.Location = new System.Drawing.Point(109, 182);
+            this.comboBox_MC_VC_Comparacion3.Location = new System.Drawing.Point(157, 181);
             this.comboBox_MC_VC_Comparacion3.Name = "comboBox_MC_VC_Comparacion3";
-            this.comboBox_MC_VC_Comparacion3.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion3.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion3.TabIndex = 10;
             this.comboBox_MC_VC_Comparacion3.Text = "Comparación";
             // 
@@ -840,9 +852,9 @@
             "Mayor",
             "Menor",
             "Igual"});
-            this.comboBox_MC_VC_Comparacion2.Location = new System.Drawing.Point(104, 105);
+            this.comboBox_MC_VC_Comparacion2.Location = new System.Drawing.Point(157, 105);
             this.comboBox_MC_VC_Comparacion2.Name = "comboBox_MC_VC_Comparacion2";
-            this.comboBox_MC_VC_Comparacion2.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion2.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion2.TabIndex = 9;
             this.comboBox_MC_VC_Comparacion2.Text = "Comparación";
             // 
@@ -854,70 +866,70 @@
             "Mayor",
             "Menor",
             "Igual"});
-            this.comboBox_MC_VC_Comparacion1.Location = new System.Drawing.Point(104, 30);
+            this.comboBox_MC_VC_Comparacion1.Location = new System.Drawing.Point(157, 30);
             this.comboBox_MC_VC_Comparacion1.Name = "comboBox_MC_VC_Comparacion1";
-            this.comboBox_MC_VC_Comparacion1.Size = new System.Drawing.Size(87, 21);
+            this.comboBox_MC_VC_Comparacion1.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion1.TabIndex = 8;
             this.comboBox_MC_VC_Comparacion1.Text = "Comparación";
             // 
-            // textBox_MC_VC_Valor3
+            // textBox_MC_VC_Cantidad3
             // 
-            this.textBox_MC_VC_Valor3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Valor3.Enabled = false;
-            this.textBox_MC_VC_Valor3.Location = new System.Drawing.Point(233, 182);
-            this.textBox_MC_VC_Valor3.Name = "textBox_MC_VC_Valor3";
-            this.textBox_MC_VC_Valor3.Size = new System.Drawing.Size(49, 20);
-            this.textBox_MC_VC_Valor3.TabIndex = 6;
-            this.textBox_MC_VC_Valor3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor3_KeyPress);
+            this.textBox_MC_VC_Cantidad3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Cantidad3.Enabled = false;
+            this.textBox_MC_VC_Cantidad3.Location = new System.Drawing.Point(61, 209);
+            this.textBox_MC_VC_Cantidad3.Name = "textBox_MC_VC_Cantidad3";
+            this.textBox_MC_VC_Cantidad3.Size = new System.Drawing.Size(70, 20);
+            this.textBox_MC_VC_Cantidad3.TabIndex = 6;
+            this.textBox_MC_VC_Cantidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor3_KeyPress);
             // 
-            // textBox_MC_VC_Valor2
+            // textBox_MC_VC_Cantida2
             // 
-            this.textBox_MC_VC_Valor2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Valor2.Enabled = false;
-            this.textBox_MC_VC_Valor2.Location = new System.Drawing.Point(233, 105);
-            this.textBox_MC_VC_Valor2.Name = "textBox_MC_VC_Valor2";
-            this.textBox_MC_VC_Valor2.Size = new System.Drawing.Size(49, 20);
-            this.textBox_MC_VC_Valor2.TabIndex = 5;
-            this.textBox_MC_VC_Valor2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor2_KeyPress);
+            this.textBox_MC_VC_Cantida2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Cantida2.Enabled = false;
+            this.textBox_MC_VC_Cantida2.Location = new System.Drawing.Point(61, 132);
+            this.textBox_MC_VC_Cantida2.Name = "textBox_MC_VC_Cantida2";
+            this.textBox_MC_VC_Cantida2.Size = new System.Drawing.Size(70, 20);
+            this.textBox_MC_VC_Cantida2.TabIndex = 5;
+            this.textBox_MC_VC_Cantida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor2_KeyPress);
             // 
-            // textBox_MC_VC_Valor1
+            // textBox_MC_VC_Cantidad1
             // 
-            this.textBox_MC_VC_Valor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Valor1.Location = new System.Drawing.Point(233, 31);
-            this.textBox_MC_VC_Valor1.Name = "textBox_MC_VC_Valor1";
-            this.textBox_MC_VC_Valor1.Size = new System.Drawing.Size(49, 20);
-            this.textBox_MC_VC_Valor1.TabIndex = 4;
-            this.textBox_MC_VC_Valor1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor1_KeyPress);
+            this.textBox_MC_VC_Cantidad1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Cantidad1.Location = new System.Drawing.Point(61, 57);
+            this.textBox_MC_VC_Cantidad1.Name = "textBox_MC_VC_Cantidad1";
+            this.textBox_MC_VC_Cantidad1.Size = new System.Drawing.Size(70, 20);
+            this.textBox_MC_VC_Cantidad1.TabIndex = 4;
+            this.textBox_MC_VC_Cantidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor1_KeyPress);
             // 
-            // label_MC_VC_Valor3
+            // label_MC_VC_Cantidad3
             // 
-            this.label_MC_VC_Valor3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Valor3.AutoSize = true;
-            this.label_MC_VC_Valor3.Location = new System.Drawing.Point(197, 185);
-            this.label_MC_VC_Valor3.Name = "label_MC_VC_Valor3";
-            this.label_MC_VC_Valor3.Size = new System.Drawing.Size(31, 13);
-            this.label_MC_VC_Valor3.TabIndex = 2;
-            this.label_MC_VC_Valor3.Text = "Valor";
+            this.label_MC_VC_Cantidad3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Cantidad3.AutoSize = true;
+            this.label_MC_VC_Cantidad3.Location = new System.Drawing.Point(6, 212);
+            this.label_MC_VC_Cantidad3.Name = "label_MC_VC_Cantidad3";
+            this.label_MC_VC_Cantidad3.Size = new System.Drawing.Size(49, 13);
+            this.label_MC_VC_Cantidad3.TabIndex = 2;
+            this.label_MC_VC_Cantidad3.Text = "Cantidad";
             // 
-            // label_MC_VC_Valor2
+            // label_MC_VC_Cantidad2
             // 
-            this.label_MC_VC_Valor2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Valor2.AutoSize = true;
-            this.label_MC_VC_Valor2.Location = new System.Drawing.Point(197, 108);
-            this.label_MC_VC_Valor2.Name = "label_MC_VC_Valor2";
-            this.label_MC_VC_Valor2.Size = new System.Drawing.Size(31, 13);
-            this.label_MC_VC_Valor2.TabIndex = 1;
-            this.label_MC_VC_Valor2.Text = "Valor";
+            this.label_MC_VC_Cantidad2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Cantidad2.AutoSize = true;
+            this.label_MC_VC_Cantidad2.Location = new System.Drawing.Point(6, 135);
+            this.label_MC_VC_Cantidad2.Name = "label_MC_VC_Cantidad2";
+            this.label_MC_VC_Cantidad2.Size = new System.Drawing.Size(49, 13);
+            this.label_MC_VC_Cantidad2.TabIndex = 1;
+            this.label_MC_VC_Cantidad2.Text = "Cantidad";
             // 
-            // label_MC_VC_Valor1
+            // label_MC_VC_Cantidad1
             // 
-            this.label_MC_VC_Valor1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Valor1.AutoSize = true;
-            this.label_MC_VC_Valor1.Location = new System.Drawing.Point(197, 34);
-            this.label_MC_VC_Valor1.Name = "label_MC_VC_Valor1";
-            this.label_MC_VC_Valor1.Size = new System.Drawing.Size(31, 13);
-            this.label_MC_VC_Valor1.TabIndex = 0;
-            this.label_MC_VC_Valor1.Text = "Valor";
+            this.label_MC_VC_Cantidad1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Cantidad1.AutoSize = true;
+            this.label_MC_VC_Cantidad1.Location = new System.Drawing.Point(6, 60);
+            this.label_MC_VC_Cantidad1.Name = "label_MC_VC_Cantidad1";
+            this.label_MC_VC_Cantidad1.Size = new System.Drawing.Size(49, 13);
+            this.label_MC_VC_Cantidad1.TabIndex = 0;
+            this.label_MC_VC_Cantidad1.Text = "Cantidad";
             // 
             // button_MC_SubirFoto
             // 
@@ -958,7 +970,7 @@
             // checkBox_MC_ActPromo
             // 
             this.checkBox_MC_ActPromo.AutoSize = true;
-            this.checkBox_MC_ActPromo.Location = new System.Drawing.Point(608, 407);
+            this.checkBox_MC_ActPromo.Location = new System.Drawing.Point(608, 415);
             this.checkBox_MC_ActPromo.Name = "checkBox_MC_ActPromo";
             this.checkBox_MC_ActPromo.Size = new System.Drawing.Size(15, 14);
             this.checkBox_MC_ActPromo.TabIndex = 4;
@@ -968,7 +980,7 @@
             // 
             this.label_MC_ActPromo.AutoSize = true;
             this.label_MC_ActPromo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MC_ActPromo.Location = new System.Drawing.Point(448, 407);
+            this.label_MC_ActPromo.Location = new System.Drawing.Point(448, 415);
             this.label_MC_ActPromo.Name = "label_MC_ActPromo";
             this.label_MC_ActPromo.Size = new System.Drawing.Size(127, 13);
             this.label_MC_ActPromo.TabIndex = 17;
@@ -1086,6 +1098,62 @@
             this.Estado.HeaderText = "¿Activado?";
             this.Estado.Name = "Estado";
             // 
+            // textBox_MC_VC_Descuento1
+            // 
+            this.textBox_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento1.Location = new System.Drawing.Point(219, 57);
+            this.textBox_MC_VC_Descuento1.Name = "textBox_MC_VC_Descuento1";
+            this.textBox_MC_VC_Descuento1.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento1.TabIndex = 20;
+            // 
+            // label_MC_VC_Descuento1
+            // 
+            this.label_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento1.AutoSize = true;
+            this.label_MC_VC_Descuento1.Location = new System.Drawing.Point(154, 60);
+            this.label_MC_VC_Descuento1.Name = "label_MC_VC_Descuento1";
+            this.label_MC_VC_Descuento1.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento1.TabIndex = 19;
+            this.label_MC_VC_Descuento1.Text = "Descuento";
+            // 
+            // textBox_MC_VC_Descuento2
+            // 
+            this.textBox_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento2.Enabled = false;
+            this.textBox_MC_VC_Descuento2.Location = new System.Drawing.Point(219, 132);
+            this.textBox_MC_VC_Descuento2.Name = "textBox_MC_VC_Descuento2";
+            this.textBox_MC_VC_Descuento2.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento2.TabIndex = 22;
+            // 
+            // label_MC_VC_Descuento2
+            // 
+            this.label_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento2.AutoSize = true;
+            this.label_MC_VC_Descuento2.Location = new System.Drawing.Point(154, 135);
+            this.label_MC_VC_Descuento2.Name = "label_MC_VC_Descuento2";
+            this.label_MC_VC_Descuento2.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento2.TabIndex = 21;
+            this.label_MC_VC_Descuento2.Text = "Descuento";
+            // 
+            // textBox_MC_VC_Descuento3
+            // 
+            this.textBox_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento3.Enabled = false;
+            this.textBox_MC_VC_Descuento3.Location = new System.Drawing.Point(219, 209);
+            this.textBox_MC_VC_Descuento3.Name = "textBox_MC_VC_Descuento3";
+            this.textBox_MC_VC_Descuento3.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento3.TabIndex = 24;
+            // 
+            // label_MC_VC_Descuento3
+            // 
+            this.label_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento3.AutoSize = true;
+            this.label_MC_VC_Descuento3.Location = new System.Drawing.Point(154, 212);
+            this.label_MC_VC_Descuento3.Name = "label_MC_VC_Descuento3";
+            this.label_MC_VC_Descuento3.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento3.TabIndex = 23;
+            this.label_MC_VC_Descuento3.Text = "Descuento";
+            // 
             // Promociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1093,6 +1161,7 @@
             this.Controls.Add(this.tabControl_promociones);
             this.Name = "Promociones";
             this.Size = new System.Drawing.Size(907, 635);
+            this.Load += new System.EventHandler(this.Promociones_Load);
             this.tabControl_promociones.ResumeLayout(false);
             this.tab_Por_espectaculo.ResumeLayout(false);
             this.tab_Por_espectaculo.PerformLayout();
@@ -1173,12 +1242,12 @@
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion3;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion2;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion1;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Valor3;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Valor2;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Valor1;
-        private System.Windows.Forms.Label label_MC_VC_Valor3;
-        private System.Windows.Forms.Label label_MC_VC_Valor2;
-        private System.Windows.Forms.Label label_MC_VC_Valor1;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Cantidad3;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Cantida2;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Cantidad1;
+        private System.Windows.Forms.Label label_MC_VC_Cantidad3;
+        private System.Windows.Forms.Label label_MC_VC_Cantidad2;
+        private System.Windows.Forms.Label label_MC_VC_Cantidad1;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion3;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion2;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Tcondicion1;
@@ -1202,5 +1271,11 @@
         public System.Windows.Forms.ComboBox comboBox_PE_espectaculo;
         private System.Windows.Forms.Label label_PE_fechaFin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Descuento1;
+        private System.Windows.Forms.Label label_MC_VC_Descuento1;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Descuento2;
+        private System.Windows.Forms.Label label_MC_VC_Descuento2;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Descuento3;
+        private System.Windows.Forms.Label label_MC_VC_Descuento3;
     }
 }

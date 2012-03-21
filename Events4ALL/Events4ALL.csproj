@@ -68,6 +68,8 @@
   <ItemGroup>
     <Compile Include="Auxiliares\BD.cs" />
     <Compile Include="Auxiliares\Validaciones.cs" />
+    <Compile Include="CAD\CondicionCAD.cs" />
+    <Compile Include="CAD\PromocionCAD.cs" />
     <Compile Include="CAD\EspectaculosCAD.cs" />
     <Compile Include="CAD\SalasCAD.cs" />
     <Compile Include="CAD\VentasCAD.cs" />

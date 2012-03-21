@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Events4ALL.CAD;
 
 namespace Events4ALL
 {
@@ -20,7 +21,8 @@ namespace Events4ALL
         {
             if (checkBox_MC_ActivarCond1.Checked == true)
             {
-                textBox_MC_VC_Valor2.Enabled = true;
+                textBox_MC_VC_Cantida2.Enabled = true;
+                textBox_MC_VC_Descuento2.Enabled = true;
                 comboBox_MC_VC_Comparacion2.Enabled = true;
                 comboBox_MC_VC_Tcondicion2.Enabled = true;
                 radioButton_MC_TE2_Cine.Enabled = true;
@@ -30,7 +32,8 @@ namespace Events4ALL
             }
             else
             {
-                textBox_MC_VC_Valor2.Enabled = false;
+                textBox_MC_VC_Cantida2.Enabled = false;
+                textBox_MC_VC_Descuento2.Enabled = false;
                 comboBox_MC_VC_Comparacion2.Enabled = false;
                 comboBox_MC_VC_Tcondicion2.Enabled = false;
                 radioButton_MC_TE2_Cine.Enabled = false;
@@ -44,7 +47,8 @@ namespace Events4ALL
         {
             if (checkBox_MC_ActivarCond2.Checked == true)
             {
-                textBox_MC_VC_Valor3.Enabled = true;
+                textBox_MC_VC_Cantidad3.Enabled = true;
+                textBox_MC_VC_Descuento3.Enabled = true;
                 comboBox_MC_VC_Comparacion3.Enabled = true;
                 comboBox_MC_VC_Tcondicion3.Enabled = true;
                 radioButton_MC_TE3_Cine.Enabled = true;
@@ -54,7 +58,8 @@ namespace Events4ALL
             }
             else
             {
-                textBox_MC_VC_Valor3.Enabled = false;
+                textBox_MC_VC_Cantidad3.Enabled = false;
+                textBox_MC_VC_Descuento3.Enabled = false;
                 comboBox_MC_VC_Comparacion3.Enabled = false;
                 comboBox_MC_VC_Tcondicion3.Enabled = false;
                 radioButton_MC_TE3_Cine.Enabled = false;
@@ -102,6 +107,10 @@ namespace Events4ALL
             {
                 e.Handled = true;
             }
+        }
+
+        private void Promociones_Load(object sender, EventArgs e)
+        {
         }
     }
 }

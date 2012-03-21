@@ -7,22 +7,42 @@ namespace Events4ALL.EN
 {
     class CondicionEN
     {
+        #region variables
+        /*
+            Dinero gastado - 0
+            Entradas - 1
+            Espectaculos - 2
+
+            Mayor - 0
+            Menor - 1
+            Igual - 2
+
+            Cine - 0
+            Teatro - 1
+            Concierto - 2
+            Todos - 3
+        */
         private int idCondicion;
         private string nombre;
         private string descripcion;
         private int tCondicion1;
         private int comparacion1;
-        private int valor1;
+        private int cantidad1;
+        private int descuento1;
         private int tEvento1;
         private int tCondicion2;
         private int comparacion2;
-        private int valor2;
+        private int cantidad2;
+        private int descuento2;
         private int tEvento2;
         private int tCondicion3;
         private int comparacion3;
-        private int valor3;
+        private int cantidad3;
+        private int descuento3;
         private int tEvento3;
+        #endregion
 
+        #region gets/sets
         private int IdPromocion
         {
             get { return idCondicion; }
@@ -53,10 +73,16 @@ namespace Events4ALL.EN
             set { comparacion1 = value; }
         }
 
-        private int Valor1
+        private int Cantidad1
         {
-            get { return valor1; }
-            set { valor1 = value; }
+            get { return cantidad1; }
+            set { cantidad1 = value; }
+        }
+
+        private int Descuento1
+        {
+            get { return descuento1; }
+            set { descuento1 = value; }
         }
 
         private int TEvento1
@@ -77,10 +103,16 @@ namespace Events4ALL.EN
             set { comparacion2 = value; }
         }
 
-        private int Valor2
+        private int Cantidad2
         {
-            get { return valor2; }
-            set { valor2 = value; }
+            get { return cantidad2; }
+            set { cantidad2 = value; }
+        }
+
+        private int Descuento2
+        {
+            get { return descuento2; }
+            set { descuento2 = value; }
         }
 
         private int TEvento2
@@ -101,10 +133,16 @@ namespace Events4ALL.EN
             set { comparacion3 = value; }
         }
 
-        private int Valor3
+        private int Cantidad3
         {
-            get { return valor3; }
-            set { valor3 = value; }
+            get { return cantidad3; }
+            set { cantidad3 = value; }
+        }
+
+        private int Descuento3
+        {
+            get { return descuento3; }
+            set { descuento3 = value; }
         }
 
         private int TEvento3
@@ -112,5 +150,6 @@ namespace Events4ALL.EN
             get { return tEvento3; }
             set { tEvento3 = value; }
         }
+        #endregion
     }
 }
