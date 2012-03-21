@@ -177,10 +177,7 @@ namespace Events4ALL
             errorProvider2.Clear();
 
             validado=validar();
-            if (validado == false)
-                MessageBox.Show("Datos incorrectos", "Error");
-            //Si validado==falso saltara una excepcion
-            else
+            if (validado == true)
             {
                 //formamos el SalasEN con su constructor sobrecargado
                 SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text);
