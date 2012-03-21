@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FormCliente = new System.Windows.Forms.TabControl();
             this.FichaCliente = new System.Windows.Forms.TabPage();
             this.buttonLimpiarCliente = new System.Windows.Forms.Button();
             this.buttonGuardarCliente = new System.Windows.Forms.Button();
             this.buttonFotoCliente = new System.Windows.Forms.Button();
             this.cliente_Perfil_Foto = new System.Windows.Forms.PictureBox();
-            this.datosPersonalesClientes = new System.Windows.Forms.GroupBox();
+            this.comboBoxProvinciaCli = new System.Windows.Forms.GroupBox();
+            this.comboBoxProvCli = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupContactoCliente = new System.Windows.Forms.GroupBox();
             this.telefonoCli = new System.Windows.Forms.Label();
@@ -49,23 +51,29 @@
             this.comboBoxDomiciCli = new System.Windows.Forms.ComboBox();
             this.textBoxDomiciCli = new System.Windows.Forms.TextBox();
             this.labelDomiciCli = new System.Windows.Forms.Label();
-            this.textBox2LocaliCli = new System.Windows.Forms.TextBox();
-            this.label3LocaliCli = new System.Windows.Forms.Label();
-            this.label3CPCli = new System.Windows.Forms.Label();
-            this.textBox2CPCli = new System.Windows.Forms.TextBox();
-            this.textBoxProvCli = new System.Windows.Forms.TextBox();
+            this.textBoxLocaliCli = new System.Windows.Forms.TextBox();
+            this.labelLocaliCli = new System.Windows.Forms.Label();
+            this.labelCPCli = new System.Windows.Forms.Label();
+            this.textBoxCPCli = new System.Windows.Forms.TextBox();
             this.labelClienteProv = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxPaisCli = new System.Windows.Forms.ComboBox();
+            this.labelPaisCli = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.apellidosCliente = new System.Windows.Forms.Label();
+            this.textBoxApellidosC = new System.Windows.Forms.TextBox();
+            this.labelApellidosCliente = new System.Windows.Forms.Label();
             this.labelNombreCliente = new System.Windows.Forms.Label();
             this.labelNifCliente = new System.Windows.Forms.Label();
             this.textBoxNifC = new System.Windows.Forms.TextBox();
             this.textBoxNombreC = new System.Windows.Forms.TextBox();
             this.BuscarCliente = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.comboBoxProvinciaBusquedaCli = new System.Windows.Forms.ComboBox();
@@ -85,17 +93,11 @@
             this.labelApellidosBusquedaCli = new System.Windows.Forms.Label();
             this.textboxNombreBusquedaCli = new System.Windows.Forms.TextBox();
             this.labelNombreBusquedaCli = new System.Windows.Forms.Label();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VerPerfil = new System.Windows.Forms.DataGridViewImageColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.FormCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
-            this.datosPersonalesClientes.SuspendLayout();
+            this.comboBoxProvinciaCli.SuspendLayout();
             this.groupContactoCliente.SuspendLayout();
             this.groupBoxSexo.SuspendLayout();
             this.BuscarCliente.SuspendLayout();
@@ -104,14 +106,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEdadBusquedaCli1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEdadBusquedaCli2)).BeginInit();
             this.groupboxSexBusquedaCli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // FormCliente
             // 
             this.FormCliente.AccessibleDescription = "Formulario Cliente";
-            this.FormCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FormCliente.Controls.Add(this.FichaCliente);
             this.FormCliente.Controls.Add(this.BuscarCliente);
             this.FormCliente.Location = new System.Drawing.Point(3, 1);
@@ -127,7 +130,7 @@
             this.FichaCliente.Controls.Add(this.buttonGuardarCliente);
             this.FichaCliente.Controls.Add(this.buttonFotoCliente);
             this.FichaCliente.Controls.Add(this.cliente_Perfil_Foto);
-            this.FichaCliente.Controls.Add(this.datosPersonalesClientes);
+            this.FichaCliente.Controls.Add(this.comboBoxProvinciaCli);
             this.FichaCliente.Location = new System.Drawing.Point(4, 22);
             this.FichaCliente.Name = "FichaCliente";
             this.FichaCliente.Padding = new System.Windows.Forms.Padding(3);
@@ -161,6 +164,7 @@
             this.buttonGuardarCliente.Text = "Guardar";
             this.buttonGuardarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGuardarCliente.UseVisualStyleBackColor = true;
+            this.buttonGuardarCliente.Click += new System.EventHandler(this.buttonGuardarCliente_Click);
             // 
             // buttonFotoCliente
             // 
@@ -187,39 +191,101 @@
             this.cliente_Perfil_Foto.TabStop = false;
             this.cliente_Perfil_Foto.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // datosPersonalesClientes
+            // comboBoxProvinciaCli
             // 
-            this.datosPersonalesClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.datosPersonalesClientes.Controls.Add(this.dateTimePicker1);
-            this.datosPersonalesClientes.Controls.Add(this.groupContactoCliente);
-            this.datosPersonalesClientes.Controls.Add(this.groupBoxSexo);
-            this.datosPersonalesClientes.Controls.Add(this.comboBoxDomiciCli);
-            this.datosPersonalesClientes.Controls.Add(this.textBoxDomiciCli);
-            this.datosPersonalesClientes.Controls.Add(this.labelDomiciCli);
-            this.datosPersonalesClientes.Controls.Add(this.textBox2LocaliCli);
-            this.datosPersonalesClientes.Controls.Add(this.label3LocaliCli);
-            this.datosPersonalesClientes.Controls.Add(this.label3CPCli);
-            this.datosPersonalesClientes.Controls.Add(this.textBox2CPCli);
-            this.datosPersonalesClientes.Controls.Add(this.textBoxProvCli);
-            this.datosPersonalesClientes.Controls.Add(this.labelClienteProv);
-            this.datosPersonalesClientes.Controls.Add(this.comboBox1);
-            this.datosPersonalesClientes.Controls.Add(this.label2);
-            this.datosPersonalesClientes.Controls.Add(this.label1);
-            this.datosPersonalesClientes.Controls.Add(this.textBox1);
-            this.datosPersonalesClientes.Controls.Add(this.apellidosCliente);
-            this.datosPersonalesClientes.Controls.Add(this.labelNombreCliente);
-            this.datosPersonalesClientes.Controls.Add(this.labelNifCliente);
-            this.datosPersonalesClientes.Controls.Add(this.textBoxNifC);
-            this.datosPersonalesClientes.Controls.Add(this.textBoxNombreC);
-            this.datosPersonalesClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datosPersonalesClientes.Location = new System.Drawing.Point(35, 34);
-            this.datosPersonalesClientes.Name = "datosPersonalesClientes";
-            this.datosPersonalesClientes.Size = new System.Drawing.Size(545, 543);
-            this.datosPersonalesClientes.TabIndex = 4;
-            this.datosPersonalesClientes.TabStop = false;
-            this.datosPersonalesClientes.Text = "Datos Personales";
-            this.datosPersonalesClientes.Enter += new System.EventHandler(this.datosPersonalesClientes_Enter);
+            this.comboBoxProvinciaCli.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxProvinciaCli.Controls.Add(this.comboBoxProvCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.dateTimePicker1);
+            this.comboBoxProvinciaCli.Controls.Add(this.groupContactoCliente);
+            this.comboBoxProvinciaCli.Controls.Add(this.groupBoxSexo);
+            this.comboBoxProvinciaCli.Controls.Add(this.comboBoxDomiciCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxDomiciCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelDomiciCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxLocaliCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelLocaliCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelCPCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxCPCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelClienteProv);
+            this.comboBoxProvinciaCli.Controls.Add(this.comboBoxPaisCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelPaisCli);
+            this.comboBoxProvinciaCli.Controls.Add(this.label1);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxApellidosC);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelApellidosCliente);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelNombreCliente);
+            this.comboBoxProvinciaCli.Controls.Add(this.labelNifCliente);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxNifC);
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxNombreC);
+            this.comboBoxProvinciaCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxProvinciaCli.Location = new System.Drawing.Point(35, 34);
+            this.comboBoxProvinciaCli.Name = "comboBoxProvinciaCli";
+            this.comboBoxProvinciaCli.Size = new System.Drawing.Size(545, 543);
+            this.comboBoxProvinciaCli.TabIndex = 4;
+            this.comboBoxProvinciaCli.TabStop = false;
+            this.comboBoxProvinciaCli.Text = "Datos Personales";
+            this.comboBoxProvinciaCli.Enter += new System.EventHandler(this.datosPersonalesClientes_Enter);
+            // 
+            // comboBoxProvCli
+            // 
+            this.comboBoxProvCli.FormattingEnabled = true;
+            this.comboBoxProvCli.Items.AddRange(new object[] {
+            "",
+            "Álava",
+            "Albacete",
+            "Alicante",
+            "Almería",
+            "Asturias",
+            "Avila",
+            "Badajoz",
+            "Barcelona",
+            "Burgos",
+            "Cáceres",
+            "Cádiz",
+            "Cantabria",
+            "Castellón",
+            "Ceuta",
+            "Ciudad Real",
+            "Córdoba",
+            "Cuenca",
+            "Gerona",
+            "Granada",
+            "Guadalajara",
+            "Huelva",
+            "Huesca",
+            "Islas Baleares",
+            "Jaén ",
+            "La Coruña",
+            "La Rioja",
+            "Las Palmas",
+            "León",
+            "Lérida",
+            "Lugo",
+            "Madrid",
+            "Málaga",
+            "Melilla",
+            "Murcia",
+            "Navarra",
+            "Orense",
+            "Palencia",
+            "Pontevedra",
+            "S.C. De Tenerife",
+            "Salamanca",
+            "Segovia",
+            "Sevilla",
+            "Soria",
+            "Tarragona",
+            "Teruel",
+            "Toledo",
+            "Valencia",
+            "Valladolid",
+            "Vizcaya",
+            "Zamora",
+            "Zaragoza"});
+            this.comboBoxProvCli.Location = new System.Drawing.Point(34, 168);
+            this.comboBoxProvCli.Name = "comboBoxProvCli";
+            this.comboBoxProvCli.Size = new System.Drawing.Size(181, 21);
+            this.comboBoxProvCli.TabIndex = 81;
+            this.comboBoxProvCli.Leave += new System.EventHandler(this.comboBoxProvCli_Leave);
             // 
             // dateTimePicker1
             // 
@@ -357,44 +423,39 @@
             this.labelDomiciCli.TabIndex = 68;
             this.labelDomiciCli.Text = "Domicilio";
             // 
-            // textBox2LocaliCli
+            // textBoxLocaliCli
             // 
-            this.textBox2LocaliCli.Location = new System.Drawing.Point(303, 170);
-            this.textBox2LocaliCli.Name = "textBox2LocaliCli";
-            this.textBox2LocaliCli.Size = new System.Drawing.Size(207, 20);
-            this.textBox2LocaliCli.TabIndex = 67;
+            this.textBoxLocaliCli.Location = new System.Drawing.Point(303, 170);
+            this.textBoxLocaliCli.Name = "textBoxLocaliCli";
+            this.textBoxLocaliCli.Size = new System.Drawing.Size(207, 20);
+            this.textBoxLocaliCli.TabIndex = 67;
+            this.textBoxLocaliCli.Leave += new System.EventHandler(this.textBoxLocaliCli_Leave);
             // 
-            // label3LocaliCli
+            // labelLocaliCli
             // 
-            this.label3LocaliCli.AutoSize = true;
-            this.label3LocaliCli.Location = new System.Drawing.Point(300, 154);
-            this.label3LocaliCli.Name = "label3LocaliCli";
-            this.label3LocaliCli.Size = new System.Drawing.Size(53, 13);
-            this.label3LocaliCli.TabIndex = 66;
-            this.label3LocaliCli.Text = "Localidad";
+            this.labelLocaliCli.AutoSize = true;
+            this.labelLocaliCli.Location = new System.Drawing.Point(300, 154);
+            this.labelLocaliCli.Name = "labelLocaliCli";
+            this.labelLocaliCli.Size = new System.Drawing.Size(53, 13);
+            this.labelLocaliCli.TabIndex = 66;
+            this.labelLocaliCli.Text = "Localidad";
             // 
-            // label3CPCli
+            // labelCPCli
             // 
-            this.label3CPCli.AutoSize = true;
-            this.label3CPCli.Location = new System.Drawing.Point(239, 154);
-            this.label3CPCli.Name = "label3CPCli";
-            this.label3CPCli.Size = new System.Drawing.Size(21, 13);
-            this.label3CPCli.TabIndex = 65;
-            this.label3CPCli.Text = "CP";
+            this.labelCPCli.AutoSize = true;
+            this.labelCPCli.Location = new System.Drawing.Point(239, 154);
+            this.labelCPCli.Name = "labelCPCli";
+            this.labelCPCli.Size = new System.Drawing.Size(21, 13);
+            this.labelCPCli.TabIndex = 65;
+            this.labelCPCli.Text = "CP";
             // 
-            // textBox2CPCli
+            // textBoxCPCli
             // 
-            this.textBox2CPCli.Location = new System.Drawing.Point(242, 170);
-            this.textBox2CPCli.Name = "textBox2CPCli";
-            this.textBox2CPCli.Size = new System.Drawing.Size(51, 20);
-            this.textBox2CPCli.TabIndex = 64;
-            // 
-            // textBoxProvCli
-            // 
-            this.textBoxProvCli.Location = new System.Drawing.Point(34, 170);
-            this.textBoxProvCli.Name = "textBoxProvCli";
-            this.textBoxProvCli.Size = new System.Drawing.Size(178, 20);
-            this.textBoxProvCli.TabIndex = 60;
+            this.textBoxCPCli.Location = new System.Drawing.Point(242, 170);
+            this.textBoxCPCli.Name = "textBoxCPCli";
+            this.textBoxCPCli.Size = new System.Drawing.Size(51, 20);
+            this.textBoxCPCli.TabIndex = 64;
+            this.textBoxCPCli.Leave += new System.EventHandler(this.textBoxCPCli_Leave);
             // 
             // labelClienteProv
             // 
@@ -405,23 +466,240 @@
             this.labelClienteProv.TabIndex = 63;
             this.labelClienteProv.Text = "Provincia";
             // 
-            // comboBox1
+            // comboBoxPaisCli
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(303, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
-            this.comboBox1.TabIndex = 62;
+            this.comboBoxPaisCli.FormattingEnabled = true;
+            this.comboBoxPaisCli.Items.AddRange(new object[] {
+            "",
+            "Afganistan",
+            "Africa del Sur",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Antigua y Barbuda",
+            "Antillas Holandesas",
+            "Arabia Saudita",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Aruba",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarusia",
+            "Belgica",
+            "Belice",
+            "Benin",
+            "Bermudas",
+            "Bolivia",
+            "Bosnia",
+            "Botswana",
+            "Brasil",
+            "Brunei Darussulam",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Butan",
+            "Camboya",
+            "Camerun",
+            "Canada",
+            "Cape Verde",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfíl",
+            "Costa Rica",
+            "Croasia",
+            "Cuba",
+            "Dinamarca",
+            "Djibouti",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "Emiratos Arabes Unidos",
+            "Eritrea",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopia",
+            "Fiji",
+            "Filipinas",
+            "Finlandia",
+            "Francia",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Granada",
+            "Grecia",
+            "Groenlandia",
+            "Guadalupe",
+            "Guam",
+            "Guatemala",
+            "Guayana Francesa",
+            "Guerney",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guinea Equatorial",
+            "Guyana",
+            "Haiti",
+            "Holanda",
+            "Honduras",
+            "Hong Kong",
+            "Hungria",
+            "India",
+            "Indonesia",
+            "Irak",
+            "Iran",
+            "Irlanda",
+            "Islandia",
+            "Islas Caiman",
+            "Islas Faroe",
+            "Islas Malvinas",
+            "Islas Marshall",
+            "Islas Solomon",
+            "Islas Virgenes (U.S.)",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Japon",
+            "Jersey",
+            "Jordania",
+            "Kazakhstan",
+            "Kenia",
+            "Kiribati",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lesotho",
+            "Libano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Macao",
+            "Macedionia",
+            "Madagascar",
+            "Malasia",
+            "Malawi",
+            "Maldivas",
+            "Mali",
+            "Malta",
+            "Marruecos",
+            "Martinica",
+            "Mauricio",
+            "Mauritania",
+            "Mexico",
+            "Micronesia",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Mozambique",
+            "Myanmar (Burma)",
+            "Namibia",
+            "Nepal",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "Noruega",
+            "Nueva Caledonia",
+            "Nueva Zealandia",
+            "Oman",
+            "Pakistan",
+            "Palestina",
+            "Panama",
+            "Papua Nueva Guinea",
+            "Paraguay",
+            "Peru",
+            "Polinesia Francesa",
+            "Polonia",
+            "Portugal",
+            "Puerto Rico",
+            "Qatar",
+            "Reino Unido",
+            "Republica Centroafricana",
+            "Republica Checa",
+            "Republica Democratica del Congo",
+            "Republica Dominicana",
+            "Republica Eslovaca",
+            "Reunion",
+            "Ruanda",
+            "Rumania",
+            "Rusia",
+            "Sahara",
+            "Samoa",
+            "San Cristobal-Nevis (St. Kitts)",
+            "San Marino",
+            "San Vincente y las Granadinas",
+            "Santa Lucia",
+            "Santa Sede (Vaticano)",
+            "Sao Tome & Principe",
+            "Senegal",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Sri Lanka (Ceilan)",
+            "Sudan",
+            "Suecia",
+            "Suiza",
+            "Sur Africa",
+            "Surinam",
+            "Swaziland",
+            "Tailandia",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Timor Oriental",
+            "Togo",
+            "Tonga",
+            "Trinidad & Tobago",
+            "Tunisia",
+            "Turkmenistan",
+            "Turquia",
+            "Ucrania",
+            "Uganda",
+            "Union Europea",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Yugoslavia",
+            "Zambia",
+            "Zimbabwe"});
+            this.comboBoxPaisCli.Location = new System.Drawing.Point(303, 113);
+            this.comboBoxPaisCli.Name = "comboBoxPaisCli";
+            this.comboBoxPaisCli.Size = new System.Drawing.Size(207, 21);
+            this.comboBoxPaisCli.TabIndex = 62;
+            this.comboBoxPaisCli.Leave += new System.EventHandler(this.comboBoxPaisCli_Leave);
             // 
-            // label2
+            // labelPaisCli
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "País";
+            this.labelPaisCli.AutoSize = true;
+            this.labelPaisCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPaisCli.Location = new System.Drawing.Point(300, 97);
+            this.labelPaisCli.Name = "labelPaisCli";
+            this.labelPaisCli.Size = new System.Drawing.Size(29, 13);
+            this.labelPaisCli.TabIndex = 61;
+            this.labelPaisCli.Text = "País";
             // 
             // label1
             // 
@@ -432,22 +710,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Fecha de Nacimiento";
             // 
-            // textBox1
+            // textBoxApellidosC
             // 
-            this.textBox1.Location = new System.Drawing.Point(303, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxApellidosC.Location = new System.Drawing.Point(303, 54);
+            this.textBoxApellidosC.Name = "textBoxApellidosC";
+            this.textBoxApellidosC.Size = new System.Drawing.Size(207, 20);
+            this.textBoxApellidosC.TabIndex = 4;
+            this.textBoxApellidosC.Leave += new System.EventHandler(this.textBoxApellidosC_Leave);
             // 
-            // apellidosCliente
+            // labelApellidosCliente
             // 
-            this.apellidosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidosCliente.Location = new System.Drawing.Point(300, 38);
-            this.apellidosCliente.Name = "apellidosCliente";
-            this.apellidosCliente.Size = new System.Drawing.Size(81, 20);
-            this.apellidosCliente.TabIndex = 2;
-            this.apellidosCliente.Text = "Apellidos";
-            this.apellidosCliente.Click += new System.EventHandler(this.label1_Click_1);
+            this.labelApellidosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellidosCliente.Location = new System.Drawing.Point(300, 38);
+            this.labelApellidosCliente.Name = "labelApellidosCliente";
+            this.labelApellidosCliente.Size = new System.Drawing.Size(53, 13);
+            this.labelApellidosCliente.TabIndex = 2;
+            this.labelApellidosCliente.Text = "Apellidos";
+            this.labelApellidosCliente.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // labelNombreCliente
             // 
@@ -483,6 +762,7 @@
             this.textBoxNombreC.Size = new System.Drawing.Size(255, 20);
             this.textBoxNombreC.TabIndex = 1;
             this.textBoxNombreC.TextChanged += new System.EventHandler(this.textBoxNombreC_TextChanged);
+            this.textBoxNombreC.Leave += new System.EventHandler(this.textBoxNombreC_Leave);
             // 
             // BuscarCliente
             // 
@@ -501,9 +781,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -521,10 +801,61 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // NIF
+            // 
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 126;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            this.Apellidos.Width = 200;
+            // 
+            // Localidad
+            // 
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.ReadOnly = true;
+            this.Localidad.Width = 150;
+            // 
+            // Provincia
+            // 
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            this.Provincia.Width = 120;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
+            // 
+            // VerPerfil
+            // 
+            this.VerPerfil.HeaderText = "Ver perfil";
+            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.VerPerfil.Name = "VerPerfil";
+            this.VerPerfil.ReadOnly = true;
+            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VerPerfil.Width = 60;
+            // 
             // groupBoxBusquedaCliente
             // 
-            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxBusquedaCliente.Controls.Add(this.buttonBuscarCliente);
             this.groupBoxBusquedaCliente.Controls.Add(this.comboBoxProvinciaBusquedaCli);
             this.groupBoxBusquedaCliente.Controls.Add(this.labelEdadBusquedaCli);
@@ -800,56 +1131,10 @@
             this.labelNombreBusquedaCli.TabIndex = 2;
             this.labelNombreBusquedaCli.Text = "Nombre";
             // 
-            // NIF
+            // errorProvider1
             // 
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 126;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 200;
-            // 
-            // Localidad
-            // 
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.ReadOnly = true;
-            this.Localidad.Width = 150;
-            // 
-            // Provincia
-            // 
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.ReadOnly = true;
-            this.Provincia.Width = 120;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
-            this.Edad.Width = 50;
-            // 
-            // VerPerfil
-            // 
-            this.VerPerfil.HeaderText = "Ver perfil";
-            this.VerPerfil.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.VerPerfil.Name = "VerPerfil";
-            this.VerPerfil.ReadOnly = true;
-            this.VerPerfil.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.VerPerfil.Width = 60;
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Clientes
             // 
@@ -861,8 +1146,8 @@
             this.FormCliente.ResumeLayout(false);
             this.FichaCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).EndInit();
-            this.datosPersonalesClientes.ResumeLayout(false);
-            this.datosPersonalesClientes.PerformLayout();
+            this.comboBoxProvinciaCli.ResumeLayout(false);
+            this.comboBoxProvinciaCli.PerformLayout();
             this.groupContactoCliente.ResumeLayout(false);
             this.groupContactoCliente.PerformLayout();
             this.groupBoxSexo.ResumeLayout(false);
@@ -875,6 +1160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEdadBusquedaCli2)).EndInit();
             this.groupboxSexBusquedaCli.ResumeLayout(false);
             this.groupboxSexBusquedaCli.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -887,18 +1173,17 @@
         private System.Windows.Forms.Label labelNombreCliente;
         private System.Windows.Forms.TextBox textBoxNifC;
         private System.Windows.Forms.Label labelNifCliente;
-        private System.Windows.Forms.GroupBox datosPersonalesClientes;
+        private System.Windows.Forms.GroupBox comboBoxProvinciaCli;
         private System.Windows.Forms.PictureBox cliente_Perfil_Foto;
-        private System.Windows.Forms.Label apellidosCliente;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelApellidosCliente;
+        private System.Windows.Forms.TextBox textBoxApellidosC;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelPaisCli;
+        private System.Windows.Forms.ComboBox comboBoxPaisCli;
         private System.Windows.Forms.Label labelClienteProv;
-        private System.Windows.Forms.TextBox textBoxProvCli;
-        private System.Windows.Forms.TextBox textBox2CPCli;
-        private System.Windows.Forms.Label label3LocaliCli;
-        private System.Windows.Forms.TextBox textBox2LocaliCli;
+        private System.Windows.Forms.TextBox textBoxCPCli;
+        private System.Windows.Forms.Label labelLocaliCli;
+        private System.Windows.Forms.TextBox textBoxLocaliCli;
         private System.Windows.Forms.ComboBox comboBoxDomiciCli;
         private System.Windows.Forms.TextBox textBoxDomiciCli;
         private System.Windows.Forms.Label labelDomiciCli;
@@ -936,7 +1221,7 @@
         private System.Windows.Forms.Button buttonBuscarCliente;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3CPCli;
+        private System.Windows.Forms.Label labelCPCli;
         public System.Windows.Forms.TextBox textBoxNombreC;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -945,5 +1230,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewImageColumn VerPerfil;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox comboBoxProvCli;
     }
 }
