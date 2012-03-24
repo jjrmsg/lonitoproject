@@ -179,6 +179,7 @@ namespace Events4ALL
             validado=validar();
             if (validado == true)
             {
+                labAforo.Text = aforo().ToString();///////////pa ver si calcula bien aforo
                 //formamos el SalasEN con su constructor sobrecargado
                 SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text);
             }
@@ -211,6 +212,38 @@ namespace Events4ALL
             }
 
             return validado;
+        }
+
+        private int aforo()
+        {
+            int total = 0;
+            int cont = 0;
+            int fila=0,col=0;
+
+            ControlCollection a = textFila1.Parent.Controls;
+            foreach (System.Windows.Forms.Control ctrl in a)
+            {
+                if(cont>=2)
+                {
+                    cont = 0;
+                }
+                else
+                {
+                    if (ctrl is TextBox && ctrl.Visible == true)
+                    {
+                        cont++;
+                        if (cont == 1)//fila
+                            fila = Convert.ToInt16(ctrl.Text);
+                        else
+                        {
+                            col = Convert.ToInt16(ctrl.Text);
+                            total = total + (fila * col);
+                        }
+                    }
+                }
+            }
+
+            return total;
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -246,6 +279,11 @@ namespace Events4ALL
                 if (ctrl is TextBox || ctrl is ComboBox)
                     ctrl.Text = "";
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -117,6 +117,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labAforo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -143,6 +144,7 @@
             // 
             // tabAñadirSala
             // 
+            this.tabAñadirSala.Controls.Add(this.labAforo);
             this.tabAñadirSala.Controls.Add(this.pictureTipo);
             this.tabAñadirSala.Controls.Add(this.buttonLimpiar);
             this.tabAñadirSala.Controls.Add(this.labelDescripcion);
@@ -1005,6 +1007,15 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // labAforo
+            // 
+            this.labAforo.AutoSize = true;
+            this.labAforo.Location = new System.Drawing.Point(330, 151);
+            this.labAforo.Name = "labAforo";
+            this.labAforo.Size = new System.Drawing.Size(0, 13);
+            this.labAforo.TabIndex = 17;
+            this.labAforo.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1118,5 +1129,6 @@
         private System.Windows.Forms.Button buttonLimpiarBusquedaSala;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Label labAforo;
     }
 }
