@@ -84,5 +84,13 @@ namespace Events4ALL.Auxiliares
 
             return ertel.IsMatch(tel);
         }
+
+        public bool CompruebaPass(string pass)
+        {
+            // longitud 6, me da igual que no tenga numero o si xD
+            Regex recp = new Regex("^[0-9a-zA-Z]{6}$");
+
+            return recp.IsMatch(pass);
+        }
     }
 }

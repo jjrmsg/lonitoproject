@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Events4ALL.Auxiliares;
+using Events4ALL.EN;
 
 namespace Events4ALL
 {
@@ -17,15 +18,7 @@ namespace Events4ALL
 
         #region Variables
 
-        private bool nif;
-        private bool nombre;
-        private bool apellidos;
-        private bool CP;
-        private bool domicilio;
-        private bool localidad;
-        private bool telefono;
-        private bool movil;
-        private bool mail;
+        bool nuevoAdmin;
 
         #endregion
 
@@ -33,28 +26,20 @@ namespace Events4ALL
         {
             InitializeComponent();
 
+            nuevoAdmin = true;
+
+            if (nuevoAdmin)
+            {
+                label_ID.Visible = false;
+            }
+
             // creo el objeto que se encargara de validar
             validar = new Validaciones();
-
-            // inicializo todos los booleanos que indican si son o no correctos sus parametros
-            nif = nombre = apellidos = CP = domicilio = false;
-            localidad = telefono = movil = mail = false;
-        }
-
-        private bool ValidaFormulario()
-        {
-            if ( nif && nombre && apellidos && CP && domicilio && localidad && telefono && movil && CompruebaSexo() 
-                && CompruebaEC() )
-            {
-                return true;
-            }
-            else
-                return false;
         }
 
         #region Comprobaciones
 
-        private void CompruebaNif(object sender, EventArgs e)
+        private bool CompruebaNif()
         {
             //test1.Text = "" + validar.DevuelveNumero(Admin_Perfil_txtBox_NIF.Text);
             //test2.Text = "" + validar.DevuelveLetra(Admin_Perfil_txtBox_NIF.Text);
@@ -63,210 +48,212 @@ namespace Events4ALL
             // esta vacio
             if (Admin_Perfil_txtBox_NIF.Text.Length == 0)
             {
-                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "NIF vacio.");
-                //errorProviderNif.Clear();
-                nif = false;
+                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "Debe de rellenar el NIF.");
+                return false;
             }
             // esta mal
             else if (!validar.CompruebaNIF(Admin_Perfil_txtBox_NIF.Text))
             {
                 errorProviderNif.SetError(Admin_Perfil_Label_NIF, "NIF incorrecto.");
-                nif = false;
+                return false;
             }
             // esta bien
             else
             {
                 errorProviderNif.Clear();
-                nif = true;
+                return true;
             }
         }
 
-        private void CompruebaNombre(object sender, EventArgs e)
+        private bool CompruebaNombre()
         { 
             
             // vacio
             if( Admin_Perfil_txtBox_Nombre.Text.Length == 0 )
             {
-                nombre = false;
-                errorProviderNombre.Clear();
+                errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Debe de rellenar el Nombre.");
+                return false;
             }
             // la BD solo almacena 50 caracteres
             else if (Admin_Perfil_txtBox_Nombre.Text.Length >= 50)
             {
-                nombre = false;
                 errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Nombre demasiado largo. Máximo 50 carácteres.");
+                return false;
             }
             // ok
             else
             {
-                nombre = true;
                 errorProviderNombre.Clear();
+                return true;
             }
         }
 
-        private void CompruebaApellidos(object sender, EventArgs e)
+        private bool CompruebaApellidos()
         {
             // vacio
             if (Admin_Perfil_txtBox_Apellidos.Text.Length == 0)
             {
-                apellidos = false;
-                errorProviderApellidos.Clear();
+                errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Debe de rellenar los Apellidos.");
+                return false;
             }
             // la BD solo almacena 50 caracteres
             else if (Admin_Perfil_txtBox_Apellidos.Text.Length >= 50)
             {
-                apellidos = false;
                 errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Apellidos demasiado largos. Máximo 50 caracteres.");
+                return false;
             }
             // ok
             else
             {
-                apellidos = true;
                 errorProviderApellidos.Clear();
+                return true;
             }
         }
 
-        private void CompruebaCP(object sender, EventArgs e)
+        private bool CompruebaCP()
         {
             // campo vacio
             if(textBox_CP_Perfil.Text.Length == 0)
             {
-                CP = false;
-                errorProviderCP.Clear();
+                errorProviderCP.SetError(label_CP_Perfil, "Debe de introducir un Código Postal.");
+                return false;
             }
             // campo erroneo
             else if( !validar.CompruebaCP(textBox_CP_Perfil.Text) )
             {
-                CP = false;
                 errorProviderCP.SetError(label_CP_Perfil, "CP incorrecto.");
+                return false;
             }
             else
             {
-                CP = true;
                 errorProviderCP.Clear();
+                return true;
             }
         }
 
-        private void CompruebaLocalidad(object sender, EventArgs e)
+        private bool CompruebaLocalidad()
         { 
             // vacio
             if( txtBox_Localidad.Text.Length == 0)
             {
-                localidad = false;
-                errorProviderLocalidad.Clear();
+                errorProviderLocalidad.SetError(Label_Localidad, "Debe introducir una Localidad.");
+                return false;
             }
             // falla
             else if( txtBox_Localidad.Text.Length >= 50)
             {
-                localidad = false;
                 errorProviderLocalidad.SetError(Label_Localidad, "Localidad demasiado larga. Máximo 50 carácteres.");
+                return false;
             }
             // correcto
             else
             {
-                localidad = true;
                 errorProviderLocalidad.Clear();
+                return true;
             }
         }
 
-        private void CompruebaMail(object sender, EventArgs e)
+        private bool CompruebaMail()
         { 
             // mail vacio
-            if (Admin_Perfil_txtBox_Mail.Text.Length == 0)
+            if ((Admin_Perfil_txtBox_Mail.Text.Length == 0) || (Admin_Perfil_txtBox_Mail.Text == "usuario@event4all.es"))
             {
-                mail = false;
                 Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
-                errorProviderMail.Clear();
+                errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Debe de introducir un E-Mail de contacto válido.");
+                return false;
             }
             // mail muy largo
             else if (Admin_Perfil_txtBox_Mail.Text.Length >= 50)
             {
-                mail = false;
                 errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Mail demasiado largo. Máximo 50 carácteres.");
+                return false;
             }
             // mail incorrecto
             else if ( !validar.CompruebaMail(Admin_Perfil_txtBox_Mail.Text))
             {
-                mail = false;
                 errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Mail incorrecto.");
+                return false;
             }
             else
             {
-                mail = true;
                 errorProviderMail.Clear();
+                return true;
             }
         }
 
-        private void CompruebaTelefono(object sender, EventArgs e)
+        private bool CompruebaTelefono()
         { 
             // vacio
-            if (Admin_Perfil_txtBox_Tel1.Text.Length == 0)
+            if ((Admin_Perfil_txtBox_Tel1.Text.Length == 0) || (Admin_Perfil_txtBox_Tel1.Text == "000 000000"))
             {
-                telefono = false;
                 Admin_Perfil_txtBox_Tel1.Text = "000 000000";
-                errorProviderTEL.Clear();
+                errorProviderTEL.SetError(Admin_Perfil_Label_Tel1, "Debe introducir un Teléfono de contacto válido.");
+                return false;
             }
             // no tiene 9 numeros o esta mal.
             else if ( !validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel1.Text))
             {
-                telefono = false;
                 errorProviderTEL.SetError(Admin_Perfil_Label_Tel1, "Teléfono incorrecto.");
+                return false;
             }
             else 
             {
-                telefono = true;
                 errorProviderTEL.Clear();
+                return true;
             }
         }
 
-        private void CompruebaMovil(object sender, EventArgs e)
+        private bool CompruebaMovil()
         {
             // vacio
-            if (Admin_Perfil_txtBox_Tel2.Text.Length == 0)
+            if ( (Admin_Perfil_txtBox_Tel2.Text.Length == 0) || (Admin_Perfil_txtBox_Tel2.Text == "000 000000") )
             {
                 Admin_Perfil_txtBox_Tel2.Text = "000 000000";
-                movil = false;
-                errorProviderMov.Clear();
+                errorProviderMov.SetError(Admin_Perfil_Label_Tel2, "Debe introducir un Móvil de contacto válido.");
+                return false;
             }
             // no tiene 9 numeros o esta mal.
             else if (!validar.CompruebaTelefono(Admin_Perfil_txtBox_Tel2.Text))
             {
-                movil = false;
                 errorProviderMov.SetError(Admin_Perfil_Label_Tel2, "Móvil incorrecto.");
+                return false;
             }
             else
             {
-                movil = true;
                 errorProviderMov.Clear();
+                return true;
             }
         }
 
-        private void CompruebaDomicilio(object sender, EventArgs e)
+        private bool CompruebaDomicilio()
         { 
             // vacio
             if( Admin_Perfil_txtBox_Domicilio.Text.Length == 0 )
             {
-                domicilio = false;
-                errorProviderDomicilo.Clear();
+                errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Debe introducir un domicilio.");
+                return false;
             }
             // Demasiado largo
             else if (Admin_Perfil_txtBox_Domicilio.Text.Length > 42)
             {
-                domicilio = false;
                 errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Dirección demasiado larga.");
+                return false;
             }
             // ok
             else
             {
-                domicilio = true;
                 errorProviderDomicilo.Clear();
+                return true;
             }
         }
 
         private bool CompruebaSexo()
         {
             if (Admin_Perfil_rButom_H.Checked == false && Admin_Perfil_rButom_M.Checked == false)
+            {
+                errorProviderSexo.SetError(Admin_Perfil_Label_Sexo, "Seleccione un campo del Sexo.");
                 return false;
+            }
             else
                 return true;
         }
@@ -277,9 +264,147 @@ namespace Events4ALL
                 Admin_Perfil_rButom_Viudo.Checked == false &&
                 Admin_Perfil_rButom_Divorciado.Checked == false &&
                 Admin_Perfil_rButom_Casado.Checked == false)
+            {
+                errorProviderEC.SetError(Admin_Perfil_Label_EstCivil, "Seleccione un Estado Civil.");
                 return false;
+            }
             else
+            {
+                errorProviderEC.Clear();
                 return true;
+            }
+        }
+
+        private bool CompruebaProvincia()
+        {
+            if (comboBox_Provincia.Text == "")
+            {
+                errorProviderProvincia.SetError(Label_Provincia_Perfil, "Debe seleccionar una provincia.");
+                return false;
+            }
+            else
+            {
+                errorProviderProvincia.Clear();
+                return true;
+            }
+        }
+
+        private bool CompruebaPais()
+        {
+            if (Admin_Perfil_comboBox_Pais.Text == "")
+            {
+                errorProviderPais.SetError(Admin_Perfil_Label_Pais, "Debe seleccionar su país de nacimiento.");
+                return false;
+            }
+            else
+            {
+                errorProviderPais.Clear();
+                return true;
+            }
+        }
+
+        // comprueba que en la BD no hay un nick igual
+        private bool CompruebaNick()
+        {
+            if (textBox_NombreUsuario.Text.Length == 0)
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "Introduzca un nombre de usuario.");
+                return false;
+            }
+            else if (textBox_NombreUsuario.Text.Length <= 25 ) // tambien he de comprobar que no existe en la BD
+            {
+                errorProviderNick.Clear();
+                return true;
+            }
+            else
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "Introduzca un nombre de usuario.");
+                return false;
+            }
+        }
+
+        // comprueba la seguridad de PASS
+        private bool CompruebaPass()
+        {
+            if (textBox_pass1.Text.Length == 0)
+            {
+                errorProviderPassInv.SetError(label_pass1, "Introduzca una Contraseña.");
+                errorProviderPassDif.Clear();
+                return false;
+            }
+            else if (validar.CompruebaPass(textBox_pass1.Text) || textBox_pass1.Text.Length <= 25)
+            {
+                if (textBox_pass1.Text == textBox_pass2.Text)
+                {
+                    errorProviderPassDif.Clear();
+                    errorProviderPassInv.Clear();
+                    return true;
+                }
+                else
+                {
+                    errorProviderPassDif.SetError(label_pass2, "Las contraseñas no coinciden.");
+                    errorProviderPassInv.Clear();
+                    return false;
+                }
+            }
+            else
+            {
+                errorProviderPassInv.SetError(label_pass1, "Contraseña Invalida.");
+                errorProviderPassDif.Clear();
+                return false;
+            }
+        }
+
+        private bool ValidaCampos()
+        {
+            bool error = true;
+
+            if (!CompruebaPass())
+                error = false;
+
+            if (!CompruebaNick())
+                error = false;
+
+            if (!CompruebaNif())
+                error = false;
+
+            if (!CompruebaNombre())
+                error = false ;
+
+            if (!CompruebaApellidos())
+                error = false;
+
+            if (!CompruebaCP())
+                error = false;
+
+            if (!CompruebaLocalidad())
+                error = false;
+
+            if (!CompruebaMail())
+                error = false;
+
+            if (!CompruebaTelefono())
+                error = false;
+            
+            if (!CompruebaMovil())
+                error = false;
+            
+            if (!CompruebaDomicilio())
+                error = false;
+           
+            if (!CompruebaSexo())
+                error = false;
+            
+            if (!CompruebaEC())
+                error = false;
+
+            if (!CompruebaProvincia())
+                error = false;
+            
+            if (!CompruebaPais())
+                error = false;
+
+            return error;
         }
 
         #endregion
@@ -327,52 +452,44 @@ namespace Events4ALL
 
         #region Accion Botones
 
+        // boton Limpiar
         private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
         {
             // borra nif
             Admin_Perfil_txtBox_NIF.Text = "";
             errorProviderNif.Clear();
-            nif = false;
             
             // borra nombre
             Admin_Perfil_txtBox_Nombre.Text = "";
             errorProviderNombre.Clear();
-            nombre = false;
             
             // borra apellido
             Admin_Perfil_txtBox_Apellidos.Text = "";
             errorProviderApellidos.Clear();
-            apellidos = false;
             
             // borra telefono
             Admin_Perfil_txtBox_Tel1.Text = "000 000000";
             errorProviderTEL.Clear();
-            telefono = false;
             
             // borra movil
             Admin_Perfil_txtBox_Tel2.Text = "000 000000";
             errorProviderMov.Clear();
-            movil = false;
             
             // borra mail
             Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
             errorProviderMail.Clear();
-            mail = false;
 
             // borra localidad
             txtBox_Localidad.Text = "";
             errorProviderLocalidad.Clear();
-            localidad = false;
 
             // borra domicilio
             Admin_Perfil_txtBox_Domicilio.Text = "";
             errorProviderDomicilo.Clear();
-            domicilio = false;
 
             // borra CP
             textBox_CP_Perfil.Text = "";
             errorProviderCP.Clear();
-            CP = false;
 
             // borro EC
             Admin_Perfil_rButom_Soltero.Checked = false;
@@ -386,69 +503,105 @@ namespace Events4ALL
             Admin_Perfil_rButom_M.Checked = false;
             errorProviderSexo.Clear();
 
+            // borro provincia
+            comboBox_Provincia.Text = "";
+            errorProviderProvincia.Clear();
+
+            // borro pais
+            Admin_Perfil_comboBox_Pais.Text = "";
+            errorProviderPais.Clear();
+
             // falta la inicializacion de la fecha
         }
 
+        // Boton Guardar
         private void Admin_Perfil_boton_Guardar_Click(object sender, EventArgs e)
         {
             // Comrpuebo que todos los campos estan rellenos
-            if (ValidaFormulario() && Admin_Perfil_comboBox_Pais.Text != "" && comboBox_Provincia.Text != "")
+            if (ValidaCampos())
             {
                 // creo el EN y toda la pedazo de basura posterior
-                MessageBox.Show("Todo Ok");
+                MessageBox.Show("Todo Ok.");
+                AltaAdminEN_Directo();
+                //AltaAdminEN_PorPasos();
             }
-            else
+            else 
             {
-                if(comboBox_Provincia.Text == "")
-                    errorProviderProvincia.SetError(Label_Provincia_Perfil, "Debe seleccionar una provincia.");
-
-                if (Admin_Perfil_comboBox_Pais.Text == "")
-                    errorProviderPais.SetError(Admin_Perfil_Label_Pais,"Debe seleccionar su país de nacimiento.");
-
-                if (!CompruebaEC() )
-                    errorProviderEC.SetError(Admin_Perfil_Label_EstCivil, "Debe seleccionar un Estado Civil.");
-
-                if (!CompruebaSexo())
-                    errorProviderSexo.SetError(Admin_Perfil_Label_Sexo, "Debe seleccionar un sexo.");
-
-                if( !nif )
-                    errorProviderNif.SetError(Admin_Perfil_Label_NIF,"Debe de rellenar el NIF.");
-               
-                if( !Admin_Perfil_rButom_H.Checked && !Admin_Perfil_rButom_M.Checked)
-                    errorProviderSexo.SetError(Admin_Perfil_Label_Sexo, "Seleccione un campo del Sexo.");
-                
-                if( !nombre )
-                    errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Debe de rellenar el Nombre.");
-                
-                if( !apellidos )
-                    errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Debe de rellenar los Apellidos.");
-                
-                if( !CP )
-                    errorProviderCP.SetError(label_CP_Perfil, "Debe de introducir un Código Postal.");
-                
-                if( !domicilio )
-                    errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Debe introducir un domicilio.");
-                
-                if( !Admin_Perfil_rButom_Soltero.Checked 
-                    && !Admin_Perfil_rButom_Viudo.Checked
-                    && !Admin_Perfil_rButom_Casado.Checked 
-                    && !Admin_Perfil_rButom_Divorciado.Checked )
-                    errorProviderEC.SetError(Admin_Perfil_Label_EstCivil, "Seleccione un Estado Civil.");
-                
-                if( !localidad )
-                    errorProviderLocalidad.SetError(Label_Localidad, "Debe introducir una Localidad.");
-                
-                if( !telefono )
-                    errorProviderTEL.SetError(Admin_Perfil_Label_Tel1, "Debe introducir un Teléfono de contacto.");
-                
-                if( !movil )
-                    errorProviderMov.SetError(Admin_Perfil_Label_Tel2, "Debe introducir un Móvil de contacto.");
-                
-                if( !mail )
-                    errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Debe de introducir un E-Mail de contacto.");
+                //MessageBox.Show("Fail.");
             }
         }
 
         #endregion
+
+        #region Trabajo con EN
+
+        private void AltaAdminEN_Directo()
+        {
+            int sexo = -1;
+            int ec = -1;
+
+            if (Admin_Perfil_rButom_H.Checked == true)
+                sexo = 0;
+            else if (Admin_Perfil_rButom_M.Checked == true)
+                sexo = 1;
+
+            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
+            if (Admin_Perfil_rButom_Soltero.Checked == true)
+                ec = 0;
+            else if (Admin_Perfil_rButom_Casado.Checked == true)
+                ec = 1;
+            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
+                ec = 2;
+            else if (Admin_Perfil_rButom_Viudo.Checked == true)
+                ec = 3;
+
+            AdminEN nuevo = new AdminEN(Admin_Perfil_txtBox_NIF.Text, Admin_Perfil_txtBox_Nombre.Text, Admin_Perfil_txtBox_Apellidos.Text,
+                                        Admin_Perfil_comboBox_Pais.Text, comboBox_Provincia.Text, txtBox_Localidad.Text,
+                                        comboBoxDirec + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
+                                        Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text, Admin_Perfil_txtBox_Mail.Text, ec, 
+                                        "VACIO !!", sexo, textBox_NombreUsuario.Text, textBox_pass1.Text);
+        }
+
+        private void AltaAdminEN_PorPasos()
+        {
+            AdminEN nuevo = new AdminEN();
+
+            nuevo.DNI = Admin_Perfil_txtBox_NIF.Text;
+            nuevo.Nombre = Admin_Perfil_txtBox_Nombre.Text;
+            nuevo.Apellidos = Admin_Perfil_txtBox_Apellidos.Text;
+            nuevo.Domicilio = comboBoxDirec + " " + Admin_Perfil_txtBox_Domicilio.Text;
+            nuevo.CP = textBox_CP_Perfil.Text;
+            nuevo.Pais = Admin_Perfil_comboBox_Pais.Text;
+            nuevo.Provincia = comboBox_Provincia.Text;
+            nuevo.Localidad = txtBox_Localidad.Text;
+            nuevo.Telefono = Admin_Perfil_txtBox_Tel1.Text;
+            nuevo.Movil = Admin_Perfil_txtBox_Tel2.Text;
+            nuevo.Mail = Admin_Perfil_txtBox_Mail.Text;
+
+            nuevo.Fecha = dateTimePicker1.Value;
+
+            if (Admin_Perfil_rButom_H.Checked == true)
+                nuevo.Sexo = 0;
+            else if (Admin_Perfil_rButom_M.Checked == true)
+                nuevo.Sexo = 1;
+
+            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
+            if (Admin_Perfil_rButom_Soltero.Checked == true)
+                nuevo.EC = 0;
+            else if (Admin_Perfil_rButom_Casado.Checked == true)
+                nuevo.EC = 1;
+            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
+                nuevo.EC = 2;
+            else if (Admin_Perfil_rButom_Viudo.Checked == true)
+                nuevo.EC = 3;
+
+            nuevo.Foto = "VACIA !!";
+
+            nuevo.Nick = textBox_NombreUsuario.Text;
+            nuevo.Pass = textBox_pass1.Text;
+        }
+
+        #endregion
+
     }
 }

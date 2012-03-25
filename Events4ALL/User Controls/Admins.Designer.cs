@@ -128,6 +128,21 @@
             this.errorProviderMov = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderMail = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFNAC = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox_UsPs = new System.Windows.Forms.GroupBox();
+            this.label_NombreUsuario = new System.Windows.Forms.Label();
+            this.textBox_NombreUsuario = new System.Windows.Forms.TextBox();
+            this.label_pass1 = new System.Windows.Forms.Label();
+            this.label_pass2 = new System.Windows.Forms.Label();
+            this.textBox_pass1 = new System.Windows.Forms.TextBox();
+            this.textBox_pass2 = new System.Windows.Forms.TextBox();
+            this.label_ID = new System.Windows.Forms.Label();
+            this.label_Nick_B = new System.Windows.Forms.Label();
+            this.textBox_Nick_busqueda = new System.Windows.Forms.TextBox();
+            this.label_ID_bus = new System.Windows.Forms.Label();
+            this.textBox_ID_busqueda = new System.Windows.Forms.TextBox();
+            this.errorProviderPassInv = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPassDif = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNick = new System.Windows.Forms.ErrorProvider(this.components);
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -156,6 +171,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).BeginInit();
+            this.groupBox_UsPs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassInv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassDif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNick)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
@@ -174,6 +193,10 @@
             // 
             this.groupBox_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Busqueda.Controls.Add(this.textBox_ID_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_ID_bus);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_Nick_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_Nick_B);
             this.groupBox_Busqueda.Controls.Add(this.comboBox2);
             this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
             this.groupBox_Busqueda.Controls.Add(this.buttom_Buscar);
@@ -617,7 +640,7 @@
             this.groupBox4.Controls.Add(this.radioButton_Divo_EC);
             this.groupBox4.Controls.Add(this.radioButton_Viud_EC);
             this.groupBox4.Controls.Add(this.radioButton_Cas_EC);
-            this.groupBox4.Location = new System.Drawing.Point(575, 33);
+            this.groupBox4.Location = new System.Drawing.Point(557, 33);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(110, 119);
             this.groupBox4.TabIndex = 7;
@@ -823,6 +846,7 @@
             // 
             // Admin_Foto_Perfil
             // 
+            this.Admin_Foto_Perfil.Controls.Add(this.groupBox_UsPs);
             this.Admin_Foto_Perfil.Controls.Add(this.Admin_Perfil_boton_Foto);
             this.Admin_Foto_Perfil.Controls.Add(this.Admin_Perfil_boton_Guardar);
             this.Admin_Foto_Perfil.Controls.Add(this.Admin_Perfil_boton_Anadir);
@@ -1013,7 +1037,6 @@
             this.comboBox_Provincia.Name = "comboBox_Provincia";
             this.comboBox_Provincia.Size = new System.Drawing.Size(181, 21);
             this.comboBox_Provincia.TabIndex = 62;
-            this.comboBox_Provincia.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // dateTimePicker1
             // 
@@ -1080,7 +1103,6 @@
             this.Admin_Perfil_txtBox_Tel1.TabIndex = 19;
             this.Admin_Perfil_txtBox_Tel1.Text = "000 000000";
             this.Admin_Perfil_txtBox_Tel1.Enter += new System.EventHandler(this.LimpiaTelefono);
-            this.Admin_Perfil_txtBox_Tel1.Leave += new System.EventHandler(this.CompruebaTelefono);
             // 
             // Admin_Perfil_txtBox_Tel2
             // 
@@ -1090,7 +1112,6 @@
             this.Admin_Perfil_txtBox_Tel2.TabIndex = 20;
             this.Admin_Perfil_txtBox_Tel2.Text = "000 000000";
             this.Admin_Perfil_txtBox_Tel2.Enter += new System.EventHandler(this.LimpiaMovil);
-            this.Admin_Perfil_txtBox_Tel2.Leave += new System.EventHandler(this.CompruebaMovil);
             // 
             // Admin_Perfil_txtBox_Mail
             // 
@@ -1100,7 +1121,6 @@
             this.Admin_Perfil_txtBox_Mail.TabIndex = 25;
             this.Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
             this.Admin_Perfil_txtBox_Mail.Enter += new System.EventHandler(this.LimpiaMail);
-            this.Admin_Perfil_txtBox_Mail.Leave += new System.EventHandler(this.CompruebaMail);
             // 
             // Label_Provincia_Perfil
             // 
@@ -1118,7 +1138,6 @@
             this.textBox_CP_Perfil.Name = "textBox_CP_Perfil";
             this.textBox_CP_Perfil.Size = new System.Drawing.Size(51, 20);
             this.textBox_CP_Perfil.TabIndex = 58;
-            this.textBox_CP_Perfil.Leave += new System.EventHandler(this.CompruebaCP);
             // 
             // label_CP_Perfil
             // 
@@ -1152,7 +1171,6 @@
             this.groupBoxSexo.Size = new System.Drawing.Size(83, 76);
             this.groupBoxSexo.TabIndex = 56;
             this.groupBoxSexo.TabStop = false;
-            this.groupBoxSexo.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_rButom_H
             // 
@@ -1182,7 +1200,6 @@
             this.Admin_Perfil_txtBox_Nombre.Name = "Admin_Perfil_txtBox_Nombre";
             this.Admin_Perfil_txtBox_Nombre.Size = new System.Drawing.Size(255, 20);
             this.Admin_Perfil_txtBox_Nombre.TabIndex = 18;
-            this.Admin_Perfil_txtBox_Nombre.Leave += new System.EventHandler(this.CompruebaNombre);
             // 
             // grupEstadoCivil
             // 
@@ -1195,7 +1212,6 @@
             this.grupEstadoCivil.Size = new System.Drawing.Size(200, 78);
             this.grupEstadoCivil.TabIndex = 55;
             this.grupEstadoCivil.TabStop = false;
-            this.grupEstadoCivil.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_rButom_Divorciado
             // 
@@ -1319,7 +1335,6 @@
             this.Admin_Perfil_txtBox_Domicilio.Name = "Admin_Perfil_txtBox_Domicilio";
             this.Admin_Perfil_txtBox_Domicilio.Size = new System.Drawing.Size(403, 20);
             this.Admin_Perfil_txtBox_Domicilio.TabIndex = 21;
-            this.Admin_Perfil_txtBox_Domicilio.Leave += new System.EventHandler(this.CompruebaDomicilio);
             // 
             // txtBox_Localidad
             // 
@@ -1327,7 +1342,6 @@
             this.txtBox_Localidad.Name = "txtBox_Localidad";
             this.txtBox_Localidad.Size = new System.Drawing.Size(196, 20);
             this.txtBox_Localidad.TabIndex = 22;
-            this.txtBox_Localidad.Leave += new System.EventHandler(this.CompruebaLocalidad);
             // 
             // Admin_Perfil_comboBox_Pais
             // 
@@ -1552,7 +1566,6 @@
             this.Admin_Perfil_comboBox_Pais.Name = "Admin_Perfil_comboBox_Pais";
             this.Admin_Perfil_comboBox_Pais.Size = new System.Drawing.Size(196, 21);
             this.Admin_Perfil_comboBox_Pais.TabIndex = 27;
-            this.Admin_Perfil_comboBox_Pais.Leave += new System.EventHandler(this.LimpiaError);
             // 
             // Admin_Perfil_Label_Sexo
             // 
@@ -1570,7 +1583,6 @@
             this.Admin_Perfil_txtBox_Apellidos.Name = "Admin_Perfil_txtBox_Apellidos";
             this.Admin_Perfil_txtBox_Apellidos.Size = new System.Drawing.Size(196, 20);
             this.Admin_Perfil_txtBox_Apellidos.TabIndex = 23;
-            this.Admin_Perfil_txtBox_Apellidos.Leave += new System.EventHandler(this.CompruebaApellidos);
             // 
             // Admin_Perfil_Label_EstCivil
             // 
@@ -1588,7 +1600,6 @@
             this.Admin_Perfil_txtBox_NIF.Name = "Admin_Perfil_txtBox_NIF";
             this.Admin_Perfil_txtBox_NIF.Size = new System.Drawing.Size(75, 20);
             this.Admin_Perfil_txtBox_NIF.TabIndex = 24;
-            this.Admin_Perfil_txtBox_NIF.Leave += new System.EventHandler(this.CompruebaNif);
             // 
             // tabControl1
             // 
@@ -1673,6 +1684,124 @@
             // 
             this.errorProviderFNAC.ContainerControl = this;
             // 
+            // groupBox_UsPs
+            // 
+            this.groupBox_UsPs.Controls.Add(this.label_ID);
+            this.groupBox_UsPs.Controls.Add(this.textBox_pass2);
+            this.groupBox_UsPs.Controls.Add(this.textBox_pass1);
+            this.groupBox_UsPs.Controls.Add(this.label_pass2);
+            this.groupBox_UsPs.Controls.Add(this.label_pass1);
+            this.groupBox_UsPs.Controls.Add(this.textBox_NombreUsuario);
+            this.groupBox_UsPs.Controls.Add(this.label_NombreUsuario);
+            this.groupBox_UsPs.Location = new System.Drawing.Point(595, 337);
+            this.groupBox_UsPs.Name = "groupBox_UsPs";
+            this.groupBox_UsPs.Size = new System.Drawing.Size(264, 196);
+            this.groupBox_UsPs.TabIndex = 59;
+            this.groupBox_UsPs.TabStop = false;
+            this.groupBox_UsPs.Text = "Datos de Usuario";
+            // 
+            // label_NombreUsuario
+            // 
+            this.label_NombreUsuario.AutoSize = true;
+            this.label_NombreUsuario.Location = new System.Drawing.Point(23, 35);
+            this.label_NombreUsuario.Name = "label_NombreUsuario";
+            this.label_NombreUsuario.Size = new System.Drawing.Size(98, 13);
+            this.label_NombreUsuario.TabIndex = 0;
+            this.label_NombreUsuario.Text = "Nombre de Usuario";
+            // 
+            // textBox_NombreUsuario
+            // 
+            this.textBox_NombreUsuario.Location = new System.Drawing.Point(26, 51);
+            this.textBox_NombreUsuario.Name = "textBox_NombreUsuario";
+            this.textBox_NombreUsuario.Size = new System.Drawing.Size(218, 20);
+            this.textBox_NombreUsuario.TabIndex = 26;
+            // 
+            // label_pass1
+            // 
+            this.label_pass1.AutoSize = true;
+            this.label_pass1.Location = new System.Drawing.Point(23, 84);
+            this.label_pass1.Name = "label_pass1";
+            this.label_pass1.Size = new System.Drawing.Size(61, 13);
+            this.label_pass1.TabIndex = 27;
+            this.label_pass1.Text = "Contraseña";
+            // 
+            // label_pass2
+            // 
+            this.label_pass2.AutoSize = true;
+            this.label_pass2.Location = new System.Drawing.Point(23, 134);
+            this.label_pass2.Name = "label_pass2";
+            this.label_pass2.Size = new System.Drawing.Size(95, 13);
+            this.label_pass2.TabIndex = 28;
+            this.label_pass2.Text = "Repita Contraseña";
+            // 
+            // textBox_pass1
+            // 
+            this.textBox_pass1.Location = new System.Drawing.Point(26, 101);
+            this.textBox_pass1.Name = "textBox_pass1";
+            this.textBox_pass1.Size = new System.Drawing.Size(218, 20);
+            this.textBox_pass1.TabIndex = 29;
+            // 
+            // textBox_pass2
+            // 
+            this.textBox_pass2.Location = new System.Drawing.Point(26, 150);
+            this.textBox_pass2.Name = "textBox_pass2";
+            this.textBox_pass2.Size = new System.Drawing.Size(218, 20);
+            this.textBox_pass2.TabIndex = 30;
+            // 
+            // label_ID
+            // 
+            this.label_ID.AutoSize = true;
+            this.label_ID.Location = new System.Drawing.Point(167, 16);
+            this.label_ID.Name = "label_ID";
+            this.label_ID.Size = new System.Drawing.Size(75, 13);
+            this.label_ID.TabIndex = 31;
+            this.label_ID.Text = "id_del_usuario";
+            this.label_ID.Visible = false;
+            // 
+            // label_Nick_B
+            // 
+            this.label_Nick_B.AutoSize = true;
+            this.label_Nick_B.Location = new System.Drawing.Point(691, 25);
+            this.label_Nick_B.Name = "label_Nick_B";
+            this.label_Nick_B.Size = new System.Drawing.Size(98, 13);
+            this.label_Nick_B.TabIndex = 64;
+            this.label_Nick_B.Text = "Nombre de Usuario";
+            // 
+            // textBox_Nick_busqueda
+            // 
+            this.textBox_Nick_busqueda.Location = new System.Drawing.Point(694, 43);
+            this.textBox_Nick_busqueda.Name = "textBox_Nick_busqueda";
+            this.textBox_Nick_busqueda.Size = new System.Drawing.Size(134, 20);
+            this.textBox_Nick_busqueda.TabIndex = 65;
+            // 
+            // label_ID_bus
+            // 
+            this.label_ID_bus.AutoSize = true;
+            this.label_ID_bus.Location = new System.Drawing.Point(691, 73);
+            this.label_ID_bus.Name = "label_ID_bus";
+            this.label_ID_bus.Size = new System.Drawing.Size(74, 13);
+            this.label_ID_bus.TabIndex = 66;
+            this.label_ID_bus.Text = "ID del Usuario";
+            // 
+            // textBox_ID_busqueda
+            // 
+            this.textBox_ID_busqueda.Location = new System.Drawing.Point(694, 90);
+            this.textBox_ID_busqueda.Name = "textBox_ID_busqueda";
+            this.textBox_ID_busqueda.Size = new System.Drawing.Size(134, 20);
+            this.textBox_ID_busqueda.TabIndex = 67;
+            // 
+            // errorProviderPassInv
+            // 
+            this.errorProviderPassInv.ContainerControl = this;
+            // 
+            // errorProviderPassDif
+            // 
+            this.errorProviderPassDif.ContainerControl = this;
+            // 
+            // errorProviderNick
+            // 
+            this.errorProviderNick.ContainerControl = this;
+            // 
             // Admins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1715,6 +1844,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).EndInit();
+            this.groupBox_UsPs.ResumeLayout(false);
+            this.groupBox_UsPs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassInv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassDif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNick)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1820,6 +1954,21 @@
         private System.Windows.Forms.ErrorProvider errorProviderMov;
         private System.Windows.Forms.ErrorProvider errorProviderMail;
         private System.Windows.Forms.ErrorProvider errorProviderFNAC;
+        private System.Windows.Forms.GroupBox groupBox_UsPs;
+        private System.Windows.Forms.Label label_ID;
+        private System.Windows.Forms.TextBox textBox_pass2;
+        private System.Windows.Forms.TextBox textBox_pass1;
+        private System.Windows.Forms.Label label_pass2;
+        private System.Windows.Forms.Label label_pass1;
+        private System.Windows.Forms.TextBox textBox_NombreUsuario;
+        private System.Windows.Forms.Label label_NombreUsuario;
+        private System.Windows.Forms.TextBox textBox_Nick_busqueda;
+        private System.Windows.Forms.Label label_Nick_B;
+        private System.Windows.Forms.TextBox textBox_ID_busqueda;
+        private System.Windows.Forms.Label label_ID_bus;
+        private System.Windows.Forms.ErrorProvider errorProviderPassInv;
+        private System.Windows.Forms.ErrorProvider errorProviderPassDif;
+        private System.Windows.Forms.ErrorProvider errorProviderNick;
 
     }
 }

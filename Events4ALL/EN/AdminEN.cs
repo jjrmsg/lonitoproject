@@ -9,7 +9,7 @@ namespace Events4ALL.EN
     {
         #region Variables
 
-        private int id;
+        //private int id;
         private string dni;
         private string nombre;
         private string apellidos;
@@ -24,16 +24,19 @@ namespace Events4ALL.EN
         private int ec; // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
         private string foto;
         private int sexo; // 0 - hombre // 1 - Mujer
-
+        private DateTime fecha;
+        private string pass;
+        private string nick;
+        
         #endregion
 
         #region Set's y Get's
 
-        public int ID
+        /*public int ID
         {
             get { return id; }
             set { id = value; }
-        }
+        }*/
 
         public string DNI
         {
@@ -119,15 +122,38 @@ namespace Events4ALL.EN
             set { foto = value; }
         }
 
+        public DateTime Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
+        public string Pass
+        {
+            get { return pass; }
+            set { pass = value; }
+        }
+
+        public string Nick
+        {
+            get { return nick; }
+            set { nick = value; }
+        }
         #endregion
 
         #region Constructores
 
-        public AdminEN(int id_c, string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
-                        string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
-                        string mail_c,  int ec_c, string foto_c, int sexo_c)
+        public AdminEN()
         {
-            id = id_c;
+            dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = foto = string.Empty;
+            ec = -1;
+            sexo = -1;
+        }
+
+        public AdminEN( string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
+                        string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
+                        string mail_c,  int ec_c, string foto_c, int sexo_c, string nick_c, string pass_c)
+        {
             dni = dni_c;
             nombre = nombre_c;
             apellidos = apellidos_c;
@@ -142,13 +168,9 @@ namespace Events4ALL.EN
             ec = ec_c;
             foto = foto_c;
             sexo = sexo_c;
+            nick = nick_c;
+            pass = pass_c;
         }
-
-        // um, no le veo utilidad,asi que ni me molesto XD
-        /*public AdminEN()
-        { 
-        
-        }*/
 
         #endregion
     }
