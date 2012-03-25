@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Promociones));
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
@@ -43,7 +44,7 @@
             this.groupBox_PE_promoEvent = new System.Windows.Forms.GroupBox();
             this.radioButton_PE_IVA = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_otroDesc = new System.Windows.Forms.RadioButton();
-            this.textBox_PE_TOtroDesc = new System.Windows.Forms.TextBox();
+            this.textBox_PE_otroDesc = new System.Windows.Forms.TextBox();
             this.radioButton_PE_50 = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_10 = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_20 = new System.Windows.Forms.RadioButton();
@@ -65,6 +66,12 @@
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
             this.groupBox_MC_TipoDeCond = new System.Windows.Forms.GroupBox();
+            this.textBox_MC_VC_Descuento3 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento3 = new System.Windows.Forms.Label();
+            this.textBox_MC_VC_Descuento2 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento2 = new System.Windows.Forms.Label();
+            this.textBox_MC_VC_Descuento1 = new System.Windows.Forms.TextBox();
+            this.label_MC_VC_Descuento1 = new System.Windows.Forms.Label();
             this.checkBox_MC_ActivarCond2 = new System.Windows.Forms.CheckBox();
             this.checkBox_MC_ActivarCond1 = new System.Windows.Forms.CheckBox();
             this.groupBox_MC_TipoEvent2 = new System.Windows.Forms.GroupBox();
@@ -89,7 +96,7 @@
             this.comboBox_MC_VC_Comparacion2 = new System.Windows.Forms.ComboBox();
             this.comboBox_MC_VC_Comparacion1 = new System.Windows.Forms.ComboBox();
             this.textBox_MC_VC_Cantidad3 = new System.Windows.Forms.TextBox();
-            this.textBox_MC_VC_Cantida2 = new System.Windows.Forms.TextBox();
+            this.textBox_MC_VC_Cantidad2 = new System.Windows.Forms.TextBox();
             this.textBox_MC_VC_Cantidad1 = new System.Windows.Forms.TextBox();
             this.label_MC_VC_Cantidad3 = new System.Windows.Forms.Label();
             this.label_MC_VC_Cantidad2 = new System.Windows.Forms.Label();
@@ -108,14 +115,7 @@
             this.button_MC_Guardar = new System.Windows.Forms.Button();
             this.label_MC_ClientesAfectados = new System.Windows.Forms.Label();
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
-            this.MC_NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.textBox_MC_VC_Descuento1 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Descuento1 = new System.Windows.Forms.Label();
-            this.textBox_MC_VC_Descuento2 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Descuento2 = new System.Windows.Forms.Label();
-            this.textBox_MC_VC_Descuento3 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Descuento3 = new System.Windows.Forms.Label();
+            this.errorProvider_PE_Otro = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -129,6 +129,7 @@
             this.groupBox_MC_TipoEvent1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_Otro)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -173,6 +174,7 @@
             this.button_PE_Guardar.Text = "Guardar cambios";
             this.button_PE_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_PE_Guardar.UseVisualStyleBackColor = true;
+            this.button_PE_Guardar.Click += new System.EventHandler(this.button_PE_Guardar_Click);
             // 
             // pictureBox_PE_imagEspec
             // 
@@ -269,7 +271,7 @@
             // 
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_IVA);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_otroDesc);
-            this.groupBox_PE_promoEvent.Controls.Add(this.textBox_PE_TOtroDesc);
+            this.groupBox_PE_promoEvent.Controls.Add(this.textBox_PE_otroDesc);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_50);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_10);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_20);
@@ -303,13 +305,12 @@
             this.radioButton_PE_otroDesc.Text = "Otro:";
             this.radioButton_PE_otroDesc.UseVisualStyleBackColor = true;
             // 
-            // textBox_PE_TOtroDesc
+            // textBox_PE_otroDesc
             // 
-            this.textBox_PE_TOtroDesc.Location = new System.Drawing.Point(218, 97);
-            this.textBox_PE_TOtroDesc.Name = "textBox_PE_TOtroDesc";
-            this.textBox_PE_TOtroDesc.Size = new System.Drawing.Size(57, 20);
-            this.textBox_PE_TOtroDesc.TabIndex = 8;
-            this.textBox_PE_TOtroDesc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_PE_TOtroDesc_KeyPress);
+            this.textBox_PE_otroDesc.Location = new System.Drawing.Point(218, 97);
+            this.textBox_PE_otroDesc.Name = "textBox_PE_otroDesc";
+            this.textBox_PE_otroDesc.Size = new System.Drawing.Size(57, 20);
+            this.textBox_PE_otroDesc.TabIndex = 8;
             // 
             // radioButton_PE_50
             // 
@@ -565,7 +566,7 @@
             this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.comboBox_MC_VC_Comparacion1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantidad3);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantida2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantidad2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Cantidad1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad3);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad2);
@@ -577,6 +578,62 @@
             this.groupBox_MC_TipoDeCond.TabIndex = 20;
             this.groupBox_MC_TipoDeCond.TabStop = false;
             this.groupBox_MC_TipoDeCond.Text = "Valores de condición:";
+            // 
+            // textBox_MC_VC_Descuento3
+            // 
+            this.textBox_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento3.Enabled = false;
+            this.textBox_MC_VC_Descuento3.Location = new System.Drawing.Point(219, 209);
+            this.textBox_MC_VC_Descuento3.Name = "textBox_MC_VC_Descuento3";
+            this.textBox_MC_VC_Descuento3.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento3.TabIndex = 24;
+            // 
+            // label_MC_VC_Descuento3
+            // 
+            this.label_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento3.AutoSize = true;
+            this.label_MC_VC_Descuento3.Location = new System.Drawing.Point(154, 212);
+            this.label_MC_VC_Descuento3.Name = "label_MC_VC_Descuento3";
+            this.label_MC_VC_Descuento3.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento3.TabIndex = 23;
+            this.label_MC_VC_Descuento3.Text = "Descuento";
+            // 
+            // textBox_MC_VC_Descuento2
+            // 
+            this.textBox_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento2.Enabled = false;
+            this.textBox_MC_VC_Descuento2.Location = new System.Drawing.Point(219, 132);
+            this.textBox_MC_VC_Descuento2.Name = "textBox_MC_VC_Descuento2";
+            this.textBox_MC_VC_Descuento2.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento2.TabIndex = 22;
+            // 
+            // label_MC_VC_Descuento2
+            // 
+            this.label_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento2.AutoSize = true;
+            this.label_MC_VC_Descuento2.Location = new System.Drawing.Point(154, 135);
+            this.label_MC_VC_Descuento2.Name = "label_MC_VC_Descuento2";
+            this.label_MC_VC_Descuento2.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento2.TabIndex = 21;
+            this.label_MC_VC_Descuento2.Text = "Descuento";
+            // 
+            // textBox_MC_VC_Descuento1
+            // 
+            this.textBox_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Descuento1.Location = new System.Drawing.Point(219, 57);
+            this.textBox_MC_VC_Descuento1.Name = "textBox_MC_VC_Descuento1";
+            this.textBox_MC_VC_Descuento1.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento1.TabIndex = 20;
+            // 
+            // label_MC_VC_Descuento1
+            // 
+            this.label_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_MC_VC_Descuento1.AutoSize = true;
+            this.label_MC_VC_Descuento1.Location = new System.Drawing.Point(154, 60);
+            this.label_MC_VC_Descuento1.Name = "label_MC_VC_Descuento1";
+            this.label_MC_VC_Descuento1.Size = new System.Drawing.Size(59, 13);
+            this.label_MC_VC_Descuento1.TabIndex = 19;
+            this.label_MC_VC_Descuento1.Text = "Descuento";
             // 
             // checkBox_MC_ActivarCond2
             // 
@@ -880,17 +937,15 @@
             this.textBox_MC_VC_Cantidad3.Name = "textBox_MC_VC_Cantidad3";
             this.textBox_MC_VC_Cantidad3.Size = new System.Drawing.Size(70, 20);
             this.textBox_MC_VC_Cantidad3.TabIndex = 6;
-            this.textBox_MC_VC_Cantidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor3_KeyPress);
             // 
-            // textBox_MC_VC_Cantida2
+            // textBox_MC_VC_Cantidad2
             // 
-            this.textBox_MC_VC_Cantida2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Cantida2.Enabled = false;
-            this.textBox_MC_VC_Cantida2.Location = new System.Drawing.Point(61, 132);
-            this.textBox_MC_VC_Cantida2.Name = "textBox_MC_VC_Cantida2";
-            this.textBox_MC_VC_Cantida2.Size = new System.Drawing.Size(70, 20);
-            this.textBox_MC_VC_Cantida2.TabIndex = 5;
-            this.textBox_MC_VC_Cantida2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor2_KeyPress);
+            this.textBox_MC_VC_Cantidad2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_MC_VC_Cantidad2.Enabled = false;
+            this.textBox_MC_VC_Cantidad2.Location = new System.Drawing.Point(61, 132);
+            this.textBox_MC_VC_Cantidad2.Name = "textBox_MC_VC_Cantidad2";
+            this.textBox_MC_VC_Cantidad2.Size = new System.Drawing.Size(70, 20);
+            this.textBox_MC_VC_Cantidad2.TabIndex = 5;
             // 
             // textBox_MC_VC_Cantidad1
             // 
@@ -899,7 +954,6 @@
             this.textBox_MC_VC_Cantidad1.Name = "textBox_MC_VC_Cantidad1";
             this.textBox_MC_VC_Cantidad1.Size = new System.Drawing.Size(70, 20);
             this.textBox_MC_VC_Cantidad1.TabIndex = 4;
-            this.textBox_MC_VC_Cantidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MC_VC_Valor1_KeyPress);
             // 
             // label_MC_VC_Cantidad3
             // 
@@ -1061,6 +1115,7 @@
             this.button_MC_Guardar.Text = "Guardar cambios";
             this.button_MC_Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_MC_Guardar.UseVisualStyleBackColor = true;
+            this.button_MC_Guardar.Click += new System.EventHandler(this.button_MC_Guardar_Click);
             // 
             // label_MC_ClientesAfectados
             // 
@@ -1079,80 +1134,14 @@
             this.dataGridView_MC_ListaPromosCond.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_MC_ListaPromosCond.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView_MC_ListaPromosCond.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_MC_ListaPromosCond.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MC_NOMBRE,
-            this.Estado});
             this.dataGridView_MC_ListaPromosCond.Location = new System.Drawing.Point(3, 26);
             this.dataGridView_MC_ListaPromosCond.Name = "dataGridView_MC_ListaPromosCond";
             this.dataGridView_MC_ListaPromosCond.Size = new System.Drawing.Size(439, 577);
             this.dataGridView_MC_ListaPromosCond.TabIndex = 1;
             // 
-            // MC_NOMBRE
+            // errorProvider_PE_Otro
             // 
-            this.MC_NOMBRE.HeaderText = "NOMBRE";
-            this.MC_NOMBRE.Name = "MC_NOMBRE";
-            this.MC_NOMBRE.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "¿Activado?";
-            this.Estado.Name = "Estado";
-            // 
-            // textBox_MC_VC_Descuento1
-            // 
-            this.textBox_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Descuento1.Location = new System.Drawing.Point(219, 57);
-            this.textBox_MC_VC_Descuento1.Name = "textBox_MC_VC_Descuento1";
-            this.textBox_MC_VC_Descuento1.Size = new System.Drawing.Size(63, 20);
-            this.textBox_MC_VC_Descuento1.TabIndex = 20;
-            // 
-            // label_MC_VC_Descuento1
-            // 
-            this.label_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Descuento1.AutoSize = true;
-            this.label_MC_VC_Descuento1.Location = new System.Drawing.Point(154, 60);
-            this.label_MC_VC_Descuento1.Name = "label_MC_VC_Descuento1";
-            this.label_MC_VC_Descuento1.Size = new System.Drawing.Size(59, 13);
-            this.label_MC_VC_Descuento1.TabIndex = 19;
-            this.label_MC_VC_Descuento1.Text = "Descuento";
-            // 
-            // textBox_MC_VC_Descuento2
-            // 
-            this.textBox_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Descuento2.Enabled = false;
-            this.textBox_MC_VC_Descuento2.Location = new System.Drawing.Point(219, 132);
-            this.textBox_MC_VC_Descuento2.Name = "textBox_MC_VC_Descuento2";
-            this.textBox_MC_VC_Descuento2.Size = new System.Drawing.Size(63, 20);
-            this.textBox_MC_VC_Descuento2.TabIndex = 22;
-            // 
-            // label_MC_VC_Descuento2
-            // 
-            this.label_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Descuento2.AutoSize = true;
-            this.label_MC_VC_Descuento2.Location = new System.Drawing.Point(154, 135);
-            this.label_MC_VC_Descuento2.Name = "label_MC_VC_Descuento2";
-            this.label_MC_VC_Descuento2.Size = new System.Drawing.Size(59, 13);
-            this.label_MC_VC_Descuento2.TabIndex = 21;
-            this.label_MC_VC_Descuento2.Text = "Descuento";
-            // 
-            // textBox_MC_VC_Descuento3
-            // 
-            this.textBox_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Descuento3.Enabled = false;
-            this.textBox_MC_VC_Descuento3.Location = new System.Drawing.Point(219, 209);
-            this.textBox_MC_VC_Descuento3.Name = "textBox_MC_VC_Descuento3";
-            this.textBox_MC_VC_Descuento3.Size = new System.Drawing.Size(63, 20);
-            this.textBox_MC_VC_Descuento3.TabIndex = 24;
-            // 
-            // label_MC_VC_Descuento3
-            // 
-            this.label_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Descuento3.AutoSize = true;
-            this.label_MC_VC_Descuento3.Location = new System.Drawing.Point(154, 212);
-            this.label_MC_VC_Descuento3.Name = "label_MC_VC_Descuento3";
-            this.label_MC_VC_Descuento3.Size = new System.Drawing.Size(59, 13);
-            this.label_MC_VC_Descuento3.TabIndex = 23;
-            this.label_MC_VC_Descuento3.Text = "Descuento";
+            this.errorProvider_PE_Otro.ContainerControl = this;
             // 
             // Promociones
             // 
@@ -1184,6 +1173,7 @@
             this.groupBox_MC_TipoEvent1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_Otro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1198,7 +1188,6 @@
         private System.Windows.Forms.Button button_MC_Guardar;
         private System.Windows.Forms.Label label_MC_ClientesAfectados;
         private System.Windows.Forms.DataGridView dataGridView_MC_ListaPromosCond;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MC_NOMBRE;
         private System.Windows.Forms.GroupBox groupBox_PE_DatosEspec;
         private System.Windows.Forms.Label label_PE_fechaIni;
         private System.Windows.Forms.Label label_PE_titulo;
@@ -1216,11 +1205,10 @@
         private System.Windows.Forms.CheckBox checkBox_PE_menor25;
         private System.Windows.Forms.RadioButton radioButton_PE_IVA;
         private System.Windows.Forms.RadioButton radioButton_PE_otroDesc;
-        private System.Windows.Forms.TextBox textBox_PE_TOtroDesc;
+        private System.Windows.Forms.TextBox textBox_PE_otroDesc;
         private System.Windows.Forms.RadioButton radioButton_PE_50;
         private System.Windows.Forms.RadioButton radioButton_PE_10;
         private System.Windows.Forms.TextBox textBox_MC_Descripcion;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
         private System.Windows.Forms.Label label_PE_TDescripcion;
         private System.Windows.Forms.Label label_PE_Descripcion;
         private System.Windows.Forms.Label label_PE_SAsig;
@@ -1243,7 +1231,7 @@
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion2;
         private System.Windows.Forms.ComboBox comboBox_MC_VC_Comparacion1;
         private System.Windows.Forms.TextBox textBox_MC_VC_Cantidad3;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Cantida2;
+        private System.Windows.Forms.TextBox textBox_MC_VC_Cantidad2;
         private System.Windows.Forms.TextBox textBox_MC_VC_Cantidad1;
         private System.Windows.Forms.Label label_MC_VC_Cantidad3;
         private System.Windows.Forms.Label label_MC_VC_Cantidad2;
@@ -1277,5 +1265,6 @@
         private System.Windows.Forms.Label label_MC_VC_Descuento2;
         private System.Windows.Forms.TextBox textBox_MC_VC_Descuento3;
         private System.Windows.Forms.Label label_MC_VC_Descuento3;
+        private System.Windows.Forms.ErrorProvider errorProvider_PE_Otro;
     }
 }

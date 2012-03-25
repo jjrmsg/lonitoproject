@@ -34,6 +34,12 @@ namespace Events4ALL.EN
         }
         #endregion
 
+        #region constructor vacio
+        public PromocionEN()
+        {
+        }
+        #endregion
+
         #region constructor
         public PromocionEN(int id, string nom, int des)
         {

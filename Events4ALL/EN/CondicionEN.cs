@@ -9,18 +9,18 @@ namespace Events4ALL.EN
     {
         #region variables
         /*
-            Dinero gastado - 0
-            Entradas - 1
-            Espectaculos - 2
+            Dinero gastado - 1
+            Entradas - 2
+            Espectaculos - 3
 
-            Mayor - 0
-            Menor - 1
-            Igual - 2
+            Mayor - 1
+            Menor - 2
+            Igual - 3
 
-            Cine - 0
-            Teatro - 1
-            Concierto - 2
-            Todos - 3
+            Cine - 1
+            Teatro - 2
+            Concierto - 3
+            Todos - 4
         */
         private int idCondicion;
         private string nombre;
@@ -40,115 +40,157 @@ namespace Events4ALL.EN
         private int cantidad3;
         private int descuento3;
         private int tEvento3;
+        private bool activado;
         #endregion
 
         #region gets/sets
-        private int IdPromocion
+        public int IdCondicion
         {
             get { return idCondicion; }
             set { idCondicion = value; }
         }
 
-        private string Nombre
+        public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
 
-        private string Descipcion
+        public string Descipcion
         {
             get { return descripcion; }
             set { descripcion = value; }
         }
 
-        private int TCondicion1
+        public int TCondicion1
         {
             get { return tCondicion1; }
             set { tCondicion1 = value; }
         }
 
-        private int Comparacion1
+        public int Comparacion1
         {
             get { return comparacion1; }
             set { comparacion1 = value; }
         }
 
-        private int Cantidad1
+        public int Cantidad1
         {
             get { return cantidad1; }
             set { cantidad1 = value; }
         }
 
-        private int Descuento1
+        public int Descuento1
         {
             get { return descuento1; }
             set { descuento1 = value; }
         }
 
-        private int TEvento1
+        public int TEvento1
         {
             get { return tEvento1; }
             set { tEvento1 = value; }
         }
 
-        private int TCondicion2
+        public int TCondicion2
         {
             get { return tCondicion2; }
             set { tCondicion2 = value; }
         }
 
-        private int Comparacion2
+        public int Comparacion2
         {
             get { return comparacion2; }
             set { comparacion2 = value; }
         }
 
-        private int Cantidad2
+        public int Cantidad2
         {
             get { return cantidad2; }
             set { cantidad2 = value; }
         }
 
-        private int Descuento2
+        public int Descuento2
         {
             get { return descuento2; }
             set { descuento2 = value; }
         }
 
-        private int TEvento2
+        public int TEvento2
         {
             get { return tEvento2; }
             set { tEvento2 = value; }
         }
 
-        private int TCondicion3
+        public int TCondicion3
         {
             get { return tCondicion3; }
             set { tCondicion3 = value; }
         }
 
-        private int Comparacion3
+        public int Comparacion3
         {
             get { return comparacion3; }
             set { comparacion3 = value; }
         }
 
-        private int Cantidad3
+        public int Cantidad3
         {
             get { return cantidad3; }
             set { cantidad3 = value; }
         }
 
-        private int Descuento3
+        public int Descuento3
         {
             get { return descuento3; }
             set { descuento3 = value; }
         }
 
-        private int TEvento3
+        public int TEvento3
         {
             get { return tEvento3; }
             set { tEvento3 = value; }
+        }
+
+        public bool Activado
+        {
+            get { return activado; }
+            set { activado = value; }
+        }
+        #endregion
+
+        #region constructor vacio
+        public CondicionEN()
+        {
+        }
+        #endregion
+
+        #region constructor sobrecargador
+        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act)
+        {
+            idCondicion = id;
+            nombre = nom;
+            descripcion = desc;
+            
+            tCondicion1 = tcond1;
+            comparacion1 = comp1;
+            cantidad1 = cant1;
+            descuento1 = descu1;
+            tEvento1 = teven1;
+
+            tCondicion2 = tcond2;
+            comparacion2 = comp2;
+            cantidad2 = cant2;
+            descuento2 = descu2;
+            tEvento2 = teven2;
+
+            tCondicion3 = tcond3;
+            comparacion3 = comp3;
+            cantidad3 = cant3;
+            descuento3 = descu3;
+            tEvento3 = teven3;
+
+            activado = act;
         }
         #endregion
     }

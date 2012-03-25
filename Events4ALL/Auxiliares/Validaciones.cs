@@ -85,6 +85,14 @@ namespace Events4ALL.Auxiliares
             return ertel.IsMatch(tel);
         }
 
+
+        public static bool EsNumeroEntero(String cadena)
+        {
+            Regex patronNumerico = new Regex("[0-9]");
+            return patronNumerico.IsMatch(cadena);
+        }
+
+
         public bool CompruebaPass(string pass)
         {
             // longitud 6, me da igual que no tenga numero o si xD
