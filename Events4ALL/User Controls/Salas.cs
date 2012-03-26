@@ -179,9 +179,12 @@ namespace Events4ALL
             validado=validar();
             if (validado == true)
             {
-                labAforo.Text = aforo().ToString();///////////pa ver si calcula bien aforo
                 //formamos el SalasEN con su constructor sobrecargado
-                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text);
+                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,aforo());
+                /////no tendria que llamar al CAD desde aqui pero bueno para probar se hace
+                //labAforo.Text = salaEn.Aforo.ToString();
+                SalasCAD insertar = new SalasCAD();
+                insertar.InsertarSala(salaEn);
             }
         }
 
