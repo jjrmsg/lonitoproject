@@ -63,7 +63,6 @@
             this.labelApellidosCliente = new System.Windows.Forms.Label();
             this.labelNombreCliente = new System.Windows.Forms.Label();
             this.labelNifCliente = new System.Windows.Forms.Label();
-            this.textBoxNifC = new System.Windows.Forms.TextBox();
             this.textBoxNombreC = new System.Windows.Forms.TextBox();
             this.BuscarCliente = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -94,6 +93,7 @@
             this.textboxNombreBusquedaCli = new System.Windows.Forms.TextBox();
             this.labelNombreBusquedaCli = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textBoxNifC = new System.Windows.Forms.TextBox();
             this.FormCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -195,6 +195,7 @@
             // 
             this.comboBoxProvinciaCli.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxProvinciaCli.Controls.Add(this.textBoxNifC);
             this.comboBoxProvinciaCli.Controls.Add(this.comboBoxProvCli);
             this.comboBoxProvinciaCli.Controls.Add(this.dateTimePicker1);
             this.comboBoxProvinciaCli.Controls.Add(this.groupContactoCliente);
@@ -214,7 +215,6 @@
             this.comboBoxProvinciaCli.Controls.Add(this.labelApellidosCliente);
             this.comboBoxProvinciaCli.Controls.Add(this.labelNombreCliente);
             this.comboBoxProvinciaCli.Controls.Add(this.labelNifCliente);
-            this.comboBoxProvinciaCli.Controls.Add(this.textBoxNifC);
             this.comboBoxProvinciaCli.Controls.Add(this.textBoxNombreC);
             this.comboBoxProvinciaCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxProvinciaCli.Location = new System.Drawing.Point(35, 34);
@@ -285,7 +285,6 @@
             this.comboBoxProvCli.Name = "comboBoxProvCli";
             this.comboBoxProvCli.Size = new System.Drawing.Size(181, 21);
             this.comboBoxProvCli.TabIndex = 81;
-            this.comboBoxProvCli.Leave += new System.EventHandler(this.comboBoxProvCli_Leave);
             // 
             // dateTimePicker1
             // 
@@ -429,7 +428,6 @@
             this.textBoxLocaliCli.Name = "textBoxLocaliCli";
             this.textBoxLocaliCli.Size = new System.Drawing.Size(207, 20);
             this.textBoxLocaliCli.TabIndex = 67;
-            this.textBoxLocaliCli.Leave += new System.EventHandler(this.textBoxLocaliCli_Leave);
             // 
             // labelLocaliCli
             // 
@@ -455,7 +453,6 @@
             this.textBoxCPCli.Name = "textBoxCPCli";
             this.textBoxCPCli.Size = new System.Drawing.Size(51, 20);
             this.textBoxCPCli.TabIndex = 64;
-            this.textBoxCPCli.Leave += new System.EventHandler(this.textBoxCPCli_Leave);
             // 
             // labelClienteProv
             // 
@@ -689,7 +686,6 @@
             this.comboBoxPaisCli.Name = "comboBoxPaisCli";
             this.comboBoxPaisCli.Size = new System.Drawing.Size(207, 21);
             this.comboBoxPaisCli.TabIndex = 62;
-            this.comboBoxPaisCli.Leave += new System.EventHandler(this.comboBoxPaisCli_Leave);
             // 
             // labelPaisCli
             // 
@@ -716,7 +712,6 @@
             this.textBoxApellidosC.Name = "textBoxApellidosC";
             this.textBoxApellidosC.Size = new System.Drawing.Size(207, 20);
             this.textBoxApellidosC.TabIndex = 4;
-            this.textBoxApellidosC.Leave += new System.EventHandler(this.textBoxApellidosC_Leave);
             // 
             // labelApellidosCliente
             // 
@@ -748,13 +743,6 @@
             this.labelNifCliente.TabIndex = 2;
             this.labelNifCliente.Text = "NIF";
             // 
-            // textBoxNifC
-            // 
-            this.textBoxNifC.Location = new System.Drawing.Point(35, 113);
-            this.textBoxNifC.Name = "textBoxNifC";
-            this.textBoxNifC.Size = new System.Drawing.Size(75, 20);
-            this.textBoxNifC.TabIndex = 3;
-            // 
             // textBoxNombreC
             // 
             this.textBoxNombreC.Location = new System.Drawing.Point(34, 54);
@@ -762,7 +750,6 @@
             this.textBoxNombreC.Size = new System.Drawing.Size(255, 20);
             this.textBoxNombreC.TabIndex = 1;
             this.textBoxNombreC.TextChanged += new System.EventHandler(this.textBoxNombreC_TextChanged);
-            this.textBoxNombreC.Leave += new System.EventHandler(this.textBoxNombreC_Leave);
             // 
             // BuscarCliente
             // 
@@ -1136,6 +1123,13 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // textBoxNifC
+            // 
+            this.textBoxNifC.Location = new System.Drawing.Point(35, 113);
+            this.textBoxNifC.Name = "textBoxNifC";
+            this.textBoxNifC.Size = new System.Drawing.Size(75, 20);
+            this.textBoxNifC.TabIndex = 82;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1171,7 +1165,6 @@
         private System.Windows.Forms.TabPage FichaCliente;
         private System.Windows.Forms.TabPage BuscarCliente;
         private System.Windows.Forms.Label labelNombreCliente;
-        private System.Windows.Forms.TextBox textBoxNifC;
         private System.Windows.Forms.Label labelNifCliente;
         private System.Windows.Forms.GroupBox comboBoxProvinciaCli;
         private System.Windows.Forms.PictureBox cliente_Perfil_Foto;
@@ -1232,5 +1225,6 @@
         private System.Windows.Forms.DataGridViewImageColumn VerPerfil;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox comboBoxProvCli;
+        private System.Windows.Forms.TextBox textBoxNifC;
     }
 }
