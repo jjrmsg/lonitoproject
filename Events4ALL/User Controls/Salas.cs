@@ -255,7 +255,7 @@ namespace Events4ALL
             foreach (System.Windows.Forms.Control ctrl in a)
             {
                //MessageBox.Show(ctrl.ToString());
-                if (ctrl is TextBox || ctrl is ComboBox)
+                if ((ctrl is TextBox || ctrl is ComboBox) && ctrl.Name!="textIdSala")
                     ctrl.Text = "";
                 else
                 {
@@ -270,6 +270,8 @@ namespace Events4ALL
                     }
                 }
             }
+            errorProvider1.Clear();
+            errorProvider2.Clear();
             groupBoxSecciones.Visible = false;
         }
 
