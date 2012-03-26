@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Events4ALL.CAD;
 
 namespace Events4ALL.EN
 {
     class AdminEN
     {
         #region Variables
+
+        private AdminCAD cad_admin;
 
         //private int id;
         private string dni;
@@ -148,6 +151,8 @@ namespace Events4ALL.EN
             dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = foto = string.Empty;
             ec = -1;
             sexo = -1;
+
+            cad_admin = new AdminCAD();
         }
 
         public AdminEN( string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
@@ -170,6 +175,17 @@ namespace Events4ALL.EN
             sexo = sexo_c;
             nick = nick_c;
             pass = pass_c;
+
+            cad_admin = new AdminCAD();
+        }
+
+        #endregion
+
+        #region Iteraccion con CAD
+
+        public bool InsertarAdmin(AdminEN nuevo)
+        {
+            return cad_admin.InsertarAdmin(nuevo);
         }
 
         #endregion

@@ -33,6 +33,9 @@ namespace Events4ALL
                 label_ID.Visible = false;
             }
 
+            numericUpDown_Fec1.Enabled = false;
+            numericUpDown_Fec2.Enabled = false;
+
             // creo el objeto que se encargara de validar
             validar = new Validaciones();
         }
@@ -450,7 +453,7 @@ namespace Events4ALL
 
         #endregion
 
-        #region Accion Botones
+        #region Seccion Perfil
 
         // boton Limpiar
         private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
@@ -522,6 +525,8 @@ namespace Events4ALL
             {
                 // creo el EN y toda la pedazo de basura posterior
                 MessageBox.Show("Todo Ok.");
+
+                // ambos metodos hacen la misma puta basura, simplemente relleno el EN de distintas maneras.... por que me sale del nabo
                 AltaAdminEN_Directo();
                 //AltaAdminEN_PorPasos();
             }
@@ -560,6 +565,11 @@ namespace Events4ALL
                                         comboBoxDirec + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
                                         Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text, Admin_Perfil_txtBox_Mail.Text, ec, 
                                         "VACIO !!", sexo, textBox_NombreUsuario.Text, textBox_pass1.Text);
+
+            if (nuevo.InsertarAdmin(nuevo))
+                MessageBox.Show("Insertado OK.");
+            else
+                MessageBox.Show("Fail al Insertar.");
         }
 
         private void AltaAdminEN_PorPasos()
@@ -599,9 +609,87 @@ namespace Events4ALL
 
             nuevo.Nick = textBox_NombreUsuario.Text;
             nuevo.Pass = textBox_pass1.Text;
+
+            if (nuevo.InsertarAdmin(nuevo))
+                MessageBox.Show("Insertado OK.");
+            else
+                MessageBox.Show("Fail al Insertar.");
         }
 
         #endregion
 
+        private void groupBox_Busqueda_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Seccion Busqueda
+
+        // boton limpiar
+        private void boton_limpia_busqueda_Click(object sender, EventArgs e)
+        {
+            textBox_Nombre_Busqueda.Text = "";
+            textBox_Apellidos_Busqueda.Text = "";
+            comboBox_provincia_busqueda.Text = "";
+            comboBox_Pais_BA.Text = "";
+            textBox_Loc1_BA.Text = "";
+            textBox_CP_busqueda.Text = "";
+            textBox_DNI_Busqueda.Text = "";
+            textBox_Nick_busqueda.Text = "";
+            textBox_ID_busqueda.Text = "";
+            textBox_mail_busqueda.Text = "";
+            textBox_tele_busqueda.Text = "";
+            textBox_movil_busqueda.Text = "";
+            textBox_domicilio_busqueda.Text = "";
+
+            radioButton_Hombre_Sexo.Checked = false;
+            radioButton_Mujer_Sexo.Checked = false;
+
+            radioButton_Cas_EC.Checked = false;
+            radioButton_Divo_EC.Checked = false;
+            radioButton_Sol_EC.Checked = false;
+            radioButton_Viud_EC.Checked = false;
+
+            numericUpDown_Fec1.Value = 16;
+            numericUpDown_Fec2.Value = 16;
+
+            radioButton_edad_no.Checked = true;
+        }
+
+        private void radioButton_edad_no_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDown_Fec1.Enabled = false;
+            numericUpDown_Fec2.Enabled = false;
+        }
+
+        private void radioButton_edad_si_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDown_Fec1.Enabled = true;
+            numericUpDown_Fec2.Enabled = true;
+        }
+
+        private bool BusquedaVacia()
+        { 
+            if(comboBox_provincia_busqueda.Text != "" || textBox_Nombre_Busqueda.Text != "" || textBox_Apellidos_Busqueda.Text != ""
+                || radioButton_edad_si.Checked == true || textBox_Nick_busqueda.Text != "" || textBox_ID_busqueda.Text != "" 
+                )
+                return false;
+            else
+                return true;
+        }
+
+        // botoncejo buscar
+        private void buttom_Buscar_Click(object sender, EventArgs e)
+        {
+            // mostrar todos, o lo que es lo mismo, no se ha establecido ningun filtro de busqueda
+            
+        }
+
+        #endregion
+
+        private void textBox_movil_busqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

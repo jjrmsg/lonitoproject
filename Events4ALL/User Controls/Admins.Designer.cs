@@ -31,7 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.Buscar = new System.Windows.Forms.TabPage();
             this.groupBox_Busqueda = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.boton_limpia_busqueda = new System.Windows.Forms.Button();
+            this.textBox_ID_busqueda = new System.Windows.Forms.TextBox();
+            this.label_ID_bus = new System.Windows.Forms.Label();
+            this.textBox_Nick_busqueda = new System.Windows.Forms.TextBox();
+            this.label_Nick_B = new System.Windows.Forms.Label();
+            this.comboBox_provincia_busqueda = new System.Windows.Forms.ComboBox();
             this.label_Edad_Ba = new System.Windows.Forms.Label();
             this.buttom_Buscar = new System.Windows.Forms.Button();
             this.comboBox_Pais_BA = new System.Windows.Forms.ComboBox();
@@ -39,10 +44,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown_Fec2 = new System.Windows.Forms.NumericUpDown();
             this.label_Y = new System.Windows.Forms.Label();
-            this.label_CP_Busqueda = new System.Windows.Forms.Label();
+            this.label_DNI_Busqueda = new System.Windows.Forms.Label();
             this.textBox_Loc1_BA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox_CP_Busqueda = new System.Windows.Forms.TextBox();
+            this.textBox_DNI_Busqueda = new System.Windows.Forms.TextBox();
             this.label_CP_BA = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_Sol_EC = new System.Windows.Forms.RadioButton();
@@ -67,6 +72,14 @@
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Admin_Foto_Perfil = new System.Windows.Forms.TabPage();
+            this.groupBox_UsPs = new System.Windows.Forms.GroupBox();
+            this.label_ID = new System.Windows.Forms.Label();
+            this.textBox_pass2 = new System.Windows.Forms.TextBox();
+            this.textBox_pass1 = new System.Windows.Forms.TextBox();
+            this.label_pass2 = new System.Windows.Forms.Label();
+            this.label_pass1 = new System.Windows.Forms.Label();
+            this.textBox_NombreUsuario = new System.Windows.Forms.TextBox();
+            this.label_NombreUsuario = new System.Windows.Forms.Label();
             this.Admin_Perfil_boton_Foto = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Guardar = new System.Windows.Forms.Button();
             this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
@@ -128,21 +141,22 @@
             this.errorProviderMov = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderMail = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFNAC = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox_UsPs = new System.Windows.Forms.GroupBox();
-            this.label_NombreUsuario = new System.Windows.Forms.Label();
-            this.textBox_NombreUsuario = new System.Windows.Forms.TextBox();
-            this.label_pass1 = new System.Windows.Forms.Label();
-            this.label_pass2 = new System.Windows.Forms.Label();
-            this.textBox_pass1 = new System.Windows.Forms.TextBox();
-            this.textBox_pass2 = new System.Windows.Forms.TextBox();
-            this.label_ID = new System.Windows.Forms.Label();
-            this.label_Nick_B = new System.Windows.Forms.Label();
-            this.textBox_Nick_busqueda = new System.Windows.Forms.TextBox();
-            this.label_ID_bus = new System.Windows.Forms.Label();
-            this.textBox_ID_busqueda = new System.Windows.Forms.TextBox();
             this.errorProviderPassInv = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderPassDif = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderNick = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox_Edad_busqueda = new System.Windows.Forms.GroupBox();
+            this.radioButton_edad_si = new System.Windows.Forms.RadioButton();
+            this.radioButton_edad_no = new System.Windows.Forms.RadioButton();
+            this.label_CP_busqueda = new System.Windows.Forms.Label();
+            this.textBox_CP_busqueda = new System.Windows.Forms.TextBox();
+            this.label_tele_busqueda = new System.Windows.Forms.Label();
+            this.label_movil_busqueda = new System.Windows.Forms.Label();
+            this.textBox_tele_busqueda = new System.Windows.Forms.TextBox();
+            this.textBox_movil_busqueda = new System.Windows.Forms.TextBox();
+            this.label_mail_busqueda = new System.Windows.Forms.Label();
+            this.textBox_mail_busqueda = new System.Windows.Forms.TextBox();
+            this.label_domicilio_busqueda = new System.Windows.Forms.Label();
+            this.textBox_domicilio_busqueda = new System.Windows.Forms.TextBox();
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Fec1)).BeginInit();
@@ -151,6 +165,7 @@
             this.groupBox_Sexo_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resultados_Busqueda)).BeginInit();
             this.Admin_Foto_Perfil.SuspendLayout();
+            this.groupBox_UsPs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -171,10 +186,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).BeginInit();
-            this.groupBox_UsPs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassInv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassDif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNick)).BeginInit();
+            this.groupBox_Edad_busqueda.SuspendLayout();
             this.SuspendLayout();
             // 
             // Buscar
@@ -193,40 +208,94 @@
             // 
             this.groupBox_Busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Busqueda.Controls.Add(this.textBox_domicilio_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_domicilio_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_mail_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_mail_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_tele_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_movil_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_tele_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_movil_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_CP_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_CP_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.groupBox_Edad_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.boton_limpia_busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_CP_BA);
+            this.groupBox_Busqueda.Controls.Add(this.comboBox_Pais_BA);
+            this.groupBox_Busqueda.Controls.Add(this.label1);
             this.groupBox_Busqueda.Controls.Add(this.textBox_ID_busqueda);
             this.groupBox_Busqueda.Controls.Add(this.label_ID_bus);
+            this.groupBox_Busqueda.Controls.Add(this.comboBox_provincia_busqueda);
             this.groupBox_Busqueda.Controls.Add(this.textBox_Nick_busqueda);
             this.groupBox_Busqueda.Controls.Add(this.label_Nick_B);
-            this.groupBox_Busqueda.Controls.Add(this.comboBox2);
-            this.groupBox_Busqueda.Controls.Add(this.label_Edad_Ba);
             this.groupBox_Busqueda.Controls.Add(this.buttom_Buscar);
-            this.groupBox_Busqueda.Controls.Add(this.comboBox_Pais_BA);
-            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec1);
             this.groupBox_Busqueda.Controls.Add(this.label3);
-            this.groupBox_Busqueda.Controls.Add(this.numericUpDown_Fec2);
-            this.groupBox_Busqueda.Controls.Add(this.label_Y);
-            this.groupBox_Busqueda.Controls.Add(this.label_CP_Busqueda);
+            this.groupBox_Busqueda.Controls.Add(this.label_DNI_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.textBox_Loc1_BA);
-            this.groupBox_Busqueda.Controls.Add(this.label1);
-            this.groupBox_Busqueda.Controls.Add(this.textBox_CP_Busqueda);
-            this.groupBox_Busqueda.Controls.Add(this.label_CP_BA);
+            this.groupBox_Busqueda.Controls.Add(this.textBox_DNI_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.groupBox4);
             this.groupBox_Busqueda.Controls.Add(this.groupBox_Sexo_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.textBox_Apellidos_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.label_Apellidos_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.textBox_Nombre_Busqueda);
             this.groupBox_Busqueda.Controls.Add(this.label_Nombre_Busqueda);
-            this.groupBox_Busqueda.Location = new System.Drawing.Point(20, 19);
+            this.groupBox_Busqueda.Location = new System.Drawing.Point(19, 31);
             this.groupBox_Busqueda.Name = "groupBox_Busqueda";
             this.groupBox_Busqueda.Size = new System.Drawing.Size(854, 183);
             this.groupBox_Busqueda.TabIndex = 1;
             this.groupBox_Busqueda.TabStop = false;
             this.groupBox_Busqueda.Text = "Búsqueda";
+            this.groupBox_Busqueda.Enter += new System.EventHandler(this.groupBox_Busqueda_Enter);
             // 
-            // comboBox2
+            // boton_limpia_busqueda
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.boton_limpia_busqueda.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.boton_limpia_busqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boton_limpia_busqueda.Location = new System.Drawing.Point(759, 122);
+            this.boton_limpia_busqueda.Name = "boton_limpia_busqueda";
+            this.boton_limpia_busqueda.Size = new System.Drawing.Size(64, 23);
+            this.boton_limpia_busqueda.TabIndex = 68;
+            this.boton_limpia_busqueda.Text = "Limpiar";
+            this.boton_limpia_busqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.boton_limpia_busqueda.UseVisualStyleBackColor = true;
+            this.boton_limpia_busqueda.Click += new System.EventHandler(this.boton_limpia_busqueda_Click);
+            // 
+            // textBox_ID_busqueda
+            // 
+            this.textBox_ID_busqueda.Location = new System.Drawing.Point(742, 90);
+            this.textBox_ID_busqueda.Name = "textBox_ID_busqueda";
+            this.textBox_ID_busqueda.Size = new System.Drawing.Size(95, 20);
+            this.textBox_ID_busqueda.TabIndex = 67;
+            // 
+            // label_ID_bus
+            // 
+            this.label_ID_bus.AutoSize = true;
+            this.label_ID_bus.Location = new System.Drawing.Point(739, 73);
+            this.label_ID_bus.Name = "label_ID_bus";
+            this.label_ID_bus.Size = new System.Drawing.Size(74, 13);
+            this.label_ID_bus.TabIndex = 66;
+            this.label_ID_bus.Text = "ID del Usuario";
+            // 
+            // textBox_Nick_busqueda
+            // 
+            this.textBox_Nick_busqueda.Location = new System.Drawing.Point(742, 41);
+            this.textBox_Nick_busqueda.Name = "textBox_Nick_busqueda";
+            this.textBox_Nick_busqueda.Size = new System.Drawing.Size(95, 20);
+            this.textBox_Nick_busqueda.TabIndex = 65;
+            // 
+            // label_Nick_B
+            // 
+            this.label_Nick_B.AutoSize = true;
+            this.label_Nick_B.Location = new System.Drawing.Point(739, 25);
+            this.label_Nick_B.Name = "label_Nick_B";
+            this.label_Nick_B.Size = new System.Drawing.Size(98, 13);
+            this.label_Nick_B.TabIndex = 64;
+            this.label_Nick_B.Text = "Nombre de Usuario";
+            // 
+            // comboBox_provincia_busqueda
+            // 
+            this.comboBox_provincia_busqueda.FormattingEnabled = true;
+            this.comboBox_provincia_busqueda.Items.AddRange(new object[] {
             "",
             "Álava",
             "Albacete",
@@ -279,32 +348,33 @@
             "Vizcaya",
             "Zamora",
             "Zaragoza"});
-            this.comboBox2.Location = new System.Drawing.Point(198, 40);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 63;
+            this.comboBox_provincia_busqueda.Location = new System.Drawing.Point(133, 88);
+            this.comboBox_provincia_busqueda.Name = "comboBox_provincia_busqueda";
+            this.comboBox_provincia_busqueda.Size = new System.Drawing.Size(106, 21);
+            this.comboBox_provincia_busqueda.TabIndex = 63;
             // 
             // label_Edad_Ba
             // 
             this.label_Edad_Ba.AutoSize = true;
-            this.label_Edad_Ba.Location = new System.Drawing.Point(236, 139);
+            this.label_Edad_Ba.Location = new System.Drawing.Point(128, 19);
             this.label_Edad_Ba.Name = "label_Edad_Ba";
-            this.label_Edad_Ba.Size = new System.Drawing.Size(68, 13);
+            this.label_Edad_Ba.Size = new System.Drawing.Size(31, 13);
             this.label_Edad_Ba.TabIndex = 0;
-            this.label_Edad_Ba.Text = "Edad :  entre";
+            this.label_Edad_Ba.Text = "entre";
             // 
             // buttom_Buscar
             // 
             this.buttom_Buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttom_Buscar.Image = global::Events4ALL.Properties.Resources.search_icon;
             this.buttom_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttom_Buscar.Location = new System.Drawing.Point(777, 154);
+            this.buttom_Buscar.Location = new System.Drawing.Point(759, 151);
             this.buttom_Buscar.Name = "buttom_Buscar";
-            this.buttom_Buscar.Size = new System.Drawing.Size(71, 23);
+            this.buttom_Buscar.Size = new System.Drawing.Size(64, 23);
             this.buttom_Buscar.TabIndex = 8;
             this.buttom_Buscar.Text = "Buscar";
             this.buttom_Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttom_Buscar.UseVisualStyleBackColor = true;
+            this.buttom_Buscar.Click += new System.EventHandler(this.buttom_Buscar_Click);
             // 
             // comboBox_Pais_BA
             // 
@@ -526,21 +596,16 @@
             "Yugoslavia",
             "Zambia",
             "Zimbabwe"});
-            this.comboBox_Pais_BA.Location = new System.Drawing.Point(379, 42);
+            this.comboBox_Pais_BA.Location = new System.Drawing.Point(18, 88);
             this.comboBox_Pais_BA.Name = "comboBox_Pais_BA";
-            this.comboBox_Pais_BA.Size = new System.Drawing.Size(152, 21);
+            this.comboBox_Pais_BA.Size = new System.Drawing.Size(107, 21);
             this.comboBox_Pais_BA.TabIndex = 12;
             // 
             // numericUpDown_Fec1
             // 
-            this.numericUpDown_Fec1.Location = new System.Drawing.Point(307, 137);
+            this.numericUpDown_Fec1.Location = new System.Drawing.Point(165, 16);
             this.numericUpDown_Fec1.Maximum = new decimal(new int[] {
             80,
-            0,
-            0,
-            0});
-            this.numericUpDown_Fec1.Minimum = new decimal(new int[] {
-            16,
             0,
             0,
             0});
@@ -556,7 +621,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(195, 74);
+            this.label3.Location = new System.Drawing.Point(245, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 14;
@@ -564,14 +629,9 @@
             // 
             // numericUpDown_Fec2
             // 
-            this.numericUpDown_Fec2.Location = new System.Drawing.Point(367, 137);
+            this.numericUpDown_Fec2.Location = new System.Drawing.Point(225, 16);
             this.numericUpDown_Fec2.Maximum = new decimal(new int[] {
             80,
-            0,
-            0,
-            0});
-            this.numericUpDown_Fec2.Minimum = new decimal(new int[] {
-            16,
             0,
             0,
             0});
@@ -587,48 +647,48 @@
             // label_Y
             // 
             this.label_Y.AutoSize = true;
-            this.label_Y.Location = new System.Drawing.Point(349, 139);
+            this.label_Y.Location = new System.Drawing.Point(207, 18);
             this.label_Y.Name = "label_Y";
             this.label_Y.Size = new System.Drawing.Size(12, 13);
             this.label_Y.TabIndex = 4;
             this.label_Y.Text = "y";
             // 
-            // label_CP_Busqueda
+            // label_DNI_Busqueda
             // 
-            this.label_CP_Busqueda.AutoSize = true;
-            this.label_CP_Busqueda.Location = new System.Drawing.Point(376, 74);
-            this.label_CP_Busqueda.Name = "label_CP_Busqueda";
-            this.label_CP_Busqueda.Size = new System.Drawing.Size(21, 13);
-            this.label_CP_Busqueda.TabIndex = 2;
-            this.label_CP_Busqueda.Text = "CP";
+            this.label_DNI_Busqueda.AutoSize = true;
+            this.label_DNI_Busqueda.Location = new System.Drawing.Point(245, 25);
+            this.label_DNI_Busqueda.Name = "label_DNI_Busqueda";
+            this.label_DNI_Busqueda.Size = new System.Drawing.Size(24, 13);
+            this.label_DNI_Busqueda.TabIndex = 2;
+            this.label_DNI_Busqueda.Text = "NIF";
             // 
             // textBox_Loc1_BA
             // 
-            this.textBox_Loc1_BA.Location = new System.Drawing.Point(198, 90);
+            this.textBox_Loc1_BA.Location = new System.Drawing.Point(248, 88);
             this.textBox_Loc1_BA.Name = "textBox_Loc1_BA";
-            this.textBox_Loc1_BA.Size = new System.Drawing.Size(147, 20);
+            this.textBox_Loc1_BA.Size = new System.Drawing.Size(88, 20);
             this.textBox_Loc1_BA.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 25);
+            this.label1.Location = new System.Drawing.Point(130, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Provincia";
             // 
-            // textBox_CP_Busqueda
+            // textBox_DNI_Busqueda
             // 
-            this.textBox_CP_Busqueda.Location = new System.Drawing.Point(379, 90);
-            this.textBox_CP_Busqueda.Name = "textBox_CP_Busqueda";
-            this.textBox_CP_Busqueda.Size = new System.Drawing.Size(152, 20);
-            this.textBox_CP_Busqueda.TabIndex = 3;
+            this.textBox_DNI_Busqueda.Location = new System.Drawing.Point(248, 41);
+            this.textBox_DNI_Busqueda.Name = "textBox_DNI_Busqueda";
+            this.textBox_DNI_Busqueda.Size = new System.Drawing.Size(88, 20);
+            this.textBox_DNI_Busqueda.TabIndex = 3;
             // 
             // label_CP_BA
             // 
             this.label_CP_BA.AutoSize = true;
-            this.label_CP_BA.Location = new System.Drawing.Point(376, 25);
+            this.label_CP_BA.Location = new System.Drawing.Point(15, 73);
             this.label_CP_BA.Name = "label_CP_BA";
             this.label_CP_BA.Size = new System.Drawing.Size(29, 13);
             this.label_CP_BA.TabIndex = 11;
@@ -640,9 +700,9 @@
             this.groupBox4.Controls.Add(this.radioButton_Divo_EC);
             this.groupBox4.Controls.Add(this.radioButton_Viud_EC);
             this.groupBox4.Controls.Add(this.radioButton_Cas_EC);
-            this.groupBox4.Location = new System.Drawing.Point(557, 33);
+            this.groupBox4.Location = new System.Drawing.Point(548, 89);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(110, 119);
+            this.groupBox4.Size = new System.Drawing.Size(188, 67);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estado Civil";
@@ -650,7 +710,7 @@
             // radioButton_Sol_EC
             // 
             this.radioButton_Sol_EC.AutoSize = true;
-            this.radioButton_Sol_EC.Location = new System.Drawing.Point(17, 20);
+            this.radioButton_Sol_EC.Location = new System.Drawing.Point(6, 19);
             this.radioButton_Sol_EC.Name = "radioButton_Sol_EC";
             this.radioButton_Sol_EC.Size = new System.Drawing.Size(69, 17);
             this.radioButton_Sol_EC.TabIndex = 7;
@@ -661,7 +721,7 @@
             // radioButton_Divo_EC
             // 
             this.radioButton_Divo_EC.AutoSize = true;
-            this.radioButton_Divo_EC.Location = new System.Drawing.Point(17, 89);
+            this.radioButton_Divo_EC.Location = new System.Drawing.Point(81, 42);
             this.radioButton_Divo_EC.Name = "radioButton_Divo_EC";
             this.radioButton_Divo_EC.Size = new System.Drawing.Size(87, 17);
             this.radioButton_Divo_EC.TabIndex = 6;
@@ -672,7 +732,7 @@
             // radioButton_Viud_EC
             // 
             this.radioButton_Viud_EC.AutoSize = true;
-            this.radioButton_Viud_EC.Location = new System.Drawing.Point(17, 66);
+            this.radioButton_Viud_EC.Location = new System.Drawing.Point(81, 19);
             this.radioButton_Viud_EC.Name = "radioButton_Viud_EC";
             this.radioButton_Viud_EC.Size = new System.Drawing.Size(63, 17);
             this.radioButton_Viud_EC.TabIndex = 5;
@@ -683,7 +743,7 @@
             // radioButton_Cas_EC
             // 
             this.radioButton_Cas_EC.AutoSize = true;
-            this.radioButton_Cas_EC.Location = new System.Drawing.Point(17, 43);
+            this.radioButton_Cas_EC.Location = new System.Drawing.Point(6, 42);
             this.radioButton_Cas_EC.Name = "radioButton_Cas_EC";
             this.radioButton_Cas_EC.Size = new System.Drawing.Size(72, 17);
             this.radioButton_Cas_EC.TabIndex = 4;
@@ -697,7 +757,7 @@
             this.groupBox_Sexo_Busqueda.Controls.Add(this.radioButton_Mujer_Sexo);
             this.groupBox_Sexo_Busqueda.Location = new System.Drawing.Point(18, 118);
             this.groupBox_Sexo_Busqueda.Name = "groupBox_Sexo_Busqueda";
-            this.groupBox_Sexo_Busqueda.Size = new System.Drawing.Size(162, 47);
+            this.groupBox_Sexo_Busqueda.Size = new System.Drawing.Size(130, 47);
             this.groupBox_Sexo_Busqueda.TabIndex = 6;
             this.groupBox_Sexo_Busqueda.TabStop = false;
             this.groupBox_Sexo_Busqueda.Text = "Sexo";
@@ -705,7 +765,7 @@
             // radioButton_Hombre_Sexo
             // 
             this.radioButton_Hombre_Sexo.AutoSize = true;
-            this.radioButton_Hombre_Sexo.Location = new System.Drawing.Point(83, 17);
+            this.radioButton_Hombre_Sexo.Location = new System.Drawing.Point(63, 19);
             this.radioButton_Hombre_Sexo.Name = "radioButton_Hombre_Sexo";
             this.radioButton_Hombre_Sexo.Size = new System.Drawing.Size(62, 17);
             this.radioButton_Hombre_Sexo.TabIndex = 3;
@@ -716,7 +776,7 @@
             // radioButton_Mujer_Sexo
             // 
             this.radioButton_Mujer_Sexo.AutoSize = true;
-            this.radioButton_Mujer_Sexo.Location = new System.Drawing.Point(16, 17);
+            this.radioButton_Mujer_Sexo.Location = new System.Drawing.Point(6, 19);
             this.radioButton_Mujer_Sexo.Name = "radioButton_Mujer_Sexo";
             this.radioButton_Mujer_Sexo.Size = new System.Drawing.Size(51, 17);
             this.radioButton_Mujer_Sexo.TabIndex = 2;
@@ -726,15 +786,15 @@
             // 
             // textBox_Apellidos_Busqueda
             // 
-            this.textBox_Apellidos_Busqueda.Location = new System.Drawing.Point(18, 90);
+            this.textBox_Apellidos_Busqueda.Location = new System.Drawing.Point(133, 42);
             this.textBox_Apellidos_Busqueda.Name = "textBox_Apellidos_Busqueda";
-            this.textBox_Apellidos_Busqueda.Size = new System.Drawing.Size(162, 20);
+            this.textBox_Apellidos_Busqueda.Size = new System.Drawing.Size(106, 20);
             this.textBox_Apellidos_Busqueda.TabIndex = 5;
             // 
             // label_Apellidos_Busqueda
             // 
             this.label_Apellidos_Busqueda.AutoSize = true;
-            this.label_Apellidos_Busqueda.Location = new System.Drawing.Point(15, 73);
+            this.label_Apellidos_Busqueda.Location = new System.Drawing.Point(130, 25);
             this.label_Apellidos_Busqueda.Name = "label_Apellidos_Busqueda";
             this.label_Apellidos_Busqueda.Size = new System.Drawing.Size(49, 13);
             this.label_Apellidos_Busqueda.TabIndex = 4;
@@ -744,7 +804,7 @@
             // 
             this.textBox_Nombre_Busqueda.Location = new System.Drawing.Point(18, 41);
             this.textBox_Nombre_Busqueda.Name = "textBox_Nombre_Busqueda";
-            this.textBox_Nombre_Busqueda.Size = new System.Drawing.Size(162, 20);
+            this.textBox_Nombre_Busqueda.Size = new System.Drawing.Size(107, 20);
             this.textBox_Nombre_Busqueda.TabIndex = 3;
             // 
             // label_Nombre_Busqueda
@@ -859,6 +919,80 @@
             this.Admin_Foto_Perfil.TabIndex = 0;
             this.Admin_Foto_Perfil.Text = "Perfil";
             this.Admin_Foto_Perfil.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_UsPs
+            // 
+            this.groupBox_UsPs.Controls.Add(this.label_ID);
+            this.groupBox_UsPs.Controls.Add(this.textBox_pass2);
+            this.groupBox_UsPs.Controls.Add(this.textBox_pass1);
+            this.groupBox_UsPs.Controls.Add(this.label_pass2);
+            this.groupBox_UsPs.Controls.Add(this.label_pass1);
+            this.groupBox_UsPs.Controls.Add(this.textBox_NombreUsuario);
+            this.groupBox_UsPs.Controls.Add(this.label_NombreUsuario);
+            this.groupBox_UsPs.Location = new System.Drawing.Point(595, 337);
+            this.groupBox_UsPs.Name = "groupBox_UsPs";
+            this.groupBox_UsPs.Size = new System.Drawing.Size(264, 196);
+            this.groupBox_UsPs.TabIndex = 59;
+            this.groupBox_UsPs.TabStop = false;
+            this.groupBox_UsPs.Text = "Datos de Usuario";
+            // 
+            // label_ID
+            // 
+            this.label_ID.AutoSize = true;
+            this.label_ID.Location = new System.Drawing.Point(167, 16);
+            this.label_ID.Name = "label_ID";
+            this.label_ID.Size = new System.Drawing.Size(75, 13);
+            this.label_ID.TabIndex = 31;
+            this.label_ID.Text = "id_del_usuario";
+            this.label_ID.Visible = false;
+            // 
+            // textBox_pass2
+            // 
+            this.textBox_pass2.Location = new System.Drawing.Point(26, 150);
+            this.textBox_pass2.Name = "textBox_pass2";
+            this.textBox_pass2.Size = new System.Drawing.Size(218, 20);
+            this.textBox_pass2.TabIndex = 30;
+            // 
+            // textBox_pass1
+            // 
+            this.textBox_pass1.Location = new System.Drawing.Point(26, 101);
+            this.textBox_pass1.Name = "textBox_pass1";
+            this.textBox_pass1.Size = new System.Drawing.Size(218, 20);
+            this.textBox_pass1.TabIndex = 29;
+            // 
+            // label_pass2
+            // 
+            this.label_pass2.AutoSize = true;
+            this.label_pass2.Location = new System.Drawing.Point(23, 134);
+            this.label_pass2.Name = "label_pass2";
+            this.label_pass2.Size = new System.Drawing.Size(95, 13);
+            this.label_pass2.TabIndex = 28;
+            this.label_pass2.Text = "Repita Contraseña";
+            // 
+            // label_pass1
+            // 
+            this.label_pass1.AutoSize = true;
+            this.label_pass1.Location = new System.Drawing.Point(23, 84);
+            this.label_pass1.Name = "label_pass1";
+            this.label_pass1.Size = new System.Drawing.Size(61, 13);
+            this.label_pass1.TabIndex = 27;
+            this.label_pass1.Text = "Contraseña";
+            // 
+            // textBox_NombreUsuario
+            // 
+            this.textBox_NombreUsuario.Location = new System.Drawing.Point(26, 51);
+            this.textBox_NombreUsuario.Name = "textBox_NombreUsuario";
+            this.textBox_NombreUsuario.Size = new System.Drawing.Size(218, 20);
+            this.textBox_NombreUsuario.TabIndex = 26;
+            // 
+            // label_NombreUsuario
+            // 
+            this.label_NombreUsuario.AutoSize = true;
+            this.label_NombreUsuario.Location = new System.Drawing.Point(23, 35);
+            this.label_NombreUsuario.Name = "label_NombreUsuario";
+            this.label_NombreUsuario.Size = new System.Drawing.Size(98, 13);
+            this.label_NombreUsuario.TabIndex = 0;
+            this.label_NombreUsuario.Text = "Nombre de Usuario";
             // 
             // Admin_Perfil_boton_Foto
             // 
@@ -1684,112 +1818,6 @@
             // 
             this.errorProviderFNAC.ContainerControl = this;
             // 
-            // groupBox_UsPs
-            // 
-            this.groupBox_UsPs.Controls.Add(this.label_ID);
-            this.groupBox_UsPs.Controls.Add(this.textBox_pass2);
-            this.groupBox_UsPs.Controls.Add(this.textBox_pass1);
-            this.groupBox_UsPs.Controls.Add(this.label_pass2);
-            this.groupBox_UsPs.Controls.Add(this.label_pass1);
-            this.groupBox_UsPs.Controls.Add(this.textBox_NombreUsuario);
-            this.groupBox_UsPs.Controls.Add(this.label_NombreUsuario);
-            this.groupBox_UsPs.Location = new System.Drawing.Point(595, 337);
-            this.groupBox_UsPs.Name = "groupBox_UsPs";
-            this.groupBox_UsPs.Size = new System.Drawing.Size(264, 196);
-            this.groupBox_UsPs.TabIndex = 59;
-            this.groupBox_UsPs.TabStop = false;
-            this.groupBox_UsPs.Text = "Datos de Usuario";
-            // 
-            // label_NombreUsuario
-            // 
-            this.label_NombreUsuario.AutoSize = true;
-            this.label_NombreUsuario.Location = new System.Drawing.Point(23, 35);
-            this.label_NombreUsuario.Name = "label_NombreUsuario";
-            this.label_NombreUsuario.Size = new System.Drawing.Size(98, 13);
-            this.label_NombreUsuario.TabIndex = 0;
-            this.label_NombreUsuario.Text = "Nombre de Usuario";
-            // 
-            // textBox_NombreUsuario
-            // 
-            this.textBox_NombreUsuario.Location = new System.Drawing.Point(26, 51);
-            this.textBox_NombreUsuario.Name = "textBox_NombreUsuario";
-            this.textBox_NombreUsuario.Size = new System.Drawing.Size(218, 20);
-            this.textBox_NombreUsuario.TabIndex = 26;
-            // 
-            // label_pass1
-            // 
-            this.label_pass1.AutoSize = true;
-            this.label_pass1.Location = new System.Drawing.Point(23, 84);
-            this.label_pass1.Name = "label_pass1";
-            this.label_pass1.Size = new System.Drawing.Size(61, 13);
-            this.label_pass1.TabIndex = 27;
-            this.label_pass1.Text = "Contraseña";
-            // 
-            // label_pass2
-            // 
-            this.label_pass2.AutoSize = true;
-            this.label_pass2.Location = new System.Drawing.Point(23, 134);
-            this.label_pass2.Name = "label_pass2";
-            this.label_pass2.Size = new System.Drawing.Size(95, 13);
-            this.label_pass2.TabIndex = 28;
-            this.label_pass2.Text = "Repita Contraseña";
-            // 
-            // textBox_pass1
-            // 
-            this.textBox_pass1.Location = new System.Drawing.Point(26, 101);
-            this.textBox_pass1.Name = "textBox_pass1";
-            this.textBox_pass1.Size = new System.Drawing.Size(218, 20);
-            this.textBox_pass1.TabIndex = 29;
-            // 
-            // textBox_pass2
-            // 
-            this.textBox_pass2.Location = new System.Drawing.Point(26, 150);
-            this.textBox_pass2.Name = "textBox_pass2";
-            this.textBox_pass2.Size = new System.Drawing.Size(218, 20);
-            this.textBox_pass2.TabIndex = 30;
-            // 
-            // label_ID
-            // 
-            this.label_ID.AutoSize = true;
-            this.label_ID.Location = new System.Drawing.Point(167, 16);
-            this.label_ID.Name = "label_ID";
-            this.label_ID.Size = new System.Drawing.Size(75, 13);
-            this.label_ID.TabIndex = 31;
-            this.label_ID.Text = "id_del_usuario";
-            this.label_ID.Visible = false;
-            // 
-            // label_Nick_B
-            // 
-            this.label_Nick_B.AutoSize = true;
-            this.label_Nick_B.Location = new System.Drawing.Point(691, 25);
-            this.label_Nick_B.Name = "label_Nick_B";
-            this.label_Nick_B.Size = new System.Drawing.Size(98, 13);
-            this.label_Nick_B.TabIndex = 64;
-            this.label_Nick_B.Text = "Nombre de Usuario";
-            // 
-            // textBox_Nick_busqueda
-            // 
-            this.textBox_Nick_busqueda.Location = new System.Drawing.Point(694, 43);
-            this.textBox_Nick_busqueda.Name = "textBox_Nick_busqueda";
-            this.textBox_Nick_busqueda.Size = new System.Drawing.Size(134, 20);
-            this.textBox_Nick_busqueda.TabIndex = 65;
-            // 
-            // label_ID_bus
-            // 
-            this.label_ID_bus.AutoSize = true;
-            this.label_ID_bus.Location = new System.Drawing.Point(691, 73);
-            this.label_ID_bus.Name = "label_ID_bus";
-            this.label_ID_bus.Size = new System.Drawing.Size(74, 13);
-            this.label_ID_bus.TabIndex = 66;
-            this.label_ID_bus.Text = "ID del Usuario";
-            // 
-            // textBox_ID_busqueda
-            // 
-            this.textBox_ID_busqueda.Location = new System.Drawing.Point(694, 90);
-            this.textBox_ID_busqueda.Name = "textBox_ID_busqueda";
-            this.textBox_ID_busqueda.Size = new System.Drawing.Size(134, 20);
-            this.textBox_ID_busqueda.TabIndex = 67;
-            // 
             // errorProviderPassInv
             // 
             this.errorProviderPassInv.ContainerControl = this;
@@ -1801,6 +1829,129 @@
             // errorProviderNick
             // 
             this.errorProviderNick.ContainerControl = this;
+            // 
+            // groupBox_Edad_busqueda
+            // 
+            this.groupBox_Edad_busqueda.Controls.Add(this.radioButton_edad_no);
+            this.groupBox_Edad_busqueda.Controls.Add(this.radioButton_edad_si);
+            this.groupBox_Edad_busqueda.Controls.Add(this.label_Edad_Ba);
+            this.groupBox_Edad_busqueda.Controls.Add(this.label_Y);
+            this.groupBox_Edad_busqueda.Controls.Add(this.numericUpDown_Fec2);
+            this.groupBox_Edad_busqueda.Controls.Add(this.numericUpDown_Fec1);
+            this.groupBox_Edad_busqueda.Location = new System.Drawing.Point(154, 122);
+            this.groupBox_Edad_busqueda.Name = "groupBox_Edad_busqueda";
+            this.groupBox_Edad_busqueda.Size = new System.Drawing.Size(276, 43);
+            this.groupBox_Edad_busqueda.TabIndex = 69;
+            this.groupBox_Edad_busqueda.TabStop = false;
+            this.groupBox_Edad_busqueda.Text = "¿Buscar por Edad?";
+            // 
+            // radioButton_edad_si
+            // 
+            this.radioButton_edad_si.AutoSize = true;
+            this.radioButton_edad_si.Location = new System.Drawing.Point(22, 20);
+            this.radioButton_edad_si.Name = "radioButton_edad_si";
+            this.radioButton_edad_si.Size = new System.Drawing.Size(34, 17);
+            this.radioButton_edad_si.TabIndex = 5;
+            this.radioButton_edad_si.Text = "Si";
+            this.radioButton_edad_si.UseVisualStyleBackColor = true;
+            this.radioButton_edad_si.CheckedChanged += new System.EventHandler(this.radioButton_edad_si_CheckedChanged);
+            // 
+            // radioButton_edad_no
+            // 
+            this.radioButton_edad_no.AutoSize = true;
+            this.radioButton_edad_no.Checked = true;
+            this.radioButton_edad_no.Location = new System.Drawing.Point(62, 20);
+            this.radioButton_edad_no.Name = "radioButton_edad_no";
+            this.radioButton_edad_no.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_edad_no.TabIndex = 6;
+            this.radioButton_edad_no.TabStop = true;
+            this.radioButton_edad_no.Text = "No";
+            this.radioButton_edad_no.UseVisualStyleBackColor = true;
+            this.radioButton_edad_no.CheckedChanged += new System.EventHandler(this.radioButton_edad_no_CheckedChanged);
+            // 
+            // label_CP_busqueda
+            // 
+            this.label_CP_busqueda.AutoSize = true;
+            this.label_CP_busqueda.Location = new System.Drawing.Point(444, 122);
+            this.label_CP_busqueda.Name = "label_CP_busqueda";
+            this.label_CP_busqueda.Size = new System.Drawing.Size(21, 13);
+            this.label_CP_busqueda.TabIndex = 70;
+            this.label_CP_busqueda.Text = "CP";
+            // 
+            // textBox_CP_busqueda
+            // 
+            this.textBox_CP_busqueda.Location = new System.Drawing.Point(447, 138);
+            this.textBox_CP_busqueda.Name = "textBox_CP_busqueda";
+            this.textBox_CP_busqueda.Size = new System.Drawing.Size(88, 20);
+            this.textBox_CP_busqueda.TabIndex = 71;
+            // 
+            // label_tele_busqueda
+            // 
+            this.label_tele_busqueda.AutoSize = true;
+            this.label_tele_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tele_busqueda.Location = new System.Drawing.Point(545, 25);
+            this.label_tele_busqueda.Name = "label_tele_busqueda";
+            this.label_tele_busqueda.Size = new System.Drawing.Size(49, 13);
+            this.label_tele_busqueda.TabIndex = 73;
+            this.label_tele_busqueda.Text = "Teléfono";
+            // 
+            // label_movil_busqueda
+            // 
+            this.label_movil_busqueda.AutoSize = true;
+            this.label_movil_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_movil_busqueda.Location = new System.Drawing.Point(645, 25);
+            this.label_movil_busqueda.Name = "label_movil_busqueda";
+            this.label_movil_busqueda.Size = new System.Drawing.Size(32, 13);
+            this.label_movil_busqueda.TabIndex = 72;
+            this.label_movil_busqueda.Text = "Móvil";
+            // 
+            // textBox_tele_busqueda
+            // 
+            this.textBox_tele_busqueda.Location = new System.Drawing.Point(548, 41);
+            this.textBox_tele_busqueda.Name = "textBox_tele_busqueda";
+            this.textBox_tele_busqueda.Size = new System.Drawing.Size(94, 20);
+            this.textBox_tele_busqueda.TabIndex = 74;
+            // 
+            // textBox_movil_busqueda
+            // 
+            this.textBox_movil_busqueda.Location = new System.Drawing.Point(648, 41);
+            this.textBox_movil_busqueda.Name = "textBox_movil_busqueda";
+            this.textBox_movil_busqueda.Size = new System.Drawing.Size(88, 20);
+            this.textBox_movil_busqueda.TabIndex = 75;
+            this.textBox_movil_busqueda.TextChanged += new System.EventHandler(this.textBox_movil_busqueda_TextChanged);
+            // 
+            // label_mail_busqueda
+            // 
+            this.label_mail_busqueda.AutoSize = true;
+            this.label_mail_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_mail_busqueda.Location = new System.Drawing.Point(344, 25);
+            this.label_mail_busqueda.Name = "label_mail_busqueda";
+            this.label_mail_busqueda.Size = new System.Drawing.Size(94, 13);
+            this.label_mail_busqueda.TabIndex = 76;
+            this.label_mail_busqueda.Text = "Correo Eléctronico";
+            // 
+            // textBox_mail_busqueda
+            // 
+            this.textBox_mail_busqueda.Location = new System.Drawing.Point(347, 41);
+            this.textBox_mail_busqueda.Name = "textBox_mail_busqueda";
+            this.textBox_mail_busqueda.Size = new System.Drawing.Size(188, 20);
+            this.textBox_mail_busqueda.TabIndex = 77;
+            // 
+            // label_domicilio_busqueda
+            // 
+            this.label_domicilio_busqueda.AutoSize = true;
+            this.label_domicilio_busqueda.Location = new System.Drawing.Point(344, 73);
+            this.label_domicilio_busqueda.Name = "label_domicilio_busqueda";
+            this.label_domicilio_busqueda.Size = new System.Drawing.Size(49, 13);
+            this.label_domicilio_busqueda.TabIndex = 78;
+            this.label_domicilio_busqueda.Text = "Domicilio";
+            // 
+            // textBox_domicilio_busqueda
+            // 
+            this.textBox_domicilio_busqueda.Location = new System.Drawing.Point(347, 89);
+            this.textBox_domicilio_busqueda.Name = "textBox_domicilio_busqueda";
+            this.textBox_domicilio_busqueda.Size = new System.Drawing.Size(188, 20);
+            this.textBox_domicilio_busqueda.TabIndex = 79;
             // 
             // Admins
             // 
@@ -1820,6 +1971,8 @@
             this.groupBox_Sexo_Busqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resultados_Busqueda)).EndInit();
             this.Admin_Foto_Perfil.ResumeLayout(false);
+            this.groupBox_UsPs.ResumeLayout(false);
+            this.groupBox_UsPs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_Foto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1844,11 +1997,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFNAC)).EndInit();
-            this.groupBox_UsPs.ResumeLayout(false);
-            this.groupBox_UsPs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassInv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassDif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNick)).EndInit();
+            this.groupBox_Edad_busqueda.ResumeLayout(false);
+            this.groupBox_Edad_busqueda.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1906,9 +2059,9 @@
         private System.Windows.Forms.RadioButton radioButton_Divo_EC;
         private System.Windows.Forms.RadioButton radioButton_Viud_EC;
         private System.Windows.Forms.RadioButton radioButton_Cas_EC;
-        private System.Windows.Forms.TextBox textBox_CP_Busqueda;
+        private System.Windows.Forms.TextBox textBox_DNI_Busqueda;
         private System.Windows.Forms.TextBox textBox_Apellidos_Busqueda;
-        private System.Windows.Forms.Label label_CP_Busqueda;
+        private System.Windows.Forms.Label label_DNI_Busqueda;
         private System.Windows.Forms.Label label_Apellidos_Busqueda;
         private System.Windows.Forms.TextBox textBox_Nombre_Busqueda;
         private System.Windows.Forms.Label label_Nombre_Busqueda;
@@ -1925,7 +2078,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.ComboBox comboBox_Provincia;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_provincia_busqueda;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
@@ -1969,6 +2122,20 @@
         private System.Windows.Forms.ErrorProvider errorProviderPassInv;
         private System.Windows.Forms.ErrorProvider errorProviderPassDif;
         private System.Windows.Forms.ErrorProvider errorProviderNick;
+        private System.Windows.Forms.Button boton_limpia_busqueda;
+        private System.Windows.Forms.GroupBox groupBox_Edad_busqueda;
+        private System.Windows.Forms.RadioButton radioButton_edad_no;
+        private System.Windows.Forms.RadioButton radioButton_edad_si;
+        private System.Windows.Forms.TextBox textBox_CP_busqueda;
+        private System.Windows.Forms.Label label_CP_busqueda;
+        private System.Windows.Forms.Label label_tele_busqueda;
+        private System.Windows.Forms.Label label_movil_busqueda;
+        private System.Windows.Forms.TextBox textBox_tele_busqueda;
+        private System.Windows.Forms.TextBox textBox_movil_busqueda;
+        private System.Windows.Forms.Label label_mail_busqueda;
+        private System.Windows.Forms.TextBox textBox_mail_busqueda;
+        private System.Windows.Forms.TextBox textBox_domicilio_busqueda;
+        private System.Windows.Forms.Label label_domicilio_busqueda;
 
     }
 }
