@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Events4ALL.CAD;
+using System.Data;
+using System.Collections;
 
 namespace Events4ALL.EN
 {
@@ -12,6 +15,8 @@ namespace Events4ALL.EN
         private int idPromocion;
         private string nombre;
         private int descuento;
+        PromocionCAD proCAD;
+        CondicionCAD conCAD;
         #endregion
 
         #region gets/sets
@@ -37,6 +42,8 @@ namespace Events4ALL.EN
         #region constructor vacio
         public PromocionEN()
         {
+            proCAD = new PromocionCAD();
+            conCAD = new CondicionCAD();
         }
         #endregion
 
@@ -48,5 +55,19 @@ namespace Events4ALL.EN
             descuento = des;
         }
         #endregion
+
+        public DataSet ObtenerTodas()
+        {
+            DataSet dsPromo;
+            dsPromo = conCAD.ObtenerTodas();
+            return dsPromo;
+        }
+
+        public ArrayList ObtenerEspectaculos()
+        {
+            ArrayList promos;
+            promos = proCAD.ObtenerEspectaculos();
+            return promos;
+        }
     }
 }

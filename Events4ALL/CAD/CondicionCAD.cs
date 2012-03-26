@@ -17,23 +17,13 @@ namespace Events4ALL.CAD
     
     class CondicionCAD
     {
-        private static readonly CondicionCAD instancia = new CondicionCAD();
-        public static CondicionCAD Instancia
-        {
-            get { return instancia; }
-        }
+        BD bd = new BD();
 
         public DataSet ObtenerTodas()
         {
             DataSet bdvirtual = new DataSet();
             try
             {
-                /*c.Open();
-                SqlCommand com = new SqlCommand("select * from Condicion", c);
-                SqlDataReader dr = com.ExecuteReader();
-                CondicionEN condicion=new CondicionEN();*/
-
-                BD bd = new BD();
                 SqlConnection con = bd.Connect();
                 
                 SqlDataAdapter da = new SqlDataAdapter("select * from Condicion", con);
@@ -65,11 +55,11 @@ namespace Events4ALL.CAD
             }
             catch (Exception ex)
             {
-                MessageBox.Show("PENE"+ex.Message);
+               MessageBox.Show("PENE"+ex.Message);
             }
             finally
             {
-                //c.Close();
+               // c.Close();
             }
 
             return bdvirtual;

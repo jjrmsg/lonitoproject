@@ -15,6 +15,7 @@ namespace Events4ALL.EN
             private string descripcion;
             private int aforo;
             private int estadoSala;
+            private int[][] secciones;
         #endregion
 
         #region set y get
@@ -22,6 +23,11 @@ namespace Events4ALL.EN
             {
                 get { return numSala; }
                 set { numSala = value; }
+            }
+            public int[][] Secciones
+            {
+                get { return secciones; }
+                set { secciones = value; }
             }
             public int EstadoSala
             {
@@ -51,7 +57,7 @@ namespace Events4ALL.EN
         #endregion
 
         #region constructor
-            public SalasEN(int numSala_c,string tipoSala_c,int numSecciones_c,string descripcion_c,int aforo_c)
+            public SalasEN(int numSala_c,string tipoSala_c,int numSecciones_c,string descripcion_c,int aforo_c,int[][] secciones_c)
             {
                 numSala = numSala_c;
                 tipoSala = tipoSala_c;
@@ -59,6 +65,7 @@ namespace Events4ALL.EN
                 descripcion = descripcion_c;
                 aforo = aforo_c;
                 estadoSala = 1; //1 quiere decir que la sala esta dada de alta/disponible
+                secciones = secciones_c;
             }
         #endregion
     }

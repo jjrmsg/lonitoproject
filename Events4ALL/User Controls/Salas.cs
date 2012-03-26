@@ -171,6 +171,19 @@ namespace Events4ALL
 
         private void buttonAñadirSala_Click(object sender, EventArgs e)
         {
+            #region Hacer Array de Secciones
+            int intSeccion=Convert.ToInt16(comboNumSeccion.Text);
+            int [][] secciones;
+            secciones= new int[intSeccion][];
+            if (labelSeccion1.Visible == true)
+            {
+                secciones[0] = new int[3];
+                secciones[0][0] = 1;
+                secciones[0][1]=Convert.ToInt16(labelFila1.Text);
+                secciones[0][2] = Convert.ToInt16(labelColumna1.Text);
+            }
+            
+            #endregion
             bool validado;
             //ocualtar todos los error provider
             errorProvider1.Clear();
@@ -180,11 +193,13 @@ namespace Events4ALL
             if (validado == true)
             {
                 //formamos el SalasEN con su constructor sobrecargado
-                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,aforo());
+                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,aforo(),secciones);
                 /////no tendria que llamar al CAD desde aqui pero bueno para probar se hace
                 //labAforo.Text = salaEn.Aforo.ToString();
                 SalasCAD insertar = new SalasCAD();
-                insertar.InsertarSala(salaEn);
+                textDescripcion.Text = secciones[0][0].ToString() + secciones[0][1].ToString() + secciones[0][2].ToString() + "\n" + secciones[1][0].ToString() + secciones[1][1].ToString() + secciones[1][2].ToString();
+               // textDescripcion.Text = salaEn.Secciones[1][1].ToString();
+             //   insertar.InsertarSala(salaEn);
             }
         }
 
