@@ -182,7 +182,69 @@ namespace Events4ALL
                 secciones[0][1]=Convert.ToInt16(labelFila1.Text);
                 secciones[0][2] = Convert.ToInt16(labelColumna1.Text);
             }
-            
+            if (labelSeccion2.Visible == true)
+            {
+                secciones[1] = new int[3];
+                secciones[1][0] = 2;
+                secciones[1][1] = Convert.ToInt16(labelFila2.Text);
+                secciones[1][2] = Convert.ToInt16(labelColumna2.Text);
+            }
+            if (labelSeccion3.Visible == true)
+            {
+                secciones[2] = new int[3];
+                secciones[2][0] = 3;
+                secciones[2][1] = Convert.ToInt16(labelFila3.Text);
+                secciones[2][2] = Convert.ToInt16(labelColumna3.Text);
+            }
+            if (labelSeccion4.Visible == true)
+            {
+                secciones[3] = new int[3];
+                secciones[3][0] = 4;
+                secciones[3][1] = Convert.ToInt16(labelFila4.Text);
+                secciones[3][2] = Convert.ToInt16(labelColumna4.Text);
+            }
+            if (labelSeccion5.Visible == true)
+            {
+                secciones[4] = new int[3];
+                secciones[4][0] = 5;
+                secciones[4][1] = Convert.ToInt16(labelFila5.Text);
+                secciones[4][2] = Convert.ToInt16(labelColumna5.Text);
+            }
+            if (labelSeccion6.Visible == true)
+            {
+                secciones[5] = new int[3];
+                secciones[5][0] = 6;
+                secciones[5][1] = Convert.ToInt16(labelFila6.Text);
+                secciones[5][2] = Convert.ToInt16(labelColumna6.Text);
+            }
+            if (labelSeccion7.Visible == true)
+            {
+                secciones[6] = new int[3];
+                secciones[6][0] = 7;
+                secciones[6][1] = Convert.ToInt16(labelFila7.Text);
+                secciones[6][2] = Convert.ToInt16(labelColumna7.Text);
+            }
+            if (labelSeccion8.Visible == true)
+            {
+                secciones[7] = new int[3];
+                secciones[7][0] = 8;
+                secciones[7][1] = Convert.ToInt16(labelFila8.Text);
+                secciones[7][2] = Convert.ToInt16(labelColumna8.Text);
+            }
+            if (labelSeccion9.Visible == true)
+            {
+                secciones[8] = new int[3];
+                secciones[8][0] = 9;
+                secciones[8][1] = Convert.ToInt16(labelFila9.Text);
+                secciones[8][2] = Convert.ToInt16(labelColumna9.Text);
+            }
+            if (labelSeccion10.Visible == true)
+            {
+                secciones[9] = new int[3];
+                secciones[9][0] = 10;
+                secciones[9][1] = Convert.ToInt16(labelFila10.Text);
+                secciones[9][2] = Convert.ToInt16(labelColumna10.Text);
+            }
             #endregion
             bool validado;
             //ocualtar todos los error provider
@@ -192,12 +254,8 @@ namespace Events4ALL
             validado=validar();
             if (validado == true)
             {
-                //formamos el SalasEN con su constructor sobrecargado
-                SalasEN salaEn=new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,aforo(),secciones);
-                /////no tendria que llamar al CAD desde aqui pero bueno para probar se hace
-                //labAforo.Text = salaEn.Aforo.ToString();
-                SalasCAD insertar = new SalasCAD();
-                textDescripcion.Text = secciones[0][0].ToString() + secciones[0][1].ToString() + secciones[0][2].ToString() + "\n" + secciones[1][0].ToString() + secciones[1][1].ToString() + secciones[1][2].ToString();
+                //labAforo.Text = salaEn.Aforo(secciones).ToString();
+               // SalasCAD insertar = new SalasCAD();
                // textDescripcion.Text = salaEn.Secciones[1][1].ToString();
              //   insertar.InsertarSala(salaEn);
             }
