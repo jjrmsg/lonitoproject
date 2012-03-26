@@ -256,7 +256,14 @@ namespace Events4ALL
             {
                 int capacidad=aforo(secciones,intSeccion);
                 SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,capacidad,secciones);
-                salaEn.InsertarEn();
+                if (salaEn.InsertarEn() == true)
+                {
+                    MessageBox.Show("Sala crada correctamente");
+                    limpiar();
+                    textIdSala.Text = salaEn.acutalizarId().ToString();
+                }
+               // else
+               //     MessageBox.Show();
             }
         }
 
@@ -300,13 +307,13 @@ namespace Events4ALL
             return total;
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
+        private void limpiar()
         {
             ControlCollection a = textIdSala.Parent.Controls;
             foreach (System.Windows.Forms.Control ctrl in a)
             {
-               //MessageBox.Show(ctrl.ToString());
-                if ((ctrl is TextBox || ctrl is ComboBox) && ctrl.Name!="textIdSala")
+                //MessageBox.Show(ctrl.ToString());
+                if ((ctrl is TextBox || ctrl is ComboBox) && ctrl.Name != "textIdSala")
                     ctrl.Text = "";
                 else
                 {
@@ -324,6 +331,11 @@ namespace Events4ALL
             errorProvider1.Clear();
             errorProvider2.Clear();
             groupBoxSecciones.Visible = false;
+        }
+
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
 
         private void buttonLimpiarBusquedaSala_Click(object sender, EventArgs e)

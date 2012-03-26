@@ -68,18 +68,18 @@ namespace Events4ALL.CAD
                 
                 SqlCommand com = new SqlCommand(cadena+cadena2, c);
                 com.ExecuteNonQuery();
-/*
+
                 int [][]vector=sala.Secciones;
-                
-                foreach(int[] i in vector)
+                string entrada = "";
+                foreach (int[] i in vector)
                 {
                     int seccion = i[0];
                     int fila = i[1];
-                    int col=i[2];
-                    string entrada="insert into Seccion (NumSala,NumSeccion,NumFilas,NumColumnas) values ("+sala.NumSala.ToString()+","+seccion+","+fila+","+col+")";
-                    SqlCommand com2 = new SqlCommand(entrada,c);
-                }*/
-
+                    int col = i[2];
+                    entrada = "insert into Seccion (NumSala,NumSeccion,NumFilas,NumColumnas) values (" + sala.NumSala.ToString() + "," + seccion + "," + fila + "," + col + ")";
+                    SqlCommand com2 = new SqlCommand(entrada, c);
+                    com2.ExecuteNonQuery();
+                }
 
                 insertado = true;
                 return insertado;

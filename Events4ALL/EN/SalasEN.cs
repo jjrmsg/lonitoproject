@@ -72,10 +72,13 @@ namespace Events4ALL.EN
                 secciones = secciones_c;
             }
 
-            public void InsertarEn()
+            public bool InsertarEn()
             {
                 SalasCAD sala = new SalasCAD();
-                sala.InsertarSala(this);   
+                if (sala.InsertarSala(this) == true)
+                    return true;
+                else
+                    return false;
             }
             public int acutalizarId()
             {
