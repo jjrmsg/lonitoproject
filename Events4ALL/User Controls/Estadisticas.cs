@@ -111,9 +111,9 @@ namespace Events4ALL
 
                 if (anyo == textAnyo.Text && mes == numerosMeses[comboMes.SelectedItem.ToString()].ToString())
                 {
-                    MessageBox.Show("Hola");
                     decimal precio = 0;
-                    precio = espEN.getPrecioId(id);
+                    espEN.idEspectaculo = id;
+                    precio = espEN.getPrecioId();
                     
                     if (diasVentas.ContainsKey(dia))
                     {

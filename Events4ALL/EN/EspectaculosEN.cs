@@ -10,6 +10,7 @@ namespace Events4ALL.EN
     {
         #region members
         private EspectaculosCAD espCAD;
+        public int idEspectaculo { get; set; }
         #endregion
 
         public EspectaculosEN()
@@ -17,9 +18,9 @@ namespace Events4ALL.EN
             espCAD = new EspectaculosCAD();
         }
 
-        public decimal getPrecioId(int id)
+        public decimal getPrecioId()
         {
-            return espCAD.getPrecioId(id);
+            return espCAD.getPrecioId(idEspectaculo);
         }
     }
 }
