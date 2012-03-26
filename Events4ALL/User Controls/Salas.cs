@@ -17,8 +17,8 @@ namespace Events4ALL
         public Salas()
         {
             InitializeComponent();
-            SalasCAD cadIdSala = new SalasCAD();
-            textIdSala.Text = cadIdSala.SacarIdSala().ToString();
+            SalasEN salaEn=new SalasEN();
+            textIdSala.Text = salaEn.acutalizarId().ToString();
             //Aqui hacer una consulta con un count salas y añadir +1
             //Ese valor se le asignara a textIdSala
         }
@@ -179,71 +179,71 @@ namespace Events4ALL
             {
                 secciones[0] = new int[3];
                 secciones[0][0] = 1;
-                secciones[0][1]=Convert.ToInt16(labelFila1.Text);
-                secciones[0][2] = Convert.ToInt16(labelColumna1.Text);
+                secciones[0][1]=Convert.ToInt16(textFila1.Text);
+                secciones[0][2] = Convert.ToInt16(textColumna1.Text);
             }
             if (labelSeccion2.Visible == true)
             {
                 secciones[1] = new int[3];
                 secciones[1][0] = 2;
-                secciones[1][1] = Convert.ToInt16(labelFila2.Text);
-                secciones[1][2] = Convert.ToInt16(labelColumna2.Text);
+                secciones[1][1] = Convert.ToInt16(textFila2.Text);
+                secciones[1][2] = Convert.ToInt16(textColumna2.Text);
             }
             if (labelSeccion3.Visible == true)
             {
                 secciones[2] = new int[3];
                 secciones[2][0] = 3;
-                secciones[2][1] = Convert.ToInt16(labelFila3.Text);
-                secciones[2][2] = Convert.ToInt16(labelColumna3.Text);
+                secciones[2][1] = Convert.ToInt16(textFila3.Text);
+                secciones[2][2] = Convert.ToInt16(textColumna3.Text);
             }
             if (labelSeccion4.Visible == true)
             {
                 secciones[3] = new int[3];
                 secciones[3][0] = 4;
-                secciones[3][1] = Convert.ToInt16(labelFila4.Text);
-                secciones[3][2] = Convert.ToInt16(labelColumna4.Text);
+                secciones[3][1] = Convert.ToInt16(textFila4.Text);
+                secciones[3][2] = Convert.ToInt16(textColumna4.Text);
             }
             if (labelSeccion5.Visible == true)
             {
                 secciones[4] = new int[3];
                 secciones[4][0] = 5;
-                secciones[4][1] = Convert.ToInt16(labelFila5.Text);
-                secciones[4][2] = Convert.ToInt16(labelColumna5.Text);
+                secciones[4][1] = Convert.ToInt16(textFila5.Text);
+                secciones[4][2] = Convert.ToInt16(textColumna5.Text);
             }
             if (labelSeccion6.Visible == true)
             {
                 secciones[5] = new int[3];
                 secciones[5][0] = 6;
-                secciones[5][1] = Convert.ToInt16(labelFila6.Text);
-                secciones[5][2] = Convert.ToInt16(labelColumna6.Text);
+                secciones[5][1] = Convert.ToInt16(textFila6.Text);
+                secciones[5][2] = Convert.ToInt16(textColumna6.Text);
             }
             if (labelSeccion7.Visible == true)
             {
                 secciones[6] = new int[3];
                 secciones[6][0] = 7;
-                secciones[6][1] = Convert.ToInt16(labelFila7.Text);
-                secciones[6][2] = Convert.ToInt16(labelColumna7.Text);
+                secciones[6][1] = Convert.ToInt16(textFila7.Text);
+                secciones[6][2] = Convert.ToInt16(textColumna7.Text);
             }
             if (labelSeccion8.Visible == true)
             {
                 secciones[7] = new int[3];
                 secciones[7][0] = 8;
-                secciones[7][1] = Convert.ToInt16(labelFila8.Text);
-                secciones[7][2] = Convert.ToInt16(labelColumna8.Text);
+                secciones[7][1] = Convert.ToInt16(textFila8.Text);
+                secciones[7][2] = Convert.ToInt16(textColumna8.Text);
             }
             if (labelSeccion9.Visible == true)
             {
                 secciones[8] = new int[3];
                 secciones[8][0] = 9;
-                secciones[8][1] = Convert.ToInt16(labelFila9.Text);
-                secciones[8][2] = Convert.ToInt16(labelColumna9.Text);
+                secciones[8][1] = Convert.ToInt16(textFila9.Text);
+                secciones[8][2] = Convert.ToInt16(textColumna9.Text);
             }
             if (labelSeccion10.Visible == true)
             {
                 secciones[9] = new int[3];
                 secciones[9][0] = 10;
-                secciones[9][1] = Convert.ToInt16(labelFila10.Text);
-                secciones[9][2] = Convert.ToInt16(labelColumna10.Text);
+                secciones[9][1] = Convert.ToInt16(textFila10.Text);
+                secciones[9][2] = Convert.ToInt16(textColumna10.Text);
             }
             #endregion
             bool validado;
@@ -254,10 +254,9 @@ namespace Events4ALL
             validado=validar();
             if (validado == true)
             {
-                //labAforo.Text = salaEn.Aforo(secciones).ToString();
-               // SalasCAD insertar = new SalasCAD();
-               // textDescripcion.Text = salaEn.Secciones[1][1].ToString();
-             //   insertar.InsertarSala(salaEn);
+                int capacidad=aforo(secciones,intSeccion);
+                SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,capacidad,secciones);
+                salaEn.InsertarEn();
             }
         }
 
@@ -290,35 +289,14 @@ namespace Events4ALL
             return validado;
         }
 
-        private int aforo()
+        private int aforo(int [][] seccion,int max)
         {
             int total = 0;
-            int cont = 0;
-            int fila=0,col=0;
-
-            ControlCollection a = textFila1.Parent.Controls;
-            foreach (System.Windows.Forms.Control ctrl in a)
+            for (int i = 0; i < max; i++)
             {
-                if(cont>=2)
-                {
-                    cont = 0;
-                }
-                else
-                {
-                    if (ctrl is TextBox && ctrl.Visible == true)
-                    {
-                        cont++;
-                        if (cont == 1)//fila
-                            fila = Convert.ToInt16(ctrl.Text);
-                        else
-                        {
-                            col = Convert.ToInt16(ctrl.Text);
-                            total = total + (fila * col);
-                        }
-                    }
-                }
+                int parcial=seccion[i][1]*seccion[i][2];
+                total = total + parcial;
             }
-
             return total;
         }
 

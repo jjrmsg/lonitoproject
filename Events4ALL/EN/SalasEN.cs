@@ -56,7 +56,11 @@ namespace Events4ALL.EN
             }
         #endregion
 
-        #region constructor
+            public SalasEN()
+            {
+                
+            }
+
             public SalasEN(int numSala_c,string tipoSala_c,int numSecciones_c,string descripcion_c,int aforo_c,int[][] secciones_c)
             {
                 numSala = numSala_c;
@@ -67,6 +71,19 @@ namespace Events4ALL.EN
                 estadoSala = 1; //1 quiere decir que la sala esta dada de alta/disponible
                 secciones = secciones_c;
             }
-        #endregion
+
+            public void InsertarEn()
+            {
+                SalasCAD sala = new SalasCAD();
+                sala.InsertarSala(this);   
+            }
+            public int acutalizarId()
+            {
+                int id = 0;
+                SalasCAD sala = new SalasCAD();
+                id=sala.SacarIdSala();
+
+                return id;
+            }
     }
 }
