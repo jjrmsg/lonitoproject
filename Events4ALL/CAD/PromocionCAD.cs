@@ -15,12 +15,6 @@ namespace Events4ALL.CAD
 {
     class PromocionCAD
     {
-
-        private static readonly PromocionCAD instancia = new PromocionCAD();
-        public static PromocionCAD Instancia
-        {
-            get { return instancia; }
-        }
         public struct Lista
         {
             public int id;
@@ -34,20 +28,30 @@ namespace Events4ALL.CAD
 
             BD bd = new BD();
             SqlConnection c = bd.Connect();
-            c.Open();
-            SqlCommand cmd = new SqlCommand("select * from Espectaculo", c);
-            SqlDataReader dr = cmd.ExecuteReader();
-            
-            while (dr.Read())
+
+            try
             {
-                l.id = Convert.ToInt32(dr["IDEspectaculo"]);
-                l.titulo = dr["Titulo"].ToString();
-                espec.Add(l);
+
+                c.Open();
+                SqlCommand cmd = new SqlCommand("select * from Espectaculo", c);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    l.id = Convert.ToInt32(dr["IDEspectaculo"]);
+                    l.titulo = dr["Titulo"].ToString();
+                    espec.Add(l);
+                }
+
+                dr.Close();
             }
-
-            dr.Close();
-            c.Close();
-
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
             return espec;
         }
     }

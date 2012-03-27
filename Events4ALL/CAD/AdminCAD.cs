@@ -11,13 +11,10 @@ namespace Events4ALL.CAD
     class AdminCAD
     {
         public AdminCAD()
-        {
-            bd = new BD();   
+        {   
         }
 
         #region Variables
-
-        public BD bd;
 
         #endregion
 
@@ -64,6 +61,7 @@ namespace Events4ALL.CAD
         public bool InsertarAdmin(AdminEN nuevo)
         {
             bool error = false;
+            BD bd = new BD();
             SqlConnection c = bd.Connect();
 
             c.Open();

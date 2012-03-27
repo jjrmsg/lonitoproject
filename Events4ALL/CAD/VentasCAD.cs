@@ -12,16 +12,15 @@ namespace Events4ALL.CAD
     public class VentasCAD
     {
         #region members
-        public BD bd;
         #endregion
 
         public VentasCAD()
         {
-            bd = new BD();
         }
 
         public DataSet getAllEspectaculos()
         {
+            BD bd = new BD();
             DataSet datosVentas = new DataSet();
             SqlConnection c = bd.Connect();
 

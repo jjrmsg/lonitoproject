@@ -10,16 +10,15 @@ namespace Events4ALL.CAD
     public class EspectaculosCAD
     {
         #region members
-        BD bd;
         #endregion
 
         public EspectaculosCAD()
         {
-            bd = new BD();
         }
 
         public decimal getPrecioId(int id)
         {
+            BD bd = new BD();
             decimal precio = 0;
 
             SqlConnection c = bd.Connect();

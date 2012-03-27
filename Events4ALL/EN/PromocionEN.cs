@@ -65,7 +65,7 @@ namespace Events4ALL.EN
 
         public ArrayList ObtenerEspectaculos()
         {
-            ArrayList promos;
+            ArrayList promos = new ArrayList();
             promos = proCAD.ObtenerEspectaculos();
             return promos;
         }

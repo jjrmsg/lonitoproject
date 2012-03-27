@@ -17,10 +17,10 @@ namespace Events4ALL.CAD
     
     class CondicionCAD
     {
-        BD bd = new BD();
 
         public DataSet ObtenerTodas()
         {
+            BD bd = new BD();
             DataSet bdvirtual = new DataSet();
             try
             {
