@@ -138,7 +138,39 @@ namespace Events4ALL
 
         private void Promociones_Load(object sender, EventArgs e)
         {
+            #region cargar datagridview
+            DataSet promos;
+           // promos = proEN.ObtenerTodas();
+           // dataGridView_MC_ListaPromosCond.DataSource = promos;
+            /* dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
+             dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[2].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[3].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[4].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[5].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[6].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[7].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[8].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[9].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[10].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[11].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[12].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[13].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[14].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[15].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
+             dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
+             dataGridView_MC_ListaPromosCond.ReadOnly = true;*/
+            #endregion
+            
+            #region cargar combobox
             ArrayList todosEsp = proEN.ObtenerEspectaculos();
+            
+            foreach (PromocionCAD.Lista obj in todosEsp)
+            {
+                comboBox_PE_espectaculo.Items.Add(obj.titulo.ToString());
+            }
+            #endregion
         }
 
         private void button_PE_Guardar_Click(object sender, EventArgs e)
