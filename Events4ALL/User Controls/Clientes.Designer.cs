@@ -36,6 +36,7 @@
             this.buttonFotoCliente = new System.Windows.Forms.Button();
             this.cliente_Perfil_Foto = new System.Windows.Forms.PictureBox();
             this.comboBoxProvinciaCli = new System.Windows.Forms.GroupBox();
+            this.textBoxNifC = new System.Windows.Forms.TextBox();
             this.comboBoxProvCli = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupContactoCliente = new System.Windows.Forms.GroupBox();
@@ -46,8 +47,8 @@
             this.textBoxMovilCli = new System.Windows.Forms.TextBox();
             this.textBoxEmailCli = new System.Windows.Forms.TextBox();
             this.groupBoxSexo = new System.Windows.Forms.GroupBox();
-            this.Admin_Perfil_rButom_H = new System.Windows.Forms.RadioButton();
-            this.Admin_Perfil_rButom_M = new System.Windows.Forms.RadioButton();
+            this.rButom_H_Cliente = new System.Windows.Forms.RadioButton();
+            this.rButom_M_Cliente = new System.Windows.Forms.RadioButton();
             this.comboBoxDomiciCli = new System.Windows.Forms.ComboBox();
             this.textBoxDomiciCli = new System.Windows.Forms.TextBox();
             this.labelDomiciCli = new System.Windows.Forms.Label();
@@ -93,7 +94,6 @@
             this.textboxNombreBusquedaCli = new System.Windows.Forms.TextBox();
             this.labelNombreBusquedaCli = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBoxNifC = new System.Windows.Forms.TextBox();
             this.FormCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -151,6 +151,7 @@
             this.buttonLimpiarCliente.Text = "Limpiar";
             this.buttonLimpiarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiarCliente.UseVisualStyleBackColor = true;
+            this.buttonLimpiarCliente.Click += new System.EventHandler(this.buttonLimpiarCliente_Click);
             // 
             // buttonGuardarCliente
             // 
@@ -224,6 +225,13 @@
             this.comboBoxProvinciaCli.TabStop = false;
             this.comboBoxProvinciaCli.Text = "Datos Personales";
             this.comboBoxProvinciaCli.Enter += new System.EventHandler(this.datosPersonalesClientes_Enter);
+            // 
+            // textBoxNifC
+            // 
+            this.textBoxNifC.Location = new System.Drawing.Point(35, 113);
+            this.textBoxNifC.Name = "textBoxNifC";
+            this.textBoxNifC.Size = new System.Drawing.Size(75, 20);
+            this.textBoxNifC.TabIndex = 82;
             // 
             // comboBoxProvCli
             // 
@@ -365,8 +373,8 @@
             // 
             // groupBoxSexo
             // 
-            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_H);
-            this.groupBoxSexo.Controls.Add(this.Admin_Perfil_rButom_M);
+            this.groupBoxSexo.Controls.Add(this.rButom_H_Cliente);
+            this.groupBoxSexo.Controls.Add(this.rButom_M_Cliente);
             this.groupBoxSexo.Location = new System.Drawing.Point(303, 284);
             this.groupBoxSexo.Name = "groupBoxSexo";
             this.groupBoxSexo.Size = new System.Drawing.Size(207, 83);
@@ -374,29 +382,29 @@
             this.groupBoxSexo.TabStop = false;
             this.groupBoxSexo.Text = "Sexo";
             // 
-            // Admin_Perfil_rButom_H
+            // rButom_H_Cliente
             // 
-            this.Admin_Perfil_rButom_H.AutoSize = true;
-            this.Admin_Perfil_rButom_H.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_rButom_H.Location = new System.Drawing.Point(11, 19);
-            this.Admin_Perfil_rButom_H.Name = "Admin_Perfil_rButom_H";
-            this.Admin_Perfil_rButom_H.Size = new System.Drawing.Size(62, 17);
-            this.Admin_Perfil_rButom_H.TabIndex = 30;
-            this.Admin_Perfil_rButom_H.TabStop = true;
-            this.Admin_Perfil_rButom_H.Text = "Hombre";
-            this.Admin_Perfil_rButom_H.UseVisualStyleBackColor = true;
+            this.rButom_H_Cliente.AutoSize = true;
+            this.rButom_H_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButom_H_Cliente.Location = new System.Drawing.Point(11, 19);
+            this.rButom_H_Cliente.Name = "rButom_H_Cliente";
+            this.rButom_H_Cliente.Size = new System.Drawing.Size(62, 17);
+            this.rButom_H_Cliente.TabIndex = 30;
+            this.rButom_H_Cliente.TabStop = true;
+            this.rButom_H_Cliente.Text = "Hombre";
+            this.rButom_H_Cliente.UseVisualStyleBackColor = true;
             // 
-            // Admin_Perfil_rButom_M
+            // rButom_M_Cliente
             // 
-            this.Admin_Perfil_rButom_M.AutoSize = true;
-            this.Admin_Perfil_rButom_M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Admin_Perfil_rButom_M.Location = new System.Drawing.Point(11, 45);
-            this.Admin_Perfil_rButom_M.Name = "Admin_Perfil_rButom_M";
-            this.Admin_Perfil_rButom_M.Size = new System.Drawing.Size(51, 17);
-            this.Admin_Perfil_rButom_M.TabIndex = 31;
-            this.Admin_Perfil_rButom_M.TabStop = true;
-            this.Admin_Perfil_rButom_M.Text = "Mujer";
-            this.Admin_Perfil_rButom_M.UseVisualStyleBackColor = true;
+            this.rButom_M_Cliente.AutoSize = true;
+            this.rButom_M_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rButom_M_Cliente.Location = new System.Drawing.Point(11, 45);
+            this.rButom_M_Cliente.Name = "rButom_M_Cliente";
+            this.rButom_M_Cliente.Size = new System.Drawing.Size(51, 17);
+            this.rButom_M_Cliente.TabIndex = 31;
+            this.rButom_M_Cliente.TabStop = true;
+            this.rButom_M_Cliente.Text = "Mujer";
+            this.rButom_M_Cliente.UseVisualStyleBackColor = true;
             // 
             // comboBoxDomiciCli
             // 
@@ -1123,13 +1131,6 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // textBoxNifC
-            // 
-            this.textBoxNifC.Location = new System.Drawing.Point(35, 113);
-            this.textBoxNifC.Name = "textBoxNifC";
-            this.textBoxNifC.Size = new System.Drawing.Size(75, 20);
-            this.textBoxNifC.TabIndex = 82;
-            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1181,8 +1182,8 @@
         private System.Windows.Forms.TextBox textBoxDomiciCli;
         private System.Windows.Forms.Label labelDomiciCli;
         private System.Windows.Forms.GroupBox groupBoxSexo;
-        private System.Windows.Forms.RadioButton Admin_Perfil_rButom_H;
-        private System.Windows.Forms.RadioButton Admin_Perfil_rButom_M;
+        private System.Windows.Forms.RadioButton rButom_H_Cliente;
+        private System.Windows.Forms.RadioButton rButom_M_Cliente;
         private System.Windows.Forms.GroupBox groupContactoCliente;
         private System.Windows.Forms.Label telefonoCli;
         private System.Windows.Forms.Label MovilCli;

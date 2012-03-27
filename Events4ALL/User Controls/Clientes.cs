@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Events4ALL.Auxiliares;
+using Events4ALL.EN;
 
 namespace Events4ALL
 {
@@ -16,7 +17,7 @@ namespace Events4ALL
         private Validaciones validarCliente;
 
         string patronNombre = @"^[a-zA-Z]*\w*$";
-        string patronCP = @"^\d{5}$";
+        //string patronCP = @"^\d{5}$";
 
         public Clientes()
         {
@@ -111,12 +112,8 @@ namespace Events4ALL
 
         private bool CompruebaApellidos()
         {
-            if (!Regex.Match(textBoxApellidosC.Text, patronNombre).Success)
-            {
-                errorProvider1.SetError(labelApellidosCliente, "Apellidos incorrectos");
-                return false;
-            }
-            else if (textBoxApellidosC.Text.Length == 0)
+            
+            if (textBoxApellidosC.Text.Length == 0)
             {
                 errorProvider1.SetError(labelApellidosCliente, "Debe rellenar los apellidos");
                 return false;
@@ -266,9 +263,34 @@ namespace Events4ALL
             if(ValidaCampos())
             {
                 MessageBox.Show("Todo OK");
+                ClientesEN teta;
             }
 
         }
+
+        #endregion
+
+        private void buttonLimpiarCliente_Click(object sender, EventArgs e)
+        {
+            //Limpiamos los campos
+            textBoxNombreC.Text = "";
+            textBoxApellidosC.Text = "";
+            textBoxNifC.Text = "";
+            comboBoxPaisCli.Text = "";
+            comboBoxProvCli.Text = "";
+            textBoxLocaliCli.Text = "";
+            textBoxCPCli.Text = "";
+            textBoxDomiciCli.Text = "";
+            textBoxTelfCli.Text = "";
+            textBoxMovilCli.Text = "";
+            textBoxEmailCli.Text = "";
+            rButom_H_Cliente.Checked = false;
+            rButom_M_Cliente.Checked = false;
+        }
+
+        #region Limpiar
+
+
 
         #endregion
 
