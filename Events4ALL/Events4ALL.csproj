@@ -75,18 +75,12 @@
     <Compile Include="CAD\SalasCAD.cs" />
     <Compile Include="CAD\VentasCAD.cs" />
     <Compile Include="ComboFlags.cs" />
-    <Compile Include="EN\ClientesEN.cs" />
     <Compile Include="EN\CondicionEN.cs" />
     <Compile Include="EN\EspectaculosEN.cs" />
     <Compile Include="EN\PromocionEN.cs" />
     <Compile Include="EN\AdminEN.cs" />
     <Compile Include="EN\SalasEN.cs" />
     <Compile Include="EN\VentasEN.cs" />
-    <Compile Include="Events4AllDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\Admins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,18 +211,7 @@
     <EmbeddedResource Include="User Controls\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="Events4AllDBDataSet.xsc">
-      <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Events4AllDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Events4AllDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Events4AllDBDataSet.xss">
-      <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="App.config" />
     <None Include="fonts\AGENCYR.TTF" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -242,13 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imgs\add_save.png" />
-    <Content Include="Events4AllDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Events4AllDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Events4AllDB.mdf</DependentUpon>
-    </Content>
     <Content Include="imgs\admins.png" />
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />

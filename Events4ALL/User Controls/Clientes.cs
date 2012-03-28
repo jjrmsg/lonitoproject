@@ -263,7 +263,7 @@ namespace Events4ALL
             if(ValidaCampos())
             {
                 MessageBox.Show("Todo OK");
-                ClientesEN teta;
+                //ClientesEN teta;
             }
 
         }
