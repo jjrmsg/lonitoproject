@@ -15,44 +15,23 @@ namespace Events4ALL.CAD
 {
     class PromocionCAD
     {
-        public struct Lista
+        public DataSet ObtenerEspectaculos()
         {
-            public int id;
-            public string titulo;
-        }
-
-        public ArrayList ObtenerEspectaculos()
-        {
-            ArrayList espec = new ArrayList();
-            Lista l;
-
-            BD bd = new BD();
-            SqlConnection c = bd.Connect();
-
+            DataSet bdvirtual = new DataSet();
             try
             {
-
-                c.Open();
-                SqlCommand cmd = new SqlCommand("select * from Espectaculo", c);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    l.id = Convert.ToInt32(dr["IDEspectaculo"]);
-                    l.titulo = dr["Titulo"].ToString();
-                    espec.Add(l);
-                }
-
-                dr.Close();
+                BD bd = new BD();
+                SqlConnection c = bd.Connect();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo", c);
+                da.Fill(bdvirtual, "Espectaculo");
             }
             catch
             {
             }
             finally
             {
-                c.Close();
             }
-            return espec;
+            return bdvirtual;
         }
     }
 }

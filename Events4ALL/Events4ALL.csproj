@@ -81,6 +81,7 @@
     <Compile Include="EN\AdminEN.cs" />
     <Compile Include="EN\SalasEN.cs" />
     <Compile Include="EN\VentasEN.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Events4AllDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -216,7 +217,7 @@
     <EmbeddedResource Include="User Controls\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="app.config" />
     <None Include="Events4AllDBDataSet.xsc">
       <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
     </None>

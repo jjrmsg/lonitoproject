@@ -16,7 +16,6 @@ namespace Events4ALL.EN
         private string nombre;
         private int descuento;
         PromocionCAD proCAD;
-        CondicionCAD conCAD;
         #endregion
 
         #region gets/sets
@@ -39,11 +38,10 @@ namespace Events4ALL.EN
         }
         #endregion
 
-        #region constructor vacio
+        #region constructor por defecto
         public PromocionEN()
         {
             proCAD = new PromocionCAD();
-            conCAD = new CondicionCAD();
         }
         #endregion
 
@@ -56,18 +54,12 @@ namespace Events4ALL.EN
         }
         #endregion
 
-        public DataSet ObtenerTodas()
+        public DataSet ObtenerEspectaculos()
         {
-            DataSet dsPromo;
-            dsPromo = conCAD.ObtenerTodas();
-            return dsPromo;
-        }
 
-        public ArrayList ObtenerEspectaculos()
-        {
-            ArrayList promos = new ArrayList();
-            promos = proCAD.ObtenerEspectaculos();
-            return promos;
+            DataSet dsPromo;
+            dsPromo = proCAD.ObtenerEspectaculos();
+            return dsPromo;
         }
     }
 }

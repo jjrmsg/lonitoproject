@@ -22,16 +22,5 @@ namespace Events4ALL.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Events4AllDB.mdf;Integr" +
-            "ated Security=True;User Instance=True")]
-        public string Events4AllDBConnectionString {
-            get {
-                return ((string)(this["Events4AllDBConnectionString"]));
-            }
-        }
     }
 }

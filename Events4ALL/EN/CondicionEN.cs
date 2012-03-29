@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Events4ALL.CAD;
+using Events4ALL.Auxiliares;
+using System.Data.Common;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace Events4ALL.EN
 {
@@ -41,6 +47,7 @@ namespace Events4ALL.EN
         private int descuento3;
         private int tEvento3;
         private bool activado;
+        CondicionCAD conCAD;
         #endregion
 
         #region gets/sets
@@ -159,9 +166,10 @@ namespace Events4ALL.EN
         }
         #endregion
 
-        #region constructor vacio
+        #region constructor por defecto
         public CondicionEN()
         {
+            conCAD = new CondicionCAD();
         }
         #endregion
 
@@ -193,5 +201,18 @@ namespace Events4ALL.EN
             activado = act;
         }
         #endregion
+        
+        public DataSet ObtenerTodas()
+        {
+            /*DataTable dsPromo;
+            dsPromo = conCAD.ObtenerTodas();
+            return dsPromo;*/
+            return conCAD.ObtenerTodas();
+        }
+
+        public void Save()
+        {
+            conCAD.Save();
+        }
     }
 }

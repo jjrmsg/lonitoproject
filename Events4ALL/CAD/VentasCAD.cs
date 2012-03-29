@@ -27,7 +27,6 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                datosVentas = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter("select IDEspectaculo, FechaVenta from Ventas", c);
                 da.Fill(datosVentas);
             }
