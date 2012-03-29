@@ -56,10 +56,7 @@ namespace Events4ALL.EN
 
         public DataSet ObtenerEspectaculos()
         {
-
-            DataSet dsPromo;
-            dsPromo = proCAD.ObtenerEspectaculos();
-            return dsPromo;
+            return proCAD.ObtenerEspectaculos();
         }
     }
 }

@@ -143,50 +143,67 @@ namespace Events4ALL
         private void Promociones_Load(object sender, EventArgs e)
         {
             #region cargar datagridview
+            promos = new DataSet();
             promos = conEN.ObtenerTodas();
             tcon = new DataTable();
-            tcon = promos.Tables["Condicion"];
-            nuevafila = tcon.NewRow();
-            nuevafila[0] = 4;
-            nuevafila[1] = "CondicionNueva";
-            nuevafila[2] = 1;
-            nuevafila[3] = 1;
-            nuevafila[4] = 1;
-            nuevafila[5] = 1;
-            nuevafila[6] = 1;
-            nuevafila[7] = 1;
-            nuevafila[18] = false;
-            tcon.Rows.Add(nuevafila);
-            //conEN.Save();
-            dataGridView_MC_ListaPromosCond.DataSource = promos;
-            dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
-            dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[2].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[3].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[4].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[5].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[6].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[7].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[8].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[9].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[10].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[11].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[12].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[13].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[14].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[15].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
-            dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
-            dataGridView_MC_ListaPromosCond.ReadOnly = true;
+            try
+            {
+                tcon = promos.Tables["Condicion"];
+                nuevafila = tcon.NewRow();
+                nuevafila[0] = 4;
+                nuevafila[1] = "CondicionNueva";
+                nuevafila[2] = 1;
+                nuevafila[3] = 1;
+                nuevafila[4] = 1;
+                nuevafila[5] = 1;
+                nuevafila[6] = 1;
+                nuevafila[7] = 1;
+                nuevafila[18] = false;
+                tcon.Rows.Add(nuevafila);
+                //conEN.Save();
+                dataGridView_MC_ListaPromosCond.DataSource = promos;
+                dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
+                dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[2].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[3].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[4].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[5].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[6].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[7].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[8].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[9].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[10].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[11].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[12].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[13].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[14].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[15].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
+                dataGridView_MC_ListaPromosCond.ReadOnly = true;
+            }
+            catch
+            {
+                //MessageBox.Show("error");
+            }
             #endregion
             
             #region cargar combobox
+            espec = new DataSet();
             espec = proEN.ObtenerEspectaculos();
             DataTable t = new DataTable();
             t = espec.Tables["Espectaculo"];
-            foreach (DataRow obj in t.Rows)
+
+            try
             {
-                comboBox_PE_espectaculo.Items.Add(obj["Titulo"].ToString() );
+                foreach (DataRow obj in t.Rows)
+                {
+                    comboBox_PE_espectaculo.Items.Add(obj["Titulo"].ToString());
+                }
+            }
+            catch
+            {
+                //MessageBox.Show("error");
             }
             #endregion
         }

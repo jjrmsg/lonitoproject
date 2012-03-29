@@ -17,11 +17,11 @@ namespace Events4ALL.CAD
     {
         public DataSet ObtenerEspectaculos()
         {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
             DataSet bdvirtual = new DataSet();
             try
             {
-                BD bd = new BD();
-                SqlConnection c = bd.Connect();
                 SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo", c);
                 da.Fill(bdvirtual, "Espectaculo");
             }
@@ -30,6 +30,7 @@ namespace Events4ALL.CAD
             }
             finally
             {
+                c.Close();
             }
             return bdvirtual;
         }
