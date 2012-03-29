@@ -68,28 +68,7 @@ namespace Events4ALL
             }
         }
 
-        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode==Keys.Enter)
-            {
-                if (textBoxUser.Text != "" && textBoxPass.Text != "" && comboBox1.Text != "")
-                {
-                    user = textBoxUser.Text;
-                    pass = textBoxPass.Text;
-                    miIdioma();
-                    Recordar();
-                    System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
-                    t.Start();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Los campos usuario, password e idioma no pueden estar vacios");
-                }
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void RunApli()
         {
             if (textBoxUser.Text != "" && textBoxPass.Text != "" && comboBox1.Text != "")
             {
@@ -129,6 +108,27 @@ namespace Events4ALL
             {
                 MessageBox.Show("Los campos usuario, password e idioma no pueden estar vacios");
             }
+        }
+
+        private void textBoxPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                RunApli();
+            }
+        }
+
+        private void textBoxUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                RunApli();
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            RunApli();
         }
 
         private void Recordar()
@@ -176,5 +176,7 @@ namespace Events4ALL
                 reader.Close();
             }
         }
+
+
     }
 }

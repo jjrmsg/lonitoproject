@@ -55,6 +55,7 @@
             // 
             resources.ApplyResources(this.textBoxUser, "textBoxUser");
             this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUser_KeyDown);
             // 
             // textBoxPass
             // 
