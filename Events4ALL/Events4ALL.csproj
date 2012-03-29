@@ -81,7 +81,6 @@
     <Compile Include="EN\AdminEN.cs" />
     <Compile Include="EN\SalasEN.cs" />
     <Compile Include="EN\VentasEN.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="Events4AllDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
