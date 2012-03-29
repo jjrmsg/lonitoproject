@@ -8,10 +8,14 @@ namespace Events4ALL.EN
 {
     public class EspectaculosEN
     {
-        #region members
+        private string titulo;
+        private string descripcion;
+        private string fechIni;
+        private string fechFin;
+        private float precio;
+        private string genero;
         private EspectaculosCAD espCAD;
         public int idEspectaculo { get; set; }
-        #endregion
 
         public EspectaculosEN()
         {

@@ -3,6 +3,7 @@ using Events4ALL.CAD;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Events4ALL.EN
 {
@@ -87,6 +88,13 @@ namespace Events4ALL.EN
                 id=sala.SacarIdSala();
 
                 return id;
+            }
+
+            public DataSet SalasPorTipo(String tipo)
+            {
+                SalasCAD sala = new SalasCAD();
+                DataSet salasTipo = sala.SalasPorTipo(tipo);
+                return salasTipo;
             }
     }
 }

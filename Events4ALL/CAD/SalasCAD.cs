@@ -5,6 +5,7 @@ using Events4ALL.EN;
 using Events4ALL.Auxiliares;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Events4ALL.CAD
 {
@@ -93,6 +94,35 @@ namespace Events4ALL.CAD
                 c.Close();
             }
             return insertado;
+        }
+
+        public DataSet SalasPorTipo(String tipo)
+        {
+            SqlConnection conn = null; 
+            BD bd = new BD();
+
+            DataSet datosSalas = null;
+            String comando = "select * from Sala where tipo = '"+tipo+"'";    
+
+            try 
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando, conn);
+                datosSalas = new DataSet();
+                sqlAdaptador.Fill(datosSalas);
+                return datosSalas;
+            } 
+            catch (Exception ex) 
+            { 
+                // Captura la condición general y la reenvía. 
+                throw ex; 
+            } 
+            finally 
+            { 
+                if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
         }
     }
 

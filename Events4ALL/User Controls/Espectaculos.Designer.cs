@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Admin_Perfil_boton_Anadir = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btLimpiar = new System.Windows.Forms.Button();
+            this.btnGuardarEsp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Admin_Perfil_numericUpDown_Ano = new System.Windows.Forms.NumericUpDown();
+            this.numPrecio = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cbSala = new System.Windows.Forms.ComboBox();
+            this.dtFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.lbFechaFin = new System.Windows.Forms.Label();
+            this.lbDescripcion = new System.Windows.Forms.Label();
+            this.lbFechaIni = new System.Windows.Forms.Label();
+            this.dtFechaIni = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.tbTitulo = new System.Windows.Forms.TextBox();
+            this.lbFechas = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -71,15 +72,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.lbTipo = new System.Windows.Forms.Label();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
+            this.lbGenero = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,8 +104,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.Admin_Perfil_boton_Anadir);
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.btLimpiar);
+            this.tabPage1.Controls.Add(this.btnGuardarEsp);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -108,52 +115,58 @@
             this.tabPage1.Text = "Espectáculo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Admin_Perfil_boton_Anadir
+            // btLimpiar
             // 
-            this.Admin_Perfil_boton_Anadir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Admin_Perfil_boton_Anadir.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.Admin_Perfil_boton_Anadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Admin_Perfil_boton_Anadir.Location = new System.Drawing.Point(748, 577);
-            this.Admin_Perfil_boton_Anadir.Name = "Admin_Perfil_boton_Anadir";
-            this.Admin_Perfil_boton_Anadir.Size = new System.Drawing.Size(64, 23);
-            this.Admin_Perfil_boton_Anadir.TabIndex = 51;
-            this.Admin_Perfil_boton_Anadir.Text = "Limpiar";
-            this.Admin_Perfil_boton_Anadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Admin_Perfil_boton_Anadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Admin_Perfil_boton_Anadir.UseVisualStyleBackColor = true;
+            this.btLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.btLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLimpiar.Location = new System.Drawing.Point(748, 577);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(64, 23);
+            this.btLimpiar.TabIndex = 51;
+            this.btLimpiar.Text = "Limpiar";
+            this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpiar.UseVisualStyleBackColor = true;
+            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
-            // button2
+            // btnGuardarEsp
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Image = global::Events4ALL.Properties.Resources.add_save;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(818, 577);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Guardar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGuardarEsp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarEsp.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.btnGuardarEsp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarEsp.Location = new System.Drawing.Point(818, 577);
+            this.btnGuardarEsp.Name = "btnGuardarEsp";
+            this.btnGuardarEsp.Size = new System.Drawing.Size(69, 23);
+            this.btnGuardarEsp.TabIndex = 10;
+            this.btnGuardarEsp.Text = "Guardar";
+            this.btnGuardarEsp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarEsp.UseVisualStyleBackColor = true;
+            this.btnGuardarEsp.Click += new System.EventHandler(this.btnGuardarEsp_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.Admin_Perfil_numericUpDown_Ano);
+            this.groupBox2.Controls.Add(this.cbGenero);
+            this.groupBox2.Controls.Add(this.lbGenero);
+            this.groupBox2.Controls.Add(this.cbTipo);
+            this.groupBox2.Controls.Add(this.lbTipo);
+            this.groupBox2.Controls.Add(this.numPrecio);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.cbSala);
+            this.groupBox2.Controls.Add(this.dtFechaFin);
+            this.groupBox2.Controls.Add(this.lbFechaFin);
+            this.groupBox2.Controls.Add(this.lbDescripcion);
+            this.groupBox2.Controls.Add(this.lbFechaIni);
+            this.groupBox2.Controls.Add(this.dtFechaIni);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.tbDescripcion);
+            this.groupBox2.Controls.Add(this.tbTitulo);
+            this.groupBox2.Controls.Add(this.lbFechas);
+            this.groupBox2.Controls.Add(this.lbTitulo);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
@@ -163,22 +176,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del espectáculo";
             // 
-            // Admin_Perfil_numericUpDown_Ano
+            // numPrecio
             // 
-            this.Admin_Perfil_numericUpDown_Ano.Location = new System.Drawing.Point(96, 264);
-            this.Admin_Perfil_numericUpDown_Ano.Maximum = new decimal(new int[] {
+            this.numPrecio.Location = new System.Drawing.Point(93, 332);
+            this.numPrecio.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.Admin_Perfil_numericUpDown_Ano.Name = "Admin_Perfil_numericUpDown_Ano";
-            this.Admin_Perfil_numericUpDown_Ano.Size = new System.Drawing.Size(53, 20);
-            this.Admin_Perfil_numericUpDown_Ano.TabIndex = 29;
+            this.numPrecio.Name = "numPrecio";
+            this.numPrecio.Size = new System.Drawing.Size(53, 20);
+            this.numPrecio.TabIndex = 4;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 266);
+            this.label11.Location = new System.Drawing.Point(14, 334);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 16;
@@ -187,62 +200,64 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 230);
+            this.label10.Location = new System.Drawing.Point(13, 298);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 13);
             this.label10.TabIndex = 14;
             this.label10.Text = "Sala asignada";
             // 
-            // comboBox4
+            // cbSala
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(96, 227);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 13;
+            this.cbSala.Enabled = false;
+            this.cbSala.FormattingEnabled = true;
+            this.cbSala.Location = new System.Drawing.Point(93, 295);
+            this.cbSala.Name = "cbSala";
+            this.cbSala.Size = new System.Drawing.Size(121, 21);
+            this.cbSala.TabIndex = 3;
+            this.cbSala.Text = "Debe elegir un tipo";
             // 
-            // dateTimePicker3
+            // dtFechaFin
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(96, 360);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker3.TabIndex = 12;
+            this.dtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaFin.Location = new System.Drawing.Point(93, 428);
+            this.dtFechaFin.Name = "dtFechaFin";
+            this.dtFechaFin.Size = new System.Drawing.Size(93, 20);
+            this.dtFechaFin.TabIndex = 6;
             // 
-            // label9
+            // lbFechaFin
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(47, 364);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Fin";
+            this.lbFechaFin.AutoSize = true;
+            this.lbFechaFin.Location = new System.Drawing.Point(44, 432);
+            this.lbFechaFin.Name = "lbFechaFin";
+            this.lbFechaFin.Size = new System.Drawing.Size(21, 13);
+            this.lbFechaFin.TabIndex = 11;
+            this.lbFechaFin.Text = "Fin";
             // 
-            // label5
+            // lbDescripcion
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Descripción";
+            this.lbDescripcion.AutoSize = true;
+            this.lbDescripcion.Location = new System.Drawing.Point(16, 72);
+            this.lbDescripcion.Name = "lbDescripcion";
+            this.lbDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lbDescripcion.TabIndex = 6;
+            this.lbDescripcion.Text = "Descripción";
             // 
-            // label8
+            // lbFechaIni
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(47, 338);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Inicio";
+            this.lbFechaIni.AutoSize = true;
+            this.lbFechaIni.Location = new System.Drawing.Point(44, 406);
+            this.lbFechaIni.Name = "lbFechaIni";
+            this.lbFechaIni.Size = new System.Drawing.Size(32, 13);
+            this.lbFechaIni.TabIndex = 10;
+            this.lbFechaIni.Text = "Inicio";
             // 
-            // dateTimePicker2
+            // dtFechaIni
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(96, 334);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker2.TabIndex = 9;
+            this.dtFechaIni.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaIni.Location = new System.Drawing.Point(93, 402);
+            this.dtFechaIni.Name = "dtFechaIni";
+            this.dtFechaIni.Size = new System.Drawing.Size(93, 20);
+            this.dtFechaIni.TabIndex = 5;
             // 
             // button3
             // 
@@ -257,38 +272,38 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(19, 92);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(670, 109);
-            this.textBox2.TabIndex = 1;
+            this.tbDescripcion.Location = new System.Drawing.Point(19, 92);
+            this.tbDescripcion.Multiline = true;
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.Size = new System.Drawing.Size(670, 109);
+            this.tbDescripcion.TabIndex = 2;
             // 
-            // textBox5
+            // tbTitulo
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 34);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(409, 20);
-            this.textBox5.TabIndex = 4;
+            this.tbTitulo.Location = new System.Drawing.Point(56, 34);
+            this.tbTitulo.Name = "tbTitulo";
+            this.tbTitulo.Size = new System.Drawing.Size(409, 20);
+            this.tbTitulo.TabIndex = 1;
             // 
-            // label7
+            // lbFechas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 314);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Fechas:";
+            this.lbFechas.AutoSize = true;
+            this.lbFechas.Location = new System.Drawing.Point(14, 382);
+            this.lbFechas.Name = "lbFechas";
+            this.lbFechas.Size = new System.Drawing.Size(45, 13);
+            this.lbFechas.TabIndex = 8;
+            this.lbFechas.Text = "Fechas:";
             // 
-            // label4
+            // lbTitulo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Título";
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Location = new System.Drawing.Point(15, 37);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(35, 13);
+            this.lbTitulo.TabIndex = 5;
+            this.lbTitulo.Text = "Título";
             // 
             // label6
             // 
@@ -538,6 +553,62 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // errPrvEspectaculo
+            // 
+            this.errPrvEspectaculo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errPrvEspectaculo.ContainerControl = this;
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.DisplayMember = "1;2";
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Cine",
+            "Teatro",
+            "Concierto"});
+            this.cbTipo.Location = new System.Drawing.Point(19, 241);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(77, 21);
+            this.cbTipo.TabIndex = 18;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(16, 225);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(28, 13);
+            this.lbTipo.TabIndex = 17;
+            this.lbTipo.Text = "Tipo";
+            // 
+            // cbGenero
+            // 
+            this.cbGenero.DisplayMember = "1;2";
+            this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Items.AddRange(new object[] {
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Romántica",
+            "Terror"});
+            this.cbGenero.Location = new System.Drawing.Point(122, 241);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cbGenero.TabIndex = 20;
+            this.cbGenero.Visible = false;
+            // 
+            // lbGenero
+            // 
+            this.lbGenero.AutoSize = true;
+            this.lbGenero.Location = new System.Drawing.Point(119, 225);
+            this.lbGenero.Name = "lbGenero";
+            this.lbGenero.Size = new System.Drawing.Size(42, 13);
+            this.lbGenero.TabIndex = 19;
+            this.lbGenero.Text = "Genero";
+            this.lbGenero.Visible = false;
+            // 
             // Espectaculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,13 +620,14 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Admin_Perfil_numericUpDown_Ano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,21 +651,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbTitulo;
+        private System.Windows.Forms.Label lbFechas;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label lbDescripcion;
+        private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.Button btnGuardarEsp;
+        private System.Windows.Forms.DateTimePicker dtFechaFin;
+        private System.Windows.Forms.Label lbFechaFin;
+        private System.Windows.Forms.Label lbFechaIni;
+        private System.Windows.Forms.DateTimePicker dtFechaIni;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.NumericUpDown Admin_Perfil_numericUpDown_Ano;
+        private System.Windows.Forms.ComboBox cbSala;
+        private System.Windows.Forms.NumericUpDown numPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
@@ -602,8 +674,13 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button Admin_Perfil_boton_Anadir;
+        private System.Windows.Forms.Button btLimpiar;
         private System.Windows.Forms.Button button4;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox tbTitulo;
+        private System.Windows.Forms.ErrorProvider errPrvEspectaculo;
+        private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.Label lbTipo;
+        private System.Windows.Forms.ComboBox cbGenero;
+        private System.Windows.Forms.Label lbGenero;
     }
 }
