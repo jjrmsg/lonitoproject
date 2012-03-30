@@ -69,7 +69,7 @@ namespace Events4ALL.EN
                 numSecciones = numSecciones_c;
                 descripcion = descripcion_c;
                 aforo = aforo_c;
-                estadoSala = 1; //1 quiere decir que la sala esta dada de alta/disponible
+                estadoSala = 1; //1 quiere decir que la sala esta libre
                 secciones = secciones_c;
             }
 

@@ -142,6 +142,19 @@ namespace Events4ALL.CAD
                 aforoMin = aforo_min.ToString();
                 
             String comando = "select s.NumSala,s.tipo,s.Aforo,s.NumSeccion,e.Titulo from Sala s,Espectaculo e,ReservaSala r where r.IDEspectaculo=e.IDEspectaculo and r.IDSala=s.NumSala";
+            if(idSala!=0 || aforo_max!=0 || aforo_min!=0 || tipo!="" ||estado==1)
+            {
+                string comando2="";
+                if(idSala!=0)
+                    comando2 = " and s.Numsala="+idSala;
+                if (tipo != "")
+                    comando2 = comando2 + " and s.tipo='"+tipo+"'";
+                if(estado==1)//libre
+                    comando2 = comando2 + " and s.EstadoSala="+estado;
+                if (aforo_max != 0 || aforo_min != 0)
+                    comando2 = comando2 + " and s.Aforo BETWEEN "+aforo_min+" and "+aforo_max;
+                comando = comando + comando2;
+            }
 
             try
             {

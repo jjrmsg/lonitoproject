@@ -372,7 +372,18 @@ namespace Events4ALL
 
             SalasEN select = new SalasEN();
             DataSet resultado=select.SalaSelect(numSala,comboBuscarTipoSala.Text,aforoMin,aforoMax,estado);
-            dataGridBuscarSala.DataSource = resultado;
+
+            dataGridBuscarSala.Rows.Clear();
+            foreach (DataRow sala in resultado.Tables[0].Rows)
+            {
+                string[] row = { sala[0].ToString(), 
+                                 sala[1].ToString(),
+                                 sala[2].ToString(),
+                                 sala[3].ToString(),
+                                 sala[4].ToString()};
+                 dataGridBuscarSala.Rows.Add(row);
+            }
+         
         }
     }
 }
