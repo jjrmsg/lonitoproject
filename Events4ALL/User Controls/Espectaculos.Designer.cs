@@ -34,6 +34,10 @@
             this.btLimpiar = new System.Windows.Forms.Button();
             this.btnGuardarEsp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbGenero = new System.Windows.Forms.ComboBox();
+            this.lbGenero = new System.Windows.Forms.Label();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.lbTipo = new System.Windows.Forms.Label();
             this.numPrecio = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -43,19 +47,15 @@
             this.lbDescripcion = new System.Windows.Forms.Label();
             this.lbFechaIni = new System.Windows.Forms.Label();
             this.dtFechaIni = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btCartel = new System.Windows.Forms.Button();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.tbTitulo = new System.Windows.Forms.TextBox();
             this.lbFechas = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCartel = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridEspectaculos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -71,19 +71,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
             this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.cbGenero = new System.Windows.Forms.ComboBox();
-            this.lbGenero = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
@@ -123,7 +124,7 @@
             this.btLimpiar.Location = new System.Drawing.Point(748, 577);
             this.btLimpiar.Name = "btLimpiar";
             this.btLimpiar.Size = new System.Drawing.Size(64, 23);
-            this.btLimpiar.TabIndex = 51;
+            this.btLimpiar.TabIndex = 11;
             this.btLimpiar.Text = "Limpiar";
             this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,19 +163,70 @@
             this.groupBox2.Controls.Add(this.lbDescripcion);
             this.groupBox2.Controls.Add(this.lbFechaIni);
             this.groupBox2.Controls.Add(this.dtFechaIni);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btCartel);
             this.groupBox2.Controls.Add(this.tbDescripcion);
             this.groupBox2.Controls.Add(this.tbTitulo);
             this.groupBox2.Controls.Add(this.lbFechas);
             this.groupBox2.Controls.Add(this.lbTitulo);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.pbCartel);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(881, 565);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del espectáculo";
+            // 
+            // cbGenero
+            // 
+            this.cbGenero.DisplayMember = "1;2";
+            this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenero.FormattingEnabled = true;
+            this.cbGenero.Items.AddRange(new object[] {
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Romántica",
+            "Terror"});
+            this.cbGenero.Location = new System.Drawing.Point(122, 241);
+            this.cbGenero.Name = "cbGenero";
+            this.cbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cbGenero.TabIndex = 4;
+            this.cbGenero.Visible = false;
+            // 
+            // lbGenero
+            // 
+            this.lbGenero.AutoSize = true;
+            this.lbGenero.Location = new System.Drawing.Point(119, 225);
+            this.lbGenero.Name = "lbGenero";
+            this.lbGenero.Size = new System.Drawing.Size(42, 13);
+            this.lbGenero.TabIndex = 19;
+            this.lbGenero.Text = "Genero";
+            this.lbGenero.Visible = false;
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.DisplayMember = "1;2";
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "Cine",
+            "Teatro",
+            "Concierto"});
+            this.cbTipo.Location = new System.Drawing.Point(19, 241);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(77, 21);
+            this.cbTipo.TabIndex = 3;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(16, 225);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(28, 13);
+            this.lbTipo.TabIndex = 17;
+            this.lbTipo.Text = "Tipo";
             // 
             // numPrecio
             // 
@@ -186,7 +238,7 @@
             0});
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(53, 20);
-            this.numPrecio.TabIndex = 4;
+            this.numPrecio.TabIndex = 6;
             // 
             // label11
             // 
@@ -213,7 +265,7 @@
             this.cbSala.Location = new System.Drawing.Point(93, 295);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(121, 21);
-            this.cbSala.TabIndex = 3;
+            this.cbSala.TabIndex = 5;
             this.cbSala.Text = "Debe elegir un tipo";
             // 
             // dtFechaFin
@@ -222,7 +274,7 @@
             this.dtFechaFin.Location = new System.Drawing.Point(93, 428);
             this.dtFechaFin.Name = "dtFechaFin";
             this.dtFechaFin.Size = new System.Drawing.Size(93, 20);
-            this.dtFechaFin.TabIndex = 6;
+            this.dtFechaFin.TabIndex = 8;
             // 
             // lbFechaFin
             // 
@@ -257,20 +309,21 @@
             this.dtFechaIni.Location = new System.Drawing.Point(93, 402);
             this.dtFechaIni.Name = "dtFechaIni";
             this.dtFechaIni.Size = new System.Drawing.Size(93, 20);
-            this.dtFechaIni.TabIndex = 5;
+            this.dtFechaIni.TabIndex = 7;
             // 
-            // button3
+            // btCartel
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Image = global::Events4ALL.Properties.Resources.photo;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(742, 225);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Cambiar imágen";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btCartel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCartel.Image = global::Events4ALL.Properties.Resources.photo;
+            this.btCartel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCartel.Location = new System.Drawing.Point(742, 225);
+            this.btCartel.Name = "btCartel";
+            this.btCartel.Size = new System.Drawing.Size(109, 23);
+            this.btCartel.TabIndex = 9;
+            this.btCartel.Text = "Cambiar imágen";
+            this.btCartel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btCartel.UseVisualStyleBackColor = true;
+            this.btCartel.Click += new System.EventHandler(this.btCartel_Click);
             // 
             // tbDescripcion
             // 
@@ -315,21 +368,21 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Cartel";
             // 
-            // pictureBox1
+            // pbCartel
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.image_default;
-            this.pictureBox1.Location = new System.Drawing.Point(733, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 169);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbCartel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbCartel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCartel.Image = global::Events4ALL.Properties.Resources.image_default;
+            this.pbCartel.Location = new System.Drawing.Point(733, 50);
+            this.pbCartel.Name = "pbCartel";
+            this.pbCartel.Size = new System.Drawing.Size(132, 169);
+            this.pbCartel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbCartel.TabIndex = 0;
+            this.pbCartel.TabStop = false;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.dataGridEspectaculos);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -339,43 +392,24 @@
             this.tabPage2.Text = "Búsqueda";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridEspectaculos
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.dataGridEspectaculos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridEspectaculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridEspectaculos.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridEspectaculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEspectaculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column4,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(878, 432);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Título";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Sala asignada";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Precio";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Fecha";
-            this.Column3.Name = "Column3";
+            this.Column3,
+            this.Column5});
+            this.dataGridEspectaculos.Location = new System.Drawing.Point(6, 168);
+            this.dataGridEspectaculos.Name = "dataGridEspectaculos";
+            this.dataGridEspectaculos.Size = new System.Drawing.Size(878, 432);
+            this.dataGridEspectaculos.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -395,7 +429,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btBuscar);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(878, 146);
@@ -540,74 +574,54 @@
             this.textBox1.Size = new System.Drawing.Size(160, 20);
             this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // btBuscar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(808, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBuscar.Location = new System.Drawing.Point(808, 117);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(64, 23);
+            this.btBuscar.TabIndex = 0;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // errPrvEspectaculo
             // 
             this.errPrvEspectaculo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errPrvEspectaculo.ContainerControl = this;
             // 
-            // cbTipo
+            // Column1
             // 
-            this.cbTipo.DisplayMember = "1;2";
-            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Items.AddRange(new object[] {
-            "Cine",
-            "Teatro",
-            "Concierto"});
-            this.cbTipo.Location = new System.Drawing.Point(19, 241);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(77, 21);
-            this.cbTipo.TabIndex = 18;
-            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            this.Column1.FillWeight = 150F;
+            this.Column1.HeaderText = "Título";
+            this.Column1.Name = "Column1";
             // 
-            // lbTipo
+            // Column2
             // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(16, 225);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(28, 13);
-            this.lbTipo.TabIndex = 17;
-            this.lbTipo.Text = "Tipo";
+            this.Column2.FillWeight = 50F;
+            this.Column2.HeaderText = "Sala asignada";
+            this.Column2.Name = "Column2";
             // 
-            // cbGenero
+            // Column4
             // 
-            this.cbGenero.DisplayMember = "1;2";
-            this.cbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.Items.AddRange(new object[] {
-            "Acción",
-            "Aventura",
-            "Comedia",
-            "Romántica",
-            "Terror"});
-            this.cbGenero.Location = new System.Drawing.Point(122, 241);
-            this.cbGenero.Name = "cbGenero";
-            this.cbGenero.Size = new System.Drawing.Size(121, 21);
-            this.cbGenero.TabIndex = 20;
-            this.cbGenero.Visible = false;
+            this.Column4.FillWeight = 50F;
+            this.Column4.HeaderText = "Precio";
+            this.Column4.Name = "Column4";
             // 
-            // lbGenero
+            // Column3
             // 
-            this.lbGenero.AutoSize = true;
-            this.lbGenero.Location = new System.Drawing.Point(119, 225);
-            this.lbGenero.Name = "lbGenero";
-            this.lbGenero.Size = new System.Drawing.Size(42, 13);
-            this.lbGenero.TabIndex = 19;
-            this.lbGenero.Text = "Genero";
-            this.lbGenero.Visible = false;
+            this.Column3.FillWeight = 80F;
+            this.Column3.HeaderText = "Fecha Inicio";
+            this.Column3.Name = "Column3";
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 80F;
+            this.Column5.HeaderText = "Fecha Fin";
+            this.Column5.Name = "Column5";
             // 
             // Espectaculos
             // 
@@ -621,9 +635,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -637,19 +651,19 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridEspectaculos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCartel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Label lbFechas;
@@ -661,15 +675,11 @@
         private System.Windows.Forms.Label lbFechaFin;
         private System.Windows.Forms.Label lbFechaIni;
         private System.Windows.Forms.DateTimePicker dtFechaIni;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btCartel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbSala;
         private System.Windows.Forms.NumericUpDown numPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ComboBox comboBox5;
@@ -682,5 +692,10 @@
         private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.Label lbGenero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
