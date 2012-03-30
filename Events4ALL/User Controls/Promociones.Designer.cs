@@ -51,7 +51,7 @@
             this.radioButton_PE_5 = new System.Windows.Forms.RadioButton();
             this.groupBox_PE_DatosEspec = new System.Windows.Forms.GroupBox();
             this.label_PE_fechaFin = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_PE_TFechaFin = new System.Windows.Forms.Label();
             this.label_PE_SAsig = new System.Windows.Forms.Label();
             this.label_PE_TSAsig = new System.Windows.Forms.Label();
             this.label_PE_Precio = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.label_PE_fechaIni = new System.Windows.Forms.Label();
             this.label_PE_titulo = new System.Windows.Forms.Label();
             this.label_PE_TTitulo = new System.Windows.Forms.Label();
-            this.label_PE_TFecha = new System.Windows.Forms.Label();
+            this.label_PE_TFechaIni = new System.Windows.Forms.Label();
             this.label_PE_Espectaculo = new System.Windows.Forms.Label();
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
@@ -361,7 +361,7 @@
             this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fechaFin);
-            this.groupBox_PE_DatosEspec.Controls.Add(this.label2);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TFechaFin);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_SAsig);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TSAsig);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_Precio);
@@ -371,7 +371,7 @@
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fechaIni);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_titulo);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TTitulo);
-            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TFecha);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TFechaIni);
             this.groupBox_PE_DatosEspec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_PE_DatosEspec.Location = new System.Drawing.Point(9, 48);
             this.groupBox_PE_DatosEspec.Name = "groupBox_PE_DatosEspec";
@@ -390,15 +390,15 @@
             this.label_PE_fechaFin.TabIndex = 14;
             this.label_PE_fechaFin.Text = "Fecha de fin:";
             // 
-            // label2
+            // label_PE_TFechaFin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(130, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "21/12/2012";
+            this.label_PE_TFechaFin.AutoSize = true;
+            this.label_PE_TFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TFechaFin.Location = new System.Drawing.Point(130, 128);
+            this.label_PE_TFechaFin.Name = "label_PE_TFechaFin";
+            this.label_PE_TFechaFin.Size = new System.Drawing.Size(65, 13);
+            this.label_PE_TFechaFin.TabIndex = 15;
+            this.label_PE_TFechaFin.Text = "21/12/2012";
             // 
             // label_PE_SAsig
             // 
@@ -492,15 +492,15 @@
             this.label_PE_TTitulo.TabIndex = 6;
             this.label_PE_TTitulo.Text = "Akira";
             // 
-            // label_PE_TFecha
+            // label_PE_TFechaIni
             // 
-            this.label_PE_TFecha.AutoSize = true;
-            this.label_PE_TFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_TFecha.Location = new System.Drawing.Point(130, 70);
-            this.label_PE_TFecha.Name = "label_PE_TFecha";
-            this.label_PE_TFecha.Size = new System.Drawing.Size(65, 13);
-            this.label_PE_TFecha.TabIndex = 7;
-            this.label_PE_TFecha.Text = "01/01/2012";
+            this.label_PE_TFechaIni.AutoSize = true;
+            this.label_PE_TFechaIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TFechaIni.Location = new System.Drawing.Point(130, 70);
+            this.label_PE_TFechaIni.Name = "label_PE_TFechaIni";
+            this.label_PE_TFechaIni.Size = new System.Drawing.Size(65, 13);
+            this.label_PE_TFechaIni.TabIndex = 7;
+            this.label_PE_TFechaIni.Text = "01/01/2012";
             // 
             // label_PE_Espectaculo
             // 
@@ -1192,7 +1192,7 @@
         private System.Windows.Forms.Label label_PE_fechaIni;
         private System.Windows.Forms.Label label_PE_titulo;
         private System.Windows.Forms.Label label_PE_TTitulo;
-        private System.Windows.Forms.Label label_PE_TFecha;
+        private System.Windows.Forms.Label label_PE_TFechaIni;
         private System.Windows.Forms.GroupBox groupBox_PE_promoEvent;
         private System.Windows.Forms.RadioButton radioButton_PE_20;
         private System.Windows.Forms.RadioButton radioButton_PE_5;
@@ -1258,7 +1258,7 @@
         private System.Windows.Forms.RadioButton radioButton_MC_TE_Todos1;
         public System.Windows.Forms.ComboBox comboBox_PE_espectaculo;
         private System.Windows.Forms.Label label_PE_fechaFin;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_PE_TFechaFin;
         private System.Windows.Forms.TextBox textBox_MC_VC_Descuento1;
         private System.Windows.Forms.Label label_MC_VC_Descuento1;
         private System.Windows.Forms.TextBox textBox_MC_VC_Descuento2;

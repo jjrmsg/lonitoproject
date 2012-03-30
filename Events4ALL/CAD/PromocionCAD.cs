@@ -15,6 +15,10 @@ namespace Events4ALL.CAD
 {
     class PromocionCAD
     {
+        public PromocionCAD()
+        {
+        }
+
         public DataSet ObtenerEspectaculos()
         {
             BD bd = new BD();

@@ -16,6 +16,9 @@ namespace Events4ALL.CAD
     
     class CondicionCAD
     {
+        public CondicionCAD()
+        {
+        }
         //DataTable tabla = new DataTable();
 
         public DataSet ObtenerTodas()
