@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
+            this.labAforo = new System.Windows.Forms.Label();
             this.pictureTipo = new System.Windows.Forms.PictureBox();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.labelDescripcion = new System.Windows.Forms.Label();
@@ -117,7 +118,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.labAforo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -164,6 +164,15 @@
             this.tabAñadirSala.TabIndex = 0;
             this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
+            // 
+            // labAforo
+            // 
+            this.labAforo.AutoSize = true;
+            this.labAforo.Location = new System.Drawing.Point(330, 151);
+            this.labAforo.Name = "labAforo";
+            this.labAforo.Size = new System.Drawing.Size(0, 13);
+            this.labAforo.TabIndex = 17;
+            this.labAforo.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureTipo
             // 
@@ -926,6 +935,7 @@
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // textAforoBusquedaMax
             // 
@@ -1006,15 +1016,6 @@
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-            // 
-            // labAforo
-            // 
-            this.labAforo.AutoSize = true;
-            this.labAforo.Location = new System.Drawing.Point(330, 151);
-            this.labAforo.Name = "labAforo";
-            this.labAforo.Size = new System.Drawing.Size(0, 13);
-            this.labAforo.TabIndex = 17;
-            this.labAforo.Click += new System.EventHandler(this.label1_Click);
             // 
             // Salas
             // 

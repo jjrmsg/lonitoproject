@@ -96,5 +96,11 @@ namespace Events4ALL.EN
                 DataSet salasTipo = sala.SalasPorTipo(tipo);
                 return salasTipo;
             }
+            public DataSet SalaSelect(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
+            {
+                SalasCAD sala = new SalasCAD();
+                DataSet selectSala = sala.SalaSelectCAD(idSala,tipo,aforo_min,aforo_max,estado);
+                return selectSala;
+            }
     }
 }

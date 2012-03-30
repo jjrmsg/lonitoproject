@@ -353,5 +353,26 @@ namespace Events4ALL
         {
 
         }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            int estado=0;
+            int aforoMax = 0;
+            int aforoMin = 0;
+            int numSala = 0;
+
+            if(checkLibre.Checked==true)
+                estado=1;
+            if(textAforoBusquedaMax.Text!="")
+                aforoMax=Convert.ToInt16(textAforoBusquedaMax.Text);
+            if(textAforoBusquedaMin.Text!="")
+                aforoMin=Convert.ToInt16(textAforoBusquedaMin.Text);
+            if(textBox1.Text!="")
+                numSala=Convert.ToInt16(textBox1.Text);
+
+            SalasEN select = new SalasEN();
+            DataSet resultado=select.SalaSelect(numSala,comboBuscarTipoSala.Text,aforoMin,aforoMax,estado);
+            dataGridBuscarSala.DataSource = resultado;
+        }
     }
 }

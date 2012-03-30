@@ -124,6 +124,45 @@ namespace Events4ALL.CAD
                 if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
         }
+
+        public DataSet SalaSelectCAD(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
+        {
+            string idSalaBusca="";
+            string aforoMax="";
+            string aforoMin="";
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            DataSet datosSalas = null;
+            if (idSala != 0)
+                idSalaBusca = idSalaBusca.ToString();
+            if (aforo_max != 0)
+                aforoMax = aforo_max.ToString();
+            if (aforo_min != 0)
+                aforoMin = aforo_min.ToString();
+                
+            String comando = "select s.NumSala,s.tipo,s.Aforo,s.NumSeccion,e.Titulo from Sala s,Espectaculo e,ReservaSala r where r.IDEspectaculo=e.IDEspectaculo and r.IDSala=s.NumSala";
+
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando, conn);
+                datosSalas = new DataSet();
+                sqlAdaptador.Fill(datosSalas);
+                return datosSalas;
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        }
     }
 
 }
