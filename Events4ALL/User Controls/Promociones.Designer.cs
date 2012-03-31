@@ -75,17 +75,17 @@
             this.checkBox_MC_ActivarCond2 = new System.Windows.Forms.CheckBox();
             this.checkBox_MC_ActivarCond1 = new System.Windows.Forms.CheckBox();
             this.groupBox_MC_TipoEvent2 = new System.Windows.Forms.GroupBox();
-            this.radioButton_MC_TE_Todos2 = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE2_Todos = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE2_Concierto = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE2_Teatro = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE2_Cine = new System.Windows.Forms.RadioButton();
             this.groupBox_MC_TipoEvent3 = new System.Windows.Forms.GroupBox();
-            this.radioButton_MC_TE_Todos3 = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE3_Todos = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE3_Concierto = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE3_Teatro = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE3_Cine = new System.Windows.Forms.RadioButton();
             this.groupBox_MC_TipoEvent1 = new System.Windows.Forms.GroupBox();
-            this.radioButton_MC_TE_Todos1 = new System.Windows.Forms.RadioButton();
+            this.radioButton_MC_TE1_Todos = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE1_Concierto = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE1_Teatro = new System.Windows.Forms.RadioButton();
             this.radioButton_MC_TE1_Cine = new System.Windows.Forms.RadioButton();
@@ -662,7 +662,7 @@
             // groupBox_MC_TipoEvent2
             // 
             this.groupBox_MC_TipoEvent2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE_Todos2);
+            this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Todos);
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Concierto);
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Teatro);
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Cine);
@@ -673,17 +673,17 @@
             this.groupBox_MC_TipoEvent2.TabStop = false;
             this.groupBox_MC_TipoEvent2.Text = "Tipo de evento";
             // 
-            // radioButton_MC_TE_Todos2
+            // radioButton_MC_TE2_Todos
             // 
-            this.radioButton_MC_TE_Todos2.AutoSize = true;
-            this.radioButton_MC_TE_Todos2.Enabled = false;
-            this.radioButton_MC_TE_Todos2.Location = new System.Drawing.Point(79, 40);
-            this.radioButton_MC_TE_Todos2.Name = "radioButton_MC_TE_Todos2";
-            this.radioButton_MC_TE_Todos2.Size = new System.Drawing.Size(55, 17);
-            this.radioButton_MC_TE_Todos2.TabIndex = 6;
-            this.radioButton_MC_TE_Todos2.TabStop = true;
-            this.radioButton_MC_TE_Todos2.Text = "Todos";
-            this.radioButton_MC_TE_Todos2.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE2_Todos.AutoSize = true;
+            this.radioButton_MC_TE2_Todos.Enabled = false;
+            this.radioButton_MC_TE2_Todos.Location = new System.Drawing.Point(79, 40);
+            this.radioButton_MC_TE2_Todos.Name = "radioButton_MC_TE2_Todos";
+            this.radioButton_MC_TE2_Todos.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_MC_TE2_Todos.TabIndex = 6;
+            this.radioButton_MC_TE2_Todos.TabStop = true;
+            this.radioButton_MC_TE2_Todos.Text = "Todos";
+            this.radioButton_MC_TE2_Todos.UseVisualStyleBackColor = true;
             // 
             // radioButton_MC_TE2_Concierto
             // 
@@ -724,7 +724,7 @@
             // groupBox_MC_TipoEvent3
             // 
             this.groupBox_MC_TipoEvent3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE_Todos3);
+            this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Todos);
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Concierto);
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Teatro);
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Cine);
@@ -735,17 +735,17 @@
             this.groupBox_MC_TipoEvent3.TabStop = false;
             this.groupBox_MC_TipoEvent3.Text = "Tipo de evento";
             // 
-            // radioButton_MC_TE_Todos3
+            // radioButton_MC_TE3_Todos
             // 
-            this.radioButton_MC_TE_Todos3.AutoSize = true;
-            this.radioButton_MC_TE_Todos3.Enabled = false;
-            this.radioButton_MC_TE_Todos3.Location = new System.Drawing.Point(79, 40);
-            this.radioButton_MC_TE_Todos3.Name = "radioButton_MC_TE_Todos3";
-            this.radioButton_MC_TE_Todos3.Size = new System.Drawing.Size(55, 17);
-            this.radioButton_MC_TE_Todos3.TabIndex = 6;
-            this.radioButton_MC_TE_Todos3.TabStop = true;
-            this.radioButton_MC_TE_Todos3.Text = "Todos";
-            this.radioButton_MC_TE_Todos3.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE3_Todos.AutoSize = true;
+            this.radioButton_MC_TE3_Todos.Enabled = false;
+            this.radioButton_MC_TE3_Todos.Location = new System.Drawing.Point(79, 40);
+            this.radioButton_MC_TE3_Todos.Name = "radioButton_MC_TE3_Todos";
+            this.radioButton_MC_TE3_Todos.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_MC_TE3_Todos.TabIndex = 6;
+            this.radioButton_MC_TE3_Todos.TabStop = true;
+            this.radioButton_MC_TE3_Todos.Text = "Todos";
+            this.radioButton_MC_TE3_Todos.UseVisualStyleBackColor = true;
             // 
             // radioButton_MC_TE3_Concierto
             // 
@@ -786,7 +786,7 @@
             // groupBox_MC_TipoEvent1
             // 
             this.groupBox_MC_TipoEvent1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE_Todos1);
+            this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Todos);
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Concierto);
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Teatro);
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Cine);
@@ -797,16 +797,16 @@
             this.groupBox_MC_TipoEvent1.TabStop = false;
             this.groupBox_MC_TipoEvent1.Text = "Tipo de evento";
             // 
-            // radioButton_MC_TE_Todos1
+            // radioButton_MC_TE1_Todos
             // 
-            this.radioButton_MC_TE_Todos1.AutoSize = true;
-            this.radioButton_MC_TE_Todos1.Location = new System.Drawing.Point(79, 40);
-            this.radioButton_MC_TE_Todos1.Name = "radioButton_MC_TE_Todos1";
-            this.radioButton_MC_TE_Todos1.Size = new System.Drawing.Size(55, 17);
-            this.radioButton_MC_TE_Todos1.TabIndex = 3;
-            this.radioButton_MC_TE_Todos1.TabStop = true;
-            this.radioButton_MC_TE_Todos1.Text = "Todos";
-            this.radioButton_MC_TE_Todos1.UseVisualStyleBackColor = true;
+            this.radioButton_MC_TE1_Todos.AutoSize = true;
+            this.radioButton_MC_TE1_Todos.Location = new System.Drawing.Point(79, 40);
+            this.radioButton_MC_TE1_Todos.Name = "radioButton_MC_TE1_Todos";
+            this.radioButton_MC_TE1_Todos.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_MC_TE1_Todos.TabIndex = 3;
+            this.radioButton_MC_TE1_Todos.TabStop = true;
+            this.radioButton_MC_TE1_Todos.Text = "Todos";
+            this.radioButton_MC_TE1_Todos.UseVisualStyleBackColor = true;
             // 
             // radioButton_MC_TE1_Concierto
             // 
@@ -1138,6 +1138,7 @@
             this.dataGridView_MC_ListaPromosCond.Name = "dataGridView_MC_ListaPromosCond";
             this.dataGridView_MC_ListaPromosCond.Size = new System.Drawing.Size(439, 577);
             this.dataGridView_MC_ListaPromosCond.TabIndex = 1;
+            this.dataGridView_MC_ListaPromosCond.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MC_ListaPromosCond_CellClick);
             // 
             // errorProvider_PE_Otro
             // 
@@ -1253,9 +1254,9 @@
         private System.Windows.Forms.RadioButton radioButton_MC_TE1_Cine;
         private System.Windows.Forms.CheckBox checkBox_MC_ActivarCond2;
         private System.Windows.Forms.CheckBox checkBox_MC_ActivarCond1;
-        private System.Windows.Forms.RadioButton radioButton_MC_TE_Todos2;
-        private System.Windows.Forms.RadioButton radioButton_MC_TE_Todos3;
-        private System.Windows.Forms.RadioButton radioButton_MC_TE_Todos1;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE2_Todos;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE3_Todos;
+        private System.Windows.Forms.RadioButton radioButton_MC_TE1_Todos;
         public System.Windows.Forms.ComboBox comboBox_PE_espectaculo;
         private System.Windows.Forms.Label label_PE_fechaFin;
         private System.Windows.Forms.Label label_PE_TFechaFin;

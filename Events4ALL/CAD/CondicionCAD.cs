@@ -16,20 +16,29 @@ namespace Events4ALL.CAD
     
     class CondicionCAD
     {
+        private BD bd;
+        private DataSet bdvirtual;
+        private SqlConnection con;
+        private SqlDataAdapter da;
+        SqlCommandBuilder cbuilder;
+
         public CondicionCAD()
         {
+            bd = new BD();
+            bdvirtual = new DataSet();
+            con = bd.Connect();
         }
         //DataTable tabla = new DataTable();
 
         public DataSet ObtenerTodas()
         {
-            BD bd = new BD();
-            DataSet bdvirtual = new DataSet();
-            SqlConnection con = bd.Connect();
+            //BD bd = new BD();
+            //DataSet bdvirtual = new DataSet();
+            //SqlConnection con = bd.Connect();
             try
             {
                 con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Condicion", con);
+                da = new SqlDataAdapter("select * from Condicion", con);
                 da.Fill(bdvirtual, "Condicion");
                 //tabla = bdvirtual.Tables["Condicion"];
             }
@@ -45,13 +54,13 @@ namespace Events4ALL.CAD
 
         public void Save()
         {
-            BD bd = new BD();
-            DataSet bdvirtual = new DataSet();
-            SqlConnection con = bd.Connect();
+            //BD bd = new BD();
+            //DataSet bdvirtual = new DataSet();
+            //SqlConnection con = bd.Connect();
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter() ;
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
+                //SqlDataAdapter da = new SqlDataAdapter() ;
+                cbuilder = new SqlCommandBuilder(da);
                 da.Update(bdvirtual, "Condicion");
             }
             catch

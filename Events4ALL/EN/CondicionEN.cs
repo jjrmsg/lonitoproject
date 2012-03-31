@@ -15,18 +15,18 @@ namespace Events4ALL.EN
     {
         #region variables
         /*
-            Dinero gastado - 1
-            Entradas - 2
-            Espectaculos - 3
+            Dinero gastado - 0
+            Entradas - 1
+            Espectaculos - 2
 
-            Mayor - 1
-            Menor - 2
-            Igual - 3
+            Mayor - 0
+            Menor - 1
+            Igual - 2
 
-            Cine - 1
-            Teatro - 2
-            Concierto - 3
-            Todos - 4
+            Cine - 0
+            Teatro - 1
+            Concierto - 2
+            Todos - 3
         */
         private int idCondicion;
         private string nombre;

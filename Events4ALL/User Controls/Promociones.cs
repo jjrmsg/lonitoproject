@@ -41,7 +41,7 @@ namespace Events4ALL
                 radioButton_MC_TE2_Cine.Enabled = true;
                 radioButton_MC_TE2_Concierto.Enabled = true;
                 radioButton_MC_TE2_Teatro.Enabled = true;
-                radioButton_MC_TE_Todos2.Enabled = true;
+                radioButton_MC_TE2_Todos.Enabled = true;
             }
             else
             {
@@ -52,7 +52,7 @@ namespace Events4ALL
                 radioButton_MC_TE2_Cine.Enabled = false;
                 radioButton_MC_TE2_Concierto.Enabled = false;
                 radioButton_MC_TE2_Teatro.Enabled = false;
-                radioButton_MC_TE_Todos2.Enabled = false;
+                radioButton_MC_TE2_Todos.Enabled = false;
             }
         }
 
@@ -67,7 +67,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Cine.Enabled = true;
                 radioButton_MC_TE3_Concierto.Enabled = true;
                 radioButton_MC_TE3_Teatro.Enabled = true;
-                radioButton_MC_TE_Todos3.Enabled = true;
+                radioButton_MC_TE3_Todos.Enabled = true;
             }
             else
             {
@@ -78,7 +78,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Cine.Enabled = false;
                 radioButton_MC_TE3_Concierto.Enabled = false;
                 radioButton_MC_TE3_Teatro.Enabled = false;
-                radioButton_MC_TE_Todos3.Enabled = false;
+                radioButton_MC_TE3_Todos.Enabled = false;
             }
         }
 
@@ -149,9 +149,10 @@ namespace Events4ALL
             try
             {
                 tcon = promos.Tables["Condicion"];
+                /*
+                 * añadiendo nueva fila a la tabla, es un ejemplo de forma manual
                 nuevafila = tcon.NewRow();
-                nuevafila[0] = 4;
-                nuevafila[1] = "CondicionNueva";
+                nuevafila[1] = "CN";
                 nuevafila[2] = 1;
                 nuevafila[3] = 1;
                 nuevafila[4] = 1;
@@ -160,7 +161,8 @@ namespace Events4ALL
                 nuevafila[7] = 1;
                 nuevafila[18] = false;
                 tcon.Rows.Add(nuevafila);
-                //conEN.Save();
+                conEN.Save();
+                 * */
                 dataGridView_MC_ListaPromosCond.DataSource = promos;
                 dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
                 dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
@@ -181,6 +183,9 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
                 dataGridView_MC_ListaPromosCond.ReadOnly = true;
+                dataGridView_MC_ListaPromosCond.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dataGridView_MC_ListaPromosCond.MultiSelect = false;
+                
             }
             catch
             {
@@ -229,6 +234,171 @@ namespace Events4ALL
             {
                 CompruebaCantidad(textBox_MC_VC_Cantidad3.ToString());
                 CompruebaCantidad(textBox_MC_VC_Descuento3.ToString());
+            }
+        }
+
+        private void MC_limpiar(int todo)
+        {
+            //true en caso de limpiar todos los campos
+            if (todo == 1)
+            {
+                textBox_MC_NomPromo.Text = "";
+                label_MC_Descripcion.Text = "";
+                comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion1.Text = "Comparación";
+                textBox_MC_VC_Cantidad1.Text = "";
+                textBox_MC_VC_Descuento1.Text = "";
+                radioButton_MC_TE1_Cine.Checked = false;
+                radioButton_MC_TE1_Concierto.Checked = false;
+                radioButton_MC_TE1_Teatro.Checked = false;
+                radioButton_MC_TE1_Todos.Checked = false;
+                checkBox_MC_ActivarCond1.Checked = false;
+                comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion2.Text = "Comparación";
+                textBox_MC_VC_Cantidad2.Text = "";
+                textBox_MC_VC_Descuento2.Text = "";
+                radioButton_MC_TE2_Cine.Checked = false;
+                radioButton_MC_TE2_Concierto.Checked = false;
+                radioButton_MC_TE2_Teatro.Checked = false;
+                radioButton_MC_TE2_Todos.Checked = false;
+                checkBox_MC_ActivarCond2.Checked = false;
+                comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion3.Text = "Comparación";
+                textBox_MC_VC_Cantidad3.Text = "";
+                textBox_MC_VC_Descuento3.Text = "";
+                radioButton_MC_TE3_Cine.Checked = false;
+                radioButton_MC_TE3_Concierto.Checked = false;
+                radioButton_MC_TE3_Teatro.Checked = false;
+                radioButton_MC_TE3_Todos.Checked = false;
+            }
+            //false caso de limipiar todos menos los combobox del primer bloque
+            else if (todo == 0)
+            {
+                textBox_MC_NomPromo.Text = "";
+                label_MC_Descripcion.Text = "";
+                textBox_MC_VC_Cantidad1.Text = "";
+                textBox_MC_VC_Descuento1.Text = "";
+                radioButton_MC_TE1_Cine.Checked = false;
+                radioButton_MC_TE1_Concierto.Checked = false;
+                radioButton_MC_TE1_Teatro.Checked = false;
+                radioButton_MC_TE1_Todos.Checked = false;
+                checkBox_MC_ActivarCond1.Checked = false;
+                //comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
+                //comboBox_MC_VC_Comparacion2.Text = "Comparación";
+                textBox_MC_VC_Cantidad2.Text = "";
+                textBox_MC_VC_Descuento2.Text = "";
+                radioButton_MC_TE2_Cine.Checked = false;
+                radioButton_MC_TE2_Concierto.Checked = false;
+                radioButton_MC_TE2_Teatro.Checked = false;
+                radioButton_MC_TE2_Todos.Checked = false;
+                checkBox_MC_ActivarCond2.Checked = false;
+                //comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
+                //comboBox_MC_VC_Comparacion3.Text = "Comparación";
+                textBox_MC_VC_Cantidad3.Text = "";
+                textBox_MC_VC_Descuento3.Text = "";
+                radioButton_MC_TE3_Cine.Checked = false;
+                radioButton_MC_TE3_Concierto.Checked = false;
+                radioButton_MC_TE3_Teatro.Checked = false;
+                radioButton_MC_TE3_Todos.Checked = false;
+            }
+        }
+
+        private void dataGridView_MC_ListaPromosCond_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MC_limpiar(0);
+            //Para el bloque 1 de las condiciones
+            //relleno el nombre de la fila seleccionada
+            textBox_MC_NomPromo.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString();
+            //relleno la descipción del a fila seleccionada
+            textBox_MC_Descripcion.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[2].Value.ToString();
+            //eligo la condición de la fila seleccionada
+            comboBox_MC_VC_Tcondicion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[3].Value);
+            //eligo la comparación de la fila seleccionada
+            comboBox_MC_VC_Comparacion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[4].Value);
+            //relleno la cantidad de la fila seleccionada
+            textBox_MC_VC_Cantidad1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[5].Value.ToString();
+            //relleno el descuento de la fila seleccionada
+            textBox_MC_VC_Descuento1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[6].Value.ToString();
+            //marco el tipo evento de la fila seleccionada
+            if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 0)
+            {
+                radioButton_MC_TE1_Cine.Checked = true;
+            }
+            else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 1)
+            {
+                radioButton_MC_TE1_Teatro.Checked = true;
+            }
+            else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 2)
+            {
+                radioButton_MC_TE1_Concierto.Checked = true;
+            }
+            else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 3)
+            {
+                radioButton_MC_TE1_Todos.Checked = true;
+            }
+            //Marcar si esta activada o no la promocion seleccionada
+            checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[18].Value);
+
+            //Para el bloque 2 de las condiciones
+            if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value != DBNull.Value)
+            {
+                //eligo la condición de la fila seleccionada
+                comboBox_MC_VC_Tcondicion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value);
+                //eligo la comparación de la fila seleccionada
+                comboBox_MC_VC_Comparacion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[9].Value);
+                //relleno la cantidad de la fila seleccionada
+                textBox_MC_VC_Cantidad2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[10].Value.ToString();
+                //relleno el descuento de la fila seleccionada
+                textBox_MC_VC_Descuento2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value.ToString();
+                //marco el tipo evento de la fila seleccionada
+                if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 0)
+                {
+                    radioButton_MC_TE2_Cine.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 1)
+                {
+                    radioButton_MC_TE2_Teatro.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 2)
+                {
+                    radioButton_MC_TE2_Concierto.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 3)
+                {
+                    radioButton_MC_TE2_Todos.Checked = true;
+                }
+                checkBox_MC_ActivarCond1.Checked = true;
+            }
+
+            //Para el bloque 3 de las condiciones
+            if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value != DBNull.Value)
+            {
+                //eligo la condición de la fila seleccionada
+                comboBox_MC_VC_Tcondicion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value);
+                //eligo la comparación de la fila seleccionada
+                comboBox_MC_VC_Comparacion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[14].Value);
+                //relleno la cantidad de la fila seleccionada
+                textBox_MC_VC_Cantidad3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value.ToString();
+                //relleno el descuento de la fila seleccionada
+                textBox_MC_VC_Descuento3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString();
+                //marco el tipo evento de la fila seleccionada
+                if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 0)
+                {
+                    radioButton_MC_TE3_Cine.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 1)
+                {
+                    radioButton_MC_TE3_Teatro.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 2)
+                {
+                    radioButton_MC_TE3_Concierto.Checked = true;
+                }
+                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 3)
+                {
+                    radioButton_MC_TE3_Todos.Checked = true;
+                }
+                checkBox_MC_ActivarCond2.Checked = true;
             }
         }
     }
