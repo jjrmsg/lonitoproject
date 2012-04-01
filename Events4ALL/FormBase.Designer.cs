@@ -36,9 +36,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.apellidosLabel = new System.Windows.Forms.Label();
+            this.nombreLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -104,9 +104,9 @@
             this.panel4.BackgroundImage = global::Events4ALL.Properties.Resources.log_bg;
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.idLabel);
+            this.panel4.Controls.Add(this.apellidosLabel);
+            this.panel4.Controls.Add(this.nombreLabel);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Name = "panel4";
@@ -127,20 +127,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // label11
+            // idLabel
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
+            resources.ApplyResources(this.idLabel, "idLabel");
+            this.idLabel.Name = "idLabel";
             // 
-            // label10
+            // apellidosLabel
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.apellidosLabel, "apellidosLabel");
+            this.apellidosLabel.Name = "apellidosLabel";
             // 
-            // label9
+            // nombreLabel
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.nombreLabel, "nombreLabel");
+            this.nombreLabel.Name = "nombreLabel";
             // 
             // label8
             // 
@@ -319,9 +319,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.Label apellidosLabel;
+        private System.Windows.Forms.Label nombreLabel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }

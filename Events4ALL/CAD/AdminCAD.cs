@@ -5,6 +5,7 @@ using Events4ALL.Auxiliares;
 using System.Text;
 using System.Data.SqlClient;
 using Events4ALL.EN;
+using System.Data;
 
 namespace Events4ALL.CAD
 {
@@ -101,6 +102,27 @@ namespace Events4ALL.CAD
             return error;
         }
 
+        public DataSet getAdminByNick(string nick)
+        {
+            DataSet ds = new DataSet();
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Administrador where Usuario='"+nick+"'", c);
+                da.Fill(ds, "Condicion");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return ds;
+        }
         #endregion
     }
 }

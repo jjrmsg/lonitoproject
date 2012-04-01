@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
-using System.Threading; 
+using System.Threading;
+using Events4ALL.EN; 
 
 namespace Events4ALL
 {
@@ -60,7 +61,13 @@ namespace Events4ALL
             DesactivarMenus();
             inicio1.Visible = true;
 
-            
+            //Cargar los datos de la ficha
+            AdminEN adEN = new AdminEN();
+            DataSet ds = new DataSet();
+            ds = adEN.getAdminByNick(user);
+            nombreLabel.Text = (string)ds.Tables[0].Rows[0]["Nombre"];
+            apellidosLabel.Text = (string)ds.Tables[0].Rows[0]["Apellidos"];
+            idLabel.Text = ds.Tables[0].Rows[0]["ID"].ToString();
         }
 
         public void ThreadProc()
