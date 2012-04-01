@@ -149,11 +149,10 @@ namespace Events4ALL
             try
             {
                 tcon = promos.Tables["Condicion"];
-                /*
-                 * añadiendo nueva fila a la tabla, es un ejemplo de forma manual
+                //añadiendo nueva fila a la tabla, es un ejemplo de forma manual
                 nuevafila = tcon.NewRow();
-                nuevafila[1] = "CN";
-                nuevafila[2] = 1;
+                nuevafila[1] = "ejemplo";
+                nuevafila[2] = "Esto se añade a la tabla pero no se guarda en la BD";
                 nuevafila[3] = 1;
                 nuevafila[4] = 1;
                 nuevafila[5] = 1;
@@ -161,8 +160,8 @@ namespace Events4ALL
                 nuevafila[7] = 1;
                 nuevafila[18] = false;
                 tcon.Rows.Add(nuevafila);
-                conEN.Save();
-                 * */
+                //conEN.Save();
+                
                 dataGridView_MC_ListaPromosCond.DataSource = promos;
                 dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
                 dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
