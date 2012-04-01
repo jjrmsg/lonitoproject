@@ -386,8 +386,9 @@
             this.mainChart.Location = new System.Drawing.Point(6, 77);
             this.mainChart.Name = "mainChart";
             series3.ChartArea = "ChartArea1";
+            series3.IsValueShownAsLabel = true;
             series3.Legend = "Legend1";
-            series3.Name = "M.Euros";
+            series3.Name = "Euros";
             series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.mainChart.Series.Add(series3);

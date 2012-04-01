@@ -84,7 +84,7 @@ namespace Events4ALL
             foreach (var pair in diasVentas)
             {
                 DataPoint p = new DataPoint(int.Parse(pair.Key), (int)pair.Value);
-                mainChart.Series["M.Euros"].Points.Add(p);
+                mainChart.Series["Euros"].Points.Add(p);
             }
         }
 
