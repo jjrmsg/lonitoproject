@@ -12,6 +12,7 @@ using System.IO;
 using Events4ALL.Auxiliares;
 using Events4ALL.EN;
 using Events4ALL.User_Controls;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Events4ALL
 {
@@ -36,61 +37,14 @@ namespace Events4ALL
                 {"Enero", 1}, {"Febrero", 2}, {"Marzo", 3}, {"Abril", 4}, {"Mayo", 5}, {"Junio", 6},
                 {"julio", 7}, {"Agosto", 8}, {"Septiembre", 9}, {"Octubre", 10}, {"Noviembre", 11}, {"Diciembre", 12}
             };
+
+            comboMes.Text = "Junio";
         }
 
         private void ValidaDatos()
         {
-            bool valido = false;
-
-            if (textAnyo.Text != "")
-            {
-                errorAnyo.SetError(textAnyo, "");
-                if (comboMes.SelectedItem != null)
-                {
-                    errorMes.SetError(comboMes, "");
-                    valido = true;
-                }
-                else
-                {
-                    errorMes.SetError(comboMes, "Debes seleccionar un mes");
-                    valido = false;
-                }
-            }
-            else
-            {
-                errorAnyo.SetError(textAnyo, "Debes seleccionar un año");
-                valido = false;
-            }
-
-            if (valido)
-            {
-                ObtenerDatosGeneral();
-            }
-           /* if (System.Text.RegularExpressions.Regex.IsMatch("^(19|20)d{2}$", textAnyo.Text))
-            {
-                errorAnyo.SetError(textAnyo, "Solo números de longitud 4");
-                textAnyo.Text="";
-            }*/
-        }
-
-        private void comboMes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ValidaDatos();
-        }
-
-        private void textAnyo_TextChanged(object sender, EventArgs e)
-        {
-            ValidaDatos();
-        }
-
-        private void textAnyo_Leave(object sender, EventArgs e)
-        {
-            ValidaDatos();
-        }
-
-        private void comboMes_TextChanged(object sender, EventArgs e)
-        {
-            ValidaDatos();
+      
+            ObtenerDatosGeneral();
         }
 
         private void ObtenerDatosGeneral()
@@ -123,9 +77,20 @@ namespace Events4ALL
                     {
                         diasVentas.Add(dia, precio);
                     }
-                    MessageBox.Show(dia + " " + precio);
+                    //MessageBox.Show(dia + " " + precio);
                 }
             }
+
+            foreach (var pair in diasVentas)
+            {
+                DataPoint p = new DataPoint(int.Parse(pair.Key), (int)pair.Value);
+                mainChart.Series["M.Euros"].Points.Add(p);
+            }
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            ValidaDatos();
         }
     }
 }
