@@ -57,27 +57,29 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridEspectaculos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.btLimpBusqueda = new System.Windows.Forms.Button();
+            this.numPrecioBuscar = new System.Windows.Forms.NumericUpDown();
+            this.cbPrecioBuscar = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbTipoBuscar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbFechaBuscar = new System.Windows.Forms.ComboBox();
+            this.cbSalaBuscar = new System.Windows.Forms.ComboBox();
+            this.dtFechaBuscar = new System.Windows.Forms.DateTimePicker();
             this.Nombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTitBuscar = new System.Windows.Forms.TextBox();
             this.btBuscar = new System.Windows.Forms.Button();
             this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.IdEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -86,7 +88,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,13 +262,13 @@
             // 
             // cbSala
             // 
+            this.cbSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSala.Enabled = false;
             this.cbSala.FormattingEnabled = true;
             this.cbSala.Location = new System.Drawing.Point(93, 295);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(121, 21);
             this.cbSala.TabIndex = 5;
-            this.cbSala.Text = "Debe elegir un tipo";
             // 
             // dtFechaFin
             // 
@@ -394,6 +396,8 @@
             // 
             // dataGridEspectaculos
             // 
+            this.dataGridEspectaculos.AllowUserToAddRows = false;
+            this.dataGridEspectaculos.AllowUserToOrderColumns = true;
             this.dataGridEspectaculos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -401,34 +405,37 @@
             this.dataGridEspectaculos.BackgroundColor = System.Drawing.Color.White;
             this.dataGridEspectaculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEspectaculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEsp,
             this.Column1,
+            this.Column6,
             this.Column2,
             this.Column4,
             this.Column3,
-            this.Column5});
+            this.Column5,
+            this.Column7});
             this.dataGridEspectaculos.Location = new System.Drawing.Point(6, 168);
             this.dataGridEspectaculos.Name = "dataGridEspectaculos";
             this.dataGridEspectaculos.Size = new System.Drawing.Size(878, 432);
             this.dataGridEspectaculos.TabIndex = 6;
+            this.dataGridEspectaculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEspectaculos_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.comboBox5);
+            this.groupBox1.Controls.Add(this.btLimpBusqueda);
+            this.groupBox1.Controls.Add(this.numPrecioBuscar);
+            this.groupBox1.Controls.Add(this.cbPrecioBuscar);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cbTipoBuscar);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.cbFechaBuscar);
+            this.groupBox1.Controls.Add(this.cbSalaBuscar);
+            this.groupBox1.Controls.Add(this.dtFechaBuscar);
             this.groupBox1.Controls.Add(this.Nombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbTitBuscar);
             this.groupBox1.Controls.Add(this.btBuscar);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -437,49 +444,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda de espectáculos";
             // 
-            // button4
+            // btLimpBusqueda
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(738, 117);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(64, 23);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "Limpiar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btLimpBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpBusqueda.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.btLimpBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLimpBusqueda.Location = new System.Drawing.Point(738, 117);
+            this.btLimpBusqueda.Name = "btLimpBusqueda";
+            this.btLimpBusqueda.Size = new System.Drawing.Size(64, 23);
+            this.btLimpBusqueda.TabIndex = 52;
+            this.btLimpBusqueda.Text = "Limpiar";
+            this.btLimpBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpBusqueda.UseVisualStyleBackColor = true;
+            this.btLimpBusqueda.Click += new System.EventHandler(this.btLimpBusqueda_Click);
             // 
-            // numericUpDown1
+            // numPrecioBuscar
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(144, 111);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDown1.TabIndex = 16;
+            this.numPrecioBuscar.Location = new System.Drawing.Point(144, 111);
+            this.numPrecioBuscar.Name = "numPrecioBuscar";
+            this.numPrecioBuscar.Size = new System.Drawing.Size(54, 20);
+            this.numPrecioBuscar.TabIndex = 16;
             // 
-            // checkBox2
+            // cbPrecioBuscar
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(217, 114);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(144, 17);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "Con entradas disponibles";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cbPrecioBuscar.DisplayMember = "0";
+            this.cbPrecioBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPrecioBuscar.FormattingEnabled = true;
+            this.cbPrecioBuscar.Items.AddRange(new object[] {
             "igual a",
             "mayor que",
             "menor que"});
-            this.comboBox5.Location = new System.Drawing.Point(51, 111);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(77, 21);
-            this.comboBox5.TabIndex = 14;
-            this.comboBox5.Text = "igual a";
+            this.cbPrecioBuscar.Location = new System.Drawing.Point(51, 111);
+            this.cbPrecioBuscar.Name = "cbPrecioBuscar";
+            this.cbPrecioBuscar.Size = new System.Drawing.Size(77, 21);
+            this.cbPrecioBuscar.TabIndex = 14;
             // 
             // label12
             // 
@@ -490,17 +489,18 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Precio";
             // 
-            // comboBox3
+            // cbTipoBuscar
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbTipoBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoBuscar.FormattingEnabled = true;
+            this.cbTipoBuscar.Items.AddRange(new object[] {
             "Cine",
             "Teatro",
             "Concierto"});
-            this.comboBox3.Location = new System.Drawing.Point(549, 31);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cbTipoBuscar.Location = new System.Drawing.Point(549, 31);
+            this.cbTipoBuscar.Name = "cbTipoBuscar";
+            this.cbTipoBuscar.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoBuscar.TabIndex = 10;
             // 
             // label3
             // 
@@ -511,34 +511,35 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Tipo de evento";
             // 
-            // comboBox2
+            // cbFechaBuscar
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbFechaBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFechaBuscar.FormattingEnabled = true;
+            this.cbFechaBuscar.Items.AddRange(new object[] {
             "igual a",
             "mayor que",
             "menor que"});
-            this.comboBox2.Location = new System.Drawing.Point(51, 73);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(77, 21);
-            this.comboBox2.TabIndex = 8;
-            this.comboBox2.Text = "igual a";
+            this.cbFechaBuscar.Location = new System.Drawing.Point(51, 73);
+            this.cbFechaBuscar.Name = "cbFechaBuscar";
+            this.cbFechaBuscar.Size = new System.Drawing.Size(77, 21);
+            this.cbFechaBuscar.TabIndex = 8;
             // 
-            // comboBox1
+            // cbSalaBuscar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(309, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbSalaBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSalaBuscar.FormattingEnabled = true;
+            this.cbSalaBuscar.Location = new System.Drawing.Point(309, 31);
+            this.cbSalaBuscar.Name = "cbSalaBuscar";
+            this.cbSalaBuscar.Size = new System.Drawing.Size(137, 21);
+            this.cbSalaBuscar.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dtFechaBuscar
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(144, 74);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(94, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dtFechaBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaBuscar.Location = new System.Drawing.Point(144, 74);
+            this.dtFechaBuscar.Name = "dtFechaBuscar";
+            this.dtFechaBuscar.Size = new System.Drawing.Size(94, 20);
+            this.dtFechaBuscar.TabIndex = 6;
             // 
             // Nombre
             // 
@@ -567,12 +568,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Fecha";
             // 
-            // textBox1
+            // tbTitBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbTitBuscar.Location = new System.Drawing.Point(51, 31);
+            this.tbTitBuscar.Name = "tbTitBuscar";
+            this.tbTitBuscar.Size = new System.Drawing.Size(160, 20);
+            this.tbTitBuscar.TabIndex = 1;
             // 
             // btBuscar
             // 
@@ -593,15 +594,27 @@
             this.errPrvEspectaculo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errPrvEspectaculo.ContainerControl = this;
             // 
+            // IdEsp
+            // 
+            this.IdEsp.FillWeight = 15F;
+            this.IdEsp.HeaderText = "Id";
+            this.IdEsp.Name = "IdEsp";
+            // 
             // Column1
             // 
-            this.Column1.FillWeight = 150F;
+            this.Column1.FillWeight = 140F;
             this.Column1.HeaderText = "Título";
             this.Column1.Name = "Column1";
             // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 70F;
+            this.Column6.HeaderText = "Tipo";
+            this.Column6.Name = "Column6";
+            // 
             // Column2
             // 
-            this.Column2.FillWeight = 50F;
+            this.Column2.FillWeight = 70F;
             this.Column2.HeaderText = "Sala asignada";
             this.Column2.Name = "Column2";
             // 
@@ -623,6 +636,13 @@
             this.Column5.HeaderText = "Fecha Fin";
             this.Column5.Name = "Column5";
             // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 30F;
+            this.Column7.HeaderText = "Eliminar";
+            this.Column7.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Column7.Name = "Column7";
+            // 
             // Espectaculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,7 +660,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecioBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).EndInit();
             this.ResumeLayout(false);
 
@@ -656,12 +676,12 @@
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTitBuscar;
         private System.Windows.Forms.Button btBuscar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DateTimePicker dtFechaBuscar;
+        private System.Windows.Forms.ComboBox cbFechaBuscar;
+        private System.Windows.Forms.ComboBox cbSalaBuscar;
+        private System.Windows.Forms.ComboBox cbTipoBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbCartel;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -680,22 +700,24 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbSala;
         private System.Windows.Forms.NumericUpDown numPrecio;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.NumericUpDown numPrecioBuscar;
+        private System.Windows.Forms.ComboBox cbPrecioBuscar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btLimpiar;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btLimpBusqueda;
         public System.Windows.Forms.TextBox tbTitulo;
         private System.Windows.Forms.ErrorProvider errPrvEspectaculo;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.Label lbGenero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEsp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewImageColumn Column7;
     }
 }

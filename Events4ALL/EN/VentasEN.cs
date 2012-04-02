@@ -9,18 +9,16 @@ namespace Events4ALL.EN
 {
     public class VentasEN
     {
-        #region members
-        private VentasCAD vCAD;
-        #endregion
-
         public VentasEN()
         {
-            vCAD = new VentasCAD();
+
         }
 
         //Devuelve un DataSet con las id y fechas de las ventas de todos los espectaculos
         public DataSet getAllEspectaculos()
         {
+            VentasCAD vCAD = new VentasCAD();
+
             DataSet dsVentas;
             dsVentas = vCAD.getAllEspectaculos();
             return dsVentas;

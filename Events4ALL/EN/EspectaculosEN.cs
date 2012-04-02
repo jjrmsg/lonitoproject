@@ -14,13 +14,12 @@ namespace Events4ALL.EN
         private string fechIni;
         private string fechFin;
         private decimal precio;
-        private string genero;
-        private EspectaculosCAD espCAD;
+        private string genero;        
         public int idEspectaculo { get; set; }
 
         public EspectaculosEN()
         {
-            espCAD = new EspectaculosCAD();
+
         }
 
         public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin)
@@ -35,6 +34,7 @@ namespace Events4ALL.EN
 
         public decimal getPrecioId()
         {
+            EspectaculosCAD espCAD;espCAD = new EspectaculosCAD();
             return espCAD.getPrecioId(idEspectaculo);
         }
 
@@ -44,10 +44,16 @@ namespace Events4ALL.EN
             return espCAD.Insertar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva);
         }
 
-        public DataSet Buscar()
+        public bool Eliminar(string idEspectaculo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
-            DataSet espectaculos = espCAD.Buscar();
+            return espCAD.Eliminar(idEspectaculo);
+        }
+
+        public DataSet Buscar(string tit, string sala, string tipo, string modFecha, string valFecha, string modPrecio, string valPrecio)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            DataSet espectaculos = espCAD.Buscar(tit, sala, tipo, modFecha, valFecha, modPrecio, valPrecio);
             return espectaculos;
         }
     }

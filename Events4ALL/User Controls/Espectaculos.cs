@@ -15,6 +15,15 @@ namespace Events4ALL
         public Espectaculos()
         {
             InitializeComponent();
+
+            SalasEN salasEN = new SalasEN();
+            DataSet salasTipo = salasEN.SalasPorTipo("");
+
+            cbSala.Items.Clear();
+            foreach (DataRow sala in salasTipo.Tables[0].Rows)
+            {
+                cbSalaBuscar.Items.Add(sala["NumSala"]);
+            }
         }
 
         private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -131,25 +140,61 @@ namespace Events4ALL
                     MessageBox.Show("Espectaculo insertado");
                 }                                                                
             }
-
-
         }
+
+        private void btLimpBusqueda_Click(object sender, EventArgs e)
+        {
+            tbTitBuscar.Text = "";
+            cbSalaBuscar.SelectedIndex = -1;
+            cbTipoBuscar.SelectedIndex = -1;
+            cbFechaBuscar.SelectedIndex = -1;
+            dtFechaBuscar.Value = DateTime.Today;
+            cbPrecioBuscar.SelectedIndex = -1;
+            numPrecioBuscar.Value = 0;
+            // checkEntradas.Checked = false;
+        } 
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
             EspectaculosEN espectaculoEN = new EspectaculosEN();
-            DataSet espectaculos = espectaculoEN.Buscar();
+            DataSet espectaculos = espectaculoEN.Buscar(tbTitBuscar.Text,
+                                                        cbSalaBuscar.Text,
+                                                        cbTipoBuscar.Text,
+                                                        cbFechaBuscar.Text,
+                                                        dtFechaBuscar.Text,
+                                                        cbPrecioBuscar.Text,
+                                                        numPrecioBuscar.Text);
 
             dataGridEspectaculos.Rows.Clear();
             foreach (DataRow espectaculo in espectaculos.Tables[0].Rows)
             {
-                string[] row = { espectaculo["Titulo"].ToString(), 
+                string[] row = { espectaculo["Id"].ToString(),
+                                 espectaculo["Titulo"].ToString(), 
+                                 espectaculo["Tipo"].ToString(),
                                  espectaculo["NumSala"].ToString(),
                                  espectaculo["Precio"].ToString(),
-                                 espectaculo["FechaIni"].ToString(),
-                                 espectaculo["FechaFin"].ToString()};
+                                 Convert.ToDateTime(espectaculo["FechaIni"]).ToShortDateString(),
+                                 Convert.ToDateTime(espectaculo["FechaFin"]).ToShortDateString()};
                 dataGridEspectaculos.Rows.Add(row);
             }
-        }       
+        }
+
+        private void dataGridEspectaculos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != dataGridEspectaculos.Columns["Column7"].Index)
+                return;
+
+            string espName = dataGridEspectaculos[1, e.RowIndex].Value.ToString();
+            if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\"?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+            {
+                EspectaculosEN espectaculo = new EspectaculosEN();
+                if (espectaculo.Eliminar(dataGridEspectaculos[0, e.RowIndex].Value.ToString()) == true)
+                {
+                    MessageBox.Show("Eliminado correctamente");
+                    dataGridEspectaculos.Rows.RemoveAt(e.RowIndex);
+                }
+            }
+        }
+              
     }
 }

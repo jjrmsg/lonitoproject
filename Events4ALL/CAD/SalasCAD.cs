@@ -102,7 +102,10 @@ namespace Events4ALL.CAD
             BD bd = new BD();
 
             DataSet datosSalas = null;
-            String comando = "select * from Sala where tipo = '"+tipo+"'";    
+            String comando = "select * from Sala";    
+
+            if(tipo != "")
+                 comando += " where tipo = '"+tipo+"'";    
 
             try 
             {

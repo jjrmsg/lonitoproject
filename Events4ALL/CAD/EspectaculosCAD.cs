@@ -75,18 +75,100 @@ namespace Events4ALL.CAD
             }        
         }
 
-        public DataSet Buscar()
+        public bool Eliminar(string idEspectaculo)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            String comEspectaculo = "DELETE FROM Espectaculo WHERE IDEspectaculo = '"+idEspectaculo+"'";
+
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand(comEspectaculo, conn);
+                return com.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }        
+        }
+
+        public DataSet Buscar(string tit, string sala, string tipo, string modFecha, string valFecha, string modPrecio, string valPrecio)
         {
             SqlConnection conn = null; 
             BD bd = new BD();
 
             DataSet datosSalas = null;
-            String comando = "SELECT esp.Titulo, sal.NumSala, esp.Precio, esp.FechaIni, esp.FechaFin ";
+            String comando = "SELECT esp.IDEspectaculo Id, esp.Titulo, sal.tipo Tipo, sal.NumSala, esp.Precio, esp.FechaIni, esp.FechaFin ";
             comando += "FROM  Espectaculo AS esp ";
-            comando += "LEFT OUTER JOIN  ReservaSala resSal ";
+            comando += "LEFT OUTER JOIN ReservaSala resSal ";
             comando += "ON resSal.IDEspectaculo = esp.IDEspectaculo ";
-            comando += "LEFT OUTER JOIN  Sala AS sal ";
+            comando += "LEFT OUTER JOIN Sala AS sal ";
             comando += "ON resSal.IDSala = sal.NumSala ";
+
+            bool condiciones = false;
+            string comandoCond = "";
+            
+            if (tit != "")
+            {
+                comandoCond += " esp.Titulo like '%" + tit + "%'";
+                condiciones = true;
+            }
+            if (sala != "")
+            {
+                if (condiciones == true)
+                    comandoCond += " and";
+                comandoCond += " sal.NumSala = '" + sala + "'";
+                condiciones = true;
+            }
+            if (tipo != "")
+            {
+                if (condiciones == true)
+                    comandoCond += " and";
+                comandoCond += " sal.tipo = '" + tipo + "'";
+                condiciones = true;
+            }
+            if (modFecha != "" && valFecha != "" )
+            {               
+                if (condiciones == true)
+                    comandoCond += " and";
+
+                if (modFecha == "igual a")
+                    comandoCond = " esp.FechaIni > '" + valFecha + "' and esp.FechaFin < '" + valFecha + "'";
+                else if (modFecha == "mayor que")
+                    comandoCond = " esp.FechaIni > '" + valFecha + "'";
+                else if (modFecha == "menor que")
+                    comandoCond = " esp.FechaFin < '" + valFecha + "'";
+
+                condiciones = true;
+            }
+            if (modPrecio != "" && valPrecio != "")
+            {
+                if (condiciones == true)
+                    comandoCond += " and";
+
+                if (modFecha == "igual a")
+                    comandoCond = " esp.Precio = "+valPrecio;
+                else if (modFecha == "mayor que")
+                    comandoCond = " esp.Precio > " + valPrecio;
+                else if (modFecha == "menor que")
+                    comandoCond = " esp.Precio < " + valPrecio;
+
+                condiciones = true;
+            }
+            if (condiciones == true)
+            {
+                comando = comando + "WHERE" + comandoCond;
+            }
+
 
             try 
             {
