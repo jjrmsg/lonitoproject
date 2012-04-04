@@ -179,6 +179,33 @@ namespace Events4ALL.CAD
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
         }
+
+        public DataSet SacarSala(string id)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet sala = null;
+            string comando1 = "SELECT sa.NumSala, sa.Descripcion, sa.tipo, sa.NumSeccion, sa.Aforo, sa.EstadoSala, se.NumSeccion AS Expr1, se.NumFilas, se.NumColumnas FROM   Sala AS sa INNER JOIN Seccion AS se ON sa.NumSala = se.NumSala WHERE sa.NumSala ="+id;
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando1, conn);
+                sala = new DataSet();
+                sqlAdaptador.Fill(sala);
+                return sala;
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
     }
 
 }

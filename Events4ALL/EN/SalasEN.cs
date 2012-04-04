@@ -102,5 +102,11 @@ namespace Events4ALL.EN
                 DataSet selectSala = sala.SalaSelectCAD(idSala,tipo,aforo_min,aforo_max,estado);
                 return selectSala;
             }
+
+            public DataSet RecuperarSala(string id)
+            {
+                SalasCAD salaCad = new SalasCAD();
+                return salaCad.SacarSala(id);
+            }
     }
 }

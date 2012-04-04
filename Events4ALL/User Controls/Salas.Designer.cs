@@ -118,6 +118,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelUpdate = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -144,6 +145,7 @@
             // 
             // tabAñadirSala
             // 
+            this.tabAñadirSala.Controls.Add(this.labelUpdate);
             this.tabAñadirSala.Controls.Add(this.labAforo);
             this.tabAñadirSala.Controls.Add(this.pictureTipo);
             this.tabAñadirSala.Controls.Add(this.buttonLimpiar);
@@ -817,6 +819,7 @@
             this.dataGridBuscarSala.ReadOnly = true;
             this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 425);
             this.dataGridBuscarSala.TabIndex = 3;
+            this.dataGridBuscarSala.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBuscarSala_CellContentClick);
             // 
             // numSala
             // 
@@ -1017,6 +1020,16 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // labelUpdate
+            // 
+            this.labelUpdate.AutoSize = true;
+            this.labelUpdate.Location = new System.Drawing.Point(61, 151);
+            this.labelUpdate.Name = "labelUpdate";
+            this.labelUpdate.Size = new System.Drawing.Size(29, 13);
+            this.labelUpdate.TabIndex = 18;
+            this.labelUpdate.Text = "falso";
+            this.labelUpdate.Visible = false;
+            // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1131,5 +1144,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Label labAforo;
+        private System.Windows.Forms.Label labelUpdate;
     }
 }

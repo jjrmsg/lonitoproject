@@ -172,99 +172,109 @@ namespace Events4ALL
         private void buttonAñadirSala_Click(object sender, EventArgs e)
         {
             bool validado;
-            //ocualtar todos los error provider
             errorProvider1.Clear();
             errorProvider2.Clear();
 
             validado=validar();
             if (validado == true)
             {
-                #region Hacer Array de Secciones
-                int intSeccion = Convert.ToInt16(comboNumSeccion.Text);
-                int[][] secciones;
-                secciones = new int[intSeccion][];
-                if (labelSeccion1.Visible == true)
-                {
-                    secciones[0] = new int[3];
-                    secciones[0][0] = 1;
-                    secciones[0][1] = Convert.ToInt16(textFila1.Text);
-                    secciones[0][2] = Convert.ToInt16(textColumna1.Text);
-                }
-                if (labelSeccion2.Visible == true)
-                {
-                    secciones[1] = new int[3];
-                    secciones[1][0] = 2;
-                    secciones[1][1] = Convert.ToInt16(textFila2.Text);
-                    secciones[1][2] = Convert.ToInt16(textColumna2.Text);
-                }
-                if (labelSeccion3.Visible == true)
-                {
-                    secciones[2] = new int[3];
-                    secciones[2][0] = 3;
-                    secciones[2][1] = Convert.ToInt16(textFila3.Text);
-                    secciones[2][2] = Convert.ToInt16(textColumna3.Text);
-                }
-                if (labelSeccion4.Visible == true)
-                {
-                    secciones[3] = new int[3];
-                    secciones[3][0] = 4;
-                    secciones[3][1] = Convert.ToInt16(textFila4.Text);
-                    secciones[3][2] = Convert.ToInt16(textColumna4.Text);
-                }
-                if (labelSeccion5.Visible == true)
-                {
-                    secciones[4] = new int[3];
-                    secciones[4][0] = 5;
-                    secciones[4][1] = Convert.ToInt16(textFila5.Text);
-                    secciones[4][2] = Convert.ToInt16(textColumna5.Text);
-                }
-                if (labelSeccion6.Visible == true)
-                {
-                    secciones[5] = new int[3];
-                    secciones[5][0] = 6;
-                    secciones[5][1] = Convert.ToInt16(textFila6.Text);
-                    secciones[5][2] = Convert.ToInt16(textColumna6.Text);
-                }
-                if (labelSeccion7.Visible == true)
-                {
-                    secciones[6] = new int[3];
-                    secciones[6][0] = 7;
-                    secciones[6][1] = Convert.ToInt16(textFila7.Text);
-                    secciones[6][2] = Convert.ToInt16(textColumna7.Text);
-                }
-                if (labelSeccion8.Visible == true)
-                {
-                    secciones[7] = new int[3];
-                    secciones[7][0] = 8;
-                    secciones[7][1] = Convert.ToInt16(textFila8.Text);
-                    secciones[7][2] = Convert.ToInt16(textColumna8.Text);
-                }
-                if (labelSeccion9.Visible == true)
-                {
-                    secciones[8] = new int[3];
-                    secciones[8][0] = 9;
-                    secciones[8][1] = Convert.ToInt16(textFila9.Text);
-                    secciones[8][2] = Convert.ToInt16(textColumna9.Text);
-                }
-                if (labelSeccion10.Visible == true)
-                {
-                    secciones[9] = new int[3];
-                    secciones[9][0] = 10;
-                    secciones[9][1] = Convert.ToInt16(textFila10.Text);
-                    secciones[9][2] = Convert.ToInt16(textColumna10.Text);
-                }
-                #endregion
-                int capacidad=aforo(secciones,intSeccion);
-                SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text),comboTipo.Text,Convert.ToInt16(comboNumSeccion.Text),textDescripcion.Text,capacidad,secciones);
-                if (salaEn.InsertarEn() == true)
-                {
-                    MessageBox.Show("Sala crada correctamente");
-                    limpiar();
-                    textIdSala.Text = salaEn.acutalizarId().ToString();
-                }
-               // else
-               //     MessageBox.Show();
+                if (labelUpdate.Text == "falso")
+                    nuevaSala();
+                else//caso de update
+                    editarSala();
             }
+        }
+
+        private void nuevaSala()
+        {
+            #region Hacer Array de Secciones
+            int intSeccion = Convert.ToInt16(comboNumSeccion.Text);
+            int[][] secciones;
+            secciones = new int[intSeccion][];
+            if (labelSeccion1.Visible == true)
+            {
+                secciones[0] = new int[3];
+                secciones[0][0] = 1;
+                secciones[0][1] = Convert.ToInt16(textFila1.Text);
+                secciones[0][2] = Convert.ToInt16(textColumna1.Text);
+            }
+            if (labelSeccion2.Visible == true)
+            {
+                secciones[1] = new int[3];
+                secciones[1][0] = 2;
+                secciones[1][1] = Convert.ToInt16(textFila2.Text);
+                secciones[1][2] = Convert.ToInt16(textColumna2.Text);
+            }
+            if (labelSeccion3.Visible == true)
+            {
+                secciones[2] = new int[3];
+                secciones[2][0] = 3;
+                secciones[2][1] = Convert.ToInt16(textFila3.Text);
+                secciones[2][2] = Convert.ToInt16(textColumna3.Text);
+            }
+            if (labelSeccion4.Visible == true)
+            {
+                secciones[3] = new int[3];
+                secciones[3][0] = 4;
+                secciones[3][1] = Convert.ToInt16(textFila4.Text);
+                secciones[3][2] = Convert.ToInt16(textColumna4.Text);
+            }
+            if (labelSeccion5.Visible == true)
+            {
+                secciones[4] = new int[3];
+                secciones[4][0] = 5;
+                secciones[4][1] = Convert.ToInt16(textFila5.Text);
+                secciones[4][2] = Convert.ToInt16(textColumna5.Text);
+            }
+            if (labelSeccion6.Visible == true)
+            {
+                secciones[5] = new int[3];
+                secciones[5][0] = 6;
+                secciones[5][1] = Convert.ToInt16(textFila6.Text);
+                secciones[5][2] = Convert.ToInt16(textColumna6.Text);
+            }
+            if (labelSeccion7.Visible == true)
+            {
+                secciones[6] = new int[3];
+                secciones[6][0] = 7;
+                secciones[6][1] = Convert.ToInt16(textFila7.Text);
+                secciones[6][2] = Convert.ToInt16(textColumna7.Text);
+            }
+            if (labelSeccion8.Visible == true)
+            {
+                secciones[7] = new int[3];
+                secciones[7][0] = 8;
+                secciones[7][1] = Convert.ToInt16(textFila8.Text);
+                secciones[7][2] = Convert.ToInt16(textColumna8.Text);
+            }
+            if (labelSeccion9.Visible == true)
+            {
+                secciones[8] = new int[3];
+                secciones[8][0] = 9;
+                secciones[8][1] = Convert.ToInt16(textFila9.Text);
+                secciones[8][2] = Convert.ToInt16(textColumna9.Text);
+            }
+            if (labelSeccion10.Visible == true)
+            {
+                secciones[9] = new int[3];
+                secciones[9][0] = 10;
+                secciones[9][1] = Convert.ToInt16(textFila10.Text);
+                secciones[9][2] = Convert.ToInt16(textColumna10.Text);
+            }
+            #endregion
+            int capacidad = aforo(secciones, intSeccion);
+            SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text), comboTipo.Text, Convert.ToInt16(comboNumSeccion.Text), textDescripcion.Text, capacidad, secciones);
+            if (salaEn.InsertarEn() == true)
+            {
+                MessageBox.Show("Sala crada correctamente");
+                limpiar();
+                textIdSala.Text = salaEn.acutalizarId().ToString();
+            }
+        }
+
+        private void editarSala()
+        {
+
         }
 
         private bool validar()
@@ -384,6 +394,22 @@ namespace Events4ALL
                  dataGridBuscarSala.Rows.Add(row);
             }
          
+        }
+
+        private void dataGridBuscarSala_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //dataGridBuscarSala[e.ColumnIndex, e.RowIndex].Value.ToString();
+            if (e.ColumnIndex == 5)//Caso de updates
+            {
+                //ver que fila vamos a editar para ello almacenaremos el numero de la sala
+                string numeroSala = dataGridBuscarSala[0, e.RowIndex].Value.ToString();
+                SalasEN salaEn = new SalasEN();
+                DataSet salaRecuperar = new DataSet();
+                salaRecuperar=salaEn.RecuperarSala(numeroSala);
+                labelUpdate.Text = "verdadero";//aqui ponemos este label a verdadero para saber que si guarda el usuario hay que hacer update
+                tabControl1.SelectTab("tabAñadirSala");
+               
+            }
         }
     }
 }
