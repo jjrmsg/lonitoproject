@@ -115,17 +115,18 @@ namespace Events4ALL.CAD
                 SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando, conn);
                 datosSalas = new DataSet();
                 sqlAdaptador.Fill(datosSalas);
-                return datosSalas;
             } 
-            catch (Exception ex) 
+            catch(Exception ex) 
             { 
                 // Captura la condición general y la reenvía. 
-                throw ex; 
+                //throw ex; 
             } 
             finally 
             { 
                 if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+
             }
+            return datosSalas;
         }
 
         public DataSet SalaSelectCAD(int idSala, String tipo, int aforo_min, int aforo_max, int estado)

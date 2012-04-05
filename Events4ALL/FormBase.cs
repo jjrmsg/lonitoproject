@@ -18,19 +18,23 @@ namespace Events4ALL
         //------------VARIABLES---------------
         int actualOption=-1;
         int numImages;
-        int update = 0;
 
         public FormBase(string user, string pass, string lang)
         {
+            InitializeComponent();
+            PintarInterfaz(user, pass, lang);
+        }
+
+        private void PintarInterfaz(string user, string pass, string lang)
+        {
             DoubleBuffered = true;
 
-            if(lang=="en")
+            if (lang == "en")
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-            InitializeComponent();
-          
+
             numImages = imageList1.Images.Count;
 
-            if(lang=="es" || lang==" ")
+            if (lang == "es" || lang == " ")
             {
                 listBox1.Items.Add(new listItem("Inicio", 0));
                 listBox1.Items.Add(new listItem("Admins", 1));
@@ -45,7 +49,7 @@ namespace Events4ALL
                 listBox1.SetSelected(0, true);
             }
             else if (lang == "en")
-            { 
+            {
                 listBox1.Items.Add(new listItem("Main", 0));
                 listBox1.Items.Add(new listItem("Admins", 1));
                 listBox1.Items.Add(new listItem("Customers", 2));
@@ -105,7 +109,6 @@ namespace Events4ALL
             admins1.Visible = false;
             clientes1.Visible = false;
             espectaculos1.Visible = false;
-            logs1.Visible = false;
             estadisticas1.Visible = false;
             promociones1.Visible = false;
             salas1.Visible = false;

@@ -17,13 +17,21 @@ namespace Events4ALL
             InitializeComponent();
 
             SalasEN salasEN = new SalasEN();
-            DataSet salasTipo = salasEN.SalasPorTipo("");
+            DataSet salasTipo = new DataSet();
+            salasTipo = salasEN.SalasPorTipo("");
 
             cbSala.Items.Clear();
-            foreach (DataRow sala in salasTipo.Tables[0].Rows)
+            try
             {
-                cbSalaBuscar.Items.Add(sala["NumSala"]);
+                foreach (DataRow sala in salasTipo.Tables[0].Rows)
+                {
+                    cbSalaBuscar.Items.Add(sala["NumSala"]);
+                }
             }
+            catch
+            {
+            }
+            
         }
 
         private void cbTipo_SelectedIndexChanged(object sender, EventArgs e)
