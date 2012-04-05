@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.progressLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +54,13 @@
             // 
             // updateList
             // 
+            this.updateList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updateList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.updateList.FormattingEnabled = true;
-            this.updateList.Location = new System.Drawing.Point(262, 49);
+            this.updateList.ItemHeight = 20;
+            this.updateList.Location = new System.Drawing.Point(229, 49);
             this.updateList.Name = "updateList";
-            this.updateList.Size = new System.Drawing.Size(262, 212);
+            this.updateList.Size = new System.Drawing.Size(295, 200);
             this.updateList.TabIndex = 2;
             this.updateList.Visible = false;
             this.updateList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.updateList_DrawItem);
@@ -79,13 +83,14 @@
             this.updateButton.Text = "Actualizar";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Visible = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Events4ALL.Properties.Resources.updateLogo;
             this.pictureBox2.Location = new System.Drawing.Point(12, 49);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(244, 212);
+            this.pictureBox2.Size = new System.Drawing.Size(211, 212);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -113,7 +118,18 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "add_save.png");
+            this.imageList1.Images.SetKeyName(0, "login_icon.png");
+            // 
+            // progressLabel
+            // 
+            this.progressLabel.AutoSize = true;
+            this.progressLabel.BackColor = System.Drawing.Color.Transparent;
+            this.progressLabel.Location = new System.Drawing.Point(250, 272);
+            this.progressLabel.Name = "progressLabel";
+            this.progressLabel.Size = new System.Drawing.Size(21, 13);
+            this.progressLabel.TabIndex = 7;
+            this.progressLabel.Text = "0%";
+            this.progressLabel.Visible = false;
             // 
             // Update
             // 
@@ -121,6 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(536, 337);
+            this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.updateButton);
@@ -149,5 +166,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label progressLabel;
     }
 }

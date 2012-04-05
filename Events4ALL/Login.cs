@@ -79,7 +79,7 @@ namespace Events4ALL
                 try
                 {
                     c.Open();
-                    SqlCommand com = new SqlCommand("select count(*) from Administrador where Usuario='" + user + "' and Pass='" + pass + "'", c);
+                    SqlCommand com = new SqlCommand("select count(*) from Administrador where  Usuario COLLATE Latin1_General_CS_AS ='" + user + "' and Pass COLLATE Latin1_General_CS_AS ='" + pass + "'", c);
                     count = (int)com.ExecuteScalar();
 
                     if (count == 1)

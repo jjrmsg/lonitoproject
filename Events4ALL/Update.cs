@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace Events4ALL
 {
@@ -97,6 +99,11 @@ namespace Events4ALL
                 //Cambiamos la vista
                 ChangeView();
             }
+            else
+            {
+                pictureBox1.Visible = false;
+                msgLabel.Text = "No hay actualizaciones disponibles";
+            }
         }
 
         private void updateList_DrawItem(object sender, DrawItemEventArgs e)
@@ -107,7 +114,7 @@ namespace Events4ALL
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
                 e = new DrawItemEventArgs(e.Graphics, e.Font, e.Bounds, e.Index, e.State ^ DrawItemState.Selected, e.ForeColor,
-                                          Color.Gainsboro);
+                                          Color.White);
             }
 
             //Añadir iconos a los items de la lista
@@ -121,6 +128,43 @@ namespace Events4ALL
 
             e.Graphics.DrawString(item.Etiqueta, e.Font, new SolidBrush(Color.Black),
                       new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            WebClient wc = new WebClient();
+            wc.Proxy = null;
+
+            wc.DownloadFileCompleted += new AsyncCompletedEventHandler(updateCompleted);
+            wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
+            wc.DownloadFileAsync(new Uri(urlProgram), "update.zip");
+            updateButton.Visible = false;
+            progressLabel.Visible = true;
+        }
+
+        private void updateCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            File.Delete("version.txt");
+            WebClient wc = new WebClient();
+            wc.Proxy = null;
+            wc.DownloadFile(new Uri(urlVersion), "version.txt");
+            MessageBox.Show("El programa se reiniciará para aplicar los cambios");
+            Process proceso = new Process();
+            proceso.StartInfo.UseShellExecute = false;
+            proceso.StartInfo.RedirectStandardOutput = true;
+            proceso.StartInfo.RedirectStandardError = false;
+            proceso.StartInfo.CreateNoWindow = false;
+            proceso.StartInfo.FileName = "Updater.exe";
+            proceso.Start();
+          
+            
+            Application.Exit();
+        }
+
+        private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            updateBar.Value = e.ProgressPercentage;
+            progressLabel.Text = e.ProgressPercentage + "%";
         }
     }
 }
