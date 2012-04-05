@@ -207,6 +207,13 @@ namespace Events4ALL.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap log_bg {
             get {
                 object obj = ResourceManager.GetObject("log_bg", resourceCulture);
@@ -308,6 +315,13 @@ namespace Events4ALL.Properties {
         internal static System.Drawing.Bitmap update {
             get {
                 object obj = ResourceManager.GetObject("update", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap updateLogo {
+            get {
+                object obj = ResourceManager.GetObject("updateLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

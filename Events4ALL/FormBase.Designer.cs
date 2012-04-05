@@ -46,7 +46,7 @@
             this.messagePicture = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.admins1 = new Events4ALL.Admins();
             this.clientes1 = new Events4ALL.Clientes();
@@ -61,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,7 +163,7 @@
             this.panel2.Controls.Add(this.messagePicture);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.updateButton);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Name = "panel2";
             // 
@@ -196,13 +196,14 @@
             this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Name = "label5";
             // 
-            // pictureBox1
+            // updateButton
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Events4ALL.Properties.Resources.update;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.updateButton, "updateButton");
+            this.updateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateButton.Image = global::Events4ALL.Properties.Resources.update;
+            this.updateButton.Name = "updateButton";
+            this.updateButton.TabStop = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // pictureBox2
             // 
@@ -281,7 +282,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,7 +292,7 @@
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox updateButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;

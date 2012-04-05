@@ -86,7 +86,7 @@ namespace Events4ALL
                     {
                         miIdioma();
                         Recordar();
-                        System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
+                        Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
                         t.Start();
                         this.Close();
                     }

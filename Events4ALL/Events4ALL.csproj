@@ -86,6 +86,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\Admins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,6 +189,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Admins.resx">
       <DependentUpon>Admins.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +249,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="version.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="imgs\add_save.png" />
     <Content Include="Events4AllDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -274,6 +286,7 @@
     <Content Include="imgs\Icono Events4All.ico" />
     <Content Include="imgs\idioma.png" />
     <None Include="imgs\login_icon.png" />
+    <Content Include="imgs\loading.gif" />
     <Content Include="imgs\logout.png" />
     <None Include="imgs\log_bg.png" />
     <None Include="imgs\logout_img.png" />
@@ -285,6 +298,7 @@
     <Content Include="imgs\salas.png" />
     <None Include="imgs\search_icon.png" />
     <Content Include="imgs\teatro.jpg" />
+    <Content Include="imgs\updateLogo.png" />
     <Content Include="imgs\ventas.png" />
     <Content Include="Properties\logo.png" />
     <None Include="imgs\image-default.png" />

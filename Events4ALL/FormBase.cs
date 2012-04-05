@@ -200,5 +200,11 @@ namespace Events4ALL
         {
             timer1.Start();
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            Form up = new Update();
+            up.ShowDialog();
+        }
     }
 }
