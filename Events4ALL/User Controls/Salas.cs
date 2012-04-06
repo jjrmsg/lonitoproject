@@ -341,6 +341,10 @@ namespace Events4ALL
             errorProvider1.Clear();
             errorProvider2.Clear();
             groupBoxSecciones.Visible = false;
+            SalasEN salaEn = new SalasEN();
+            textIdSala.Text = salaEn.acutalizarId().ToString();
+            labelUpdate.Text = "falso";
+
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -357,6 +361,8 @@ namespace Events4ALL
                 if (ctrl is TextBox || ctrl is ComboBox)
                     ctrl.Text = "";
             }
+            checkLibre.Checked = false;
+            dataGridBuscarSala.Rows.Clear();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -408,7 +414,65 @@ namespace Events4ALL
                 salaRecuperar=salaEn.RecuperarSala(numeroSala);
                 labelUpdate.Text = "verdadero";//aqui ponemos este label a verdadero para saber que si guarda el usuario hay que hacer update
                 tabControl1.SelectTab("tabAñadirSala");
-               
+                textIdSala.Text=salaRecuperar.Tables[0].Rows[0][0].ToString();
+                textDescripcion.Text= salaRecuperar.Tables[0].Rows[0][1].ToString();
+                comboTipo.Text=salaRecuperar.Tables[0].Rows[0][2].ToString();
+                comboNumSeccion.Text = salaRecuperar.Tables[0].Rows[0][3].ToString();
+
+                #region hacer secciones
+                int nSecciones=Convert.ToInt16(comboNumSeccion.Text);
+                if (nSecciones >= 1)
+                {
+                    textFila1.Text = salaRecuperar.Tables[0].Rows[0][6].ToString();
+                    textColumna1.Text = salaRecuperar.Tables[0].Rows[0][7].ToString();
+                }
+                if (nSecciones >= 2)
+                {
+                    textFila2.Text = salaRecuperar.Tables[0].Rows[1][6].ToString();
+                    textColumna2.Text = salaRecuperar.Tables[0].Rows[1][7].ToString();
+                }
+                if (nSecciones >= 3)
+                {
+                    textFila3.Text = salaRecuperar.Tables[0].Rows[2][6].ToString();
+                    textColumna3.Text = salaRecuperar.Tables[0].Rows[2][7].ToString();
+                }
+                if (nSecciones >= 4)
+                {
+                    textFila4.Text = salaRecuperar.Tables[0].Rows[3][6].ToString();
+                    textColumna4.Text = salaRecuperar.Tables[0].Rows[3][7].ToString();
+                }
+                if (nSecciones >= 5)
+                {
+                    textFila5.Text = salaRecuperar.Tables[0].Rows[4][6].ToString();
+                    textColumna5.Text = salaRecuperar.Tables[0].Rows[4][7].ToString();
+                }
+                if (nSecciones >= 6)
+                {
+                    textFila6.Text = salaRecuperar.Tables[0].Rows[5][6].ToString();
+                    textColumna6.Text = salaRecuperar.Tables[0].Rows[5][7].ToString();
+                }
+                if (nSecciones >= 7)
+                {
+                    textFila7.Text = salaRecuperar.Tables[0].Rows[6][6].ToString();
+                    textColumna7.Text = salaRecuperar.Tables[0].Rows[6][7].ToString();
+                }
+                if (nSecciones >= 8)
+                {
+                    textFila8.Text = salaRecuperar.Tables[0].Rows[7][6].ToString();
+                    textColumna8.Text = salaRecuperar.Tables[0].Rows[7][7].ToString();
+                }
+                if (nSecciones >= 9)
+                {
+                    textFila9.Text = salaRecuperar.Tables[0].Rows[8][6].ToString();
+                    textColumna9.Text = salaRecuperar.Tables[0].Rows[8][7].ToString();
+                }
+                if (nSecciones >= 10)
+                {
+                    textFila10.Text = salaRecuperar.Tables[0].Rows[9][6].ToString();
+                    textColumna10.Text = salaRecuperar.Tables[0].Rows[9][7].ToString();
+                }
+                #endregion
+
             }
         }
     }

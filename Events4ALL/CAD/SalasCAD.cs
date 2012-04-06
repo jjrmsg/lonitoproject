@@ -186,7 +186,7 @@ namespace Events4ALL.CAD
             SqlConnection conn = null;
             BD bd = new BD();
             DataSet sala = null;
-            string comando1 = "SELECT sa.NumSala, sa.Descripcion, sa.tipo, sa.NumSeccion, sa.Aforo, sa.EstadoSala, se.NumSeccion AS Expr1, se.NumFilas, se.NumColumnas FROM   Sala AS sa INNER JOIN Seccion AS se ON sa.NumSala = se.NumSala WHERE sa.NumSala ="+id;
+            string comando1 = "SELECT sa.NumSala, sa.Descripcion, sa.tipo, sa.NumSeccion, sa.EstadoSala, se.NumSeccion AS Expr1, se.NumFilas, se.NumColumnas FROM   Sala AS sa INNER JOIN Seccion AS se ON sa.NumSala = se.NumSala WHERE sa.NumSala ="+id;
             try
             {
                 conn = bd.Connect();
