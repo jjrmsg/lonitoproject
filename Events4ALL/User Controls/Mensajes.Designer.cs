@@ -47,7 +47,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.X = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msgGridView)).BeginInit();
             this.SuspendLayout();
@@ -160,10 +160,11 @@
             this.msgGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Asunto,
-            this.X});
+            this.Eliminar});
             this.msgGridView.Name = "msgGridView";
             this.msgGridView.ReadOnly = true;
             this.msgGridView.RowHeadersVisible = false;
+            this.msgGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.msgGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.msgGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msgGridView_CellClick);
             // 
@@ -187,13 +188,13 @@
             this.Asunto.Name = "Asunto";
             this.Asunto.ReadOnly = true;
             // 
-            // X
+            // Eliminar
             // 
-            this.X.FillWeight = 10.15228F;
-            resources.ApplyResources(this.X, "X");
-            this.X.Image = global::Events4ALL.Properties.Resources.delete;
-            this.X.Name = "X";
-            this.X.ReadOnly = true;
+            this.Eliminar.FillWeight = 10.15228F;
+            resources.ApplyResources(this.Eliminar, "Eliminar");
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // Mensajes
             // 
@@ -231,6 +232,6 @@
         public System.Windows.Forms.TextBox responseText;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
-        private System.Windows.Forms.DataGridViewImageColumn X;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

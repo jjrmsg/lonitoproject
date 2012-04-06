@@ -79,5 +79,25 @@ namespace Events4ALL.CAD
             }
 
         }
+
+        public void deleteMessage(string ID)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("delete Mensaje where IDMensaje='" + ID + "'", c);
+                com.ExecuteNonQuery();
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
     }
 }

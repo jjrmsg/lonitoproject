@@ -30,5 +30,10 @@ namespace Events4ALL.EN
         {
             msgCAD.setResponse(ID);
         }
+
+        public void deleteMessage(string ID)
+        {
+            msgCAD.deleteMessage(ID);
+        }
     }
 }

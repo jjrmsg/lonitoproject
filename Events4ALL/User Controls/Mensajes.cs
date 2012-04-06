@@ -36,7 +36,9 @@ namespace Events4ALL.User_Controls
         {
             DataSet dsmsg = new DataSet();
 
+
             dsmsg = msgEN.getMessages();
+            msgGridView.Rows.Clear();
 
             foreach (DataRow row in dsmsg.Tables[0].Rows)
             {
@@ -44,17 +46,21 @@ namespace Events4ALL.User_Controls
                 Console.WriteLine("est vale: "+est);
                 if (est==0)
                 {
-                    Console.WriteLine("NYAAAAAAAAAN");
-                    DataGridViewRow r=new DataGridViewRow();
+                    DataGridViewRow r = new DataGridViewRow();
                     r.CreateCells(msgGridView);
+                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
                     r.SetValues(row["IDMensaje"], row["Asunto"]);
-                    r.DefaultCellStyle.BackColor = Color.LawnGreen;
+                    r.DefaultCellStyle.BackColor = Color.Gainsboro;
+                    
                     msgGridView.Rows.Add(r);
                 }
                 else
                 {
-                    Console.WriteLine("CATTTTTTTTTTTT");
-                    msgGridView.Rows.Add(row["IDMensaje"], row["Asunto"]);
+                    DataGridViewRow r = new DataGridViewRow();
+                    r.CreateCells(msgGridView);
+                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
+                    r.SetValues(row["IDMensaje"], row["Asunto"]);
+                    msgGridView.Rows.Add(r);
                 }
             }
         }
@@ -73,28 +79,38 @@ namespace Events4ALL.User_Controls
             statusLabel.Text = "Enviado";
             responseText.Clear();
             msgEN.setResponse(ID);
+            LoadMessages();
         }
 
         private void msgGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0 || e.ColumnIndex != msgGridView.Columns["Boton"].Index) return;
-
-            //textBox1.Text = msgGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            foreach (DataGridViewRow r in msgGridView.SelectedRows)
+            if (e.RowIndex < 0 || e.ColumnIndex != msgGridView.Columns["Eliminar"].Index)
             {
-                DataSet mensaje= new DataSet();
-                mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-                
-                foreach (DataRow row in mensaje.Tables[0].Rows)
+                //textBox1.Text = msgGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                foreach (DataGridViewRow r in msgGridView.SelectedRows)
                 {
-                    textNombre.Text = row["Nombre"].ToString();
-                    textApellidos.Text = row["Apellidos"].ToString();
-                    textAsunto.Text = row["Asunto"].ToString();
-                    textConsulta.Text = row["Contenido"].ToString();
-                    mimail = row["Mail"].ToString();
-                    IDMensaje = row["IDMensaje"].ToString();
+                    DataSet mensaje = new DataSet();
+                    mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
+
+                    foreach (DataRow row in mensaje.Tables[0].Rows)
+                    {
+                        textNombre.Text = row["Nombre"].ToString();
+                        textApellidos.Text = row["Apellidos"].ToString();
+                        textAsunto.Text = row["Asunto"].ToString();
+                        textConsulta.Text = row["Contenido"].ToString();
+                        mimail = row["Mail"].ToString();
+                        IDMensaje = row["IDMensaje"].ToString();
+                    }
                 }
-                //msgGridView.Rows.RemoveAt(r.Index);
+            }
+            else //Eliminar fila
+            {
+                foreach (DataGridViewRow r in msgGridView.SelectedRows)
+                {
+                    msgEN.deleteMessage(msgGridView.Rows[r.Index].Cells["ID"].Value.ToString());
+                    msgGridView.Rows.RemoveAt(r.Index);
+                }
             }
         }
     }
