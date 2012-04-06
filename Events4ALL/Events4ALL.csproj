@@ -251,6 +251,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\reload.png" />
     <Content Include="imgs\true.png" />
     <Content Include="version.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

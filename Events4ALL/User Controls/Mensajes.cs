@@ -35,33 +35,37 @@ namespace Events4ALL.User_Controls
         private void LoadMessages()
         {
             DataSet dsmsg = new DataSet();
-
-
             dsmsg = msgEN.getMessages();
             msgGridView.Rows.Clear();
 
-            foreach (DataRow row in dsmsg.Tables[0].Rows)
+            try
             {
-                int est = int.Parse(row["Estado"].ToString());
-                Console.WriteLine("est vale: "+est);
-                if (est==0)
+                foreach (DataRow row in dsmsg.Tables[0].Rows)
                 {
-                    DataGridViewRow r = new DataGridViewRow();
-                    r.CreateCells(msgGridView);
-                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
-                    r.SetValues(row["IDMensaje"], row["Asunto"]);
-                    r.DefaultCellStyle.BackColor = Color.Gainsboro;
-                    
-                    msgGridView.Rows.Add(r);
+                    int est = int.Parse(row["Estado"].ToString());
+                    Console.WriteLine("est vale: " + est);
+                    if (est == 0)
+                    {
+                        DataGridViewRow r = new DataGridViewRow();
+                        r.CreateCells(msgGridView);
+                        r.DefaultCellStyle.SelectionBackColor = Color.Gold;
+                        r.SetValues(row["IDMensaje"], row["Asunto"]);
+                        r.DefaultCellStyle.BackColor = Color.Gainsboro;
+
+                        msgGridView.Rows.Add(r);
+                    }
+                    else
+                    {
+                        DataGridViewRow r = new DataGridViewRow();
+                        r.CreateCells(msgGridView);
+                        r.DefaultCellStyle.SelectionBackColor = Color.Gold;
+                        r.SetValues(row["IDMensaje"], row["Asunto"]);
+                        msgGridView.Rows.Add(r);
+                    }
                 }
-                else
-                {
-                    DataGridViewRow r = new DataGridViewRow();
-                    r.CreateCells(msgGridView);
-                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
-                    r.SetValues(row["IDMensaje"], row["Asunto"]);
-                    msgGridView.Rows.Add(r);
-                }
+            }
+            catch
+            {
             }
         }
 
@@ -112,6 +116,11 @@ namespace Events4ALL.User_Controls
                     msgGridView.Rows.RemoveAt(r.Index);
                 }
             }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            LoadMessages();
         }
     }
 
