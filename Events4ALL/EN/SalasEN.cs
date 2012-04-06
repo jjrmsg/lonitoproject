@@ -81,6 +81,13 @@ namespace Events4ALL.EN
                 else
                     return false;
             }
+
+            public void UpdateSala()
+            {
+                SalasCAD sala = new SalasCAD();
+                sala.UpdateCAD(this);
+            }
+            
             public int acutalizarId()
             {
                 int id = 0;

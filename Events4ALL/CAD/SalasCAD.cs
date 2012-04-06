@@ -96,6 +96,51 @@ namespace Events4ALL.CAD
             return insertado;
         }
 
+        public void UpdateCAD(SalasEN sala)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+                string update = "update Sala set ";
+                ////editando
+                string update2 = "Descripcion='" + sala.Descripcion +"', tipo='"+ sala.TipoSala + "', NumSeccion=" + sala.NumSecciones.ToString() + ", Aforo=" + sala.Aforo + " where NumSala="+sala.NumSala;
+
+                SqlCommand com = new SqlCommand(update + update2, c);
+                com.ExecuteNonQuery();
+
+                /////////////////////BORRAR SECCIONES ANTIGUAS/////////////////////
+                string borrado = "delete from Seccion where NumSala="+sala.NumSala;
+                SqlCommand com2 = new SqlCommand(borrado,c);
+                com2.ExecuteNonQuery();
+                ///////////////////////////////////////////////////////////////////
+                ////////////////////INSERCION DE LAS NUEVAS SECCIONES//////////////
+                int[][] vector = sala.Secciones;
+                string entrada = "";
+                foreach (int[] i in vector)
+                {
+                    int seccion = i[0];
+                    int fila = i[1];
+                    int col = i[2];
+                    entrada = "insert into Seccion (NumSala,NumSeccion,NumFilas,NumColumnas) values (" + sala.NumSala.ToString() + "," + seccion + "," + fila + "," + col + ")";
+                    SqlCommand com3 = new SqlCommand(entrada, c);
+                    com3.ExecuteNonQuery();
+                }
+                ////////////////////////////////////////////////////////////////////
+
+            }
+            catch(Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
+
         public DataSet SalasPorTipo(String tipo)
         {
             SqlConnection conn = null; 
@@ -119,7 +164,7 @@ namespace Events4ALL.CAD
             catch(Exception ex) 
             { 
                 // Captura la condición general y la reenvía. 
-                //throw ex; 
+                throw ex; 
             } 
             finally 
             { 

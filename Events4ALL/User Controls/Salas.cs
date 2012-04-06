@@ -176,17 +176,6 @@ namespace Events4ALL
             errorProvider2.Clear();
 
             validado=validar();
-            if (validado == true)
-            {
-                if (labelUpdate.Text == "falso")
-                    nuevaSala();
-                else//caso de update
-                    editarSala();
-            }
-        }
-
-        private void nuevaSala()
-        {
             #region Hacer Array de Secciones
             int intSeccion = Convert.ToInt16(comboNumSeccion.Text);
             int[][] secciones;
@@ -264,6 +253,18 @@ namespace Events4ALL
             #endregion
             int capacidad = aforo(secciones, intSeccion);
             SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text), comboTipo.Text, Convert.ToInt16(comboNumSeccion.Text), textDescripcion.Text, capacidad, secciones);
+
+            if (validado == true)
+            {
+                if (labelUpdate.Text == "falso")
+                    nuevaSala(salaEn);
+                else//caso de update
+                    editarSala(salaEn);
+            }
+        }
+
+        private void nuevaSala(SalasEN salaEn)
+        {
             if (salaEn.InsertarEn() == true)
             {
                 MessageBox.Show("Sala crada correctamente");
@@ -272,9 +273,11 @@ namespace Events4ALL
             }
         }
 
-        private void editarSala()
+        private void editarSala(SalasEN sala)
         {
-
+            sala.UpdateSala();
+            MessageBox.Show("Sala actualizada");
+            limpiar();
         }
 
         private bool validar()
