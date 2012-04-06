@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using System.Threading;
+using Events4ALL.EN;
 
 namespace Events4ALL.User_Controls
 {
@@ -17,6 +18,9 @@ namespace Events4ALL.User_Controls
     {
 
         string status = "";
+        private MensajesEN msgEN = new MensajesEN();
+        private string mimail = "";
+        private string IDMensaje = "";
 
         public Mensajes()
         {
@@ -25,39 +29,73 @@ namespace Events4ALL.User_Controls
             status = statusLabel.Text;
             CheckForIllegalCrossThreadCalls = false;
 
-            string[] row1 = new string[] { "Problema con los pagos" };
-            string[] row2 = new string[] { "No puedo loguearme" };
-            string[] row3 = new string[] { "Mi tarjeta de credito no funciona" };
-            string[] row4 = new string[] { "No puedo elegir asientos" };
-            string[] row5 = new string[] { "Hay descuentos para estudiantes?" };
-            string[] row6 = new string[] { "Quiero cancelar una reserva" };
-            string[] row7 = new string[] { "No me salen mis compras" };
-            string[] row8 = new string[] {"He perdido mis entradas"};
-            object[] rows = new object[] { row1, row2, row3, row4, row5, row6, row7, row8 };
+            LoadMessages();
+        }
 
-            foreach (string[] rowArray in rows)
+        private void LoadMessages()
+        {
+            DataSet dsmsg = new DataSet();
+
+            dsmsg = msgEN.getMessages();
+
+            foreach (DataRow row in dsmsg.Tables[0].Rows)
             {
-                dataGridView1.Rows.Add(rowArray);
+                int est = int.Parse(row["Estado"].ToString());
+                Console.WriteLine("est vale: "+est);
+                if (est==0)
+                {
+                    Console.WriteLine("NYAAAAAAAAAN");
+                    DataGridViewRow r=new DataGridViewRow();
+                    r.CreateCells(msgGridView);
+                    r.SetValues(row["IDMensaje"], row["Asunto"]);
+                    r.DefaultCellStyle.BackColor = Color.LawnGreen;
+                    msgGridView.Rows.Add(r);
+                }
+                else
+                {
+                    Console.WriteLine("CATTTTTTTTTTTT");
+                    msgGridView.Rows.Add(row["IDMensaje"], row["Asunto"]);
+                }
             }
         }
 
         private void mailButton_Click(object sender, EventArgs e)
         {
-            Mail mail = new Mail(responseText.Text, new MailCallback(ResultCallback));
+            Mail mail = new Mail(responseText.Text, mimail, IDMensaje, new MailCallback(ResultCallback));
             Thread th1 = new Thread(new ThreadStart(mail.sendMail));
             th1.Start();
-            //th1.Join();
             statusLabel.Visible = true;
             statusLabel.Text = "Enviando...";
         }
 
-        public void ResultCallback(string res)
+        public void ResultCallback(string ID)
         {
             statusLabel.Text = "Enviado";
+            responseText.Clear();
+            msgEN.setResponse(ID);
         }
 
-        private void prueba_Click(object sender, EventArgs e)
+        private void msgGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (e.RowIndex < 0 || e.ColumnIndex != msgGridView.Columns["Boton"].Index) return;
+
+            //textBox1.Text = msgGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            foreach (DataGridViewRow r in msgGridView.SelectedRows)
+            {
+                DataSet mensaje= new DataSet();
+                mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+                
+                foreach (DataRow row in mensaje.Tables[0].Rows)
+                {
+                    textNombre.Text = row["Nombre"].ToString();
+                    textApellidos.Text = row["Apellidos"].ToString();
+                    textAsunto.Text = row["Asunto"].ToString();
+                    textConsulta.Text = row["Contenido"].ToString();
+                    mimail = row["Mail"].ToString();
+                    IDMensaje = row["IDMensaje"].ToString();
+                }
+                //msgGridView.Rows.RemoveAt(r.Index);
+            }
         }
     }
 
@@ -66,11 +104,15 @@ namespace Events4ALL.User_Controls
     public class Mail
     {
         string Mensaje = "";
+        string eMail = "";
+        string IDMensaje = "";
         protected MailCallback callback = null;
 
-        public Mail(string msj, MailCallback callback)
+        public Mail(string msj, string mail, string ID, MailCallback callback)
         {
             Mensaje = msj;
+            eMail=mail;
+            IDMensaje = ID;
             this.callback = callback;
         }
 
@@ -90,7 +132,7 @@ namespace Events4ALL.User_Controls
 
             if (callback != null)
             {
-                callback("Enviado");
+                callback(IDMensaje);
             }
         }
     }
