@@ -9,9 +9,6 @@ namespace Updater
 {
     class Program
     {
-        static String username = Environment.UserName;
-        static String mineLauncherPath = @"C:\Users\" + username + @"\AppData\Roaming\.minecraft\MineLauncher\";
-
         static void Main(string[] args)
         {
             if (File.Exists("update.zip"))
