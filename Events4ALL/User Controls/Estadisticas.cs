@@ -25,7 +25,9 @@ namespace Events4ALL
         private Dictionary<string, decimal> diasVentas;
         private Dictionary<string, int> numerosMeses;
         private Dictionary<string, int> tipoVentas;
+        private Dictionary<string, int> generoVentas;
         private Dictionary<string, int> tipos;
+        private Dictionary<string, int> generos;
         #endregion
 
         public Estadisticas()
@@ -35,7 +37,9 @@ namespace Events4ALL
             espEN = new EspectaculosEN();
             diasVentas = new Dictionary<string, decimal>();
             tipoVentas = new Dictionary<string, int>();
+            generoVentas = new Dictionary<string, int>();
             tipos = new Dictionary<string, int>() { {"Teatro", 1}, {"Cine", 2}, {"Concierto", 3} };
+            generos = new Dictionary<string, int>() { { "Aventura", 1 }, { "Romantica", 2 }, { "Comedia", 3 }, { "Accion", 4 }, { "Terror", 5 } };
 
             numerosMeses = new Dictionary<string, int>()
             {
@@ -48,6 +52,13 @@ namespace Events4ALL
 
         private void loadButton_Click(object sender, EventArgs e)
         {
+            mainChart.Series["Euros"].Points.Clear();
+            tipoChart.Series["Tipo"].Points.Clear();
+            generoChart.Series["Genero"].Points.Clear();
+            diasVentas.Clear();
+            tipoVentas.Clear();
+            generoVentas.Clear();
+            
             ValidaDatos();
         }
 
@@ -103,17 +114,27 @@ namespace Events4ALL
             DataSet dsVentas;
 
             dsVentas = vEN.getAllEspectaculos();
+            string anyo = "0";
+            string mes = "0";
+            string dia = "0";
             foreach (DataRow row in dsVentas.Tables[0].Rows)
             {
+                DateTime dt = (DateTime)row["FechaVenta"];
+                anyo = dt.Year.ToString();
+                mes = dt.Month.ToString();
+                dia = dt.Day.ToString();
                 string tipo = row["tipo"].ToString();
 
-                if (tipoVentas.ContainsKey(tipo))
+                if (anyo == textAnyo.Text && mes == numerosMeses[comboMes.SelectedItem.ToString()].ToString())
                 {
-                    tipoVentas[tipo] = tipoVentas[tipo] + 1;
-                }
-                else
-                {
-                    tipoVentas.Add(tipo, 1);
+                    if (tipoVentas.ContainsKey(tipo))
+                    {
+                        tipoVentas[tipo] = tipoVentas[tipo] + 1;
+                    }
+                    else
+                    {
+                        tipoVentas.Add(tipo, 1);
+                    }
                 }
             }
 
@@ -128,6 +149,42 @@ namespace Events4ALL
 
         private void ObtenerDatosGenero()
         {
+            DataSet dsVentas;
+
+            dsVentas = vEN.getAllEspectaculos();
+            string anyo = "0";
+            string mes = "0";
+            string dia = "0";
+            foreach (DataRow row in dsVentas.Tables[0].Rows)
+            {
+                DateTime dt = (DateTime)row["FechaVenta"];
+                anyo = dt.Year.ToString();
+                mes = dt.Month.ToString();
+                dia = dt.Day.ToString();
+                string genero = row["Genero"].ToString();
+                genero = genero.Replace("  ", string.Empty);
+                
+                if (anyo == textAnyo.Text && mes == numerosMeses[comboMes.SelectedItem.ToString()].ToString() && !string.IsNullOrEmpty(genero))
+                {
+                    
+                    if (generoVentas.ContainsKey(genero))
+                    {
+                        generoVentas[genero] = generoVentas[genero] + 1;
+                    }
+                    else
+                    {
+                        generoVentas.Add(genero, 1);
+                    }
+                }
+            }
+
+            foreach (var pair in generoVentas)
+            {
+                Console.WriteLine("genero 2: " + pair.Key);
+                DataPoint p = new DataPoint(generos[pair.Key], (int)pair.Value);
+                p.Label = pair.Key;
+                generoChart.Series["Genero"].Points.Add(p);
+            }
         }
     }
 }
