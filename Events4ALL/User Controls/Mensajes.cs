@@ -28,7 +28,6 @@ namespace Events4ALL.User_Controls
 
             status = statusLabel.Text;
             CheckForIllegalCrossThreadCalls = false;
-
             LoadMessages();
         }
 
@@ -42,15 +41,19 @@ namespace Events4ALL.User_Controls
             {
                 foreach (DataRow row in dsmsg.Tables[0].Rows)
                 {
+                    DateTime Fecha = (DateTime)row["Fecha"];
+                    string anyo = Fecha.Year.ToString();
+                    string mes = Fecha.Month.ToString();
+                    string dia = Fecha.Day.ToString();
+
                     int est = int.Parse(row["Estado"].ToString());
-                    Console.WriteLine("est vale: " + est);
                     if (est == 0)
                     {
                         DataGridViewRow r = new DataGridViewRow();
                         r.CreateCells(msgGridView);
-                        r.DefaultCellStyle.SelectionBackColor = Color.Gold;
-                        r.SetValues(row["IDMensaje"], row["Asunto"]);
-                        r.DefaultCellStyle.BackColor = Color.Gainsboro;
+                        r.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
+                        r.SetValues(row["IDMensaje"], row["Asunto"], dia+"/"+mes+"/"+anyo);
+                        r.DefaultCellStyle.BackColor = Color.Lavender;
 
                         msgGridView.Rows.Add(r);
                     }
@@ -58,8 +61,8 @@ namespace Events4ALL.User_Controls
                     {
                         DataGridViewRow r = new DataGridViewRow();
                         r.CreateCells(msgGridView);
-                        r.DefaultCellStyle.SelectionBackColor = Color.Gold;
-                        r.SetValues(row["IDMensaje"], row["Asunto"]);
+                        r.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
+                        r.SetValues(row["IDMensaje"], row["Asunto"], dia + "/" + mes + "/" + anyo);
                         msgGridView.Rows.Add(r);
                     }
                 }
@@ -95,7 +98,7 @@ namespace Events4ALL.User_Controls
                 {
                     DataSet mensaje = new DataSet();
                     mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
-                    r.DefaultCellStyle.SelectionBackColor = Color.Gold;
+                    r.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
 
                     foreach (DataRow row in mensaje.Tables[0].Rows)
                     {
@@ -144,7 +147,7 @@ namespace Events4ALL.User_Controls
         public void sendMail()
         {
             System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
-            message.To.Add("shadowfiltro@gmail.com");
+            message.To.Add(eMail);
             message.Subject = "Respuesta Events4ALL";
             message.From = new System.Net.Mail.MailAddress("events4alls@gmail.com");
             message.Body = Mensaje;

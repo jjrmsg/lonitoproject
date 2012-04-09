@@ -23,7 +23,7 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Mensaje", c);
+                SqlDataAdapter da = new SqlDataAdapter("select * from Mensaje order by Estado asc", c);
                 da.Fill(mensajes);
             }
             catch

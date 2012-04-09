@@ -46,6 +46,7 @@
             this.msgGridView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.refreshButton = new System.Windows.Forms.PictureBox();
@@ -156,12 +157,13 @@
             resources.ApplyResources(this.msgGridView, "msgGridView");
             this.msgGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.msgGridView.BackgroundColor = System.Drawing.Color.White;
-            this.msgGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.msgGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.msgGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.msgGridView.ColumnHeadersVisible = false;
             this.msgGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Asunto,
+            this.Fecha,
             this.Eliminar});
             this.msgGridView.Name = "msgGridView";
             this.msgGridView.ReadOnly = true;
@@ -182,6 +184,13 @@
             resources.ApplyResources(this.Asunto, "Asunto");
             this.Asunto.Name = "Asunto";
             this.Asunto.ReadOnly = true;
+            // 
+            // Fecha
+            // 
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            resources.ApplyResources(this.Fecha, "Fecha");
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
             // Eliminar
             // 
@@ -243,9 +252,10 @@
         private System.Windows.Forms.DataGridView msgGridView;
         private System.Windows.Forms.Label statusLabel;
         public System.Windows.Forms.TextBox responseText;
+        private System.Windows.Forms.PictureBox refreshButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.PictureBox refreshButton;
     }
 }
