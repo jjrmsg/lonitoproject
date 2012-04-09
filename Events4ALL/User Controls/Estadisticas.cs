@@ -24,6 +24,8 @@ namespace Events4ALL
         private EspectaculosEN espEN;
         private Dictionary<string, decimal> diasVentas;
         private Dictionary<string, int> numerosMeses;
+        private Dictionary<string, int> tipoVentas;
+        private Dictionary<string, int> tipos;
         #endregion
 
         public Estadisticas()
@@ -32,6 +34,9 @@ namespace Events4ALL
             vEN = new VentasEN();
             espEN = new EspectaculosEN();
             diasVentas = new Dictionary<string, decimal>();
+            tipoVentas = new Dictionary<string, int>();
+            tipos = new Dictionary<string, int>() { {"Teatro", 1}, {"Cine", 2}, {"Concierto", 3} };
+
             numerosMeses = new Dictionary<string, int>()
             {
                 {"Enero", 1}, {"Febrero", 2}, {"Marzo", 3}, {"Abril", 4}, {"Mayo", 5}, {"Junio", 6},
@@ -41,10 +46,16 @@ namespace Events4ALL
             comboMes.Text = "Junio";
         }
 
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            ValidaDatos();
+        }
+
         private void ValidaDatos()
         {
-      
             ObtenerDatosGeneral();
+            ObtenerDatosTipo();
+            ObtenerDatosGenero();
         }
 
         private void ObtenerDatosGeneral()
@@ -77,7 +88,6 @@ namespace Events4ALL
                     {
                         diasVentas.Add(dia, precio);
                     }
-                    //MessageBox.Show(dia + " " + precio);
                 }
             }
 
@@ -88,9 +98,36 @@ namespace Events4ALL
             }
         }
 
-        private void loadButton_Click(object sender, EventArgs e)
+        private void ObtenerDatosTipo()
         {
-            ValidaDatos();
+            DataSet dsVentas;
+
+            dsVentas = vEN.getAllEspectaculos();
+            foreach (DataRow row in dsVentas.Tables[0].Rows)
+            {
+                string tipo = row["tipo"].ToString();
+
+                if (tipoVentas.ContainsKey(tipo))
+                {
+                    tipoVentas[tipo] = tipoVentas[tipo] + 1;
+                }
+                else
+                {
+                    tipoVentas.Add(tipo, 1);
+                }
+            }
+
+            foreach (var pair in tipoVentas)
+            {
+
+                DataPoint p = new DataPoint(tipos[pair.Key], (int)pair.Value);
+                p.Label = pair.Key;
+                tipoChart.Series["Tipo"].Points.Add(p);
+            }
+        }
+
+        private void ObtenerDatosGenero()
+        {
         }
     }
 }
