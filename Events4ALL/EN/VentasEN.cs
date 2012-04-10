@@ -23,5 +23,23 @@ namespace Events4ALL.EN
             dsVentas = vCAD.getAllEspectaculos();
             return dsVentas;
         }
+
+        public DataSet getEstadisticasCliente(string nif)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.getEstadisticasCliente(nif);
+        }
+
+        public DataSet getEspectaculosCliente(string nif)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.getEspectaculosCliente(nif);
+        }
+
+        public DataSet getGeneroTipoCli(string nif)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.getGeneroTipoCli(nif);
+        }
     }
 }

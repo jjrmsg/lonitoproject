@@ -22,6 +22,7 @@ namespace Events4ALL
         #region Members
         private VentasEN vEN;
         private EspectaculosEN espEN;
+        //private ClientesEN cliEN;
         private Dictionary<string, decimal> diasVentas;
         private Dictionary<string, int> numerosMeses;
         private Dictionary<string, int> tipoVentas;
@@ -33,6 +34,7 @@ namespace Events4ALL
         public Estadisticas()
         {
             InitializeComponent();
+            //cliEN = new ClientesEN();
             vEN = new VentasEN();
             espEN = new EspectaculosEN();
             diasVentas = new Dictionary<string, decimal>();
@@ -180,10 +182,110 @@ namespace Events4ALL
 
             foreach (var pair in generoVentas)
             {
-                Console.WriteLine("genero 2: " + pair.Key);
                 DataPoint p = new DataPoint(generos[pair.Key], (int)pair.Value);
                 p.Label = pair.Key;
                 generoChart.Series["Genero"].Points.Add(p);
+            }
+        }
+
+        private void loadButton2_Click(object sender, EventArgs e)
+        {
+            ObtenerDatosCliente();
+            ObtenerDatosCliGenerales();
+            ObtenerGeneroPref();
+            ObtenerTipoPref();
+        }
+
+        private void ObtenerDatosCliente()
+        {
+            /*DataSet ds = new DataSet();
+            ds = cliEN.getClientByNIF();
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                labelNombre.Text = row["Nombre"].ToString();
+                labelApellidos.Text = row["Apellidos"].ToString();
+                labelCiudad.Text = row["Poblacion"].ToString();
+            }*/
+        }
+
+        private void ObtenerDatosCliGenerales()
+        {
+            DataSet ds = new DataSet();
+            ds = vEN.getEstadisticasCliente(textNIF.Text);
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                labelDinero.Text = row["Dinero"].ToString();
+                labelEntradas.Text = row["Entradas"].ToString();
+            }
+
+            ds = vEN.getEspectaculosCliente(textNIF.Text);
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                labelEspec.Text = row["Espectaculos"].ToString();
+            }
+        }
+
+        private void ObtenerGeneroPref()
+        {
+            DataSet ds;
+
+            ds = vEN.getGeneroTipoCli(textNIF.Text);
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                string genero = row["Genero"].ToString();
+                genero = genero.Replace("  ", string.Empty);
+
+                if (!string.IsNullOrEmpty(genero))
+                {
+                    if (generoVentas.ContainsKey(genero))
+                    {
+                        generoVentas[genero] = generoVentas[genero] + 1;
+                    }
+                    else
+                    {
+                        generoVentas.Add(genero, 1);
+                    }
+                }
+            }
+
+            foreach (var pair in generoVentas)
+            {
+                DataPoint p = new DataPoint(generos[pair.Key], (int)pair.Value);
+                p.Label = pair.Key;
+                generoChartCli.Series["Genero"].Points.Add(p);
+            }
+        }
+
+        private void ObtenerTipoPref()
+        {
+            DataSet ds;
+
+            ds = vEN.getGeneroTipoCli(textNIF.Text);
+
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                string tipo = row["tipo"].ToString();
+
+                if (tipoVentas.ContainsKey(tipo))
+                {
+                    tipoVentas[tipo] = tipoVentas[tipo] + 1;
+                }
+                else
+                {
+                    tipoVentas.Add(tipo, 1);
+                }
+            }
+
+            foreach (var pair in tipoVentas)
+            {
+                Console.WriteLine("TIPO: " + pair.Key);
+                DataPoint p = new DataPoint(tipos[pair.Key], (int)pair.Value);
+                p.Label = pair.Key;
+                tipoChartCli.Series["Tipo"].Points.Add(p);
             }
         }
     }
