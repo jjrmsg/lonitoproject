@@ -191,5 +191,46 @@ namespace Events4ALL.CAD
             }        
         }
 
+        public DataSet ObtenerEspectaculos()
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala", c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
+
+        public DataSet ObtenerDatosEspectaculo(string titulo)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala and e.Titulo='"+titulo+"'", c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
     }
 }

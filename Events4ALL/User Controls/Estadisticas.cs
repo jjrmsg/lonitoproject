@@ -50,6 +50,18 @@ namespace Events4ALL
             };
 
             comboMes.Text = "Junio";
+            LoadEspectaculos();
+        }
+
+        private void LoadEspectaculos()
+        {
+            DataSet espec = new DataSet();
+            espec = espEN.ObtenerEspectaculos();
+
+            foreach (DataRow r in espec.Tables[0].Rows)
+            {
+                comboTitulo.Items.Add(r["Titulo"].ToString());
+            }
         }
 
         private void loadButton_Click(object sender, EventArgs e)
@@ -190,6 +202,12 @@ namespace Events4ALL
 
         private void loadButton2_Click(object sender, EventArgs e)
         {
+            generoChartCli.Series["Genero"].Points.Clear();
+            tipoChartCli.Series["Tipo"].Points.Clear();
+            diasVentas.Clear();
+            tipoVentas.Clear();
+            generoVentas.Clear();
+
             ObtenerDatosCliente();
             ObtenerDatosCliGenerales();
             ObtenerGeneroPref();
@@ -216,7 +234,8 @@ namespace Events4ALL
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                labelDinero.Text = row["Dinero"].ToString();
+                decimal d = (decimal)row["Dinero"];
+                labelDinero.Text = Math.Round(d, 2)+" €";
                 labelEntradas.Text = row["Entradas"].ToString();
             }
 
@@ -282,10 +301,65 @@ namespace Events4ALL
 
             foreach (var pair in tipoVentas)
             {
-                Console.WriteLine("TIPO: " + pair.Key);
                 DataPoint p = new DataPoint(tipos[pair.Key], (int)pair.Value);
                 p.Label = pair.Key;
                 tipoChartCli.Series["Tipo"].Points.Add(p);
+            }
+        }
+
+        private void comboTitulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboTitulo.Items[comboTitulo.SelectedIndex].ToString() != "Espectáculo")
+            {
+                ObtenerDatosEspectaculo(comboTitulo.Items[comboTitulo.SelectedIndex].ToString());
+                ObtenerEstadisticasEspectaculo(comboTitulo.Items[comboTitulo.SelectedIndex].ToString());
+            }
+        }
+
+        private void ObtenerEstadisticasEspectaculo(string titulo)
+        {
+
+            DataSet ds = new DataSet();
+            ds = vEN.getVentasEspectaculo(titulo);
+
+            foreach (DataRow r in ds.Tables[0].Rows)
+            {
+                decimal d = (decimal)r["Recaudacion"];
+                labelRecaudacion.Text = Math.Round(d, 2)+" €";
+                labelVendidas.Text = r["Entradas"].ToString();
+            }
+        }
+
+        private void ObtenerDatosEspectaculo(string titulo)
+        {
+            DataSet ds = new DataSet();
+            ds = espEN.ObtenerDatosEspectaculo(titulo);
+
+            foreach (DataRow r in ds.Tables[0].Rows)
+            {
+                labelID.Text = r["IDEspectaculo"].ToString();
+                labelTipo.Text = r["Tipo"].ToString();
+                if (labelTipo.Text == "Cine")
+                {
+                    labelGenero.Text = r["Genero"].ToString();
+                }
+                else
+                {
+                    labelGenero.Text = "NA";
+                }
+            }
+
+            ds = vEN.ObtenerRanking();
+            int i=1;
+
+            foreach(DataRow r in ds.Tables[0].Rows)
+            {
+                if (r["Titulo"].ToString().Equals(titulo))
+                {
+                    labelRanking.Text = i.ToString();
+                    break;
+                }
+                i++;
             }
         }
     }

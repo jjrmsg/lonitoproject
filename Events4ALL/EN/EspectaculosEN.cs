@@ -56,5 +56,17 @@ namespace Events4ALL.EN
             DataSet espectaculos = espCAD.Buscar(tit, sala, tipo, modFecha, valFecha, modPrecio, valPrecio);
             return espectaculos;
         }
+
+        public DataSet ObtenerEspectaculos()
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerEspectaculos();
+        }
+
+        public DataSet ObtenerDatosEspectaculo(string titulo)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerDatosEspectaculo(titulo);
+        }
     }
 }

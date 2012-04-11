@@ -109,5 +109,49 @@ namespace Events4ALL.CAD
 
             return datosVentas;
         }
+
+        public DataSet getVentasEspectaculo(string titulo)
+        {
+            BD bd = new BD();
+            DataSet datosVentas = new DataSet();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select sum(e.Precio) Recaudacion, count(*) Entradas from Ventas v, Espectaculo e where e.Titulo='"+titulo+"' and e.IDEspectaculo=v.IDEspectaculo", c);
+                da.Fill(datosVentas);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            return datosVentas;
+        }
+
+        public DataSet ObtenerRanking()
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas DESC;", c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
     }
 }

@@ -41,5 +41,17 @@ namespace Events4ALL.EN
             VentasCAD vCAD = new VentasCAD();
             return vCAD.getGeneroTipoCli(nif);
         }
+
+        public DataSet getVentasEspectaculo(string titulo)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.getVentasEspectaculo(titulo);
+        }
+
+        public DataSet ObtenerRanking()
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.ObtenerRanking();
+        }
     }
 }
