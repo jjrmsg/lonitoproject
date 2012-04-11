@@ -9,7 +9,6 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using System.Data.OleDb;
 
 namespace Events4ALL.CAD
 {
@@ -29,7 +28,7 @@ namespace Events4ALL.CAD
                 SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo", c);
                 da.Fill(bdvirtual, "Espectaculo");
             }
-            catch
+            catch(Exception ex)
             {
             }
             finally

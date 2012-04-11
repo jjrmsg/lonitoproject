@@ -58,9 +58,16 @@ namespace Events4ALL
             DataSet espec = new DataSet();
             espec = espEN.ObtenerEspectaculos();
 
-            foreach (DataRow r in espec.Tables[0].Rows)
+            try
             {
-                comboTitulo.Items.Add(r["Titulo"].ToString());
+
+                foreach (DataRow r in espec.Tables[0].Rows)
+                {
+                    comboTitulo.Items.Add(r["Titulo"].ToString());
+                }
+            }
+            catch
+            {
             }
         }
 
