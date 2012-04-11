@@ -116,6 +116,13 @@
             this.label_MC_ClientesAfectados = new System.Windows.Forms.Label();
             this.dataGridView_MC_ListaPromosCond = new System.Windows.Forms.DataGridView();
             this.errorProvider_PE_Otro = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Cant1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Cant2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Cant3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Desc1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Desc2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Desc3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkBox_PE_Ninguno = new System.Windows.Forms.CheckBox();
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -130,6 +137,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_Otro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -269,6 +282,7 @@
             // 
             // groupBox_PE_promoEvent
             // 
+            this.groupBox_PE_promoEvent.Controls.Add(this.checkBox_PE_Ninguno);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_IVA);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_otroDesc);
             this.groupBox_PE_promoEvent.Controls.Add(this.textBox_PE_otroDesc);
@@ -304,6 +318,7 @@
             this.radioButton_PE_otroDesc.TabStop = true;
             this.radioButton_PE_otroDesc.Text = "Otro:";
             this.radioButton_PE_otroDesc.UseVisualStyleBackColor = true;
+            this.radioButton_PE_otroDesc.CheckedChanged += new System.EventHandler(this.radioButton_PE_otroDesc_CheckedChanged);
             // 
             // textBox_PE_otroDesc
             // 
@@ -1144,6 +1159,41 @@
             // 
             this.errorProvider_PE_Otro.ContainerControl = this;
             // 
+            // errorProvider_MC_Cant1
+            // 
+            this.errorProvider_MC_Cant1.ContainerControl = this;
+            // 
+            // errorProvider_MC_Cant2
+            // 
+            this.errorProvider_MC_Cant2.ContainerControl = this;
+            // 
+            // errorProvider_MC_Cant3
+            // 
+            this.errorProvider_MC_Cant3.ContainerControl = this;
+            // 
+            // errorProvider_MC_Desc1
+            // 
+            this.errorProvider_MC_Desc1.ContainerControl = this;
+            // 
+            // errorProvider_MC_Desc2
+            // 
+            this.errorProvider_MC_Desc2.ContainerControl = this;
+            // 
+            // errorProvider_MC_Desc3
+            // 
+            this.errorProvider_MC_Desc3.ContainerControl = this;
+            // 
+            // checkBox_PE_Ninguno
+            // 
+            this.checkBox_PE_Ninguno.AutoSize = true;
+            this.checkBox_PE_Ninguno.Location = new System.Drawing.Point(263, 19);
+            this.checkBox_PE_Ninguno.Name = "checkBox_PE_Ninguno";
+            this.checkBox_PE_Ninguno.Size = new System.Drawing.Size(66, 17);
+            this.checkBox_PE_Ninguno.TabIndex = 9;
+            this.checkBox_PE_Ninguno.Text = "Ninguno";
+            this.checkBox_PE_Ninguno.UseVisualStyleBackColor = true;
+            this.checkBox_PE_Ninguno.CheckedChanged += new System.EventHandler(this.checkBox_PE_Ninguno_CheckedChanged);
+            // 
             // Promociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1175,6 +1225,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_MC_CartelPromo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MC_ListaPromosCond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_Otro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1267,5 +1323,12 @@
         private System.Windows.Forms.TextBox textBox_MC_VC_Descuento3;
         private System.Windows.Forms.Label label_MC_VC_Descuento3;
         private System.Windows.Forms.ErrorProvider errorProvider_PE_Otro;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant1;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant2;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant3;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc1;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc2;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc3;
+        private System.Windows.Forms.CheckBox checkBox_PE_Ninguno;
     }
 }

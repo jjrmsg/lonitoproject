@@ -88,7 +88,7 @@ namespace Events4ALL.Auxiliares
 
         public static bool EsNumeroEntero(String cadena)
         {
-            Regex patronNumerico = new Regex("[0-9]");
+            Regex patronNumerico = new Regex("^[0-9]+$");
             return patronNumerico.IsMatch(cadena);
         }
 

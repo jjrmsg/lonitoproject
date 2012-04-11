@@ -15,7 +15,13 @@ namespace Events4ALL
 {
     public partial class Promociones : UserControl
     {
-        private bool cantOtro;
+        private bool PE_Cantidad;
+        private bool MC_Cantidad1;
+        private bool MC_Cantidad2;
+        private bool MC_Cantidad3;
+        private bool MC_Descuento1;
+        private bool MC_Descuento2;
+        private bool MC_Descuento3;
         private PromocionEN proEN;
         private CondicionEN conEN;
         private DataSet promos;
@@ -53,6 +59,8 @@ namespace Events4ALL
                 radioButton_MC_TE2_Concierto.Enabled = false;
                 radioButton_MC_TE2_Teatro.Enabled = false;
                 radioButton_MC_TE2_Todos.Enabled = false;
+                errorProvider_MC_Cant2.Clear();
+                errorProvider_MC_Desc2.Clear();
             }
         }
 
@@ -79,6 +87,8 @@ namespace Events4ALL
                 radioButton_MC_TE3_Concierto.Enabled = false;
                 radioButton_MC_TE3_Teatro.Enabled = false;
                 radioButton_MC_TE3_Todos.Enabled = false;
+                errorProvider_MC_Cant3.Clear();
+                errorProvider_MC_Desc3.Clear();
             }
         }
 
@@ -126,17 +136,15 @@ namespace Events4ALL
         }
         */
         
-        private void CompruebaCantidad(string num)
+        private bool CompruebaCantidad(string num)
         {
             if (!Auxiliares.Validaciones.EsNumeroEntero(num))
             {
-                errorProvider_PE_Otro.SetError(textBox_PE_otroDesc, "Debe ser un número entero");
-                cantOtro = false;
+                return false;
             }
             else
             {
-                errorProvider_PE_Otro.Clear();
-                cantOtro = true;
+                return true;
             }
         }
 
@@ -185,6 +193,7 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.ReadOnly = true;
                 dataGridView_MC_ListaPromosCond.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dataGridView_MC_ListaPromosCond.MultiSelect = false;
+                dataGridView_MC_ListaPromosCond.AllowUserToAddRows = false;
                 
             }
             catch
@@ -217,23 +226,150 @@ namespace Events4ALL
         {
             if (radioButton_PE_otroDesc.Checked)
             {
-                CompruebaCantidad(textBox_PE_otroDesc.ToString());
+                if (!CompruebaCantidad(textBox_PE_otroDesc.Text.ToString()))
+                {
+                    errorProvider_PE_Otro.SetError(textBox_PE_otroDesc, "Debe ser un número entero");
+                    PE_Cantidad = false;
+                }
+                else
+                {
+                    errorProvider_PE_Otro.Clear();
+                    PE_Cantidad = true;
+                }
+            }
+
+            if (!checkBox_PE_Ninguno.Checked)
+            {
+                //Comprobamos si esta elegido Otro y la cantidad es un número entero
+                if (radioButton_PE_otroDesc.Checked && PE_Cantidad)
+                {
+                    MessageBox.Show("Listo para guardar1");
+                }
+                else if (!radioButton_PE_otroDesc.Checked && (radioButton_PE_5.Checked || radioButton_PE_10.Checked || radioButton_PE_20.Checked || radioButton_PE_50.Checked || radioButton_PE_IVA.Checked))
+                {
+                    //Si se selecciona otro que no sea Otro también se puede guardar ya que no hay restricción mínima
+                    MessageBox.Show("Listo para guardar2");
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Listo para guardar3");
             }
         }
 
         private void button_MC_Guardar_Click(object sender, EventArgs e)
         {
-            CompruebaCantidad(textBox_MC_VC_Cantidad1.ToString());
-            CompruebaCantidad(textBox_MC_VC_Descuento1.ToString());
+            //Comprobamos la Cantidad1
+            if (!CompruebaCantidad(textBox_MC_VC_Cantidad1.Text.ToString()))
+            {
+                errorProvider_MC_Cant1.SetError(textBox_MC_VC_Cantidad1, "Debe ser un número entero");
+                MC_Cantidad1 = false;
+            }
+            else
+            {
+                errorProvider_MC_Cant1.Clear();
+                MC_Cantidad1 = true;
+            }
+            //Comprobamos en Descuento1
+            if (!CompruebaCantidad(textBox_MC_VC_Descuento1.Text.ToString()))
+            {
+                errorProvider_MC_Desc1.SetError(textBox_MC_VC_Descuento1, "Debe ser un número entero");
+                MC_Descuento1 = false;
+            }
+            else
+            {
+                errorProvider_MC_Desc1.Clear();
+                MC_Descuento1 = true;
+            }
+
+
+            //Si está activada la segunda condición la comprobamos
             if (checkBox_MC_ActivarCond1.Checked)
             {
-                CompruebaCantidad(textBox_MC_VC_Cantidad2.ToString());
-                CompruebaCantidad(textBox_MC_VC_Descuento2.ToString());
+                //Comprobamos Cantidad2
+                if (!CompruebaCantidad(textBox_MC_VC_Cantidad2.Text.ToString()))
+                {
+                    errorProvider_MC_Cant2.SetError(textBox_MC_VC_Cantidad2, "Debe ser un número entero");
+                    MC_Cantidad2 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Cant2.Clear();
+                    MC_Cantidad2 = true;
+                }
+                //Comprobamos Descuento2
+                if (!CompruebaCantidad(textBox_MC_VC_Descuento2.Text.ToString()))
+                {
+                    errorProvider_MC_Desc2.SetError(textBox_MC_VC_Descuento2, "Debe ser un número entero");
+                    MC_Descuento2 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Desc2.Clear();
+                    MC_Descuento2 = true;
+                }
             }
+
+
+            //Si está activada la tercera condición la comprobamos
             if (checkBox_MC_ActivarCond2.Checked)
             {
-                CompruebaCantidad(textBox_MC_VC_Cantidad3.ToString());
-                CompruebaCantidad(textBox_MC_VC_Descuento3.ToString());
+                //Comprobamos Cantidad3
+                if (!CompruebaCantidad(textBox_MC_VC_Cantidad3.Text.ToString()))
+                {
+                    errorProvider_MC_Cant3.SetError(textBox_MC_VC_Cantidad3, "Debe ser un número entero");
+                    MC_Cantidad3 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Cant3.Clear();
+                    MC_Cantidad3 = true;
+                }
+                //Comprobamos Descuento3
+                if (!CompruebaCantidad(textBox_MC_VC_Descuento3.Text.ToString()))
+                {
+                    errorProvider_MC_Desc3.SetError(textBox_MC_VC_Descuento3, "Debe ser un número entero");
+                    MC_Descuento3 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Desc3.Clear();
+                    MC_Descuento3 = true;
+                }
+            }
+
+            //Comprobamos que este todo listo
+            if (checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
+            {
+                //En el caso que esten las 3 condiciones
+                if (MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento2 && MC_Descuento3)
+                {
+                    MessageBox.Show("Listo para guardar");
+                }
+            }
+            else if (checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
+            {
+                //En el caso que la segunda este activada y la tercera no
+                if (MC_Cantidad1 && MC_Cantidad2 && MC_Descuento1 && MC_Descuento2)
+                {
+                    MessageBox.Show("Listo para guardar");
+                }
+            }
+            else if (!checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
+            {
+                //En el caso que la segunda no este activada y la tercera si
+                if (MC_Cantidad1 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento3)
+                {
+                    MessageBox.Show("Listo para guardar");
+                }
+            }
+            else if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
+            {
+                //En el caso que sólo este la primera
+                if (MC_Cantidad1 && MC_Descuento1)
+                {
+                    MessageBox.Show("Listo para guardar");
+                }
             }
         }
 
@@ -402,6 +538,38 @@ namespace Events4ALL
                     }
                     checkBox_MC_ActivarCond2.Checked = true;
                 }
+            }
+        }
+
+        private void radioButton_PE_otroDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioButton_PE_otroDesc.Checked)
+            {
+                errorProvider_PE_Otro.Clear();
+            }
+        }
+
+        private void checkBox_PE_Ninguno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_PE_Ninguno.Checked)
+            {
+                radioButton_PE_5.Enabled = false;
+                radioButton_PE_10.Enabled = false;
+                radioButton_PE_20.Enabled = false;
+                radioButton_PE_50.Enabled = false;
+                radioButton_PE_IVA.Enabled = false;
+                radioButton_PE_otroDesc.Enabled = false;
+                textBox_PE_otroDesc.Enabled = false;
+            }
+            else
+            {
+                radioButton_PE_5.Enabled = true;
+                radioButton_PE_10.Enabled = true;
+                radioButton_PE_20.Enabled = true;
+                radioButton_PE_50.Enabled = true;
+                radioButton_PE_IVA.Enabled = true;
+                radioButton_PE_otroDesc.Enabled = true;
+                textBox_PE_otroDesc.Enabled = true;
             }
         }
     }
