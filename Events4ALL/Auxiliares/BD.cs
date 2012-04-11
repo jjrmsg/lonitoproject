@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.IO;
+using System.Configuration;
 
 namespace Events4ALL.Auxiliares
 {
@@ -16,8 +17,7 @@ namespace Events4ALL.Auxiliares
 
         public SqlConnection Connect()
         {
-            string dbDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + @"\Events4ALL\Events4AllDB.mdf";
-            string s = "Data Source=.\\SQLEXPRESS;AttachDbFilename=" + dbDirectory + ";Integrated Security=True;Connect Timeout=30;User Instance=True";
+            string s = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|Events4AllDB.mdf ;Integrated Security=True;Connect Timeout=30;User Instance=True";
             SqlConnection c = new SqlConnection(s);
             return c;
         }

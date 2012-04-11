@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.DirectoryServices" />
@@ -227,7 +228,7 @@
     <EmbeddedResource Include="User Controls\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="App.config" />
     <None Include="Events4AllDBDataSet.xsc">
       <DependentUpon>Events4AllDBDataSet.xsd</DependentUpon>
     </None>
@@ -251,12 +252,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="imgs\reload.png" />
-    <Content Include="imgs\true.png" />
-    <Content Include="version.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="imgs\add_save.png" />
     <Content Include="Events4AllDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -264,6 +259,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Events4AllDB.mdf</DependentUpon>
     </Content>
+    <Content Include="imgs\reload.png" />
+    <Content Include="imgs\true.png" />
+    <Content Include="version.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="imgs\add_save.png" />
     <Content Include="imgs\admins.png" />
     <Content Include="imgs\akira.jpg" />
     <Content Include="imgs\arrow_right.png" />
