@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Promociones));
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
             this.button_PE_Guardar = new System.Windows.Forms.Button();
@@ -42,18 +41,19 @@
             this.checkBox_PE_mayor65 = new System.Windows.Forms.CheckBox();
             this.checkBox_PE_menor25 = new System.Windows.Forms.CheckBox();
             this.groupBox_PE_promoEvent = new System.Windows.Forms.GroupBox();
+            this.checkBox_PE_Ninguno = new System.Windows.Forms.CheckBox();
             this.radioButton_PE_IVA = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_otroDesc = new System.Windows.Forms.RadioButton();
             this.textBox_PE_otroDesc = new System.Windows.Forms.TextBox();
             this.radioButton_PE_50 = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_10 = new System.Windows.Forms.RadioButton();
-            this.radioButton_PE_20 = new System.Windows.Forms.RadioButton();
+            this.radioButton_PE_25 = new System.Windows.Forms.RadioButton();
             this.radioButton_PE_5 = new System.Windows.Forms.RadioButton();
             this.groupBox_PE_DatosEspec = new System.Windows.Forms.GroupBox();
+            this.label_PE_TTipo = new System.Windows.Forms.Label();
+            this.label_PE_tipo = new System.Windows.Forms.Label();
             this.label_PE_fechaFin = new System.Windows.Forms.Label();
             this.label_PE_TFechaFin = new System.Windows.Forms.Label();
-            this.label_PE_SAsig = new System.Windows.Forms.Label();
-            this.label_PE_TSAsig = new System.Windows.Forms.Label();
             this.label_PE_Precio = new System.Windows.Forms.Label();
             this.label_PE_TPrecio = new System.Windows.Forms.Label();
             this.label_PE_TDescripcion = new System.Windows.Forms.Label();
@@ -122,7 +122,7 @@
             this.errorProvider_MC_Desc1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Desc2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Desc3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkBox_PE_Ninguno = new System.Windows.Forms.CheckBox();
+            this.errorProvider_PE_eligeuno = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -143,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -288,7 +289,7 @@
             this.groupBox_PE_promoEvent.Controls.Add(this.textBox_PE_otroDesc);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_50);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_10);
-            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_20);
+            this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_25);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_5);
             this.groupBox_PE_promoEvent.Location = new System.Drawing.Point(9, 295);
             this.groupBox_PE_promoEvent.Name = "groupBox_PE_promoEvent";
@@ -296,6 +297,17 @@
             this.groupBox_PE_promoEvent.TabIndex = 6;
             this.groupBox_PE_promoEvent.TabStop = false;
             this.groupBox_PE_promoEvent.Text = "Promociones eventuales";
+            // 
+            // checkBox_PE_Ninguno
+            // 
+            this.checkBox_PE_Ninguno.AutoSize = true;
+            this.checkBox_PE_Ninguno.Location = new System.Drawing.Point(263, 19);
+            this.checkBox_PE_Ninguno.Name = "checkBox_PE_Ninguno";
+            this.checkBox_PE_Ninguno.Size = new System.Drawing.Size(66, 17);
+            this.checkBox_PE_Ninguno.TabIndex = 9;
+            this.checkBox_PE_Ninguno.Text = "Ninguno";
+            this.checkBox_PE_Ninguno.UseVisualStyleBackColor = true;
+            this.checkBox_PE_Ninguno.CheckedChanged += new System.EventHandler(this.checkBox_PE_Ninguno_CheckedChanged);
             // 
             // radioButton_PE_IVA
             // 
@@ -349,16 +361,16 @@
             this.radioButton_PE_10.Text = "10%";
             this.radioButton_PE_10.UseVisualStyleBackColor = true;
             // 
-            // radioButton_PE_20
+            // radioButton_PE_25
             // 
-            this.radioButton_PE_20.AutoSize = true;
-            this.radioButton_PE_20.Location = new System.Drawing.Point(27, 98);
-            this.radioButton_PE_20.Name = "radioButton_PE_20";
-            this.radioButton_PE_20.Size = new System.Drawing.Size(45, 17);
-            this.radioButton_PE_20.TabIndex = 4;
-            this.radioButton_PE_20.TabStop = true;
-            this.radioButton_PE_20.Text = "25%";
-            this.radioButton_PE_20.UseVisualStyleBackColor = true;
+            this.radioButton_PE_25.AutoSize = true;
+            this.radioButton_PE_25.Location = new System.Drawing.Point(27, 98);
+            this.radioButton_PE_25.Name = "radioButton_PE_25";
+            this.radioButton_PE_25.Size = new System.Drawing.Size(45, 17);
+            this.radioButton_PE_25.TabIndex = 4;
+            this.radioButton_PE_25.TabStop = true;
+            this.radioButton_PE_25.Text = "25%";
+            this.radioButton_PE_25.UseVisualStyleBackColor = true;
             // 
             // radioButton_PE_5
             // 
@@ -375,10 +387,10 @@
             // 
             this.groupBox_PE_DatosEspec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TTipo);
+            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_tipo);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_fechaFin);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TFechaFin);
-            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_SAsig);
-            this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TSAsig);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_Precio);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TPrecio);
             this.groupBox_PE_DatosEspec.Controls.Add(this.label_PE_TDescripcion);
@@ -395,11 +407,30 @@
             this.groupBox_PE_DatosEspec.TabStop = false;
             this.groupBox_PE_DatosEspec.Text = "Datos";
             // 
+            // label_PE_TTipo
+            // 
+            this.label_PE_TTipo.AutoSize = true;
+            this.label_PE_TTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_TTipo.Location = new System.Drawing.Point(128, 64);
+            this.label_PE_TTipo.Name = "label_PE_TTipo";
+            this.label_PE_TTipo.Size = new System.Drawing.Size(0, 13);
+            this.label_PE_TTipo.TabIndex = 17;
+            // 
+            // label_PE_tipo
+            // 
+            this.label_PE_tipo.AutoSize = true;
+            this.label_PE_tipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PE_tipo.Location = new System.Drawing.Point(24, 64);
+            this.label_PE_tipo.Name = "label_PE_tipo";
+            this.label_PE_tipo.Size = new System.Drawing.Size(36, 13);
+            this.label_PE_tipo.TabIndex = 16;
+            this.label_PE_tipo.Text = "Tipo:";
+            // 
             // label_PE_fechaFin
             // 
             this.label_PE_fechaFin.AutoSize = true;
             this.label_PE_fechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_fechaFin.Location = new System.Drawing.Point(24, 128);
+            this.label_PE_fechaFin.Location = new System.Drawing.Point(24, 170);
             this.label_PE_fechaFin.Name = "label_PE_fechaFin";
             this.label_PE_fechaFin.Size = new System.Drawing.Size(82, 13);
             this.label_PE_fechaFin.TabIndex = 14;
@@ -409,31 +440,10 @@
             // 
             this.label_PE_TFechaFin.AutoSize = true;
             this.label_PE_TFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_TFechaFin.Location = new System.Drawing.Point(130, 128);
+            this.label_PE_TFechaFin.Location = new System.Drawing.Point(124, 170);
             this.label_PE_TFechaFin.Name = "label_PE_TFechaFin";
-            this.label_PE_TFechaFin.Size = new System.Drawing.Size(65, 13);
+            this.label_PE_TFechaFin.Size = new System.Drawing.Size(0, 13);
             this.label_PE_TFechaFin.TabIndex = 15;
-            this.label_PE_TFechaFin.Text = "21/12/2012";
-            // 
-            // label_PE_SAsig
-            // 
-            this.label_PE_SAsig.AutoSize = true;
-            this.label_PE_SAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_SAsig.Location = new System.Drawing.Point(24, 178);
-            this.label_PE_SAsig.Name = "label_PE_SAsig";
-            this.label_PE_SAsig.Size = new System.Drawing.Size(91, 13);
-            this.label_PE_SAsig.TabIndex = 12;
-            this.label_PE_SAsig.Text = "Sala asignada:";
-            // 
-            // label_PE_TSAsig
-            // 
-            this.label_PE_TSAsig.AutoSize = true;
-            this.label_PE_TSAsig.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_TSAsig.Location = new System.Drawing.Point(130, 178);
-            this.label_PE_TSAsig.Name = "label_PE_TSAsig";
-            this.label_PE_TSAsig.Size = new System.Drawing.Size(13, 13);
-            this.label_PE_TSAsig.TabIndex = 13;
-            this.label_PE_TSAsig.Text = "7";
             // 
             // label_PE_Precio
             // 
@@ -451,9 +461,8 @@
             this.label_PE_TPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_PE_TPrecio.Location = new System.Drawing.Point(130, 225);
             this.label_PE_TPrecio.Name = "label_PE_TPrecio";
-            this.label_PE_TPrecio.Size = new System.Drawing.Size(19, 13);
+            this.label_PE_TPrecio.Size = new System.Drawing.Size(0, 13);
             this.label_PE_TPrecio.TabIndex = 11;
-            this.label_PE_TPrecio.Text = "5€";
             // 
             // label_PE_TDescripcion
             // 
@@ -465,7 +474,6 @@
             this.label_PE_TDescripcion.Name = "label_PE_TDescripcion";
             this.label_PE_TDescripcion.Size = new System.Drawing.Size(542, 222);
             this.label_PE_TDescripcion.TabIndex = 9;
-            this.label_PE_TDescripcion.Text = resources.GetString("label_PE_TDescripcion.Text");
             // 
             // label_PE_Descripcion
             // 
@@ -481,7 +489,7 @@
             // 
             this.label_PE_fechaIni.AutoSize = true;
             this.label_PE_fechaIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_fechaIni.Location = new System.Drawing.Point(24, 70);
+            this.label_PE_fechaIni.Location = new System.Drawing.Point(24, 113);
             this.label_PE_fechaIni.Name = "label_PE_fechaIni";
             this.label_PE_fechaIni.Size = new System.Drawing.Size(98, 13);
             this.label_PE_fechaIni.TabIndex = 1;
@@ -503,19 +511,17 @@
             this.label_PE_TTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_PE_TTitulo.Location = new System.Drawing.Point(130, 16);
             this.label_PE_TTitulo.Name = "label_PE_TTitulo";
-            this.label_PE_TTitulo.Size = new System.Drawing.Size(31, 13);
+            this.label_PE_TTitulo.Size = new System.Drawing.Size(0, 13);
             this.label_PE_TTitulo.TabIndex = 6;
-            this.label_PE_TTitulo.Text = "Akira";
             // 
             // label_PE_TFechaIni
             // 
             this.label_PE_TFechaIni.AutoSize = true;
             this.label_PE_TFechaIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_PE_TFechaIni.Location = new System.Drawing.Point(130, 70);
+            this.label_PE_TFechaIni.Location = new System.Drawing.Point(128, 113);
             this.label_PE_TFechaIni.Name = "label_PE_TFechaIni";
-            this.label_PE_TFechaIni.Size = new System.Drawing.Size(65, 13);
+            this.label_PE_TFechaIni.Size = new System.Drawing.Size(0, 13);
             this.label_PE_TFechaIni.TabIndex = 7;
-            this.label_PE_TFechaIni.Text = "01/01/2012";
             // 
             // label_PE_Espectaculo
             // 
@@ -534,6 +540,8 @@
             this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
             this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(251, 21);
             this.comboBox_PE_espectaculo.TabIndex = 1;
+            this.comboBox_PE_espectaculo.SelectedIndexChanged += new System.EventHandler(this.comboBox_PE_espectaculo_SelectedIndexChanged);
+            this.comboBox_PE_espectaculo.Click += new System.EventHandler(this.comboBox_PE_espectaculo_Click);
             // 
             // tab_Mediante_condiciones
             // 
@@ -1183,16 +1191,9 @@
             // 
             this.errorProvider_MC_Desc3.ContainerControl = this;
             // 
-            // checkBox_PE_Ninguno
+            // errorProvider_PE_eligeuno
             // 
-            this.checkBox_PE_Ninguno.AutoSize = true;
-            this.checkBox_PE_Ninguno.Location = new System.Drawing.Point(263, 19);
-            this.checkBox_PE_Ninguno.Name = "checkBox_PE_Ninguno";
-            this.checkBox_PE_Ninguno.Size = new System.Drawing.Size(66, 17);
-            this.checkBox_PE_Ninguno.TabIndex = 9;
-            this.checkBox_PE_Ninguno.Text = "Ninguno";
-            this.checkBox_PE_Ninguno.UseVisualStyleBackColor = true;
-            this.checkBox_PE_Ninguno.CheckedChanged += new System.EventHandler(this.checkBox_PE_Ninguno_CheckedChanged);
+            this.errorProvider_PE_eligeuno.ContainerControl = this;
             // 
             // Promociones
             // 
@@ -1231,6 +1232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1251,7 +1253,7 @@
         private System.Windows.Forms.Label label_PE_TTitulo;
         private System.Windows.Forms.Label label_PE_TFechaIni;
         private System.Windows.Forms.GroupBox groupBox_PE_promoEvent;
-        private System.Windows.Forms.RadioButton radioButton_PE_20;
+        private System.Windows.Forms.RadioButton radioButton_PE_25;
         private System.Windows.Forms.RadioButton radioButton_PE_5;
         private System.Windows.Forms.GroupBox groupBox_PE_promoGen;
         private System.Windows.Forms.CheckBox checkBox_PE_descParado;
@@ -1268,8 +1270,6 @@
         private System.Windows.Forms.TextBox textBox_MC_Descripcion;
         private System.Windows.Forms.Label label_PE_TDescripcion;
         private System.Windows.Forms.Label label_PE_Descripcion;
-        private System.Windows.Forms.Label label_PE_SAsig;
-        private System.Windows.Forms.Label label_PE_TSAsig;
         private System.Windows.Forms.Label label_PE_Precio;
         private System.Windows.Forms.Label label_PE_TPrecio;
         private System.Windows.Forms.PictureBox pictureBox_PE_imagEspec;
@@ -1330,5 +1330,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc2;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc3;
         private System.Windows.Forms.CheckBox checkBox_PE_Ninguno;
+        private System.Windows.Forms.ErrorProvider errorProvider_PE_eligeuno;
+        private System.Windows.Forms.Label label_PE_TTipo;
+        private System.Windows.Forms.Label label_PE_tipo;
     }
 }

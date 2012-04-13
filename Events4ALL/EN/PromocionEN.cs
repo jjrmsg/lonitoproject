@@ -58,5 +58,10 @@ namespace Events4ALL.EN
         {
             return proCAD.ObtenerEspectaculos();
         }
+
+        public void Save()
+        {
+            proCAD.Save();
+        }
     }
 }

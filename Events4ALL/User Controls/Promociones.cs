@@ -26,16 +26,32 @@ namespace Events4ALL
         private CondicionEN conEN;
         private DataSet promos;
         private DataSet espec;
-        private DataTable tcon;
-        private DataRow nuevafila;
+        private DataTable tPromo;
+        private DataTable tEspec;
+        private DataTable tEspecConPromo;
+        private int idEventoSelec;
 
         public Promociones()
         {
             InitializeComponent();
             proEN = new PromocionEN();
             conEN = new CondicionEN();
+            
+            espec = new DataSet();
+            espec = proEN.ObtenerEspectaculos();
+            tEspec = new DataTable();
+            tEspec = espec.Tables["Espectaculo"];
+            tEspecConPromo = new DataTable();
+            tEspecConPromo = espec.Tables["PromocionConEvento"];
+            //MessageBox.Show(tEspecConPromo.Rows.Count.ToString());
+
+            promos = new DataSet();
+            promos = conEN.ObtenerTodas();
+            tPromo = new DataTable();
+            tPromo = promos.Tables["Condicion"];
         }
 
+        //Evento para activar los campos de la segunda condicion de promociones por condicion
         private void checkBox_MC_ActivarCond1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_MC_ActivarCond1.Checked == true)
@@ -64,6 +80,7 @@ namespace Events4ALL
             }
         }
 
+        //Evento para activar los campos de la tercera condicion de promociones por condicion
         private void checkBox_MC_ActivarCond2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_MC_ActivarCond2.Checked == true)
@@ -92,50 +109,7 @@ namespace Events4ALL
             }
         }
 
-        /*
-        public bool isCaracterValido(Char c)
-        {
-            if ((c >= '0' && c <= '9') || (Char)Keys.Back==c)
-            {
-                return true;
-            }
-            return false;
-        }
-        
-        
-        private void textBox_PE_TOtroDesc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-             if (!isCaracterValido (e.KeyChar))
-             {
-                e.Handled = true;
-             }
-        }
-
-        private void textBox_MC_VC_Valor1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isCaracterValido(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_MC_VC_Valor2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isCaracterValido(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox_MC_VC_Valor3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!isCaracterValido(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        */
-        
+        //Funcion para comprobar que solo se pongan numeros enteros
         private bool CompruebaCantidad(string num)
         {
             if (!Auxiliares.Validaciones.EsNumeroEntero(num))
@@ -148,18 +122,35 @@ namespace Events4ALL
             }
         }
 
+        //Funcion para limpiar y cargar el combobox
+        private void CargarComboBox()
+        {
+            comboBox_PE_espectaculo.Items.Clear();
+            try
+            {
+                foreach (DataRow obj in tEspec.Rows)
+                {
+                    comboBox_PE_espectaculo.Items.Add(obj["Titulo"].ToString());
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("PENE error al rellenar el combobox "+ ex);
+            }
+        }
+
+        //Evento que carga los datos en el combobox y datagridview
         private void Promociones_Load(object sender, EventArgs e)
         {
             #region cargar datagridview
-            promos = new DataSet();
-            promos = conEN.ObtenerTodas();
-            tcon = new DataTable();
+            
             try
             {
-                tcon = promos.Tables["Condicion"];
+                
                 //añadiendo nueva fila a la tabla, es un ejemplo de forma manual
                 //esta linea tiene que estar si no el VisualStudio se pone a llorar y el FormBase peta. ¿pq? -> Preguntaselo a Microsoft xD
-                nuevafila = tcon.NewRow();
+                //nuevafila = tPromo.NewRow();
                 //nuevafila[1] = "ejemplo";
                 //nuevafila[2] = "Esto se añade a la tabla pero no se guarda en la BD";
                 //nuevafila[3] = 1;
@@ -196,34 +187,21 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.AllowUserToAddRows = false;
                 
             }
-            catch
+            catch(Exception ex)
             {
-                //MessageBox.Show("error");
+                MessageBox.Show("PENE error al cargar datagriview " + ex);
             }
             #endregion
             
             #region cargar combobox
-            espec = new DataSet();
-            espec = proEN.ObtenerEspectaculos();
-            DataTable t = new DataTable();
-            t = espec.Tables["Espectaculo"];
-
-            try
-            {
-                foreach (DataRow obj in t.Rows)
-                {
-                    comboBox_PE_espectaculo.Items.Add(obj["Titulo"].ToString());
-                }
-            }
-            catch
-            {
-                //MessageBox.Show("error");
-            }
+            CargarComboBox();
             #endregion
         }
 
+        //Evento para guardar los datos modificados de las promociones de los eventos
         private void button_PE_Guardar_Click(object sender, EventArgs e)
         {
+            //Si se elige Otro debe estar relleno el campo numerico de Otro
             if (radioButton_PE_otroDesc.Checked)
             {
                 if (!CompruebaCantidad(textBox_PE_otroDesc.Text.ToString()))
@@ -238,25 +216,193 @@ namespace Events4ALL
                 }
             }
 
+            errorProvider_PE_eligeuno.Clear();
+
             if (!checkBox_PE_Ninguno.Checked)
             {
                 //Comprobamos si esta elegido Otro y la cantidad es un número entero
                 if (radioButton_PE_otroDesc.Checked && PE_Cantidad)
                 {
-                    MessageBox.Show("Listo para guardar1");
+                    //MessageBox.Show("Listo para guardar1");
+                    GuardarPromocionConEvento();
                 }
-                else if (!radioButton_PE_otroDesc.Checked && (radioButton_PE_5.Checked || radioButton_PE_10.Checked || radioButton_PE_20.Checked || radioButton_PE_50.Checked || radioButton_PE_IVA.Checked))
+                else if (!radioButton_PE_otroDesc.Checked && (radioButton_PE_5.Checked || radioButton_PE_10.Checked || radioButton_PE_25.Checked || radioButton_PE_50.Checked || radioButton_PE_IVA.Checked))
                 {
                     //Si se selecciona otro que no sea Otro también se puede guardar ya que no hay restricción mínima
-                    MessageBox.Show("Listo para guardar2");
+                    //MessageBox.Show("Listo para guardar2");
+                    GuardarPromocionConEvento();
+                }
+                else
+                {
+                    errorProvider_PE_eligeuno.SetError(checkBox_PE_Ninguno, "Debes elegir una opción, si no deseas usar ninguna, marca Ninguna");
+                    errorProvider_PE_eligeuno.RightToLeft = true;
                 }
             }
             else 
             {
-                MessageBox.Show("Listo para guardar3");
+                //MessageBox.Show("Listo para guardar3");
+                GuardarPromocionConEvento();
             }
         }
 
+
+        //Funcion para borrar una promocion de un espectaculo
+        private void BorrarPromoEspectaculo(int id,int idPromo)
+        {
+            int i=0;
+            foreach (DataRow obj in tEspecConPromo.Rows)
+            {
+                if (Convert.ToInt32(obj[0]) == id && Convert.ToInt32(obj[1])==idPromo)
+                {
+                    tEspecConPromo.Rows[i].Delete();
+                    i=i+1;
+                }
+            }
+        }
+        //Funcion para guardar en la tabla PromocionConEvento de la BD
+        private void GuardarPromocionConEvento()
+        {
+            DataRow nuevafila1;
+            DataRow nuevafila2;
+            DataRow nuevafila3;
+            DataRow nuevafila4;
+            DataRow nuevafila5;
+            DataRow nuevafila6;
+            DataRow nuevafila7;
+            DataRow nuevafila8;
+            DataRow nuevafila9;
+            DataRow nuevafila10;
+            DataRow nuevafila11;
+
+            try
+            {
+                if (radioButton_PE_5.Checked)
+                {
+                    nuevafila1 = tEspecConPromo.NewRow();
+                    nuevafila1[0] = idEventoSelec;
+                    nuevafila1[1] = 1;
+                    tEspecConPromo.Rows.Add(nuevafila1);
+                    //MessageBox.Show("el de 5");
+                }
+                else
+                {
+                    BorrarPromoEspectaculo(idEventoSelec,1);
+                }
+
+
+
+                if (radioButton_PE_10.Checked)
+                {
+                    nuevafila2 = tEspecConPromo.NewRow();
+                    nuevafila2[0] = idEventoSelec;
+                    nuevafila2[1] = 2;
+                    tEspecConPromo.Rows.Add(nuevafila2);
+                    //MessageBox.Show("el de 10");
+                }
+
+                if (radioButton_PE_25.Checked)
+                {
+                    nuevafila3 = tEspecConPromo.NewRow();
+                    nuevafila3[0] = idEventoSelec;
+                    nuevafila3[1] = 3;
+                    tEspecConPromo.Rows.Add(nuevafila3);
+                    //MessageBox.Show("el de 25");
+                }
+                else
+                {
+                    BorrarPromoEspectaculo(idEventoSelec, 3);
+                }
+
+
+
+                if (radioButton_PE_50.Checked)
+                {
+                    nuevafila4 = tEspecConPromo.NewRow();
+                    nuevafila4[0] = idEventoSelec;
+                    nuevafila4[1] = 4;
+                    tEspecConPromo.Rows.Add(nuevafila4);
+                    //MessageBox.Show("el de 50");
+                }
+
+                if (radioButton_PE_IVA.Checked)
+                {
+                    nuevafila5 = tEspecConPromo.NewRow();
+                    nuevafila5[0] = idEventoSelec;
+                    nuevafila5[1] = 5;
+                    tEspecConPromo.Rows.Add(nuevafila5);
+                    //MessageBox.Show("el de iva");
+                }
+
+                if (checkBox_PE_menor25.Checked)
+                {
+                    nuevafila6 = tEspecConPromo.NewRow();
+                    nuevafila6[0] = idEventoSelec;
+                    nuevafila6[1] = 6;
+                    tEspecConPromo.Rows.Add(nuevafila6);
+                    //MessageBox.Show("el de menor25");
+                }
+                else
+                {
+                    BorrarPromoEspectaculo(idEventoSelec, 6);
+                }
+
+
+
+                if (checkBox_PE_mayor65.Checked)
+                {
+                    nuevafila7 = tEspecConPromo.NewRow();
+                    nuevafila7[0] = idEventoSelec;
+                    nuevafila7[1] = 7;
+                    tEspecConPromo.Rows.Add(nuevafila7);
+                    //MessageBox.Show("el de mayor65");
+                }
+
+                if (checkBox_PE_descCliente.Checked)
+                {
+                    nuevafila8 = tEspecConPromo.NewRow();
+                    nuevafila8[0] = idEventoSelec;
+                    nuevafila8[1] = 8;
+                    tEspecConPromo.Rows.Add(nuevafila8);
+                    //MessageBox.Show("el de cliente");
+                }
+
+                if (checkBox_PE_descEstudiante.Checked)
+                {
+                    nuevafila9 = tEspecConPromo.NewRow();
+                    nuevafila9[0] = idEventoSelec;
+                    nuevafila9[1] = 9;
+                    tEspecConPromo.Rows.Add(nuevafila9);
+                    //MessageBox.Show("el de estudiante");
+                }
+
+                if (checkBox_PE_descJubilado.Checked)
+                {
+                    nuevafila10 = tEspecConPromo.NewRow();
+                    nuevafila10[0] = idEventoSelec;
+                    nuevafila10[1] = 10;
+                    tEspecConPromo.Rows.Add(nuevafila10);
+                    //MessageBox.Show("el de jubilado");
+                }
+
+                if (checkBox_PE_descParado.Checked)
+                {
+                    nuevafila11 = tEspecConPromo.NewRow();
+                    nuevafila11[0] = idEventoSelec;
+                    nuevafila11[1] = 11;
+                    tEspecConPromo.Rows.Add(nuevafila11);
+                    //MessageBox.Show("el de parado");
+                }
+                proEN.Save();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("PENE error al guardar la promocion del evento " + ex);
+            }
+
+            
+        }
+
+        //Evento para guardar los datos modificados de las promociones por condicion
         private void button_MC_Guardar_Click(object sender, EventArgs e)
         {
             //Comprobamos la Cantidad1
@@ -373,6 +519,7 @@ namespace Events4ALL
             }
         }
 
+        //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox)
         private void MC_limpiar(int todo)
         {
             //true en caso de limpiar todos los campos
@@ -439,6 +586,7 @@ namespace Events4ALL
             }
         }
 
+        //Evento para cargar los datos de la fila seleccionada del datagridview
         private void dataGridView_MC_ListaPromosCond_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
@@ -541,6 +689,7 @@ namespace Events4ALL
             }
         }
 
+        //Evento para quitar el errorprovider del radiobuton Otro si se seleciona otro
         private void radioButton_PE_otroDesc_CheckedChanged(object sender, EventArgs e)
         {
             if (!radioButton_PE_otroDesc.Checked)
@@ -549,13 +698,14 @@ namespace Events4ALL
             }
         }
 
+        //Evento para habilitar o deshabilitar las promociones generales
         private void checkBox_PE_Ninguno_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_PE_Ninguno.Checked)
             {
                 radioButton_PE_5.Enabled = false;
                 radioButton_PE_10.Enabled = false;
-                radioButton_PE_20.Enabled = false;
+                radioButton_PE_25.Enabled = false;
                 radioButton_PE_50.Enabled = false;
                 radioButton_PE_IVA.Enabled = false;
                 radioButton_PE_otroDesc.Enabled = false;
@@ -565,12 +715,110 @@ namespace Events4ALL
             {
                 radioButton_PE_5.Enabled = true;
                 radioButton_PE_10.Enabled = true;
-                radioButton_PE_20.Enabled = true;
+                radioButton_PE_25.Enabled = true;
                 radioButton_PE_50.Enabled = true;
                 radioButton_PE_IVA.Enabled = true;
                 radioButton_PE_otroDesc.Enabled = true;
                 textBox_PE_otroDesc.Enabled = true;
             }
+        }
+
+        //Evento para recargar el combobox de espectaculos
+        private void comboBox_PE_espectaculo_Click(object sender, EventArgs e)
+        {
+            CargarComboBox();
+        }
+
+        //Limpiar radiobutons y chebox de pestaña por espectaculo
+        private void LimpiarPorEspectaculo()
+        {
+            radioButton_PE_5.Checked = false;
+            radioButton_PE_10.Checked = false;
+            radioButton_PE_25.Checked = false;
+            radioButton_PE_50.Checked = false;
+            radioButton_PE_IVA.Checked = false;
+            checkBox_PE_menor25.Checked = false;
+            checkBox_PE_mayor65.Checked = false;
+            checkBox_PE_descCliente.Checked = false;
+            checkBox_PE_descEstudiante.Checked = false;
+            checkBox_PE_descJubilado.Checked = false;
+            checkBox_PE_descParado.Checked = false;
+        }
+
+        //Evento para cargar los datos cuando seleccionas un item del combo box
+        private void comboBox_PE_espectaculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idEventoSelec = Convert.ToInt32(comboBox_PE_espectaculo.SelectedIndex);
+            label_PE_TTitulo.Text = tEspec.Rows[idEventoSelec][1].ToString();
+            label_PE_TTipo.Text = tEspec.Rows[idEventoSelec][6].ToString();
+            label_PE_TDescripcion.Text = tEspec.Rows[idEventoSelec][2].ToString();
+            label_PE_TFechaIni.Text = tEspec.Rows[idEventoSelec][3].ToString();
+            label_PE_TFechaFin.Text = tEspec.Rows[idEventoSelec][4].ToString();
+            label_PE_TPrecio.Text = tEspec.Rows[idEventoSelec][5].ToString();
+
+            LimpiarPorEspectaculo();
+
+            foreach (DataRow obj in tEspecConPromo.Rows)
+            {
+                if (idEventoSelec == Convert.ToInt32(obj[0]))
+                {
+                    if (Convert.ToInt32(obj[1]) == 1)
+                    {
+                        radioButton_PE_5.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 2)
+                    {
+                        radioButton_PE_10.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 3)
+                    {
+                        radioButton_PE_25.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 4)
+                    {
+                        radioButton_PE_50.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 5)
+                    {
+                        radioButton_PE_IVA.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 6)
+                    {
+                        checkBox_PE_menor25.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 7)
+                    {
+                        checkBox_PE_mayor65.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 8)
+                    {
+                        checkBox_PE_descCliente.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 9)
+                    {
+                        checkBox_PE_descEstudiante.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 10)
+                    {
+                        checkBox_PE_descJubilado.Checked = true;
+                    }
+
+                    if (Convert.ToInt32(obj[1]) == 11)
+                    {
+                        checkBox_PE_descParado.Checked = true;
+                    }
+                }
+            }
+            //Aqui va el de la imagen
         }
     }
 }

@@ -28,22 +28,18 @@ namespace Events4ALL.CAD
             bdvirtual = new DataSet();
             con = bd.Connect();
         }
-        //DataTable tabla = new DataTable();
 
         public DataSet ObtenerTodas()
         {
-            //BD bd = new BD();
-            //DataSet bdvirtual = new DataSet();
-            //SqlConnection con = bd.Connect();
             try
             {
                 con.Open();
                 da = new SqlDataAdapter("select * from Condicion", con);
                 da.Fill(bdvirtual, "Condicion");
-                //tabla = bdvirtual.Tables["Condicion"];
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show("PENE error al obtener las condiciones " + ex);
             }
             finally
             {
@@ -54,17 +50,14 @@ namespace Events4ALL.CAD
 
         public void Save()
         {
-            //BD bd = new BD();
-            //DataSet bdvirtual = new DataSet();
-            //SqlConnection con = bd.Connect();
             try
             {
-                //SqlDataAdapter da = new SqlDataAdapter() ;
                 cbuilder = new SqlCommandBuilder(da);
                 da.Update(bdvirtual, "Condicion");
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show("PENE error al guardar las condiciones " + ex);
             }
             finally
             {

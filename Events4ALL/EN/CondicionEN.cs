@@ -204,9 +204,6 @@ namespace Events4ALL.EN
         
         public DataSet ObtenerTodas()
         {
-            /*DataTable dsPromo;
-            dsPromo = conCAD.ObtenerTodas();
-            return dsPromo;*/
             return conCAD.ObtenerTodas();
         }
 

@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label_PE_TDescripcion.Text" xml:space="preserve">
-    <value>El argumento se inicia en el año 1988 en Tokio, luego de la destrucción de la ciudad por la explosión causada aparentemente por una bomba nuclear de última generación. Sin embargo, la misma había sido provocada por las espantosas energías psíquicas de un niño llamado Akira, que formaba parte de un proyecto secreto de investigación del gobierno que busca controlar las capacidades psicokinéticas.
-
-Probablemente debido a la confusión provocada después del incidente, la explosión condujo al comienzo de la Tercera Guerra Mundial. Treinta y un años más adelante, en el año 2019, la metrópoli futurista de Neo-Tokio está posicionada en una isla artificial, situada en la bahía de Tokio.
-
-La situación política es inestable, pues existe un grupo de insurrectos terroristas que atacan la ciudad con el objetivo de desestabilizar al gobierno corrupto. Éste es controlado por pequeños y ambiciosos burócratas como el coronel Shikishima, quien casi al final de la película afirma que la ciudad, bajo su mando, se convirtió en “un montón de basura que funciona gracias a un manojo de tontos hedonistas”.
-
-Una cuadrilla de motoristas adolescentes liderada por un adolescente de dieciséis años llamado Shotaro Kaneda suele mantener luchas callejeras con una cuadrilla rival, conocida como “los Payasos”. Todos son miembros de grupos de resistencia anti-gubernamental.</value>
-  </data>
   <metadata name="errorProvider_PE_Otro.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -146,5 +137,8 @@ Una cuadrilla de motoristas adolescentes liderada por un adolescente de diecisé
   </metadata>
   <metadata name="errorProvider_MC_Desc3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 56</value>
+  </metadata>
+  <metadata name="errorProvider_PE_eligeuno.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>387, 56</value>
   </metadata>
 </root>
