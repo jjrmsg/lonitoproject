@@ -247,17 +247,31 @@ namespace Events4ALL
 
 
         //Funcion para borrar una promocion de un espectaculo
-        private void BorrarPromoEspectaculo(int id,int idPromo)
+        private bool BuscarPromoEspectaculo(int id,int idPromo, ref int fila)
         {
-            int i=0;
-            foreach (DataRow obj in tEspecConPromo.Rows)
+            
+            bool salir = false;
+            for (int i=0;i<Convert.ToInt32(tEspecConPromo.Rows.Count) && salir==false;i++)
             {
-                if (Convert.ToInt32(obj[0]) == id && Convert.ToInt32(obj[1])==idPromo)
+                if(tEspecConPromo.Rows[i].RowState.ToString()!="Deleted")
                 {
-                    tEspecConPromo.Rows[i].Delete();
-                    i=i+1;
+                    if (Convert.ToInt32(tEspecConPromo.Rows[i][0])==id && Convert.ToInt32(tEspecConPromo.Rows[i][1])==idPromo)
+                    {
+                        fila = i;
+                        salir = true;
+                    }
                 }
             }
+            return salir;
+            //tEspecConPromo.Rows[i].Delete();
+        }
+
+
+        //Funcion para buscar un evento con una promo
+        private void BorrarPromoEspectaculo(int fila)
+        {
+            //MessageBox.Show(fila.ToString());
+            tEspecConPromo.Rows[fila].Delete();
         }
         //Funcion para guardar en la tabla PromocionConEvento de la BD
         private void GuardarPromocionConEvento()
@@ -273,124 +287,250 @@ namespace Events4ALL
             DataRow nuevafila9;
             DataRow nuevafila10;
             DataRow nuevafila11;
+            int fila=0;
 
             try
             {
-                if (radioButton_PE_5.Checked)
+                if (radioButton_PE_5.Checked && !checkBox_PE_Ninguno.Checked)
                 {
-                    nuevafila1 = tEspecConPromo.NewRow();
-                    nuevafila1[0] = idEventoSelec;
-                    nuevafila1[1] = 1;
-                    tEspecConPromo.Rows.Add(nuevafila1);
-                    //MessageBox.Show("el de 5");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 1, ref fila))
+                    {
+                        nuevafila1 = tEspecConPromo.NewRow();
+                        nuevafila1[0] = idEventoSelec;
+                        nuevafila1[1] = 1;
+                        tEspecConPromo.Rows.Add(nuevafila1);
+                        //MessageBox.Show("el de 5");
+                    }
                 }
                 else
                 {
-                    BorrarPromoEspectaculo(idEventoSelec,1);
+                    if (BuscarPromoEspectaculo(idEventoSelec, 1, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
                 }
 
 
 
-                if (radioButton_PE_10.Checked)
+                if (radioButton_PE_10.Checked && !checkBox_PE_Ninguno.Checked)
                 {
-                    nuevafila2 = tEspecConPromo.NewRow();
-                    nuevafila2[0] = idEventoSelec;
-                    nuevafila2[1] = 2;
-                    tEspecConPromo.Rows.Add(nuevafila2);
-                    //MessageBox.Show("el de 10");
-                }
-
-                if (radioButton_PE_25.Checked)
-                {
-                    nuevafila3 = tEspecConPromo.NewRow();
-                    nuevafila3[0] = idEventoSelec;
-                    nuevafila3[1] = 3;
-                    tEspecConPromo.Rows.Add(nuevafila3);
-                    //MessageBox.Show("el de 25");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 2, ref fila))
+                    {
+                        nuevafila2 = tEspecConPromo.NewRow();
+                        nuevafila2[0] = idEventoSelec;
+                        nuevafila2[1] = 2;
+                        tEspecConPromo.Rows.Add(nuevafila2);
+                        //MessageBox.Show("el de 10");
+                    }
                 }
                 else
                 {
-                    BorrarPromoEspectaculo(idEventoSelec, 3);
+                    if (BuscarPromoEspectaculo(idEventoSelec, 2, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
                 }
 
 
 
-                if (radioButton_PE_50.Checked)
+                if (radioButton_PE_25.Checked && !checkBox_PE_Ninguno.Checked)
                 {
-                    nuevafila4 = tEspecConPromo.NewRow();
-                    nuevafila4[0] = idEventoSelec;
-                    nuevafila4[1] = 4;
-                    tEspecConPromo.Rows.Add(nuevafila4);
-                    //MessageBox.Show("el de 50");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 3, ref fila))
+                    {
+                        nuevafila3 = tEspecConPromo.NewRow();
+                        nuevafila3[0] = idEventoSelec;
+                        nuevafila3[1] = 3;
+                        tEspecConPromo.Rows.Add(nuevafila3);
+                        //MessageBox.Show("el de 25");
+                    }
+                }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 3, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
                 }
 
-                if (radioButton_PE_IVA.Checked)
+
+
+
+                if (radioButton_PE_50.Checked && !checkBox_PE_Ninguno.Checked)
                 {
-                    nuevafila5 = tEspecConPromo.NewRow();
-                    nuevafila5[0] = idEventoSelec;
-                    nuevafila5[1] = 5;
-                    tEspecConPromo.Rows.Add(nuevafila5);
-                    //MessageBox.Show("el de iva");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 4, ref fila))
+                    {
+                        nuevafila4 = tEspecConPromo.NewRow();
+                        nuevafila4[0] = idEventoSelec;
+                        nuevafila4[1] = 4;
+                        tEspecConPromo.Rows.Add(nuevafila4);
+                        //MessageBox.Show("el de 50");
+                    }
                 }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 4, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
+
+                if (radioButton_PE_IVA.Checked && !checkBox_PE_Ninguno.Checked)
+                {
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 5, ref fila))
+                    {
+                        nuevafila5 = tEspecConPromo.NewRow();
+                        nuevafila5[0] = idEventoSelec;
+                        nuevafila5[1] = 5;
+                        tEspecConPromo.Rows.Add(nuevafila5);
+                        //MessageBox.Show("el de iva");
+                    }
+                }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 5, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
 
                 if (checkBox_PE_menor25.Checked)
                 {
-                    nuevafila6 = tEspecConPromo.NewRow();
-                    nuevafila6[0] = idEventoSelec;
-                    nuevafila6[1] = 6;
-                    tEspecConPromo.Rows.Add(nuevafila6);
-                    //MessageBox.Show("el de menor25");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 6, ref fila))
+                    {
+                        nuevafila6 = tEspecConPromo.NewRow();
+                        nuevafila6[0] = idEventoSelec;
+                        nuevafila6[1] = 6;
+                        tEspecConPromo.Rows.Add(nuevafila6);
+                        //MessageBox.Show("el de menor25");
+                    }
                 }
                 else
                 {
-                    BorrarPromoEspectaculo(idEventoSelec, 6);
+                    if (BuscarPromoEspectaculo(idEventoSelec, 6, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
                 }
+                
 
 
 
                 if (checkBox_PE_mayor65.Checked)
                 {
-                    nuevafila7 = tEspecConPromo.NewRow();
-                    nuevafila7[0] = idEventoSelec;
-                    nuevafila7[1] = 7;
-                    tEspecConPromo.Rows.Add(nuevafila7);
-                    //MessageBox.Show("el de mayor65");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 7, ref fila))
+                    {
+                        nuevafila7 = tEspecConPromo.NewRow();
+                        nuevafila7[0] = idEventoSelec;
+                        nuevafila7[1] = 7;
+                        tEspecConPromo.Rows.Add(nuevafila7);
+                        //MessageBox.Show("el de mayor65");
+                    }
                 }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 7, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
 
                 if (checkBox_PE_descCliente.Checked)
                 {
-                    nuevafila8 = tEspecConPromo.NewRow();
-                    nuevafila8[0] = idEventoSelec;
-                    nuevafila8[1] = 8;
-                    tEspecConPromo.Rows.Add(nuevafila8);
-                    //MessageBox.Show("el de cliente");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 8, ref fila))
+                    {
+                        nuevafila8 = tEspecConPromo.NewRow();
+                        nuevafila8[0] = idEventoSelec;
+                        nuevafila8[1] = 8;
+                        tEspecConPromo.Rows.Add(nuevafila8);
+                        //MessageBox.Show("el de cliente");
+                    }
                 }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 8, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
 
                 if (checkBox_PE_descEstudiante.Checked)
                 {
-                    nuevafila9 = tEspecConPromo.NewRow();
-                    nuevafila9[0] = idEventoSelec;
-                    nuevafila9[1] = 9;
-                    tEspecConPromo.Rows.Add(nuevafila9);
-                    //MessageBox.Show("el de estudiante");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 9, ref fila))
+                    {
+                        nuevafila9 = tEspecConPromo.NewRow();
+                        nuevafila9[0] = idEventoSelec;
+                        nuevafila9[1] = 9;
+                        tEspecConPromo.Rows.Add(nuevafila9);
+                        //MessageBox.Show("el de estudiante");
+                    }
                 }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 9, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
 
                 if (checkBox_PE_descJubilado.Checked)
                 {
-                    nuevafila10 = tEspecConPromo.NewRow();
-                    nuevafila10[0] = idEventoSelec;
-                    nuevafila10[1] = 10;
-                    tEspecConPromo.Rows.Add(nuevafila10);
-                    //MessageBox.Show("el de jubilado");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 10, ref fila))
+                    {
+                        nuevafila10 = tEspecConPromo.NewRow();
+                        nuevafila10[0] = idEventoSelec;
+                        nuevafila10[1] = 10;
+                        tEspecConPromo.Rows.Add(nuevafila10);
+                        //MessageBox.Show("el de jubilado");
+                    }
                 }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 10, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
+                }
+
+
 
                 if (checkBox_PE_descParado.Checked)
                 {
-                    nuevafila11 = tEspecConPromo.NewRow();
-                    nuevafila11[0] = idEventoSelec;
-                    nuevafila11[1] = 11;
-                    tEspecConPromo.Rows.Add(nuevafila11);
-                    //MessageBox.Show("el de parado");
+                    //Miramos si no existe ya la relacion, si no esta se crea
+                    if (!BuscarPromoEspectaculo(idEventoSelec, 11, ref fila))
+                    {
+                        nuevafila11 = tEspecConPromo.NewRow();
+                        nuevafila11[0] = idEventoSelec;
+                        nuevafila11[1] = 11;
+                        tEspecConPromo.Rows.Add(nuevafila11);
+                        //MessageBox.Show("el de parado");
+                    }
+                }
+                else
+                {
+                    if (BuscarPromoEspectaculo(idEventoSelec, 11, ref fila))
+                    {
+                        BorrarPromoEspectaculo(fila);
+                    }
                 }
                 proEN.Save();
             }
@@ -817,6 +957,19 @@ namespace Events4ALL
                         checkBox_PE_descParado.Checked = true;
                     }
                 }
+            }
+            if (!radioButton_PE_5.Checked && !radioButton_PE_10.Checked && !radioButton_PE_25.Checked && !radioButton_PE_50.Checked && !radioButton_PE_IVA.Checked)
+            {
+                checkBox_PE_Ninguno.Checked = true;
+                radioButton_PE_5.Checked = false;
+                radioButton_PE_10.Checked = false;
+                radioButton_PE_25.Checked = false;
+                radioButton_PE_50.Checked = false;
+                radioButton_PE_IVA.Checked = false;
+            }
+            else
+            {
+                checkBox_PE_Ninguno.Checked = false;
             }
             //Aqui va el de la imagen
         }
