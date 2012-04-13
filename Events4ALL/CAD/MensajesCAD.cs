@@ -99,5 +99,26 @@ namespace Events4ALL.CAD
                 c.Close();
             }
         }
+
+        public int getNumMessages()
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            int rows = 0;
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("select count(*) from Mensaje where Estado=1", c);
+                rows=(int)com.ExecuteScalar();
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return rows;
+        }
     }
 }

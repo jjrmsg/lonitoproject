@@ -16,12 +16,15 @@ namespace Events4ALL
     {
 
         //------------VARIABLES---------------
-        int actualOption=-1;
-        int numImages;
+        private int actualOption=-1;
+        private int numImages;
+        private int sec = 0;
+        MensajesEN mEN;
 
         public FormBase(string user, string pass, string lang)
         {
             InitializeComponent();
+            mEN = new MensajesEN();
             PintarInterfaz(user, pass, lang);
         }
 
@@ -72,6 +75,9 @@ namespace Events4ALL
             nombreLabel.Text = (string)ds.Tables[0].Rows[0]["Nombre"];
             apellidosLabel.Text = (string)ds.Tables[0].Rows[0]["Apellidos"];
             idLabel.Text = ds.Tables[0].Rows[0]["ID"].ToString();
+
+            //Cargar número de mensajes
+            RefreshMessages();
         }
 
         public void ThreadProc()
@@ -194,6 +200,17 @@ namespace Events4ALL
         private void timer1_Tick(object sender, EventArgs e)
         {
             clockLabel.Text = DateTime.Now.ToLongTimeString();
+            sec++;
+            if (sec == 120)
+            {
+                RefreshMessages();
+                sec = 0;
+            }
+        }
+
+        private void RefreshMessages()
+        {
+            labelMensajes.Text = mEN.getNumMessages().ToString();
         }
 
         private void FormBase_Load(object sender, EventArgs e)

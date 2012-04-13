@@ -44,7 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.clockLabel = new System.Windows.Forms.Label();
             this.messagePicture = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelMensajes = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -161,7 +161,7 @@
             this.panel2.BackgroundImage = global::Events4ALL.Properties.Resources.bg;
             this.panel2.Controls.Add(this.clockLabel);
             this.panel2.Controls.Add(this.messagePicture);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.labelMensajes);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.updateButton);
             this.panel2.Controls.Add(this.pictureBox2);
@@ -182,12 +182,12 @@
             this.messagePicture.TabStop = false;
             this.messagePicture.Click += new System.EventHandler(this.messagePicture_Click);
             // 
-            // label7
+            // labelMensajes
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.labelMensajes, "labelMensajes");
+            this.labelMensajes.BackColor = System.Drawing.Color.Transparent;
+            this.labelMensajes.ForeColor = System.Drawing.Color.DimGray;
+            this.labelMensajes.Name = "labelMensajes";
             // 
             // label5
             // 
@@ -295,7 +295,7 @@
         private System.Windows.Forms.PictureBox updateButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelMensajes;
         private System.Windows.Forms.PictureBox messagePicture;
         private System.Windows.Forms.Label clockLabel;
         private System.Windows.Forms.Timer timer1;
