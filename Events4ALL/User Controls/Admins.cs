@@ -14,11 +14,16 @@ namespace Events4ALL
 {
     public partial class Admins : UserControl
     {
-        private Validaciones validar;
-
+        // generador de DNI's para hacer pruebas http://niednicifgenerador.appspot.com/
+        
         #region Variables
 
-        bool nuevoAdmin;
+        private Validaciones validar;
+        bool edicion;
+        AdminEN en_admin;
+        DataSet muestraAdmin;
+        DataTable tAdmin;
+        int idActual;
 
         #endregion
 
@@ -26,9 +31,9 @@ namespace Events4ALL
         {
             InitializeComponent();
 
-            nuevoAdmin = true;
+            dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());
 
-            if (nuevoAdmin)
+            if (!edicion)
             {
                 label_ID.Visible = false;
             }
@@ -38,6 +43,21 @@ namespace Events4ALL
 
             // creo el objeto que se encargara de validar
             validar = new Validaciones();
+            en_admin = new AdminEN();
+
+            textBox_anterior_pass.Enabled = false;
+
+            edicion = false;
+
+            idActual = -1;
+            boton_eliminar.Enabled = false;
+        }
+
+        // Carga los todos administradores al entrar en el panel de busqueda.
+        // Limitar a 20 !!!
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            MuestraAdmins();
         }
 
         #region Comprobaciones
@@ -258,7 +278,10 @@ namespace Events4ALL
                 return false;
             }
             else
+            {
+                errorProviderSexo.Clear();
                 return true;
+            }
         }
 
         private bool CompruebaEC()
@@ -306,7 +329,6 @@ namespace Events4ALL
             }
         }
 
-        // comprueba que en la BD no hay un nick igual
         private bool CompruebaNick()
         {
             if (textBox_NombreUsuario.Text.Length == 0)
@@ -362,9 +384,6 @@ namespace Events4ALL
         {
             bool error = true;
 
-            if (!CompruebaPass())
-                error = false;
-
             if (!CompruebaNick())
                 error = false;
 
@@ -410,9 +429,45 @@ namespace Events4ALL
             return error;
         }
 
+        // rellena el formulario de Admin con un ejemplo predefinido
+        private void RellenaDatos()
+        {
+            textBox_NombreUsuario.Text = "Mike";
+            textBox_pass1.Text = "123456";
+            textBox_pass2.Text = "123456";
+
+            Admin_Perfil_txtBox_Nombre.Text = "Miguel";
+            Admin_Perfil_txtBox_Apellidos.Text = "Lirio Villena";
+            Admin_Perfil_txtBox_NIF.Text = "45839549C";
+            Admin_Perfil_comboBox_Pais.Text = "España";
+            comboBox_Provincia.Text = "Alicante";
+            textBox_CP_Perfil.Text = "03610";
+            txtBox_Localidad.Text = "Petrer";
+            comboBoxDirec.Text = "C/";
+            Admin_Perfil_txtBox_Domicilio.Text = "Toledo Nº37 1ºB";
+
+            Admin_Perfil_txtBox_Tel1.Text = "966 314090";
+            Admin_Perfil_txtBox_Tel2.Text = "680301123";
+            Admin_Perfil_txtBox_Mail.Text = "michaelirio@gmail.com";
+
+            Admin_Perfil_rButom_H.Checked = true;
+            Admin_Perfil_rButom_Soltero.Checked = true;
+
+        }
+
         #endregion
 
         #region Limpiadores
+
+        private string IniciaFechaHoy()
+        {
+            string fechaHoy = DateTime.Now.Date.ToString();
+            string aux = "";
+            for (int i = 0; i < 10; i++)
+                aux = aux + fechaHoy[i];
+
+            return aux;
+        }
 
         private void LimpiaTelefono(object sender, EventArgs e)
         {
@@ -451,182 +506,7 @@ namespace Events4ALL
                 errorProviderPais.Clear();
         }
 
-        #endregion
-
-        #region Seccion Perfil
-
-        // boton Limpiar
-        private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
-        {
-            // borra nif
-            Admin_Perfil_txtBox_NIF.Text = "";
-            errorProviderNif.Clear();
-            
-            // borra nombre
-            Admin_Perfil_txtBox_Nombre.Text = "";
-            errorProviderNombre.Clear();
-            
-            // borra apellido
-            Admin_Perfil_txtBox_Apellidos.Text = "";
-            errorProviderApellidos.Clear();
-            
-            // borra telefono
-            Admin_Perfil_txtBox_Tel1.Text = "000 000000";
-            errorProviderTEL.Clear();
-            
-            // borra movil
-            Admin_Perfil_txtBox_Tel2.Text = "000 000000";
-            errorProviderMov.Clear();
-            
-            // borra mail
-            Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
-            errorProviderMail.Clear();
-
-            // borra localidad
-            txtBox_Localidad.Text = "";
-            errorProviderLocalidad.Clear();
-
-            // borra domicilio
-            Admin_Perfil_txtBox_Domicilio.Text = "";
-            errorProviderDomicilo.Clear();
-
-            // borra CP
-            textBox_CP_Perfil.Text = "";
-            errorProviderCP.Clear();
-
-            // borro EC
-            Admin_Perfil_rButom_Soltero.Checked = false;
-            Admin_Perfil_rButom_Viudo.Checked = false;
-            Admin_Perfil_rButom_Divorciado.Checked = false;
-            Admin_Perfil_rButom_Casado.Checked = false;
-            errorProviderEC.Clear();
-
-            // borro sexo
-            Admin_Perfil_rButom_H.Checked = false;
-            Admin_Perfil_rButom_M.Checked = false;
-            errorProviderSexo.Clear();
-
-            // borro provincia
-            comboBox_Provincia.Text = "";
-            errorProviderProvincia.Clear();
-
-            // borro pais
-            Admin_Perfil_comboBox_Pais.Text = "";
-            errorProviderPais.Clear();
-
-            // falta la inicializacion de la fecha
-        }
-
-        // Boton Guardar
-        private void Admin_Perfil_boton_Guardar_Click(object sender, EventArgs e)
-        {
-            // Comrpuebo que todos los campos estan rellenos
-            if (ValidaCampos())
-            {
-                // creo el EN y toda la pedazo de basura posterior
-                MessageBox.Show("Todo Ok.");
-
-                // ambos metodos hacen la misma puta basura, simplemente relleno el EN de distintas maneras.... por que me sale del nabo
-                AltaAdminEN_Directo();
-                //AltaAdminEN_PorPasos();
-            }
-            else 
-            {
-                //MessageBox.Show("Fail.");
-            }
-        }
-
-        #endregion
-
-        #region Trabajo con EN
-
-        private void AltaAdminEN_Directo()
-        {
-            int sexo = -1;
-            int ec = -1;
-
-            if (Admin_Perfil_rButom_H.Checked == true)
-                sexo = 0;
-            else if (Admin_Perfil_rButom_M.Checked == true)
-                sexo = 1;
-
-            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
-            if (Admin_Perfil_rButom_Soltero.Checked == true)
-                ec = 0;
-            else if (Admin_Perfil_rButom_Casado.Checked == true)
-                ec = 1;
-            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
-                ec = 2;
-            else if (Admin_Perfil_rButom_Viudo.Checked == true)
-                ec = 3;
-
-            AdminEN nuevo = new AdminEN(Admin_Perfil_txtBox_NIF.Text, Admin_Perfil_txtBox_Nombre.Text, Admin_Perfil_txtBox_Apellidos.Text,
-                                        Admin_Perfil_comboBox_Pais.Text, comboBox_Provincia.Text, txtBox_Localidad.Text,
-                                        comboBoxDirec + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
-                                        Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text, Admin_Perfil_txtBox_Mail.Text, ec, 
-                                        "VACIO !!", sexo, textBox_NombreUsuario.Text, textBox_pass1.Text);
-
-            if (nuevo.InsertarAdmin(nuevo))
-                MessageBox.Show("Insertado OK.");
-            else
-                MessageBox.Show("Fail al Insertar.");
-        }
-
-        private void AltaAdminEN_PorPasos()
-        {
-            AdminEN nuevo = new AdminEN();
-
-            nuevo.DNI = Admin_Perfil_txtBox_NIF.Text;
-            nuevo.Nombre = Admin_Perfil_txtBox_Nombre.Text;
-            nuevo.Apellidos = Admin_Perfil_txtBox_Apellidos.Text;
-            nuevo.Domicilio = comboBoxDirec + " " + Admin_Perfil_txtBox_Domicilio.Text;
-            nuevo.CP = textBox_CP_Perfil.Text;
-            nuevo.Pais = Admin_Perfil_comboBox_Pais.Text;
-            nuevo.Provincia = comboBox_Provincia.Text;
-            nuevo.Localidad = txtBox_Localidad.Text;
-            nuevo.Telefono = Admin_Perfil_txtBox_Tel1.Text;
-            nuevo.Movil = Admin_Perfil_txtBox_Tel2.Text;
-            nuevo.Mail = Admin_Perfil_txtBox_Mail.Text;
-
-            nuevo.Fecha = dateTimePicker1.Value;
-
-            if (Admin_Perfil_rButom_H.Checked == true)
-                nuevo.Sexo = 0;
-            else if (Admin_Perfil_rButom_M.Checked == true)
-                nuevo.Sexo = 1;
-
-            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
-            if (Admin_Perfil_rButom_Soltero.Checked == true)
-                nuevo.EC = 0;
-            else if (Admin_Perfil_rButom_Casado.Checked == true)
-                nuevo.EC = 1;
-            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
-                nuevo.EC = 2;
-            else if (Admin_Perfil_rButom_Viudo.Checked == true)
-                nuevo.EC = 3;
-
-            nuevo.Foto = "VACIA !!";
-
-            nuevo.Nick = textBox_NombreUsuario.Text;
-            nuevo.Pass = textBox_pass1.Text;
-
-            if (nuevo.InsertarAdmin(nuevo))
-                MessageBox.Show("Insertado OK.");
-            else
-                MessageBox.Show("Fail al Insertar.");
-        }
-
-        #endregion
-
-        private void groupBox_Busqueda_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        #region Seccion Busqueda
-
-        // boton limpiar
-        private void boton_limpia_busqueda_Click(object sender, EventArgs e)
+        public void LimpiaBusqueda()
         {
             textBox_Nombre_Busqueda.Text = "";
             textBox_Apellidos_Busqueda.Text = "";
@@ -656,6 +536,436 @@ namespace Events4ALL
             radioButton_edad_no.Checked = true;
         }
 
+        private void LimpiarDatos()
+        {
+            #region Datos Personales
+
+            //Admin_Perfil_txtBox_NIF.Enabled = true;
+            edicion = false;
+            en_admin.LimpiaEN();
+
+            // borra nif
+            Admin_Perfil_txtBox_NIF.Text = "";
+            errorProviderNif.Clear();
+
+            // borra nombre
+            Admin_Perfil_txtBox_Nombre.Text = "";
+            errorProviderNombre.Clear();
+
+            // borra apellido
+            Admin_Perfil_txtBox_Apellidos.Text = "";
+            errorProviderApellidos.Clear();
+
+            // borra telefono
+            Admin_Perfil_txtBox_Tel1.Text = "000 000000";
+            errorProviderTEL.Clear();
+
+            // borra movil
+            Admin_Perfil_txtBox_Tel2.Text = "000 000000";
+            errorProviderMov.Clear();
+
+            // borra mail
+            Admin_Perfil_txtBox_Mail.Text = "usuario@event4all.es";
+            errorProviderMail.Clear();
+
+            // borra localidad
+            txtBox_Localidad.Text = "";
+            errorProviderLocalidad.Clear();
+
+            // borra domicilio
+            comboBoxDirec.Text = "";
+            Admin_Perfil_txtBox_Domicilio.Text = "";
+            errorProviderDomicilo.Clear();
+
+            // borra CP
+            textBox_CP_Perfil.Text = "";
+            errorProviderCP.Clear();
+
+            // borro EC
+            Admin_Perfil_rButom_Soltero.Checked = false;
+            Admin_Perfil_rButom_Viudo.Checked = false;
+            Admin_Perfil_rButom_Divorciado.Checked = false;
+            Admin_Perfil_rButom_Casado.Checked = false;
+            errorProviderEC.Clear();
+
+            // borro sexo
+            Admin_Perfil_rButom_H.Checked = false;
+            Admin_Perfil_rButom_M.Checked = false;
+            errorProviderSexo.Clear();
+
+            // borro provincia
+            comboBox_Provincia.Text = "";
+            errorProviderProvincia.Clear();
+
+            // borro pais
+            Admin_Perfil_comboBox_Pais.Text = "";
+            errorProviderPais.Clear();
+
+            //Admin_Perfil_Label_FecNacimiento.Text =S DateTime.Now.Date.Totring();
+            dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());
+
+            #endregion
+            #region Datos de Usuario
+
+            // borra y esconde ID
+            label_ID.Text = "";
+            label_ID.Visible = false;
+
+            // borra Nick
+            textBox_NombreUsuario.Text = "";
+            errorProviderNick.Clear();
+
+            // borra Pass 
+            textBox_pass1.Text = "";
+            textBox_pass2.Text = "";
+            errorProviderPassDif.Clear();
+            errorProviderPassInv.Clear();
+
+            edicion = false;
+            textBox_anterior_pass.Enabled = false;
+            idActual = -1;
+            boton_eliminar.Enabled = false;
+            errorProviderPassAnt.Clear();
+            textBox_anterior_pass.Text = "";
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Seccion Perfil
+
+        // Elimina el Admin seleccionado
+        private void boton_eliminar_Click(object sender, EventArgs e)
+        {
+            BorrarAdmin();
+        }
+        
+        // boton Limpiar
+        private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+            //RellenaDatos();
+        }
+
+        // Boton Guardar
+        private void Admin_Perfil_boton_Guardar_Click(object sender, EventArgs e)
+        {
+            //RellenaDatos();
+            //45836991S
+            
+            // Comrpuebo que todos los campos estan rellenos
+            if (ValidaCampos())
+            {
+                // creo el EN y toda la pedazo de basura posterior
+
+                // ambos metodos hacen la misma puta basura, simplemente relleno el EN de distintas maneras.... por que me sale del nabo
+                //AltaAdminEN_Directo();
+                //AltaAdminEN_PorPasos();
+                
+                // NUEVO 
+                if (!edicion && CompruebaPass())
+                {
+                    if (AltaAdminEN_PorPasos())
+                    {
+                        idActual = ObtieneID(textBox_NombreUsuario.Text);
+                        // Una vez insertado mostramos el ID que se le ha asignado
+                        label_ID.Text = "ID de Usuario : " + idActual;
+                        label_ID.Visible = true;
+
+                        // Establecemos edicion a true, ya que si se realiza un modificacion del admin, tendremos que realizar
+                        // un update y no un insert
+                        edicion = true;
+
+                        textBox_pass1.Text = "";
+                        textBox_pass2.Text = "";
+
+                        textBox_anterior_pass.Enabled = true;
+                        boton_eliminar.Enabled = true;
+                    }
+                }
+                // ACTUALIZAR
+                else 
+                {
+                    int sexo = -1;
+
+                    if (Admin_Perfil_rButom_H.Checked == true)
+                        sexo = 0;
+                    else if (Admin_Perfil_rButom_M.Checked == true)
+                        sexo = 1;
+
+                    string ec = "";
+
+                    if (Admin_Perfil_rButom_Soltero.Checked == true)
+                        ec = Admin_Perfil_rButom_Soltero.Text;
+                    else if (Admin_Perfil_rButom_Casado.Checked == true)
+                        ec = Admin_Perfil_rButom_Casado.Text;
+                    else if (Admin_Perfil_rButom_Divorciado.Checked == true)
+                        ec = Admin_Perfil_rButom_Divorciado.Text;
+                    else if (Admin_Perfil_rButom_Viudo.Checked == true)
+                        ec = Admin_Perfil_rButom_Viudo.Text;
+
+                    int error = en_admin.CompruebaPass(textBox_anterior_pass.Text, textBox_pass1.Text, textBox_pass2.Text, idActual);
+
+                    if (error == 1 && ValidaCampos())
+                    {
+                        errorProviderPassAnt.Clear();
+                        errorProviderPassDif.Clear();
+                        error = en_admin.ActualizarAdmin(idActual, Admin_Perfil_txtBox_NIF.Text, Admin_Perfil_txtBox_Nombre.Text,
+                                                Admin_Perfil_txtBox_Apellidos.Text, Admin_Perfil_comboBox_Pais.Text,
+                                                comboBox_Provincia.Text, txtBox_Localidad.Text,
+                                                comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
+                                                Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
+                                                Admin_Perfil_txtBox_Mail.Text, ec, "foto xD", sexo, textBox_NombreUsuario.Text,
+                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
+
+                        if (error == 4) MessageBox.Show("No se ha podido realizar la actualización.");
+                        else if (error == 5) MessageBox.Show("No se ha realizado ninguna modificación.");
+                        else MessageBox.Show("Se ha realizado la actualizacion. + " + error);
+                        
+                    }
+                    else if (error == 0 && CompruebaPass() && ValidaCampos())
+                    {
+                        errorProviderPassAnt.Clear();
+                        errorProviderPassDif.Clear();
+                        error = en_admin.ActualizarAdmin(idActual, Admin_Perfil_txtBox_NIF.Text, Admin_Perfil_txtBox_Nombre.Text,
+                                                Admin_Perfil_txtBox_Apellidos.Text, Admin_Perfil_comboBox_Pais.Text,
+                                                comboBox_Provincia.Text, txtBox_Localidad.Text,
+                                                comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
+                                                Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
+                                                Admin_Perfil_txtBox_Mail.Text, ec, "foto xD", sexo, textBox_NombreUsuario.Text,
+                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
+
+                        if (error == 4) MessageBox.Show("No se ha podido realizar la actualizacion.");
+                        else if (error == 5) MessageBox.Show("No se ha realizado ninguna modificación.");
+                        else MessageBox.Show("Se ha realizado la actualizacion.");
+                    }
+                    else if (error == 2)
+                        errorProviderPassDif.SetError(label_pass1, "Error, contraseñas direfentes.");
+                    else if (error == 3)
+                        errorProviderPassAnt.SetError(label_anterior_pass, "La constraseña anterior no es correcta.");
+                    else if (error == 4)
+                        errorProviderPassAnt.SetError(label_anterior_pass, "Debe introducir la contraseña anterior para poder cambiarla.");
+                    else
+                        MessageBox.Show("Dafaq !?");
+                }
+            }
+            else 
+            {
+                //MessageBox.Show("Fail.");
+            }
+        }
+
+        #endregion
+
+        #region Trabajo con EN
+
+        private void MuestraEN(AdminEN muestra)
+        {
+            MessageBox.Show("Nombre : "+muestra.Nombre+
+                            " \nApellidos : "+muestra.Apellidos+
+                            " \nDNI : "+muestra.DNI+
+                            " \nPais : "+muestra.Pais+
+                            " \nProvincia : "+muestra.Provincia+
+                            " \nLocalidad : "+muestra.Localidad+
+                            " \nDireccion : "+muestra.Domicilio+
+                            " \nCP : "+muestra.CP+
+                            " \nSexo : "+muestra.Sexo+
+                            " \nTelefono : "+muestra.Telefono+
+                            " \nMovil : "+muestra.Movil+
+                            " \nMail : "+muestra.Mail+
+                            " \nEC : "+muestra.EC+
+                            " \nNick : "+muestra.Nick+
+                            " \nPASS : "+muestra.Pass+
+                            " \nFoto : "+muestra.Foto+
+                            " \nFecha : "+muestra.Fecha);
+        }
+
+        private bool AltaAdminEN_Directo()
+        {
+            int sexo = -1;
+            string ec = "";
+
+            if (Admin_Perfil_rButom_H.Checked == true)
+                sexo = 0;
+            else if (Admin_Perfil_rButom_M.Checked == true)
+                sexo = 1;
+
+            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
+            if (Admin_Perfil_rButom_Soltero.Checked == true)
+                ec = Admin_Perfil_rButom_Soltero.Text;
+            else if (Admin_Perfil_rButom_Casado.Checked == true)
+                ec = Admin_Perfil_rButom_Casado.Text;
+            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
+                ec = Admin_Perfil_rButom_Divorciado.Text;
+            else if (Admin_Perfil_rButom_Viudo.Checked == true)
+                ec = Admin_Perfil_rButom_Viudo.Text;
+
+            AdminEN nuevo = new AdminEN(Admin_Perfil_txtBox_NIF.Text,
+                                        Admin_Perfil_txtBox_Nombre.Text,
+                                        Admin_Perfil_txtBox_Apellidos.Text,
+                                        Admin_Perfil_comboBox_Pais.Text,
+                                        comboBox_Provincia.Text,
+                                        txtBox_Localidad.Text,
+                                        comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text,
+                                        textBox_CP_Perfil.Text,
+                                        Admin_Perfil_txtBox_Tel1.Text,
+                                        Admin_Perfil_txtBox_Tel2.Text,
+                                        Admin_Perfil_txtBox_Mail.Text,
+                                        ec, 
+                                        "VACIO !!",
+                                        sexo,
+                                        textBox_NombreUsuario.Text,
+                                        textBox_pass1.Text,
+                                        dateTimePicker1.Value);
+
+            //MuestraEN(nuevo);
+
+            // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existen
+            int error = nuevo.InsertarAdmin();
+
+            if (error == 0)
+            {
+                MessageBox.Show("Se ha insertado con éxito.");
+                errorProviderNif.Clear();
+                errorProviderNick.Clear();
+                return true;
+            }
+            else if (error == 1)
+            {
+                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "El DNI ya está registrado.");
+                errorProviderNick.Clear();
+                return false;
+            }
+            else if (error == 2)
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "El Nombre de Usuario ya existe.");
+                errorProviderNif.Clear();
+                return false;
+            }
+            else if (error == 3)
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "El Nombre de Usuario ya existe.");
+                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "El DNI ya está registrado.");
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("Se ha producido un error desconocido.");
+                errorProviderNif.Clear();
+                errorProviderNick.Clear();
+                return false;
+            }
+        }
+
+        private bool AltaAdminEN_PorPasos()
+        {
+            en_admin.DNI = Admin_Perfil_txtBox_NIF.Text;
+            en_admin.Nombre = Admin_Perfil_txtBox_Nombre.Text;
+            en_admin.Apellidos = Admin_Perfil_txtBox_Apellidos.Text;
+            en_admin.Domicilio = comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text;
+            en_admin.CP = textBox_CP_Perfil.Text;
+            en_admin.Pais = Admin_Perfil_comboBox_Pais.Text;
+            en_admin.Provincia = comboBox_Provincia.Text;
+            en_admin.Localidad = txtBox_Localidad.Text;
+            en_admin.Telefono = Admin_Perfil_txtBox_Tel1.Text;
+            en_admin.Movil = Admin_Perfil_txtBox_Tel2.Text;
+            en_admin.Mail = Admin_Perfil_txtBox_Mail.Text;
+
+            en_admin.Fecha = dateTimePicker1.Value;
+
+            if (Admin_Perfil_rButom_H.Checked == true)
+                en_admin.Sexo = 0;
+            else if (Admin_Perfil_rButom_M.Checked == true)
+                en_admin.Sexo = 1;
+
+            // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
+            if (Admin_Perfil_rButom_Soltero.Checked == true)
+                en_admin.EC = Admin_Perfil_rButom_Soltero.Text;
+            else if (Admin_Perfil_rButom_Casado.Checked == true)
+                en_admin.EC = Admin_Perfil_rButom_Casado.Text;
+            else if (Admin_Perfil_rButom_Divorciado.Checked == true)
+                en_admin.EC = Admin_Perfil_rButom_Divorciado.Text;
+            else if (Admin_Perfil_rButom_Viudo.Checked == true)
+                en_admin.EC = Admin_Perfil_rButom_Viudo.Text;
+
+            en_admin.Foto = "VACIA !!";
+
+            en_admin.Nick = textBox_NombreUsuario.Text;
+            en_admin.Pass = textBox_pass1.Text;
+
+            //MuestraEN(nuevo);
+
+            // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existen
+            int error = en_admin.InsertarAdmin();
+
+            if (error == 0)
+            {
+                MessageBox.Show("Se ha insertado con éxito.","",MessageBoxButtons.OK,MessageBoxIcon.Information
+                                ,MessageBoxDefaultButton.Button1);
+                errorProviderNif.Clear();
+                errorProviderNick.Clear();
+                return true;
+            }
+            else if (error == 1)
+            {
+                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "El DNI ya está registrado.");
+                errorProviderNick.Clear();
+                return false;
+            }   
+            else if (error == 2)
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "El Nombre de Usuario ya existe.");
+                errorProviderNif.Clear();
+                return false;
+            }
+            else if (error == 3)
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "El Nombre de Usuario ya existe.");
+                errorProviderNif.SetError(Admin_Perfil_Label_NIF, "El DNI ya está registrado.");
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("Se ha producido un error desconocido.");
+                errorProviderNif.Clear();
+                errorProviderNick.Clear();
+                return false;
+            }
+        }
+
+        private int ObtieneID(string usuario)
+        {
+            return en_admin.ObtieneID(usuario);
+        }
+
+        private void BorrarAdmin()
+        {
+            if (MessageBox.Show("¿Desea eliminar este administrador? \nEste cambio se realizará de forma permanente.",
+                                    "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                                    == DialogResult.Yes)
+            {
+                if (!en_admin.BorraAdmin(idActual))
+                {
+                    MessageBox.Show("No se ha podido eliminar el Administrador.");
+                }
+                else
+                {
+                    LimpiarDatos();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Seccion Busqueda
+
+        // boton limpiar
+        private void boton_limpia_busqueda_Click(object sender, EventArgs e)
+        {
+            LimpiaBusqueda();
+        }
+
         private void radioButton_edad_no_CheckedChanged(object sender, EventArgs e)
         {
             numericUpDown_Fec1.Enabled = false;
@@ -682,14 +992,189 @@ namespace Events4ALL
         private void buttom_Buscar_Click(object sender, EventArgs e)
         {
             // mostrar todos, o lo que es lo mismo, no se ha establecido ningun filtro de busqueda
+            MuestraAdmins();
+        }
+
+        public void MuestraAdmins()
+        {
+            muestraAdmin = new DataSet();
+            muestraAdmin = en_admin.getAdmins();
+            tAdmin = new DataTable();
+
+            try
+            {
+                Resultados_Busqueda.Rows.Clear();
+                foreach(DataRow administrador in muestraAdmin.Tables[0].Rows)
+                {
+                    string[] row = { administrador["ID"].ToString(),
+                                     administrador["NIF"].ToString(), 
+                                     administrador["Usuario"].ToString(),
+                                     administrador["Nombre"].ToString(),
+                                     administrador["Apellidos"].ToString(),
+                                     administrador["Mail"].ToString()};
+                    Resultados_Busqueda.Rows.Add(row);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("PWNDED, petada hermosa :D");
+            }
+        }
+
+        private void Resultados_Busqueda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+                RellenaDatos_AdminSeleccionado(sender, e);
+            else
+            { 
+                en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
+                MuestraAdmins();
+            }
+        }
+
+        private void RellenaDatos_AdminSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            LimpiarDatos();
             
+            idActual = Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString());
+            muestraAdmin = en_admin.getAdmin(idActual);
+
+            #region Rellenando Datos
+
+            string aux = "";
+            bool espacio = false;
+        
+            Admin_Perfil_txtBox_NIF.Text = muestraAdmin.Tables[0].Rows[0][0].ToString();
+            Admin_Perfil_txtBox_Nombre.Text = muestraAdmin.Tables[0].Rows[0][1].ToString();
+            Admin_Perfil_txtBox_Apellidos.Text = muestraAdmin.Tables[0].Rows[0][2].ToString();
+            textBox_NombreUsuario.Text = muestraAdmin.Tables[0].Rows[0][3].ToString();
+            // muestraAdmin.Tables[0].Rows[0][4] es el pass
+            //muestraAdmin.Tables[0].Rows[0][5] es la fecha
+
+            dateTimePicker1.Value = (DateTime) muestraAdmin.Tables[0].Rows[0][5];
+
+            txtBox_Localidad.Text = muestraAdmin.Tables[0].Rows[0][6].ToString();
+            comboBox_Provincia.Text = muestraAdmin.Tables[0].Rows[0][7].ToString();
+            Admin_Perfil_comboBox_Pais.Text = muestraAdmin.Tables[0].Rows[0][8].ToString();
+
+            aux = muestraAdmin.Tables[0].Rows[0][9].ToString();
+            
+            comboBoxDirec.Text = "";
+            Admin_Perfil_txtBox_Domicilio.Text = "";
+
+            espacio = false;
+            
+            for (int i = 0; i < aux.Length; i++)
+            {   
+                if (aux[i] == ' ' && !espacio)
+                {
+                    espacio = true;
+                }
+                else if (!espacio)
+                {
+                    comboBoxDirec.Text = comboBoxDirec.Text + aux[i];
+                }
+                else if (espacio)
+                {
+                    Admin_Perfil_txtBox_Domicilio.Text = Admin_Perfil_txtBox_Domicilio.Text + aux[i];
+                }
+            }
+
+            Admin_Perfil_txtBox_Tel1.Text = muestraAdmin.Tables[0].Rows[0][10].ToString();
+            Admin_Perfil_txtBox_Tel2.Text = muestraAdmin.Tables[0].Rows[0][11].ToString();
+            Admin_Perfil_txtBox_Mail.Text = muestraAdmin.Tables[0].Rows[0][12].ToString();
+
+            idActual = Convert.ToInt16(muestraAdmin.Tables[0].Rows[0][13].ToString());
+            label_ID.Text = "ID de usuario : " + idActual;
+            label_ID.Visible = true;
+
+            aux = muestraAdmin.Tables[0].Rows[0][14].ToString();
+
+            if (aux[0] == 'S')
+            {
+                Admin_Perfil_rButom_Casado.Checked = false;
+                Admin_Perfil_rButom_Viudo.Checked = false;
+                Admin_Perfil_rButom_Divorciado.Checked = false;
+                Admin_Perfil_rButom_Soltero.Checked = true;
+            }
+            else if (aux[0] == 'C')
+            {
+                Admin_Perfil_rButom_Soltero.Checked = false;
+                Admin_Perfil_rButom_Viudo.Checked = false;
+                Admin_Perfil_rButom_Divorciado.Checked = false;
+                Admin_Perfil_rButom_Casado.Checked = true;
+            }
+            else if (aux[0] == 'D')
+            {
+                Admin_Perfil_rButom_Soltero.Checked = false;
+                Admin_Perfil_rButom_Casado.Checked = false;
+                Admin_Perfil_rButom_Viudo.Checked = false;
+                Admin_Perfil_rButom_Divorciado.Checked = true;
+            }
+            else if (aux[0] == 'V')
+            {
+                Admin_Perfil_rButom_Soltero.Checked = false;
+                Admin_Perfil_rButom_Casado.Checked = false;
+                Admin_Perfil_rButom_Divorciado.Checked = false;
+                Admin_Perfil_rButom_Viudo.Checked = true;
+            }
+            else
+                MessageBox.Show("Se ha localizado un error con los estados en la BD.");
+
+            // = muestraAdmin.Tables[0].Rows[0][15] es la foto
+
+            textBox_CP_Perfil.Text = muestraAdmin.Tables[0].Rows[0][16].ToString();
+
+            if (muestraAdmin.Tables[0].Rows[0][17].ToString() == "0")
+            {
+                Admin_Perfil_rButom_H.Checked = true;
+                Admin_Perfil_rButom_M.Checked = false;
+            }
+            else if (muestraAdmin.Tables[0].Rows[0][17].ToString() == "1")
+            {
+                Admin_Perfil_rButom_H.Checked = false;
+                Admin_Perfil_rButom_M.Checked = true;
+            }
+            else
+                MessageBox.Show("Se ha localizado un error con el sexo en la BD.");
+
+            #endregion
+
+            edicion = true;
+            boton_eliminar.Enabled = true;
+            textBox_anterior_pass.Enabled = true;
+
+            tabControl1.SelectTab("Perfil");
         }
 
         #endregion
 
+        #region Basura que da pereza Borrar XD
+
         private void textBox_movil_busqueda_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox_Busqueda_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Resultados_Busqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+            // MuestraAdmins();
+        }
+        #endregion
+
+        private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
+        {
+            RellenaDatos();
         }
     }
 }
