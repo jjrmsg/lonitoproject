@@ -1074,6 +1074,7 @@
             this.button_MC_Nueva.TabIndex = 6;
             this.button_MC_Nueva.Text = "Nueva";
             this.button_MC_Nueva.UseVisualStyleBackColor = true;
+            this.button_MC_Nueva.Click += new System.EventHandler(this.button_MC_Nueva_Click);
             // 
             // label_MC_Descripcion
             // 
@@ -1090,6 +1091,7 @@
             this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
+            this.textBox_MC_NomPromo.MaxLength = 10;
             this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
             this.textBox_MC_NomPromo.Size = new System.Drawing.Size(442, 20);
             this.textBox_MC_NomPromo.TabIndex = 2;
@@ -1109,6 +1111,7 @@
             this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 81);
+            this.textBox_MC_Descripcion.MaxLength = 248;
             this.textBox_MC_Descripcion.Multiline = true;
             this.textBox_MC_Descripcion.Name = "textBox_MC_Descripcion";
             this.textBox_MC_Descripcion.Size = new System.Drawing.Size(442, 64);

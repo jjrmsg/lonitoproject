@@ -43,7 +43,6 @@ namespace Events4ALL
             tEspec = espec.Tables["Espectaculo"];
             tEspecConPromo = new DataTable();
             tEspecConPromo = espec.Tables["PromocionConEvento"];
-            //MessageBox.Show(tEspecConPromo.Rows.Count.ToString());
 
             promos = new DataSet();
             promos = conEN.ObtenerTodas();
@@ -245,7 +244,6 @@ namespace Events4ALL
             }
         }
 
-
         //Funcion para borrar una promocion de un espectaculo
         private bool BuscarPromoEspectaculo(int id,int idPromo, ref int fila)
         {
@@ -266,13 +264,13 @@ namespace Events4ALL
             //tEspecConPromo.Rows[i].Delete();
         }
 
-
         //Funcion para buscar un evento con una promo
         private void BorrarPromoEspectaculo(int fila)
         {
             //MessageBox.Show(fila.ToString());
             tEspecConPromo.Rows[fila].Delete();
         }
+
         //Funcion para guardar en la tabla PromocionConEvento de la BD
         private void GuardarPromocionConEvento()
         {
@@ -542,8 +540,8 @@ namespace Events4ALL
             
         }
 
-        //Evento para guardar los datos modificados de las promociones por condicion
-        private void button_MC_Guardar_Click(object sender, EventArgs e)
+        //Funcion para comprobar las cantidades numericas de las promociones por condicion
+        private void ComproCantCondiciones()
         {
             //Comprobamos la Cantidad1
             if (!CompruebaCantidad(textBox_MC_VC_Cantidad1.Text.ToString()))
@@ -567,6 +565,7 @@ namespace Events4ALL
                 errorProvider_MC_Desc1.Clear();
                 MC_Descuento1 = true;
             }
+            
 
 
             //Si está activada la segunda condición la comprobamos
@@ -623,6 +622,14 @@ namespace Events4ALL
                     MC_Descuento3 = true;
                 }
             }
+        }
+
+        //Funcion para comprobar los combobox y groupbox de condiciones
+
+        //Evento para guardar los datos modificados de las promociones por condicion
+        private void button_MC_Guardar_Click(object sender, EventArgs e)
+        {
+            ComproCantCondiciones();
 
             //Comprobamos que este todo listo
             if (checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
@@ -631,6 +638,7 @@ namespace Events4ALL
                 if (MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento2 && MC_Descuento3)
                 {
                     MessageBox.Show("Listo para guardar");
+                    GuardarCondicion();
                 }
             }
             else if (checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
@@ -639,6 +647,7 @@ namespace Events4ALL
                 if (MC_Cantidad1 && MC_Cantidad2 && MC_Descuento1 && MC_Descuento2)
                 {
                     MessageBox.Show("Listo para guardar");
+                    GuardarCondicion();
                 }
             }
             else if (!checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
@@ -647,6 +656,7 @@ namespace Events4ALL
                 if (MC_Cantidad1 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento3)
                 {
                     MessageBox.Show("Listo para guardar");
+                    GuardarCondicion();
                 }
             }
             else if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
@@ -655,18 +665,112 @@ namespace Events4ALL
                 if (MC_Cantidad1 && MC_Descuento1)
                 {
                     MessageBox.Show("Listo para guardar");
+                    GuardarCondicion();
                 }
             }
         }
 
-        //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox)
+        //Funcion pasa sacar el numero del tipo de evento seleccionado en las condiciones
+        private int ObtenerTipoEvento(int numGropuBox)
+        {
+            int resul=0;
+
+            if (numGropuBox == 1)
+            {
+                if (radioButton_MC_TE1_Cine.Checked)
+                {
+                    resul = 0;
+                }
+                else if (radioButton_MC_TE1_Teatro.Checked)
+                {
+                    resul = 1;
+                }
+                else if(radioButton_MC_TE1_Concierto.Checked)
+                {
+                    resul=2;
+                }
+                else if (radioButton_MC_TE1_Todos.Checked)
+                {
+                    resul = 3;
+                }
+            }
+            else if (numGropuBox == 2)
+            {
+                if (radioButton_MC_TE2_Cine.Checked)
+                {
+                    resul = 0;
+                }
+                else if (radioButton_MC_TE2_Teatro.Checked)
+                {
+                    resul = 1;
+                }
+                else if (radioButton_MC_TE2_Concierto.Checked)
+                {
+                    resul = 2;
+                }
+                else if (radioButton_MC_TE2_Todos.Checked)
+                {
+                    resul = 3;
+                }
+            }
+            else if (numGropuBox == 3)
+            {
+                if (radioButton_MC_TE3_Cine.Checked)
+                {
+                    resul = 0;
+                }
+                else if (radioButton_MC_TE3_Teatro.Checked)
+                {
+                    resul = 1;
+                }
+                else if (radioButton_MC_TE3_Concierto.Checked)
+                {
+                    resul = 2;
+                }
+                else if (radioButton_MC_TE3_Todos.Checked)
+                {
+                    resul = 3;
+                }
+            }
+
+            return resul;
+        }
+
+        //Funcion para guardar los cambios en la condicion seleccionada
+        private void GuardarCondicion()
+        {
+            DataRow fila = tPromo.NewRow();
+
+            string nompromo = textBox_MC_NomPromo.Text.ToString();
+            if (nompromo.Length - 10 >= 0)
+            {
+                nompromo = nompromo.Remove(10, nompromo.Length - 10);
+            }
+            fila[1] = nompromo;
+
+            fila[2] = textBox_MC_Descripcion.Text.ToString();
+
+            fila[3] = Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex);
+
+            fila[4] = Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex);
+
+            fila[5] = Convert.ToInt32(textBox_MC_VC_Cantidad1.Text);
+
+            fila[6] = Convert.ToInt32(textBox_MC_VC_Descuento1.Text);
+
+            fila[7] = ObtenerTipoEvento(1);
+
+            //MessageBox.Show(fila[1].ToString()+fila[2].ToString()+fila[3].ToString()+fila[4].ToString()+fila[5].ToString()+fila[6].ToString());
+        }
+
+        //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox) de promociones por condicion
         private void MC_limpiar(int todo)
         {
             //true en caso de limpiar todos los campos
             if (todo == 1)
             {
                 textBox_MC_NomPromo.Text = "";
-                label_MC_Descripcion.Text = "";
+                textBox_MC_Descripcion.Text = "";
                 comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion1.Text = "Comparación";
                 textBox_MC_VC_Cantidad1.Text = "";
@@ -698,7 +802,7 @@ namespace Events4ALL
             else if (todo == 0)
             {
                 textBox_MC_NomPromo.Text = "";
-                label_MC_Descripcion.Text = "";
+                textBox_MC_Descripcion.Text = "";
                 textBox_MC_VC_Cantidad1.Text = "";
                 textBox_MC_VC_Descuento1.Text = "";
                 radioButton_MC_TE1_Cine.Checked = false;
@@ -972,6 +1076,11 @@ namespace Events4ALL
                 checkBox_PE_Ninguno.Checked = false;
             }
             //Aqui va el de la imagen
+        }
+
+        private void button_MC_Nueva_Click(object sender, EventArgs e)
+        {
+            MC_limpiar(1);
         }
     }
 }
