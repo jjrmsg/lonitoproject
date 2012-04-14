@@ -38,8 +38,8 @@ namespace Events4ALL
                 label_ID.Visible = false;
             }
 
-            numericUpDown_Fec1.Enabled = false;
-            numericUpDown_Fec2.Enabled = false;
+            textBox_filtro_busqueda.Visible = false;
+            comboBox_filtro_busqueda.Visible = false;
 
             // creo el objeto que se encargara de validar
             validar = new Validaciones();
@@ -508,7 +508,14 @@ namespace Events4ALL
 
         public void LimpiaBusqueda()
         {
-            textBox_Nombre_Busqueda.Text = "";
+            textBox_filtro_busqueda.Visible = false;
+            comboBox_filtro_busqueda.Visible = false;
+
+            comboBox_filtro.Text = "Mostrar Todos";
+
+            MuestraAdmins();
+
+            /*textBox_Nombre_Busqueda.Text = "";
             textBox_Apellidos_Busqueda.Text = "";
             comboBox_provincia_busqueda.Text = "";
             comboBox_Pais_BA.Text = "";
@@ -533,7 +540,7 @@ namespace Events4ALL
             numericUpDown_Fec1.Value = 16;
             numericUpDown_Fec2.Value = 16;
 
-            radioButton_edad_no.Checked = true;
+            radioButton_edad_no.Checked = true;*/
         }
 
         private void LimpiarDatos()
@@ -721,7 +728,7 @@ namespace Events4ALL
 
                         if (error == 4) MessageBox.Show("No se ha podido realizar la actualización.");
                         else if (error == 5) MessageBox.Show("No se ha realizado ninguna modificación.");
-                        else MessageBox.Show("Se ha realizado la actualizacion. + " + error);
+                        else MessageBox.Show("Se ha realizado la actualizacion.");
                         
                     }
                     else if (error == 0 && CompruebaPass() && ValidaCampos())
@@ -968,31 +975,91 @@ namespace Events4ALL
 
         private void radioButton_edad_no_CheckedChanged(object sender, EventArgs e)
         {
-            numericUpDown_Fec1.Enabled = false;
-            numericUpDown_Fec2.Enabled = false;
+            //numericUpDown_Fec1.Enabled = false;
+            //numericUpDown_Fec2.Enabled = false;
         }
 
         private void radioButton_edad_si_CheckedChanged(object sender, EventArgs e)
         {
-            numericUpDown_Fec1.Enabled = true;
-            numericUpDown_Fec2.Enabled = true;
+            //numericUpDown_Fec1.Enabled = true;
+            //numericUpDown_Fec2.Enabled = true;
         }
 
         private bool BusquedaVacia()
         { 
-            if(comboBox_provincia_busqueda.Text != "" || textBox_Nombre_Busqueda.Text != "" || textBox_Apellidos_Busqueda.Text != ""
-                || radioButton_edad_si.Checked == true || textBox_Nick_busqueda.Text != "" || textBox_ID_busqueda.Text != "" 
-                )
-                return false;
-            else
-                return true;
+            return true;
         }
 
         // botoncejo buscar
         private void buttom_Buscar_Click(object sender, EventArgs e)
         {
             // mostrar todos, o lo que es lo mismo, no se ha establecido ningun filtro de busqueda
-            MuestraAdmins();
+            //MuestraAdmins();
+
+            if (comboBox_filtro.Text == "Mostrar Todos")
+            {
+                MuestraAdmins();
+            }
+            else if (comboBox_filtro.Text == "NIF")
+            {
+                MuestraDataSet(en_admin.Busqueda("NIF",textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Nombre")
+            {
+                MuestraDataSet(en_admin.Busqueda("Nombre", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Apellido")
+            {
+                MuestraDataSet(en_admin.Busqueda("Apellidos", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Nombre de Usuario")
+            {
+                MuestraDataSet(en_admin.Busqueda("Usuario", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "ID")
+            {
+                MuestraDataSet(en_admin.Busqueda("ID", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Pais")
+            {
+                MuestraDataSet(en_admin.Busqueda("Pais", comboBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Provincia")
+            {
+                MuestraDataSet(en_admin.Busqueda("Provincia", comboBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Localidad")
+            {
+                MuestraDataSet(en_admin.Busqueda("Poblacion", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Domicilio")
+            {
+                MuestraDataSet(en_admin.Busqueda("Direccion", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Código Postal")
+            {
+                MuestraDataSet(en_admin.Busqueda("CP", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Correo Electrónico")
+            {
+                MuestraDataSet(en_admin.Busqueda("Mail", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Teléfono o Móvil")
+            {
+                MuestraDataSet(en_admin.Busqueda("TM", textBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Estado Civil")
+            {
+                if(comboBox_filtro_busqueda.Text != "")
+                    MuestraDataSet(en_admin.Busqueda("Estado", comboBox_filtro_busqueda.Text));
+            }
+            else if (comboBox_filtro.Text == "Sexo")
+            {
+                if(comboBox_filtro_busqueda.Text == "Hombre")
+                    MuestraDataSet(en_admin.Busqueda("Sexo", "0"));
+                else if(comboBox_filtro_busqueda.Text == "Mujer")
+                    MuestraDataSet(en_admin.Busqueda("Sexo", "1"));
+            }
         }
 
         public void MuestraAdmins()
@@ -1024,9 +1091,12 @@ namespace Events4ALL
         private void Resultados_Busqueda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+            {
+                LimpiaBusqueda();
                 RellenaDatos_AdminSeleccionado(sender, e);
+            }
             else
-            { 
+            {
                 en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
                 MuestraAdmins();
             }
@@ -1049,7 +1119,6 @@ namespace Events4ALL
             Admin_Perfil_txtBox_Apellidos.Text = muestraAdmin.Tables[0].Rows[0][2].ToString();
             textBox_NombreUsuario.Text = muestraAdmin.Tables[0].Rows[0][3].ToString();
             // muestraAdmin.Tables[0].Rows[0][4] es el pass
-            //muestraAdmin.Tables[0].Rows[0][5] es la fecha
 
             dateTimePicker1.Value = (DateTime) muestraAdmin.Tables[0].Rows[0][5];
 
@@ -1080,8 +1149,33 @@ namespace Events4ALL
                 }
             }
 
-            Admin_Perfil_txtBox_Tel1.Text = muestraAdmin.Tables[0].Rows[0][10].ToString();
-            Admin_Perfil_txtBox_Tel2.Text = muestraAdmin.Tables[0].Rows[0][11].ToString();
+            string auxTel = muestraAdmin.Tables[0].Rows[0][10].ToString();
+            string tel = "";
+
+            for(int i = 0; i < auxTel.Length; i++)
+            {
+                if(i == 3)
+                    tel = tel + " ";
+
+                tel = tel + auxTel[i];
+            }
+
+            Admin_Perfil_txtBox_Tel1.Text = tel;
+
+            auxTel = muestraAdmin.Tables[0].Rows[0][11].ToString();
+            tel = "";
+
+            for (int i = 0; i < auxTel.Length; i++)
+            {
+                if (i == 3)
+                    tel = tel + " ";
+
+                tel = tel + auxTel[i];
+            }
+
+            Admin_Perfil_txtBox_Tel2.Text = tel;
+
+
             Admin_Perfil_txtBox_Mail.Text = muestraAdmin.Tables[0].Rows[0][12].ToString();
 
             idActual = Convert.ToInt16(muestraAdmin.Tables[0].Rows[0][13].ToString());
@@ -1147,6 +1241,146 @@ namespace Events4ALL
             tabControl1.SelectTab("Perfil");
         }
 
+        private void MuestraDataSet(DataSet muestrame)
+        {
+            tAdmin = new DataTable();
+
+            try
+            {
+                Resultados_Busqueda.Rows.Clear();
+                foreach (DataRow administrador in muestrame.Tables[0].Rows)
+                {
+                    string[] row = { administrador["ID"].ToString(),
+                                     administrador["NIF"].ToString(), 
+                                     administrador["Usuario"].ToString(),
+                                     administrador["Nombre"].ToString(),
+                                     administrador["Apellidos"].ToString(),
+                                     administrador["Mail"].ToString()};
+                    Resultados_Busqueda.Rows.Add(row);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("PWNDED, petada hermosa :D");
+            }
+        }
+
+        private void comboBox_filtro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_filtro.Text == "Mostrar Todos")
+            {
+                textBox_filtro_busqueda.Visible = false;
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "NIF")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Nombre")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Apellido")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Nombre de Usuario")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "ID")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Pais")
+            {
+                textBox_filtro_busqueda.Visible = false;
+                comboBox_filtro_busqueda.Visible = true;
+
+                comboBox_filtro_busqueda.Items.Clear();
+
+                for (int i = 0; i < Admin_Perfil_comboBox_Pais.Items.Count; i++ )
+                {
+                    comboBox_filtro_busqueda.Items.Add(Admin_Perfil_comboBox_Pais.Items[i]);
+                }
+            }
+            else if (comboBox_filtro.Text == "Provincia")
+            {
+                textBox_filtro_busqueda.Visible = false;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = true;
+
+                comboBox_filtro_busqueda.Items.Clear();
+
+                for (int i = 0; i < comboBox_Provincia.Items.Count; i++)
+                {
+                    comboBox_filtro_busqueda.Items.Add(comboBox_Provincia.Items[i]);
+                }
+            }
+            else if (comboBox_filtro.Text == "Localidad")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Domicilio")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Código Postal")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Correo Electrónico")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Teléfono o Móvil")
+            {
+                textBox_filtro_busqueda.Visible = true;
+                textBox_filtro_busqueda.Text = "";
+                comboBox_filtro_busqueda.Visible = false;
+            }
+            else if (comboBox_filtro.Text == "Estado Civil")
+            {
+                textBox_filtro_busqueda.Visible = false;
+                comboBox_filtro_busqueda.Visible = true;
+                
+                comboBox_filtro_busqueda.Items.Clear();
+
+                comboBox_filtro_busqueda.Items.Add("Soltero/a");
+                comboBox_filtro_busqueda.Items.Add("Casado/a");
+                comboBox_filtro_busqueda.Items.Add("Divorciado/a");
+                comboBox_filtro_busqueda.Items.Add("Viudo/a");
+            }
+            else if (comboBox_filtro.Text == "Sexo")
+            {
+                textBox_filtro_busqueda.Visible = false;
+                comboBox_filtro_busqueda.Visible = true;
+                
+                comboBox_filtro_busqueda.Items.Clear();
+
+                comboBox_filtro_busqueda.Items.Add("Hombre");
+                comboBox_filtro_busqueda.Items.Add("Mujer");
+            }
+        }
+
         #endregion
 
         #region Basura que da pereza Borrar XD
@@ -1176,5 +1410,7 @@ namespace Events4ALL
         {
             RellenaDatos();
         }
+
+        
     }
 }

@@ -21,6 +21,38 @@ namespace Events4ALL.CAD
 
         #region Consultas BD
 
+        public DataSet Busqueda(string quebusco, string loquebusco)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+
+            try
+            {
+                string sql = "";
+
+                if(quebusco == "TM")
+                    sql = "select ID,NIF,Usuario,Nombre,Apellidos,Mail from Administrador WHERE TfnoFijo LIKE '%" + loquebusco + "%' OR TfnoMovil LIKE '%" + loquebusco + "%'";
+                else
+                    sql = "select ID,NIF,Usuario,Nombre,Apellidos,Mail from Administrador WHERE " + quebusco + " LIKE '%" + loquebusco + "%'";
+
+                System.Diagnostics.Debug.Write(sql);
+                
+                SqlDataAdapter da = new SqlDataAdapter(sql, c);
+                da.Fill(bdvirtual, "Administrador");
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            return bdvirtual;
+        }
+
         // Comprueba que el Nick del usuario no exista. Devuelve True si existe
         public bool CompruebaExistenciaUsuario(string nuevo)
         {
@@ -223,6 +255,32 @@ namespace Events4ALL.CAD
 
                 string comilla = "', '";
 
+                string tel1 = "";
+
+                if (nuevo.Telefono[3] == ' ')
+                {
+                    for (int i = 0; i < nuevo.Telefono.Length; i++)
+                    {
+                        if (nuevo.Telefono[i] != ' ')
+                            tel1 = tel1 + nuevo.Telefono[i];
+                    }
+                }
+                else
+                    tel1 = nuevo.Telefono;
+
+                string tel2 = "";
+
+                if (nuevo.Movil[3] == ' ')
+                {
+                    for (int i = 0; i < nuevo.Movil.Length; i++)
+                    {
+                        if (nuevo.Movil[i] != ' ')
+                            tel2 = tel2 + nuevo.Movil[i];
+                    }
+                }
+                else
+                    tel2 = nuevo.Movil;
+
                 string sql1 = "INSERT INTO Administrador ";
                 string tabla1 = "(Nombre, Apellidos, Usuario, Pass, NIF, ";
                 string tabla2 = "FechaNac, Poblacion, Provincia, Pais, ";
@@ -231,7 +289,7 @@ namespace Events4ALL.CAD
                 string sql2 = " VALUES ('";
                 string valores1 = nuevo.Nombre + comilla + nuevo.Apellidos + comilla + nuevo.Nick + comilla + nuevo.Pass+comilla+ nuevo.DNI+comilla;
                 string valores2 = fecha + comilla + nuevo.Localidad + comilla + nuevo.Provincia + comilla + nuevo.Pais + comilla;
-                string valores3 = nuevo.Domicilio + comilla + nuevo.Telefono + comilla + nuevo.Movil + comilla + nuevo.Mail + comilla;
+                string valores3 = nuevo.Domicilio + comilla + tel1 + comilla + tel2 + comilla + nuevo.Mail + comilla;
                 string valores4 = nuevo.Foto + comilla + nuevo.EC + "'," + nuevo.Sexo +",'"+ nuevo.CP+"'";
                 string sql3 = ")";
 
@@ -381,20 +439,49 @@ namespace Events4ALL.CAD
 
                 if (upTelefono)
                 {
-                    if (primero)
-                        sql = sql + ", TfnoFijo = '" + telefono + "'";
+                    string tel1 = "";
+
+                    if (telefono[3] == ' ')
+                    {
+                        for (int i = 0; i < telefono.Length; i++)
+                        {
+                            if (telefono[i] != ' ')
+                                tel1 = tel1 + telefono[i];
+                        }
+                    }
                     else
-                        sql = sql + "TfnoFijo = '" + telefono + "'";
+                        tel1 = telefono;
+
+                    if (primero)
+                        sql = sql + ", TfnoFijo = '" + tel1 + "'";
+                    else
+                        sql = sql + "TfnoFijo = '" + tel1 + "'";
 
                     primero = true;
+
+                    System.Diagnostics.Debug.Write(telefono[3] + " cochino");
+                    System.Diagnostics.Debug.Write(tel1 + " cerdo");
                 }
 
                 if (upMovil)
                 {
-                    if (primero)
-                        sql = sql + ", TfnoMovil = '" + movil + "'";
+                    string tel2 = "";
+
+                    if (movil[3] == ' ')
+                    {
+                        for (int i = 0; i < movil.Length; i++)
+                        {
+                            if (movil[i] != ' ')
+                                tel2 = tel2 + movil[i];
+                        }
+                    }
                     else
-                        sql = sql + "TfnoMovil = '" + movil + "'";
+                        tel2 = movil;
+                    
+                    if (primero)
+                        sql = sql + ", TfnoMovil = '" + tel2 + "'";
+                    else
+                        sql = sql + "TfnoMovil = '" + tel2 + "'";
 
                     primero = true;
                 }

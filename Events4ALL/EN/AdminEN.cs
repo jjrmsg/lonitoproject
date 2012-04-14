@@ -384,14 +384,40 @@ namespace Events4ALL.EN
                     System.Diagnostics.Debug.Write("CP");
                 }
 
-                if (admin_anterior.Telefono != telefono_c)
+                string tel1 = "";
+
+                if (telefono_c[3] == ' ')
+                {
+                    for (int i = 0; i < telefono_c.Length; i++)
+                    {
+                        if (telefono_c[i] != ' ')
+                            tel1 = tel1 + telefono_c[i];
+                    }
+                }
+                else
+                    tel1 = telefono_c;
+
+                if (admin_anterior.Telefono != tel1)
                 {
                     updateTelefono = true;
                     modificado = true;
                     System.Diagnostics.Debug.Write("Telefono");
                 }
 
-                if (admin_anterior.Movil != movil_c)
+                tel1 = "";
+
+                if (movil_c[3] == ' ')
+                {
+                    for (int i = 0; i < movil_c.Length; i++)
+                    {
+                        if (movil_c[i] != ' ')
+                            tel1 = tel1 + movil_c[i];
+                    }
+                }
+                else
+                    tel1 = movil_c;
+
+                if (admin_anterior.Movil != tel1)
                 {
                     updateMovil = true;
                     modificado = true;
@@ -517,6 +543,11 @@ namespace Events4ALL.EN
         public DataSet getAdmin(int id)
         {
             return cad_admin.getAdmin(id);
+        }
+
+        public DataSet Busqueda(string quebusco, string loquebusco)
+        {
+            return cad_admin.Busqueda(quebusco,loquebusco);
         }
 
         // 0 = todo ok // 1 = todo vacio, por lo que ok // 2 = no coinciden pass1 y pass2 // 3 = pass_ant erroneo 
