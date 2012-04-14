@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
+            this.labelUpdate = new System.Windows.Forms.Label();
             this.labAforo = new System.Windows.Forms.Label();
             this.pictureTipo = new System.Windows.Forms.PictureBox();
             this.buttonLimpiar = new System.Windows.Forms.Button();
@@ -118,7 +119,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.labelUpdate = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -142,6 +142,8 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(901, 632);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabAñadirSala
             // 
@@ -166,6 +168,16 @@
             this.tabAñadirSala.TabIndex = 0;
             this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
+            // 
+            // labelUpdate
+            // 
+            this.labelUpdate.AutoSize = true;
+            this.labelUpdate.Location = new System.Drawing.Point(61, 151);
+            this.labelUpdate.Name = "labelUpdate";
+            this.labelUpdate.Size = new System.Drawing.Size(29, 13);
+            this.labelUpdate.TabIndex = 18;
+            this.labelUpdate.Text = "falso";
+            this.labelUpdate.Visible = false;
             // 
             // labAforo
             // 
@@ -1019,16 +1031,6 @@
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-            // 
-            // labelUpdate
-            // 
-            this.labelUpdate.AutoSize = true;
-            this.labelUpdate.Location = new System.Drawing.Point(61, 151);
-            this.labelUpdate.Name = "labelUpdate";
-            this.labelUpdate.Size = new System.Drawing.Size(29, 13);
-            this.labelUpdate.TabIndex = 18;
-            this.labelUpdate.Text = "falso";
-            this.labelUpdate.Visible = false;
             // 
             // Salas
             // 

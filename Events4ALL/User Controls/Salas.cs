@@ -350,12 +350,7 @@ namespace Events4ALL
 
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiar();
-        }
-
-        private void buttonLimpiarBusquedaSala_Click(object sender, EventArgs e)
+        private void limpiarBusquedaSala()
         {
             ControlCollection a = textBox1.Parent.Controls;
             foreach (System.Windows.Forms.Control ctrl in a)
@@ -368,29 +363,39 @@ namespace Events4ALL
             dataGridBuscarSala.Rows.Clear();
         }
 
+        private void buttonLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void buttonLimpiarBusquedaSala_Click(object sender, EventArgs e)
+        {
+            limpiarBusquedaSala();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void BusquedaSala()
         {
-            int estado=0;
+            int estado = 0;
             int aforoMax = 0;
             int aforoMin = 0;
             int numSala = 0;
 
-            if(checkLibre.Checked==true)
-                estado=1;
-            if(textAforoBusquedaMax.Text!="")
-                aforoMax=Convert.ToInt16(textAforoBusquedaMax.Text);
-            if(textAforoBusquedaMin.Text!="")
-                aforoMin=Convert.ToInt16(textAforoBusquedaMin.Text);
-            if(textBox1.Text!="")
-                numSala=Convert.ToInt16(textBox1.Text);
+            if (checkLibre.Checked == true)
+                estado = 1;
+            if (textAforoBusquedaMax.Text != "")
+                aforoMax = Convert.ToInt16(textAforoBusquedaMax.Text);
+            if (textAforoBusquedaMin.Text != "")
+                aforoMin = Convert.ToInt16(textAforoBusquedaMin.Text);
+            if (textBox1.Text != "")
+                numSala = Convert.ToInt16(textBox1.Text);
 
             SalasEN select = new SalasEN();
-            DataSet resultado=select.SalaSelect(numSala,comboBuscarTipoSala.Text,aforoMin,aforoMax,estado);
+            DataSet resultado = select.SalaSelect(numSala, comboBuscarTipoSala.Text, aforoMin, aforoMax, estado);
 
             dataGridBuscarSala.Rows.Clear();
             foreach (DataRow sala in resultado.Tables[0].Rows)
@@ -400,9 +405,13 @@ namespace Events4ALL
                                  sala[2].ToString(),
                                  sala[3].ToString(),
                                  sala[4].ToString()};
-                 dataGridBuscarSala.Rows.Add(row);
+                dataGridBuscarSala.Rows.Add(row);
             }
-         
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            BusquedaSala();
         }
 
         private void dataGridBuscarSala_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -477,6 +486,31 @@ namespace Events4ALL
                 #endregion
 
             }
+            if (e.ColumnIndex == 6)
+            {
+                string numeroSala=dataGridBuscarSala[0, e.RowIndex].Value.ToString();
+                if (MessageBox.Show("Esta seguro de borrar la sala " + numeroSala, "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    SalasEN salaEn = new SalasEN();
+                    salaEn.BorrarSala(numeroSala);
+                    dataGridBuscarSala.Rows.Clear();
+                    BusquedaSala();
+                }
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+
+            if (tabControl1.SelectedTab.Name == "tabAñadirSala")
+                limpiar();
+            else
+                limpiarBusquedaSala();
         }
     }
 }

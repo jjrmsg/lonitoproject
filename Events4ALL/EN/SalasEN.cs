@@ -115,5 +115,10 @@ namespace Events4ALL.EN
                 SalasCAD salaCad = new SalasCAD();
                 return salaCad.SacarSala(id);
             }
+            public void BorrarSala(string numSala)
+            {
+                SalasCAD sala = new SalasCAD();
+                sala.BorrarSalaCAD(numSala);
+            }
     }
 }

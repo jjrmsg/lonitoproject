@@ -14,6 +14,7 @@ namespace Events4ALL.CAD
         public int SacarIdSala()
         {
             int newID=0;
+
             int atras = 0;
             int delante = 0;
             BD bd = new BD();
@@ -27,18 +28,23 @@ namespace Events4ALL.CAD
                 bool encontrado = false;
                 dr.Read();
                 delante = Convert.ToInt16(dr[0]);
-                while (dr.Read() && encontrado==false)
+                if (delante > 1)
+                    newID = 1;
+                else
                 {
-                    atras = delante;
-                    delante = Convert.ToInt16(dr[0]);
-                    if ((delante - atras) >= 2)
+                    while (dr.Read() && encontrado == false)
                     {
-                        newID = atras + 1;
-                        encontrado = true;
+                        atras = delante;
+                        delante = Convert.ToInt16(dr[0]);
+                        if ((delante - atras) >= 2)
+                        {
+                            newID = atras + 1;
+                            encontrado = true;
+                        }
                     }
+                    if (encontrado == false)
+                        newID = delante + 1;
                 }
-                if (encontrado == false)
-                    newID = delante + 1; 
 
                 dr.Close();
                // return newID;
@@ -250,6 +256,38 @@ namespace Events4ALL.CAD
             finally
             {
 
+            }
+        }
+
+        public void BorrarSalaCAD(string id)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+
+
+                /////////////////////BORRAR SECCIONES/////////////////////
+                string borrado = "delete from Seccion where NumSala=" + id;
+                SqlCommand com2 = new SqlCommand(borrado, c);
+                com2.ExecuteNonQuery();
+                ///////////////////////////////////////////////////////////////////
+                ////////////////////Borrar Sala//////////////
+                borrado = "delete from Sala where NumSala=" + id;
+                SqlCommand com3 = new SqlCommand(borrado, c);
+                com3.ExecuteNonQuery();
+                ////////////////////////////////////////////////////////////////////
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                c.Close();
             }
         }
     }
