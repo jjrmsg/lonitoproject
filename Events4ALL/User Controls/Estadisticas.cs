@@ -394,7 +394,7 @@ namespace Events4ALL
 
         private void LoadRanking()
         {
-            DataSet ds = new DataSet();
+            DataSet ds = null;
             ds = vEN.ObtenerRanking('d');
             int numEspectaculos = comboTitulo.Items.Count;
 
@@ -404,19 +404,27 @@ namespace Events4ALL
             chartRanking.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             chartRanking.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
 
-            foreach (DataRow r in ds.Tables[0].Rows)
+
+            try
             {
-                DataPoint p = new DataPoint(numEspectaculos, (int)r["Entradas"]);
-                p.Label = r["Titulo"].ToString();
-                if (comboTitulo.SelectedIndex != -1)
+                foreach (DataRow r in ds.Tables[0].Rows)
                 {
-                    if (p.Label == comboTitulo.Items[comboTitulo.SelectedIndex].ToString())
+                    DataPoint p = new DataPoint(numEspectaculos, (int)r["Entradas"]);
+                    p.Label = r["Titulo"].ToString();
+                    if (comboTitulo.SelectedIndex != -1)
                     {
-                        p.Color = Color.YellowGreen;
+                        if (p.Label == comboTitulo.Items[comboTitulo.SelectedIndex].ToString())
+                        {
+                            p.Color = Color.YellowGreen;
+                        }
                     }
+                    chartRanking.Series["Entradas"].Points.Add(p);
+                    numEspectaculos--;
                 }
-                chartRanking.Series["Entradas"].Points.Add(p);
-                numEspectaculos--;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }

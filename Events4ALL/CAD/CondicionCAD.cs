@@ -39,7 +39,8 @@ namespace Events4ALL.CAD
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al obtener las condiciones " + ex);
+                // MessageBox.Show("PENE error al obtener las condiciones " + ex);
+                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -57,7 +58,8 @@ namespace Events4ALL.CAD
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al guardar las condiciones " + ex);
+                // MessageBox.Show("PENE error al guardar las condiciones " + ex);
+                Console.WriteLine(ex.Message);
             }
             finally
             {

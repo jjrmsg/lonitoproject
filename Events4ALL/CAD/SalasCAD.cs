@@ -170,7 +170,7 @@ namespace Events4ALL.CAD
             catch(Exception ex) 
             { 
                 // Captura la condición general y la reenvía. 
-                throw ex; 
+                Console.WriteLine(ex.Message);
             } 
             finally 
             { 

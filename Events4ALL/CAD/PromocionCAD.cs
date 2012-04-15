@@ -43,7 +43,8 @@ namespace Events4ALL.CAD
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al cargar las tablas Espectaculo y PromocionConEvento " + ex);
+                // MessageBox.Show("PENE error al cargar las tablas Espectaculo y PromocionConEvento " + ex);
+                Console.WriteLine(ex.Message);
             }
             finally
             {
@@ -61,7 +62,8 @@ namespace Events4ALL.CAD
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al guardar cambios en la tabla PromosConEvento " + ex);
+                // MessageBox.Show("PENE error al guardar cambios en la tabla PromosConEvento " + ex);
+                Console.WriteLine(ex.Message);
             }
             finally
             {

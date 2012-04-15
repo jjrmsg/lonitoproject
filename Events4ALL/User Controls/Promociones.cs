@@ -36,7 +36,7 @@ namespace Events4ALL
             InitializeComponent();
             proEN = new PromocionEN();
             conEN = new CondicionEN();
-            
+
             espec = new DataSet();
             espec = proEN.ObtenerEspectaculos();
             tEspec = new DataTable();
@@ -135,7 +135,8 @@ namespace Events4ALL
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al rellenar el combobox "+ ex);
+                //MessageBox.Show("PENE error al rellenar el combobox "+ ex);
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -149,7 +150,8 @@ namespace Events4ALL
                 
                 //añadiendo nueva fila a la tabla, es un ejemplo de forma manual
                 //esta linea tiene que estar si no el VisualStudio se pone a llorar y el FormBase peta. ¿pq? -> Preguntaselo a Microsoft xD
-                //nuevafila = tPromo.NewRow();
+                DataRow nuevafila;
+                nuevafila = tPromo.NewRow();
                 //nuevafila[1] = "ejemplo";
                 //nuevafila[2] = "Esto se añade a la tabla pero no se guarda en la BD";
                 //nuevafila[3] = 1;
@@ -188,13 +190,12 @@ namespace Events4ALL
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al cargar datagriview " + ex);
+                // MessageBox.Show("PENE error al cargar datagriview " + ex);
+                Console.WriteLine(ex.Message);
             }
             #endregion
             
-            #region cargar combobox
             CargarComboBox();
-            #endregion
         }
 
         //Evento para guardar los datos modificados de las promociones de los eventos
@@ -534,7 +535,8 @@ namespace Events4ALL
             }
             catch(Exception ex)
             {
-                MessageBox.Show("PENE error al guardar la promocion del evento " + ex);
+                // MessageBox.Show("PENE error al guardar la promocion del evento " + ex);
+                Console.WriteLine(ex.Message);
             }
 
             
