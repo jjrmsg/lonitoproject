@@ -79,7 +79,8 @@ namespace Events4ALL
                 try
                 {
                     c.Open();
-                    SqlCommand com = new SqlCommand("select count(*) from Administrador where  Usuario COLLATE Latin1_General_CS_AS ='" + user + "' and Pass COLLATE Latin1_General_CS_AS ='" + pass + "'", c);
+                    string SHA1pass = SHA1helper.Compute(pass);
+                    SqlCommand com = new SqlCommand("select count(*) from Administrador where  Usuario COLLATE Latin1_General_CS_AS ='" + user + "' and Pass ='" + SHA1pass + "'", c);
                     count = (int)com.ExecuteScalar();
 
                     if (count == 1)
@@ -92,7 +93,7 @@ namespace Events4ALL
                     }
                     else
                     {
-                        MessageBox.Show("El usuario o password son erroneos");
+                        MessageBox.Show("El usuario o password son erroneos" + SHA1pass);
                     }
                 }
                 catch

@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auxiliares\BD.cs" />
+    <Compile Include="Auxiliares\SHA1helper.cs" />
     <Compile Include="Auxiliares\Validaciones.cs" />
     <Compile Include="CAD\AdminCAD.cs" />
     <Compile Include="CAD\CondicionCAD.cs" />
