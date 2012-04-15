@@ -48,10 +48,10 @@ namespace Events4ALL.EN
             return vCAD.getVentasEspectaculo(titulo);
         }
 
-        public DataSet ObtenerRanking()
+        public DataSet ObtenerRanking(char orden)
         {
             VentasCAD vCAD = new VentasCAD();
-            return vCAD.ObtenerRanking();
+            return vCAD.ObtenerRanking(orden);
         }
     }
 }

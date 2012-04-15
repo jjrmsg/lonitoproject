@@ -51,6 +51,7 @@ namespace Events4ALL
 
             comboMes.Text = "Junio";
             LoadEspectaculos();
+            LoadRanking();
         }
 
         private void LoadEspectaculos()
@@ -85,9 +86,25 @@ namespace Events4ALL
 
         private void ValidaDatos()
         {
-            ObtenerDatosGeneral();
-            ObtenerDatosTipo();
-            ObtenerDatosGenero();
+            if (!string.IsNullOrWhiteSpace(textAnyo.Text))
+            {
+                if (comboMes.SelectedIndex != -1)
+                {
+                    errorMes.Clear();
+                    errorAnyo.Clear();
+                    ObtenerDatosGeneral();
+                    ObtenerDatosTipo();
+                    ObtenerDatosGenero();
+                }
+                else
+                {
+                    errorMes.SetError(comboMes, "Debes seleccionar un mes");
+                }
+            }
+            else
+            {
+                errorAnyo.SetError(textAnyo, "Debes seleccionar un año");
+            }
         }
 
         private void ObtenerDatosGeneral()
@@ -209,16 +226,20 @@ namespace Events4ALL
 
         private void loadButton2_Click(object sender, EventArgs e)
         {
-            generoChartCli.Series["Genero"].Points.Clear();
-            tipoChartCli.Series["Tipo"].Points.Clear();
-            diasVentas.Clear();
-            tipoVentas.Clear();
-            generoVentas.Clear();
 
-            ObtenerDatosCliente();
-            ObtenerDatosCliGenerales();
-            ObtenerGeneroPref();
-            ObtenerTipoPref();
+            if (!string.IsNullOrWhiteSpace(textNIF.Text))
+            {
+                generoChartCli.Series["Genero"].Points.Clear();
+                tipoChartCli.Series["Tipo"].Points.Clear();
+                diasVentas.Clear();
+                tipoVentas.Clear();
+                generoVentas.Clear();
+
+                ObtenerDatosCliente();
+                ObtenerDatosCliGenerales();
+                ObtenerGeneroPref();
+                ObtenerTipoPref();
+            }
         }
 
         private void ObtenerDatosCliente()
@@ -320,6 +341,7 @@ namespace Events4ALL
             {
                 ObtenerDatosEspectaculo(comboTitulo.Items[comboTitulo.SelectedIndex].ToString());
                 ObtenerEstadisticasEspectaculo(comboTitulo.Items[comboTitulo.SelectedIndex].ToString());
+                LoadRanking();
             }
         }
 
@@ -356,17 +378,45 @@ namespace Events4ALL
                 }
             }
 
-            ds = vEN.ObtenerRanking();
+            ds = vEN.ObtenerRanking('d');
             int i=1;
 
             foreach(DataRow r in ds.Tables[0].Rows)
             {
                 if (r["Titulo"].ToString().Equals(titulo))
                 {
-                    labelRanking.Text = i.ToString();
+                    labelRanking.Text = i.ToString()+"º";
                     break;
                 }
                 i++;
+            }
+        }
+
+        private void LoadRanking()
+        {
+            DataSet ds = new DataSet();
+            ds = vEN.ObtenerRanking('d');
+            int numEspectaculos = comboTitulo.Items.Count;
+
+            chartRanking.Series[0]["PieLabelStyle"] = "Disabled";
+            chartRanking.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            chartRanking.ChartAreas[0].AxisX.MinorGrid.Enabled = false;
+            chartRanking.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            chartRanking.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
+
+            foreach (DataRow r in ds.Tables[0].Rows)
+            {
+                DataPoint p = new DataPoint(numEspectaculos, (int)r["Entradas"]);
+                p.Label = r["Titulo"].ToString();
+                if (comboTitulo.SelectedIndex != -1)
+                {
+                    if (p.Label == comboTitulo.Items[comboTitulo.SelectedIndex].ToString())
+                    {
+                        p.Color = Color.YellowGreen;
+                    }
+                }
+                chartRanking.Series["Entradas"].Points.Add(p);
+                numEspectaculos--;
             }
         }
     }

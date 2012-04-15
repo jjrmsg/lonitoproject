@@ -194,6 +194,7 @@ namespace Events4ALL
         private void messagePicture_Click(object sender, EventArgs e)
         {
             DesactivarMenus();
+            listBox1.SelectedIndex = 8;
             mensajes1.Visible = true;
         }
 

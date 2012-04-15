@@ -133,7 +133,7 @@ namespace Events4ALL.CAD
             return datosVentas;
         }
 
-        public DataSet ObtenerRanking()
+        public DataSet ObtenerRanking(char orden)
         {
             BD bd = new BD();
             SqlConnection c = bd.Connect();
@@ -141,7 +141,15 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas DESC;", c);
+                SqlDataAdapter da;
+                if (orden == 'd')
+                {
+                    da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas DESC;", c);
+                }
+                else
+                {
+                    da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas asc;", c);
+                }
                 da.Fill(bdvirtual);
             }
             catch
