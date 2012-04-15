@@ -123,6 +123,15 @@
             this.errorProvider_MC_Desc2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Desc3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_PE_eligeuno = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoCondicion1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Comparacion1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoEvento1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoCondicion2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Comparacion2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoEvento2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoCondicion3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Comparacion3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_TipoEvento3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -144,6 +153,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -691,7 +709,7 @@
             this.groupBox_MC_TipoEvent2.Controls.Add(this.radioButton_MC_TE2_Cine);
             this.groupBox_MC_TipoEvent2.Location = new System.Drawing.Point(290, 105);
             this.groupBox_MC_TipoEvent2.Name = "groupBox_MC_TipoEvent2";
-            this.groupBox_MC_TipoEvent2.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent2.Size = new System.Drawing.Size(134, 63);
             this.groupBox_MC_TipoEvent2.TabIndex = 16;
             this.groupBox_MC_TipoEvent2.TabStop = false;
             this.groupBox_MC_TipoEvent2.Text = "Tipo de evento";
@@ -753,7 +771,7 @@
             this.groupBox_MC_TipoEvent3.Controls.Add(this.radioButton_MC_TE3_Cine);
             this.groupBox_MC_TipoEvent3.Location = new System.Drawing.Point(290, 181);
             this.groupBox_MC_TipoEvent3.Name = "groupBox_MC_TipoEvent3";
-            this.groupBox_MC_TipoEvent3.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent3.Size = new System.Drawing.Size(134, 63);
             this.groupBox_MC_TipoEvent3.TabIndex = 16;
             this.groupBox_MC_TipoEvent3.TabStop = false;
             this.groupBox_MC_TipoEvent3.Text = "Tipo de evento";
@@ -815,7 +833,7 @@
             this.groupBox_MC_TipoEvent1.Controls.Add(this.radioButton_MC_TE1_Cine);
             this.groupBox_MC_TipoEvent1.Location = new System.Drawing.Point(290, 31);
             this.groupBox_MC_TipoEvent1.Name = "groupBox_MC_TipoEvent1";
-            this.groupBox_MC_TipoEvent1.Size = new System.Drawing.Size(140, 63);
+            this.groupBox_MC_TipoEvent1.Size = new System.Drawing.Size(134, 63);
             this.groupBox_MC_TipoEvent1.TabIndex = 15;
             this.groupBox_MC_TipoEvent1.TabStop = false;
             this.groupBox_MC_TipoEvent1.Text = "Tipo de evento";
@@ -1198,6 +1216,42 @@
             // 
             this.errorProvider_PE_eligeuno.ContainerControl = this;
             // 
+            // errorProvider_MC_TipoCondicion1
+            // 
+            this.errorProvider_MC_TipoCondicion1.ContainerControl = this;
+            // 
+            // errorProvider_MC_Comparacion1
+            // 
+            this.errorProvider_MC_Comparacion1.ContainerControl = this;
+            // 
+            // errorProvider_MC_TipoEvento1
+            // 
+            this.errorProvider_MC_TipoEvento1.ContainerControl = this;
+            // 
+            // errorProvider_MC_TipoCondicion2
+            // 
+            this.errorProvider_MC_TipoCondicion2.ContainerControl = this;
+            // 
+            // errorProvider_MC_Comparacion2
+            // 
+            this.errorProvider_MC_Comparacion2.ContainerControl = this;
+            // 
+            // errorProvider_MC_TipoEvento2
+            // 
+            this.errorProvider_MC_TipoEvento2.ContainerControl = this;
+            // 
+            // errorProvider_MC_TipoCondicion3
+            // 
+            this.errorProvider_MC_TipoCondicion3.ContainerControl = this;
+            // 
+            // errorProvider_MC_Comparacion3
+            // 
+            this.errorProvider_MC_Comparacion3.ContainerControl = this;
+            // 
+            // errorProvider_MC_TipoEvento3
+            // 
+            this.errorProvider_MC_TipoEvento3.ContainerControl = this;
+            // 
             // Promociones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1236,6 +1290,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1336,5 +1399,14 @@
         private System.Windows.Forms.ErrorProvider errorProvider_PE_eligeuno;
         private System.Windows.Forms.Label label_PE_TTipo;
         private System.Windows.Forms.Label label_PE_tipo;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoCondicion1;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Comparacion1;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoEvento1;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoCondicion2;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Comparacion2;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoEvento2;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoCondicion3;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Comparacion3;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoEvento3;
     }
 }

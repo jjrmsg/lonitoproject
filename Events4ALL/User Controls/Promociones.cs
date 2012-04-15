@@ -22,6 +22,15 @@ namespace Events4ALL
         private bool MC_Descuento1;
         private bool MC_Descuento2;
         private bool MC_Descuento3;
+        private bool MC_TipoCondicion1;
+        private bool MC_TipoCondicion2;
+        private bool MC_TipoCondicion3;
+        private bool MC_Comparacion1;
+        private bool MC_Comparacion2;
+        private bool MC_Comparacion3;
+        private bool MC_TipoEvento1;
+        private bool MC_TipoEvento2;
+        private bool MC_TipoEvento3;
         private PromocionEN proEN;
         private CondicionEN conEN;
         private DataSet promos;
@@ -66,16 +75,9 @@ namespace Events4ALL
             }
             else
             {
-                textBox_MC_VC_Cantidad2.Enabled = false;
-                textBox_MC_VC_Descuento2.Enabled = false;
-                comboBox_MC_VC_Comparacion2.Enabled = false;
-                comboBox_MC_VC_Tcondicion2.Enabled = false;
-                radioButton_MC_TE2_Cine.Enabled = false;
-                radioButton_MC_TE2_Concierto.Enabled = false;
-                radioButton_MC_TE2_Teatro.Enabled = false;
-                radioButton_MC_TE2_Todos.Enabled = false;
-                errorProvider_MC_Cant2.Clear();
-                errorProvider_MC_Desc2.Clear();
+                limpiarErrorProvider(2);
+                DesactivarCondicion(1);
+                MC_limpiar(2);
             }
         }
 
@@ -95,16 +97,9 @@ namespace Events4ALL
             }
             else
             {
-                textBox_MC_VC_Cantidad3.Enabled = false;
-                textBox_MC_VC_Descuento3.Enabled = false;
-                comboBox_MC_VC_Comparacion3.Enabled = false;
-                comboBox_MC_VC_Tcondicion3.Enabled = false;
-                radioButton_MC_TE3_Cine.Enabled = false;
-                radioButton_MC_TE3_Concierto.Enabled = false;
-                radioButton_MC_TE3_Teatro.Enabled = false;
-                radioButton_MC_TE3_Todos.Enabled = false;
-                errorProvider_MC_Cant3.Clear();
-                errorProvider_MC_Desc3.Clear();
+                limpiarErrorProvider(3);
+                DesactivarCondicion(2);
+                MC_limpiar(3);
             }
         }
 
@@ -627,17 +622,140 @@ namespace Events4ALL
         }
 
         //Funcion para comprobar los combobox y groupbox de condiciones
+        private void ComproComboYGroup()
+        {
+            //Comprobamos el combobox TipoCondicion1
+            if (comboBox_MC_VC_Tcondicion1.SelectedIndex != 0 && comboBox_MC_VC_Tcondicion1.SelectedIndex != 1 && comboBox_MC_VC_Tcondicion1.SelectedIndex != 2)
+            {
+                errorProvider_MC_TipoCondicion1.SetError(comboBox_MC_VC_Tcondicion1, "Debes elegir un Tipo Condición");
+                MC_TipoCondicion1 = false;
+            }
+            else
+            {
+                errorProvider_MC_TipoCondicion1.Clear();
+                MC_TipoCondicion1 = true;
+            }
+
+            //Comprobamos el combobox Comparacion1
+            if (comboBox_MC_VC_Comparacion1.SelectedIndex != 0 && comboBox_MC_VC_Comparacion1.SelectedIndex != 1 && comboBox_MC_VC_Comparacion1.SelectedIndex != 2)
+            {
+                errorProvider_MC_Comparacion1.SetError(comboBox_MC_VC_Comparacion1, "Debes elegir una Comparación");
+                MC_Comparacion1 = false;
+            }
+            else
+            {
+                errorProvider_MC_Comparacion1.Clear();
+                MC_Comparacion1 = true;
+            }
+
+            //Comprobamos que se ha elegido un Tipo Evento
+            if (!radioButton_MC_TE1_Cine.Checked && !radioButton_MC_TE1_Concierto.Checked && !radioButton_MC_TE1_Teatro.Checked && !radioButton_MC_TE1_Todos.Checked)
+            {
+                errorProvider_MC_TipoEvento1.SetError(groupBox_MC_TipoEvent1, "Debes seleccionar un Tipo Evento");
+                MC_TipoEvento1 = false;
+            }
+            else
+            {
+                errorProvider_MC_TipoEvento1.Clear();
+                MC_TipoEvento1 = true;
+            }
+
+            //Si esta activada la segunda condicion la comprobamos
+            if (checkBox_MC_ActivarCond1.Checked)
+            {
+                //Comprobamos el combobox TipoCondicion2
+                if (comboBox_MC_VC_Tcondicion2.SelectedIndex != 0 && comboBox_MC_VC_Tcondicion2.SelectedIndex != 1 && comboBox_MC_VC_Tcondicion2.SelectedIndex != 2)
+                {
+                    errorProvider_MC_TipoCondicion2.SetError(comboBox_MC_VC_Tcondicion2, "Debes elegir un Tipo Condición");
+                    MC_TipoCondicion2 = false;
+                }
+                else
+                {
+                    errorProvider_MC_TipoCondicion2.Clear();
+                    MC_TipoCondicion2 = true;
+                }
+
+                //Comprobamos el combobox Comparacion2
+                if (comboBox_MC_VC_Comparacion2.SelectedIndex != 0 && comboBox_MC_VC_Comparacion2.SelectedIndex != 1 && comboBox_MC_VC_Comparacion2.SelectedIndex != 2)
+                {
+                    errorProvider_MC_Comparacion2.SetError(comboBox_MC_VC_Comparacion2, "Debes elegir una Comparación");
+                    MC_Comparacion2 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Comparacion2.Clear();
+                    MC_Comparacion2 = true;
+                }
+
+                //Comprobamos que se ha elegido un Tipo Evento
+                if (!radioButton_MC_TE2_Cine.Checked && !radioButton_MC_TE2_Concierto.Checked && !radioButton_MC_TE2_Teatro.Checked && !radioButton_MC_TE2_Todos.Checked)
+                {
+                    errorProvider_MC_TipoEvento2.SetError(groupBox_MC_TipoEvent2, "Debes seleccionar un Tipo Evento");
+                    MC_TipoEvento2 = false;
+                }
+                else
+                {
+                    errorProvider_MC_TipoEvento2.Clear();
+                    MC_TipoEvento2 = true;
+                }
+            }
+
+            //Si esta activada la tercera condicion la comprobamos
+            if (checkBox_MC_ActivarCond2.Checked)
+            {
+                //Comprobamos el combobox TipoCondicion3
+                if (comboBox_MC_VC_Tcondicion3.SelectedIndex != 0 && comboBox_MC_VC_Tcondicion3.SelectedIndex != 1 && comboBox_MC_VC_Tcondicion3.SelectedIndex != 2)
+                {
+                    errorProvider_MC_TipoCondicion3.SetError(comboBox_MC_VC_Tcondicion3, "Debes elegir un Tipo Condición");
+                    MC_TipoCondicion3 = false;
+                }
+                else
+                {
+                    errorProvider_MC_TipoCondicion3.Clear();
+                    MC_TipoCondicion3 = true;
+                }
+
+                //Comprobamos el combobox Comparacion3
+                if (comboBox_MC_VC_Comparacion3.SelectedIndex != 0 && comboBox_MC_VC_Comparacion3.SelectedIndex != 1 && comboBox_MC_VC_Comparacion3.SelectedIndex != 2)
+                {
+                    errorProvider_MC_Comparacion3.SetError(comboBox_MC_VC_Comparacion3, "Debes elegir una Comparación");
+                    MC_Comparacion3 = false;
+                }
+                else
+                {
+                    errorProvider_MC_Comparacion3.Clear();
+                    MC_Comparacion3 = true;
+                }
+
+                //Comprobamos que se ha elegido un Tipo Evento
+                if (!radioButton_MC_TE3_Cine.Checked && !radioButton_MC_TE3_Concierto.Checked && !radioButton_MC_TE3_Teatro.Checked && !radioButton_MC_TE3_Todos.Checked)
+                {
+                    errorProvider_MC_TipoEvento3.SetError(groupBox_MC_TipoEvent3, "Debes seleccionar un Tipo Evento");
+                    MC_TipoEvento3 = false;
+                }
+                else
+                {
+                    errorProvider_MC_TipoEvento3.Clear();
+                    MC_TipoEvento3 = true;
+                }
+            }
+        }
 
         //Evento para guardar los datos modificados de las promociones por condicion
         private void button_MC_Guardar_Click(object sender, EventArgs e)
         {
             ComproCantCondiciones();
+            ComproComboYGroup();
 
             //Comprobamos que este todo listo
             if (checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que esten las 3 condiciones
-                if (MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento2 && MC_Descuento3)
+                if (MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && 
+                    MC_Descuento1 && MC_Descuento2 && MC_Descuento3 &&
+                    MC_TipoCondicion1 && MC_TipoCondicion2 && MC_TipoCondicion3 && 
+                    MC_Comparacion1 && MC_Comparacion2 && MC_Comparacion3 &&
+                    MC_TipoEvento1 && MC_TipoEvento2 && MC_TipoEvento3)
                 {
                     MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
@@ -646,7 +764,11 @@ namespace Events4ALL
             else if (checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que la segunda este activada y la tercera no
-                if (MC_Cantidad1 && MC_Cantidad2 && MC_Descuento1 && MC_Descuento2)
+                if (MC_Cantidad1 && MC_Cantidad2 && 
+                    MC_Descuento1 && MC_Descuento2 &&
+                    MC_TipoCondicion1 && MC_TipoCondicion2 && 
+                    MC_Comparacion1 && MC_Comparacion2 &&
+                    MC_TipoEvento1 && MC_TipoEvento2)
                 {
                     MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
@@ -655,7 +777,11 @@ namespace Events4ALL
             else if (!checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que la segunda no este activada y la tercera si
-                if (MC_Cantidad1 && MC_Cantidad3 && MC_Descuento1 && MC_Descuento3)
+                if (MC_Cantidad1 && MC_Cantidad3 && 
+                    MC_Descuento1 && MC_Descuento3 &&
+                    MC_TipoCondicion1 && MC_TipoCondicion3 &&
+                    MC_Comparacion1 && MC_Comparacion3 &&
+                    MC_TipoEvento1 && MC_TipoEvento3)
                 {
                     MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
@@ -664,7 +790,7 @@ namespace Events4ALL
             else if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que sólo este la primera
-                if (MC_Cantidad1 && MC_Descuento1)
+                if (MC_Cantidad1 && MC_Descuento1 && MC_TipoCondicion1 && MC_Comparacion1 && MC_TipoEvento1)
                 {
                     MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
@@ -765,7 +891,7 @@ namespace Events4ALL
             //MessageBox.Show(fila[1].ToString()+fila[2].ToString()+fila[3].ToString()+fila[4].ToString()+fila[5].ToString()+fila[6].ToString());
         }
 
-        //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox) de promociones por condicion
+        //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox, 2 solo del segundo bloque de condiciones, 3 solo del tercer bloque de condiciones) de promociones por condicion
         private void MC_limpiar(int todo)
         {
             //true en caso de limpiar todos los campos
@@ -823,6 +949,27 @@ namespace Events4ALL
                 checkBox_MC_ActivarCond2.Checked = false;
                 //comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
                 //comboBox_MC_VC_Comparacion3.Text = "Comparación";
+                textBox_MC_VC_Cantidad3.Text = "";
+                textBox_MC_VC_Descuento3.Text = "";
+                radioButton_MC_TE3_Cine.Checked = false;
+                radioButton_MC_TE3_Concierto.Checked = false;
+                radioButton_MC_TE3_Teatro.Checked = false;
+                radioButton_MC_TE3_Todos.Checked = false;
+            }
+            //Solo limpiar segundo bloque
+            else if (todo == 2)
+            {
+                textBox_MC_VC_Cantidad2.Text = "";
+                textBox_MC_VC_Descuento2.Text = "";
+                radioButton_MC_TE2_Cine.Checked = false;
+                radioButton_MC_TE2_Concierto.Checked = false;
+                radioButton_MC_TE2_Teatro.Checked = false;
+                radioButton_MC_TE2_Todos.Checked = false;
+                checkBox_MC_ActivarCond2.Checked = false;
+            }
+            //Solo limpiar tercer bloque
+            else if (todo == 3)
+            {
                 textBox_MC_VC_Cantidad3.Text = "";
                 textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
@@ -1080,9 +1227,69 @@ namespace Events4ALL
             //Aqui va el de la imagen
         }
 
+        //Funcion para limpiar los errorProvider
+        private void limpiarErrorProvider(int cual)
+        {
+            if (cual == 1)
+            {
+                errorProvider_MC_Cant1.Clear();
+                errorProvider_MC_Desc1.Clear();
+                errorProvider_MC_TipoCondicion1.Clear();
+                errorProvider_MC_Comparacion1.Clear();
+                errorProvider_MC_TipoEvento1.Clear();
+            }
+            else if (cual == 2)
+            {
+                errorProvider_MC_Cant2.Clear();
+                errorProvider_MC_Desc2.Clear();
+                errorProvider_MC_TipoCondicion2.Clear();
+                errorProvider_MC_Comparacion2.Clear();
+                errorProvider_MC_TipoEvento2.Clear();
+            }
+            else if (cual == 3)
+            {
+                errorProvider_MC_Cant3.Clear();
+                errorProvider_MC_Desc3.Clear();
+                errorProvider_MC_TipoCondicion3.Clear();
+                errorProvider_MC_Comparacion3.Clear();
+                errorProvider_MC_TipoEvento3.Clear();
+            }
+        }
+
+        //Funcion para desactivar el grupo de condiciones segunda o tercera
+        private void DesactivarCondicion(int cual)
+        {
+            if (cual == 1)
+            {
+                textBox_MC_VC_Cantidad2.Enabled = false;
+                textBox_MC_VC_Descuento2.Enabled = false;
+                comboBox_MC_VC_Comparacion2.Enabled = false;
+                comboBox_MC_VC_Tcondicion2.Enabled = false;
+                radioButton_MC_TE2_Cine.Enabled = false;
+                radioButton_MC_TE2_Concierto.Enabled = false;
+                radioButton_MC_TE2_Teatro.Enabled = false;
+                radioButton_MC_TE2_Todos.Enabled = false;
+            }
+            else if (cual == 2)
+            {
+                textBox_MC_VC_Cantidad3.Enabled = false;
+                textBox_MC_VC_Descuento3.Enabled = false;
+                comboBox_MC_VC_Comparacion3.Enabled = false;
+                comboBox_MC_VC_Tcondicion3.Enabled = false;
+                radioButton_MC_TE3_Cine.Enabled = false;
+                radioButton_MC_TE3_Concierto.Enabled = false;
+                radioButton_MC_TE3_Teatro.Enabled = false;
+                radioButton_MC_TE3_Todos.Enabled = false;
+            }
+        }
+
+        //Evento para introducir una nueva condicion
         private void button_MC_Nueva_Click(object sender, EventArgs e)
         {
             MC_limpiar(1);
+            limpiarErrorProvider(1);
+            checkBox_MC_ActivarCond1.Checked = false;
+            checkBox_MC_ActivarCond2.Checked = false;
         }
     }
 }
