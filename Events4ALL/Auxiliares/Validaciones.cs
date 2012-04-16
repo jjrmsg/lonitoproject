@@ -92,13 +92,37 @@ namespace Events4ALL.Auxiliares
             return patronNumerico.IsMatch(cadena);
         }
 
-
-        public bool CompruebaPass(string pass)
+        
+        public string CompruebaPass(string pass)
         {
             // longitud 6, me da igual que no tenga numero o si xD
-            Regex recp = new Regex("^[0-9a-zA-Z]{6}$");
+            Regex ex1 = new Regex("^[0-9a-zA-Z]{6,15}$"); // longitud
+            Regex ex2 = new Regex("[0-9]+"); // un numero
+            Regex ex3 = new Regex("[a-z]+"); // una letra minuscula
+            Regex ex4 = new Regex("[A-Z]+"); // una letra mayuscula
 
-            return recp.IsMatch(pass);
+            string error = "Fallo Desconocido.";
+
+            if (ex1.IsMatch(pass) && ex2.IsMatch(pass) && ex3.IsMatch(pass) && ex4.IsMatch(pass))
+            {
+                error = "";
+                return error;
+            }
+            else
+            {
+                error = "Error : ";
+
+                if (!ex1.IsMatch(pass))
+                    error = error + "Longitud erronea, debe ser entre 6 y 15 caracteres. ";
+                if (!ex2.IsMatch(pass))
+                    error = error + "La contraseña no contiene un número. ";
+                if (!ex3.IsMatch(pass))
+                    error = error + "La contraseña no contiene una letra minúscula. ";
+                if (!ex4.IsMatch(pass))
+                    error = error + "La contraseña no contiene una letra mayúscula.";
+
+                return error;
+            }
         }
     }
 }

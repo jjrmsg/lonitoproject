@@ -351,13 +351,15 @@ namespace Events4ALL
         // comprueba la seguridad de PASS
         private bool CompruebaPass()
         {
+            string error = validar.CompruebaPass(textBox_pass1.Text);
+
             if (textBox_pass1.Text.Length == 0)
             {
                 errorProviderPassInv.SetError(label_pass1, "Introduzca una Contraseña.");
                 errorProviderPassDif.Clear();
                 return false;
             }
-            else if (validar.CompruebaPass(textBox_pass1.Text) || textBox_pass1.Text.Length <= 25)
+            else if (error == "")
             {
                 if (textBox_pass1.Text == textBox_pass2.Text)
                 {
@@ -374,7 +376,7 @@ namespace Events4ALL
             }
             else
             {
-                errorProviderPassInv.SetError(label_pass1, "Contraseña Invalida.");
+                errorProviderPassInv.SetError(label_pass1, error);
                 errorProviderPassDif.Clear();
                 return false;
             }
@@ -432,26 +434,26 @@ namespace Events4ALL
         // rellena el formulario de Admin con un ejemplo predefinido
         private void RellenaDatos()
         {
-            textBox_NombreUsuario.Text = "Mike";
-            textBox_pass1.Text = "123456";
-            textBox_pass2.Text = "123456";
+            textBox_NombreUsuario.Text = "Pepe";
+            //textBox_pass1.Text = "123456";
+            //textBox_pass2.Text = "123456";
 
-            Admin_Perfil_txtBox_Nombre.Text = "Miguel";
-            Admin_Perfil_txtBox_Apellidos.Text = "Lirio Villena";
-            Admin_Perfil_txtBox_NIF.Text = "45839549C";
+            Admin_Perfil_txtBox_Nombre.Text = "Pepe";
+            Admin_Perfil_txtBox_Apellidos.Text = "El de los Huevos Repe";
+            Admin_Perfil_txtBox_NIF.Text = "45836991S";
             Admin_Perfil_comboBox_Pais.Text = "España";
             comboBox_Provincia.Text = "Alicante";
             textBox_CP_Perfil.Text = "03610";
             txtBox_Localidad.Text = "Petrer";
             comboBoxDirec.Text = "C/";
-            Admin_Perfil_txtBox_Domicilio.Text = "Toledo Nº37 1ºB";
+            Admin_Perfil_txtBox_Domicilio.Text = "Random";
 
-            Admin_Perfil_txtBox_Tel1.Text = "966 314090";
-            Admin_Perfil_txtBox_Tel2.Text = "680301123";
-            Admin_Perfil_txtBox_Mail.Text = "michaelirio@gmail.com";
+            Admin_Perfil_txtBox_Tel1.Text = "123456789";
+            Admin_Perfil_txtBox_Tel2.Text = "987654321";
+            Admin_Perfil_txtBox_Mail.Text = "random@hotmail.com";
 
             Admin_Perfil_rButom_H.Checked = true;
-            Admin_Perfil_rButom_Soltero.Checked = true;
+            Admin_Perfil_rButom_Divorciado.Checked = true;
 
         }
 
@@ -664,6 +666,7 @@ namespace Events4ALL
             // Comrpuebo que todos los campos estan rellenos
             if (ValidaCampos())
             {
+                System.Diagnostics.Debug.Write("nuevo");
                 // creo el EN y toda la pedazo de basura posterior
 
                 // ambos metodos hacen la misma puta basura, simplemente relleno el EN de distintas maneras.... por que me sale del nabo
@@ -692,8 +695,9 @@ namespace Events4ALL
                     }
                 }
                 // ACTUALIZAR
-                else 
+                else if(edicion)
                 {
+                    System.Diagnostics.Debug.Write("Edicion");
                     int sexo = -1;
 
                     if (Admin_Perfil_rButom_H.Checked == true)
@@ -761,6 +765,12 @@ namespace Events4ALL
             {
                 //MessageBox.Show("Fail.");
             }
+        }
+
+        // boton Foto
+        private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
+        {
+            RellenaDatos();
         }
 
         #endregion
@@ -1406,11 +1416,5 @@ namespace Events4ALL
         }
         #endregion
 
-        private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
-        {
-            RellenaDatos();
-        }
-
-        
     }
 }

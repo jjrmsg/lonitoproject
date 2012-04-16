@@ -139,7 +139,9 @@ namespace Events4ALL.CAD
 
                 dr.Read();
 
-                if (pass == dr[0].ToString())
+                string passCod = SHA1helper.Compute(pass);
+
+                if (passCod == dr[0].ToString())
                     concuerda = true;
 
                 dr.Close();
@@ -285,12 +287,12 @@ namespace Events4ALL.CAD
                 string tabla1 = "(Nombre, Apellidos, Usuario, Pass, NIF, ";
                 string tabla2 = "FechaNac, Poblacion, Provincia, Pais, ";
                 string tabla3 = "Direccion, TfnoFijo, TfnoMovil, Mail, ";
-                string tabla4 = "Foto, Estado, Sexo, CP)";
+                string tabla4 = "Estado, Sexo, CP)";
                 string sql2 = " VALUES ('";
-                string valores1 = nuevo.Nombre + comilla + nuevo.Apellidos + comilla + nuevo.Nick + comilla + nuevo.Pass+comilla+ nuevo.DNI+comilla;
+                string valores1 = nuevo.Nombre + comilla + nuevo.Apellidos + comilla + nuevo.Nick + comilla + SHA1helper.Compute(nuevo.Pass) +comilla+ nuevo.DNI+comilla;
                 string valores2 = fecha + comilla + nuevo.Localidad + comilla + nuevo.Provincia + comilla + nuevo.Pais + comilla;
                 string valores3 = nuevo.Domicilio + comilla + tel1 + comilla + tel2 + comilla + nuevo.Mail + comilla;
-                string valores4 = nuevo.Foto + comilla + nuevo.EC + "'," + nuevo.Sexo +",'"+ nuevo.CP+"'";
+                string valores4 = nuevo.EC + "'," + nuevo.Sexo +",'"+ nuevo.CP+"'";
                 string sql3 = ")";
 
                 string sql = sql1 + tabla1 + tabla2 + tabla3 + tabla4 + sql2 + valores1 + valores2 + valores3 + valores4 + sql3;
@@ -531,9 +533,9 @@ namespace Events4ALL.CAD
                 if (upPass)
                 {
                     if (primero)
-                        sql = sql + ", Pass = '" + pass + "'";
+                        sql = sql + ", Pass = '" + SHA1helper.Compute(pass) + "'";
                     else
-                        sql = sql + "Pass = '" + pass + "'";
+                        sql = sql + "Pass = '" + SHA1helper.Compute(pass) + "'";
 
                     primero = true;
                 }
