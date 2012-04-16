@@ -770,7 +770,7 @@ namespace Events4ALL
         // boton Foto
         private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
         {
-            RellenaDatos();
+           
         }
 
         #endregion
