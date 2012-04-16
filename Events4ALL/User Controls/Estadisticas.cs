@@ -168,12 +168,12 @@ namespace Events4ALL
             }
 
             Image cartel = espEN.ObtenerImagenEspectaculo(maxID);
-
+            
             if (cartel != null)
             {
                 try
                 {
-                    pictureRentable.Image = espEN.ObtenerImagenEspectaculo(maxID);
+                    pictureRentable.Image = cartel;
                 }
                 catch (Exception ex)
                 {

@@ -41,7 +41,12 @@ namespace Events4ALL.CAD
 
         public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
         {
-            Byte[] result  = (Byte[])new ImageConverter().ConvertTo(cartel, typeof(Byte[]));
+            MemoryStream tmpStream = new MemoryStream();
+            cartel.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+            tmpStream.Position = 0;
+            byte[] pic = new byte[tmpStream.Length];
+            tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+            pic = tmpStream.ToArray();
 
             SqlConnection conn = null;
             BD bd = new BD();
@@ -49,7 +54,7 @@ namespace Events4ALL.CAD
             String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Cartel, Precio, Genero, FechaIni, FechaFin) values (";
             comEspectaculo += "'" + titulo + "',";
             comEspectaculo += "'" + descripcion + "',";
-            comEspectaculo += "CAST('" + result +"' AS VARBINARY(MAX)),";
+            comEspectaculo += "@pic,";
             comEspectaculo += "'" + precio + "',";
             comEspectaculo += "'" + genero + "',";
             comEspectaculo += "'" + fechIni + "',";
@@ -65,6 +70,7 @@ namespace Events4ALL.CAD
                 conn.Open();
 
                 SqlCommand com = new SqlCommand(comEspectaculo, conn);
+                com.Parameters.AddWithValue("@pic", pic);
                 return com.ExecuteNonQuery() > 1;
 
             }
@@ -276,9 +282,14 @@ namespace Events4ALL.CAD
                 SqlCommand cmd = new SqlCommand("select * from Espectaculo where IDEspectaculo='" + id + "'", c);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
+
                 bImage = (byte[])dr["Cartel"];
-                MemoryStream ms = new MemoryStream(bImage);
-                im = Image.FromStream(ms);
+
+                if (bImage != null)
+                {
+                    MemoryStream ms = new MemoryStream(bImage);
+                    im = Image.FromStream(ms, true, true);
+                }
             }
             catch
             {
