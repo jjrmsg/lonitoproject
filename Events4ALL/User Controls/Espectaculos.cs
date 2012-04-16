@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Events4ALL.EN;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Events4ALL
 {
@@ -66,7 +68,9 @@ namespace Events4ALL
             OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
             pbCartel.SizeMode = PictureBoxSizeMode.StretchImage;
             if (OFich.ShowDialog() == DialogResult.OK)
-                pbCartel.Image = Image.FromFile(OFich.FileName); 
+                pbCartel.Image = Image.FromFile(OFich.FileName);
+
+            
         } 
 
         private void btLimpiar_Click(object sender, EventArgs e)
@@ -137,12 +141,14 @@ namespace Events4ALL
 
             if (valido == true)
             {
+
                 EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
                                                                 tbDescripcion.Text,
                                                                 numPrecio.Value,
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
-                                                                dtFechaFin.Text);
+                                                                dtFechaFin.Text,
+                                                                "0");
                 if (espectaculo.Insertar(cbSala.Text))
                 {
                     MessageBox.Show("Espectaculo insertado");
@@ -189,20 +195,56 @@ namespace Events4ALL
 
         private void dataGridEspectaculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex != dataGridEspectaculos.Columns["Column7"].Index)
-                return;
-
-            string espName = dataGridEspectaculos[1, e.RowIndex].Value.ToString();
-            if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\"?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+            if (e.RowIndex >= 0)
             {
-                EspectaculosEN espectaculo = new EspectaculosEN();
-                if (espectaculo.Eliminar(dataGridEspectaculos[0, e.RowIndex].Value.ToString()) == true)
+                // Si se ha pulsado en el boton de editar
+                if(e.ColumnIndex == dataGridEspectaculos.Columns["Column8"].Index)
                 {
-                    MessageBox.Show("Eliminado correctamente");
-                    dataGridEspectaculos.Rows.RemoveAt(e.RowIndex);
+                    Editar_espectaculo(dataGridEspectaculos[0, e.RowIndex].Value.ToString());
                 }
+                // Si se ha pulsado en el boton de borrar
+                else if (e.ColumnIndex == dataGridEspectaculos.Columns["Column7"].Index)
+                {
+                    string espName = dataGridEspectaculos[1, e.RowIndex].Value.ToString();
+                    if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\"?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                    {
+                        EspectaculosEN espectaculo = new EspectaculosEN();
+                        if (espectaculo.Eliminar(dataGridEspectaculos[0, e.RowIndex].Value.ToString()) == true)
+                        {
+                            MessageBox.Show("Eliminado correctamente");
+                            dataGridEspectaculos.Rows.RemoveAt(e.RowIndex);
+                        }
+                    }
+                }
+            }          
+        }
+
+        private void Editar_espectaculo(string id)
+        {
+            tabControl1.SelectedIndex = 0;
+            
+            DataSet ds = null;
+            EspectaculosEN espEN = new EspectaculosEN();
+            ds = espEN.ObtenerEspectaculoPorID(id);
+
+            try
+            {
+                DataRow espectaculo = ds.Tables[0].Rows[0];
+
+                tbTitulo.Text = espectaculo["Titulo"].ToString();
+                tbDescripcion.Text = espectaculo["Descripcion"].ToString();
+                cbTipo.Text = espectaculo["Tipo"].ToString();
+                if (espectaculo["Tipo"].ToString() == "Cine")
+                    cbGenero.Text = espectaculo["Genero"].ToString();
+                cbSala.Text = espectaculo["IdSala"].ToString();
+                numPrecio.Value = Convert.ToInt32(espectaculo["Precio"]);
+                dtFechaIni.Value = (DateTime)espectaculo["FechaIni"];
+                dtFechaFin.Value = (DateTime)espectaculo["FechaFin"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al recuperar los datos del espectáculo.\n\nInformación del error:\n  "+ex.Message, "Ocurrió un error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-              
     }
 }

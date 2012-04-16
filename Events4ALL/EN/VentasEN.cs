@@ -53,5 +53,17 @@ namespace Events4ALL.EN
             VentasCAD vCAD = new VentasCAD();
             return vCAD.ObtenerRanking(orden);
         }
+
+        public DataSet BuscarVenta(string nombre, string dni, string titulo, string tipo, string fEsp, string fVenta)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.BuscarVenta(nombre, dni, titulo, tipo, fEsp, fVenta);
+        }
+
+        public bool EliminarVenta(string idVenta)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.EliminarVenta(idVenta);
+        }
     }
 }

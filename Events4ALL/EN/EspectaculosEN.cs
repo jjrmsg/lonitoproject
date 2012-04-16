@@ -15,7 +15,8 @@ namespace Events4ALL.EN
         private string fechIni;
         private string fechFin;
         private decimal precio;
-        private string genero;        
+        private string genero;
+        private string cartel;
         public int idEspectaculo { get; set; }
 
         public EspectaculosEN()
@@ -23,7 +24,7 @@ namespace Events4ALL.EN
 
         }
 
-        public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin)
+        public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin, string cartel)
         {
             this.titulo = titulo;
             this.descripcion = descripcion;
@@ -31,6 +32,7 @@ namespace Events4ALL.EN
             this.fechFin = fechFin;
             this.precio = precio;
             this.genero = genero;
+            this.cartel = cartel;
         }
 
         public decimal getPrecioId()
@@ -42,7 +44,7 @@ namespace Events4ALL.EN
         public bool Insertar(string salaReserva)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
-            return espCAD.Insertar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva);
+            return espCAD.Insertar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel);
         }
 
         public bool Eliminar(string idEspectaculo)
@@ -69,11 +71,17 @@ namespace Events4ALL.EN
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerDatosEspectaculo(titulo);
         }
-
+<<<<<<< .mine
+        public DataSet ObtenerEspectaculoPorID(string id)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerEspectaculoPorID(id);
+        }
+=======
         public Image ObtenerImagenEspectaculo(int id)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerImagenEspectaculo(id);
         }
-    }
+>>>>>>> .theirs    }
 }

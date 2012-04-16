@@ -79,6 +79,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -412,9 +413,12 @@
             this.Column4,
             this.Column3,
             this.Column5,
+            this.Column8,
             this.Column7});
             this.dataGridEspectaculos.Location = new System.Drawing.Point(6, 168);
             this.dataGridEspectaculos.Name = "dataGridEspectaculos";
+            this.dataGridEspectaculos.ReadOnly = true;
+            this.dataGridEspectaculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridEspectaculos.Size = new System.Drawing.Size(878, 432);
             this.dataGridEspectaculos.TabIndex = 6;
             this.dataGridEspectaculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEspectaculos_CellClick);
@@ -596,45 +600,59 @@
             // 
             // IdEsp
             // 
-            this.IdEsp.FillWeight = 15F;
+            this.IdEsp.FillWeight = 20F;
             this.IdEsp.HeaderText = "Id";
             this.IdEsp.Name = "IdEsp";
+            this.IdEsp.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.FillWeight = 140F;
             this.Column1.HeaderText = "Título";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.FillWeight = 70F;
             this.Column6.HeaderText = "Tipo";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.FillWeight = 70F;
             this.Column2.HeaderText = "Sala asignada";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.FillWeight = 50F;
             this.Column4.HeaderText = "Precio";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.FillWeight = 80F;
             this.Column3.HeaderText = "Fecha Inicio";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.FillWeight = 80F;
             this.Column5.HeaderText = "Fecha Fin";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 50F;
+            this.Column8.HeaderText = "Editar";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column7
             // 
@@ -642,6 +660,7 @@
             this.Column7.HeaderText = "Eliminar";
             this.Column7.Image = global::Events4ALL.Properties.Resources.delete;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Espectaculos
             // 
@@ -718,6 +737,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column7;
     }
 }

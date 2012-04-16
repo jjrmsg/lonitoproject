@@ -39,7 +39,7 @@ namespace Events4ALL.CAD
             return precio;
         }
 
-        public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva)
+        public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, string cartel)
         {
             SqlConnection conn = null;
             BD bd = new BD();
@@ -47,7 +47,7 @@ namespace Events4ALL.CAD
             String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Cartel, Precio, Genero, FechaIni, FechaFin) values (";
             comEspectaculo += "'" + titulo + "',";
             comEspectaculo += "'" + descripcion + "',";
-            comEspectaculo += "'0',";
+            comEspectaculo += cartel+",";
             comEspectaculo += "'" + precio + "',";
             comEspectaculo += "'" + genero + "',";
             comEspectaculo += "'" + fechIni + "',";
@@ -144,7 +144,7 @@ namespace Events4ALL.CAD
                     comandoCond += " and";
 
                 if (modFecha == "igual a")
-                    comandoCond = " esp.FechaIni > '" + valFecha + "' and esp.FechaFin < '" + valFecha + "'";
+                    comandoCond = " esp.FechaIni <= '" + valFecha + "' and esp.FechaFin >= '" + valFecha + "'";
                 else if (modFecha == "mayor que")
                     comandoCond = " esp.FechaIni > '" + valFecha + "'";
                 else if (modFecha == "menor que")
@@ -170,7 +170,6 @@ namespace Events4ALL.CAD
             {
                 comando = comando + "WHERE" + comandoCond;
             }
-
 
             try 
             {
@@ -223,6 +222,34 @@ namespace Events4ALL.CAD
             {
                 c.Open();
                 SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala and e.Titulo='"+titulo+"'", c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
+
+        public DataSet ObtenerEspectaculoPorID(string id)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+
+            string query = "SELECT esp.*, tipo Tipo, NumSala IdSala ";
+            query += "FROM Espectaculo esp, ReservaSala res, Sala sal ";
+            query += "WHERE esp.IDEspectaculo = res.IDEspectaculo ";
+            query += "and res.IDSala = sal.NumSala ";
+            query += "and esp.IDEspectaculo = "+id;
+
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter(query, c);
                 da.Fill(bdvirtual);
             }
             catch

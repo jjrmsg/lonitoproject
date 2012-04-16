@@ -161,5 +161,84 @@ namespace Events4ALL.CAD
             }
             return bdvirtual;
         }
+
+        public DataSet BuscarVenta(string nombre, string dni, string titulo, string tipo, string fEsp, string fVenta)
+        {
+            BD bd = new BD();
+            DataSet datosVentas = new DataSet();
+            SqlConnection c = bd.Connect();
+
+            String query = "SELECT vent.IDVentas IdVenta,cli.Nombre, cli.NIF, esp.Titulo, sal.tipo Tipo, vent.FechaVenta ";
+            query += "FROM Ventas vent, Espectaculo esp, Sala sal, ReservaSala res, Cliente cli ";
+            query += "WHERE vent.IDEspectaculo = esp.IDEspectaculo ";
+            query += "and esp.IDEspectaculo = res.IDEspectaculo ";
+            query += "and  res.IDSala = sal.NumSala ";
+            query += "and cli.NIF = vent.IDCliente ";
+
+            if (nombre != "")            
+                query += "and cli.Nombre like '%" + nombre + "%' ";
+            
+            if (dni != "")            
+                query += "and cli.NIF like '%" + dni + "%' ";
+            
+            if (titulo != "")
+                query += "and esp.Titulo like '%" + titulo + "%' ";
+
+            if (tipo != "")
+                query += "and sal.tipo = '" + tipo + "' ";
+
+            if (fEsp != "")
+                query += "and esp.FechaIni <= '" + fEsp + "' and esp.FechaFin >= '" + fEsp + "' ";
+
+            if (fVenta != "")
+                query += "and vent.FechaVenta = '" + fVenta + "' ";
+
+            Console.WriteLine(query);
+
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter(query, c);
+                da.Fill(datosVentas);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            return datosVentas;
+        }
+
+
+
+        public bool EliminarVenta(string idVenta)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            String comEspectaculo = "DELETE FROM Ventas WHERE IDVentas = '" + idVenta + "'";
+
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand(comEspectaculo, conn);
+                return com.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        }
     }
 }
