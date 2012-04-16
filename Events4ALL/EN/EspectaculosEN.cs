@@ -37,7 +37,7 @@ namespace Events4ALL.EN
 
         public decimal getPrecioId()
         {
-            EspectaculosCAD espCAD;espCAD = new EspectaculosCAD();
+            EspectaculosCAD espCAD; espCAD = new EspectaculosCAD();
             return espCAD.getPrecioId(idEspectaculo);
         }
 
@@ -83,5 +83,5 @@ namespace Events4ALL.EN
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerImagenEspectaculo(id);
         }
-
+    }
 }
