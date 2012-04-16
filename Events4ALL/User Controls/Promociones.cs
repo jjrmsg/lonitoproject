@@ -752,7 +752,6 @@ namespace Events4ALL
                     MC_Comparacion1 && MC_Comparacion2 && MC_Comparacion3 &&
                     MC_TipoEvento1 && MC_TipoEvento2 && MC_TipoEvento3)
                 {
-                    MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
                 }
             }
@@ -765,7 +764,6 @@ namespace Events4ALL
                     MC_Comparacion1 && MC_Comparacion2 &&
                     MC_TipoEvento1 && MC_TipoEvento2)
                 {
-                    MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
                 }
             }
@@ -778,7 +776,6 @@ namespace Events4ALL
                     MC_Comparacion1 && MC_Comparacion3 &&
                     MC_TipoEvento1 && MC_TipoEvento3)
                 {
-                    MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
                 }
             }
@@ -787,7 +784,6 @@ namespace Events4ALL
                 //En el caso que sólo este la primera
                 if (MC_Cantidad1 && MC_Descuento1 && MC_TipoCondicion1 && MC_Comparacion1 && MC_TipoEvento1)
                 {
-                    MessageBox.Show("Listo para guardar");
                     GuardarCondicion();
                 }
             }
@@ -859,7 +855,7 @@ namespace Events4ALL
             return resul;
         }
 
-        //Funcion para guardar los cambios en la condicion seleccionada
+        //Funcion para guardar los cambios en la condicion seleccionada sobre la BD
         private void GuardarCondicion()
         {
             DataRow fila = tPromo.NewRow();
@@ -935,7 +931,8 @@ namespace Events4ALL
                 condicionEN.ModificarFilaDeDataTable(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)-1,ref tPromo);
                 conEN.Save();
             }
-            CargarDatagridview();
+            dataGridView_MC_ListaPromosCond.Refresh();
+            MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox, 2 solo del segundo bloque de condiciones, 3 solo del tercer bloque de condiciones) de promociones por condicion
@@ -1369,13 +1366,14 @@ namespace Events4ALL
             insertarNueva = true;
         }
 
+        //Funcion para eliminar una condicion
         private void button_MC_Eliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
+            if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
             {
-                tPromo.Rows[Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value) - 1].Delete();
+                /*tPromo.Rows[Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0])].Delete();
                 conEN.Save();
-                MC_limpiar(1);
+                MC_limpiar(1);*/
             }
         }
     }
