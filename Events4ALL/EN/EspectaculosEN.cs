@@ -47,6 +47,12 @@ namespace Events4ALL.EN
             return espCAD.Insertar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel);
         }
 
+        public bool Editar(string salaReserva, int idEspectaculo)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.Editar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel, idEspectaculo);
+        }
+
         public bool Eliminar(string idEspectaculo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();

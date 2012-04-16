@@ -17,6 +17,8 @@ namespace Events4ALL
 {
     public partial class Espectaculos : UserControl
     {
+        private bool imagenCambiada = false;
+        private int idEspectaculo = 0; // Id del espectaculo del formulario (0 para nuevo espectaculo)
         public Espectaculos()
         {
             InitializeComponent();
@@ -73,13 +75,20 @@ namespace Events4ALL
             OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
             pbCartel.SizeMode = PictureBoxSizeMode.StretchImage;
             if (OFich.ShowDialog() == DialogResult.OK)
+            {
                 pbCartel.Image = Image.FromFile(OFich.FileName);
-
-            
+                imagenCambiada = true;
+            }            
         } 
 
         private void btLimpiar_Click(object sender, EventArgs e)
         {
+            LimpiarFormEntrada();
+        }
+
+        private void LimpiarFormEntrada()
+        {
+            errPrvEspectaculo.Clear();
             tbTitulo.Text = "";
             tbDescripcion.Text = "";
             cbTipo.SelectedIndex = -1;
@@ -92,74 +101,11 @@ namespace Events4ALL
             numPrecio.Value = 0;
             dtFechaIni.Value = DateTime.Today;
             dtFechaFin.Value = DateTime.Today;
+            pbCartel.Image = Events4ALL.Properties.Resources.image_default;
+            imagenCambiada = false;
         }
 
-        private void btnGuardarEsp_Click(object sender, EventArgs e)
-        {
-            bool valido = true;
-            errPrvEspectaculo.Clear();
-
-            if (tbTitulo.Text == "")
-            {
-                errPrvEspectaculo.SetError(tbTitulo, "Debe introducir un titulo.");
-                valido = false;
-            }
-
-            if (tbDescripcion.Text == "")
-            {
-                errPrvEspectaculo.SetError(lbDescripcion, "Debe introducir una descripción.");
-                valido = false;
-            }
-            if (cbTipo.Text == "")
-            {
-                errPrvEspectaculo.SetError(cbTipo, "Debe elegir un tipo de espectaculo.");
-                valido = false;
-            }
-            else
-            {
-                if (cbTipo.Text == "Cine" && cbGenero.Text == "")
-                {
-                    errPrvEspectaculo.SetError(cbGenero, "Debe elegir un genero.");
-                    valido = false;
-                }
-            }
-
-            if (cbSala.Text == "")
-            {
-                errPrvEspectaculo.SetError(cbSala, "Debe elegir una sala.");
-                valido = false;
-            }
-
-            if (numPrecio.Text == "")
-            {
-                errPrvEspectaculo.SetError(numPrecio, "El valor del precio no es valido.");
-                valido = false;
-            }
-
-            DateTime dtIni = dtFechaIni.Value.Date;
-            DateTime dtFin = dtFechaFin.Value.Date;
-            if (dtIni > dtFin)
-            {
-                errPrvEspectaculo.SetError(lbFechas, "La fecha de inicio es posterior a la fecha final.");
-                valido = false;
-            }
-
-            if (valido == true)
-            {
-
-                EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
-                                                                tbDescripcion.Text,
-                                                                numPrecio.Value,
-                                                                cbGenero.Text,
-                                                                dtFechaIni.Text,
-                                                                dtFechaFin.Text,
-                                                                pbCartel.Image);
-                if (espectaculo.Insertar(cbSala.Text))
-                {
-                    MessageBox.Show("Espectaculo insertado");
-                }                                                                
-            }
-        }
+        
 
         private void btLimpBusqueda_Click(object sender, EventArgs e)
         {
@@ -170,7 +116,6 @@ namespace Events4ALL
             dtFechaBuscar.Value = DateTime.Today;
             cbPrecioBuscar.SelectedIndex = -1;
             numPrecioBuscar.Value = 0;
-            // checkEntradas.Checked = false;
         } 
 
         private void btBuscar_Click(object sender, EventArgs e)
@@ -226,7 +171,14 @@ namespace Events4ALL
 
         private void Editar_espectaculo(string id)
         {
-            tabControl1.SelectedIndex = 0;
+            LimpiarFormEntrada();
+            btFormNuevo.Visible = true;
+            btnGuardarEsp.Visible = true;
+
+            btLimpiar.Visible = false;
+            btInsertar.Visible = false;
+            imagenCambiada = false;
+            tabControl1.SelectedIndex = 1;
             
             DataSet ds = null;
             EspectaculosEN espEN = new EspectaculosEN();
@@ -245,11 +197,146 @@ namespace Events4ALL
                 numPrecio.Value = Convert.ToInt32(espectaculo["Precio"]);
                 dtFechaIni.Value = (DateTime)espectaculo["FechaIni"];
                 dtFechaFin.Value = (DateTime)espectaculo["FechaFin"];
+                idEspectaculo = Convert.ToInt32(espectaculo["IDEspectaculo"].ToString());
+                
+                if (espectaculo["Cartel"] != System.DBNull.Value)
+                {
+                    byte[] bImage = (byte[])espectaculo["Cartel"];
+                    MemoryStream ms = new MemoryStream(bImage);
+                    pbCartel.Image = Image.FromStream(ms, true, true);
+                }
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error al recuperar los datos del espectáculo.\n\nInformación del error:\n  "+ex.Message, "Ocurrió un error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw ex;
             }
         }
+
+        private void btFormNuevo_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea ir al formulario de inserción y perder los cambios no guardados?", "Los cambios no guardados se perderan", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+            {
+                LimpiarFormEntrada();
+                btFormNuevo.Visible = false;
+                btnGuardarEsp.Visible = false;
+
+                btLimpiar.Visible = true;
+                btInsertar.Visible = true;
+                imagenCambiada = false;
+                idEspectaculo = 0;
+            }
+        }
+
+        private void btInsertar_Click(object sender, EventArgs e)
+        {
+            if (Validar() == true)
+            {
+                Image cartel = null;
+                if (imagenCambiada == true)
+                    cartel = pbCartel.Image;
+
+                EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
+                                                                tbDescripcion.Text,
+                                                                numPrecio.Value,
+                                                                cbGenero.Text,
+                                                                dtFechaIni.Text,
+                                                                dtFechaFin.Text,
+                                                                cartel);
+                if (espectaculo.Insertar(cbSala.Text))
+                {
+                    MessageBox.Show("Espectaculo insertado");
+                    LimpiarFormEntrada();
+                }
+            }
+        }
+
+
+        private void btnGuardarEsp_Click(object sender, EventArgs e)
+        {
+            if (Validar() == true)
+            {
+                Image cartel = null;
+                if (imagenCambiada == true)
+                    cartel = pbCartel.Image;
+
+                EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
+                                                                tbDescripcion.Text,
+                                                                numPrecio.Value,
+                                                                cbGenero.Text,
+                                                                dtFechaIni.Text,
+                                                                dtFechaFin.Text,
+                                                                cartel);
+                if (espectaculo.Editar(cbSala.Text, idEspectaculo))
+                {
+                    MessageBox.Show("Espectaculo modificado");
+                    LimpiarFormEntrada();
+                    btFormNuevo.Visible = false;
+                    btnGuardarEsp.Visible = false;
+
+                    btLimpiar.Visible = true;
+                    btInsertar.Visible = true;
+                    imagenCambiada = false;
+                    idEspectaculo = 0;
+                }
+            }
+        }
+
+
+        private bool Validar()
+        {
+            bool valido = true;
+            errPrvEspectaculo.Clear();
+
+            if (tbTitulo.Text == "")
+            {
+                errPrvEspectaculo.SetError(tbTitulo, "Debe introducir un titulo.");
+                valido = false;
+            }
+
+            if (tbDescripcion.Text == "")
+            {
+                errPrvEspectaculo.SetError(lbDescripcion, "Debe introducir una descripción.");
+                valido = false;
+            }
+            if (cbTipo.Text == "")
+            {
+                errPrvEspectaculo.SetError(cbTipo, "Debe elegir un tipo de espectaculo.");
+                valido = false;
+            }
+            else
+            {
+                if (cbTipo.Text == "Cine" && cbGenero.Text == "")
+                {
+                    errPrvEspectaculo.SetError(cbGenero, "Debe elegir un genero.");
+                    valido = false;
+                }
+            }
+
+            if (cbSala.Text == "")
+            {
+                errPrvEspectaculo.SetError(cbSala, "Debe elegir una sala.");
+                valido = false;
+            }
+
+            if (numPrecio.Text == "")
+            {
+                errPrvEspectaculo.SetError(numPrecio, "El valor del precio no es valido.");
+                valido = false;
+            }
+
+            DateTime dtIni = dtFechaIni.Value.Date;
+            DateTime dtFin = dtFechaFin.Value.Date;
+            if (dtIni > dtFin)
+            {
+                errPrvEspectaculo.SetError(lbFechas, "La fecha de inicio es posterior a la fecha final.");
+                valido = false;
+            }
+
+            return valido;
+        }
+
     }
 }

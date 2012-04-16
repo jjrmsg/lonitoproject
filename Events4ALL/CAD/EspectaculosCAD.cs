@@ -41,24 +41,35 @@ namespace Events4ALL.CAD
 
         public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
         {
-            MemoryStream tmpStream = new MemoryStream();
-            cartel.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            tmpStream.Position = 0;
-            byte[] pic = new byte[tmpStream.Length];
-            tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
-            pic = tmpStream.ToArray();
+            byte[] pic = null;
+            if (cartel != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                cartel.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
 
             SqlConnection conn = null;
             BD bd = new BD();
 
-            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Cartel, Precio, Genero, FechaIni, FechaFin) values (";
-            comEspectaculo += "'" + titulo + "',";
+            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Precio, Genero, FechaIni, FechaFin";
+            if (cartel != null)
+                comEspectaculo += ", Cartel";
+            comEspectaculo += ") values ('" + titulo + "',";
             comEspectaculo += "'" + descripcion + "',";
-            comEspectaculo += "@pic,";
             comEspectaculo += "'" + precio + "',";
-            comEspectaculo += "'" + genero + "',";
+            if (genero != "")
+                comEspectaculo += "'" + genero + "',";
+            else
+                comEspectaculo += "NULL,";
             comEspectaculo += "'" + fechIni + "',";
-            comEspectaculo += "'" + fechFin + "');";
+            comEspectaculo += "'" + fechFin + "'";
+            if (cartel != null)
+                comEspectaculo += ",@pic";
+            comEspectaculo += ");";
 
             comEspectaculo += "INSERT INTO ReservaSala (IDEspectaculo, IDSala) values (";
             comEspectaculo += "SCOPE_IDENTITY (),";
@@ -70,7 +81,8 @@ namespace Events4ALL.CAD
                 conn.Open();
 
                 SqlCommand com = new SqlCommand(comEspectaculo, conn);
-                com.Parameters.AddWithValue("@pic", pic);
+                if (cartel != null)
+                    com.Parameters.AddWithValue("@pic", pic);
                 return com.ExecuteNonQuery() > 1;
 
             }
@@ -84,6 +96,86 @@ namespace Events4ALL.CAD
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }        
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public bool Editar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel, int idEspectaculo)
+        {
+            byte[] pic = null;
+            if (cartel != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                cartel.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            String query = "UPDATE Espectaculo set ";
+            query += "Titulo = '" + titulo + "'";
+            query += ", Descripcion = '" + descripcion + "'";
+            query += ", Precio = '" + precio + "'";
+            query += ", Genero = '" + genero + "'";
+            query += ", FechaIni = '" + fechIni + "'";
+            query += ", FechaFin = '" + fechFin + "'";
+            if (cartel != null)
+                query += ", Cartel = @pic ";
+            query += "WHERE IDEspectaculo = '" + idEspectaculo + "'";
+
+            query += ";UPDATE ReservaSala set ";
+            query += "IDSala = '" + salaReserva + "' ";
+            query += "WHERE IDEspectaculo = " + idEspectaculo;
+
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlCommand com = new SqlCommand(query, conn);
+                if (cartel != null)
+                    com.Parameters.AddWithValue("@pic", pic);
+                return com.ExecuteNonQuery() > 1;
+
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public bool Eliminar(string idEspectaculo)
         {
