@@ -5,6 +5,8 @@ using System.Text;
 using Events4ALL.Auxiliares;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
+using System.IO;
 
 namespace Events4ALL.CAD
 {
@@ -231,6 +233,32 @@ namespace Events4ALL.CAD
                 c.Close();
             }
             return bdvirtual;
+        }
+
+        public Image ObtenerImagenEspectaculo(int id)
+        {
+            byte[] bImage = new byte[0];
+            Image im = null;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            try
+            {
+                c.Open();
+                SqlCommand cmd = new SqlCommand("select * from Espectaculo where IDEspectaculo='" + id + "'", c);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                bImage = (byte[])dr["Cartel"];
+                MemoryStream ms = new MemoryStream(bImage);
+                im = Image.FromStream(ms);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return im;
         }
     }
 }

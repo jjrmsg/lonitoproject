@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Events4ALL.CAD;
 using System.Data;
+using System.Drawing;
 
 namespace Events4ALL.EN
 {
@@ -67,6 +68,12 @@ namespace Events4ALL.EN
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerDatosEspectaculo(titulo);
+        }
+
+        public Image ObtenerImagenEspectaculo(int id)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerImagenEspectaculo(id);
         }
     }
 }

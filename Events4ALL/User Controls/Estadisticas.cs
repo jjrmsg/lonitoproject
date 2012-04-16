@@ -22,9 +22,10 @@ namespace Events4ALL
         #region Members
         private VentasEN vEN;
         private EspectaculosEN espEN;
-        //private ClientesEN cliEN;
+        private ClientesEN cliEN;
         private Dictionary<string, decimal> diasVentas;
         private Dictionary<string, int> numerosMeses;
+        private Dictionary<int, decimal> espectaculos;
         private Dictionary<string, int> tipoVentas;
         private Dictionary<string, int> generoVentas;
         private Dictionary<string, int> tipos;
@@ -34,14 +35,15 @@ namespace Events4ALL
         public Estadisticas()
         {
             InitializeComponent();
-            //cliEN = new ClientesEN();
+            cliEN = new ClientesEN();
             vEN = new VentasEN();
             espEN = new EspectaculosEN();
             diasVentas = new Dictionary<string, decimal>();
             tipoVentas = new Dictionary<string, int>();
+            espectaculos = new Dictionary<int, decimal>();
             generoVentas = new Dictionary<string, int>();
             tipos = new Dictionary<string, int>() { {"Teatro", 1}, {"Cine", 2}, {"Concierto", 3} };
-            generos = new Dictionary<string, int>() { { "Aventura", 1 }, { "Romantica", 2 }, { "Comedia", 3 }, { "Accion", 4 }, { "Terror", 5 } };
+            generos = new Dictionary<string, int>() { { "Aventura", 1 }, { "Romantica", 2 }, { "Comedia", 3 }, { "Acción", 4 }, { "Terror", 5 } };
 
             numerosMeses = new Dictionary<string, int>()
             {
@@ -137,6 +139,15 @@ namespace Events4ALL
                     {
                         diasVentas.Add(dia, precio);
                     }
+
+                    if (espectaculos.ContainsKey(id))
+                    {
+                        espectaculos[id] = espectaculos[id] + precio;
+                    }
+                    else
+                    {
+                        espectaculos.Add(id, 1);
+                    }
                 }
             }
 
@@ -144,6 +155,30 @@ namespace Events4ALL
             {
                 DataPoint p = new DataPoint(int.Parse(pair.Key), (int)pair.Value);
                 mainChart.Series["Euros"].Points.Add(p);
+            }
+
+            int maxID = 0;
+            decimal maxValue=0;
+            foreach (var pair in espectaculos)
+            {
+                if (pair.Value > maxValue)
+                {
+                    maxID = pair.Key;
+                }
+            }
+
+            Image cartel = espEN.ObtenerImagenEspectaculo(maxID);
+
+            if (cartel != null)
+            {
+                try
+                {
+                    pictureRentable.Image = espEN.ObtenerImagenEspectaculo(maxID);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
 
@@ -200,7 +235,6 @@ namespace Events4ALL
                 mes = dt.Month.ToString();
                 dia = dt.Day.ToString();
                 string genero = row["Genero"].ToString();
-                genero = genero.Replace("  ", string.Empty);
                 
                 if (anyo == textAnyo.Text && mes == numerosMeses[comboMes.SelectedItem.ToString()].ToString() && !string.IsNullOrEmpty(genero))
                 {
@@ -226,7 +260,6 @@ namespace Events4ALL
 
         private void loadButton2_Click(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrWhiteSpace(textNIF.Text))
             {
                 generoChartCli.Series["Genero"].Points.Clear();
@@ -244,15 +277,16 @@ namespace Events4ALL
 
         private void ObtenerDatosCliente()
         {
-            /*DataSet ds = new DataSet();
-            ds = cliEN.getClientByNIF();
+            DataSet ds = new DataSet();
+            cliEN.nif = textNIF.Text;
+            ds = cliEN.getClienteByNif();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 labelNombre.Text = row["Nombre"].ToString();
                 labelApellidos.Text = row["Apellidos"].ToString();
                 labelCiudad.Text = row["Poblacion"].ToString();
-            }*/
+            }
         }
 
         private void ObtenerDatosCliGenerales()

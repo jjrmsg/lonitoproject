@@ -71,6 +71,7 @@
     <Compile Include="Auxiliares\SHA1helper.cs" />
     <Compile Include="Auxiliares\Validaciones.cs" />
     <Compile Include="CAD\AdminCAD.cs" />
+    <Compile Include="CAD\ClientesCAD.cs" />
     <Compile Include="CAD\CondicionCAD.cs" />
     <Compile Include="CAD\MensajesCAD.cs" />
     <Compile Include="CAD\PromocionCAD.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="CAD\SalasCAD.cs" />
     <Compile Include="CAD\VentasCAD.cs" />
     <Compile Include="ComboFlags.cs" />
+    <Compile Include="EN\ClientesEN.cs" />
     <Compile Include="EN\CondicionEN.cs" />
     <Compile Include="EN\EspectaculosEN.cs" />
     <Compile Include="EN\MensajesEN.cs" />
