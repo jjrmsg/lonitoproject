@@ -71,17 +71,17 @@ namespace Events4ALL.EN
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerDatosEspectaculo(titulo);
         }
-<<<<<<< .mine
+
         public DataSet ObtenerEspectaculoPorID(string id)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerEspectaculoPorID(id);
         }
-=======
+
         public Image ObtenerImagenEspectaculo(int id)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerImagenEspectaculo(id);
         }
->>>>>>> .theirs    }
+
 }
