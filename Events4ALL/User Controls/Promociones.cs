@@ -39,6 +39,7 @@ namespace Events4ALL
         private DataTable tEspec;
         private DataTable tEspecConPromo;
         private int idEventoSelec;
+        private bool insertarNueva;
 
         public Promociones()
         {
@@ -57,6 +58,8 @@ namespace Events4ALL
             promos = conEN.ObtenerTodas();
             tPromo = new DataTable();
             tPromo = promos.Tables["Condicion"];
+
+            insertarNueva = false;
         }
 
         //Evento para activar los campos de la segunda condicion de promociones por condicion
@@ -135,29 +138,16 @@ namespace Events4ALL
             }
         }
 
-        //Evento que carga los datos en el combobox y datagridview
-        private void Promociones_Load(object sender, EventArgs e)
+        //Fucion para cargar el datagridview
+        private void CargarDatagridview()
         {
-            #region cargar datagridview
-            
             try
             {
-                
-                //añadiendo nueva fila a la tabla, es un ejemplo de forma manual
-                //esta linea tiene que estar si no el VisualStudio se pone a llorar y el FormBase peta. ¿pq? -> Preguntaselo a Microsoft xD
+                //estas 2 lineas tienen que estar si no el VisualStudio se pone a llorar y el FormBase peta. ¿pq? -> Preguntaselo a Microsoft xD
                 DataRow nuevafila;
                 nuevafila = tPromo.NewRow();
-                //nuevafila[1] = "ejemplo";
-                //nuevafila[2] = "Esto se añade a la tabla pero no se guarda en la BD";
-                //nuevafila[3] = 1;
-                //nuevafila[4] = 1;
-                //nuevafila[5] = 1;
-                //nuevafila[6] = 1;
-                //nuevafila[7] = 1;
-                //nuevafila[18] = false;
-                //tcon.Rows.Add(nuevafila);
-                //conEN.Save();
-                
+
+                dataGridView_MC_ListaPromosCond.DataSource = "";
                 dataGridView_MC_ListaPromosCond.DataSource = promos;
                 dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
                 dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
@@ -181,14 +171,19 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dataGridView_MC_ListaPromosCond.MultiSelect = false;
                 dataGridView_MC_ListaPromosCond.AllowUserToAddRows = false;
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // MessageBox.Show("PENE error al cargar datagriview " + ex);
                 Console.WriteLine(ex.Message);
             }
-            #endregion
+        }
+
+        //Evento que carga los datos en el combobox y datagridview
+        private void Promociones_Load(object sender, EventArgs e)
+        {
+            CargarDatagridview();
             
             CargarComboBox();
         }
@@ -868,27 +863,79 @@ namespace Events4ALL
         private void GuardarCondicion()
         {
             DataRow fila = tPromo.NewRow();
-
+            
+            //El nombre no puede ser mayor de 10 caracteres, lo capamos si es mayor de 10
             string nompromo = textBox_MC_NomPromo.Text.ToString();
             if (nompromo.Length - 10 >= 0)
             {
                 nompromo = nompromo.Remove(10, nompromo.Length - 10);
             }
-            fila[1] = nompromo;
 
-            fila[2] = textBox_MC_Descripcion.Text.ToString();
+            CondicionEN condicionEN;
 
-            fila[3] = Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex);
+            #region crear el EN
+            if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
+            {
+                //Solo insertar la condicion obliglatoria
+                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(), Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex), 
+                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text), 
+                        ObtenerTipoEvento(1), 
+                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked);
+            }
+            else if(checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
+            {
+                //Se inserta la primera y segunda condicion
+                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(), 
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex), 
+                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text), 
+                        ObtenerTipoEvento(1),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento2.Text), 
+                        ObtenerTipoEvento(2),  
+                        -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked);
+            }
+            else
+            {
+                //Se insertan las tres condiciones
+                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                        ObtenerTipoEvento(1),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
+                        ObtenerTipoEvento(2),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento3.Text),
+                        ObtenerTipoEvento(3),
+                        checkBox_MC_ActPromo.Checked);
+            }
+            #endregion
 
-            fila[4] = Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex);
-
-            fila[5] = Convert.ToInt32(textBox_MC_VC_Cantidad1.Text);
-
-            fila[6] = Convert.ToInt32(textBox_MC_VC_Descuento1.Text);
-
-            fila[7] = ObtenerTipoEvento(1);
-
-            //MessageBox.Show(fila[1].ToString()+fila[2].ToString()+fila[3].ToString()+fila[4].ToString()+fila[5].ToString()+fila[6].ToString());
+            if (insertarNueva)
+            {
+                condicionEN.InsertarEnDataRow(ref fila);
+                tPromo.Rows.Add(fila);
+                conEN.Save();
+                insertarNueva = false;
+            }
+            else
+            {
+                condicionEN.ModificarFilaDeDataTable(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)-1,ref tPromo);
+                conEN.Save();
+            }
+            CargarDatagridview();
         }
 
         //Funcion para limpiar campos (1 todos, 0 todos menos los textos de los combobox, 2 solo del segundo bloque de condiciones, 3 solo del tercer bloque de condiciones) de promociones por condicion
@@ -926,7 +973,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Teatro.Checked = false;
                 radioButton_MC_TE3_Todos.Checked = false;
             }
-            //false caso de limipiar todos menos los combobox del primer bloque
+            //caso de limipiar todos menos los combobox del primer bloque
             else if (todo == 0)
             {
                 textBox_MC_NomPromo.Text = "";
@@ -938,8 +985,8 @@ namespace Events4ALL
                 radioButton_MC_TE1_Teatro.Checked = false;
                 radioButton_MC_TE1_Todos.Checked = false;
                 checkBox_MC_ActivarCond1.Checked = false;
-                //comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
-                //comboBox_MC_VC_Comparacion2.Text = "Comparación";
+                comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion2.Text = "Comparación";
                 textBox_MC_VC_Cantidad2.Text = "";
                 textBox_MC_VC_Descuento2.Text = "";
                 radioButton_MC_TE2_Cine.Checked = false;
@@ -947,8 +994,8 @@ namespace Events4ALL
                 radioButton_MC_TE2_Teatro.Checked = false;
                 radioButton_MC_TE2_Todos.Checked = false;
                 checkBox_MC_ActivarCond2.Checked = false;
-                //comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
-                //comboBox_MC_VC_Comparacion3.Text = "Comparación";
+                comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion3.Text = "Comparación";
                 textBox_MC_VC_Cantidad3.Text = "";
                 textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
@@ -959,17 +1006,20 @@ namespace Events4ALL
             //Solo limpiar segundo bloque
             else if (todo == 2)
             {
+                comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion2.Text = "Comparación";
                 textBox_MC_VC_Cantidad2.Text = "";
                 textBox_MC_VC_Descuento2.Text = "";
                 radioButton_MC_TE2_Cine.Checked = false;
                 radioButton_MC_TE2_Concierto.Checked = false;
                 radioButton_MC_TE2_Teatro.Checked = false;
                 radioButton_MC_TE2_Todos.Checked = false;
-                checkBox_MC_ActivarCond2.Checked = false;
             }
             //Solo limpiar tercer bloque
             else if (todo == 3)
             {
+                comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
+                comboBox_MC_VC_Comparacion3.Text = "Comparación";
                 textBox_MC_VC_Cantidad3.Text = "";
                 textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
@@ -982,103 +1032,124 @@ namespace Events4ALL
         //Evento para cargar los datos de la fila seleccionada del datagridview
         private void dataGridView_MC_ListaPromosCond_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
+            
+            if (insertarNueva)
             {
-                MC_limpiar(0);
-                //Para el bloque 1 de las condiciones
-                //relleno el nombre de la fila seleccionada
-                textBox_MC_NomPromo.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString();
-                //relleno la descipción del a fila seleccionada
-                textBox_MC_Descripcion.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[2].Value.ToString();
-                //eligo la condición de la fila seleccionada
-                comboBox_MC_VC_Tcondicion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[3].Value);
-                //eligo la comparación de la fila seleccionada
-                comboBox_MC_VC_Comparacion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[4].Value);
-                //relleno la cantidad de la fila seleccionada
-                textBox_MC_VC_Cantidad1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[5].Value.ToString();
-                //relleno el descuento de la fila seleccionada
-                textBox_MC_VC_Descuento1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[6].Value.ToString();
-                //marco el tipo evento de la fila seleccionada
-                if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 0)
+                if (MessageBox.Show("Has pulsado Nueva condición ¿Realmente quieres cancelar la insercion de una nueva condición? ", "Nueva condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
                 {
-                    radioButton_MC_TE1_Cine.Checked = true;
+                    insertarNueva = false;
                 }
-                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 1)
-                {
-                    radioButton_MC_TE1_Teatro.Checked = true;
-                }
-                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 2)
-                {
-                    radioButton_MC_TE1_Concierto.Checked = true;
-                }
-                else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 3)
-                {
-                    radioButton_MC_TE1_Todos.Checked = true;
-                }
-                //Marcar si esta activada o no la promocion seleccionada
-                checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[18].Value);
+                
+            }
 
-                //Para el bloque 2 de las condiciones
-                if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value != DBNull.Value)
+            if (!insertarNueva)
+            {
+                #region Codigo Para rellenar los datos
+                if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
                 {
+                    MC_limpiar(0);
+                    //Para el bloque 1 de las condiciones
+                    //relleno el nombre de la fila seleccionada
+                    textBox_MC_NomPromo.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString();
+                    //relleno la descipción del a fila seleccionada
+                    textBox_MC_Descripcion.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[2].Value.ToString();
                     //eligo la condición de la fila seleccionada
-                    comboBox_MC_VC_Tcondicion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value);
+                    comboBox_MC_VC_Tcondicion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[3].Value);
                     //eligo la comparación de la fila seleccionada
-                    comboBox_MC_VC_Comparacion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[9].Value);
+                    comboBox_MC_VC_Comparacion1.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[4].Value);
                     //relleno la cantidad de la fila seleccionada
-                    textBox_MC_VC_Cantidad2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[10].Value.ToString();
+                    textBox_MC_VC_Cantidad1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[5].Value.ToString();
                     //relleno el descuento de la fila seleccionada
-                    textBox_MC_VC_Descuento2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value.ToString();
+                    textBox_MC_VC_Descuento1.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[6].Value.ToString();
                     //marco el tipo evento de la fila seleccionada
-                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 0)
+                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 0)
                     {
-                        radioButton_MC_TE2_Cine.Checked = true;
+                        radioButton_MC_TE1_Cine.Checked = true;
                     }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 1)
+                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 1)
                     {
-                        radioButton_MC_TE2_Teatro.Checked = true;
+                        radioButton_MC_TE1_Teatro.Checked = true;
                     }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 2)
+                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 2)
                     {
-                        radioButton_MC_TE2_Concierto.Checked = true;
+                        radioButton_MC_TE1_Concierto.Checked = true;
                     }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 3)
+                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[7].Value) == 3)
                     {
-                        radioButton_MC_TE2_Todos.Checked = true;
+                        radioButton_MC_TE1_Todos.Checked = true;
                     }
-                    checkBox_MC_ActivarCond1.Checked = true;
-                }
+                    //Marcar si esta activada o no la promocion seleccionada
+                    checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[18].Value);
 
-                //Para el bloque 3 de las condiciones
-                if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value != DBNull.Value)
-                {
-                    //eligo la condición de la fila seleccionada
-                    comboBox_MC_VC_Tcondicion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value);
-                    //eligo la comparación de la fila seleccionada
-                    comboBox_MC_VC_Comparacion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[14].Value);
-                    //relleno la cantidad de la fila seleccionada
-                    textBox_MC_VC_Cantidad3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value.ToString();
-                    //relleno el descuento de la fila seleccionada
-                    textBox_MC_VC_Descuento3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString();
-                    //marco el tipo evento de la fila seleccionada
-                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 0)
+                    //Para el bloque 2 de las condiciones
+                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value) != -1)
                     {
-                        radioButton_MC_TE3_Cine.Checked = true;
+                        //Con esto fuerzo a volver a cargar el SelectedIndex porque si es el mismo no muesra el texto aunque cambie, ya que el SelectedIndex es el mismo
+                        comboBox_MC_VC_Tcondicion2.SelectedIndex = -1;
+                        comboBox_MC_VC_Comparacion2.SelectedIndex = -1;
+                        //eligo la condición de la fila seleccionada
+                        comboBox_MC_VC_Tcondicion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value);
+                        //eligo la comparación de la fila seleccionada
+                        comboBox_MC_VC_Comparacion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[9].Value);
+                        //relleno la cantidad de la fila seleccionada
+                        textBox_MC_VC_Cantidad2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[10].Value.ToString();
+                        //relleno el descuento de la fila seleccionada
+                        textBox_MC_VC_Descuento2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value.ToString();
+                        //marco el tipo evento de la fila seleccionada
+                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 0)
+                        {
+                            radioButton_MC_TE2_Cine.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 1)
+                        {
+                            radioButton_MC_TE2_Teatro.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 2)
+                        {
+                            radioButton_MC_TE2_Concierto.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 3)
+                        {
+                            radioButton_MC_TE2_Todos.Checked = true;
+                        }
+                        checkBox_MC_ActivarCond1.Checked = true;
                     }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 1)
+
+                    //Para el bloque 3 de las condiciones
+                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value) != -1)
                     {
-                        radioButton_MC_TE3_Teatro.Checked = true;
+                        //Con esto fuerzo a volver a cargar el SelectedIndex porque si es el mismo no muesra el texto aunque cambie, ya que el SelectedIndex es el mismo
+                        comboBox_MC_VC_Tcondicion3.SelectedIndex = -1;
+                        comboBox_MC_VC_Comparacion3.SelectedIndex = -1;
+                        //eligo la condición de la fila seleccionada
+                        comboBox_MC_VC_Tcondicion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value);
+                        //eligo la comparación de la fila seleccionada
+                        comboBox_MC_VC_Comparacion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[14].Value);
+                        //relleno la cantidad de la fila seleccionada
+                        textBox_MC_VC_Cantidad3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value.ToString();
+                        //relleno el descuento de la fila seleccionada
+                        textBox_MC_VC_Descuento3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString();
+                        //marco el tipo evento de la fila seleccionada
+                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 0)
+                        {
+                            radioButton_MC_TE3_Cine.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 1)
+                        {
+                            radioButton_MC_TE3_Teatro.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 2)
+                        {
+                            radioButton_MC_TE3_Concierto.Checked = true;
+                        }
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 3)
+                        {
+                            radioButton_MC_TE3_Todos.Checked = true;
+                        }
+                        checkBox_MC_ActivarCond2.Checked = true;
                     }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 2)
-                    {
-                        radioButton_MC_TE3_Concierto.Checked = true;
-                    }
-                    else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 3)
-                    {
-                        radioButton_MC_TE3_Todos.Checked = true;
-                    }
-                    checkBox_MC_ActivarCond2.Checked = true;
                 }
+                #endregion
             }
         }
 
@@ -1145,9 +1216,12 @@ namespace Events4ALL
             label_PE_TTitulo.Text = tEspec.Rows[idEventoSelec][1].ToString();
             label_PE_TTipo.Text = tEspec.Rows[idEventoSelec][6].ToString();
             label_PE_TDescripcion.Text = tEspec.Rows[idEventoSelec][2].ToString();
-            label_PE_TFechaIni.Text = tEspec.Rows[idEventoSelec][3].ToString();
-            label_PE_TFechaFin.Text = tEspec.Rows[idEventoSelec][4].ToString();
-            label_PE_TPrecio.Text = tEspec.Rows[idEventoSelec][5].ToString();
+            DateTime fini, ffin;
+            fini = (DateTime)tEspec.Rows[idEventoSelec][3];
+            ffin =(DateTime)tEspec.Rows[idEventoSelec][4];
+            label_PE_TFechaIni.Text = fini.ToShortDateString();
+            label_PE_TFechaFin.Text = ffin.ToShortDateString();
+            label_PE_TPrecio.Text = Convert.ToInt32(tEspec.Rows[idEventoSelec][5]).ToString("C2");
 
             LimpiarPorEspectaculo();
 
@@ -1269,6 +1343,7 @@ namespace Events4ALL
                 radioButton_MC_TE2_Concierto.Enabled = false;
                 radioButton_MC_TE2_Teatro.Enabled = false;
                 radioButton_MC_TE2_Todos.Enabled = false;
+                checkBox_MC_ActivarCond1.Checked = false;
             }
             else if (cual == 2)
             {
@@ -1280,6 +1355,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Concierto.Enabled = false;
                 radioButton_MC_TE3_Teatro.Enabled = false;
                 radioButton_MC_TE3_Todos.Enabled = false;
+                checkBox_MC_ActivarCond2.Checked = false;
             }
         }
 
@@ -1290,6 +1366,17 @@ namespace Events4ALL
             limpiarErrorProvider(1);
             checkBox_MC_ActivarCond1.Checked = false;
             checkBox_MC_ActivarCond2.Checked = false;
+            insertarNueva = true;
+        }
+
+        private void button_MC_Eliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)==DialogResult.Yes)
+            {
+                tPromo.Rows[Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value) - 1].Delete();
+                conEN.Save();
+                MC_limpiar(1);
+            }
         }
     }
 }

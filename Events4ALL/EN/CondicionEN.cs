@@ -173,7 +173,7 @@ namespace Events4ALL.EN
         }
         #endregion
 
-        #region constructor sobrecargador
+        #region constructor sobrecargado con todos los paremetros
         public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act)
         {
             idCondicion = id;
@@ -201,7 +201,55 @@ namespace Events4ALL.EN
             activado = act;
         }
         #endregion
-        
+
+        #region Insertar una fila
+        public void InsertarEnDataRow(ref DataRow fila)
+        {
+            fila[1] = nombre;
+            fila[2] = descripcion;
+            fila[3] = tCondicion1;
+            fila[4] = comparacion1;
+            fila[5] = cantidad1;
+            fila[6] = descuento1;
+            fila[7] = tEvento1;
+            fila[8] = tCondicion2;
+            fila[9] = comparacion2;
+            fila[10] = cantidad2;
+            fila[11] = descuento2;
+            fila[12] = tEvento2;
+            fila[13] = tCondicion3;
+            fila[14] = comparacion3;
+            fila[15] = cantidad3;
+            fila[16] = descuento3;
+            fila[17] = tEvento3;
+            fila[18] = activado;
+        }
+        #endregion
+
+        #region Modificar una fila
+        public void ModificarFilaDeDataTable(int id, ref DataTable tabla)
+        {
+            tabla.Rows[id][1] = nombre;
+            tabla.Rows[id][2] = descripcion;
+            tabla.Rows[id][3] = tCondicion1;
+            tabla.Rows[id][4] = comparacion1;
+            tabla.Rows[id][5] = cantidad1;
+            tabla.Rows[id][6] = descuento1;
+            tabla.Rows[id][7] = tEvento1;
+            tabla.Rows[id][8] = tCondicion2;
+            tabla.Rows[id][9] = comparacion2;
+            tabla.Rows[id][10] = cantidad2;
+            tabla.Rows[id][11] = descuento2;
+            tabla.Rows[id][12] = tEvento2;
+            tabla.Rows[id][13] = tCondicion3;
+            tabla.Rows[id][14] = comparacion3;
+            tabla.Rows[id][15] = cantidad3;
+            tabla.Rows[id][16] = descuento3;
+            tabla.Rows[id][17] = tEvento3;
+            tabla.Rows[id][18] = activado;
+        }
+        #endregion
+
         public DataSet ObtenerTodas()
         {
             return conCAD.ObtenerTodas();

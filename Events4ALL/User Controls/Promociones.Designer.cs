@@ -1146,6 +1146,7 @@
             this.button_MC_Eliminar.TabIndex = 8;
             this.button_MC_Eliminar.Text = "Eliminar";
             this.button_MC_Eliminar.UseVisualStyleBackColor = true;
+            this.button_MC_Eliminar.Click += new System.EventHandler(this.button_MC_Eliminar_Click);
             // 
             // button_MC_Guardar
             // 
