@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.IO;
-using System.Configuration;
+
 
 namespace Events4ALL.Auxiliares
 {
@@ -22,7 +22,7 @@ namespace Events4ALL.Auxiliares
             string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|Events4AllDB.mdf ;Integrated Security=True;User Instance=True";
             SqlConnection c = new SqlConnection(s);
             return c;*/
-            AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName);
+
             Console.WriteLine("#########Datadirectory es: " + AppDomain.CurrentDomain.GetData("DataDirectory"));
             string s = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|Events4AllDB.mdf ;Integrated Security=True;User Instance=True";
             SqlConnection c = new SqlConnection(s);

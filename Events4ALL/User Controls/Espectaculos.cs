@@ -10,6 +10,9 @@ using Events4ALL.EN;
 using System.IO;
 using System.Drawing.Imaging;
 
+
+
+
 namespace Events4ALL
 {
     public partial class Espectaculos : UserControl
