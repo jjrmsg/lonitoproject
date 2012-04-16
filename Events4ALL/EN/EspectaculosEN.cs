@@ -16,7 +16,7 @@ namespace Events4ALL.EN
         private string fechFin;
         private decimal precio;
         private string genero;
-        private string cartel;
+        private Image cartel;
         public int idEspectaculo { get; set; }
 
         public EspectaculosEN()
@@ -24,7 +24,7 @@ namespace Events4ALL.EN
 
         }
 
-        public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin, string cartel)
+        public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin, Image cartel)
         {
             this.titulo = titulo;
             this.descripcion = descripcion;

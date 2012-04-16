@@ -65,6 +65,8 @@ namespace Events4ALL
         private void btCartel_Click(object sender, EventArgs e)
         {
             OpenFileDialog OFich = new OpenFileDialog();
+            OFich.ShowHelp = true;
+           
             OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
             pbCartel.SizeMode = PictureBoxSizeMode.StretchImage;
             if (OFich.ShowDialog() == DialogResult.OK)
@@ -148,7 +150,7 @@ namespace Events4ALL
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
                                                                 dtFechaFin.Text,
-                                                                "0");
+                                                                pbCartel.Image);
                 if (espectaculo.Insertar(cbSala.Text))
                 {
                     MessageBox.Show("Espectaculo insertado");

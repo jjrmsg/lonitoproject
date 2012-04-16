@@ -39,15 +39,17 @@ namespace Events4ALL.CAD
             return precio;
         }
 
-        public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, string cartel)
+        public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
         {
+            Byte[] result  = (Byte[])new ImageConverter().ConvertTo(cartel, typeof(Byte[]));
+
             SqlConnection conn = null;
             BD bd = new BD();
 
             String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Cartel, Precio, Genero, FechaIni, FechaFin) values (";
             comEspectaculo += "'" + titulo + "',";
             comEspectaculo += "'" + descripcion + "',";
-            comEspectaculo += cartel+",";
+            comEspectaculo += "CAST('" + result +"' AS VARBINARY(MAX)),";
             comEspectaculo += "'" + precio + "',";
             comEspectaculo += "'" + genero + "',";
             comEspectaculo += "'" + fechIni + "',";
