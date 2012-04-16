@@ -34,5 +34,35 @@ namespace Events4ALL.CAD
             }
             return bdvirtual;
         }
+
+        public bool ExisteCliente(string nif)
+        {
+            int i=0;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            try
+            {
+                c.Open();
+                SqlCommand cmd = new SqlCommand("select count(*) from Cliente where NIF='" + nif + "'", c);
+                i = (int)cmd.ExecuteScalar(); 
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            Console.WriteLine("Existe o no el cliente: " + i);
+            if(i>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

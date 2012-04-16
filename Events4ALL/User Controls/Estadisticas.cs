@@ -268,15 +268,33 @@ namespace Events4ALL
                 tipoVentas.Clear();
                 generoVentas.Clear();
 
-                ObtenerDatosCliente();
-                ObtenerDatosCliGenerales();
-                ObtenerGeneroPref();
-                ObtenerTipoPref();
+                bool existe = false;
+                existe = cliEN.ExisteCliente(textNIF.Text);
+                if (existe)
+                {
+                    ObtenerDatosCliente();
+                    ObtenerDatosCliGenerales();
+                    ObtenerGeneroPref();
+                    ObtenerTipoPref();
+                }
+                else
+                {
+                    textNIF.Text = "";
+                    labelNombre.Text = "-";
+                    labelApellidos.Text = "-";
+                    labelCiudad.Text = "-";
+                    labelEntradas.Text = "-";
+                    labelDinero.Text = "-";
+                    labelEspec.Text = "-";
+                    MessageBox.Show("El cliente no existe");
+                }
             }
         }
 
         private void ObtenerDatosCliente()
         {
+            byte[] bImage = new byte[0];
+            Image im = null;
             DataSet ds = new DataSet();
             cliEN.nif = textNIF.Text;
             ds = cliEN.getClienteByNif();
@@ -286,18 +304,38 @@ namespace Events4ALL
                 labelNombre.Text = row["Nombre"].ToString();
                 labelApellidos.Text = row["Apellidos"].ToString();
                 labelCiudad.Text = row["Poblacion"].ToString();
+
+                if (row["Foto"] != DBNull.Value)
+                {
+                    bImage = (byte[])row["Foto"];
+                    MemoryStream ms = new MemoryStream(bImage);
+                    im = Image.FromStream(ms);
+                }
+
+                if (im != null)
+                {
+                    try
+                    {
+                        pictureCliente.Image = im;
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
             }
         }
 
         private void ObtenerDatosCliGenerales()
         {
             DataSet ds = new DataSet();
+
             ds = vEN.getEstadisticasCliente(textNIF.Text);
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
                 decimal d = (decimal)row["Dinero"];
-                labelDinero.Text = Math.Round(d, 2)+" €";
+                labelDinero.Text = Math.Round(d, 2) + " €";
                 labelEntradas.Text = row["Entradas"].ToString();
             }
 
@@ -307,6 +345,7 @@ namespace Events4ALL
             {
                 labelEspec.Text = row["Espectaculos"].ToString();
             }
+            
         }
 
         private void ObtenerGeneroPref()

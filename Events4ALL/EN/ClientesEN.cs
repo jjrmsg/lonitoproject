@@ -21,5 +21,10 @@ namespace Events4ALL.EN
         {
             return cliCAD.getClienteByNif(nif);
         }
+
+        public bool ExisteCliente(string nif)
+        {
+            return cliCAD.ExisteCliente(nif);
+        }
     }
 }
