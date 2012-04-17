@@ -33,5 +33,14 @@ namespace Events4ALL.Properties {
                 return ((string)(this["Events4AllDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("es")]
+        public string Lenguaje {
+            get {
+                return ((string)(this["Lenguaje"]));
+            }
+        }
     }
 }

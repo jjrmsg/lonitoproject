@@ -112,16 +112,16 @@
             // 
             // button2
             // 
-            this.button2.Image = global::Events4ALL.Properties.Resources.quit_icon;
             resources.ApplyResources(this.button2, "button2");
+            this.button2.Image = global::Events4ALL.Properties.Resources.quit_icon;
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // button1
             // 
-            this.button1.Image = global::Events4ALL.Properties.Resources.logout_img;
             resources.ApplyResources(this.button1, "button1");
+            this.button1.Image = global::Events4ALL.Properties.Resources.logout_img;
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.logoutButton_Click);
@@ -148,9 +148,9 @@
             // 
             // pictureBox5
             // 
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
@@ -207,8 +207,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.logo;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::Events4ALL.Properties.Resources.logo;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 

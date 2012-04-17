@@ -11,6 +11,8 @@ using System.Threading;
 using System.IO;
 using Events4ALL.Auxiliares;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace Events4ALL
 {
@@ -60,11 +62,11 @@ namespace Events4ALL
         {
             if (comboBox1.Text == "Es" || comboBox1.Text == "Es")
             {
-                lang = "es";
+                ConfigurationManager.AppSettings.Set("Lenguaje", "es");
             }
             else if (comboBox1.Text == "En" || comboBox1.Text == "En")
             {
-                lang = "en";
+                ConfigurationManager.AppSettings.Set("Lenguaje", "en");
             }
         }
 

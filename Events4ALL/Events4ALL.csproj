@@ -171,6 +171,9 @@
     <EmbeddedResource Include="FormBase.en.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBase.es.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +195,12 @@
     </Compile>
     <EmbeddedResource Include="Update.resx">
       <DependentUpon>Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Admins.en.resx">
+      <DependentUpon>Admins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Admins.es-ES.resx">
+      <DependentUpon>Admins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Admins.resx">
       <DependentUpon>Admins.cs</DependentUpon>

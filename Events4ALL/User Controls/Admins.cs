@@ -9,6 +9,10 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Events4ALL.Auxiliares;
 using Events4ALL.EN;
+using System.Configuration;
+using System.Collections.Specialized;
+using System.Globalization;
+using System.Threading;
 
 namespace Events4ALL
 {
@@ -29,6 +33,10 @@ namespace Events4ALL
 
         public Admins()
         {
+            string lang = ConfigurationManager.AppSettings.Get("Lenguaje");
+            if (lang == "en")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            
             InitializeComponent();
 
             dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());

@@ -8,7 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
-using Events4ALL.EN; 
+using Events4ALL.EN;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace Events4ALL
 {
@@ -23,6 +25,9 @@ namespace Events4ALL
 
         public FormBase(string user, string pass, string lang)
         {
+            lang = ConfigurationManager.AppSettings.Get("Lenguaje");
+            if (lang == "en")
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
             mEN = new MensajesEN();
             PintarInterfaz(user, pass, lang);
@@ -31,10 +36,7 @@ namespace Events4ALL
         private void PintarInterfaz(string user, string pass, string lang)
         {
             DoubleBuffered = true;
-
-            if (lang == "en")
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-
+            lang = ConfigurationManager.AppSettings.Get("Lenguaje");
             numImages = imageList1.Images.Count;
 
             if (lang == "es" || lang == " ")
@@ -46,7 +48,7 @@ namespace Events4ALL
                 listBox1.Items.Add(new listItem("Espectáculos", 4));
                 listBox1.Items.Add(new listItem("Promociones", 5));
                 listBox1.Items.Add(new listItem("Estadísticas", 6));
-                listBox1.Items.Add(new listItem("Ventas y reservas", 7));
+                listBox1.Items.Add(new listItem("Ventas", 7));
                 listBox1.Items.Add(new listItem("Mensajes", 8));
                 //listBox1.Items.Add(new listItem("Logs", 8));
                 listBox1.SetSelected(0, true);
@@ -60,7 +62,7 @@ namespace Events4ALL
                 listBox1.Items.Add(new listItem("Shows", 4));
                 listBox1.Items.Add(new listItem("Promotions", 5));
                 listBox1.Items.Add(new listItem("Statistics", 6));
-                listBox1.Items.Add(new listItem("Sales and reservations", 7));
+                listBox1.Items.Add(new listItem("Sales", 7));
                 listBox1.Items.Add(new listItem("Messages", 8));
                 listBox1.SetSelected(0, true);
             }
