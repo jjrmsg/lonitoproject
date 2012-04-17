@@ -47,6 +47,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estadisticas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -903,11 +904,13 @@
             // 
             this.errorAnyo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorAnyo.ContainerControl = this;
+            this.errorAnyo.Icon = ((System.Drawing.Icon)(resources.GetObject("errorAnyo.Icon")));
             // 
             // errorMes
             // 
             this.errorMes.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorMes.ContainerControl = this;
+            this.errorMes.Icon = ((System.Drawing.Icon)(resources.GetObject("errorMes.Icon")));
             // 
             // Estadisticas
             // 

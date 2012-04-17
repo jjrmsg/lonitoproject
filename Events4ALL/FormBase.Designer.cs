@@ -48,14 +48,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.admins1 = new Events4ALL.Admins();
-            this.clientes1 = new Events4ALL.Clientes();
-            this.estadisticas1 = new Events4ALL.Estadisticas();
-            this.inicio1 = new Events4ALL.Inicio();
-            this.promociones1 = new Events4ALL.Promociones();
-            this.salas1 = new Events4ALL.Salas();
-            this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
             this.ventas1 = new Events4ALL.Ventas();
+            this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
+            this.salas1 = new Events4ALL.Salas();
+            this.promociones1 = new Events4ALL.Promociones();
+            this.inicio1 = new Events4ALL.Inicio();
+            this.estadisticas1 = new Events4ALL.Estadisticas();
+            this.clientes1 = new Events4ALL.Clientes();
+            this.admins1 = new Events4ALL.Admins();
             this.espectaculos1 = new Events4ALL.Espectaculos();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -212,45 +212,45 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
-            // admins1
+            // ventas1
             // 
-            resources.ApplyResources(this.admins1, "admins1");
-            this.admins1.Name = "admins1";
-            // 
-            // clientes1
-            // 
-            resources.ApplyResources(this.clientes1, "clientes1");
-            this.clientes1.Name = "clientes1";
-            // 
-            // estadisticas1
-            // 
-            resources.ApplyResources(this.estadisticas1, "estadisticas1");
-            this.estadisticas1.Name = "estadisticas1";
-            // 
-            // inicio1
-            // 
-            resources.ApplyResources(this.inicio1, "inicio1");
-            this.inicio1.Name = "inicio1";
-            // 
-            // promociones1
-            // 
-            resources.ApplyResources(this.promociones1, "promociones1");
-            this.promociones1.Name = "promociones1";
-            // 
-            // salas1
-            // 
-            resources.ApplyResources(this.salas1, "salas1");
-            this.salas1.Name = "salas1";
+            resources.ApplyResources(this.ventas1, "ventas1");
+            this.ventas1.Name = "ventas1";
             // 
             // mensajes1
             // 
             resources.ApplyResources(this.mensajes1, "mensajes1");
             this.mensajes1.Name = "mensajes1";
             // 
-            // ventas1
+            // salas1
             // 
-            resources.ApplyResources(this.ventas1, "ventas1");
-            this.ventas1.Name = "ventas1";
+            resources.ApplyResources(this.salas1, "salas1");
+            this.salas1.Name = "salas1";
+            // 
+            // promociones1
+            // 
+            resources.ApplyResources(this.promociones1, "promociones1");
+            this.promociones1.Name = "promociones1";
+            // 
+            // inicio1
+            // 
+            resources.ApplyResources(this.inicio1, "inicio1");
+            this.inicio1.Name = "inicio1";
+            // 
+            // estadisticas1
+            // 
+            resources.ApplyResources(this.estadisticas1, "estadisticas1");
+            this.estadisticas1.Name = "estadisticas1";
+            // 
+            // clientes1
+            // 
+            resources.ApplyResources(this.clientes1, "clientes1");
+            this.clientes1.Name = "clientes1";
+            // 
+            // admins1
+            // 
+            resources.ApplyResources(this.admins1, "admins1");
+            this.admins1.Name = "admins1";
             // 
             // espectaculos1
             // 
@@ -262,8 +262,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.espectaculos1);
-            this.Controls.Add(this.ventas1);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.mensajes1);
             this.Controls.Add(this.salas1);
             this.Controls.Add(this.promociones1);
@@ -271,9 +272,8 @@
             this.Controls.Add(this.estadisticas1);
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.admins1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.espectaculos1);
+            this.Controls.Add(this.ventas1);
             this.Name = "FormBase";
             this.Load += new System.EventHandler(this.FormBase_Load);
             this.panel4.ResumeLayout(false);
