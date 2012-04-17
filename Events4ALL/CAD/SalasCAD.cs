@@ -51,7 +51,7 @@ namespace Events4ALL.CAD
             }
             catch
             {
-                newID = 888;
+                newID = 1;
             }
             finally
             {
