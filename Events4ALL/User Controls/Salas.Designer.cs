@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAñadirSala = new System.Windows.Forms.TabPage();
             this.labelUpdate = new System.Windows.Forms.Label();
@@ -1027,10 +1028,12 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
+            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 
             // Salas
             // 
