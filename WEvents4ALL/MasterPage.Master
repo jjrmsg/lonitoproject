@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="WEvents4ALL.MAsterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Estilo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="TopBar">
+        <asp:ContentPlaceHolder ID="TopBar1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    
+    <div id="Bar">
+        <asp:ContentPlaceHolder ID="Bar1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div id="wrap">
+        <div id="Content">
+            <asp:ContentPlaceHolder ID="Content1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>
