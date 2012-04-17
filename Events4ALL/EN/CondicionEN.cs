@@ -8,6 +8,8 @@ using System.Data.Common;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Events4ALL.EN
 {
@@ -47,6 +49,7 @@ namespace Events4ALL.EN
         private int descuento3;
         private int tEvento3;
         private bool activado;
+        private Byte[] imagen;
         CondicionCAD conCAD;
         #endregion
 
@@ -164,6 +167,12 @@ namespace Events4ALL.EN
             get { return activado; }
             set { activado = value; }
         }
+
+        public Byte[] Imagen
+        {
+            get { return imagen; }
+            set { imagen = value; }
+        }
         #endregion
 
         #region constructor por defecto
@@ -174,7 +183,7 @@ namespace Events4ALL.EN
         #endregion
 
         #region constructor sobrecargado con todos los paremetros
-        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act)
+        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act, Byte[] img)
         {
             idCondicion = id;
             nombre = nom;
@@ -199,12 +208,45 @@ namespace Events4ALL.EN
             tEvento3 = teven3;
 
             activado = act;
+
+            imagen = img;
+        }
+        #endregion
+
+        #region constructor sobrecargado sin la imagen
+        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act)
+        {
+            idCondicion = id;
+            nombre = nom;
+            descripcion = desc;
+
+            tCondicion1 = tcond1;
+            comparacion1 = comp1;
+            cantidad1 = cant1;
+            descuento1 = descu1;
+            tEvento1 = teven1;
+
+            tCondicion2 = tcond2;
+            comparacion2 = comp2;
+            cantidad2 = cant2;
+            descuento2 = descu2;
+            tEvento2 = teven2;
+
+            tCondicion3 = tcond3;
+            comparacion3 = comp3;
+            cantidad3 = cant3;
+            descuento3 = descu3;
+            tEvento3 = teven3;
+
+            activado = act;
+
         }
         #endregion
 
         #region Insertar una fila
         public void InsertarEnDataRow(ref DataRow fila)
         {
+            fila[0] = idCondicion;
             fila[1] = nombre;
             fila[2] = descripcion;
             fila[3] = tCondicion1;
@@ -223,12 +265,14 @@ namespace Events4ALL.EN
             fila[16] = descuento3;
             fila[17] = tEvento3;
             fila[18] = activado;
+            fila[19] = imagen;
         }
         #endregion
 
         #region Modificar una fila
         public void ModificarFilaDeDataTable(int id, ref DataTable tabla)
         {
+            //tabla.Rows[id][0] = idCondicion;
             tabla.Rows[id][1] = nombre;
             tabla.Rows[id][2] = descripcion;
             tabla.Rows[id][3] = tCondicion1;
@@ -247,6 +291,7 @@ namespace Events4ALL.EN
             tabla.Rows[id][16] = descuento3;
             tabla.Rows[id][17] = tEvento3;
             tabla.Rows[id][18] = activado;
+            tabla.Rows[id][19] = imagen;
         }
         #endregion
 

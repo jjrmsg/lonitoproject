@@ -10,6 +10,8 @@ using Events4ALL.CAD;
 using Events4ALL.EN;
 using System.Collections;
 using Events4ALL.Auxiliares;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Events4ALL
 {
@@ -147,7 +149,6 @@ namespace Events4ALL
                 DataRow nuevafila;
                 nuevafila = tPromo.NewRow();
 
-                dataGridView_MC_ListaPromosCond.DataSource = "";
                 dataGridView_MC_ListaPromosCond.DataSource = promos;
                 dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
                 dataGridView_MC_ListaPromosCond.Columns[0].Visible = false;
@@ -167,6 +168,7 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.Columns[15].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
+                dataGridView_MC_ListaPromosCond.Columns[19].Visible = false;
                 dataGridView_MC_ListaPromosCond.ReadOnly = true;
                 dataGridView_MC_ListaPromosCond.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dataGridView_MC_ListaPromosCond.MultiSelect = false;
@@ -855,70 +857,102 @@ namespace Events4ALL
             return resul;
         }
 
+        //Funcion obtener nueva id para guardar en condiciones
+        private int NuevaIdCondicion()
+        {
+            int nuevaID;
+            nuevaID = Convert.ToInt32(tPromo.Rows[0][0]);
+            foreach (DataRow row in tPromo.Rows)
+            {
+                if (nuevaID < Convert.ToInt32(row[0]))
+                {
+                    nuevaID = Convert.ToInt32(row[0]);
+                }
+            }
+            return nuevaID+1;
+        }
+
         //Funcion para guardar los cambios en la condicion seleccionada sobre la BD
         private void GuardarCondicion()
         {
             DataRow fila = tPromo.NewRow();
             
-            //El nombre no puede ser mayor de 10 caracteres, lo capamos si es mayor de 10
-            string nompromo = textBox_MC_NomPromo.Text.ToString();
-            if (nompromo.Length - 10 >= 0)
-            {
-                nompromo = nompromo.Remove(10, nompromo.Length - 10);
-            }
-
             CondicionEN condicionEN;
+
+            #region imagen
+            MemoryStream imgdefault = new MemoryStream();
+            Events4ALL.Properties.Resources.image_default.Save(imgdefault, ImageFormat.Jpeg);
+            Byte[] imagen = imgdefault.GetBuffer();
+            if (insertarNueva)
+            {
+                    MemoryStream ms = new MemoryStream();
+                    pictureBox_MC_CartelPromo.Image.Save(ms, ImageFormat.Jpeg);
+                    imagen = ms.GetBuffer();
+            }
+            else
+            {
+                    MemoryStream ms = new MemoryStream();
+                    pictureBox_MC_CartelPromo.Image.Save(ms, ImageFormat.Jpeg);
+                    imagen = ms.GetBuffer();
+            }
+            #endregion
 
             #region crear el EN
             if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //Solo insertar la condicion obliglatoria
-                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(), Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex), 
-                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text), 
-                        ObtenerTipoEvento(1), 
-                        -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked);
+                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(), Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                            ObtenerTipoEvento(1),
+                            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
+                            imagen);
+
+            
             }
             else if(checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //Se inserta la primera y segunda condicion
-                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(), 
-                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex), 
-                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text), 
-                        ObtenerTipoEvento(1),
-                        Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
-                        Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento2.Text), 
-                        ObtenerTipoEvento(2),  
-                        -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked);
+                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(),
+                            Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                            ObtenerTipoEvento(1),
+                            Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
+                            ObtenerTipoEvento(2),
+                            -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
+                            imagen);
             }
             else
             {
                 //Se insertan las tres condiciones
-                condicionEN = new CondicionEN(1, nompromo, textBox_MC_Descripcion.Text.ToString(),
-                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
-                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
-                        ObtenerTipoEvento(1),
-                        Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
-                        Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
-                        ObtenerTipoEvento(2),
-                        Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
-                        Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
-                        Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
-                        Convert.ToInt32(textBox_MC_VC_Descuento3.Text),
-                        ObtenerTipoEvento(3),
-                        checkBox_MC_ActPromo.Checked);
+                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(),
+                            Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                            ObtenerTipoEvento(1),
+                            Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
+                            ObtenerTipoEvento(2),
+                            Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
+                            Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
+                            Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
+                            Convert.ToInt32(textBox_MC_VC_Descuento3.Text),
+                            ObtenerTipoEvento(3),
+                            checkBox_MC_ActPromo.Checked, 
+                            imagen);
             }
             #endregion
 
+            #region insertar nueva o modificar existente
             if (insertarNueva)
             {
                 condicionEN.InsertarEnDataRow(ref fila);
@@ -928,10 +962,10 @@ namespace Events4ALL
             }
             else
             {
-                condicionEN.ModificarFilaDeDataTable(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)-1,ref tPromo);
+                condicionEN.ModificarFilaDeDataTable(NumFilaTabla(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)),ref tPromo);
                 conEN.Save();
             }
-            dataGridView_MC_ListaPromosCond.Refresh();
+            #endregion
             MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
@@ -969,6 +1003,8 @@ namespace Events4ALL
                 radioButton_MC_TE3_Concierto.Checked = false;
                 radioButton_MC_TE3_Teatro.Checked = false;
                 radioButton_MC_TE3_Todos.Checked = false;
+                checkBox_MC_ActPromo.Checked = false;
+                pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
             }
             //caso de limipiar todos menos los combobox del primer bloque
             else if (todo == 0)
@@ -999,6 +1035,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Concierto.Checked = false;
                 radioButton_MC_TE3_Teatro.Checked = false;
                 radioButton_MC_TE3_Todos.Checked = false;
+                pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
             }
             //Solo limpiar segundo bloque
             else if (todo == 2)
@@ -1042,8 +1079,8 @@ namespace Events4ALL
             if (!insertarNueva)
             {
                 #region Codigo Para rellenar los datos
-                if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
-                {
+                //if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
+                //{
                     MC_limpiar(0);
                     //Para el bloque 1 de las condiciones
                     //relleno el nombre de la fila seleccionada
@@ -1077,6 +1114,18 @@ namespace Events4ALL
                     }
                     //Marcar si esta activada o no la promocion seleccionada
                     checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[18].Value);
+                    //Cargando la imagen, si tiene, si no, se muesra la de por defecto
+                    if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value != System.DBNull.Value)
+                    {
+                        byte[] bImage = (byte[])dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value;
+                        MemoryStream ms = new MemoryStream(bImage);
+                        pictureBox_MC_CartelPromo.Image = Image.FromStream(ms, true, true);
+                    }
+                    else
+                    {
+                        pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
+                    }
+                    //pictureBox_MC_CartelPromo.Image = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value;
 
                     //Para el bloque 2 de las condiciones
                     if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value) != -1)
@@ -1145,7 +1194,7 @@ namespace Events4ALL
                         }
                         checkBox_MC_ActivarCond2.Checked = true;
                     }
-                }
+                //}
                 #endregion
             }
         }
@@ -1371,10 +1420,47 @@ namespace Events4ALL
         {
             if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
             {
-                /*tPromo.Rows[Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0])].Delete();
-                conEN.Save();
-                MC_limpiar(1);*/
+                int id = (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value));
+                int cual = NumFilaTabla(id);
+                if (Convert.ToInt32(tPromo.Rows[cual][0]) == id)
+                {
+                    tPromo.Rows[cual].Delete();
+                    conEN.Save();
+                    MC_limpiar(1);
+                }
+
+                
             }
+        }
+
+        //Funcion para saber que fila corresponde al DataTable mediante su id
+        private int NumFilaTabla(int id)
+        {
+            int i;
+            bool sal = false;
+            for (i = 0; i < tPromo.Rows.Count && !sal; i++)
+            {
+                if (Convert.ToInt32(tPromo.Rows[i][0]) == id)
+                {
+                    sal = true;
+                }
+            }
+            return i-1;
+        }
+
+        //Funcion para poner una imagen
+        private void button_MC_SubirFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFich = new OpenFileDialog();
+            OFich.ShowHelp = true;
+            
+            OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
+
+            pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.CenterImage;
+            if (OFich.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox_MC_CartelPromo.Image = Image.FromFile(OFich.FileName);
+            }  
         }
     }
 }

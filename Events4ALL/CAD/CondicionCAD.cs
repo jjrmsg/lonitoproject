@@ -44,7 +44,7 @@ namespace Events4ALL.CAD
             }
             finally
             {
-                con.Close();
+                if (con != null) con.Close(); // Se asegura de cerrar la conexión.
             }
             return bdvirtual;
         }
@@ -53,6 +53,7 @@ namespace Events4ALL.CAD
         {
             try
             {
+                con.Open();
                 cbuilder = new SqlCommandBuilder(da);
                 da.Update(bdvirtual, "Condicion");
             }
@@ -63,6 +64,7 @@ namespace Events4ALL.CAD
             }
             finally
             {
+                if (con != null) con.Close(); // Se asegura de cerrar la conexión.
             }
         }
     }

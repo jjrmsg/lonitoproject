@@ -1037,6 +1037,7 @@
             this.button_MC_SubirFoto.Text = "Seleccionar imágen";
             this.button_MC_SubirFoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_MC_SubirFoto.UseVisualStyleBackColor = true;
+            this.button_MC_SubirFoto.Click += new System.EventHandler(this.button_MC_SubirFoto_Click);
             // 
             // label_MC_CartelPromo
             // 
