@@ -244,7 +244,7 @@
     <value>59, 23</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Entrar</value>
@@ -277,7 +277,7 @@
     <value>70, 17</value>
   </data>
   <data name="checkSave.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="checkSave.Text" xml:space="preserve">
     <value>Recordar</value>
@@ -328,7 +328,7 @@
     <value>45, 18</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>

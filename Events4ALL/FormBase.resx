@@ -128,6 +128,9 @@
   <data name="messagePicture.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Right</value>
   </data>
+  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
+    <value>listBox1</value>
+  </data>
   <data name="&gt;&gt;labelMensajes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -159,9 +162,6 @@
   <data name="mensajes1.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 49</value>
   </data>
-  <data name="&gt;&gt;apellidosLabel.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
   <data name="clockLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -175,7 +175,7 @@
     <value>timer1</value>
   </data>
   <data name="&gt;&gt;admins1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -197,6 +197,9 @@
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 107</value>
+  </data>
+  <data name="listBox1.ItemHeight" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
   <data name="apellidosLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 41</value>
@@ -808,9 +811,6 @@
   <data name="espectaculos1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
   <data name="updateButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -890,7 +890,7 @@
     <value>0</value>
   </data>
   <data name="&gt;&gt;ventas1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -920,7 +920,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;salas1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>10</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 8</value>
@@ -1036,8 +1036,8 @@
   <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pictureBox5.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>panel4</value>
   </data>
   <data name="&gt;&gt;updateButton.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1064,7 +1064,7 @@
     <value>nombreLabel</value>
   </data>
   <data name="&gt;&gt;clientes1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="clockLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1087,9 +1087,6 @@
   <data name="estadisticas1.Location" type="System.Drawing.Point, System.Drawing">
     <value>195, 49</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
   <data name="&gt;&gt;messagePicture.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -1106,10 +1103,10 @@
     <value>199, 49</value>
   </data>
   <data name="&gt;&gt;mensajes1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;inicio1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="apellidosLabel.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1117,11 +1114,11 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="mensajes1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;promociones1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1423,8 +1420,11 @@
   <data name="apellidosLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="messagePicture.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;pictureBox5.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt, style=Bold</value>
@@ -1486,8 +1486,8 @@
   <data name="&gt;&gt;idLabel.Name" xml:space="preserve">
     <value>idLabel</value>
   </data>
-  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 450</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;updateButton.Parent" xml:space="preserve">
     <value>panel2</value>
@@ -1513,14 +1513,14 @@
   <data name="&gt;&gt;clockLabel.Name" xml:space="preserve">
     <value>clockLabel</value>
   </data>
-  <data name="listBox1.ItemHeight" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 450</value>
   </data>
   <data name="&gt;&gt;clientes1.Name" xml:space="preserve">
     <value>clientes1</value>
   </data>
   <data name="&gt;&gt;espectaculos1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>7</value>
   </data>
   <data name="button1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -1562,7 +1562,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;promociones1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="nombreLabel.Text" xml:space="preserve">
     <value>Federico Javier</value>
@@ -1577,13 +1577,13 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;estadisticas1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
-  <data name="messagePicture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1025, 10</value>
+  <data name="mensajes1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;listBox1.Name" xml:space="preserve">
-    <value>listBox1</value>
+  <data name="&gt;&gt;apellidosLabel.Parent" xml:space="preserve">
+    <value>panel4</value>
   </data>
   <data name="&gt;&gt;admins1.Type" xml:space="preserve">
     <value>Events4ALL.Admins, Events4ALL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -1603,8 +1603,8 @@
   <data name="clientes1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="messagePicture.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+  <data name="messagePicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1025, 10</value>
   </data>
   <data name="apellidosLabel.Text" xml:space="preserve">
     <value>Lozano Moya</value>
