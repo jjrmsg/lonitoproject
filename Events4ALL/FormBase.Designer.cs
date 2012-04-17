@@ -48,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ventas1 = new Events4ALL.Ventas();
             this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
@@ -57,6 +56,7 @@
             this.clientes1 = new Events4ALL.Clientes();
             this.admins1 = new Events4ALL.Admins();
             this.espectaculos1 = new Events4ALL.Espectaculos();
+            this.ventas1 = new Events4ALL.Ventas();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel2.SuspendLayout();
@@ -212,11 +212,6 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
-            // ventas1
-            // 
-            resources.ApplyResources(this.ventas1, "ventas1");
-            this.ventas1.Name = "ventas1";
-            // 
             // mensajes1
             // 
             resources.ApplyResources(this.mensajes1, "mensajes1");
@@ -256,6 +251,11 @@
             // 
             resources.ApplyResources(this.espectaculos1, "espectaculos1");
             this.espectaculos1.Name = "espectaculos1";
+            // 
+            // ventas1
+            // 
+            resources.ApplyResources(this.ventas1, "ventas1");
+            this.ventas1.Name = "ventas1";
             // 
             // FormBase
             // 
