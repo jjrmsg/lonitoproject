@@ -326,6 +326,7 @@
             this.cbSalaBuscar.Name = "cbSalaBuscar";
             this.cbSalaBuscar.Size = new System.Drawing.Size(137, 21);
             this.cbSalaBuscar.TabIndex = 2;
+            this.cbSalaBuscar.DropDown += new System.EventHandler(this.cbSalaBuscar_DropDown);
             // 
             // dtFechaBuscar
             // 
@@ -385,9 +386,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btInsertar);
             this.tabPage1.Controls.Add(this.btnGuardarEsp);
             this.tabPage1.Controls.Add(this.btFormNuevo);
+            this.tabPage1.Controls.Add(this.btInsertar);
             this.tabPage1.Controls.Add(this.btLimpiar);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -410,7 +411,6 @@
             this.btInsertar.Text = "Insertar";
             this.btInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btInsertar.UseVisualStyleBackColor = true;
-            this.btInsertar.Visible = false;
             this.btInsertar.Click += new System.EventHandler(this.btInsertar_Click);
             // 
             // btnGuardarEsp
@@ -425,6 +425,7 @@
             this.btnGuardarEsp.Text = "Guardar";
             this.btnGuardarEsp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardarEsp.UseVisualStyleBackColor = true;
+            this.btnGuardarEsp.Visible = false;
             this.btnGuardarEsp.Click += new System.EventHandler(this.btnGuardarEsp_Click);
             // 
             // btFormNuevo
@@ -705,7 +706,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Espectaculos";
             this.Size = new System.Drawing.Size(907, 635);
-            this.Load += new System.EventHandler(this.Espectaculos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).EndInit();

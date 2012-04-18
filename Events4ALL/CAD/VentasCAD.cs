@@ -167,31 +167,31 @@ namespace Events4ALL.CAD
             BD bd = new BD();
             DataSet datosVentas = new DataSet();
             SqlConnection c = bd.Connect();
-
-            String query = "SELECT vent.IDVentas IdVenta,cli.Nombre, cli.NIF, esp.Titulo, sal.tipo Tipo, vent.FechaVenta ";
-            query += "FROM Ventas vent, Espectaculo esp, Sala sal, ReservaSala res, Cliente cli ";
-            query += "WHERE vent.IDEspectaculo = esp.IDEspectaculo ";
-            query += "and esp.IDEspectaculo = res.IDEspectaculo ";
-            query += "and  res.IDSala = sal.NumSala ";
-            query += "and cli.NIF = vent.IDCliente ";
-
-            if (nombre != "")            
-                query += "and cli.Nombre like '%" + nombre + "%' ";
             
-            if (dni != "")            
-                query += "and cli.NIF like '%" + dni + "%' ";
+            String query = "SELECT Ventas.IDVentas IdVenta, Cliente.Nombre, Cliente.NIF, Espectaculo.Titulo, Sala.tipo Tipo, Ventas.FechaVenta ";
+            query += "FROM Cliente RIGHT OUTER JOIN ";
+            query += "Ventas ON Cliente.NIF = Ventas.IDCliente LEFT OUTER JOIN ";
+            query += "ReservaSala INNER JOIN ";
+            query += "Sala ON ReservaSala.IDSala = Sala.NumSala INNER JOIN ";
+            query += "Espectaculo ON ReservaSala.IDEspectaculo = Espectaculo.IDEspectaculo ON Ventas.IDEspectaculo = Espectaculo.IDEspectaculo WHERE (''='') ";
+
+            if (nombre != "")
+                query += "and Cliente.Nombre like '%" + nombre + "%' ";
+            
+            if (dni != "")
+                query += "and Cliente.NIF like '%" + dni + "%' ";
             
             if (titulo != "")
-                query += "and esp.Titulo like '%" + titulo + "%' ";
+                query += "and Espectaculo.Titulo like '%" + titulo + "%' ";
 
             if (tipo != "")
-                query += "and sal.tipo = '" + tipo + "' ";
+                query += "and Sala.tipo = '" + tipo + "' ";
 
             if (fEsp != "")
-                query += "and esp.FechaIni <= '" + fEsp + "' and esp.FechaFin >= '" + fEsp + "' ";
+                query += "and Espectaculo.FechaIni <= '" + fEsp + "' and Espectaculo.FechaFin >= '" + fEsp + "' ";
 
             if (fVenta != "")
-                query += "and vent.FechaVenta = '" + fVenta + "' ";
+                query += "and Ventas.FechaVenta = '" + fVenta + "' ";
 
             Console.WriteLine(query);
 

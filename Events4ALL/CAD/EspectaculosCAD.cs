@@ -74,7 +74,7 @@ namespace Events4ALL.CAD
             comEspectaculo += "INSERT INTO ReservaSala (IDEspectaculo, IDSala) values (";
             comEspectaculo += "SCOPE_IDENTITY (),";
             comEspectaculo += "'" + salaReserva + "')";
-            
+
             try
             {
                 conn = bd.Connect();
@@ -96,18 +96,6 @@ namespace Events4ALL.CAD
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }        
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
         public bool Editar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel, int idEspectaculo)
         {
@@ -161,28 +149,16 @@ namespace Events4ALL.CAD
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         public bool Eliminar(string idEspectaculo)
         {
             SqlConnection conn = null;
             BD bd = new BD();
 
-            String comEspectaculo = "DELETE FROM Espectaculo WHERE IDEspectaculo = '"+idEspectaculo+"'";
+            String comEspectaculo = "DELETE FROM Espectaculo WHERE IDEspectaculo = '"+idEspectaculo+"';";
+            // comEspectaculo += "DELETE FROM Promocion WHERE ID_Promocion IN (SELECT ID_Promocion FROM PromocionConEvento WHERE ID_Evento = '"+idEspectaculo+"');";
+            // comEspectaculo += "DELETE FROM PromocionConEvento WHERE ID_Evento = '" + idEspectaculo + "';";
 
             try
             {
@@ -341,11 +317,13 @@ namespace Events4ALL.CAD
             DataSet bdvirtual = new DataSet();
 
             string query = "SELECT esp.*, tipo Tipo, NumSala IdSala ";
-            query += "FROM Espectaculo esp, ReservaSala res, Sala sal ";
-            query += "WHERE esp.IDEspectaculo = res.IDEspectaculo ";
-            query += "and res.IDSala = sal.NumSala ";
-            query += "and esp.IDEspectaculo = "+id;
-
+            query += "FROM  Espectaculo AS esp ";
+            query += "LEFT OUTER JOIN ReservaSala res ";
+            query += "ON res.IDEspectaculo = esp.IDEspectaculo ";
+            query += "LEFT OUTER JOIN Sala AS sal ";
+            query += "ON res.IDSala = sal.NumSala ";
+            query += "WHERE esp.IDEspectaculo = "+id;
+            
             try
             {
                 c.Open();

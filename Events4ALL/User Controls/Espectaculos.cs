@@ -24,14 +24,14 @@ namespace Events4ALL
 
         /* #### BÚSQUEDA #### */
 
-        // Al cargar se recogen las salas en las que se pueden buscar espectáculos.
-        private void Espectaculos_Load(object sender, EventArgs e)
+        // Al desplegar el comboBox se recogen las salas en las que se pueden buscar espectáculos.
+        private void cbSalaBuscar_DropDown(object sender, EventArgs e)
         {
             SalasEN salasEN = new SalasEN();
             DataSet salasTipo = new DataSet();
             salasTipo = salasEN.SalasPorTipo("");
 
-            cbSala.Items.Clear();
+            cbSalaBuscar.Items.Clear();
             try
             {
                 foreach (DataRow sala in salasTipo.Tables[0].Rows)
@@ -45,7 +45,7 @@ namespace Events4ALL
             }
         }
 
-        // Elimina el contendido de los campos del formulario de búsqueda.
+        // Elimina el contenido de los campos del formulario de búsqueda.
         private void btLimpBusqueda_Click(object sender, EventArgs e)
         {
             tbTitBuscar.Text = "";
@@ -98,7 +98,7 @@ namespace Events4ALL
                 else if (e.ColumnIndex == dataGridEspectaculos.Columns["Column7"].Index)
                 {
                     string espName = dataGridEspectaculos[1, e.RowIndex].Value.ToString();
-                    if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\"?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\" y sus promociones asociadas?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
                     {
                         EspectaculosEN espectaculo = new EspectaculosEN();
                         if (espectaculo.Eliminar(dataGridEspectaculos[0, e.RowIndex].Value.ToString()) == true)
@@ -186,7 +186,7 @@ namespace Events4ALL
             }
         }
 
-        // Muestra el dialogo de elección de imagen para el cartel del espectáculo.
+        // Muestra el diálogo de elección de imagen para el cartel del espectáculo.
         private void btCartel_Click(object sender, EventArgs e)
         {
             OpenFileDialog OFich = new OpenFileDialog();
@@ -207,7 +207,7 @@ namespace Events4ALL
             LimpiarFormEntrada();
         }
 
-        // Elimina el contendido de los campos del formulario, el errorProvider y la imagen.
+        // Elimina el contenido de los campos del formulario, el errorProvider y la imagen.
         private void LimpiarFormEntrada()
         {
             errPrvEspectaculo.Clear();
@@ -357,5 +357,7 @@ namespace Events4ALL
 
             return valido;
         }
+
+
     }
 }

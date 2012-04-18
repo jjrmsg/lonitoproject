@@ -17,16 +17,19 @@ namespace Events4ALL
             InitializeComponent();
         }
 
+        // Si marcamos buscar por fecha de espectáculo desbloqueamos el selector de fecha.
         private void cbEspectaculo_CheckedChanged(object sender, EventArgs e)
         {
             dtFechEspectaculo.Enabled = cbEspectaculo.Checked;
         }
 
+        // Si marcamos buscar por fecha de venta desbloqueamos el selector de fecha.
         private void cbVenta_CheckedChanged(object sender, EventArgs e)
         {
             dtFechVenta.Enabled = cbVenta.Checked;
         }
 
+        // Elimina el contenido de los campos del formulario de búsqueda.
         private void btLimpiar_Click(object sender, EventArgs e)
         {
             tbNombre.Text = "";
@@ -37,6 +40,7 @@ namespace Events4ALL
             dtFechVenta.Value = DateTime.Today;
         }
 
+        // Recoge los datos del formulario, realiza la búqueda y muestra los resultados.
         private void btBuscar_Click(object sender, EventArgs e)
         {
             VentasEN ventasEN = new VentasEN();
@@ -62,6 +66,7 @@ namespace Events4ALL
             }
         }
 
+        // Al pulsar en una fila de la búsqueda se comprueba si se hizo en el boton de borrar venta.
         private void dataGridVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridVentas.Columns["Eliminar"].Index)
