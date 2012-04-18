@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Events4ALL.CAD;
 using System.Data;
+using System.Drawing;
 
 namespace Events4ALL.EN
 {
@@ -27,7 +28,7 @@ namespace Events4ALL.EN
         private string movil;
         private string mail;
         private string ec; // estado civil // 0 - Soltero // 1 - Casado // 2 - Divorciado // 3 - Viudo
-        private string foto;
+        private Image foto;
         private int sexo; // 0 - hombre // 1 - Mujer
         private DateTime fecha;
         private string pass;
@@ -121,7 +122,7 @@ namespace Events4ALL.EN
             set { sexo = value; }
         }
 
-        public string Foto
+        public Image Foto
         {
             get { return foto; }
             set { foto = value; }
@@ -151,16 +152,15 @@ namespace Events4ALL.EN
 
         public AdminEN()
         {
-            ec = dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = foto = string.Empty;
+            ec = dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = string.Empty;
             sexo = -1;
             Fecha = DateTime.Parse("01/01/2100");
-
-            cad_admin = new AdminCAD();
+            foto = null;
         }
 
         public AdminEN(string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
                         string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
-                        string mail_c, string ec_c, string foto_c, int sexo_c, string nick_c, string pass_c, DateTime fecha_c)
+                        string mail_c, string ec_c, Image foto_c, int sexo_c, string nick_c, string pass_c, DateTime fecha_c)
         {
             dni = dni_c;
             nombre = nombre_c;
@@ -179,8 +179,6 @@ namespace Events4ALL.EN
             nick = nick_c;
             pass = pass_c;
             fecha = fecha_c;
-
-            cad_admin = new AdminCAD();
         }
 
         public AdminEN (AdminEN anterior)
@@ -242,6 +240,8 @@ namespace Events4ALL.EN
         // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existentes
         public int InsertarAdmin()
         {
+            cad_admin = new AdminCAD();
+
             int error = -1;
             bool dni = false;
             bool nick = false;
@@ -278,9 +278,11 @@ namespace Events4ALL.EN
         // 0 = todo OK // 1 = DNI existe // 2 = Nick existe // 3 = DNI y Nick Existen // 4 = No se ha insertado // -1 = tira tu a saber
         public int ActualizarAdmin(int id, string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
                                    string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
-                                   string mail_c, string ec_c, string foto_c, int sexo_c, string nick_c, string pass_c, string pass2_c,
+                                   string mail_c, string ec_c, Image foto_c, int sexo_c, string nick_c, string pass_c, string pass2_c,
                                    DateTime fecha_c)
         {
+            cad_admin = new AdminCAD();
+
             int error = -1;
 
             try
@@ -438,12 +440,12 @@ namespace Events4ALL.EN
                     System.Diagnostics.Debug.Write("EC");
                 }
 
-                /*if (admin_anterior.Foto != foto_c)
+                if (admin_anterior.Foto != null)
                 {
                     updateFoto = true;
                     modificado = true;
                     System.Diagnostics.Debug.Write("Foto");
-                }*/
+                }
 
                 if (admin_anterior.Sexo != sexo_c)
                 {
@@ -527,26 +529,37 @@ namespace Events4ALL.EN
 
         public int ObtieneID(string usuario)
         {
+            cad_admin = new AdminCAD();
             return cad_admin.ObtieneID(usuario);
+        }
+
+        public Image ObtieneImagen(int id)
+        {
+            cad_admin = new AdminCAD();
+            return cad_admin.ObtieneImagen(id);
         }
 
         public DataSet getAdminByNick(string nick)
         {
+            cad_admin = new AdminCAD();
             return cad_admin.getAdminByNick(nick);
         }
 
         public DataSet getAdmins()
         {
+            cad_admin = new AdminCAD();
             return cad_admin.getAdmins();
         }
 
         public DataSet getAdmin(int id)
         {
+            cad_admin = new AdminCAD();
             return cad_admin.getAdmin(id);
         }
 
         public DataSet Busqueda(string quebusco, string loquebusco)
         {
+            cad_admin = new AdminCAD();
             return cad_admin.Busqueda(quebusco,loquebusco);
         }
 
@@ -554,6 +567,8 @@ namespace Events4ALL.EN
         // 4 = pass1 y pass2 ok, pero el nuevo vacio // 5 = 
         public int CompruebaPass(string pass_ant, string pass1, string pass2, int id)
         {
+            cad_admin = new AdminCAD();
+
             // todo vacio, no va a variar
             if (pass1 == "" && pass2 == "" && pass_ant == "")
                 return 1;
@@ -575,6 +590,8 @@ namespace Events4ALL.EN
 
         public bool BorraAdmin(int id)
         {
+            cad_admin = new AdminCAD();
+
             if (id != -1)
             {
                 return cad_admin.BorraAdmin(id);
@@ -612,9 +629,9 @@ namespace Events4ALL.EN
 
         public void LimpiaEN()
         {
-            ec = dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = foto = string.Empty;
+            ec = dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail  = string.Empty;
             sexo = -1;
-
+            foto = null;
             Fecha = DateTime.Parse("01/01/2100");
         }
 

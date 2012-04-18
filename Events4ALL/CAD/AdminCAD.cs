@@ -6,6 +6,8 @@ using System.Text;
 using System.Data.SqlClient;
 using Events4ALL.EN;
 using System.Data;
+using System.Drawing;
+using System.IO;
 
 namespace Events4ALL.CAD
 {
@@ -235,12 +237,54 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        public Image ObtieneImagen(int id)
+        {
+            byte[] bImage = new byte[0];
+            Image im = null;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            try
+            {
+                c.Open();
+                SqlCommand cmd = new SqlCommand("select * from Administrador where ID='" + id + "'", c);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+
+                bImage = (byte[])dr["Foto"];
+
+                if (bImage != null)
+                {
+                    MemoryStream ms = new MemoryStream(bImage);
+                    im = Image.FromStream(ms, true, true);
+                }
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return im;
+        }
+
         #endregion
 
         #region Iteraccion BD
 
         public bool InsertarAdmin(AdminEN nuevo)
         {
+            byte[] pic = null;
+            if (nuevo.Foto != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                nuevo.Foto.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
             bool error = false;
             BD bd = new BD();
             SqlConnection c = bd.Connect();
@@ -287,12 +331,22 @@ namespace Events4ALL.CAD
                 string tabla1 = "(Nombre, Apellidos, Usuario, Pass, NIF, ";
                 string tabla2 = "FechaNac, Poblacion, Provincia, Pais, ";
                 string tabla3 = "Direccion, TfnoFijo, TfnoMovil, Mail, ";
-                string tabla4 = "Estado, Sexo, CP)";
+                string tabla4 = "Estado, Sexo, CP";
+
+                if (nuevo.Foto != null)
+                    tabla4 = tabla4 + ", Foto)";
+                else
+                    tabla4 = tabla4 + ")";
+
                 string sql2 = " VALUES ('";
                 string valores1 = nuevo.Nombre + comilla + nuevo.Apellidos + comilla + nuevo.Nick + comilla + SHA1helper.Compute(nuevo.Pass) +comilla+ nuevo.DNI+comilla;
                 string valores2 = fecha + comilla + nuevo.Localidad + comilla + nuevo.Provincia + comilla + nuevo.Pais + comilla;
                 string valores3 = nuevo.Domicilio + comilla + tel1 + comilla + tel2 + comilla + nuevo.Mail + comilla;
                 string valores4 = nuevo.EC + "'," + nuevo.Sexo +",'"+ nuevo.CP+"'";
+
+                if (nuevo.Foto != null)
+                    valores4 = valores4 + ", @pic";
+
                 string sql3 = ")";
 
                 string sql = sql1 + tabla1 + tabla2 + tabla3 + tabla4 + sql2 + valores1 + valores2 + valores3 + valores4 + sql3;
@@ -300,13 +354,18 @@ namespace Events4ALL.CAD
                 System.Diagnostics.Debug.Write(sql);
                 
                 SqlCommand com = new SqlCommand(sql, c);
+
+                if (nuevo.Foto != null)
+                    com.Parameters.AddWithValue("@pic", pic);
+
                 com.ExecuteNonQuery();
 
                 error = true;
             }
-            catch
-            { 
-            
+            catch(Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
             }
             finally
             { 
@@ -343,12 +402,23 @@ namespace Events4ALL.CAD
 
         public bool ActualizarAdmin(int id, string dni, string nombre, string apellidos, string pais, string provincia,
                                     string localidad, string domicilio, string cp, string telefono, string movil,
-                                    string mail, string ec, string foto, int sexo, string nick, string pass, DateTime fecha,
+                                    string mail, string ec, Image foto, int sexo, string nick, string pass, DateTime fecha,
                                     bool upDNI, bool upNombre, bool upApellido,  bool upPaisbool, bool upProvincia,
                                     bool upLocalidad, bool upDomicilio, bool upCP, bool upTelefono, 
                                     bool upMovil, bool upMail, bool upEC, bool upFoto, bool upSexo, bool upNick, bool upPass, 
                                     bool upFecha)
         {
+            byte[] pic = null;
+            if (foto != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                foto.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
             bool error = false;
             BD bd = new BD();
             SqlConnection c = bd.Connect();
@@ -508,7 +578,15 @@ namespace Events4ALL.CAD
                     primero = true;
                 }
 
-                 //if(upFoto)
+                if (upFoto)
+                {
+                    if (primero)
+                        sql = sql + ", Foto = @pic";
+                    else
+                        sql = sql + "Foto = @pic";
+
+                    primero = true;
+                }
 
                 if (upSexo)
                 {
@@ -562,6 +640,10 @@ namespace Events4ALL.CAD
                 System.Diagnostics.Debug.Write(sql);
 
                 SqlCommand com = new SqlCommand(sql, c);
+
+                if (foto != null)
+                    com.Parameters.AddWithValue("@pic", pic);
+
                 com.ExecuteNonQuery();
 
                 error = true;

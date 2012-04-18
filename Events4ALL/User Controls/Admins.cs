@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.Threading;
+using System.Drawing.Imaging;
 
 namespace Events4ALL
 {
@@ -23,11 +24,12 @@ namespace Events4ALL
         #region Variables
 
         private Validaciones validar;
-        bool edicion;
-        AdminEN en_admin;
-        DataSet muestraAdmin;
-        DataTable tAdmin;
-        int idActual;
+        private bool edicion;
+        private AdminEN en_admin;
+        private DataSet muestraAdmin;
+        private DataTable tAdmin;
+        private int idActual;
+        private bool imagenCambiada;
 
         #endregion
 
@@ -50,8 +52,8 @@ namespace Events4ALL
             comboBox_filtro_busqueda.Visible = false;
 
             // creo el objeto que se encargara de validar
-            validar = new Validaciones();
-            en_admin = new AdminEN();
+            //validar = new Validaciones();
+            //en_admin = new AdminEN();
 
             textBox_anterior_pass.Enabled = false;
 
@@ -59,6 +61,8 @@ namespace Events4ALL
 
             idActual = -1;
             boton_eliminar.Enabled = false;
+
+            imagenCambiada = false;
         }
 
         // Carga los todos administradores al entrar en el panel de busqueda.
@@ -72,6 +76,8 @@ namespace Events4ALL
 
         private bool CompruebaNif()
         {
+            validar = new Validaciones();
+
             //test1.Text = "" + validar.DevuelveNumero(Admin_Perfil_txtBox_NIF.Text);
             //test2.Text = "" + validar.DevuelveLetra(Admin_Perfil_txtBox_NIF.Text);
             //test3.Text = "" + validar.ObtieneLetra(validar.DevuelveNumero(Admin_Perfil_txtBox_NIF.Text));
@@ -143,6 +149,8 @@ namespace Events4ALL
 
         private bool CompruebaCP()
         {
+            validar = new Validaciones();
+
             // campo vacio
             if(textBox_CP_Perfil.Text.Length == 0)
             {
@@ -163,7 +171,9 @@ namespace Events4ALL
         }
 
         private bool CompruebaLocalidad()
-        { 
+        {
+            validar = new Validaciones();
+
             // vacio
             if( txtBox_Localidad.Text.Length == 0)
             {
@@ -185,7 +195,9 @@ namespace Events4ALL
         }
 
         private bool CompruebaMail()
-        { 
+        {
+            validar = new Validaciones();
+
             // mail vacio
             if ((Admin_Perfil_txtBox_Mail.Text.Length == 0) || (Admin_Perfil_txtBox_Mail.Text == "usuario@event4all.es"))
             {
@@ -213,7 +225,9 @@ namespace Events4ALL
         }
 
         private bool CompruebaTelefono()
-        { 
+        {
+            validar = new Validaciones();
+
             // vacio
             if ((Admin_Perfil_txtBox_Tel1.Text.Length == 0) || (Admin_Perfil_txtBox_Tel1.Text == "000 000000"))
             {
@@ -236,6 +250,8 @@ namespace Events4ALL
 
         private bool CompruebaMovil()
         {
+            validar = new Validaciones();
+
             // vacio
             if ( (Admin_Perfil_txtBox_Tel2.Text.Length == 0) || (Admin_Perfil_txtBox_Tel2.Text == "000 000000") )
             {
@@ -359,6 +375,8 @@ namespace Events4ALL
         // comprueba la seguridad de PASS
         private bool CompruebaPass()
         {
+            validar = new Validaciones();
+
             string error = validar.CompruebaPass(textBox_pass1.Text);
 
             if (textBox_pass1.Text.Length == 0)
@@ -559,7 +577,7 @@ namespace Events4ALL
 
             //Admin_Perfil_txtBox_NIF.Enabled = true;
             edicion = false;
-            en_admin.LimpiaEN();
+            //en_admin.LimpiaEN();
 
             // borra nif
             Admin_Perfil_txtBox_NIF.Text = "";
@@ -619,7 +637,8 @@ namespace Events4ALL
             errorProviderPais.Clear();
 
             //Admin_Perfil_Label_FecNacimiento.Text =S DateTime.Now.Date.Totring();
-            dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());
+            //dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());
+            dateTimePicker1.Value = DateTime.Today;
 
             #endregion
             #region Datos de Usuario
@@ -670,6 +689,7 @@ namespace Events4ALL
         {
             //RellenaDatos();
             //45836991S
+            en_admin = new AdminEN();
             
             // Comrpuebo que todos los campos estan rellenos
             if (ValidaCampos())
@@ -735,7 +755,7 @@ namespace Events4ALL
                                                 comboBox_Provincia.Text, txtBox_Localidad.Text,
                                                 comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
                                                 Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
-                                                Admin_Perfil_txtBox_Mail.Text, ec, "foto xD", sexo, textBox_NombreUsuario.Text,
+                                                Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
                                                 textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
 
                         if (error == 4) MessageBox.Show("No se ha podido realizar la actualización.");
@@ -752,7 +772,7 @@ namespace Events4ALL
                                                 comboBox_Provincia.Text, txtBox_Localidad.Text,
                                                 comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
                                                 Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
-                                                Admin_Perfil_txtBox_Mail.Text, ec, "foto xD", sexo, textBox_NombreUsuario.Text,
+                                                Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
                                                 textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
 
                         if (error == 4) MessageBox.Show("No se ha podido realizar la actualizacion.");
@@ -778,7 +798,16 @@ namespace Events4ALL
         // boton Foto
         private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
         {
-           
+            OpenFileDialog OFich = new OpenFileDialog();
+            OFich.ShowHelp = true;
+
+            OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
+            Admin_Perfil_Foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (OFich.ShowDialog() == DialogResult.OK)
+            {
+                Admin_Perfil_Foto.Image = Image.FromFile(OFich.FileName);
+                imagenCambiada = true;
+            } 
         }
 
         #endregion
@@ -826,7 +855,7 @@ namespace Events4ALL
             else if (Admin_Perfil_rButom_Viudo.Checked == true)
                 ec = Admin_Perfil_rButom_Viudo.Text;
 
-            AdminEN nuevo = new AdminEN(Admin_Perfil_txtBox_NIF.Text,
+            en_admin = new AdminEN(Admin_Perfil_txtBox_NIF.Text,
                                         Admin_Perfil_txtBox_Nombre.Text,
                                         Admin_Perfil_txtBox_Apellidos.Text,
                                         Admin_Perfil_comboBox_Pais.Text,
@@ -838,7 +867,7 @@ namespace Events4ALL
                                         Admin_Perfil_txtBox_Tel2.Text,
                                         Admin_Perfil_txtBox_Mail.Text,
                                         ec, 
-                                        "VACIO !!",
+                                        Admin_Perfil_Foto.Image,
                                         sexo,
                                         textBox_NombreUsuario.Text,
                                         textBox_pass1.Text,
@@ -847,7 +876,7 @@ namespace Events4ALL
             //MuestraEN(nuevo);
 
             // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existen
-            int error = nuevo.InsertarAdmin();
+            int error = en_admin.InsertarAdmin();
 
             if (error == 0)
             {
@@ -885,6 +914,8 @@ namespace Events4ALL
 
         private bool AltaAdminEN_PorPasos()
         {
+            en_admin = new AdminEN();
+
             en_admin.DNI = Admin_Perfil_txtBox_NIF.Text;
             en_admin.Nombre = Admin_Perfil_txtBox_Nombre.Text;
             en_admin.Apellidos = Admin_Perfil_txtBox_Apellidos.Text;
@@ -914,12 +945,18 @@ namespace Events4ALL
             else if (Admin_Perfil_rButom_Viudo.Checked == true)
                 en_admin.EC = Admin_Perfil_rButom_Viudo.Text;
 
-            en_admin.Foto = "VACIA !!";
-
             en_admin.Nick = textBox_NombreUsuario.Text;
             en_admin.Pass = textBox_pass1.Text;
 
             //MuestraEN(nuevo);
+
+            if (imagenCambiada)
+            {
+                imagenCambiada = false;
+                en_admin.Foto = Admin_Perfil_Foto.Image;
+            }
+            else
+                en_admin.Foto = null;
 
             // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existen
             int error = en_admin.InsertarAdmin();
@@ -961,11 +998,14 @@ namespace Events4ALL
 
         private int ObtieneID(string usuario)
         {
+            en_admin = new AdminEN();
             return en_admin.ObtieneID(usuario);
         }
 
         private void BorrarAdmin()
         {
+            en_admin = new AdminEN();
+
             if (MessageBox.Show("¿Desea eliminar este administrador? \nEste cambio se realizará de forma permanente.",
                                     "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
                                     == DialogResult.Yes)
@@ -1011,6 +1051,7 @@ namespace Events4ALL
         // botoncejo buscar
         private void buttom_Buscar_Click(object sender, EventArgs e)
         {
+            en_admin = new AdminEN();
             // mostrar todos, o lo que es lo mismo, no se ha establecido ningun filtro de busqueda
             //MuestraAdmins();
 
@@ -1082,6 +1123,8 @@ namespace Events4ALL
 
         public void MuestraAdmins()
         {
+            en_admin = new AdminEN();
+
             muestraAdmin = new DataSet();
             muestraAdmin = en_admin.getAdmins();
             tAdmin = new DataTable();
@@ -1108,6 +1151,8 @@ namespace Events4ALL
 
         private void Resultados_Busqueda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            en_admin = new AdminEN();
+            
             if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
             {
                 LimpiaBusqueda();
@@ -1122,6 +1167,8 @@ namespace Events4ALL
 
         private void RellenaDatos_AdminSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
         {
+            en_admin = new AdminEN();
+            
             LimpiarDatos();
             
             idActual = Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString());
@@ -1255,6 +1302,15 @@ namespace Events4ALL
             edicion = true;
             boton_eliminar.Enabled = true;
             textBox_anterior_pass.Enabled = true;
+
+            Image im;
+
+            im = en_admin.ObtieneImagen(idActual);
+
+            if (im != null)
+                Admin_Perfil_Foto.Image = im;
+            else
+                Admin_Perfil_Foto.Image = Events4ALL.Properties.Resources.Events4All;
 
             tabControl1.SelectTab("Perfil");
         }
