@@ -51,7 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Estilos\MasterStyle.css" />
+    <Content Include="css\MasterStyle.css" />
     <Content Include="contacto.aspx" />
     <Content Include="cartelera.aspx" />
     <Content Include="espectaculo.aspx" />
