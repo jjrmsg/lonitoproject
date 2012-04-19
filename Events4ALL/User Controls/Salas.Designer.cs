@@ -806,7 +806,7 @@
             this.tabBusquedaSala.Padding = new System.Windows.Forms.Padding(3);
             this.tabBusquedaSala.Size = new System.Drawing.Size(893, 606);
             this.tabBusquedaSala.TabIndex = 1;
-            this.tabBusquedaSala.Text = "Busqueda";
+            this.tabBusquedaSala.Text = "Búsqueda";
             this.tabBusquedaSala.UseVisualStyleBackColor = true;
             // 
             // dataGridBuscarSala
@@ -1027,11 +1027,13 @@
             // 
             // errorProvider1
             // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // errorProvider2
             // 
+            this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider2.ContainerControl = this;
             this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 

@@ -19,11 +19,13 @@ namespace Events4ALL.EN
         private Image cartel;
         public int idEspectaculo { get; set; }
 
+        // Constructor por defecto de la entidad Espectáculos.
         public EspectaculosEN()
         {
 
         }
 
+        // Constructor de la entidad Espectáculos.
         public EspectaculosEN(string titulo, string descripcion, decimal precio, string genero, string fechIni, string fechFin, Image cartel)
         {
             this.titulo = titulo;
@@ -35,30 +37,35 @@ namespace Events4ALL.EN
             this.cartel = cartel;
         }
 
+        // Recoge el precio de un espectáculo.
         public decimal getPrecioId()
         {
             EspectaculosCAD espCAD; espCAD = new EspectaculosCAD();
             return espCAD.getPrecioId(idEspectaculo);
         }
 
+        // Inserta el espectáculo en la bd.
         public bool Insertar(string salaReserva)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.Insertar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel);
         }
 
+        // Edita un espectáculo en la bd.
         public bool Editar(string salaReserva, int idEspectaculo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.Editar(titulo, descripcion, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel, idEspectaculo);
         }
 
+        // Elimina un espectáculo de la bd a partir de una id.
         public bool Eliminar(string idEspectaculo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.Eliminar(idEspectaculo);
         }
 
+        // Busca espectáculos en la bd que cumplan las restricciones.
         public DataSet Buscar(string tit, string sala, string tipo, string modFecha, string valFecha, string modPrecio, string valPrecio)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
@@ -66,24 +73,28 @@ namespace Events4ALL.EN
             return espectaculos;
         }
 
+        // Obtiene todos los espectáculos de la bd.
         public DataSet ObtenerEspectaculos()
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerEspectaculos();
         }
 
+        // Obtiene los datos de un espectáculo a partir de su título.
         public DataSet ObtenerDatosEspectaculo(string titulo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerDatosEspectaculo(titulo);
         }
 
+        // Obtiene los datos de un espectáculo a partir de su id.
         public DataSet ObtenerEspectaculoPorID(string id)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerEspectaculoPorID(id);
         }
 
+        // Obtiene la imagen de un espectáculo a partir de su id.
         public Image ObtenerImagenEspectaculo(int id)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();

@@ -159,6 +159,7 @@ namespace Events4ALL.CAD
             String comEspectaculo = "DELETE FROM Espectaculo WHERE IDEspectaculo = '"+idEspectaculo+"';";
             // comEspectaculo += "DELETE FROM Promocion WHERE ID_Promocion IN (SELECT ID_Promocion FROM PromocionConEvento WHERE ID_Evento = '"+idEspectaculo+"');";
             // comEspectaculo += "DELETE FROM PromocionConEvento WHERE ID_Evento = '" + idEspectaculo + "';";
+            comEspectaculo += "DELETE FROM Ventas WHERE IDEspectaculo = '" + idEspectaculo + "';";
 
             try
             {

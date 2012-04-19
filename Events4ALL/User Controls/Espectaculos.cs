@@ -98,13 +98,16 @@ namespace Events4ALL
                 else if (e.ColumnIndex == dataGridEspectaculos.Columns["Column7"].Index)
                 {
                     string espName = dataGridEspectaculos[1, e.RowIndex].Value.ToString();
-                    if (MessageBox.Show("¿Desea eliminar el espectaculo \"" + espName + "\" y sus promociones asociadas?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Desea eliminar el espectáculo \"" + espName + "\", sus promociones y ventas asociadas?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
                     {
                         EspectaculosEN espectaculo = new EspectaculosEN();
                         if (espectaculo.Eliminar(dataGridEspectaculos[0, e.RowIndex].Value.ToString()) == true)
-                        {
-                            MessageBox.Show("Eliminado correctamente");
+                        {   
                             dataGridEspectaculos.Rows.RemoveAt(e.RowIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrió un error al eliminar el espectáculo");
                         }
                     }
                 }
@@ -311,39 +314,39 @@ namespace Events4ALL
 
             if (tbTitulo.Text == "")
             {
-                errPrvEspectaculo.SetError(tbTitulo, "Debe introducir un titulo.");
+                errPrvEspectaculo.SetError(tbTitulo, "Debe introducir un título");
                 valido = false;
             }
 
             if (tbDescripcion.Text == "")
             {
-                errPrvEspectaculo.SetError(lbDescripcion, "Debe introducir una descripción.");
+                errPrvEspectaculo.SetError(lbDescripcion, "Debe introducir una descripción");
                 valido = false;
             }
 
             if (cbTipo.Text == "")
             {
-                errPrvEspectaculo.SetError(cbTipo, "Debe elegir un tipo de espectaculo.");
+                errPrvEspectaculo.SetError(cbTipo, "Debe elegir un tipo de espectáculo");
                 valido = false;
             }
             else
             {
                 if (cbTipo.Text == "Cine" && cbGenero.Text == "")
                 {
-                    errPrvEspectaculo.SetError(cbGenero, "Debe elegir un genero.");
+                    errPrvEspectaculo.SetError(cbGenero, "Debe elegir un género");
                     valido = false;
                 }
             }
 
             if (cbSala.Text == "")
             {
-                errPrvEspectaculo.SetError(cbSala, "Debe elegir una sala.");
+                errPrvEspectaculo.SetError(cbSala, "Debe elegir una sala");
                 valido = false;
             }
 
             if (numPrecio.Text == "")
             {
-                errPrvEspectaculo.SetError(numPrecio, "El valor del precio no es valido.");
+                errPrvEspectaculo.SetError(numPrecio, "El valor del precio no es válido");
                 valido = false;
             }
 
@@ -351,10 +354,9 @@ namespace Events4ALL
             DateTime dtFin = dtFechaFin.Value.Date;
             if (dtIni > dtFin)
             {
-                errPrvEspectaculo.SetError(lbFechas, "La fecha de inicio es posterior a la fecha final.");
+                errPrvEspectaculo.SetError(lbFechas, "La fecha de inicio es posterior a la fecha final");
                 valido = false;
             }
-
             return valido;
         }
 

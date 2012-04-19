@@ -32,13 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridVentas = new System.Windows.Forms.DataGridView();
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbVenta = new System.Windows.Forms.CheckBox();
             this.cbEspectaculo = new System.Windows.Forms.CheckBox();
@@ -55,6 +48,14 @@
             this.btLimpiar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
@@ -101,6 +102,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
+            this.Importe,
             this.Column5,
             this.Eliminar});
             this.dataGridVentas.Location = new System.Drawing.Point(6, 175);
@@ -110,51 +112,6 @@
             this.dataGridVentas.Size = new System.Drawing.Size(878, 425);
             this.dataGridVentas.TabIndex = 8;
             this.dataGridVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVentas_CellClick);
-            // 
-            // IdVenta
-            // 
-            this.IdVenta.FillWeight = 20F;
-            this.IdVenta.HeaderText = "Id";
-            this.IdVenta.Name = "IdVenta";
-            this.IdVenta.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre cliente";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DNI";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Título espectaculo";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tipo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha de venta";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 30F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -321,6 +278,58 @@
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
+            // IdVenta
+            // 
+            this.IdVenta.FillWeight = 20F;
+            this.IdVenta.HeaderText = "Id";
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre cliente";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DNI";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Título espectaculo";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tipo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 60F;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha de venta";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 30F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }

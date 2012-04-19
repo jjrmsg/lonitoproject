@@ -61,6 +61,7 @@ namespace Events4ALL
                                  venta["NIF"].ToString(), 
                                  venta["Titulo"].ToString(),
                                  venta["tipo"].ToString(),
+                                 venta["Importe"].ToString(),
                                  Convert.ToDateTime(venta["FechaVenta"]).ToShortDateString()};
                 dataGridVentas.Rows.Add(row);
             }
@@ -72,14 +73,17 @@ namespace Events4ALL
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridVentas.Columns["Eliminar"].Index)
             {
                 // Si se ha pulsado en el boton de borrar
-                if (MessageBox.Show("¿Desea eliminar la venta?", "Confirmar eliminación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                if (MessageBox.Show("¿Desea eliminar la venta?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
                 {
                     VentasEN ventasEN = new VentasEN();
                     if (ventasEN.EliminarVenta(dataGridVentas[0, e.RowIndex].Value.ToString()) == true)
                     {
-                        MessageBox.Show("Eliminada correctamente");
                         dataGridVentas.Rows.RemoveAt(e.RowIndex);
-                    }   
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar la venta.");
+                    }
                 }
             }          
         }

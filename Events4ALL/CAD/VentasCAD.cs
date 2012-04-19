@@ -90,7 +90,7 @@ namespace Events4ALL.CAD
             return datos;
         }
 
-        //Obtiene los datos necesarios para saber que tipo y gérnero de espectaculos son los favoritos de un cliente
+        // Obtiene los datos necesarios para saber que tipo y género de espectáculos son los favoritos de un cliente.
         public DataSet getGeneroTipoCli(string nif)
         {
             BD bd = new BD();
@@ -174,7 +174,7 @@ namespace Events4ALL.CAD
             DataSet datosVentas = new DataSet();
             SqlConnection c = bd.Connect();
             
-            String query = "SELECT Ventas.IDVentas IdVenta, Cliente.Nombre, Cliente.NIF, Espectaculo.Titulo, Sala.tipo Tipo, Ventas.FechaVenta ";
+            String query = "SELECT Ventas.IDVentas IdVenta, Cliente.Nombre, Cliente.NIF, Espectaculo.Titulo, Sala.tipo Tipo, Ventas.Importe, Ventas.FechaVenta ";
             query += "FROM Cliente RIGHT OUTER JOIN ";
             query += "Ventas ON Cliente.NIF = Ventas.IDCliente LEFT OUTER JOIN ";
             query += "ReservaSala INNER JOIN ";
