@@ -19,10 +19,8 @@ namespace Events4ALL
             InitializeComponent();
             SalasEN salaEn=new SalasEN();
             textIdSala.Text = salaEn.acutalizarId().ToString();
-            //Aqui hacer una consulta con un count salas y añadir +1
-            //Ese valor se le asignara a textIdSala
         }
-
+        //oculata lo referente a las secciones
         private void ocultarTodo()
         {
             labelSeccion1.Visible = false; labelFila1.Visible = false; textFila1.Visible = false; labelColumna1.Visible = false; textColumna1.Visible = false;
@@ -37,6 +35,7 @@ namespace Events4ALL
             labelSeccion10.Visible = false; labelFila10.Visible = false; textFila10.Visible = false; labelColumna10.Visible = false; textColumna10.Visible = false;
         }
 
+        //Muestra las secciones en fucnion del numero seleccionado en comboNumMat
         private void comboNumMat_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboNumSeccion.Text == "1")
@@ -148,6 +147,7 @@ namespace Events4ALL
 
             }
         }
+
 
         private void comboTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -264,7 +264,8 @@ namespace Events4ALL
                     editarSala(salaEn);
             }
         }
-
+        
+        //Inserta la nueva sala y una vez confirmado borrara los campos y calculara la siguiente IDSala
         private void nuevaSala(SalasEN salaEn)
         {
             if (salaEn.InsertarEn() == true)
@@ -275,6 +276,7 @@ namespace Events4ALL
             }
         }
 
+        //LLamara a los metodos de actualizar sala y borrara los campos e informara de la acutalizacion
         private void editarSala(SalasEN sala)
         {
             sala.UpdateSala();
@@ -282,6 +284,7 @@ namespace Events4ALL
             limpiar();
         }
 
+        //realiza la validacion de sala, regresando verdadero en caso de que todo sea correcto
         private bool validar()
         {
             bool validado = true;
@@ -311,6 +314,7 @@ namespace Events4ALL
             return validado;
         }
 
+        //calcula el aforo en funcion del numero de filas y columnas
         private int aforo(int [][] seccion,int max)
         {
             int total = 0;
@@ -322,6 +326,7 @@ namespace Events4ALL
             return total;
         }
 
+        //borra los textbox y combo de guardar sala
         private void limpiar()
         {
             ControlCollection a = textIdSala.Parent.Controls;
@@ -352,6 +357,7 @@ namespace Events4ALL
 
         }
 
+        //borra los combo box y textbox, dataGridView.Rows hace un clear
         private void limpiarBusquedaSala()
         {
             ControlCollection a = textBox1.Parent.Controls;
@@ -365,6 +371,7 @@ namespace Events4ALL
             dataGridBuscarSala.Rows.Clear();
         }
 
+        //llama a limpiar
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -380,6 +387,7 @@ namespace Events4ALL
 
         }
 
+        //Saca los parametros necesarios para llamar al metodo que hace la select y la muestra en el datagrid
         private void BusquedaSala()
         {
             int estado = 0;
@@ -415,7 +423,8 @@ namespace Events4ALL
         {
             BusquedaSala();
         }
-
+        
+        //Si se pincha en columan 5 se cargara los datos en el formulario de edicion y si es la columna 6 se intentara borrar la sala si se puede
         private void dataGridBuscarSala_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataGridBuscarSala[e.ColumnIndex, e.RowIndex].Value.ToString();
@@ -496,9 +505,13 @@ namespace Events4ALL
                 if (MessageBox.Show("Esta seguro de borrar la sala " + numeroSala, "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     SalasEN salaEn = new SalasEN();
-                    salaEn.BorrarSala(numeroSala);
-                    dataGridBuscarSala.Rows.Clear();
-                    BusquedaSala();
+                    if (salaEn.BorrarSala(numeroSala) == true)
+                    {
+                        dataGridBuscarSala.Rows.Clear();
+                        BusquedaSala();
+                    }
+                    else
+                        MessageBox.Show("No se puede borrar la sala tiene espectaculos que se realizaran proximamente", "Error");
                 }
             }
         }
@@ -508,6 +521,7 @@ namespace Events4ALL
             
         }
 
+        //Cuando pinchamos en una de las dos pestañas se limpiaran los campos de estas
         private void tabControl1_Click(object sender, EventArgs e)
         {
 

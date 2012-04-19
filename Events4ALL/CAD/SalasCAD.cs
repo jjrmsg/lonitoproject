@@ -10,7 +10,7 @@ using System.Data;
 namespace Events4ALL.CAD
 {
     class SalasCAD
-    {
+    {   //Calcula la ID que le toque a la proxima sala a crear. Contando algun posible salto entre ellas y supliendolo
         public int SacarIdSala()
         {
             int newID=0;
@@ -59,7 +59,7 @@ namespace Events4ALL.CAD
             }
             return newID;
         }
-
+        //Inserta una sala y sus secciones en la base de datos
         public bool InsertarSala(SalasEN sala)
         {
             bool insertado = false;
@@ -101,7 +101,7 @@ namespace Events4ALL.CAD
             }
             return insertado;
         }
-
+        //Refleja los cambios realizados en una sala y sus secciones en la base de datos
         public void UpdateCAD(SalasEN sala)
         {
             BD bd = new BD();
@@ -146,7 +146,7 @@ namespace Events4ALL.CAD
                 c.Close();
             }
         }
-
+        //Saca las salas por tipo
         public DataSet SalasPorTipo(String tipo)
         {
             SqlConnection conn = null; 
@@ -179,7 +179,7 @@ namespace Events4ALL.CAD
             }
             return datosSalas;
         }
-
+        //Realiza una select con los parametros especificados y regresa un dataset
         public DataSet SalaSelectCAD(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
         {
             string idSalaBusca="";
@@ -231,7 +231,7 @@ namespace Events4ALL.CAD
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
         }
-
+        //Extrae una sala concreta de la base de datos
         public DataSet SacarSala(string id)
         {
             SqlConnection conn = null;
@@ -258,28 +258,40 @@ namespace Events4ALL.CAD
 
             }
         }
-
-        public void BorrarSalaCAD(string id)
+        //Borra una sala y sus secciones de la base de datos, siempre y cuando no tenga espectaculos asignados proximamente
+        public bool BorrarSalaCAD(string id)
         {
+            bool borrada = false;
             BD bd = new BD();
             SqlConnection c = bd.Connect();
 
             try
             {
                 c.Open();
+                
+                string disponibilidad="SELECT        e.IDEspectaculo, e.Titulo FROM            ReservaSala AS x INNER JOIN Sala AS s ON x.IDSala = s.NumSala INNER JOIN Espectaculo AS e ON x.IDEspectaculo = e.IDEspectaculo WHERE        (e.FechaFin >= GETDATE()) and s.NumSala="+id;
+                SqlCommand com1 = new SqlCommand(disponibilidad,c);
+                SqlDataReader dr = com1.ExecuteReader();
 
+                if (dr.HasRows == false)
+                {
+                    dr.Close();
+                    /////////////////////BORRAR SECCIONES/////////////////////
+                    string selectBorrar = "delete from Seccion where NumSala=" + id;
+                    SqlCommand com2 = new SqlCommand(selectBorrar, c);
+                    com2.ExecuteNonQuery();
+                    ///////////////////////////////////////////////////////////////////
+                    ////////////////////Borrar Sala//////////////
+                    selectBorrar = "delete from Sala where NumSala=" + id;
+                    SqlCommand com3 = new SqlCommand(selectBorrar, c);
+                    com3.ExecuteNonQuery();
+                    borrada = true;
+                    ////////////////////////////////////////////////////////////////////
+                }
+                else
+                    dr.Close();
 
-                /////////////////////BORRAR SECCIONES/////////////////////
-                string borrado = "delete from Seccion where NumSala=" + id;
-                SqlCommand com2 = new SqlCommand(borrado, c);
-                com2.ExecuteNonQuery();
-                ///////////////////////////////////////////////////////////////////
-                ////////////////////Borrar Sala//////////////
-                borrado = "delete from Sala where NumSala=" + id;
-                SqlCommand com3 = new SqlCommand(borrado, c);
-                com3.ExecuteNonQuery();
-                ////////////////////////////////////////////////////////////////////
-
+                return borrada;
             }
             catch (Exception ex)
             {

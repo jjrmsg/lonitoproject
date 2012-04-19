@@ -56,12 +56,12 @@ namespace Events4ALL.EN
                 set { descripcion = value; }
             }
         #endregion
-
+            
             public SalasEN()
             {
                 
             }
-
+            //constructor sobrecargado de Salas
             public SalasEN(int numSala_c,string tipoSala_c,int numSecciones_c,string descripcion_c,int aforo_c,int[][] secciones_c)
             {
                 numSala = numSala_c;
@@ -73,6 +73,7 @@ namespace Events4ALL.EN
                 secciones = secciones_c;
             }
 
+            //llama al metodo updateCAD que se encarga de hacer un insert en la sala de la actual entidad de negocio
             public bool InsertarEn()
             {
                 SalasCAD sala = new SalasCAD();
@@ -81,13 +82,13 @@ namespace Events4ALL.EN
                 else
                     return false;
             }
-
+            //llama al metodo updateCAD que se encarga de hacer un update en la sala de la actual entidad de negocio
             public void UpdateSala()
             {
                 SalasCAD sala = new SalasCAD();
                 sala.UpdateCAD(this);
             }
-            
+            //calcula la id de la proxima sala
             public int acutalizarId()
             {
                 int id = 0;
@@ -103,22 +104,26 @@ namespace Events4ALL.EN
                 DataSet salasTipo = sala.SalasPorTipo(tipo);
                 return salasTipo;
             }
+            //Pasa los parametros necesarios al cad para que pueda realizar la select
             public DataSet SalaSelect(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
             {
                 SalasCAD sala = new SalasCAD();
                 DataSet selectSala = sala.SalaSelectCAD(idSala,tipo,aforo_min,aforo_max,estado);
                 return selectSala;
             }
-
+            //recupera la sala segun la id que se le pasa
             public DataSet RecuperarSala(string id)
             {
                 SalasCAD salaCad = new SalasCAD();
                 return salaCad.SacarSala(id);
             }
-            public void BorrarSala(string numSala)
+            //borra la sala en caso de que sea posible si no tiene espectaculo asignado
+            public bool BorrarSala(string numSala)
             {
+                bool borrada;
                 SalasCAD sala = new SalasCAD();
-                sala.BorrarSalaCAD(numSala);
+                borrada= sala.BorrarSalaCAD(numSala);
+                return borrada;
             }
     }
 }
