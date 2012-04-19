@@ -17,10 +17,10 @@ namespace Events4ALL.CAD
     {
         private BD bd;
         private DataSet bdvirtual;
-        //private DataSet bdvirtual2;
         private SqlConnection con;
         private SqlDataAdapter da;
         private SqlDataAdapter da2;
+        private SqlDataAdapter da3;
         SqlCommandBuilder cbuilder;
 
         public PromocionCAD()
@@ -40,6 +40,8 @@ namespace Events4ALL.CAD
                 da.Fill(bdvirtual, "Espectaculo");
                 da2 = new SqlDataAdapter("select * from PromocionConEvento", con);
                 da2.Fill(bdvirtual, "PromocionConEvento");
+                da3 = new SqlDataAdapter("select * from Promocion", con);
+                da3.Fill(bdvirtual, "Promocion");
             }
             catch(Exception ex)
             {
@@ -59,6 +61,8 @@ namespace Events4ALL.CAD
             {
                 cbuilder = new SqlCommandBuilder(da2);
                 da2.Update(bdvirtual, "PromocionConEvento");
+                cbuilder = new SqlCommandBuilder(da3);
+                da3.Update(bdvirtual, "Promocion");
             }
             catch(Exception ex)
             {

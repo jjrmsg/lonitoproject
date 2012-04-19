@@ -54,6 +54,15 @@ namespace Events4ALL.EN
         }
         #endregion
 
+        #region Insertar una fila
+        public void InsertarEnDataRow(ref DataRow fila)
+        {
+            fila[0] = idPromocion;
+            fila[1] = nombre;
+            fila[2] = descuento;
+        }
+        #endregion
+
         public DataSet ObtenerEspectaculos()
         {
             return proCAD.ObtenerEspectaculos();

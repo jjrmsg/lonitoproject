@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Promociones));
             this.tabControl_promociones = new System.Windows.Forms.TabControl();
             this.tab_Por_espectaculo = new System.Windows.Forms.TabPage();
             this.button_PE_Guardar = new System.Windows.Forms.Button();
@@ -132,6 +133,8 @@
             this.errorProvider_MC_TipoCondicion3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Comparacion3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_TipoEvento3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Nombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider_MC_Descripcion = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl_promociones.SuspendLayout();
             this.tab_Por_espectaculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_PE_imagEspec)).BeginInit();
@@ -162,6 +165,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Nombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Descripcion)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_promociones
@@ -197,6 +202,7 @@
             // button_PE_Guardar
             // 
             this.button_PE_Guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_PE_Guardar.Enabled = false;
             this.button_PE_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.button_PE_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_PE_Guardar.Location = new System.Drawing.Point(767, 577);
@@ -214,7 +220,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_PE_imagEspec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.akira;
+            this.pictureBox_PE_imagEspec.Image = global::Events4ALL.Properties.Resources.image_default;
             this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
             this.pictureBox_PE_imagEspec.Name = "pictureBox_PE_imagEspec";
             this.pictureBox_PE_imagEspec.Size = new System.Drawing.Size(537, 267);
@@ -232,6 +238,7 @@
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_descCliente);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_mayor65);
             this.groupBox_PE_promoGen.Controls.Add(this.checkBox_PE_menor25);
+            this.groupBox_PE_promoGen.Enabled = false;
             this.groupBox_PE_promoGen.Location = new System.Drawing.Point(9, 441);
             this.groupBox_PE_promoGen.Name = "groupBox_PE_promoGen";
             this.groupBox_PE_promoGen.Size = new System.Drawing.Size(335, 121);
@@ -309,6 +316,7 @@
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_10);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_25);
             this.groupBox_PE_promoEvent.Controls.Add(this.radioButton_PE_5);
+            this.groupBox_PE_promoEvent.Enabled = false;
             this.groupBox_PE_promoEvent.Location = new System.Drawing.Point(9, 295);
             this.groupBox_PE_promoEvent.Name = "groupBox_PE_promoEvent";
             this.groupBox_PE_promoEvent.Size = new System.Drawing.Size(335, 140);
@@ -558,6 +566,7 @@
             this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
             this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(251, 21);
             this.comboBox_PE_espectaculo.TabIndex = 1;
+            this.comboBox_PE_espectaculo.Text = "Selecciona un espectaculo";
             this.comboBox_PE_espectaculo.SelectedIndexChanged += new System.EventHandler(this.comboBox_PE_espectaculo_SelectedIndexChanged);
             this.comboBox_PE_espectaculo.Click += new System.EventHandler(this.comboBox_PE_espectaculo_Click);
             // 
@@ -612,6 +621,7 @@
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad3);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad2);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Cantidad1);
+            this.groupBox_MC_TipoDeCond.Enabled = false;
             this.groupBox_MC_TipoDeCond.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_MC_TipoDeCond.Location = new System.Drawing.Point(451, 151);
             this.groupBox_MC_TipoDeCond.Name = "groupBox_MC_TipoDeCond";
@@ -1028,6 +1038,7 @@
             // 
             // button_MC_SubirFoto
             // 
+            this.button_MC_SubirFoto.Enabled = false;
             this.button_MC_SubirFoto.Image = global::Events4ALL.Properties.Resources.photo;
             this.button_MC_SubirFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_MC_SubirFoto.Location = new System.Drawing.Point(608, 432);
@@ -1066,6 +1077,7 @@
             // checkBox_MC_ActPromo
             // 
             this.checkBox_MC_ActPromo.AutoSize = true;
+            this.checkBox_MC_ActPromo.Enabled = false;
             this.checkBox_MC_ActPromo.Location = new System.Drawing.Point(608, 415);
             this.checkBox_MC_ActPromo.Name = "checkBox_MC_ActPromo";
             this.checkBox_MC_ActPromo.Size = new System.Drawing.Size(15, 14);
@@ -1109,6 +1121,7 @@
             // 
             this.textBox_MC_NomPromo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_NomPromo.Enabled = false;
             this.textBox_MC_NomPromo.Location = new System.Drawing.Point(448, 42);
             this.textBox_MC_NomPromo.MaxLength = 10;
             this.textBox_MC_NomPromo.Name = "textBox_MC_NomPromo";
@@ -1129,6 +1142,7 @@
             // 
             this.textBox_MC_Descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_MC_Descripcion.Enabled = false;
             this.textBox_MC_Descripcion.Location = new System.Drawing.Point(448, 81);
             this.textBox_MC_Descripcion.MaxLength = 248;
             this.textBox_MC_Descripcion.Multiline = true;
@@ -1139,6 +1153,7 @@
             // button_MC_Eliminar
             // 
             this.button_MC_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Eliminar.Enabled = false;
             this.button_MC_Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
             this.button_MC_Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_MC_Eliminar.Location = new System.Drawing.Point(765, 580);
@@ -1152,6 +1167,7 @@
             // button_MC_Guardar
             // 
             this.button_MC_Guardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button_MC_Guardar.Enabled = false;
             this.button_MC_Guardar.Image = global::Events4ALL.Properties.Resources.add_save;
             this.button_MC_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_MC_Guardar.Location = new System.Drawing.Point(608, 580);
@@ -1188,71 +1204,136 @@
             // 
             // errorProvider_PE_Otro
             // 
+            this.errorProvider_PE_Otro.BlinkRate = 0;
+            this.errorProvider_PE_Otro.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_PE_Otro.ContainerControl = this;
+            this.errorProvider_PE_Otro.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_PE_Otro.Icon")));
             // 
             // errorProvider_MC_Cant1
             // 
+            this.errorProvider_MC_Cant1.BlinkRate = 0;
+            this.errorProvider_MC_Cant1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Cant1.ContainerControl = this;
+            this.errorProvider_MC_Cant1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Cant1.Icon")));
             // 
             // errorProvider_MC_Cant2
             // 
+            this.errorProvider_MC_Cant2.BlinkRate = 0;
+            this.errorProvider_MC_Cant2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Cant2.ContainerControl = this;
+            this.errorProvider_MC_Cant2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Cant2.Icon")));
             // 
             // errorProvider_MC_Cant3
             // 
+            this.errorProvider_MC_Cant3.BlinkRate = 0;
+            this.errorProvider_MC_Cant3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Cant3.ContainerControl = this;
+            this.errorProvider_MC_Cant3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Cant3.Icon")));
             // 
             // errorProvider_MC_Desc1
             // 
+            this.errorProvider_MC_Desc1.BlinkRate = 0;
+            this.errorProvider_MC_Desc1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Desc1.ContainerControl = this;
+            this.errorProvider_MC_Desc1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc1.Icon")));
             // 
             // errorProvider_MC_Desc2
             // 
+            this.errorProvider_MC_Desc2.BlinkRate = 0;
+            this.errorProvider_MC_Desc2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Desc2.ContainerControl = this;
+            this.errorProvider_MC_Desc2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc2.Icon")));
             // 
             // errorProvider_MC_Desc3
             // 
+            this.errorProvider_MC_Desc3.BlinkRate = 0;
+            this.errorProvider_MC_Desc3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Desc3.ContainerControl = this;
+            this.errorProvider_MC_Desc3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc3.Icon")));
             // 
             // errorProvider_PE_eligeuno
             // 
+            this.errorProvider_PE_eligeuno.BlinkRate = 0;
+            this.errorProvider_PE_eligeuno.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_PE_eligeuno.ContainerControl = this;
+            this.errorProvider_PE_eligeuno.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_PE_eligeuno.Icon")));
             // 
             // errorProvider_MC_TipoCondicion1
             // 
+            this.errorProvider_MC_TipoCondicion1.BlinkRate = 0;
+            this.errorProvider_MC_TipoCondicion1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoCondicion1.ContainerControl = this;
+            this.errorProvider_MC_TipoCondicion1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoCondicion1.Icon")));
             // 
             // errorProvider_MC_Comparacion1
             // 
+            this.errorProvider_MC_Comparacion1.BlinkRate = 0;
+            this.errorProvider_MC_Comparacion1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Comparacion1.ContainerControl = this;
+            this.errorProvider_MC_Comparacion1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Comparacion1.Icon")));
             // 
             // errorProvider_MC_TipoEvento1
             // 
+            this.errorProvider_MC_TipoEvento1.BlinkRate = 0;
+            this.errorProvider_MC_TipoEvento1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoEvento1.ContainerControl = this;
+            this.errorProvider_MC_TipoEvento1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoEvento1.Icon")));
             // 
             // errorProvider_MC_TipoCondicion2
             // 
+            this.errorProvider_MC_TipoCondicion2.BlinkRate = 0;
+            this.errorProvider_MC_TipoCondicion2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoCondicion2.ContainerControl = this;
+            this.errorProvider_MC_TipoCondicion2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoCondicion2.Icon")));
             // 
             // errorProvider_MC_Comparacion2
             // 
+            this.errorProvider_MC_Comparacion2.BlinkRate = 0;
+            this.errorProvider_MC_Comparacion2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Comparacion2.ContainerControl = this;
+            this.errorProvider_MC_Comparacion2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Comparacion2.Icon")));
             // 
             // errorProvider_MC_TipoEvento2
             // 
+            this.errorProvider_MC_TipoEvento2.BlinkRate = 0;
+            this.errorProvider_MC_TipoEvento2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoEvento2.ContainerControl = this;
+            this.errorProvider_MC_TipoEvento2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoEvento2.Icon")));
             // 
             // errorProvider_MC_TipoCondicion3
             // 
+            this.errorProvider_MC_TipoCondicion3.BlinkRate = 0;
+            this.errorProvider_MC_TipoCondicion3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoCondicion3.ContainerControl = this;
+            this.errorProvider_MC_TipoCondicion3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoCondicion3.Icon")));
             // 
             // errorProvider_MC_Comparacion3
             // 
+            this.errorProvider_MC_Comparacion3.BlinkRate = 0;
+            this.errorProvider_MC_Comparacion3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_Comparacion3.ContainerControl = this;
+            this.errorProvider_MC_Comparacion3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Comparacion3.Icon")));
             // 
             // errorProvider_MC_TipoEvento3
             // 
+            this.errorProvider_MC_TipoEvento3.BlinkRate = 0;
+            this.errorProvider_MC_TipoEvento3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider_MC_TipoEvento3.ContainerControl = this;
+            this.errorProvider_MC_TipoEvento3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_TipoEvento3.Icon")));
+            // 
+            // errorProvider_MC_Nombre
+            // 
+            this.errorProvider_MC_Nombre.BlinkRate = 0;
+            this.errorProvider_MC_Nombre.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider_MC_Nombre.ContainerControl = this;
+            this.errorProvider_MC_Nombre.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Nombre.Icon")));
+            // 
+            // errorProvider_MC_Descripcion
+            // 
+            this.errorProvider_MC_Descripcion.BlinkRate = 0;
+            this.errorProvider_MC_Descripcion.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider_MC_Descripcion.ContainerControl = this;
+            this.errorProvider_MC_Descripcion.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Descripcion.Icon")));
             // 
             // Promociones
             // 
@@ -1301,6 +1382,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoEvento3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Nombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Descripcion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1410,5 +1493,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoCondicion3;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Comparacion3;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoEvento3;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Nombre;
+        private System.Windows.Forms.ErrorProvider errorProvider_MC_Descripcion;
     }
 }

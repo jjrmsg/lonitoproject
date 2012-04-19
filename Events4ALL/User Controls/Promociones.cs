@@ -18,6 +18,8 @@ namespace Events4ALL
     public partial class Promociones : UserControl
     {
         private bool PE_Cantidad;
+        private bool MC_Nombre;
+        private bool MC_Descripcion;
         private bool MC_Cantidad1;
         private bool MC_Cantidad2;
         private bool MC_Cantidad3;
@@ -37,8 +39,9 @@ namespace Events4ALL
         private CondicionEN conEN;
         private DataSet promos;
         private DataSet espec;
-        private DataTable tPromo;
+        private DataTable tCondicion;
         private DataTable tEspec;
+        private DataTable tPromocion;
         private DataTable tEspecConPromo;
         private int idEventoSelec;
         private bool insertarNueva;
@@ -55,11 +58,14 @@ namespace Events4ALL
             tEspec = espec.Tables["Espectaculo"];
             tEspecConPromo = new DataTable();
             tEspecConPromo = espec.Tables["PromocionConEvento"];
+            tPromocion = new DataTable();
+            tPromocion = espec.Tables["Promocion"];
+            
 
             promos = new DataSet();
             promos = conEN.ObtenerTodas();
-            tPromo = new DataTable();
-            tPromo = promos.Tables["Condicion"];
+            tCondicion = new DataTable();
+            tCondicion = promos.Tables["Condicion"];
 
             insertarNueva = false;
         }
@@ -147,7 +153,7 @@ namespace Events4ALL
             {
                 //estas 2 lineas tienen que estar si no el VisualStudio se pone a llorar y el FormBase peta. ¿pq? -> Preguntaselo a Microsoft xD
                 DataRow nuevafila;
-                nuevafila = tPromo.NewRow();
+                nuevafila = tCondicion.NewRow();
 
                 dataGridView_MC_ListaPromosCond.DataSource = promos;
                 dataGridView_MC_ListaPromosCond.DataMember = "Condicion";
@@ -260,7 +266,6 @@ namespace Events4ALL
         //Funcion para buscar un evento con una promo
         private void BorrarPromoEspectaculo(int fila)
         {
-            //MessageBox.Show(fila.ToString());
             tEspecConPromo.Rows[fila].Delete();
         }
 
@@ -278,6 +283,8 @@ namespace Events4ALL
             DataRow nuevafila9;
             DataRow nuevafila10;
             DataRow nuevafila11;
+            DataRow nuevafila12;
+            PromocionEN promocionEN;
             int fila=0;
 
             try
@@ -523,7 +530,55 @@ namespace Events4ALL
                         BorrarPromoEspectaculo(fila);
                     }
                 }
+
+                if (radioButton_PE_otroDesc.Checked && !checkBox_PE_Ninguno.Checked)
+                {
+                    //Agregamos primero la nueva promocion custom si no esta
+                    if (IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)) == -1)
+                    {
+                        promocionEN = new PromocionEN(NuevaIdPromocion(), "Otra" + textBox_PE_otroDesc.Text.ToString(), Convert.ToInt32(textBox_PE_otroDesc.Text));
+                        DataRow fOtro = tPromocion.NewRow();
+                        promocionEN.InsertarEnDataRow(ref fOtro);
+                        tPromocion.Rows.Add(fOtro);
+                    }
+
+                    //Ahora agregamos la relacion de esta promocion con el espectaculo
+                    if (!BuscarPromoEspectaculo(idEventoSelec, IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)), ref fila))
+                    {
+                        nuevafila12 = tEspecConPromo.NewRow();
+                        nuevafila12[0] = idEventoSelec;
+                        nuevafila12[1] = IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text));
+                        tEspecConPromo.Rows.Add(nuevafila12);
+                    }
+                    foreach (DataRow f in tEspecConPromo.Rows)
+                    {
+                        if (f.RowState.ToString() != "Deleted")
+                        {
+                            if (Convert.ToInt32(f[0]) == idEventoSelec && Convert.ToInt32(f[1]) > 11 && Convert.ToInt32(f[1]) != IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)))
+                            {
+                                f.Delete();
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (DataRow f in tEspecConPromo.Rows)
+                    {
+                        if (f.RowState.ToString() != "Deleted")
+                        {
+                            if (Convert.ToInt32(f[0]) == idEventoSelec && Convert.ToInt32(f[1]) > 11)
+                            {
+                                f.Delete();
+                            }
+                        }
+                    }
+                }
+                    
+
+
                 proEN.Save();
+                MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
             catch(Exception ex)
             {
@@ -532,6 +587,24 @@ namespace Events4ALL
             }
 
             
+        }
+
+        //Funcin para obtener la idPromocion mediante su cantidad
+        private int IdPromoMedianteCantidad(int cant)
+        {
+            int resul = -1;
+            foreach (DataRow fila in tPromocion.Rows)
+            {
+                if (fila.RowState.ToString() != "Deleted")
+                {
+                    if(Convert.ToInt32(fila[2]) == cant)
+                    {
+                        resul = Convert.ToInt32(fila[0]);
+                        break;
+                    }
+                }
+            }
+            return resul;
         }
 
         //Funcion para comprobar las cantidades numericas de las promociones por condicion
@@ -738,17 +811,44 @@ namespace Events4ALL
             }
         }
 
+        //Funcion para comprobar que has puesto un nombre a la condicion
+        private void ComproNombreYDescripcionCondicion()
+        {
+            if (textBox_MC_NomPromo.Text.ToString()=="")
+            {
+                errorProvider_MC_Nombre.SetError(label_MC_Nombre, "Debes poner un nombre");
+                MC_Nombre = false;
+            }
+            else
+            {
+                errorProvider_MC_Nombre.Clear();
+                MC_Nombre = true;
+            }
+
+            if (textBox_MC_Descripcion.Text.ToString() == "")
+            {
+                errorProvider_MC_Descripcion.SetError(label_MC_Descripcion, "Debes poner una descripcion");
+                MC_Descripcion = false;
+            }
+            else
+            {
+                errorProvider_MC_Descripcion.Clear();
+                MC_Descripcion = true;
+            }
+        }
+
         //Evento para guardar los datos modificados de las promociones por condicion
         private void button_MC_Guardar_Click(object sender, EventArgs e)
         {
             ComproCantCondiciones();
             ComproComboYGroup();
+            ComproNombreYDescripcionCondicion();
 
             //Comprobamos que este todo listo
             if (checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que esten las 3 condiciones
-                if (MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && 
+                if (MC_Nombre && MC_Descripcion&& MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && 
                     MC_Descuento1 && MC_Descuento2 && MC_Descuento3 &&
                     MC_TipoCondicion1 && MC_TipoCondicion2 && MC_TipoCondicion3 && 
                     MC_Comparacion1 && MC_Comparacion2 && MC_Comparacion3 &&
@@ -760,7 +860,7 @@ namespace Events4ALL
             else if (checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que la segunda este activada y la tercera no
-                if (MC_Cantidad1 && MC_Cantidad2 && 
+                if (MC_Nombre && MC_Descripcion && MC_Cantidad1 && MC_Cantidad2 && 
                     MC_Descuento1 && MC_Descuento2 &&
                     MC_TipoCondicion1 && MC_TipoCondicion2 && 
                     MC_Comparacion1 && MC_Comparacion2 &&
@@ -772,7 +872,7 @@ namespace Events4ALL
             else if (!checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que la segunda no este activada y la tercera si
-                if (MC_Cantidad1 && MC_Cantidad3 && 
+                if (MC_Nombre && MC_Descripcion && MC_Cantidad1 && MC_Cantidad3 && 
                     MC_Descuento1 && MC_Descuento3 &&
                     MC_TipoCondicion1 && MC_TipoCondicion3 &&
                     MC_Comparacion1 && MC_Comparacion3 &&
@@ -784,7 +884,7 @@ namespace Events4ALL
             else if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //En el caso que sólo este la primera
-                if (MC_Cantidad1 && MC_Descuento1 && MC_TipoCondicion1 && MC_Comparacion1 && MC_TipoEvento1)
+                if (MC_Nombre && MC_Descripcion && MC_Cantidad1 && MC_Descuento1 && MC_TipoCondicion1 && MC_Comparacion1 && MC_TipoEvento1)
                 {
                     GuardarCondicion();
                 }
@@ -861,8 +961,8 @@ namespace Events4ALL
         private int NuevaIdCondicion()
         {
             int nuevaID;
-            nuevaID = Convert.ToInt32(tPromo.Rows[0][0]);
-            foreach (DataRow row in tPromo.Rows)
+            nuevaID = Convert.ToInt32(tCondicion.Rows[0][0]);
+            foreach (DataRow row in tCondicion.Rows)
             {
                 if (nuevaID < Convert.ToInt32(row[0]))
                 {
@@ -872,10 +972,25 @@ namespace Events4ALL
             return nuevaID+1;
         }
 
+        //Funcion obtener nueva id para guardar en promociones
+        private int NuevaIdPromocion()
+        {
+            int nuevaID;
+            nuevaID = Convert.ToInt32(tPromocion.Rows[0][0]);
+            foreach (DataRow row in tPromocion.Rows)
+            {
+                if (nuevaID < Convert.ToInt32(row[0]))
+                {
+                    nuevaID = Convert.ToInt32(row[0]);
+                }
+            }
+            return nuevaID + 1;
+        }
+
         //Funcion para guardar los cambios en la condicion seleccionada sobre la BD
         private void GuardarCondicion()
         {
-            DataRow fila = tPromo.NewRow();
+            DataRow fila = tCondicion.NewRow();
             
             CondicionEN condicionEN;
 
@@ -956,16 +1071,18 @@ namespace Events4ALL
             if (insertarNueva)
             {
                 condicionEN.InsertarEnDataRow(ref fila);
-                tPromo.Rows.Add(fila);
+                tCondicion.Rows.Add(fila);
                 conEN.Save();
                 insertarNueva = false;
             }
             else
             {
-                condicionEN.ModificarFilaDeDataTable(NumFilaTabla(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)),ref tPromo);
+                condicionEN.ModificarFilaDeDataTable(NumFilaTabla(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)),ref tCondicion);
                 conEN.Save();
             }
             #endregion
+            button_MC_Guardar.Enabled = false;
+            MC_limpiar(1);
             MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
@@ -1066,7 +1183,15 @@ namespace Events4ALL
         //Evento para cargar los datos de la fila seleccionada del datagridview
         private void dataGridView_MC_ListaPromosCond_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            limpiarErrorProvider(1);
+            limpiarErrorProvider(2);
+            limpiarErrorProvider(3);
+            button_MC_Guardar.Enabled = true;
+            textBox_MC_NomPromo.Enabled = true;
+            textBox_MC_Descripcion.Enabled = true;
+            groupBox_MC_TipoDeCond.Enabled = true;
+            checkBox_MC_ActPromo.Enabled = true;
+            button_MC_SubirFoto.Enabled = true;
             if (insertarNueva)
             {
                 if (MessageBox.Show("Has pulsado Nueva condición ¿Realmente quieres cancelar la insercion de una nueva condición? ", "Nueva condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
@@ -1079,8 +1204,7 @@ namespace Events4ALL
             if (!insertarNueva)
             {
                 #region Codigo Para rellenar los datos
-                //if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value != DBNull.Value)
-                //{
+                    button_MC_Eliminar.Enabled = true;
                     MC_limpiar(0);
                     //Para el bloque 1 de las condiciones
                     //relleno el nombre de la fila seleccionada
@@ -1194,17 +1318,22 @@ namespace Events4ALL
                         }
                         checkBox_MC_ActivarCond2.Checked = true;
                     }
-                //}
+
                 #endregion
             }
         }
 
-        //Evento para quitar el errorprovider del radiobuton Otro si se seleciona otro
+        //Evento para quitar el errorprovider del radiobuton Otro si se seleciona otro y acticar/desactivar el textbox asociado
         private void radioButton_PE_otroDesc_CheckedChanged(object sender, EventArgs e)
         {
             if (!radioButton_PE_otroDesc.Checked)
             {
                 errorProvider_PE_Otro.Clear();
+                textBox_PE_otroDesc.Enabled = false;
+            }
+            else
+            {
+                textBox_PE_otroDesc.Enabled = true;
             }
         }
 
@@ -1231,6 +1360,7 @@ namespace Events4ALL
                 radioButton_PE_otroDesc.Enabled = true;
                 textBox_PE_otroDesc.Enabled = true;
             }
+            limpiarErrorProviderEspectaculos();
         }
 
         //Evento para recargar el combobox de espectaculos
@@ -1247,6 +1377,9 @@ namespace Events4ALL
             radioButton_PE_25.Checked = false;
             radioButton_PE_50.Checked = false;
             radioButton_PE_IVA.Checked = false;
+            radioButton_PE_otroDesc.Checked = false;
+            textBox_PE_otroDesc.Text = "";
+            textBox_PE_otroDesc.Enabled = false;
             checkBox_PE_menor25.Checked = false;
             checkBox_PE_mayor65.Checked = false;
             checkBox_PE_descCliente.Checked = false;
@@ -1255,9 +1388,49 @@ namespace Events4ALL
             checkBox_PE_descParado.Checked = false;
         }
 
+        //Funcion para obtener la id de la promcocion mediandte la id del espectaculo en la tabla PromosConEspectaculo
+        private int ObtenerIdPromocion(int idEspectaculo)
+        {
+            int resul = 0;
+
+            foreach (DataRow fila in tEspecConPromo.Rows)
+            {
+                if (fila.RowState.ToString() != "Deleted")
+                {
+                    if (Convert.ToInt32(fila[0]) == idEspectaculo)
+                    {
+                        resul = Convert.ToInt32(fila[1]);
+                    }
+                }
+            }
+
+            return resul;
+        }
+
+        //Funcion para obtener la cantidad de descuento del descuento Otro de las promociones para eventos
+        private int ObtenerCantidadOtroPromocion(int idPromocion)
+        {
+            int resul = -1;
+
+            foreach (DataRow fila in tPromocion.Rows)
+            {
+                if (fila.RowState.ToString() != "Deleted")
+                {
+                    if (Convert.ToInt32(fila[0]) == idPromocion)
+                    {
+                        resul = Convert.ToInt32(fila[2]);
+                    }
+                }
+            }
+            return resul;
+        }
+
         //Evento para cargar los datos cuando seleccionas un item del combo box
         private void comboBox_PE_espectaculo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button_PE_Guardar.Enabled = true;
+            groupBox_PE_promoEvent.Enabled = true;
+            groupBox_PE_promoGen.Enabled = true;
             idEventoSelec = Convert.ToInt32(comboBox_PE_espectaculo.SelectedIndex);
             label_PE_TTitulo.Text = tEspec.Rows[idEventoSelec][1].ToString();
             label_PE_TTipo.Text = tEspec.Rows[idEventoSelec][6].ToString();
@@ -1268,70 +1441,91 @@ namespace Events4ALL
             label_PE_TFechaIni.Text = fini.ToShortDateString();
             label_PE_TFechaFin.Text = ffin.ToShortDateString();
             label_PE_TPrecio.Text = Convert.ToInt32(tEspec.Rows[idEventoSelec][5]).ToString("C2");
+            //Cargando la imagen, si tiene, si no, se muesra la de por defecto
+            if (tEspec.Rows[idEventoSelec][7] != System.DBNull.Value)
+            {
+                byte[] bImage = (byte[])tEspec.Rows[idEventoSelec][7];
+                MemoryStream ms = new MemoryStream(bImage);
+                pictureBox_PE_imagEspec.Image = Image.FromStream(ms, true, true);
+            }
+            else
+            {
+                pictureBox_PE_imagEspec.Image = Events4ALL.Properties.Resources.image_default;
+            }
 
             LimpiarPorEspectaculo();
 
             foreach (DataRow obj in tEspecConPromo.Rows)
             {
-                if (idEventoSelec == Convert.ToInt32(obj[0]))
+                if (obj.RowState.ToString() != "Deleted")
                 {
-                    if (Convert.ToInt32(obj[1]) == 1)
+                    if (idEventoSelec == Convert.ToInt32(obj[0]))
                     {
-                        radioButton_PE_5.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 1)
+                        {
+                            radioButton_PE_5.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 2)
-                    {
-                        radioButton_PE_10.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 2)
+                        {
+                            radioButton_PE_10.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 3)
-                    {
-                        radioButton_PE_25.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 3)
+                        {
+                            radioButton_PE_25.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 4)
-                    {
-                        radioButton_PE_50.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 4)
+                        {
+                            radioButton_PE_50.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 5)
-                    {
-                        radioButton_PE_IVA.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 5)
+                        {
+                            radioButton_PE_IVA.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 6)
-                    {
-                        checkBox_PE_menor25.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == ObtenerIdPromocion(idEventoSelec) && ObtenerIdPromocion(idEventoSelec) > 11)
+                        {
+                            radioButton_PE_otroDesc.Checked = true;
+                            textBox_PE_otroDesc.Enabled = true;
+                            textBox_PE_otroDesc.Text = ObtenerCantidadOtroPromocion(ObtenerIdPromocion(idEventoSelec)).ToString();
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 7)
-                    {
-                        checkBox_PE_mayor65.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 6)
+                        {
+                            checkBox_PE_menor25.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 8)
-                    {
-                        checkBox_PE_descCliente.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 7)
+                        {
+                            checkBox_PE_mayor65.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 9)
-                    {
-                        checkBox_PE_descEstudiante.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 8)
+                        {
+                            checkBox_PE_descCliente.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 10)
-                    {
-                        checkBox_PE_descJubilado.Checked = true;
-                    }
+                        if (Convert.ToInt32(obj[1]) == 9)
+                        {
+                            checkBox_PE_descEstudiante.Checked = true;
+                        }
 
-                    if (Convert.ToInt32(obj[1]) == 11)
-                    {
-                        checkBox_PE_descParado.Checked = true;
+                        if (Convert.ToInt32(obj[1]) == 10)
+                        {
+                            checkBox_PE_descJubilado.Checked = true;
+                        }
+
+                        if (Convert.ToInt32(obj[1]) == 11)
+                        {
+                            checkBox_PE_descParado.Checked = true;
+                        }
                     }
                 }
             }
-            if (!radioButton_PE_5.Checked && !radioButton_PE_10.Checked && !radioButton_PE_25.Checked && !radioButton_PE_50.Checked && !radioButton_PE_IVA.Checked)
+            if (!radioButton_PE_5.Checked && !radioButton_PE_10.Checked && !radioButton_PE_25.Checked && !radioButton_PE_50.Checked && !radioButton_PE_IVA.Checked && !radioButton_PE_otroDesc.Checked)
             {
                 checkBox_PE_Ninguno.Checked = true;
                 radioButton_PE_5.Checked = false;
@@ -1347,7 +1541,7 @@ namespace Events4ALL
             //Aqui va el de la imagen
         }
 
-        //Funcion para limpiar los errorProvider
+        //Funcion para limpiar los errorProvider de las condiciones
         private void limpiarErrorProvider(int cual)
         {
             if (cual == 1)
@@ -1374,6 +1568,13 @@ namespace Events4ALL
                 errorProvider_MC_Comparacion3.Clear();
                 errorProvider_MC_TipoEvento3.Clear();
             }
+        }
+
+        //Funcion para limpiar los errorProvider de las promociones espectaculo
+        private void limpiarErrorProviderEspectaculos()
+        {
+            errorProvider_PE_eligeuno.Clear();
+            errorProvider_PE_Otro.Clear();
         }
 
         //Funcion para desactivar el grupo de condiciones segunda o tercera
@@ -1410,6 +1611,15 @@ namespace Events4ALL
         {
             MC_limpiar(1);
             limpiarErrorProvider(1);
+            limpiarErrorProvider(2);
+            limpiarErrorProvider(3);
+            button_MC_Guardar.Enabled = true;
+            button_MC_Eliminar.Enabled = false;
+            textBox_MC_NomPromo.Enabled = true;
+            textBox_MC_Descripcion.Enabled = true;
+            groupBox_MC_TipoDeCond.Enabled = true;
+            checkBox_MC_ActPromo.Enabled = true;
+            button_MC_SubirFoto.Enabled = true;
             checkBox_MC_ActivarCond1.Checked = false;
             checkBox_MC_ActivarCond2.Checked = false;
             insertarNueva = true;
@@ -1418,18 +1628,27 @@ namespace Events4ALL
         //Funcion para eliminar una condicion
         private void button_MC_Eliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button2)==DialogResult.Yes)
+            try
             {
-                int id = (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value));
-                int cual = NumFilaTabla(id);
-                if (Convert.ToInt32(tPromo.Rows[cual][0]) == id)
+                if (MessageBox.Show("¿Realmente quieres eliminar la condicion " + dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[1].Value.ToString() + " ?", "Eliminar condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
-                    tPromo.Rows[cual].Delete();
-                    conEN.Save();
-                    MC_limpiar(1);
-                }
+                    int id = (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value));
+                    int cual = NumFilaTabla(id);
+                    if (Convert.ToInt32(tCondicion.Rows[cual][0]) == id)
+                    {
+                        tCondicion.Rows[cual].Delete();
+                        conEN.Save();
+                        MC_limpiar(1);
+                        button_MC_Guardar.Enabled=false;
+                        button_MC_Eliminar.Enabled = false;
+                    }
 
-                
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No hay ninguna fila seleccionada","Eliminar condición",MessageBoxButtons.OK,MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
             }
         }
 
@@ -1438,9 +1657,9 @@ namespace Events4ALL
         {
             int i;
             bool sal = false;
-            for (i = 0; i < tPromo.Rows.Count && !sal; i++)
+            for (i = 0; i < tCondicion.Rows.Count && !sal; i++)
             {
-                if (Convert.ToInt32(tPromo.Rows[i][0]) == id)
+                if (Convert.ToInt32(tCondicion.Rows[i][0]) == id)
                 {
                     sal = true;
                 }
