@@ -51,7 +51,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Estilo.css" />
+    <Content Include="Estilos\MasterStyle.css" />
+    <Content Include="contacto.aspx" />
+    <Content Include="cartelera.aspx" />
+    <Content Include="espectaculo.aspx" />
+    <Content Include="perfil.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="ranking.aspx" />
+    <Content Include="registro.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -62,6 +69,55 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cartelera.aspx.cs">
+      <DependentUpon>cartelera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cartelera.aspx.designer.cs">
+      <DependentUpon>cartelera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="espectaculo.aspx.cs">
+      <DependentUpon>espectaculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="espectaculo.aspx.designer.cs">
+      <DependentUpon>espectaculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfil.aspx.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perfil.aspx.designer.cs">
+      <DependentUpon>perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ranking.aspx.cs">
+      <DependentUpon>ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking.aspx.designer.cs">
+      <DependentUpon>ranking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registro.aspx.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registro.aspx.designer.cs">
+      <DependentUpon>registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -80,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="js\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

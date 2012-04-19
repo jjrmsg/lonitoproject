@@ -5,18 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Estilo.css" rel="stylesheet" type="text/css" />
+    <link href="Estilos/MasterStyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="TopBar">
-        <asp:ContentPlaceHolder ID="TopBar1" runat="server">
-        </asp:ContentPlaceHolder>
+
     </div>
     
     <div id="Bar">
-        <asp:ContentPlaceHolder ID="Bar1" runat="server">
-        </asp:ContentPlaceHolder>
+
     </div>
 
     <div id="wrap">
