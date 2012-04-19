@@ -56,6 +56,7 @@ namespace Events4ALL
             LoadRanking();
         }
 
+        //Carga en el combobox todos los espectaculos 
         private void LoadEspectaculos()
         {
             DataSet espec = new DataSet();
@@ -74,6 +75,7 @@ namespace Events4ALL
             }
         }
 
+        //Realiza la llamada a todos los metodos que se encargan de obtener los datos de la pestaña General
         private void loadButton_Click(object sender, EventArgs e)
         {
             mainChart.Series["Euros"].Points.Clear();
@@ -86,6 +88,7 @@ namespace Events4ALL
             ValidaDatos();
         }
 
+        //Realiza la validación de los datos introducidos en la pestaña General
         private void ValidaDatos()
         {
             if (!string.IsNullOrWhiteSpace(textAnyo.Text))
@@ -109,6 +112,7 @@ namespace Events4ALL
             }
         }
 
+        //Obtiene los datos para generar el gráfico de Recaudación de la pestaña General
         private void ObtenerDatosGeneral()
         {
             DataSet dsVentas;
@@ -129,7 +133,7 @@ namespace Events4ALL
                 {
                     decimal precio = 0;
                     espEN.idEspectaculo = id;
-                    precio = espEN.getPrecioId();
+                    precio = (decimal)row["Importe"];
                     
                     if (diasVentas.ContainsKey(dia))
                     {
@@ -167,6 +171,9 @@ namespace Events4ALL
                 }
             }
 
+            DataSet espect = new DataSet();
+            espect = espEN.ObtenerEspectaculoPorID(maxID.ToString());
+
             Image cartel = espEN.ObtenerImagenEspectaculo(maxID);
             
             if (cartel != null)
@@ -180,8 +187,14 @@ namespace Events4ALL
                     Console.WriteLine(ex.Message);
                 }
             }
+
+            foreach (DataRow r in espect.Tables[0].Rows)
+            {
+                labelRentable.Text = r["Titulo"].ToString();
+            }
         }
 
+        //Obtiene los datos necesarios para generar el gráfico "Ventas por tipo" de la pestaña General 
         private void ObtenerDatosTipo()
         {
             DataSet dsVentas;
@@ -220,6 +233,7 @@ namespace Events4ALL
             }
         }
 
+        //Obtiene los datos necesarios para generar el gráfico "Ventas por género" de la pestaña General
         private void ObtenerDatosGenero()
         {
             DataSet dsVentas;
@@ -258,6 +272,7 @@ namespace Events4ALL
             }
         }
 
+        //Se en carga de llamar a los métodos que obtiene los datos de la pestaña Cliente
         private void loadButton2_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textNIF.Text))
@@ -291,6 +306,7 @@ namespace Events4ALL
             }
         }
 
+        //Obtiene los datos personales del cliente del cual hemos introducido el NIF y los muestra
         private void ObtenerDatosCliente()
         {
             byte[] bImage = new byte[0];
@@ -326,6 +342,7 @@ namespace Events4ALL
             }
         }
 
+        //Obtiene datos generales del cliente y los muestra
         private void ObtenerDatosCliGenerales()
         {
             DataSet ds = new DataSet();
@@ -348,6 +365,7 @@ namespace Events4ALL
             
         }
 
+        //Obtiene los datos necesarios para generar una gráfica con el tipo de género favorito del cliente
         private void ObtenerGeneroPref()
         {
             DataSet ds;
@@ -380,6 +398,7 @@ namespace Events4ALL
             }
         }
 
+        //Obtiene los datos necesarios para generar una gráfica con los tipos de espectáculos favoritos del cliente
         private void ObtenerTipoPref()
         {
             DataSet ds;
@@ -408,6 +427,7 @@ namespace Events4ALL
             }
         }
 
+        //En la pestaña Espectáculo, se obtienen los datos del espectáculo seleccionado
         private void comboTitulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboTitulo.Items[comboTitulo.SelectedIndex].ToString() != "Espectáculo")
@@ -418,6 +438,7 @@ namespace Events4ALL
             }
         }
 
+        //Se obtienen los datos necesarios para generar las estadisticas del espectaculo seleccionado
         private void ObtenerEstadisticasEspectaculo(string titulo)
         {
 
@@ -432,6 +453,7 @@ namespace Events4ALL
             }
         }
 
+        //Se obtienen algunos datos generales del espectáculo seleccionado
         private void ObtenerDatosEspectaculo(string titulo)
         {
             DataSet ds = new DataSet();
@@ -465,6 +487,7 @@ namespace Events4ALL
             }
         }
 
+        //Se obtienen los datos necesarios para generar un gráfico que represente en orden descendente un ranking con los espectaculos mas rentables.
         private void LoadRanking()
         {
             DataSet ds = null;

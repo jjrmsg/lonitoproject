@@ -14,6 +14,7 @@ namespace Events4ALL.CAD
         {
         }
 
+        //Obtiene una lista de todos los mensajes
         public DataSet getMessages()
         {
             BD bd = new BD();
@@ -37,6 +38,7 @@ namespace Events4ALL.CAD
             return mensajes;
         }
 
+        //Obtiene los datos de un mensaje concreto sabiendo su ID
         public DataSet getMessageByID(string id)
         {
             BD bd = new BD();
@@ -59,6 +61,7 @@ namespace Events4ALL.CAD
             return mensaje;
         }
 
+        //Marca un mensaje como leido
         public void setResponse(string ID)
         {
             BD bd = new BD();
@@ -80,6 +83,7 @@ namespace Events4ALL.CAD
 
         }
 
+        //Elimina un mensaje de la BD
         public void deleteMessage(string ID)
         {
             BD bd = new BD();
@@ -100,6 +104,7 @@ namespace Events4ALL.CAD
             }
         }
 
+        //Obtiene el número de mensajes sin leer
         public int getNumMessages()
         {
             BD bd = new BD();

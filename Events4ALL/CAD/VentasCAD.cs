@@ -18,6 +18,7 @@ namespace Events4ALL.CAD
         {
         }
 
+        //Obtiene todos los datos de un espectaculo
         public DataSet getAllEspectaculos()
         {
             BD bd = new BD();
@@ -41,6 +42,7 @@ namespace Events4ALL.CAD
             return datosVentas;
         }
 
+        //Obtiene el importe gastado y el número de entradas que ha comprado un cliente
         public DataSet getEstadisticasCliente(string nif)
         {
             BD bd = new BD();
@@ -50,7 +52,7 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select sum(Precio) Dinero, count(v.IDEspectaculo) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo and v.IDCliente='"+nif+"'", c);
+                SqlDataAdapter da = new SqlDataAdapter("select sum(Importe) Dinero, count(v.IDEspectaculo) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo and v.IDCliente='"+nif+"'", c);
                 da.Fill(datos);
             }
             catch
@@ -64,6 +66,7 @@ namespace Events4ALL.CAD
             return datos;
         }
 
+        //Obtiene el número de espectáculos distintos a los que ha asistido un cliente
         public DataSet getEspectaculosCliente(string nif)
         {
             BD bd = new BD();
@@ -87,6 +90,7 @@ namespace Events4ALL.CAD
             return datos;
         }
 
+        //Obtiene los datos necesarios para saber que tipo y gérnero de espectaculos son los favoritos de un cliente
         public DataSet getGeneroTipoCli(string nif)
         {
             BD bd = new BD();
@@ -110,6 +114,7 @@ namespace Events4ALL.CAD
             return datosVentas;
         }
 
+        //Obtiene el importe total recaudado por un espectáculo
         public DataSet getVentasEspectaculo(string titulo)
         {
             BD bd = new BD();
@@ -119,7 +124,7 @@ namespace Events4ALL.CAD
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select sum(e.Precio) Recaudacion, count(*) Entradas from Ventas v, Espectaculo e where e.Titulo='"+titulo+"' and e.IDEspectaculo=v.IDEspectaculo", c);
+                SqlDataAdapter da = new SqlDataAdapter("select sum(v.Importe) Recaudacion, count(*) Entradas from Ventas v, Espectaculo e where e.Titulo='"+titulo+"' and e.IDEspectaculo=v.IDEspectaculo", c);
                 da.Fill(datosVentas);
             }
             catch
@@ -133,6 +138,7 @@ namespace Events4ALL.CAD
             return datosVentas;
         }
 
+        //Obtiene una lista ordenada por número de ventas en orden ascendente o descendente de los espectáculos 
         public DataSet ObtenerRanking(char orden)
         {
             BD bd = new BD();

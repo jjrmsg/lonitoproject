@@ -31,6 +31,7 @@ namespace Events4ALL.User_Controls
             LoadMessages();
         }
 
+        //Carga todos los mensajes en el datagridview
         private void LoadMessages()
         {
             DataSet dsmsg = new DataSet();
@@ -72,6 +73,7 @@ namespace Events4ALL.User_Controls
             }
         }
 
+        //Envia la contestación por mail a la dirección de correo del cliente, se ejecuta en un thread diferente
         private void mailButton_Click(object sender, EventArgs e)
         {
             Mail mail = new Mail(responseText.Text, mimail, IDMensaje, new MailCallback(ResultCallback));
@@ -81,6 +83,7 @@ namespace Events4ALL.User_Controls
             statusLabel.Text = "Enviando...";
         }
 
+        //Este método se ejecuta cuando el mensaje ha sido enviado, muestra un mensaje y limpia los datos
         public void ResultCallback(string ID)
         {
             statusLabel.Text = "Enviado";
@@ -89,6 +92,7 @@ namespace Events4ALL.User_Controls
             LoadMessages();
         }
 
+        //Carga los datos de un mensaje cuando pinchas en el y borra el mensaje si le das al boton de eliminar
         private void msgGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex != msgGridView.Columns["Eliminar"].Index)
@@ -121,6 +125,7 @@ namespace Events4ALL.User_Controls
             }
         }
 
+        //Recarga la lista de mensajes
         private void refreshButton_Click(object sender, EventArgs e)
         {
             LoadMessages();
@@ -129,6 +134,8 @@ namespace Events4ALL.User_Controls
 
     public delegate void MailCallback(string res);
 
+
+    //Esta clase se encarga de componer un mail
     public class Mail
     {
         string Mensaje = "";
@@ -144,6 +151,7 @@ namespace Events4ALL.User_Controls
             this.callback = callback;
         }
 
+        //Envia el mail a la dirección especificada con su contenido y asunto
         public void sendMail()
         {
             System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();

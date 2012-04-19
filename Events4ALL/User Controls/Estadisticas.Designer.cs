@@ -109,6 +109,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.errorAnyo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorMes = new System.Windows.Forms.ErrorProvider(this.components);
+            this.labelRentable = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -240,6 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.labelRentable);
             this.groupBox1.Controls.Add(this.loadButton);
             this.groupBox1.Controls.Add(this.textAnyo);
             this.groupBox1.Controls.Add(this.label3);
@@ -807,7 +809,7 @@
             this.groupBox8.Size = new System.Drawing.Size(347, 215);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Espetáculo";
+            this.groupBox8.Text = "Espectáculo";
             // 
             // comboTitulo
             // 
@@ -911,6 +913,17 @@
             this.errorMes.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorMes.ContainerControl = this;
             this.errorMes.Icon = ((System.Drawing.Icon)(resources.GetObject("errorMes.Icon")));
+            // 
+            // labelRentable
+            // 
+            this.labelRentable.AutoSize = true;
+            this.labelRentable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRentable.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelRentable.Location = new System.Drawing.Point(704, 268);
+            this.labelRentable.Name = "labelRentable";
+            this.labelRentable.Size = new System.Drawing.Size(48, 16);
+            this.labelRentable.TabIndex = 8;
+            this.labelRentable.Text = "--------";
             // 
             // Estadisticas
             // 
@@ -1019,5 +1032,6 @@
         private System.Windows.Forms.ComboBox comboTitulo;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRanking;
+        private System.Windows.Forms.Label labelRentable;
     }
 }
