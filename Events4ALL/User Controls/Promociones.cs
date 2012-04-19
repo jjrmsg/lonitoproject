@@ -1197,6 +1197,7 @@ namespace Events4ALL
                 if (MessageBox.Show("Has pulsado Nueva condición ¿Realmente quieres cancelar la insercion de una nueva condición? ", "Nueva condición", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
                 {
                     insertarNueva = false;
+                    
                 }
                 
             }
@@ -1204,6 +1205,8 @@ namespace Events4ALL
             if (!insertarNueva)
             {
                 #region Codigo Para rellenar los datos
+                    errorProvider_MC_Nombre.Clear();
+                    errorProvider_MC_Descripcion.Clear();
                     button_MC_Eliminar.Enabled = true;
                     MC_limpiar(0);
                     //Para el bloque 1 de las condiciones
