@@ -1684,5 +1684,35 @@ namespace Events4ALL
                 pictureBox_MC_CartelPromo.Image = Image.FromFile(OFich.FileName);
             }  
         }
+
+        //Funcion para eliminar las relaciones de los espectaculos
+        public void EliminarEspecConPromo(int id)
+        {
+            //Borramos de la tabla local Espectaculo, el espectaculo pasado por su id
+            //Esto no se refleja en la BD original, solo en la local con la que trabajo
+            foreach (DataRow fila in tEspec.Rows)
+            {
+                if (fila.RowState.ToString() != "Deleted")
+                {
+                    if (Convert.ToInt32(fila[0]) == id)
+                    {
+                        fila.Delete();
+                        break;
+                    }
+                }
+            }
+
+            //Borramos de la tabla local PromocionesConEspectaculo las relaciones
+            foreach (DataRow fila in tEspecConPromo.Rows)
+            {
+                if (fila.RowState.ToString() != "Deleted")
+                {
+                    if (Convert.ToInt32(fila[0]) == id)
+                    {
+                        fila.Delete();
+                    }
+                }
+            }
+        }
     }
 }
