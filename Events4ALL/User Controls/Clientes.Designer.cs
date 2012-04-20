@@ -109,7 +109,7 @@
             this.formCliente.SelectedIndex = 0;
             this.formCliente.Size = new System.Drawing.Size(901, 632);
             this.formCliente.TabIndex = 1;
-            this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
+            //this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
             // 
             // FichaCliente
             // 
@@ -176,7 +176,7 @@
             this.buttonLimpiarCliente.Text = "Limpiar";
             this.buttonLimpiarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiarCliente.UseVisualStyleBackColor = true;
-            this.buttonLimpiarCliente.Click += new System.EventHandler(this.buttonLimpiarCliente_Click);
+            //this.buttonLimpiarCliente.Click += new System.EventHandler(this.buttonLimpiarCliente_Click);
             // 
             // buttonGuardarCliente
             // 
@@ -929,7 +929,7 @@
             this.buttonBuscarCliente.TabIndex = 64;
             this.buttonBuscarCliente.Text = "Buscar";
             this.buttonBuscarCliente.UseVisualStyleBackColor = true;
-            this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
+            //this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
             // 
             // errorProvider1
             // 

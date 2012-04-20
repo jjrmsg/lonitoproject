@@ -224,7 +224,7 @@ namespace Events4ALL.EN
 
         public bool ExisteCliente(string nif)
         {
-            return cliCAD.ExisteCliente(nif);
+            return cliCAD.ExisteCliente(nif); 
         }*/
 
 
