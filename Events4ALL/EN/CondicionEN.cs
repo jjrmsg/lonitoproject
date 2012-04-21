@@ -41,12 +41,12 @@ namespace Events4ALL.EN
         private int tCondicion2;
         private int comparacion2;
         private int cantidad2;
-        private int descuento2;
+        //private int descuento2;
         private int tEvento2;
         private int tCondicion3;
         private int comparacion3;
         private int cantidad3;
-        private int descuento3;
+        //private int descuento3;
         private int tEvento3;
         private bool activado;
         private Byte[] imagen;
@@ -120,11 +120,11 @@ namespace Events4ALL.EN
             set { cantidad2 = value; }
         }
 
-        public int Descuento2
+        /*public int Descuento2
         {
             get { return descuento2; }
             set { descuento2 = value; }
-        }
+        }*/
 
         public int TEvento2
         {
@@ -150,11 +150,11 @@ namespace Events4ALL.EN
             set { cantidad3 = value; }
         }
 
-        public int Descuento3
+        /*public int Descuento3
         {
             get { return descuento3; }
             set { descuento3 = value; }
-        }
+        }*/
 
         public int TEvento3
         {
@@ -183,7 +183,7 @@ namespace Events4ALL.EN
         #endregion
 
         #region constructor sobrecargado con todos los paremetros
-        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int descu2, int teven2, int tcond3, int comp3, int cant3, int descu3, int teven3, bool act, Byte[] img)
+        public CondicionEN(int id, string nom, string desc, int tcond1, int comp1, int cant1, int descu1, int teven1, int tcond2, int comp2, int cant2, int teven2, int tcond3, int comp3, int cant3, int teven3, bool act, Byte[] img)
         {
             idCondicion = id;
             nombre = nom;
@@ -198,13 +198,13 @@ namespace Events4ALL.EN
             tCondicion2 = tcond2;
             comparacion2 = comp2;
             cantidad2 = cant2;
-            descuento2 = descu2;
+            //descuento2 = descu2;
             tEvento2 = teven2;
 
             tCondicion3 = tcond3;
             comparacion3 = comp3;
             cantidad3 = cant3;
-            descuento3 = descu3;
+            //descuento3 = descu3;
             tEvento3 = teven3;
 
             activado = act;
@@ -229,13 +229,13 @@ namespace Events4ALL.EN
             tCondicion2 = tcond2;
             comparacion2 = comp2;
             cantidad2 = cant2;
-            descuento2 = descu2;
+            //descuento2 = descu2;
             tEvento2 = teven2;
 
             tCondicion3 = tcond3;
             comparacion3 = comp3;
             cantidad3 = cant3;
-            descuento3 = descu3;
+            //descuento3 = descu3;
             tEvento3 = teven3;
 
             activado = act;
@@ -257,15 +257,15 @@ namespace Events4ALL.EN
             fila[8] = tCondicion2;
             fila[9] = comparacion2;
             fila[10] = cantidad2;
-            fila[11] = descuento2;
-            fila[12] = tEvento2;
-            fila[13] = tCondicion3;
-            fila[14] = comparacion3;
-            fila[15] = cantidad3;
-            fila[16] = descuento3;
-            fila[17] = tEvento3;
-            fila[18] = activado;
-            fila[19] = imagen;
+            //fila[11] = descuento2;
+            fila[11] = tEvento2;
+            fila[12] = tCondicion3;
+            fila[13] = comparacion3;
+            fila[14] = cantidad3;
+            //fila[16] = descuento3;
+            fila[15] = tEvento3;
+            fila[16] = activado;
+            fila[17] = imagen;
         }
         #endregion
 
@@ -283,15 +283,15 @@ namespace Events4ALL.EN
             tabla.Rows[id][8] = tCondicion2;
             tabla.Rows[id][9] = comparacion2;
             tabla.Rows[id][10] = cantidad2;
-            tabla.Rows[id][11] = descuento2;
-            tabla.Rows[id][12] = tEvento2;
-            tabla.Rows[id][13] = tCondicion3;
-            tabla.Rows[id][14] = comparacion3;
-            tabla.Rows[id][15] = cantidad3;
-            tabla.Rows[id][16] = descuento3;
-            tabla.Rows[id][17] = tEvento3;
-            tabla.Rows[id][18] = activado;
-            tabla.Rows[id][19] = imagen;
+            //tabla.Rows[id][11] = descuento2;
+            tabla.Rows[id][11] = tEvento2;
+            tabla.Rows[id][12] = tCondicion3;
+            tabla.Rows[id][13] = comparacion3;
+            tabla.Rows[id][14] = cantidad3;
+            //tabla.Rows[id][16] = descuento3;
+            tabla.Rows[id][15] = tEvento3;
+            tabla.Rows[id][16] = activado;
+            tabla.Rows[id][17] = imagen;
         }
         #endregion
 

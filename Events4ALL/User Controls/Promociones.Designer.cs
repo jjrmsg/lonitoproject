@@ -67,10 +67,7 @@
             this.comboBox_PE_espectaculo = new System.Windows.Forms.ComboBox();
             this.tab_Mediante_condiciones = new System.Windows.Forms.TabPage();
             this.groupBox_MC_TipoDeCond = new System.Windows.Forms.GroupBox();
-            this.textBox_MC_VC_Descuento3 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Descuento3 = new System.Windows.Forms.Label();
-            this.textBox_MC_VC_Descuento2 = new System.Windows.Forms.TextBox();
-            this.label_MC_VC_Descuento2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox_MC_VC_Descuento1 = new System.Windows.Forms.TextBox();
             this.label_MC_VC_Descuento1 = new System.Windows.Forms.Label();
             this.checkBox_MC_ActivarCond2 = new System.Windows.Forms.CheckBox();
@@ -121,8 +118,6 @@
             this.errorProvider_MC_Cant2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Cant3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Desc1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider_MC_Desc2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider_MC_Desc3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_PE_eligeuno = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_TipoCondicion1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_MC_Comparacion1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -153,8 +148,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion1)).BeginInit();
@@ -598,10 +591,7 @@
             // 
             this.groupBox_MC_TipoDeCond.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento3);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento3);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento2);
-            this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento2);
+            this.groupBox_MC_TipoDeCond.Controls.Add(this.label1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.textBox_MC_VC_Descuento1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.label_MC_VC_Descuento1);
             this.groupBox_MC_TipoDeCond.Controls.Add(this.checkBox_MC_ActivarCond2);
@@ -630,50 +620,21 @@
             this.groupBox_MC_TipoDeCond.TabStop = false;
             this.groupBox_MC_TipoDeCond.Text = "Valores de condición:";
             // 
-            // textBox_MC_VC_Descuento3
+            // label1
             // 
-            this.textBox_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Descuento3.Enabled = false;
-            this.textBox_MC_VC_Descuento3.Location = new System.Drawing.Point(219, 209);
-            this.textBox_MC_VC_Descuento3.Name = "textBox_MC_VC_Descuento3";
-            this.textBox_MC_VC_Descuento3.Size = new System.Drawing.Size(63, 20);
-            this.textBox_MC_VC_Descuento3.TabIndex = 24;
-            // 
-            // label_MC_VC_Descuento3
-            // 
-            this.label_MC_VC_Descuento3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Descuento3.AutoSize = true;
-            this.label_MC_VC_Descuento3.Location = new System.Drawing.Point(154, 212);
-            this.label_MC_VC_Descuento3.Name = "label_MC_VC_Descuento3";
-            this.label_MC_VC_Descuento3.Size = new System.Drawing.Size(59, 13);
-            this.label_MC_VC_Descuento3.TabIndex = 23;
-            this.label_MC_VC_Descuento3.Text = "Descuento";
-            // 
-            // textBox_MC_VC_Descuento2
-            // 
-            this.textBox_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox_MC_VC_Descuento2.Enabled = false;
-            this.textBox_MC_VC_Descuento2.Location = new System.Drawing.Point(219, 132);
-            this.textBox_MC_VC_Descuento2.Name = "textBox_MC_VC_Descuento2";
-            this.textBox_MC_VC_Descuento2.Size = new System.Drawing.Size(63, 20);
-            this.textBox_MC_VC_Descuento2.TabIndex = 22;
-            // 
-            // label_MC_VC_Descuento2
-            // 
-            this.label_MC_VC_Descuento2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label_MC_VC_Descuento2.AutoSize = true;
-            this.label_MC_VC_Descuento2.Location = new System.Drawing.Point(154, 135);
-            this.label_MC_VC_Descuento2.Name = "label_MC_VC_Descuento2";
-            this.label_MC_VC_Descuento2.Size = new System.Drawing.Size(59, 13);
-            this.label_MC_VC_Descuento2.TabIndex = 21;
-            this.label_MC_VC_Descuento2.Text = "Descuento";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(266, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "%";
             // 
             // textBox_MC_VC_Descuento1
             // 
             this.textBox_MC_VC_Descuento1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox_MC_VC_Descuento1.Location = new System.Drawing.Point(219, 57);
             this.textBox_MC_VC_Descuento1.Name = "textBox_MC_VC_Descuento1";
-            this.textBox_MC_VC_Descuento1.Size = new System.Drawing.Size(63, 20);
+            this.textBox_MC_VC_Descuento1.Size = new System.Drawing.Size(41, 20);
             this.textBox_MC_VC_Descuento1.TabIndex = 20;
             // 
             // label_MC_VC_Descuento1
@@ -1237,20 +1198,6 @@
             this.errorProvider_MC_Desc1.ContainerControl = this;
             this.errorProvider_MC_Desc1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc1.Icon")));
             // 
-            // errorProvider_MC_Desc2
-            // 
-            this.errorProvider_MC_Desc2.BlinkRate = 0;
-            this.errorProvider_MC_Desc2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider_MC_Desc2.ContainerControl = this;
-            this.errorProvider_MC_Desc2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc2.Icon")));
-            // 
-            // errorProvider_MC_Desc3
-            // 
-            this.errorProvider_MC_Desc3.BlinkRate = 0;
-            this.errorProvider_MC_Desc3.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider_MC_Desc3.ContainerControl = this;
-            this.errorProvider_MC_Desc3.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider_MC_Desc3.Icon")));
-            // 
             // errorProvider_PE_eligeuno
             // 
             this.errorProvider_PE_eligeuno.BlinkRate = 0;
@@ -1370,8 +1317,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Cant3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Desc3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_PE_eligeuno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_TipoCondicion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MC_Comparacion1)).EndInit();
@@ -1469,17 +1414,11 @@
         private System.Windows.Forms.Label label_PE_TFechaFin;
         private System.Windows.Forms.TextBox textBox_MC_VC_Descuento1;
         private System.Windows.Forms.Label label_MC_VC_Descuento1;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Descuento2;
-        private System.Windows.Forms.Label label_MC_VC_Descuento2;
-        private System.Windows.Forms.TextBox textBox_MC_VC_Descuento3;
-        private System.Windows.Forms.Label label_MC_VC_Descuento3;
         private System.Windows.Forms.ErrorProvider errorProvider_PE_Otro;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant1;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant2;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Cant3;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc1;
-        private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc2;
-        private System.Windows.Forms.ErrorProvider errorProvider_MC_Desc3;
         private System.Windows.Forms.CheckBox checkBox_PE_Ninguno;
         private System.Windows.Forms.ErrorProvider errorProvider_PE_eligeuno;
         private System.Windows.Forms.Label label_PE_TTipo;
@@ -1495,5 +1434,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider_MC_TipoEvento3;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Nombre;
         private System.Windows.Forms.ErrorProvider errorProvider_MC_Descripcion;
+        private System.Windows.Forms.Label label1;
     }
 }

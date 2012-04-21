@@ -24,8 +24,6 @@ namespace Events4ALL
         private bool MC_Cantidad2;
         private bool MC_Cantidad3;
         private bool MC_Descuento1;
-        private bool MC_Descuento2;
-        private bool MC_Descuento3;
         private bool MC_TipoCondicion1;
         private bool MC_TipoCondicion2;
         private bool MC_TipoCondicion3;
@@ -44,6 +42,7 @@ namespace Events4ALL
         private DataTable tPromocion;
         private DataTable tEspecConPromo;
         private int idEventoSelec;
+        private int idEventoValor;
         private bool insertarNueva;
 
         public Promociones()
@@ -76,7 +75,6 @@ namespace Events4ALL
             if (checkBox_MC_ActivarCond1.Checked == true)
             {
                 textBox_MC_VC_Cantidad2.Enabled = true;
-                textBox_MC_VC_Descuento2.Enabled = true;
                 comboBox_MC_VC_Comparacion2.Enabled = true;
                 comboBox_MC_VC_Tcondicion2.Enabled = true;
                 radioButton_MC_TE2_Cine.Enabled = true;
@@ -98,7 +96,6 @@ namespace Events4ALL
             if (checkBox_MC_ActivarCond2.Checked == true)
             {
                 textBox_MC_VC_Cantidad3.Enabled = true;
-                textBox_MC_VC_Descuento3.Enabled = true;
                 comboBox_MC_VC_Comparacion3.Enabled = true;
                 comboBox_MC_VC_Tcondicion3.Enabled = true;
                 radioButton_MC_TE3_Cine.Enabled = true;
@@ -141,7 +138,7 @@ namespace Events4ALL
             }
             catch(Exception ex)
             {
-                //MessageBox.Show("PENE error al rellenar el combobox "+ ex);
+                //MessageBox.Show("Error al rellenar el combobox "+ ex);
                 Console.WriteLine(ex.Message);
             }
         }
@@ -172,9 +169,7 @@ namespace Events4ALL
                 dataGridView_MC_ListaPromosCond.Columns[13].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[14].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[15].Visible = false;
-                dataGridView_MC_ListaPromosCond.Columns[16].Visible = false;
                 dataGridView_MC_ListaPromosCond.Columns[17].Visible = false;
-                dataGridView_MC_ListaPromosCond.Columns[19].Visible = false;
                 dataGridView_MC_ListaPromosCond.ReadOnly = true;
                 dataGridView_MC_ListaPromosCond.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dataGridView_MC_ListaPromosCond.MultiSelect = false;
@@ -183,7 +178,7 @@ namespace Events4ALL
             }
             catch (Exception ex)
             {
-                // MessageBox.Show("PENE error al cargar datagriview " + ex);
+                // MessageBox.Show("Error al cargar datagriview " + ex);
                 Console.WriteLine(ex.Message);
             }
         }
@@ -221,13 +216,11 @@ namespace Events4ALL
                 //Comprobamos si esta elegido Otro y la cantidad es un número entero
                 if (radioButton_PE_otroDesc.Checked && PE_Cantidad)
                 {
-                    //MessageBox.Show("Listo para guardar1");
                     GuardarPromocionConEvento();
                 }
                 else if (!radioButton_PE_otroDesc.Checked && (radioButton_PE_5.Checked || radioButton_PE_10.Checked || radioButton_PE_25.Checked || radioButton_PE_50.Checked || radioButton_PE_IVA.Checked))
                 {
                     //Si se selecciona otro que no sea Otro también se puede guardar ya que no hay restricción mínima
-                    //MessageBox.Show("Listo para guardar2");
                     GuardarPromocionConEvento();
                 }
                 else
@@ -238,7 +231,6 @@ namespace Events4ALL
             }
             else 
             {
-                //MessageBox.Show("Listo para guardar3");
                 GuardarPromocionConEvento();
             }
         }
@@ -260,7 +252,6 @@ namespace Events4ALL
                 }
             }
             return salir;
-            //tEspecConPromo.Rows[i].Delete();
         }
 
         //Funcion para buscar un evento con una promo
@@ -292,10 +283,10 @@ namespace Events4ALL
                 if (radioButton_PE_5.Checked && !checkBox_PE_Ninguno.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 1, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 1, ref fila))
                     {
                         nuevafila1 = tEspecConPromo.NewRow();
-                        nuevafila1[0] = idEventoSelec;
+                        nuevafila1[0] = idEventoValor;
                         nuevafila1[1] = 1;
                         tEspecConPromo.Rows.Add(nuevafila1);
                         //MessageBox.Show("el de 5");
@@ -303,7 +294,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 1, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 1, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -314,10 +305,10 @@ namespace Events4ALL
                 if (radioButton_PE_10.Checked && !checkBox_PE_Ninguno.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 2, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 2, ref fila))
                     {
                         nuevafila2 = tEspecConPromo.NewRow();
-                        nuevafila2[0] = idEventoSelec;
+                        nuevafila2[0] = idEventoValor;
                         nuevafila2[1] = 2;
                         tEspecConPromo.Rows.Add(nuevafila2);
                         //MessageBox.Show("el de 10");
@@ -325,7 +316,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 2, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 2, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -336,10 +327,10 @@ namespace Events4ALL
                 if (radioButton_PE_25.Checked && !checkBox_PE_Ninguno.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 3, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 3, ref fila))
                     {
                         nuevafila3 = tEspecConPromo.NewRow();
-                        nuevafila3[0] = idEventoSelec;
+                        nuevafila3[0] = idEventoValor;
                         nuevafila3[1] = 3;
                         tEspecConPromo.Rows.Add(nuevafila3);
                         //MessageBox.Show("el de 25");
@@ -347,7 +338,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 3, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 3, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -359,10 +350,10 @@ namespace Events4ALL
                 if (radioButton_PE_50.Checked && !checkBox_PE_Ninguno.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 4, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 4, ref fila))
                     {
                         nuevafila4 = tEspecConPromo.NewRow();
-                        nuevafila4[0] = idEventoSelec;
+                        nuevafila4[0] = idEventoValor;
                         nuevafila4[1] = 4;
                         tEspecConPromo.Rows.Add(nuevafila4);
                         //MessageBox.Show("el de 50");
@@ -370,7 +361,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 4, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 4, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -381,10 +372,10 @@ namespace Events4ALL
                 if (radioButton_PE_IVA.Checked && !checkBox_PE_Ninguno.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 5, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 5, ref fila))
                     {
                         nuevafila5 = tEspecConPromo.NewRow();
-                        nuevafila5[0] = idEventoSelec;
+                        nuevafila5[0] = idEventoValor;
                         nuevafila5[1] = 5;
                         tEspecConPromo.Rows.Add(nuevafila5);
                         //MessageBox.Show("el de iva");
@@ -392,7 +383,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 5, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 5, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -403,10 +394,10 @@ namespace Events4ALL
                 if (checkBox_PE_menor25.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 6, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 6, ref fila))
                     {
                         nuevafila6 = tEspecConPromo.NewRow();
-                        nuevafila6[0] = idEventoSelec;
+                        nuevafila6[0] = idEventoValor;
                         nuevafila6[1] = 6;
                         tEspecConPromo.Rows.Add(nuevafila6);
                         //MessageBox.Show("el de menor25");
@@ -414,7 +405,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 6, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 6, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -426,10 +417,10 @@ namespace Events4ALL
                 if (checkBox_PE_mayor65.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 7, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 7, ref fila))
                     {
                         nuevafila7 = tEspecConPromo.NewRow();
-                        nuevafila7[0] = idEventoSelec;
+                        nuevafila7[0] = idEventoValor;
                         nuevafila7[1] = 7;
                         tEspecConPromo.Rows.Add(nuevafila7);
                         //MessageBox.Show("el de mayor65");
@@ -437,7 +428,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 7, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 7, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -448,10 +439,10 @@ namespace Events4ALL
                 if (checkBox_PE_descCliente.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 8, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 8, ref fila))
                     {
                         nuevafila8 = tEspecConPromo.NewRow();
-                        nuevafila8[0] = idEventoSelec;
+                        nuevafila8[0] = idEventoValor;
                         nuevafila8[1] = 8;
                         tEspecConPromo.Rows.Add(nuevafila8);
                         //MessageBox.Show("el de cliente");
@@ -459,7 +450,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 8, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 8, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -470,10 +461,10 @@ namespace Events4ALL
                 if (checkBox_PE_descEstudiante.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 9, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 9, ref fila))
                     {
                         nuevafila9 = tEspecConPromo.NewRow();
-                        nuevafila9[0] = idEventoSelec;
+                        nuevafila9[0] = idEventoValor;
                         nuevafila9[1] = 9;
                         tEspecConPromo.Rows.Add(nuevafila9);
                         //MessageBox.Show("el de estudiante");
@@ -481,7 +472,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 9, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 9, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -492,10 +483,10 @@ namespace Events4ALL
                 if (checkBox_PE_descJubilado.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 10, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 10, ref fila))
                     {
                         nuevafila10 = tEspecConPromo.NewRow();
-                        nuevafila10[0] = idEventoSelec;
+                        nuevafila10[0] = idEventoValor;
                         nuevafila10[1] = 10;
                         tEspecConPromo.Rows.Add(nuevafila10);
                         //MessageBox.Show("el de jubilado");
@@ -503,7 +494,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 10, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 10, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -514,10 +505,10 @@ namespace Events4ALL
                 if (checkBox_PE_descParado.Checked)
                 {
                     //Miramos si no existe ya la relacion, si no esta se crea
-                    if (!BuscarPromoEspectaculo(idEventoSelec, 11, ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, 11, ref fila))
                     {
                         nuevafila11 = tEspecConPromo.NewRow();
-                        nuevafila11[0] = idEventoSelec;
+                        nuevafila11[0] = idEventoValor;
                         nuevafila11[1] = 11;
                         tEspecConPromo.Rows.Add(nuevafila11);
                         //MessageBox.Show("el de parado");
@@ -525,7 +516,7 @@ namespace Events4ALL
                 }
                 else
                 {
-                    if (BuscarPromoEspectaculo(idEventoSelec, 11, ref fila))
+                    if (BuscarPromoEspectaculo(idEventoValor, 11, ref fila))
                     {
                         BorrarPromoEspectaculo(fila);
                     }
@@ -543,10 +534,10 @@ namespace Events4ALL
                     }
 
                     //Ahora agregamos la relacion de esta promocion con el espectaculo
-                    if (!BuscarPromoEspectaculo(idEventoSelec, IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)), ref fila))
+                    if (!BuscarPromoEspectaculo(idEventoValor, IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)), ref fila))
                     {
                         nuevafila12 = tEspecConPromo.NewRow();
-                        nuevafila12[0] = idEventoSelec;
+                        nuevafila12[0] = idEventoValor;
                         nuevafila12[1] = IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text));
                         tEspecConPromo.Rows.Add(nuevafila12);
                     }
@@ -554,7 +545,7 @@ namespace Events4ALL
                     {
                         if (f.RowState.ToString() != "Deleted")
                         {
-                            if (Convert.ToInt32(f[0]) == idEventoSelec && Convert.ToInt32(f[1]) > 11 && Convert.ToInt32(f[1]) != IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)))
+                            if (Convert.ToInt32(f[0]) == idEventoValor && Convert.ToInt32(f[1]) > 11 && Convert.ToInt32(f[1]) != IdPromoMedianteCantidad(Convert.ToInt32(textBox_PE_otroDesc.Text)))
                             {
                                 f.Delete();
                             }
@@ -567,7 +558,7 @@ namespace Events4ALL
                     {
                         if (f.RowState.ToString() != "Deleted")
                         {
-                            if (Convert.ToInt32(f[0]) == idEventoSelec && Convert.ToInt32(f[1]) > 11)
+                            if (Convert.ToInt32(f[0]) == idEventoValor && Convert.ToInt32(f[1]) > 11)
                             {
                                 f.Delete();
                             }
@@ -582,7 +573,7 @@ namespace Events4ALL
             }
             catch(Exception ex)
             {
-                // MessageBox.Show("PENE error al guardar la promocion del evento " + ex);
+                // MessageBox.Show("Error al guardar la promocion del evento " + ex);
                 Console.WriteLine(ex.Message);
             }
 
@@ -649,17 +640,6 @@ namespace Events4ALL
                     errorProvider_MC_Cant2.Clear();
                     MC_Cantidad2 = true;
                 }
-                //Comprobamos Descuento2
-                if (!CompruebaCantidad(textBox_MC_VC_Descuento2.Text.ToString()))
-                {
-                    errorProvider_MC_Desc2.SetError(textBox_MC_VC_Descuento2, "Debe ser un número entero");
-                    MC_Descuento2 = false;
-                }
-                else
-                {
-                    errorProvider_MC_Desc2.Clear();
-                    MC_Descuento2 = true;
-                }
             }
 
 
@@ -676,17 +656,6 @@ namespace Events4ALL
                 {
                     errorProvider_MC_Cant3.Clear();
                     MC_Cantidad3 = true;
-                }
-                //Comprobamos Descuento3
-                if (!CompruebaCantidad(textBox_MC_VC_Descuento3.Text.ToString()))
-                {
-                    errorProvider_MC_Desc3.SetError(textBox_MC_VC_Descuento3, "Debe ser un número entero");
-                    MC_Descuento3 = false;
-                }
-                else
-                {
-                    errorProvider_MC_Desc3.Clear();
-                    MC_Descuento3 = true;
                 }
             }
         }
@@ -849,7 +818,7 @@ namespace Events4ALL
             {
                 //En el caso que esten las 3 condiciones
                 if (MC_Nombre && MC_Descripcion&& MC_Cantidad1 && MC_Cantidad2 && MC_Cantidad3 && 
-                    MC_Descuento1 && MC_Descuento2 && MC_Descuento3 &&
+                    MC_Descuento1 && 
                     MC_TipoCondicion1 && MC_TipoCondicion2 && MC_TipoCondicion3 && 
                     MC_Comparacion1 && MC_Comparacion2 && MC_Comparacion3 &&
                     MC_TipoEvento1 && MC_TipoEvento2 && MC_TipoEvento3)
@@ -861,7 +830,7 @@ namespace Events4ALL
             {
                 //En el caso que la segunda este activada y la tercera no
                 if (MC_Nombre && MC_Descripcion && MC_Cantidad1 && MC_Cantidad2 && 
-                    MC_Descuento1 && MC_Descuento2 &&
+                    MC_Descuento1 && 
                     MC_TipoCondicion1 && MC_TipoCondicion2 && 
                     MC_Comparacion1 && MC_Comparacion2 &&
                     MC_TipoEvento1 && MC_TipoEvento2)
@@ -873,7 +842,7 @@ namespace Events4ALL
             {
                 //En el caso que la segunda no este activada y la tercera si
                 if (MC_Nombre && MC_Descripcion && MC_Cantidad1 && MC_Cantidad3 && 
-                    MC_Descuento1 && MC_Descuento3 &&
+                    MC_Descuento1 && 
                     MC_TipoCondicion1 && MC_TipoCondicion3 &&
                     MC_Comparacion1 && MC_Comparacion3 &&
                     MC_TipoEvento1 && MC_TipoEvento3)
@@ -960,28 +929,41 @@ namespace Events4ALL
         //Funcion obtener nueva id para guardar en condiciones
         private int NuevaIdCondicion()
         {
-            int nuevaID;
-            nuevaID = Convert.ToInt32(tCondicion.Rows[0][0]);
-            foreach (DataRow row in tCondicion.Rows)
+            if (tCondicion.Rows.Count > 0)
             {
-                if (nuevaID < Convert.ToInt32(row[0]))
+                int nuevaID;
+                nuevaID = Convert.ToInt32(tCondicion.Rows[0][0]);
+                foreach (DataRow row in tCondicion.Rows)
                 {
-                    nuevaID = Convert.ToInt32(row[0]);
+                    if (row.RowState.ToString() != "Deleted")
+                    {
+                        if (nuevaID < Convert.ToInt32(row[0]))
+                        {
+                            nuevaID = Convert.ToInt32(row[0]);
+                        }
+                    }
                 }
+                return nuevaID + 1;
             }
-            return nuevaID+1;
+            else
+            {
+                return 1;
+            }
         }
 
         //Funcion obtener nueva id para guardar en promociones
         private int NuevaIdPromocion()
         {
             int nuevaID;
-            nuevaID = Convert.ToInt32(tPromocion.Rows[0][0]);
+            nuevaID = 12;
             foreach (DataRow row in tPromocion.Rows)
             {
-                if (nuevaID < Convert.ToInt32(row[0]))
+                if (row.RowState.ToString() != "Deleted")
                 {
-                    nuevaID = Convert.ToInt32(row[0]);
+                    if (Convert.ToInt32(row[0]) > nuevaID)
+                    {
+                        nuevaID = Convert.ToInt32(row[0]);
+                    }
                 }
             }
             return nuevaID + 1;
@@ -1016,12 +998,12 @@ namespace Events4ALL
             if (!checkBox_MC_ActivarCond1.Checked && !checkBox_MC_ActivarCond2.Checked)
             {
                 //Solo insertar la condicion obliglatoria
-                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(), Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString().Trim(), textBox_MC_Descripcion.Text.ToString(), Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
                             Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
                             Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
                             Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
                             ObtenerTipoEvento(1),
-                            -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
+                            -1, -1, -1, -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
                             imagen);
 
             
@@ -1038,32 +1020,49 @@ namespace Events4ALL
                             Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
                             Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
                             Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
-                            Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
                             ObtenerTipoEvento(2),
-                            -1, -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
+                            -1, -1, -1, -1, checkBox_MC_ActPromo.Checked, 
                             imagen);
+            }
+            else if (!checkBox_MC_ActivarCond1.Checked && checkBox_MC_ActivarCond2.Checked)
+            {
+                //Se insertan la primera y terecera
+                condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                        ObtenerTipoEvento(1),
+                        -1,
+                        -1,
+                        -1,
+                        -1,
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
+                        ObtenerTipoEvento(3),
+                        checkBox_MC_ActPromo.Checked,
+                        imagen);
             }
             else
             {
                 //Se insertan las tres condiciones
-                    condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(),
-                            Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
-                            Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
-                            Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
-                            Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
-                            ObtenerTipoEvento(1),
-                            Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
-                            Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
-                            Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
-                            Convert.ToInt32(textBox_MC_VC_Descuento2.Text),
-                            ObtenerTipoEvento(2),
-                            Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
-                            Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
-                            Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
-                            Convert.ToInt32(textBox_MC_VC_Descuento3.Text),
-                            ObtenerTipoEvento(3),
-                            checkBox_MC_ActPromo.Checked, 
-                            imagen);
+                condicionEN = new CondicionEN(NuevaIdCondicion(), textBox_MC_NomPromo.Text.ToString(), textBox_MC_Descripcion.Text.ToString(),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion1.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion1.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad1.Text),
+                        Convert.ToInt32(textBox_MC_VC_Descuento1.Text),
+                        ObtenerTipoEvento(1),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion2.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion2.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad2.Text),
+                        ObtenerTipoEvento(2),
+                        Convert.ToInt32(comboBox_MC_VC_Tcondicion3.SelectedIndex),
+                        Convert.ToInt32(comboBox_MC_VC_Comparacion3.SelectedIndex),
+                        Convert.ToInt32(textBox_MC_VC_Cantidad3.Text),
+                        ObtenerTipoEvento(3),
+                        checkBox_MC_ActPromo.Checked,
+                        imagen);
             }
             #endregion
 
@@ -1092,6 +1091,13 @@ namespace Events4ALL
             //true en caso de limpiar todos los campos
             if (todo == 1)
             {
+                button_MC_Guardar.Enabled = false;
+                textBox_MC_NomPromo.Enabled = false;
+                textBox_MC_Descripcion.Enabled = false;
+                groupBox_MC_TipoDeCond.Enabled = false;
+                checkBox_MC_ActPromo.Enabled = false;
+                button_MC_SubirFoto.Enabled = false;
+
                 textBox_MC_NomPromo.Text = "";
                 textBox_MC_Descripcion.Text = "";
                 comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
@@ -1106,7 +1112,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion2.Text = "Comparación";
                 textBox_MC_VC_Cantidad2.Text = "";
-                textBox_MC_VC_Descuento2.Text = "";
                 radioButton_MC_TE2_Cine.Checked = false;
                 radioButton_MC_TE2_Concierto.Checked = false;
                 radioButton_MC_TE2_Teatro.Checked = false;
@@ -1115,7 +1120,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion3.Text = "Comparación";
                 textBox_MC_VC_Cantidad3.Text = "";
-                textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
                 radioButton_MC_TE3_Concierto.Checked = false;
                 radioButton_MC_TE3_Teatro.Checked = false;
@@ -1138,7 +1142,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion2.Text = "Comparación";
                 textBox_MC_VC_Cantidad2.Text = "";
-                textBox_MC_VC_Descuento2.Text = "";
                 radioButton_MC_TE2_Cine.Checked = false;
                 radioButton_MC_TE2_Concierto.Checked = false;
                 radioButton_MC_TE2_Teatro.Checked = false;
@@ -1147,7 +1150,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion3.Text = "Comparación";
                 textBox_MC_VC_Cantidad3.Text = "";
-                textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
                 radioButton_MC_TE3_Concierto.Checked = false;
                 radioButton_MC_TE3_Teatro.Checked = false;
@@ -1160,7 +1162,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion2.Text = "Comparación";
                 textBox_MC_VC_Cantidad2.Text = "";
-                textBox_MC_VC_Descuento2.Text = "";
                 radioButton_MC_TE2_Cine.Checked = false;
                 radioButton_MC_TE2_Concierto.Checked = false;
                 radioButton_MC_TE2_Teatro.Checked = false;
@@ -1172,7 +1173,6 @@ namespace Events4ALL
                 comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
                 comboBox_MC_VC_Comparacion3.Text = "Comparación";
                 textBox_MC_VC_Cantidad3.Text = "";
-                textBox_MC_VC_Descuento3.Text = "";
                 radioButton_MC_TE3_Cine.Checked = false;
                 radioButton_MC_TE3_Concierto.Checked = false;
                 radioButton_MC_TE3_Teatro.Checked = false;
@@ -1205,6 +1205,8 @@ namespace Events4ALL
             if (!insertarNueva)
             {
                 #region Codigo Para rellenar los datos
+                try
+                {
                     errorProvider_MC_Nombre.Clear();
                     errorProvider_MC_Descripcion.Clear();
                     button_MC_Eliminar.Enabled = true;
@@ -1240,11 +1242,11 @@ namespace Events4ALL
                         radioButton_MC_TE1_Todos.Checked = true;
                     }
                     //Marcar si esta activada o no la promocion seleccionada
-                    checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[18].Value);
+                    checkBox_MC_ActPromo.Checked = Convert.ToBoolean(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value);
                     //Cargando la imagen, si tiene, si no, se muesra la de por defecto
-                    if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value != System.DBNull.Value)
+                    if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value != System.DBNull.Value)
                     {
-                        byte[] bImage = (byte[])dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value;
+                        byte[] bImage = (byte[])dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value;
                         MemoryStream ms = new MemoryStream(bImage);
                         pictureBox_MC_CartelPromo.Image = Image.FromStream(ms, true, true);
                     }
@@ -1252,7 +1254,6 @@ namespace Events4ALL
                     {
                         pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
                     }
-                    //pictureBox_MC_CartelPromo.Image = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[19].Value;
 
                     //Para el bloque 2 de las condiciones
                     if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[8].Value) != -1)
@@ -1266,22 +1267,20 @@ namespace Events4ALL
                         comboBox_MC_VC_Comparacion2.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[9].Value);
                         //relleno la cantidad de la fila seleccionada
                         textBox_MC_VC_Cantidad2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[10].Value.ToString();
-                        //relleno el descuento de la fila seleccionada
-                        textBox_MC_VC_Descuento2.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value.ToString();
                         //marco el tipo evento de la fila seleccionada
-                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 0)
+                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value) == 0)
                         {
                             radioButton_MC_TE2_Cine.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 1)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value) == 1)
                         {
                             radioButton_MC_TE2_Teatro.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 2)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value) == 2)
                         {
                             radioButton_MC_TE2_Concierto.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) == 3)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[11].Value) == 3)
                         {
                             radioButton_MC_TE2_Todos.Checked = true;
                         }
@@ -1289,38 +1288,43 @@ namespace Events4ALL
                     }
 
                     //Para el bloque 3 de las condiciones
-                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value) != -1)
+                    if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value) != -1)
                     {
                         //Con esto fuerzo a volver a cargar el SelectedIndex porque si es el mismo no muesra el texto aunque cambie, ya que el SelectedIndex es el mismo
                         comboBox_MC_VC_Tcondicion3.SelectedIndex = -1;
                         comboBox_MC_VC_Comparacion3.SelectedIndex = -1;
                         //eligo la condición de la fila seleccionada
-                        comboBox_MC_VC_Tcondicion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value);
+                        comboBox_MC_VC_Tcondicion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[12].Value);
                         //eligo la comparación de la fila seleccionada
-                        comboBox_MC_VC_Comparacion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[14].Value);
+                        comboBox_MC_VC_Comparacion3.SelectedIndex = Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[13].Value);
                         //relleno la cantidad de la fila seleccionada
-                        textBox_MC_VC_Cantidad3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value.ToString();
-                        //relleno el descuento de la fila seleccionada
-                        textBox_MC_VC_Descuento3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString();
+                        textBox_MC_VC_Cantidad3.Text = dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[14].Value.ToString();
                         //marco el tipo evento de la fila seleccionada
-                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 0)
+                        if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value) == 0)
                         {
                             radioButton_MC_TE3_Cine.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 1)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value) == 1)
                         {
                             radioButton_MC_TE3_Teatro.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 2)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value) == 2)
                         {
                             radioButton_MC_TE3_Concierto.Checked = true;
                         }
-                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value) == 3)
+                        else if (Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[15].Value) == 3)
                         {
                             radioButton_MC_TE3_Todos.Checked = true;
                         }
                         checkBox_MC_ActivarCond2.Checked = true;
                     }
+                }
+                catch(System.ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("No has seleccionado ninguna fila", "Seleccionar condición", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MC_limpiar(1);
+                    button_MC_Eliminar.Enabled = false;
+                }
 
                 #endregion
             }
@@ -1435,6 +1439,7 @@ namespace Events4ALL
             groupBox_PE_promoEvent.Enabled = true;
             groupBox_PE_promoGen.Enabled = true;
             idEventoSelec = Convert.ToInt32(comboBox_PE_espectaculo.SelectedIndex);
+            idEventoValor = Convert.ToInt32(tEspec.Rows[idEventoSelec][0]);
             label_PE_TTitulo.Text = tEspec.Rows[idEventoSelec][1].ToString();
             label_PE_TTipo.Text = tEspec.Rows[idEventoSelec][6].ToString();
             label_PE_TDescripcion.Text = tEspec.Rows[idEventoSelec][2].ToString();
@@ -1462,7 +1467,7 @@ namespace Events4ALL
             {
                 if (obj.RowState.ToString() != "Deleted")
                 {
-                    if (idEventoSelec == Convert.ToInt32(obj[0]))
+                    if (idEventoValor == Convert.ToInt32(obj[0]))
                     {
                         if (Convert.ToInt32(obj[1]) == 1)
                         {
@@ -1489,11 +1494,11 @@ namespace Events4ALL
                             radioButton_PE_IVA.Checked = true;
                         }
 
-                        if (Convert.ToInt32(obj[1]) == ObtenerIdPromocion(idEventoSelec) && ObtenerIdPromocion(idEventoSelec) > 11)
+                        if (Convert.ToInt32(obj[1]) == ObtenerIdPromocion(idEventoValor) && ObtenerIdPromocion(idEventoValor) > 11)
                         {
                             radioButton_PE_otroDesc.Checked = true;
                             textBox_PE_otroDesc.Enabled = true;
-                            textBox_PE_otroDesc.Text = ObtenerCantidadOtroPromocion(ObtenerIdPromocion(idEventoSelec)).ToString();
+                            textBox_PE_otroDesc.Text = ObtenerCantidadOtroPromocion(ObtenerIdPromocion(idEventoValor)).ToString();
                         }
 
                         if (Convert.ToInt32(obj[1]) == 6)
@@ -1541,7 +1546,6 @@ namespace Events4ALL
             {
                 checkBox_PE_Ninguno.Checked = false;
             }
-            //Aqui va el de la imagen
         }
 
         //Funcion para limpiar los errorProvider de las condiciones
@@ -1558,7 +1562,6 @@ namespace Events4ALL
             else if (cual == 2)
             {
                 errorProvider_MC_Cant2.Clear();
-                errorProvider_MC_Desc2.Clear();
                 errorProvider_MC_TipoCondicion2.Clear();
                 errorProvider_MC_Comparacion2.Clear();
                 errorProvider_MC_TipoEvento2.Clear();
@@ -1566,7 +1569,6 @@ namespace Events4ALL
             else if (cual == 3)
             {
                 errorProvider_MC_Cant3.Clear();
-                errorProvider_MC_Desc3.Clear();
                 errorProvider_MC_TipoCondicion3.Clear();
                 errorProvider_MC_Comparacion3.Clear();
                 errorProvider_MC_TipoEvento3.Clear();
@@ -1586,7 +1588,6 @@ namespace Events4ALL
             if (cual == 1)
             {
                 textBox_MC_VC_Cantidad2.Enabled = false;
-                textBox_MC_VC_Descuento2.Enabled = false;
                 comboBox_MC_VC_Comparacion2.Enabled = false;
                 comboBox_MC_VC_Tcondicion2.Enabled = false;
                 radioButton_MC_TE2_Cine.Enabled = false;
@@ -1598,7 +1599,6 @@ namespace Events4ALL
             else if (cual == 2)
             {
                 textBox_MC_VC_Cantidad3.Enabled = false;
-                textBox_MC_VC_Descuento3.Enabled = false;
                 comboBox_MC_VC_Comparacion3.Enabled = false;
                 comboBox_MC_VC_Tcondicion3.Enabled = false;
                 radioButton_MC_TE3_Cine.Enabled = false;
@@ -1655,7 +1655,7 @@ namespace Events4ALL
             }
         }
 
-        //Funcion para saber que fila corresponde al DataTable mediante su id
+        //Funcion para saber que fila corresponde al DataTable mediante su idCondicion
         private int NumFilaTabla(int id)
         {
             int i;
