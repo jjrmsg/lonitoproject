@@ -87,6 +87,13 @@ namespace Events4ALL.EN
             return espCAD.ObtenerDatosEspectaculo(titulo);
         }
 
+        //Obtiene los espectaculos en cartelera y los proximos espectaculos, descarta los que ya han finalizado
+        public DataSet ObtenerEspectaculosNuevos(string fecha)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerEspectaculosNuevos(fecha);
+        }
+
         // Obtiene los datos de un espectáculo a partir de su id.
         public DataSet ObtenerEspectaculoPorID(string id)
         {

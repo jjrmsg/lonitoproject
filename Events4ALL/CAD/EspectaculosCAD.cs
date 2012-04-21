@@ -311,6 +311,27 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        public DataSet ObtenerEspectaculosNuevos(string fecha)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala and e.FechaFin>='"+fecha+"'", c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
+
         public DataSet ObtenerEspectaculoPorID(string id)
         {
             BD bd = new BD();
