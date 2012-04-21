@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,6 +84,7 @@
             this.panel2.Controls.Add(this.textBoxPass);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxUser);
+            this.panel2.Controls.Add(this.panel4);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
@@ -111,6 +113,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Events4ALL.Properties.Resources.idioma;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
@@ -153,6 +156,12 @@
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Name = "label4";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
+            // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
@@ -189,5 +198,6 @@
         private System.Windows.Forms.CheckBox checkSave;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel4;
     }
 }

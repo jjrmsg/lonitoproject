@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.inicio1 = new Events4ALL.Inicio();
             this.estadisticas1 = new Events4ALL.Estadisticas();
             this.clientes1 = new Events4ALL.Clientes();
@@ -112,16 +113,16 @@
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
             this.button2.Image = global::Events4ALL.Properties.Resources.quit_icon;
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.Image = global::Events4ALL.Properties.Resources.logout_img;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.logoutButton_Click);
@@ -148,9 +149,9 @@
             // 
             // pictureBox5
             // 
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
@@ -207,10 +208,16 @@
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Image = global::Events4ALL.Properties.Resources.logo;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Name = "panel1";
             // 
             // inicio1
             // 
@@ -274,6 +281,7 @@
             this.Controls.Add(this.mensajes1);
             this.Controls.Add(this.salas1);
             this.Controls.Add(this.promociones1);
+            this.Controls.Add(this.panel1);
             this.Name = "FormBase";
             this.Load += new System.EventHandler(this.FormBase_Load);
             this.panel4.ResumeLayout(false);
@@ -317,6 +325,7 @@
         private User_Controls.Mensajes mensajes1;
         private Ventas ventas1;
         private Espectaculos espectaculos1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

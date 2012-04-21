@@ -284,7 +284,7 @@ namespace Events4ALL
                 generoVentas.Clear();
 
                 bool existe = false;
-                //existe = cliEN.ExisteCliente(textNIF.Text);
+                existe = cliEN.ExisteCliente(textNIF.Text);
                 if (existe)
                 {
                     ObtenerDatosCliente();
@@ -312,8 +312,8 @@ namespace Events4ALL
             byte[] bImage = new byte[0];
             Image im = null;
             DataSet ds = new DataSet();
-            //cliEN.nif = textNIF.Text;
-            //ds = cliEN.getClienteByNif();
+            cliEN.DNI = textNIF.Text;
+            ds = cliEN.getClienteByNif();
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {

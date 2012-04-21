@@ -209,23 +209,15 @@ namespace Events4ALL.EN
         }
 
 
-         /*private ClientesCAD cliCAD;
-        public string nif { get; set; }
-
-        public ClientesEN()
-        {
-            cliCAD = new ClientesCAD();
-        }
-
         public DataSet getClienteByNif()
         {
-            return cliCAD.getClienteByNif(nif);
+            return cad_cliente.getClienteByNif(nif);
         }
 
         public bool ExisteCliente(string nif)
         {
-            return cliCAD.ExisteCliente(nif); 
-        }*/
+            return cad_cliente.ExisteCliente(nif);
+        }
 
 
         #endregion

@@ -117,7 +117,7 @@ namespace Events4ALL.CAD
             }
             else
             {
-                return false; 
+                return false;
             }
         }
 

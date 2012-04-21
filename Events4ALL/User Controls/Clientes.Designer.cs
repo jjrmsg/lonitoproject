@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.formCliente = new System.Windows.Forms.TabControl();
             this.FichaCliente = new System.Windows.Forms.TabPage();
+            this.boton_eliminar_cliente = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.label_filtro_busqueda = new System.Windows.Forms.Label();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.boton_eliminar_cliente = new System.Windows.Forms.Button();
             this.formCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -109,7 +109,7 @@
             this.formCliente.SelectedIndex = 0;
             this.formCliente.Size = new System.Drawing.Size(901, 632);
             this.formCliente.TabIndex = 1;
-            //this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
+            this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
             // 
             // FichaCliente
             // 
@@ -131,6 +131,18 @@
             this.FichaCliente.TabIndex = 0;
             this.FichaCliente.Text = "Ficha";
             this.FichaCliente.UseVisualStyleBackColor = true;
+            // 
+            // boton_eliminar_cliente
+            // 
+            this.boton_eliminar_cliente.Image = global::Events4ALL.Properties.Resources.delete;
+            this.boton_eliminar_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.boton_eliminar_cliente.Location = new System.Drawing.Point(638, 554);
+            this.boton_eliminar_cliente.Name = "boton_eliminar_cliente";
+            this.boton_eliminar_cliente.Size = new System.Drawing.Size(66, 23);
+            this.boton_eliminar_cliente.TabIndex = 61;
+            this.boton_eliminar_cliente.Text = "Borrar";
+            this.boton_eliminar_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.boton_eliminar_cliente.UseVisualStyleBackColor = true;
             // 
             // textBoxPassword
             // 
@@ -176,7 +188,7 @@
             this.buttonLimpiarCliente.Text = "Limpiar";
             this.buttonLimpiarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiarCliente.UseVisualStyleBackColor = true;
-            //this.buttonLimpiarCliente.Click += new System.EventHandler(this.buttonLimpiarCliente_Click);
+            this.buttonLimpiarCliente.Click += new System.EventHandler(this.buttonLimpiarCliente_Click);
             // 
             // buttonGuardarCliente
             // 
@@ -929,24 +941,12 @@
             this.buttonBuscarCliente.TabIndex = 64;
             this.buttonBuscarCliente.Text = "Buscar";
             this.buttonBuscarCliente.UseVisualStyleBackColor = true;
-            //this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
+            this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // boton_eliminar_cliente
-            // 
-            this.boton_eliminar_cliente.Image = global::Events4ALL.Properties.Resources.delete;
-            this.boton_eliminar_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boton_eliminar_cliente.Location = new System.Drawing.Point(638, 554);
-            this.boton_eliminar_cliente.Name = "boton_eliminar_cliente";
-            this.boton_eliminar_cliente.Size = new System.Drawing.Size(66, 23);
-            this.boton_eliminar_cliente.TabIndex = 61;
-            this.boton_eliminar_cliente.Text = "Borrar";
-            this.boton_eliminar_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.boton_eliminar_cliente.UseVisualStyleBackColor = true;
             // 
             // Clientes
             // 
