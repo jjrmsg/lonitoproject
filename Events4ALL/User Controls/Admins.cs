@@ -643,6 +643,9 @@ namespace Events4ALL
             #endregion
             #region Datos de Usuario
 
+            // limpia foto
+            Admin_Perfil_Foto.Image = Events4ALL.Properties.Resources.Events4All;
+
             // borra y esconde ID
             label_ID.Text = "";
             label_ID.Visible = false;
@@ -690,7 +693,7 @@ namespace Events4ALL
             //RellenaDatos();
             //45836991S
             en_admin = new AdminEN();
-            
+
             // Comrpuebo que todos los campos estan rellenos
             if (ValidaCampos())
             {
@@ -746,6 +749,7 @@ namespace Events4ALL
 
                     int error = en_admin.CompruebaPass(textBox_anterior_pass.Text, textBox_pass1.Text, textBox_pass2.Text, idActual);
 
+                    // pass vacio, pero se realiza edicion
                     if (error == 1 && ValidaCampos())
                     {
                         errorProviderPassAnt.Clear();
@@ -758,11 +762,14 @@ namespace Events4ALL
                                                 Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
                                                 textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
 
+                        System.Diagnostics.Debug.Write("El error en actualizar 1." + error);
+
                         if (error == 4) MessageBox.Show("No se ha podido realizar la actualización.");
                         else if (error == 5) MessageBox.Show("No se ha realizado ninguna modificación.");
                         else MessageBox.Show("Se ha realizado la actualizacion.");
                         
                     }
+                    // Todo ok, y cambio en el pass
                     else if (error == 0 && CompruebaPass() && ValidaCampos())
                     {
                         errorProviderPassAnt.Clear();
@@ -774,6 +781,8 @@ namespace Events4ALL
                                                 Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
                                                 Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
                                                 textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
+
+                        System.Diagnostics.Debug.Write("El error en actualizar 2." + error);
 
                         if (error == 4) MessageBox.Show("No se ha podido realizar la actualizacion.");
                         else if (error == 5) MessageBox.Show("No se ha realizado ninguna modificación.");

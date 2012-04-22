@@ -648,9 +648,9 @@ namespace Events4ALL.CAD
 
                 error = true;
             }
-            catch
+            catch (Exception ex)
             {
-
+                throw ex;
             }
             finally
             {

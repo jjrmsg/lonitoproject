@@ -137,8 +137,8 @@
   <data name="Admin_Perfil_Label_Tel1.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="comboBox_Provincia.Items33" xml:space="preserve">
-    <value>Melilla</value>
+  <data name="label_filtro.IconPadding11" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_rButom_Casado.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -270,9 +270,6 @@
   <data name="textBox_filtro_busqueda.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="label_CP_Perfil.Text" xml:space="preserve">
-    <value>CP</value>
-  </data>
   <data name="Admin_Perfil_rButom_M.Error9" xml:space="preserve">
     <value />
   </data>
@@ -281,9 +278,6 @@
   </data>
   <data name="boton_limpia_busqueda.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="boton_eliminar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="Admin_Perfil_Label_Pais.Error14" xml:space="preserve">
     <value />
@@ -411,8 +405,8 @@
   <data name="Admin_Perfil_rButom_M.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 17</value>
   </data>
-  <data name="test2.IconPadding15" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_EstCivil.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_NIF.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -528,8 +522,8 @@
   <data name="Admin_Perfil_rButom_H.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_Divorciado.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="grupEstadoCivil.Error6" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_rButom_H.Error6" xml:space="preserve">
     <value />
@@ -546,11 +540,11 @@
   <data name="label_ID.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="textBox_anterior_pass.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;Admin_Perfil_Label_Sexo.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_pass1.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_boton_Guardar.Error11" xml:space="preserve">
     <value />
@@ -669,6 +663,9 @@
   <data name="Label_Localidad.Error5" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_Label_FecNacimiento.IconPadding13" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="Admin_Perfil_Foto.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -708,6 +705,9 @@
   <data name="groupBox_UsPs.Error3" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;Admin_Perfil_Label_Mail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="label_pass1.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -715,9 +715,6 @@
     <value>Nueva Zealandia</value>
   </data>
   <data name="Admin_Perfil_Label_Mail.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_Label_Tel2.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items126" xml:space="preserve">
@@ -758,6 +755,9 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel1.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="groupBox1.Error9" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_Foto.Error4" xml:space="preserve">
     <value />
@@ -870,11 +870,17 @@
   <data name="Label_Localidad.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
+  <data name="Label_Provincia_Perfil.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="boton_limpia_busqueda.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="comboBox_Provincia.Items49" xml:space="preserve">
     <value>Vizcaya</value>
+  </data>
+  <data name="Admin_Perfil_boton_Anadir.IconPadding12" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="comboBox_Provincia.Items19" xml:space="preserve">
     <value>Granada</value>
@@ -951,6 +957,9 @@
   <data name="buttom_Buscar.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="comboBox_Provincia.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="grupEstadoCivil.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -963,6 +972,9 @@
   <data name="comboBox_filtro.Error7" xml:space="preserve">
     <value />
   </data>
+  <data name="comboBox_Provincia.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="Admin_Perfil_txtBox_NIF.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -970,9 +982,6 @@
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Nombre.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_comboBox_Pais.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="$this.IconPadding3" type="System.Int32, mscorlib">
@@ -1023,9 +1032,6 @@
   <data name="&gt;&gt;Admin_Perfil_Label_Tel1.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="Admin_Perfil_Label_Tel2.IconPadding11" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_boton_Foto.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1054,6 +1060,9 @@
     <value />
   </data>
   <data name="test3.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_Label_Apellidos.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="grupEstadoCivil.IconPadding1" type="System.Int32, mscorlib">
@@ -1179,8 +1188,11 @@
   <data name="&gt;&gt;Admin_Perfil_txtBox_Nombre.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="comboBox_Provincia.Items36" xml:space="preserve">
-    <value>Orense</value>
+  <data name="label_filtro.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="test3.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="comboBox_filtro.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1269,8 +1281,8 @@
   <data name="Admin_Perfil_comboBox_Pais.Items27" xml:space="preserve">
     <value>Bosnia</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items37" xml:space="preserve">
-    <value>Canada</value>
+  <data name="&gt;&gt;buttom_Buscar.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="groupBox_Busqueda.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1314,9 +1326,6 @@
   <data name="label_NombreUsuario.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="label_CP_Perfil.Error17" xml:space="preserve">
-    <value />
-  </data>
   <data name="Admin_Perfil_boton_Foto.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1331,6 +1340,9 @@
   </data>
   <data name="Admin_Perfil_Label_Mail.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_Label_Domicilio.IconPadding13" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="textBox_CP_Perfil.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -1419,8 +1431,14 @@
   <data name="label_anterior_pass.Error14" xml:space="preserve">
     <value />
   </data>
+  <data name="comboBox_Provincia.Items41" xml:space="preserve">
+    <value>Segovia</value>
+  </data>
   <data name="Admin_Perfil_Label_Apellidos.Error4" xml:space="preserve">
     <value />
+  </data>
+  <data name="comboBox_Provincia.Items11" xml:space="preserve">
+    <value>Cádiz</value>
   </data>
   <data name="boton_eliminar.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1482,8 +1500,8 @@
   <data name="Admin_Perfil_Label_Nombre.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Label_Localidad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Label_Localidad.Error17" xml:space="preserve">
+    <value />
   </data>
   <data name="Label_Localidad.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>
@@ -1493,6 +1511,9 @@
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items39" xml:space="preserve">
     <value>Chad</value>
+  </data>
+  <data name="Admin_Perfil_rButom_Soltero.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items19" xml:space="preserve">
     <value>Bangladesh</value>
@@ -1584,6 +1605,9 @@
   <data name="label_ID.Error8" xml:space="preserve">
     <value />
   </data>
+  <data name="label_anterior_pass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
   <data name="Admin_Perfil_Label_Sexo.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 268</value>
   </data>
@@ -1632,9 +1656,6 @@
   <data name="label_anterior_pass.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Tel2.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="groupBox1.Error5" xml:space="preserve">
     <value />
   </data>
@@ -1671,7 +1692,7 @@
   <data name="groupBoxSexo.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="groupBox1.IconPadding14" type="System.Int32, mscorlib">
+  <data name="label_CP_Perfil.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="comboBox_filtro_busqueda.Error16" xml:space="preserve">
@@ -1697,9 +1718,6 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel1.Error14" xml:space="preserve">
     <value />
-  </data>
-  <data name="Admin_Perfil_txtBox_Tel1.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="textBox_pass1.IconPadding12" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1770,8 +1788,11 @@
   <data name="label_pass2.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_EstCivil.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="$this.IconPadding9" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label_Localidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label_pass2.Error4" xml:space="preserve">
     <value />
@@ -1814,9 +1835,6 @@
   </data>
   <data name="groupBox_UsPs.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="tabControl1.Error15" xml:space="preserve">
-    <value />
   </data>
   <data name="Admin_Perfil_Label_Nombre.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1881,6 +1899,9 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
+  <data name="Admin_Perfil_comboBox_Pais.Items133" xml:space="preserve">
+    <value>Mauritania</value>
+  </data>
   <data name="test3.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -1913,9 +1934,6 @@
   </data>
   <data name="comboBox_Provincia.Items44" xml:space="preserve">
     <value>Tarragona</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Nombre.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2001,7 +2019,7 @@
   <data name="test2.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Label_Localidad.IconPadding7" type="System.Int32, mscorlib">
+  <data name="Admin_Perfil_txtBox_Nombre.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="boton_limpia_busqueda.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -2018,6 +2036,9 @@
   </data>
   <data name="comboBox_Provincia.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 21</value>
+  </data>
+  <data name="&gt;&gt;comboBox_Provincia.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="boton_limpia_busqueda.TabIndex" type="System.Int32, mscorlib">
     <value>68</value>
@@ -2157,6 +2178,12 @@
   <data name="Admin_Perfil_Label_Tel2.Error11" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;Admin_Perfil_txtBox_Apellidos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Admin_Perfil_rButom_Casado.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="tabControl1.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -2175,17 +2202,11 @@
   <data name="Admin_Perfil_Label_Nombre.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items170" xml:space="preserve">
-    <value>Rusia</value>
-  </data>
-  <data name="label_pass2.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="groupBox_UsPs.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="$this.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="label_pass1.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="Perfil.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2217,6 +2238,9 @@
   <data name="Admin_Perfil_rButom_H.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="Admin_Perfil_txtBox_Mail.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="groupBox_Busqueda.IconPadding6" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -2225,6 +2249,9 @@
   </data>
   <data name="Admin_Perfil_Label_Apellidos.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="Admin_Perfil_Label_Tel1.Error9" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;errorProviderPassInv.Name" xml:space="preserve">
     <value>errorProviderPassInv</value>
@@ -2280,17 +2307,11 @@
   <data name="Admin_Perfil_comboBox_Pais.Items50" xml:space="preserve">
     <value>Croasia</value>
   </data>
-  <data name="groupBoxSexo.Error16" xml:space="preserve">
-    <value />
-  </data>
   <data name="Admin_Perfil_comboBox_Pais.Items80" xml:space="preserve">
     <value>Guerney</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items90" xml:space="preserve">
     <value>India</value>
-  </data>
-  <data name="Admin_Perfil_Label_Sexo.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2370,6 +2391,9 @@
   <data name="textBox_NombreUsuario.IconPadding6" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="Admin_Perfil_Label_Pais.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="label_NombreUsuario.Error3" xml:space="preserve">
     <value />
   </data>
@@ -2381,6 +2405,9 @@
   </data>
   <data name="textBox_anterior_pass.Error6" xml:space="preserve">
     <value />
+  </data>
+  <data name="Admin_Perfil_rButom_Divorciado.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="groupBox2.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2490,7 +2517,13 @@
   <data name="Admin_Perfil_rButom_Viudo.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label_ID.Text" xml:space="preserve">
+    <value>id_del_usuario</value>
+  </data>
   <data name="Admin_Perfil_comboBox_Pais.Error17" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_pass2.Error2" xml:space="preserve">
     <value />
   </data>
   <data name="groupBoxSexo.Error" xml:space="preserve">
@@ -2507,12 +2540,6 @@
   </data>
   <data name="&gt;&gt;Admin_Perfil_txtBox_Apellidos.ZOrder" xml:space="preserve">
     <value>24</value>
-  </data>
-  <data name="textBox_CP_Perfil.Error7" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBox_pass1.IconPadding4" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="Admin_Perfil_Foto.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2550,8 +2577,8 @@
   <data name="Admin_Perfil_Label_Sexo.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;NIF.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBox_filtro_busqueda.IconPadding6" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_NombreUsuario.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2589,8 +2616,8 @@
   <data name="&gt;&gt;Admin_Perfil_txtBox_Domicilio.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="comboBox_Provincia.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_boton_Anadir.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_txtBox_Apellidos.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2610,8 +2637,8 @@
   <data name="grupEstadoCivil.Error5" xml:space="preserve">
     <value />
   </data>
-  <data name="label_CP_Perfil.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="tabControl1.Error17" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBoxDirec.Items" xml:space="preserve">
     <value />
@@ -2634,8 +2661,8 @@
   <data name="textBox_NombreUsuario.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_rButom_Casado.Error11" xml:space="preserve">
-    <value />
+  <data name="tabControl1.IconPadding6" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_CP_Perfil.Error11" xml:space="preserve">
     <value />
@@ -2693,6 +2720,9 @@
   </data>
   <data name="buttom_Buscar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_Label_Pais.Error13" xml:space="preserve">
+    <value />
   </data>
   <data name="txtBox_Localidad.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2862,6 +2892,9 @@
   <data name="Admin_Perfil_comboBox_Pais.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="Admin_Perfil_boton_Guardar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
   <data name="Admin_Perfil_boton_Foto.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -2898,6 +2931,9 @@
   <data name="textBox_pass2.Error17" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_txtBox_NIF.Error14" xml:space="preserve">
+    <value />
+  </data>
   <data name="label_ID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2912,9 +2948,6 @@
   </data>
   <data name="comboBox_filtro.Items5" xml:space="preserve">
     <value>ID</value>
-  </data>
-  <data name="buttom_Buscar.Error4" xml:space="preserve">
-    <value />
   </data>
   <data name="boton_limpia_busqueda.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -2946,9 +2979,6 @@
   <data name="Admin_Perfil_txtBox_Apellidos.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_M.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="Admin_Perfil_boton_Anadir.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -2957,9 +2987,6 @@
   </data>
   <data name="label_filtro.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items151" xml:space="preserve">
-    <value>Palestina</value>
   </data>
   <data name="label_filtro.Error5" xml:space="preserve">
     <value />
@@ -2997,6 +3024,9 @@
   <data name="Admin_Perfil_txtBox_NIF.Error5" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_txtBox_Nombre.Error12" xml:space="preserve">
+    <value />
+  </data>
   <data name="test3.IconPadding12" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -3030,7 +3060,7 @@
   <data name="Admin_Perfil_rButom_M.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Admin_Perfil_Label_Nombre.Error8" xml:space="preserve">
+  <data name="Admin_Perfil_Label_EstCivil.Error10" xml:space="preserve">
     <value />
   </data>
   <data name="txtBox_Localidad.IconPadding17" type="System.Int32, mscorlib">
@@ -3063,8 +3093,8 @@
   <data name="Admin_Perfil_Label_Domicilio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;textBox_CP_Perfil.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="label_pass1.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="textBox_filtro_busqueda.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -3096,6 +3126,9 @@
   <data name="&gt;&gt;boton_limpia_busqueda.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="Label_Localidad.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="Admin_Perfil_txtBox_Domicilio.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -3111,8 +3144,8 @@
   <data name="test1.Error16" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_rButom_Divorciado.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="test1.Error17" xml:space="preserve">
+    <value />
   </data>
   <data name="test1.Error14" xml:space="preserve">
     <value />
@@ -3150,8 +3183,8 @@
   <data name="Resultados_Busqueda.Error13" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;dataGridViewImageColumn2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="grupEstadoCivil.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="textBox_NombreUsuario.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -3170,6 +3203,9 @@
   </data>
   <data name="test3.Error3" xml:space="preserve">
     <value />
+  </data>
+  <data name="Admin_Perfil_rButom_Soltero.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Foto.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3228,14 +3264,8 @@
   <data name="Admin_Perfil_Label_Apellidos.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Apellidos.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="label_ID.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="textBox_CP_Perfil.IconPadding15" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="buttom_Buscar.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -3267,9 +3297,6 @@
   <data name="Admin_Perfil_rButom_Viudo.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label_filtro.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="test1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -3292,9 +3319,6 @@
     <value>MiddleRight</value>
   </data>
   <data name="test2.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_Label_Domicilio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_NIF.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -3359,9 +3383,6 @@
   </data>
   <data name="&gt;&gt;Label_Localidad.Parent" xml:space="preserve">
     <value>groupBox1</value>
-  </data>
-  <data name="Admin_Perfil_Label_Tel2.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="$this.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -3483,7 +3504,7 @@
   <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="test3.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -3774,9 +3795,6 @@
   <data name="Admin_Perfil_comboBox_Pais.Items164" xml:space="preserve">
     <value>Republica Democratica del Congo</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Mail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="Admin_Perfil_comboBox_Pais.Items92" xml:space="preserve">
     <value>Irak</value>
   </data>
@@ -3786,8 +3804,8 @@
   <data name="Admin_Perfil_rButom_Casado.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_boton_Guardar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="comboBox_Provincia.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
   </data>
   <data name="Resultados_Busqueda.Error12" xml:space="preserve">
     <value />
@@ -3830,9 +3848,6 @@
   </data>
   <data name="Admin_Perfil_rButom_Soltero.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;buttom_Buscar.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="dateTimePicker1.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3894,8 +3909,8 @@
   <data name="Admin_Perfil_boton_Foto.Error4" xml:space="preserve">
     <value />
   </data>
-  <data name="Label_Localidad.Error17" xml:space="preserve">
-    <value />
+  <data name="comboBox_Provincia.Items33" xml:space="preserve">
+    <value>Melilla</value>
   </data>
   <data name="Admin_Perfil_rButom_Soltero.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 17</value>
@@ -3911,6 +3926,9 @@
   </data>
   <data name="Admin_Perfil_Label_NIF.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="Admin_Perfil_comboBox_Pais.Items199" xml:space="preserve">
+    <value>Trinidad &amp; Tobago</value>
   </data>
   <data name="Admin_Perfil_txtBox_NIF.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -4011,13 +4029,16 @@
   <data name="Admin_Perfil_Label_Sexo.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="groupBox1.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="label_anterior_pass.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_EstCivil.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Nombre.IconPadding4" type="System.Int32, mscorlib">
+  <data name="textBox_CP_Perfil.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_EstCivil.IconPadding14" type="System.Int32, mscorlib">
@@ -4164,9 +4185,6 @@
   <data name="Label_Provincia_Perfil.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="test1.Error17" xml:space="preserve">
-    <value />
-  </data>
   <data name="Admin_Perfil_Label_Tel2.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -4185,8 +4203,8 @@
   <data name="test2.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_txtBox_Mail.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_comboBox_Pais.Items137" xml:space="preserve">
+    <value>Monaco</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -4263,6 +4281,9 @@
   <data name="&gt;&gt;comboBox_filtro_busqueda.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="comboBox_filtro_busqueda.Error8" xml:space="preserve">
+    <value />
+  </data>
   <data name="Admin_Perfil_txtBox_Mail.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -4332,8 +4353,8 @@
   <data name="&gt;&gt;errorProviderCP.Name" xml:space="preserve">
     <value>errorProviderCP</value>
   </data>
-  <data name="label_pass1.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="test3.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="$this.Error15" xml:space="preserve">
     <value />
@@ -4347,14 +4368,14 @@
   <data name="&gt;&gt;Admin_Perfil_txtBox_NIF.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label_pass1.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_boton_Guardar.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="grupEstadoCivil.Error10" xml:space="preserve">
     <value />
+  </data>
+  <data name="label_pass1.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
   <data name="label_anterior_pass.IconPadding4" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4383,8 +4404,8 @@
   <data name="Admin_Perfil_txtBox_NIF.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label_pass1.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Resultados_Busqueda.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_ID.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4419,8 +4440,11 @@
   <data name="label_ID.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label_pass1.Error9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Admin_Perfil_txtBox_Apellidos.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_Label_Pais.Error6" xml:space="preserve">
     <value />
@@ -4554,11 +4578,11 @@
   <data name="test1.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="test1.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Contacto</value>
   </data>
-  <data name="label_anterior_pass.Error15" xml:space="preserve">
-    <value />
+  <data name="id.Width" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
   <data name="Admin_Perfil_Label_Sexo.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -4614,11 +4638,14 @@
   <data name="Admin_Perfil_Label_Apellidos.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_EstCivil.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="Buscar.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="Buscar.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="comboBox_filtro.Error4" xml:space="preserve">
+    <value />
   </data>
   <data name="Label_Localidad.Error3" xml:space="preserve">
     <value />
@@ -4719,6 +4746,9 @@
   <data name="&gt;&gt;boton_limpia_busqueda.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="comboBoxDirec.Error9" xml:space="preserve">
+    <value />
+  </data>
   <data name="Admin_Perfil_txtBox_Tel1.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -4795,12 +4825,6 @@
     <value />
   </data>
   <data name="test3.Error6" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items188" xml:space="preserve">
-    <value>Suiza</value>
-  </data>
-  <data name="Admin_Perfil_rButom_Soltero.Error17" xml:space="preserve">
     <value />
   </data>
   <data name="label_filtro.IconPadding12" type="System.Int32, mscorlib">
@@ -4893,8 +4917,8 @@
   <data name="comboBox_filtro.Error9" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_Label_EstCivil.Error10" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_comboBox_Pais.Items37" xml:space="preserve">
+    <value>Canada</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items" xml:space="preserve">
     <value />
@@ -4914,11 +4938,8 @@
   <data name="Admin_Perfil_txtBox_Tel2.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="$this.IconPadding9" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="comboBox_filtro.Error5" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_Label_Tel2.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Mail.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -4974,8 +4995,8 @@
   <data name="boton_limpia_busqueda.Error8" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items115" xml:space="preserve">
-    <value>Lesotho</value>
+  <data name="Admin_Perfil_boton_Anadir.IconPadding7" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Mail.IconPadding4" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5016,6 +5037,9 @@
   <data name="Admin_Perfil_rButom_M.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="textBox_pass2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="Admin_Perfil_txtBox_Mail.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -5036,6 +5060,9 @@
   </data>
   <data name="test1.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
+  </data>
+  <data name="label_anterior_pass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="Admin_Perfil_Label_Mail.Error15" xml:space="preserve">
     <value />
@@ -5061,8 +5088,8 @@
   <data name="textBox_filtro_busqueda.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="test3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="Label_Localidad.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;errorProviderPais.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5084,6 +5111,9 @@
   </data>
   <data name="test1.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtBox_Localidad.ZOrder" xml:space="preserve">
+    <value>21</value>
   </data>
   <data name="Admin_Perfil_Label_Apellidos.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5118,6 +5148,9 @@
   <data name="textBox_NombreUsuario.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="grupEstadoCivil.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="comboBoxDirec.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -5129,9 +5162,6 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel2.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="groupBox_UsPs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 337</value>
   </data>
   <data name="Admin_Perfil_boton_Guardar.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5151,8 +5181,8 @@
   <data name="Admin_Perfil_comboBox_Pais.Items61" xml:space="preserve">
     <value>España</value>
   </data>
-  <data name="buttom_Buscar.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_comboBox_Pais.Items71" xml:space="preserve">
+    <value>Georgia</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items41" xml:space="preserve">
     <value>China</value>
@@ -5235,8 +5265,8 @@
   <data name="Label_Localidad.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_rButom_Casado.Error11" xml:space="preserve">
+    <value />
   </data>
   <data name="Resultados_Busqueda.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5249,9 +5279,6 @@
   </data>
   <data name="groupBox1.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="label_pass1.Text" xml:space="preserve">
-    <value>Contraseña</value>
   </data>
   <data name="comboBoxDirec.Error3" xml:space="preserve">
     <value />
@@ -5318,9 +5345,6 @@
   </data>
   <data name="&gt;&gt;errorProviderSexo.Name" xml:space="preserve">
     <value>errorProviderSexo</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Tel2.IconPadding15" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Tel1.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5418,9 +5442,6 @@
   <data name="label_pass1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Nombre.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="groupBox_Busqueda.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -5435,6 +5456,9 @@
   </data>
   <data name="comboBox_filtro.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="groupBox_Busqueda.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Sexo.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5454,8 +5478,14 @@
   <data name="Admin_Perfil_rButom_M.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding12" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="Admin_Perfil_txtBox_Tel2.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_rButom_Soltero.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items135" xml:space="preserve">
     <value>Micronesia</value>
@@ -5601,14 +5631,17 @@
   <data name="label_ID.Error" xml:space="preserve">
     <value />
   </data>
-  <data name="comboBox_Provincia.Items21" xml:space="preserve">
-    <value>Huelva</value>
+  <data name="Admin_Perfil_txtBox_Apellidos.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items214" xml:space="preserve">
     <value>Zimbabwe</value>
   </data>
   <data name="grupEstadoCivil.Error14" xml:space="preserve">
     <value />
+  </data>
+  <data name="textBox_pass2.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_rButom_M.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5676,8 +5709,8 @@
   <data name="textBox_filtro_busqueda.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_boton_Guardar.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_txtBox_Mail.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Domicilio.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5700,8 +5733,8 @@
   <data name="label_pass2.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;Admin_Perfil_rButom_H.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Admin_Perfil_rButom_H.IconPadding13" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="groupBox1.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -5739,8 +5772,8 @@
   <data name="$this.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="groupBox1.Error9" xml:space="preserve">
-    <value />
+  <data name="label_CP_Perfil.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.Error2" xml:space="preserve">
     <value />
@@ -5829,20 +5862,20 @@
   <data name="Admin_Perfil_rButom_H.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items6" xml:space="preserve">
-    <value>Angola</value>
-  </data>
   <data name="Admin_Perfil_txtBox_NIF.Error2" xml:space="preserve">
     <value />
   </data>
   <data name="label_anterior_pass.IconPadding12" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="label_anterior_pass.IconPadding13" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="Admin_Perfil_comboBox_Pais.Items187" xml:space="preserve">
     <value>Suecia</value>
   </data>
-  <data name="NIF.HeaderText" xml:space="preserve">
-    <value>NIF</value>
+  <data name="Admin_Perfil_txtBox_Tel2.IconPadding15" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_txtBox_Domicilio.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5852,6 +5885,9 @@
   </data>
   <data name="dateTimePicker1.Error13" xml:space="preserve">
     <value />
+  </data>
+  <data name="textBox_anterior_pass.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
   </data>
   <data name="groupBox2.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5878,9 +5914,6 @@
     <value>Sexo</value>
   </data>
   <data name="textBox_CP_Perfil.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Admin_Perfil_rButom_M.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Pais.AutoSize" type="System.Boolean, mscorlib">
@@ -5931,6 +5964,9 @@
   <data name="Admin_Perfil_boton_Foto.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="Admin_Perfil_txtBox_Nombre.Error11" xml:space="preserve">
+    <value />
+  </data>
   <data name="label_pass2.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -5963,12 +5999,6 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel2.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding15" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="textBox_filtro_busqueda.IconPadding6" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="Label_Provincia_Perfil.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -6066,9 +6096,6 @@
   <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_rButom_Soltero.Error12" xml:space="preserve">
-    <value />
-  </data>
   <data name="Perfil.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -6092,6 +6119,9 @@
   </data>
   <data name="textBox_pass1.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="label_NombreUsuario.Error10" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBoxDirec.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6123,9 +6153,6 @@
   <data name="Admin_Perfil_rButom_Viudo.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="textBox_anterior_pass.IconPadding11" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="comboBox_Provincia.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -6140,6 +6167,9 @@
   </data>
   <data name="Admin_Perfil_txtBox_NIF.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="label_NombreUsuario.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_txtBox_Nombre.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6186,8 +6216,8 @@
   <data name="Admin_Perfil_txtBox_Tel2.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_txtBox_Nombre.IconPadding9" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Foto.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_rButom_M.IconPadding6" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6290,9 +6320,6 @@
   </data>
   <data name="Admin_Perfil_Label_Domicilio.Error12" xml:space="preserve">
     <value />
-  </data>
-  <data name="Resultados_Busqueda.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="comboBox_Provincia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -6402,9 +6429,6 @@
   <data name="comboBoxDirec.Items3" xml:space="preserve">
     <value>Vía</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Contacto</value>
-  </data>
   <data name="Admin_Perfil_rButom_Divorciado.Error15" xml:space="preserve">
     <value />
   </data>
@@ -6429,8 +6453,14 @@
   <data name="Admin_Perfil_boton_Anadir.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="Admin_Perfil_comboBox_Pais.Error13" xml:space="preserve">
+    <value />
+  </data>
   <data name="Admin_Perfil_Label_EstCivil.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="NIF.HeaderText" xml:space="preserve">
+    <value>NIF</value>
   </data>
   <data name="&gt;&gt;Admin_Perfil_Label_Apellidos.ZOrder" xml:space="preserve">
     <value>14</value>
@@ -6535,9 +6565,6 @@
     <value />
   </data>
   <data name="groupBox_Busqueda.IconPadding15" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Admin_Perfil_Label_Domicilio.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="Label_Localidad.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -6654,8 +6681,8 @@
   <data name="Admin_Perfil_txtBox_Mail.Error11" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_rButom_H.IconPadding13" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="comboBox_filtro.Error5" xml:space="preserve">
+    <value />
   </data>
   <data name="Resultados_Busqueda.Error3" xml:space="preserve">
     <value />
@@ -6683,6 +6710,9 @@
   </data>
   <data name="textBox_filtro_busqueda.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_txtBox_Nombre.Error13" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_Label_Domicilio.Error4" xml:space="preserve">
     <value />
@@ -6735,6 +6765,9 @@
   <data name="textBox_pass2.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="Admin_Perfil_Label_Nombre.Error8" xml:space="preserve">
+    <value />
+  </data>
   <data name="Admin_Perfil_boton_Anadir.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -6771,8 +6804,8 @@
   <data name="textBox_pass1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_boton_Anadir.IconPadding7" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_txtBox_Nombre.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Nombre.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -6786,14 +6819,14 @@
   <data name="Admin_Perfil_txtBox_Nombre.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Nombre.Error13" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_txtBox_Nombre.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Tel1.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Mail.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="groupBox2.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="txtBox_Localidad.Error4" xml:space="preserve">
     <value />
@@ -6809,9 +6842,6 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel1.Error17" xml:space="preserve">
     <value />
-  </data>
-  <data name="Admin_Perfil_Foto.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="buttom_Buscar.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -6996,6 +7026,9 @@
   <data name="&gt;&gt;textBox_pass2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="Perfil.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="Admin_Perfil_boton_Guardar.Error16" xml:space="preserve">
     <value />
   </data>
@@ -7011,8 +7044,8 @@
   <data name="boton_eliminar.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_rButom_Soltero.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label_CP_Perfil.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="groupBox_Busqueda.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -7056,8 +7089,8 @@
   <data name="label_pass1.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_Casado.Error6" xml:space="preserve">
-    <value />
+  <data name="label_pass1.IconPadding12" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_pass1.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7074,7 +7107,7 @@
   <data name="label_pass1.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_anterior_pass.IconPadding13" type="System.Int32, mscorlib">
+  <data name="label_pass1.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label_anterior_pass.IconPadding10" type="System.Int32, mscorlib">
@@ -7193,6 +7226,9 @@
   </data>
   <data name="&gt;&gt;Admin_Perfil_boton_Foto.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;Admin_Perfil_Label_FecNacimiento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox_UsPs.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7341,8 +7377,8 @@
   <data name="grupEstadoCivil.Error8" xml:space="preserve">
     <value />
   </data>
-  <data name="label_anterior_pass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
+  <data name="Admin_Perfil_txtBox_Nombre.IconPadding9" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_txtBox_Tel2.Error11" xml:space="preserve">
     <value />
@@ -7370,6 +7406,9 @@
   </data>
   <data name="Admin_Perfil_rButom_Viudo.Error2" xml:space="preserve">
     <value />
+  </data>
+  <data name="Admin_Perfil_comboBox_Pais.Items43" xml:space="preserve">
+    <value>Colombia</value>
   </data>
   <data name="label_pass2.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7405,9 +7444,6 @@
     <value>MiddleRight</value>
   </data>
   <data name="label_CP_Perfil.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_Label_Mail.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Apellidos.Error7" xml:space="preserve">
@@ -7461,8 +7497,8 @@
   <data name="&gt;&gt;errorProviderNick.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Buscar.Name" xml:space="preserve">
-    <value>Buscar</value>
+  <data name="&gt;&gt;Admin_Perfil_boton_Anadir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.IconPadding4" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7539,6 +7575,9 @@
   <data name="Label_Provincia_Perfil.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="test2.IconPadding15" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="test1.Error7" xml:space="preserve">
     <value />
   </data>
@@ -7572,9 +7611,6 @@
   <data name="Admin_Perfil_Label_Nombre.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_Label_Nombre.Error16" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;errorProviderFNAC.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -7605,8 +7641,8 @@
   <data name="comboBoxDirec.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label_filtro.IconPadding11" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="comboBoxDirec.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label_filtro.Error12" xml:space="preserve">
     <value />
@@ -7643,9 +7679,6 @@
   </data>
   <data name="dateTimePicker1.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="Admin_Perfil_Foto.IconAlignment15" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items204" xml:space="preserve">
     <value>Uganda</value>
@@ -7758,9 +7791,6 @@
   <data name="dateTimePicker1.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_pass1.Error9" xml:space="preserve">
-    <value />
-  </data>
   <data name="Admin_Perfil_boton_Foto.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -7773,14 +7803,8 @@
   <data name="tabControl1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_CP_Perfil.IconPadding17" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_txtBox_Nombre.Error16" xml:space="preserve">
     <value />
-  </data>
-  <data name="label_CP_Perfil.IconPadding11" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="Admin_Perfil_rButom_Soltero.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7812,8 +7836,8 @@
   <data name="tabControl1.Error16" xml:space="preserve">
     <value />
   </data>
-  <data name="Label_Localidad.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Label_Localidad.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_Provincia.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -7956,9 +7980,6 @@
   <data name="Admin_Perfil_txtBox_Tel1.Error9" xml:space="preserve">
     <value />
   </data>
-  <data name="textBox_CP_Perfil.Error10" xml:space="preserve">
-    <value />
-  </data>
   <data name="comboBoxDirec.IconPadding4" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -7970,12 +7991,6 @@
   </data>
   <data name="label_NombreUsuario.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="groupBox_UsPs.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Nombre.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Apellidos.Error2" xml:space="preserve">
     <value />
@@ -8187,19 +8202,19 @@
   <data name="comboBox_Provincia.Error11" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_rButom_Casado.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_Label_Tel2.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Sexo.Error10" xml:space="preserve">
     <value />
   </data>
+  <data name="Perfil.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="textBox_filtro_busqueda.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Mail.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_NIF.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="$this.IconPadding10" type="System.Int32, mscorlib">
@@ -8217,9 +8232,6 @@
   <data name="Admin_Perfil_Label_NIF.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_CP_Perfil.IconPadding4" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_comboBox_Pais.Items146" xml:space="preserve">
     <value>Noruega</value>
   </data>
@@ -8235,6 +8247,9 @@
   <data name="test2.Error1" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_comboBox_Pais.Items170" xml:space="preserve">
+    <value>Rusia</value>
+  </data>
   <data name="groupBox1.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -8247,10 +8262,13 @@
   <data name="Admin_Perfil_rButom_Casado.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="Admin_Perfil_rButom_Casado.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="groupBox_Busqueda.Size" type="System.Drawing.Size, System.Drawing">
     <value>854, 76</value>
   </data>
-  <data name="comboBoxDirec.Error9" xml:space="preserve">
+  <data name="Admin_Perfil_txtBox_Mail.Error14" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_rButom_Divorciado.Error11" xml:space="preserve">
@@ -8294,6 +8312,9 @@
   </data>
   <data name="Admin_Perfil_Foto.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="grupEstadoCivil.Error4" xml:space="preserve">
+    <value />
   </data>
   <data name="tabControl1.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -8430,9 +8451,6 @@
   <data name="groupBox_UsPs.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_boton_Foto.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="label_anterior_pass.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -8454,8 +8472,8 @@
   <data name="Admin_Perfil_txtBox_Tel1.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="tabControl1.Error17" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_comboBox_Pais.Items188" xml:space="preserve">
+    <value>Suiza</value>
   </data>
   <data name="Admin_Perfil_txtBox_Domicilio.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8487,6 +8505,9 @@
   <data name="label_anterior_pass.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 152</value>
   </data>
+  <data name="groupBoxSexo.Error1" xml:space="preserve">
+    <value />
+  </data>
   <data name="Resultados_Busqueda.Error7" xml:space="preserve">
     <value />
   </data>
@@ -8495,9 +8516,6 @@
   </data>
   <data name="&gt;&gt;test1.Name" xml:space="preserve">
     <value>test1</value>
-  </data>
-  <data name="Label_Localidad.Error2" xml:space="preserve">
-    <value />
   </data>
   <data name="Admin_Perfil_Label_Tel2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -8508,7 +8526,7 @@
   <data name="Admin_Perfil_Label_Pais.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Apellidos.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_Label_Nombre.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_txtBox_Apellidos.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -8544,8 +8562,8 @@
   <data name="label_CP_Perfil.Error13" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox2.Error16" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_comboBox_Pais.Items151" xml:space="preserve">
+    <value>Palestina</value>
   </data>
   <data name="groupBox2.Error17" xml:space="preserve">
     <value />
@@ -8577,9 +8595,6 @@
   <data name="comboBox_filtro.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Nombre.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="Admin_Perfil_boton_Guardar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -8606,6 +8621,9 @@
   </data>
   <data name="Admin_Perfil_txtBox_Tel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>133, 68</value>
+  </data>
+  <data name="Admin_Perfil_rButom_Casado.Error6" xml:space="preserve">
+    <value />
   </data>
   <data name="test2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -8685,12 +8703,6 @@
   <data name="comboBox_Provincia.Items3" xml:space="preserve">
     <value>Alicante</value>
   </data>
-  <data name="grupEstadoCivil.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_Label_Domicilio.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
   <data name="Admin_Perfil_Label_NIF.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -8730,9 +8742,6 @@
   <data name="Admin_Perfil_Label_NIF.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_Soltero.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
-  </data>
   <data name="Admin_Perfil_Label_Apellidos.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -8765,9 +8774,6 @@
   </data>
   <data name="Admin_Perfil_Label_Nombre.Error1" xml:space="preserve">
     <value />
-  </data>
-  <data name="Admin_Perfil_txtBox_Nombre.IconPadding7" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="groupBoxSexo.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -8805,9 +8811,6 @@
   <data name="Admin_Perfil_rButom_M.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_CP_Perfil.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
   <data name="Admin_Perfil_rButom_Divorciado.IconPadding12" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -8826,14 +8829,14 @@
   <data name="label_CP_Perfil.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Tel1.Error9" xml:space="preserve">
-    <value />
+  <data name="test1.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label_CP_Perfil.IconPadding16" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_Soltero.Error16" xml:space="preserve">
-    <value />
+  <data name="label_CP_Perfil.IconPadding11" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_CP_Perfil.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8847,8 +8850,8 @@
   <data name="Admin_Perfil_Label_Nombre.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label_NombreUsuario.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_Domicilio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;textBox_pass2.Name" xml:space="preserve">
     <value>textBox_pass2</value>
@@ -8868,8 +8871,8 @@
   <data name="textBox_filtro_busqueda.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="textBox_NombreUsuario.Error2" xml:space="preserve">
-    <value />
+  <data name="Label_Localidad.IconPadding7" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="comboBox_Provincia.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -8949,13 +8952,13 @@
   <data name="boton_limpia_busqueda.Error7" xml:space="preserve">
     <value />
   </data>
-  <data name="buttom_Buscar.Error2" xml:space="preserve">
+  <data name="Admin_Perfil_boton_Guardar.Error10" xml:space="preserve">
     <value />
   </data>
   <data name="textBox_NombreUsuario.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_Label_Apellidos.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="comboBox_filtro_busqueda.IconPadding8" type="System.Int32, mscorlib">
@@ -8969,6 +8972,9 @@
   </data>
   <data name="groupBox_UsPs.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="comboBox_filtro_busqueda.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_FecNacimiento.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -9147,6 +9153,9 @@
   <data name="textBox_pass2.Error13" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
   <data name="&gt;&gt;boton_limpia_busqueda.Parent" xml:space="preserve">
     <value>groupBox_Busqueda</value>
   </data>
@@ -9168,8 +9177,8 @@
   <data name="test2.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items137" xml:space="preserve">
-    <value>Monaco</value>
+  <data name="textBox_NombreUsuario.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="test2.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -9203,9 +9212,6 @@
   </data>
   <data name="label_NombreUsuario.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;textBox_NombreUsuario.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Admin_Perfil_Label_Apellidos.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -9351,8 +9357,8 @@
   <data name="label_pass1.Error2" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_Label_FecNacimiento.IconPadding13" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_Domicilio.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="label_NombreUsuario.Error14" xml:space="preserve">
     <value />
@@ -9486,10 +9492,10 @@
   <data name="Admin_Perfil_Label_Tel2.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Tel2.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label_pass1.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Sexo.IconPadding17" type="System.Int32, mscorlib">
+  <data name="Admin_Perfil_Label_Tel2.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="buttom_Buscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -9498,8 +9504,8 @@
   <data name="Admin_Perfil_Label_Sexo.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Admin_Perfil_txtBox_Apellidos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Admin_Perfil_Label_Sexo.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Nombre.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -9525,8 +9531,11 @@
   <data name="comboBox_Provincia.Items26" xml:space="preserve">
     <value>La Rioja</value>
   </data>
-  <data name="Perfil.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="comboBox_Provincia.Items36" xml:space="preserve">
+    <value>Orense</value>
+  </data>
+  <data name="Admin_Perfil_comboBox_Pais.Items69" xml:space="preserve">
+    <value>Gabon</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9567,13 +9576,13 @@
   <data name="Admin_Perfil_Label_Mail.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Nombre.IconPadding6" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Resultados_Busqueda.Error14" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_rButom_Casado.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="grupEstadoCivil.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="test1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -9603,8 +9612,8 @@
   <data name="Admin_Perfil_boton_Guardar.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 23</value>
   </data>
-  <data name="comboBox_filtro.Error4" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_txtBox_Tel1.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="textBox_NombreUsuario.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -9623,6 +9632,9 @@
   </data>
   <data name="Admin_Perfil_Label_Apellidos.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;NIF.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Admin_Perfil_Label_EstCivil.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9732,13 +9744,10 @@
   <data name="&gt;&gt;Admin_Perfil_Label_Domicilio.Name" xml:space="preserve">
     <value>Admin_Perfil_Label_Domicilio</value>
   </data>
-  <data name="Admin_Perfil_Foto.Error1" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;Admin_Perfil_txtBox_Tel1.Name" xml:space="preserve">
     <value>Admin_Perfil_txtBox_Tel1</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Nombre.Error12" xml:space="preserve">
+  <data name="buttom_Buscar.Error4" xml:space="preserve">
     <value />
   </data>
   <data name="dateTimePicker1.Error10" xml:space="preserve">
@@ -9766,6 +9775,9 @@
     <value>Singapur</value>
   </data>
   <data name="boton_limpia_busqueda.IconPadding13" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox2.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="textBox_filtro_busqueda.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -9804,8 +9816,8 @@
   <data name="comboBox_filtro_busqueda.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="comboBox_filtro_busqueda.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="tabControl1.Error15" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_filtro_busqueda.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
@@ -9869,6 +9881,9 @@
   </data>
   <data name="Resultados_Busqueda.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textBox_filtro_busqueda.Parent" xml:space="preserve">
+    <value>groupBox_Busqueda</value>
   </data>
   <data name="label_pass1.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -9942,9 +9957,6 @@
   <data name="groupBox1.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Domicilio.IconPadding2" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="textBox_anterior_pass.IconPadding12" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -10005,11 +10017,11 @@
   <data name="Admin_Perfil_Label_Domicilio.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;textBox_filtro_busqueda.Parent" xml:space="preserve">
-    <value>groupBox_Busqueda</value>
+  <data name="Admin_Perfil_Label_Domicilio.IconPadding2" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="Buscar.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="boton_eliminar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="Admin_Perfil_Label_Domicilio.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
@@ -10023,8 +10035,8 @@
   <data name="Admin_Perfil_Label_Mail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Admin_Perfil_Label_Domicilio.IconPadding8" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_txtBox_Mail.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Domicilio.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
@@ -10036,9 +10048,6 @@
     <value>0</value>
   </data>
   <data name="label_NombreUsuario.Error1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.Error6" xml:space="preserve">
     <value />
   </data>
   <data name="test3.IconPadding7" type="System.Int32, mscorlib">
@@ -10058,9 +10067,6 @@
   </data>
   <data name="Admin_Perfil_Label_NIF.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="comboBox_Provincia.Items20" xml:space="preserve">
-    <value>Guadalajara</value>
   </data>
   <data name="test1.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -10135,9 +10141,6 @@
     <value />
   </data>
   <data name="Admin_Perfil_txtBox_Mail.Error9" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label_anterior_pass.Error16" xml:space="preserve">
     <value />
   </data>
   <data name="label_filtro.Size" type="System.Drawing.Size, System.Drawing">
@@ -10293,7 +10296,7 @@
   <data name="Admin_Perfil_comboBox_Pais.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_rButom_H.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_comboBox_Pais.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="label_NombreUsuario.Error6" xml:space="preserve">
@@ -10308,17 +10311,14 @@
   <data name="label_CP_Perfil.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_pass1.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="Admin_Perfil_comboBox_Pais.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="grupEstadoCivil.Error7" xml:space="preserve">
     <value />
-  </data>
-  <data name="test3.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
   </data>
   <data name="label_ID.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
@@ -10371,8 +10371,8 @@
   <data name="Admin_Perfil_Label_FecNacimiento.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Admin_Perfil_txtBox_NIF.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="label_CP_Perfil.Error17" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_Label_Sexo.Error11" xml:space="preserve">
     <value />
@@ -10443,14 +10443,11 @@
   <data name="txtBox_Localidad.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="grupEstadoCivil.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_Label_EstCivil.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="grupEstadoCivil.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="Admin_Perfil_Label_Domicilio.Error3" xml:space="preserve">
-    <value />
   </data>
   <data name="txtBox_Localidad.Error6" xml:space="preserve">
     <value />
@@ -10551,6 +10548,9 @@
   <data name="label_NombreUsuario.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="Label_Provincia_Perfil.Error9" xml:space="preserve">
+    <value />
+  </data>
   <data name="Admin_Perfil_Label_Tel1.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -10587,8 +10587,8 @@
   <data name="Resultados_Busqueda.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Label_Provincia_Perfil.Error9" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_comboBox_Pais.Items6" xml:space="preserve">
+    <value>Angola</value>
   </data>
   <data name="Label_Provincia_Perfil.Error8" xml:space="preserve">
     <value />
@@ -10674,11 +10674,11 @@
   <data name="Admin_Perfil_txtBox_Tel1.Error8" xml:space="preserve">
     <value />
   </data>
-  <data name="label_ID.Text" xml:space="preserve">
-    <value>id_del_usuario</value>
+  <data name="textBox_anterior_pass.IconPadding11" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Apellidos.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="comboBox_Provincia.Items21" xml:space="preserve">
+    <value>Huelva</value>
   </data>
   <data name="comboBox_Provincia.Items31" xml:space="preserve">
     <value>Madrid</value>
@@ -10725,8 +10725,8 @@
   <data name="Admin_Perfil_Label_FecNacimiento.Error14" xml:space="preserve">
     <value />
   </data>
-  <data name="Perfil.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;dataGridViewImageColumn2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label_pass2.Error6" xml:space="preserve">
     <value />
@@ -10770,7 +10770,7 @@
   <data name="comboBoxDirec.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="groupBox2.IconPadding14" type="System.Int32, mscorlib">
+  <data name="Admin_Perfil_rButom_Divorciado.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Domicilio.Error8" xml:space="preserve">
@@ -10793,9 +10793,6 @@
   </data>
   <data name="&gt;&gt;errorProviderPassDif.Name" xml:space="preserve">
     <value>errorProviderPassDif</value>
-  </data>
-  <data name="Admin_Perfil_rButom_Viudo.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="buttom_Buscar.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
@@ -10893,8 +10890,8 @@
   <data name="groupBox_Busqueda.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Apellidos.Error3" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_Label_Tel2.IconPadding12" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_NombreUsuario.Error8" xml:space="preserve">
     <value />
@@ -11037,8 +11034,8 @@
   <data name="label_CP_Perfil.Error16" xml:space="preserve">
     <value />
   </data>
-  <data name="comboBox_Provincia.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="groupBoxSexo.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_boton_Guardar.IconAlignment12" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -11046,11 +11043,14 @@
   <data name="&gt;&gt;groupBox_UsPs.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Admin_Perfil_boton_Anadir.Error14" xml:space="preserve">
+    <value />
+  </data>
   <data name="boton_limpia_busqueda.IconPadding6" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;comboBox_Provincia.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="Admin_Perfil_Label_Tel2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_ID.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
@@ -11064,20 +11064,20 @@
   <data name="Admin_Perfil_txtBox_Nombre.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_boton_Guardar.Error10" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_rButom_M.IconPadding5" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="grupEstadoCivil.Error9" xml:space="preserve">
     <value />
+  </data>
+  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding16" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_NombreUsuario.Error4" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;Admin_Perfil_Label_Tel1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Tel2.Error6" xml:space="preserve">
-    <value />
   </data>
   <data name="test1.Error5" xml:space="preserve">
     <value />
@@ -11145,9 +11145,6 @@
   <data name="comboBoxDirec.Error8" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items71" xml:space="preserve">
-    <value>Georgia</value>
-  </data>
   <data name="dateTimePicker1.Error8" xml:space="preserve">
     <value />
   </data>
@@ -11181,8 +11178,8 @@
   <data name="Admin_Perfil_Label_Tel2.Error15" xml:space="preserve">
     <value />
   </data>
-  <data name="comboBoxDirec.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="textBox_pass1.IconPadding4" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_filtro.Error" xml:space="preserve">
     <value />
@@ -11268,7 +11265,7 @@
   <data name="Admin_Perfil_comboBox_Pais.Items178" xml:space="preserve">
     <value>Sao Tome &amp; Principe</value>
   </data>
-  <data name="Admin_Perfil_rButom_Casado.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Admin_Perfil_txtBox_NIF.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Tel1.Error15" xml:space="preserve">
@@ -11310,8 +11307,8 @@
   <data name="label_pass2.IconPadding8" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="txtBox_Localidad.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_txtBox_Tel2.Error6" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items162" xml:space="preserve">
     <value>Republica Centroafricana</value>
@@ -11418,8 +11415,8 @@
   <data name="boton_eliminar.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;Admin_Perfil_boton_Anadir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Admin_Perfil_Label_Domicilio.Error3" xml:space="preserve">
+    <value />
   </data>
   <data name="boton_eliminar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -11469,8 +11466,8 @@
   <data name="Admin_Perfil_boton_Anadir.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_Label_Domicilio.IconPadding13" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_rButom_M.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.Error15" xml:space="preserve">
     <value />
@@ -11493,8 +11490,8 @@
   <data name="groupBox1.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Mail.Error14" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_txtBox_Nombre.IconPadding6" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="textBox_filtro_busqueda.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -11550,9 +11547,6 @@
   <data name="Label_Localidad.Error8" xml:space="preserve">
     <value />
   </data>
-  <data name="textBox_CP_Perfil.IconPadding13" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_Label_Nombre.IconPadding13" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -11574,7 +11568,7 @@
   <data name="Admin_Perfil_rButom_Casado.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Error13" xml:space="preserve">
+  <data name="Admin_Perfil_rButom_Soltero.Error17" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_boton_Anadir.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -11610,10 +11604,13 @@
   <data name="Resultados_Busqueda.Error6" xml:space="preserve">
     <value />
   </data>
+  <data name="Admin_Perfil_boton_Guardar.IconPadding14" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="textBox_NombreUsuario.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_rButom_Soltero.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="Buscar.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="textBox_pass1.Error9" xml:space="preserve">
@@ -11688,9 +11685,6 @@
   <data name="Label_Provincia_Perfil.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="textBox_NombreUsuario.Error6" xml:space="preserve">
-    <value />
-  </data>
   <data name="Admin_Perfil_Label_NIF.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
@@ -11760,11 +11754,11 @@
   <data name="Admin_Perfil_rButom_M.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="groupBoxSexo.Error1" xml:space="preserve">
-    <value />
+  <data name="label_pass1.Text" xml:space="preserve">
+    <value>Contraseña</value>
   </data>
-  <data name="groupBox_Busqueda.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label_anterior_pass.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;Admin_Perfil_Label_Nombre.ZOrder" xml:space="preserve">
     <value>13</value>
@@ -11841,8 +11835,8 @@
   <data name="comboBox_filtro.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_rButom_H.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="textBox_NombreUsuario.Error6" xml:space="preserve">
+    <value />
   </data>
   <data name="label_pass1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -11910,11 +11904,8 @@
   <data name="Admin_Perfil_txtBox_Tel1.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="tabControl1.IconPadding6" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="boton_limpia_busqueda.Error6" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;Admin_Perfil_rButom_Casado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
@@ -11964,9 +11955,6 @@
   <data name="&gt;&gt;label_ID.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox2.IconPadding11" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="Admin_Perfil_boton_Foto.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -11997,8 +11985,8 @@
   <data name="textBox_pass1.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="id.Width" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="&gt;&gt;textBox_NombreUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;errorProviderDomicilo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -12011,6 +11999,9 @@
   </data>
   <data name="Admin_Perfil_Label_Sexo.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="Admin_Perfil_txtBox_Mail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 68</value>
   </data>
   <data name="grupEstadoCivil.Error2" xml:space="preserve">
     <value />
@@ -12240,8 +12231,11 @@
   <data name="&gt;&gt;comboBoxDirec.Name" xml:space="preserve">
     <value>comboBoxDirec</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items199" xml:space="preserve">
-    <value>Trinidad &amp; Tobago</value>
+  <data name="Admin_Perfil_comboBox_Pais.Items115" xml:space="preserve">
+    <value>Lesotho</value>
+  </data>
+  <data name="Admin_Perfil_rButom_H.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Mail.Error6" xml:space="preserve">
     <value />
@@ -12345,8 +12339,8 @@
   <data name="Admin_Perfil_txtBox_Tel1.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;txtBox_Localidad.ZOrder" xml:space="preserve">
-    <value>21</value>
+  <data name="buttom_Buscar.Error2" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_txtBox_Tel1.Text" xml:space="preserve">
     <value>000 000000</value>
@@ -12417,8 +12411,8 @@
   <data name="Admin_Perfil_Label_Mail.IconPadding5" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label_anterior_pass.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="Admin_Perfil_rButom_Viudo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="buttom_Buscar.Error1" xml:space="preserve">
     <value />
@@ -12447,7 +12441,7 @@
   <data name="Admin_Perfil_rButom_Divorciado.Error13" xml:space="preserve">
     <value />
   </data>
-  <data name="label_NombreUsuario.Error10" xml:space="preserve">
+  <data name="label_anterior_pass.Error15" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_txtBox_Domicilio.Error8" xml:space="preserve">
@@ -12455,9 +12449,6 @@
   </data>
   <data name="Admin_Perfil_Foto.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
-  </data>
-  <data name="Admin_Perfil_Label_EstCivil.Error2" xml:space="preserve">
-    <value />
   </data>
   <data name="textBox_filtro_busqueda.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -12549,8 +12540,8 @@
   <data name="comboBox_Provincia.Items10" xml:space="preserve">
     <value>Cáceres</value>
   </data>
-  <data name="textBox_CP_Perfil.Error16" xml:space="preserve">
-    <value />
+  <data name="comboBox_Provincia.Items20" xml:space="preserve">
+    <value>Guadalajara</value>
   </data>
   <data name="textBox_CP_Perfil.Error17" xml:space="preserve">
     <value />
@@ -12567,7 +12558,7 @@
   <data name="textBox_CP_Perfil.Error13" xml:space="preserve">
     <value />
   </data>
-  <data name="txtBox_Localidad.Error7" xml:space="preserve">
+  <data name="textBox_CP_Perfil.Error10" xml:space="preserve">
     <value />
   </data>
   <data name="textBox_CP_Perfil.Error11" xml:space="preserve">
@@ -12585,8 +12576,8 @@
   <data name="groupBox1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_NIF.Error14" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_rButom_Divorciado.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Perfil.Error10" xml:space="preserve">
     <value />
@@ -12633,8 +12624,8 @@
   <data name="textBox_anterior_pass.Error17" xml:space="preserve">
     <value />
   </data>
-  <data name="Label_Localidad.IconPadding1" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_Nombre.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="textBox_anterior_pass.Error11" xml:space="preserve">
     <value />
@@ -12693,8 +12684,8 @@
   <data name="Admin_Perfil_rButom_H.IconPadding15" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_Label_Nombre.IconPadding8" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Foto.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label_filtro.Error2" xml:space="preserve">
     <value />
@@ -12729,8 +12720,8 @@
   <data name="comboBox_filtro.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="label_pass2.Error2" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_Label_Nombre.IconPadding4" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label_pass2.Error15" xml:space="preserve">
     <value />
@@ -12822,11 +12813,17 @@
   <data name="Label_Provincia_Perfil.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
+  <data name="&gt;&gt;textBox_CP_Perfil.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="label_anterior_pass.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label_pass2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="textBox_CP_Perfil.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="test3.IconPadding11" type="System.Int32, mscorlib">
     <value>0</value>
@@ -12834,7 +12831,7 @@
   <data name="label_CP_Perfil.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
   </data>
-  <data name="grupEstadoCivil.Error4" xml:space="preserve">
+  <data name="textBox_CP_Perfil.Error7" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_Label_Tel1.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -12849,6 +12846,9 @@
   <data name="groupBoxSexo.Error2" xml:space="preserve">
     <value />
   </data>
+  <data name="buttom_Buscar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="tabControl1.Error2" xml:space="preserve">
     <value />
   </data>
@@ -12858,7 +12858,7 @@
   <data name="Admin_Perfil_rButom_M.IconPadding1" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_rButom_Divorciado.IconPadding1" type="System.Int32, mscorlib">
+  <data name="Admin_Perfil_Label_Sexo.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="tabControl1.IconPadding4" type="System.Int32, mscorlib">
@@ -12894,8 +12894,8 @@
   <data name="Label_Localidad.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="comboBox_Provincia.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_Foto.Error11" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_rButom_Soltero.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -12909,14 +12909,14 @@
   <data name="Admin_Perfil_txtBox_Tel1.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Mail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 68</value>
-  </data>
-  <data name="Admin_Perfil_txtBox_Nombre.Error11" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBox_Provincia.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="comboBox_Provincia.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="comboBox_Provincia.IconAlignment4" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_Foto.Error1" xml:space="preserve">
+    <value />
   </data>
   <data name="Label_Provincia_Perfil.Error16" xml:space="preserve">
     <value />
@@ -12930,8 +12930,8 @@
   <data name="Admin_Perfil_txtBox_Tel1.Error10" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="Admin_Perfil_txtBox_Domicilio.Error6" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBoxSexo.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -12948,8 +12948,8 @@
   <data name="groupBoxSexo.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Buscar.Error16" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding15" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Perfil.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -12972,14 +12972,14 @@
   <data name="Perfil.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="comboBox_Provincia.Items41" xml:space="preserve">
-    <value>Segovia</value>
+  <data name="groupBox2.IconPadding11" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Perfil.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="comboBox_Provincia.TabIndex" type="System.Int32, mscorlib">
-    <value>62</value>
+  <data name="Admin_Perfil_Label_Mail.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="comboBox_Provincia.Error2" xml:space="preserve">
     <value />
@@ -12987,8 +12987,8 @@
   <data name="comboBox_Provincia.Error3" xml:space="preserve">
     <value />
   </data>
-  <data name="comboBox_Provincia.Items11" xml:space="preserve">
-    <value>Cádiz</value>
+  <data name="label_CP_Perfil.IconPadding4" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="comboBox_Provincia.Error1" xml:space="preserve">
     <value />
@@ -13011,8 +13011,8 @@
   <data name="$this.Error6" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;Admin_Perfil_rButom_Casado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label_CP_Perfil.Text" xml:space="preserve">
+    <value>CP</value>
   </data>
   <data name="textBox_anterior_pass.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -13026,8 +13026,8 @@
   <data name="grupEstadoCivil.IconAlignment13" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="textBox_anterior_pass.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
+  <data name="test3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="Admin_Perfil_boton_Guardar.IconPadding4" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13065,14 +13065,14 @@
   <data name="textBox_NombreUsuario.IconPadding14" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_boton_Anadir.Error16" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;Buscar.Name" xml:space="preserve">
+    <value>Buscar</value>
   </data>
   <data name="groupBox1.Error16" xml:space="preserve">
     <value />
   </data>
-  <data name="Admin_Perfil_boton_Anadir.Error14" xml:space="preserve">
-    <value />
+  <data name="label_pass1.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="comboBoxDirec.IconPadding7" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13113,8 +13113,8 @@
   <data name="Admin_Perfil_comboBox_Pais.Items73" xml:space="preserve">
     <value>Granada</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items43" xml:space="preserve">
-    <value>Colombia</value>
+  <data name="Admin_Perfil_rButom_Soltero.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 19</value>
   </data>
   <data name="Admin_Perfil_comboBox_Pais.Items53" xml:space="preserve">
     <value>Djibouti</value>
@@ -13164,17 +13164,20 @@
   <data name="label_NombreUsuario.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="buttom_Buscar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="Admin_Perfil_boton_Foto.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_boton_Anadir.IconPadding12" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="groupBox_UsPs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>595, 337</value>
   </data>
   <data name="&gt;&gt;Mail.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label_ID.IconAlignment5" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
+  </data>
+  <data name="Admin_Perfil_Label_Nombre.IconPadding8" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="comboBox_filtro.Error16" xml:space="preserve">
     <value />
@@ -13245,9 +13248,6 @@
   <data name="test1.IconAlignment2" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="comboBoxDirec.Items1" xml:space="preserve">
-    <value>Calle</value>
-  </data>
   <data name="groupBox1.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
@@ -13275,8 +13275,8 @@
   <data name="Admin_Perfil_txtBox_Domicilio.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Pais.IconPadding14" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_EstCivil.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
@@ -13302,8 +13302,8 @@
   <data name="Admin_Perfil_txtBox_Mail.IconPadding17" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Buscar.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;Admin_Perfil_rButom_H.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox_Busqueda.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -13374,8 +13374,8 @@
   <data name="&gt;&gt;Admin_Perfil_comboBox_Pais.Name" xml:space="preserve">
     <value>Admin_Perfil_comboBox_Pais</value>
   </data>
-  <data name="textBox_pass2.IconPadding3" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Buscar.Error16" xml:space="preserve">
+    <value />
   </data>
   <data name="Admin_Perfil_rButom_Soltero.IconPadding2" type="System.Int32, mscorlib">
     <value>0</value>
@@ -13452,14 +13452,14 @@
   <data name="label_filtro.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items133" xml:space="preserve">
-    <value>Mauritania</value>
+  <data name="buttom_Buscar.IconAlignment9" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="groupBox_UsPs.IconPadding3" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Admin_Perfil_comboBox_Pais.Items69" xml:space="preserve">
-    <value>Gabon</value>
+  <data name="txtBox_Localidad.IconAlignment14" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="comboBoxDirec.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -13467,7 +13467,7 @@
   <data name="label_NombreUsuario.Text" xml:space="preserve">
     <value>Nombre de Usuario</value>
   </data>
-  <data name="comboBox_filtro_busqueda.Error8" xml:space="preserve">
+  <data name="txtBox_Localidad.Error7" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_Label_Mail.Error1" xml:space="preserve">
@@ -13587,7 +13587,7 @@
   <data name="label_NombreUsuario.IconPadding6" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="textBox_pass2.IconPadding" type="System.Int32, mscorlib">
+  <data name="Admin_Perfil_txtBox_NIF.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label_pass2.IconAlignment17" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -13626,7 +13626,7 @@
   <data name="Admin_Perfil_Label_Nombre.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="grupEstadoCivil.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+  <data name="label_pass2.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
   <data name="groupBox_Busqueda.TabIndex" type="System.Int32, mscorlib">
@@ -13641,8 +13641,8 @@
   <data name="Admin_Perfil_txtBox_Apellidos.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_Label_Pais.Error13" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_rButom_H.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="label_pass2.Error11" xml:space="preserve">
     <value />
@@ -13656,13 +13656,13 @@
   <data name="groupBoxSexo.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="textBox_anterior_pass.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="comboBoxDirec.Items1" xml:space="preserve">
+    <value>Calle</value>
   </data>
   <data name="buttom_Buscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 23</value>
   </data>
-  <data name="Admin_Perfil_Foto.Error11" xml:space="preserve">
+  <data name="boton_limpia_busqueda.Error6" xml:space="preserve">
     <value />
   </data>
   <data name="Admin_Perfil_Label_Pais.IconAlignment7" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
@@ -13683,8 +13683,8 @@
   <data name="Admin_Perfil_Label_Nombre.IconAlignment10" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Admin_Perfil_txtBox_Domicilio.IconPadding16" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="Admin_Perfil_Label_Nombre.IconAlignment11" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
   </data>
   <data name="Admin_Perfil_Label_Nombre.IconAlignment16" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -13692,8 +13692,8 @@
   <data name="test1.IconPadding9" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="grupEstadoCivil.Error6" xml:space="preserve">
-    <value />
+  <data name="Admin_Perfil_Label_Domicilio.IconPadding3" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_rButom_Viudo.Error1" xml:space="preserve">
     <value />
@@ -13713,8 +13713,8 @@
   <data name="groupBox2.IconPadding10" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;Admin_Perfil_Label_FecNacimiento.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Admin_Perfil_Label_Domicilio.IconPadding8" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Admin_Perfil_Label_Tel2.Error6" xml:space="preserve">
     <value />
@@ -13731,8 +13731,8 @@
   <data name="Admin_Perfil_comboBox_Pais.Items161" xml:space="preserve">
     <value>Reino Unido</value>
   </data>
-  <data name="&gt;&gt;Admin_Perfil_Label_Mail.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="Admin_Perfil_rButom_Soltero.Error12" xml:space="preserve">
+    <value />
   </data>
   <data name="Label_Provincia_Perfil.IconAlignment8" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
@@ -13755,8 +13755,8 @@
   <data name="Label_Provincia_Perfil.IconAlignment6" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>
   </data>
-  <data name="Label_Provincia_Perfil.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
+  <data name="textBox_CP_Perfil.IconPadding15" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="Label_Provincia_Perfil.IconAlignment3" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleRight</value>

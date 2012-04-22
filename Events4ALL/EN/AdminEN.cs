@@ -269,8 +269,10 @@ namespace Events4ALL.EN
                 else if (!dni && !nick && cad_admin.InsertarAdmin(this))
                     error = 0;
             }
-            catch
-            { }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
 
             return error;
         }
@@ -440,7 +442,7 @@ namespace Events4ALL.EN
                     System.Diagnostics.Debug.Write("EC");
                 }
 
-                if (admin_anterior.Foto != null)
+                if (foto_c != null)
                 {
                     updateFoto = true;
                     modificado = true;
