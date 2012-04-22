@@ -44,12 +44,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.msgGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.refreshButton = new System.Windows.Forms.PictureBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.refreshButton = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.msgGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -172,6 +172,22 @@
             this.msgGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.msgGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.msgGridView_CellClick);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 10.15228F;
+            resources.ApplyResources(this.dataGridViewImageColumn1, "dataGridViewImageColumn1");
+            this.dataGridViewImageColumn1.Image = global::Events4ALL.Properties.Resources.delete;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshButton.Image = global::Events4ALL.Properties.Resources.reload;
+            resources.ApplyResources(this.refreshButton, "refreshButton");
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.TabStop = false;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // ID
             // 
             resources.ApplyResources(this.ID, "ID");
@@ -199,22 +215,6 @@
             this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 10.15228F;
-            resources.ApplyResources(this.dataGridViewImageColumn1, "dataGridViewImageColumn1");
-            this.dataGridViewImageColumn1.Image = global::Events4ALL.Properties.Resources.delete;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshButton.Image = global::Events4ALL.Properties.Resources.reload;
-            resources.ApplyResources(this.refreshButton, "refreshButton");
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.TabStop = false;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Mensajes
             // 
