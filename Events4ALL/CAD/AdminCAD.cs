@@ -23,6 +23,7 @@ namespace Events4ALL.CAD
 
         #region Consultas BD
 
+        // Realiza la Sql de la busqueda y devuelve el Dataset del resultado.
         public DataSet Busqueda(string quebusco, string loquebusco)
         {
             BD bd = new BD();
@@ -90,7 +91,7 @@ namespace Events4ALL.CAD
             return existe;
         }
 
-        // devuelve true si Existe
+        // Devuelve true si existe el DNI en la Base de Datos.
         public bool CompruebaExistenciaDNI(string dni)
         {
             bool existe = false;
@@ -125,6 +126,7 @@ namespace Events4ALL.CAD
             return existe;
         }
 
+        // Utilizado para comprobar el pass en la BD de un usuario.
         public bool CompruebaPass(string pass, int id)
         {
             bool concuerda = false;
@@ -158,7 +160,7 @@ namespace Events4ALL.CAD
             return concuerda;
         }
 
-        // pues eso...
+        // Obtienes el ID de un administrador con el nick pasado por parametro
         public int ObtieneID(string usuario)
         {
             int id = -1;
@@ -189,6 +191,7 @@ namespace Events4ALL.CAD
             return id;
         }
 
+        // Devuelve todos los admins de la BD en un DataSet.
         public DataSet getAdmins()
         {
             BD bd = new BD();
@@ -213,6 +216,7 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        // Devuelve los datos del Adminatrados de la ID pasada por parametro.
         public DataSet getAdmin(int id)
         {
             BD bd = new BD();
@@ -237,6 +241,7 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        // Devuelve la imagen del Administrador de la ID pasada por parametro.
         public Image ObtieneImagen(int id)
         {
             byte[] bImage = new byte[0];
@@ -268,10 +273,36 @@ namespace Events4ALL.CAD
             return im;
         }
 
+        // Devuelve los datos en forma de DataSet del administrador que contenga como nombre de usuario el nick pasado
+        // como parametro.
+        public DataSet getAdminByNick(string nick)
+        {
+            DataSet ds = new DataSet();
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from Administrador where Usuario='" + nick + "'", c);
+                da.Fill(ds, "Condicion");
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return ds;
+        }
+
         #endregion
 
         #region Iteraccion BD
 
+        // Inserta el los datos del administrador pasado en el EN por parametro en la base de datos. Devuelve true 
+        // o false en funcion de si se ha realizado la inserccion o no.
         public bool InsertarAdmin(AdminEN nuevo)
         {
             byte[] pic = null;
@@ -374,6 +405,8 @@ namespace Events4ALL.CAD
             return error;
         }
 
+        // Ejecuta la sentencia SQL de borrado del Admin pasado por ID. Devuelve true o false en funcion de si se ha 
+        // podido realizar o no.
         public bool BorraAdmin(int id)
         {
             SqlConnection conn = null;
@@ -400,6 +433,8 @@ namespace Events4ALL.CAD
             }        
         }
 
+        // Actualiza los datos del administrador pasados por parametro. Y solo se actualizaran aquellos donde su booleano
+        // este en true. Devuelve true o false en funcion de si se ha realizado la inserccion o no.
         public bool ActualizarAdmin(int id, string dni, string nombre, string apellidos, string pais, string provincia,
                                     string localidad, string domicilio, string cp, string telefono, string movil,
                                     string mail, string ec, Image foto, int sexo, string nick, string pass, DateTime fecha,
@@ -660,27 +695,6 @@ namespace Events4ALL.CAD
             return error;
         }
 
-        public DataSet getAdminByNick(string nick)
-        {
-            DataSet ds = new DataSet();
-            BD bd = new BD();
-            SqlConnection c = bd.Connect();
-
-            try
-            {
-                c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Administrador where Usuario='"+nick+"'", c);
-                da.Fill(ds, "Condicion");
-            }
-            catch
-            {
-            }
-            finally
-            {
-                c.Close();
-            }
-            return ds;
-        }
         #endregion
     }
 }

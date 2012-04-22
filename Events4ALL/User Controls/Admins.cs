@@ -33,6 +33,8 @@ namespace Events4ALL
 
         #endregion
 
+        // Inicializa el formulario Admin con algunos valores por defecto e imagen, 
+        // y establece los valores de las variables internas.
         public Admins()
         {
             string lang = ConfigurationManager.AppSettings.Get("Lenguaje");
@@ -65,8 +67,7 @@ namespace Events4ALL
             imagenCambiada = false;
         }
 
-        // Carga los todos administradores al entrar en el panel de busqueda.
-        // Limitar a 20 !!!
+        // Carga y muestra todos administradores del sistema al entrar en el pestaña de busqueda.
         private void tabControl1_Click(object sender, EventArgs e)
         {
             MuestraAdmins();
@@ -74,6 +75,9 @@ namespace Events4ALL
 
         #region Comprobaciones
 
+        // Establece mediante un errorProvider en el formulario, si el apartado NIF es correcto.
+        // La comprobación del NIF se realiza mediante la separacion de los numeros y las letras,
+        // seguidamente se genera la letra a partir de los numeros, si coinciden, es correcto.
         private bool CompruebaNif()
         {
             validar = new Validaciones();
@@ -102,6 +106,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Nombre es correcto.
         private bool CompruebaNombre()
         { 
             
@@ -125,6 +130,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Apellidos es correcto.
         private bool CompruebaApellidos()
         {
             // vacio
@@ -147,6 +153,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado designado al 
+        // codigo postal es correcto.
         private bool CompruebaCP()
         {
             validar = new Validaciones();
@@ -170,6 +178,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Localidad es correcto.
         private bool CompruebaLocalidad()
         {
             validar = new Validaciones();
@@ -194,6 +203,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Mail es correcto.
         private bool CompruebaMail()
         {
             validar = new Validaciones();
@@ -224,6 +234,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Telefono es correcto.
         private bool CompruebaTelefono()
         {
             validar = new Validaciones();
@@ -248,6 +259,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Movil es correcto.
         private bool CompruebaMovil()
         {
             validar = new Validaciones();
@@ -272,6 +284,7 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Domicilio es correcto.
         private bool CompruebaDomicilio()
         { 
             // vacio
@@ -294,6 +307,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Sexo es correcto, asegurando
+        // que exista un elemento seleccionado.
         private bool CompruebaSexo()
         {
             if (Admin_Perfil_rButom_H.Checked == false && Admin_Perfil_rButom_M.Checked == false)
@@ -308,6 +323,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Estado Civil es correcto,
+        // asegurando que algun campo este marcado.
         private bool CompruebaEC()
         {
             if (Admin_Perfil_rButom_Soltero.Checked == false &&
@@ -325,6 +342,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Provincia es correcto, 
+        // asegurando que se haya seleccionado una provincia.
         private bool CompruebaProvincia()
         {
             if (comboBox_Provincia.Text == "")
@@ -339,6 +358,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Pais es correcto, asegurando
+        // que haya sido seleccionado un pais.
         private bool CompruebaPais()
         {
             if (Admin_Perfil_comboBox_Pais.Text == "")
@@ -353,6 +374,8 @@ namespace Events4ALL
             }
         }
 
+        // Establece mediante un errorProvider en el formulario, si el apartado Nick es correcto, comrpobando
+        // que no exista otro usuario con el mismo Nick.
         private bool CompruebaNick()
         {
             if (textBox_NombreUsuario.Text.Length == 0)
@@ -372,7 +395,9 @@ namespace Events4ALL
             }
         }
 
-        // comprueba la seguridad de PASS
+        // Establece mediante un errorProvider en el formulario, si el apartado Conntraseña es correcto, 
+        // asegurando que sean iguales y que cumplan unos minimos de seguridad establecidos ( una minuscula, 
+        // una mayuscula y un numero).
         private bool CompruebaPass()
         {
             validar = new Validaciones();
@@ -408,6 +433,7 @@ namespace Events4ALL
             }
         }
 
+        // Comprueba que todos los campos del formulario sean correctos.
         private bool ValidaCampos()
         {
             bool error = true;
@@ -457,7 +483,7 @@ namespace Events4ALL
             return error;
         }
 
-        // rellena el formulario de Admin con un ejemplo predefinido
+        // rellena el formulario de Admin con un ejemplo predefinido para comprobar errores.
         private void RellenaDatos()
         {
             textBox_NombreUsuario.Text = "Pepe";
@@ -487,6 +513,7 @@ namespace Events4ALL
 
         #region Limpiadores
 
+        // devuelve un string con la ficha del dia actual.
         private string IniciaFechaHoy()
         {
             string fechaHoy = DateTime.Now.Date.ToString();
@@ -497,24 +524,28 @@ namespace Events4ALL
             return aux;
         }
 
+        // Borra el valor del campo telefono y establece el valor por defecto.
         private void LimpiaTelefono(object sender, EventArgs e)
         {
             if(Admin_Perfil_txtBox_Tel1.Text == "000 000000")
                 Admin_Perfil_txtBox_Tel1.Text = "";
         }
 
+        // Borra el valor del campo movil y establece el valor por defecto.
         private void LimpiaMovil(object sender, EventArgs e)
         {
             if(Admin_Perfil_txtBox_Tel2.Text == "000 000000")
                 Admin_Perfil_txtBox_Tel2.Text = "";
         }
 
+        // Borra el valor del campo mail y establece el valor por defecto.
         private void LimpiaMail(object sender, EventArgs e)
         {
             if (Admin_Perfil_txtBox_Mail.Text == "usuario@event4all.es")
                 Admin_Perfil_txtBox_Mail.Text = "";
         }
 
+        // Limpia todos los errorProviders del formulario.
         public void LimpiaError(object sender, EventArgs e)
         {
             // limpia el error de sexo
@@ -534,6 +565,7 @@ namespace Events4ALL
                 errorProviderPais.Clear();
         }
 
+        // Limpia los valores introducidos en la busqueda.
         public void LimpiaBusqueda()
         {
             textBox_filtro_busqueda.Visible = false;
@@ -571,6 +603,8 @@ namespace Events4ALL
             radioButton_edad_no.Checked = true;*/
         }
 
+        // Limpia los valores introducidos en el formulario principal y las variables del sistema,
+        // dejando el formulario igual que la primera vez que hemos accedido.
         private void LimpiarDatos()
         {
             #region Datos Personales
@@ -674,20 +708,21 @@ namespace Events4ALL
 
         #region Seccion Perfil
 
-        // Elimina el Admin seleccionado
+        // Elimina el usuario cargado a partir de la busqueda.
         private void boton_eliminar_Click(object sender, EventArgs e)
         {
             BorrarAdmin();
         }
         
-        // boton Limpiar
+        // Llama a la funcion LimpiarDatos() para limpiar el formulario.
         private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
         {
             LimpiarDatos();
             //RellenaDatos();
         }
 
-        // Boton Guardar
+        // Comprueba los datos introducidos en el formulario, los valida mediante llamadas a
+        // metodos anteriores y los almacena o edita en la BD.
         private void Admin_Perfil_boton_Guardar_Click(object sender, EventArgs e)
         {
             //RellenaDatos();
@@ -804,7 +839,7 @@ namespace Events4ALL
             }
         }
 
-        // boton Foto
+        // Abre el dialogo necesario para seleccionar la imagen que deseamos establecer al administrador.
         private void Admin_Perfil_boton_Foto_Click(object sender, EventArgs e)
         {
             OpenFileDialog OFich = new OpenFileDialog();
@@ -823,6 +858,7 @@ namespace Events4ALL
 
         #region Trabajo con EN
 
+        // Muestra mediando un MessageBox los datos introducidos en el formulario.
         private void MuestraEN(AdminEN muestra)
         {
             MessageBox.Show("Nombre : "+muestra.Nombre+
@@ -844,6 +880,9 @@ namespace Events4ALL
                             " \nFecha : "+muestra.Fecha);
         }
 
+        // Establece la llamada a la funcion de almacenaje del Admin en el EN y pasa los datos
+        // del formulario al constructor sobrecargado.
+        // NO OPERATIVO
         private bool AltaAdminEN_Directo()
         {
             int sexo = -1;
@@ -921,6 +960,8 @@ namespace Events4ALL
             }
         }
 
+        // Establecela llamada a la funcion de almacenaje del Admin en el EN, creando un EN de Admin,
+        // estableciendo sus valores, y seguidamente almacenandolos.
         private bool AltaAdminEN_PorPasos()
         {
             en_admin = new AdminEN();
@@ -1005,12 +1046,14 @@ namespace Events4ALL
             }
         }
 
+        // Obtiene la id de un administrador mediante el nick del usuario.
         private int ObtieneID(string usuario)
         {
             en_admin = new AdminEN();
             return en_admin.ObtieneID(usuario);
         }
 
+        // Metodo que establece la llamada para borrar el Admin mediante el pase del ID de este.
         private void BorrarAdmin()
         {
             en_admin = new AdminEN();
@@ -1034,30 +1077,14 @@ namespace Events4ALL
 
         #region Seccion Busqueda
 
-        // boton limpiar
+        // Boton que realiza la llamada para limpiar los datos introducidos para realizar la busqueda.
         private void boton_limpia_busqueda_Click(object sender, EventArgs e)
         {
             LimpiaBusqueda();
         }
 
-        private void radioButton_edad_no_CheckedChanged(object sender, EventArgs e)
-        {
-            //numericUpDown_Fec1.Enabled = false;
-            //numericUpDown_Fec2.Enabled = false;
-        }
-
-        private void radioButton_edad_si_CheckedChanged(object sender, EventArgs e)
-        {
-            //numericUpDown_Fec1.Enabled = true;
-            //numericUpDown_Fec2.Enabled = true;
-        }
-
-        private bool BusquedaVacia()
-        { 
-            return true;
-        }
-
-        // botoncejo buscar
+        // Boton que realiza la busqueda en base al filtro seleccionado y muestra en el datagrid el 
+        // resultado de esta.
         private void buttom_Buscar_Click(object sender, EventArgs e)
         {
             en_admin = new AdminEN();
@@ -1130,6 +1157,7 @@ namespace Events4ALL
             }
         }
 
+        // Muestra todos los Administradores dados de alta en el sistema en el Datagrid de la busqueda.
         public void MuestraAdmins()
         {
             en_admin = new AdminEN();
@@ -1158,6 +1186,7 @@ namespace Events4ALL
             }
         }
 
+        // Muestra los datos en el formulario del administrados que se ha seleccionado en el Datagrid. 
         private void Resultados_Busqueda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             en_admin = new AdminEN();
@@ -1174,6 +1203,7 @@ namespace Events4ALL
             }
         }
 
+        // Rellena los datos del formulario principal en base al admin que se le indique.
         private void RellenaDatos_AdminSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
         {
             en_admin = new AdminEN();
@@ -1324,6 +1354,7 @@ namespace Events4ALL
             tabControl1.SelectTab("Perfil");
         }
 
+        // Muestra en el datragrid de busqueda aquel Dataset que se le pase por parametro.
         private void MuestraDataSet(DataSet muestrame)
         {
             tAdmin = new DataTable();
@@ -1348,6 +1379,7 @@ namespace Events4ALL
             }
         }
 
+        // Muestra o oculta campos en base al filtro seleccionado en la busqueda.
         private void comboBox_filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_filtro.Text == "Mostrar Todos")
@@ -1487,6 +1519,20 @@ namespace Events4ALL
         {
             // MuestraAdmins();
         }
+
+        // Basura xD
+        private void radioButton_edad_no_CheckedChanged(object sender, EventArgs e)
+        {
+            //numericUpDown_Fec1.Enabled = false;
+            //numericUpDown_Fec2.Enabled = false;
+        }
+
+        private void radioButton_edad_si_CheckedChanged(object sender, EventArgs e)
+        {
+            //numericUpDown_Fec1.Enabled = true;
+            //numericUpDown_Fec2.Enabled = true;
+        }
+
         #endregion
 
     }

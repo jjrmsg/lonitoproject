@@ -237,7 +237,13 @@ namespace Events4ALL.EN
 
         #region Iteraccion con CAD
 
-        // -1 = No se sabe // 0 = todo Ok // 1 = DNI Existente // 2 = Nick Existente // 3 = Nick y DNI existentes
+        // Inserta los datos del AdministradorEN a traves de la llamada al CAD y devuelve un entero en funcion 
+        // de los errores que se han podido producir.
+        // -1 = No se sabe
+        //  0 = todo Ok 
+        //  1 = DNI Existente 
+        //  2 = Nick Existente 
+        //  3 = Nick y DNI existentes
         public int InsertarAdmin()
         {
             cad_admin = new AdminCAD();
@@ -277,7 +283,14 @@ namespace Events4ALL.EN
             return error;
         }
 
-        // 0 = todo OK // 1 = DNI existe // 2 = Nick existe // 3 = DNI y Nick Existen // 4 = No se ha insertado // -1 = tira tu a saber
+        // Actualiza los datos del AdministradorEN a traves de la llamada al CAD y devuelve un entero en funcion 
+        // de los errores que se han podido producir.
+        //  0 = todo OK 
+        //  1 = DNI existe 
+        //  2 = Nick existe 
+        //  3 = DNI y Nick Existen 
+        //  4 = No se ha insertado 
+        // -1 = tira tu a saber
         public int ActualizarAdmin(int id, string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
                                    string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
                                    string mail_c, string ec_c, Image foto_c, int sexo_c, string nick_c, string pass_c, string pass2_c,
@@ -529,44 +542,58 @@ namespace Events4ALL.EN
             return error;
         }
 
+        // Obtiene el ID a traves de la llamada al CAD con el Nombre de Usuario pasado como parametro.
         public int ObtieneID(string usuario)
         {
             cad_admin = new AdminCAD();
             return cad_admin.ObtieneID(usuario);
         }
 
+        // Obtiene la Foto del administrador a traves de la llamada al CAD con el ID pasado como parametro.
         public Image ObtieneImagen(int id)
         {
             cad_admin = new AdminCAD();
             return cad_admin.ObtieneImagen(id);
         }
 
+        // Obtiene todos los datos de un Administror mediante peticion al CAD y los devuelve en un Dataset
         public DataSet getAdminByNick(string nick)
         {
             cad_admin = new AdminCAD();
             return cad_admin.getAdminByNick(nick);
         }
 
+        // Obtiene todos los Administradores de la base de datos a partir de la peticion al CAD y los devuelve 
+        // en un DAtaset
         public DataSet getAdmins()
         {
             cad_admin = new AdminCAD();
             return cad_admin.getAdmins();
         }
 
+        // Obtiene todos los datos del Administrador que coincida con la ID pasada y los devuelve por un DataSet.
         public DataSet getAdmin(int id)
         {
             cad_admin = new AdminCAD();
             return cad_admin.getAdmin(id);
         }
 
+        // Realiza la llamada al CAD de la busqueda en base a los parametros pasados y devuelve un DataSer con
+        // el resultado de esta.
         public DataSet Busqueda(string quebusco, string loquebusco)
         {
             cad_admin = new AdminCAD();
             return cad_admin.Busqueda(quebusco,loquebusco);
         }
 
-        // 0 = todo ok // 1 = todo vacio, por lo que ok // 2 = no coinciden pass1 y pass2 // 3 = pass_ant erroneo 
-        // 4 = pass1 y pass2 ok, pero el nuevo vacio // 5 = 
+        // Comprueba el pass anterior del Administrador que coincida con la ID, y seguidamente, si es correcto, 
+        // realiza una serie de comprobaciones y asegura el cambio del pass.
+        //  0 = todo ok 
+        //  1 = todo vacio, por lo que ok 
+        //  2 = no coinciden pass1 y pass2 
+        //  3 = pass_ant erroneo 
+        //  4 = pass1 y pass2 ok, pero el nuevo vacio 
+        // -1 = tira tu a saber que ha pasado xD
         public int CompruebaPass(string pass_ant, string pass1, string pass2, int id)
         {
             cad_admin = new AdminCAD();
@@ -590,6 +617,7 @@ namespace Events4ALL.EN
                 return -1;
         }
 
+        // Ejecuta el borrado por parte del CAD del Administrador pasado por ID
         public bool BorraAdmin(int id)
         {
             cad_admin = new AdminCAD();
@@ -608,6 +636,7 @@ namespace Events4ALL.EN
 
         #region Metodos Variados
 
+        // Copia los datos de un EN a otro EN
         public void CopiaDatos(AdminEN anterior)
         {
             DNI = anterior.DNI;
@@ -629,6 +658,7 @@ namespace Events4ALL.EN
             Fecha = anterior.Fecha;
         }
 
+        // Limpia las variables del EN en cuestion.
         public void LimpiaEN()
         {
             ec = dni = nick = pass = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail  = string.Empty;
