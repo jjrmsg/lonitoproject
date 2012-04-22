@@ -40,7 +40,7 @@
             this.apellidosLabel = new System.Windows.Forms.Label();
             this.nombreLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureAdmin = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.clockLabel = new System.Windows.Forms.Label();
             this.messagePicture = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,7 @@
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAdmin)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateButton)).BeginInit();
@@ -108,7 +108,7 @@
             this.panel4.Controls.Add(this.apellidosLabel);
             this.panel4.Controls.Add(this.nombreLabel);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Controls.Add(this.pictureAdmin);
             this.panel4.Name = "panel4";
             // 
             // button2
@@ -147,13 +147,13 @@
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
-            // pictureBox5
+            // pictureAdmin
             // 
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.TabStop = false;
+            this.pictureAdmin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureAdmin.Image = global::Events4ALL.Properties.Resources.foto_usuario_defectojpg;
+            resources.ApplyResources(this.pictureAdmin, "pictureAdmin");
+            this.pictureAdmin.Name = "pictureAdmin";
+            this.pictureAdmin.TabStop = false;
             // 
             // panel2
             // 
@@ -272,9 +272,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.inicio1);
-            this.Controls.Add(this.estadisticas1);
-            this.Controls.Add(this.clientes1);
             this.Controls.Add(this.admins1);
             this.Controls.Add(this.espectaculos1);
             this.Controls.Add(this.ventas1);
@@ -282,11 +279,14 @@
             this.Controls.Add(this.salas1);
             this.Controls.Add(this.promociones1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.inicio1);
+            this.Controls.Add(this.estadisticas1);
+            this.Controls.Add(this.clientes1);
             this.Name = "FormBase";
             this.Load += new System.EventHandler(this.FormBase_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAdmin)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.messagePicture)).EndInit();
@@ -310,7 +310,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureAdmin;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label apellidosLabel;
         private System.Windows.Forms.Label nombreLabel;

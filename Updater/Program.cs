@@ -14,7 +14,7 @@ namespace Updater
             if (File.Exists("update.zip"))
             {
                 FastZip fZip = new FastZip();
-                fZip.ExtractZip("update.zip", "/", "");
+                fZip.ExtractZip("update.zip", Directory.GetCurrentDirectory(), "");
             }
             System.Diagnostics.Process.Start("Events4ALL.exe");
         }

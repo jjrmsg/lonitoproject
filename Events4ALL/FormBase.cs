@@ -11,6 +11,7 @@ using System.Threading;
 using Events4ALL.EN;
 using System.Configuration;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace Events4ALL
 {
@@ -33,6 +34,7 @@ namespace Events4ALL
             PintarInterfaz(user, pass, lang);
         }
 
+        //Método encargado de pintar la barra lateral y cargar los datos de la caja del admin
         private void PintarInterfaz(string user, string pass, string lang)
         {
             DoubleBuffered = true;
@@ -71,22 +73,43 @@ namespace Events4ALL
             inicio1.Visible = true;
 
             //Cargar los datos de la ficha
+            byte[] bImage = new byte[0];
+            Image imAdmin = null;
             AdminEN adEN = new AdminEN();
             DataSet ds = new DataSet();
             ds = adEN.getAdminByNick(user);
             nombreLabel.Text = (string)ds.Tables[0].Rows[0]["Nombre"];
             apellidosLabel.Text = (string)ds.Tables[0].Rows[0]["Apellidos"];
             idLabel.Text = ds.Tables[0].Rows[0]["ID"].ToString();
+            if (ds.Tables[0].Rows[0]["Foto"] != DBNull.Value)
+            {
+                bImage = (byte[])ds.Tables[0].Rows[0]["Foto"];
+                MemoryStream ms = new MemoryStream(bImage);
+                imAdmin = Image.FromStream(ms);
+            }
+            if (imAdmin != null)
+            {
+                try
+                {
+                    pictureAdmin.Image = imAdmin;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
 
             //Cargar número de mensajes
             RefreshMessages();
         }
+
 
         public void ThreadProc()
         {
             Application.Run(new Login());
         }
 
+        //Método que pinta la barra lateral con los iconos
         private void listBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             //Cambiar el color de la selección de items
@@ -110,7 +133,7 @@ namespace Events4ALL
                       new PointF(e.Bounds.Left + imageList1.ImageSize.Width + 20, e.Bounds.Top + 5));
         }
 
-
+        //Método que oculta todos los formularios
         private void DesactivarMenus()
         {
             inicio1.Visible = false;
@@ -125,7 +148,7 @@ namespace Events4ALL
         }
 
 
-
+        //Método que gestiona la transición de pantallas en funcion del menú lateral
         private void listBox1_Click(object sender, EventArgs e)
         {
             int optionMenu = listBox1.SelectedIndex;
@@ -181,11 +204,13 @@ namespace Events4ALL
 
         }
 
+        //Salida del programa
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Loggout
         private void logoutButton_Click(object sender, EventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(ThreadProc));
@@ -193,6 +218,7 @@ namespace Events4ALL
             this.Close();
         }
 
+        //Carga la vista de mensajes cuando haces click en el sobre de la barra superior
         private void messagePicture_Click(object sender, EventArgs e)
         {
             DesactivarMenus();
@@ -200,6 +226,7 @@ namespace Events4ALL
             mensajes1.Visible = true;
         }
 
+        //Gestiona el reloj de la barra superior
         private void timer1_Tick(object sender, EventArgs e)
         {
             clockLabel.Text = DateTime.Now.ToLongTimeString();
@@ -211,16 +238,19 @@ namespace Events4ALL
             }
         }
 
+        //Recarga el número de mensajes de la barra superior cada 2 minutos
         private void RefreshMessages()
         {
             labelMensajes.Text = mEN.getNumMessages().ToString();
         }
 
+        //Pone en marcha el reloj al cargar el programa
         private void FormBase_Load(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
+        //Carga el form de autoupdate al hacer click en su boton de la barra superior
         private void updateButton_Click(object sender, EventArgs e)
         {
             Form up = new Update();
