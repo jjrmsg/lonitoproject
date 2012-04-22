@@ -168,12 +168,14 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        // Busca y devuelve ventas de la bd que cumplen unas restricciones.
         public DataSet BuscarVenta(string nombre, string dni, string titulo, string tipo, string fEsp, string fVenta)
         {
             BD bd = new BD();
             DataSet datosVentas = new DataSet();
-            SqlConnection c = bd.Connect();
+            SqlConnection conn = null;
             
+            // Creamos la query
             String query = "SELECT Ventas.IDVentas IdVenta, Cliente.Nombre, Cliente.NIF, Espectaculo.Titulo, Sala.tipo Tipo, Ventas.Importe, Ventas.FechaVenta ";
             query += "FROM Cliente RIGHT OUTER JOIN ";
             query += "Ventas ON Cliente.NIF = Ventas.IDCliente LEFT OUTER JOIN ";
@@ -182,13 +184,13 @@ namespace Events4ALL.CAD
             query += "Espectaculo ON ReservaSala.IDEspectaculo = Espectaculo.IDEspectaculo ON Ventas.IDEspectaculo = Espectaculo.IDEspectaculo WHERE (''='') ";
 
             if (nombre != "")
-                query += "and Cliente.Nombre like '%" + nombre + "%' ";
+                query += "and Cliente.Nombre like '%'+@nombre+'%' ";
             
             if (dni != "")
-                query += "and Cliente.NIF like '%" + dni + "%' ";
+                query += "and Cliente.NIF like '%'+@nif+'%' ";
             
             if (titulo != "")
-                query += "and Espectaculo.Titulo like '%" + titulo + "%' ";
+                query += "and Espectaculo.Titulo like '%'+@titulo+'%' ";
 
             if (tipo != "")
                 query += "and Sala.tipo = '" + tipo + "' ";
@@ -199,12 +201,25 @@ namespace Events4ALL.CAD
             if (fVenta != "")
                 query += "and Ventas.FechaVenta = '" + fVenta + "' ";
 
-            Console.WriteLine(query);
-
+            // Abrimos la conexion y recogemos los datos
             try
             {
-                c.Open();
-                SqlDataAdapter da = new SqlDataAdapter(query, c);
+                conn = bd.Connect();
+
+                // Creamos un SqlCommand y ponemos valor permitiendo que tengan caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                if (nombre != "")
+                    com.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+                if (dni != "")
+                    com.Parameters.Add("@nif", SqlDbType.NChar).Value = dni;
+                if (titulo != "")
+                    com.Parameters.Add("@titulo", SqlDbType.NVarChar).Value = titulo;
+
+                Console.WriteLine(com.CommandText.ToString());
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = com;
                 da.Fill(datosVentas);
             }
             catch (Exception ex)
@@ -213,14 +228,12 @@ namespace Events4ALL.CAD
             }
             finally
             {
-                c.Close();
+                conn.Close();
             }
-
             return datosVentas;
         }
 
-
-
+        // Elimina una venta de la BD a partir de una id.
         public bool EliminarVenta(string idVenta)
         {
             SqlConnection conn = null;

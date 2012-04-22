@@ -324,7 +324,7 @@
             // 
             // Eliminar
             // 
-            this.Eliminar.FillWeight = 30F;
+            this.Eliminar.FillWeight = 35F;
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
             this.Eliminar.Name = "Eliminar";

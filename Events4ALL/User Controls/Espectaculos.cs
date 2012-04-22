@@ -118,6 +118,7 @@ namespace Events4ALL
         // que tuviese el formulario y se rellenan con los del espectáculo seleccionado.
         private void Editar_espectaculo(string id)
         {
+            // Limpiamos cuarquier contenido del for y ponemos los controles correspondientes
             LimpiarFormEntrada();
             btFormNuevo.Visible = true;
             btnGuardarEsp.Visible = true;
@@ -131,6 +132,7 @@ namespace Events4ALL
             EspectaculosEN espEN = new EspectaculosEN();
             ds = espEN.ObtenerEspectaculoPorID(id);
 
+            // Recuperamos datos y rellenamos el formulario
             try
             {
                 DataRow espectaculo = ds.Tables[0].Rows[0];
@@ -170,6 +172,8 @@ namespace Events4ALL
             {
                 cbSala.Enabled = true;
                 cbSala.Text = "";
+                cbGenero.SelectedIndex = -1;
+                // Si no es tipo cine no mostramos el combobox de genero.
                 if (cbTipo.Text == "Cine")
                 {
                     selectGenero = true;
@@ -194,8 +198,8 @@ namespace Events4ALL
         {
             OpenFileDialog OFich = new OpenFileDialog();
             OFich.ShowHelp = true;
-           
-            OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
+            // Filtro de tipo de imágenes
+            OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif";
             pbCartel.SizeMode = PictureBoxSizeMode.StretchImage;
             if (OFich.ShowDialog() == DialogResult.OK)
             {
@@ -234,7 +238,7 @@ namespace Events4ALL
         // un formulario vacío de inserción de espectáculo.
         private void btFormNuevo_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea ir al formulario de inserción y perder los cambios no guardados?", "Los cambios no guardados se perderan", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea ir al formulario de inserción y perder los cambios no guardados?", "Los cambios no guardados se perderan", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
             {
                 LimpiarFormEntrada();
                 btFormNuevo.Visible = false;
@@ -266,7 +270,7 @@ namespace Events4ALL
                                                                 cartel);
                 if (espectaculo.Insertar(cbSala.Text))
                 {
-                    MessageBox.Show("Espectaculo insertado");
+                    MessageBox.Show("Espectáculo insertado", "Inserción correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarFormEntrada();
                 }
             }
@@ -292,7 +296,7 @@ namespace Events4ALL
 
                 if (espectaculo.Editar(cbSala.Text, idEspectaculo))
                 {
-                    MessageBox.Show("Espectaculo modificado");
+                    MessageBox.Show("Espectáculo modificado", "Edición correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarFormEntrada();
                     btFormNuevo.Visible = false;
                     btnGuardarEsp.Visible = false;
@@ -301,6 +305,10 @@ namespace Events4ALL
                     btInsertar.Visible = true;
                     imagenCambiada = false;
                     idEspectaculo = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al editar el espectáculo, es posible que el espectáculo no exista o que alguno de los datos no sea correcto.", "Ocurrió un error al editar", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
                 }
             }
         }
@@ -317,13 +325,11 @@ namespace Events4ALL
                 errPrvEspectaculo.SetError(tbTitulo, "Debe introducir un título");
                 valido = false;
             }
-
             if (tbDescripcion.Text == "")
             {
                 errPrvEspectaculo.SetError(lbDescripcion, "Debe introducir una descripción");
                 valido = false;
             }
-
             if (cbTipo.Text == "")
             {
                 errPrvEspectaculo.SetError(cbTipo, "Debe elegir un tipo de espectáculo");
@@ -337,13 +343,11 @@ namespace Events4ALL
                     valido = false;
                 }
             }
-
             if (cbSala.Text == "")
             {
                 errPrvEspectaculo.SetError(cbSala, "Debe elegir una sala");
                 valido = false;
             }
-
             if (numPrecio.Text == "")
             {
                 errPrvEspectaculo.SetError(numPrecio, "El valor del precio no es válido");
@@ -352,6 +356,7 @@ namespace Events4ALL
 
             DateTime dtIni = dtFechaIni.Value.Date;
             DateTime dtFin = dtFechaFin.Value.Date;
+            // La fecha de inicio debe ser menos que la de fin.
             if (dtIni > dtFin)
             {
                 errPrvEspectaculo.SetError(lbFechas, "La fecha de inicio es posterior a la fecha final");

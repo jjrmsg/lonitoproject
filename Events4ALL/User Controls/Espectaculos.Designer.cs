@@ -33,17 +33,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridEspectaculos = new System.Windows.Forms.DataGridView();
-            this.IdEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btLimpBusqueda = new System.Windows.Forms.Button();
             this.numPrecioBuscar = new System.Windows.Forms.NumericUpDown();
             this.cbPrecioBuscar = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,12 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbTitBuscar = new System.Windows.Forms.TextBox();
-            this.btBuscar = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btInsertar = new System.Windows.Forms.Button();
-            this.btnGuardarEsp = new System.Windows.Forms.Button();
-            this.btFormNuevo = new System.Windows.Forms.Button();
-            this.btLimpiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.lbGenero = new System.Windows.Forms.Label();
@@ -76,14 +61,31 @@
             this.lbDescripcion = new System.Windows.Forms.Label();
             this.lbFechaIni = new System.Windows.Forms.Label();
             this.dtFechaIni = new System.Windows.Forms.DateTimePicker();
-            this.btCartel = new System.Windows.Forms.Button();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.tbTitulo = new System.Windows.Forms.TextBox();
             this.lbFechas = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pbCartel = new System.Windows.Forms.PictureBox();
             this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btLimpBusqueda = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.btnGuardarEsp = new System.Windows.Forms.Button();
+            this.btFormNuevo = new System.Windows.Forms.Button();
+            this.btInsertar = new System.Windows.Forms.Button();
+            this.btLimpiar = new System.Windows.Forms.Button();
+            this.btCartel = new System.Windows.Forms.Button();
+            this.pbCartel = new System.Windows.Forms.PictureBox();
+            this.IdEsp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).BeginInit();
@@ -92,8 +94,8 @@
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,70 +151,6 @@
             this.dataGridEspectaculos.TabIndex = 10;
             this.dataGridEspectaculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEspectaculos_CellClick);
             // 
-            // IdEsp
-            // 
-            this.IdEsp.FillWeight = 20F;
-            this.IdEsp.HeaderText = "Id";
-            this.IdEsp.Name = "IdEsp";
-            this.IdEsp.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 140F;
-            this.Column1.HeaderText = "Título";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 70F;
-            this.Column6.HeaderText = "Tipo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 70F;
-            this.Column2.HeaderText = "Sala asignada";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 50F;
-            this.Column4.HeaderText = "Precio";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 80F;
-            this.Column3.HeaderText = "Fecha Inicio";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 80F;
-            this.Column5.HeaderText = "Fecha Fin";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 50F;
-            this.Column8.HeaderText = "Editar";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 30F;
-            this.Column7.HeaderText = "Eliminar";
-            this.Column7.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -237,21 +175,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda de espectáculos";
-            // 
-            // btLimpBusqueda
-            // 
-            this.btLimpBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btLimpBusqueda.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.btLimpBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLimpBusqueda.Location = new System.Drawing.Point(738, 117);
-            this.btLimpBusqueda.Name = "btLimpBusqueda";
-            this.btLimpBusqueda.Size = new System.Drawing.Size(64, 23);
-            this.btLimpBusqueda.TabIndex = 8;
-            this.btLimpBusqueda.Text = "Limpiar";
-            this.btLimpBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLimpBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btLimpBusqueda.UseVisualStyleBackColor = true;
-            this.btLimpBusqueda.Click += new System.EventHandler(this.btLimpBusqueda_Click);
             // 
             // numPrecioBuscar
             // 
@@ -370,20 +293,6 @@
             this.tbTitBuscar.Size = new System.Drawing.Size(160, 20);
             this.tbTitBuscar.TabIndex = 1;
             // 
-            // btBuscar
-            // 
-            this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(808, 117);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(64, 23);
-            this.btBuscar.TabIndex = 9;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btBuscar.UseVisualStyleBackColor = true;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnGuardarEsp);
@@ -398,65 +307,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Espectáculo";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btInsertar
-            // 
-            this.btInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btInsertar.Image = global::Events4ALL.Properties.Resources.add_save;
-            this.btInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btInsertar.Location = new System.Drawing.Point(818, 577);
-            this.btInsertar.Name = "btInsertar";
-            this.btInsertar.Size = new System.Drawing.Size(69, 23);
-            this.btInsertar.TabIndex = 13;
-            this.btInsertar.Text = "Insertar";
-            this.btInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btInsertar.UseVisualStyleBackColor = true;
-            this.btInsertar.Click += new System.EventHandler(this.btInsertar_Click);
-            // 
-            // btnGuardarEsp
-            // 
-            this.btnGuardarEsp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardarEsp.Image = global::Events4ALL.Properties.Resources.add_save;
-            this.btnGuardarEsp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarEsp.Location = new System.Drawing.Point(818, 577);
-            this.btnGuardarEsp.Name = "btnGuardarEsp";
-            this.btnGuardarEsp.Size = new System.Drawing.Size(69, 23);
-            this.btnGuardarEsp.TabIndex = 10;
-            this.btnGuardarEsp.Text = "Guardar";
-            this.btnGuardarEsp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardarEsp.UseVisualStyleBackColor = true;
-            this.btnGuardarEsp.Visible = false;
-            this.btnGuardarEsp.Click += new System.EventHandler(this.btnGuardarEsp_Click);
-            // 
-            // btFormNuevo
-            // 
-            this.btFormNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btFormNuevo.Image = global::Events4ALL.Properties.Resources.mas;
-            this.btFormNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btFormNuevo.Location = new System.Drawing.Point(743, 577);
-            this.btFormNuevo.Name = "btFormNuevo";
-            this.btFormNuevo.Size = new System.Drawing.Size(69, 23);
-            this.btFormNuevo.TabIndex = 12;
-            this.btFormNuevo.Text = "Nuevo";
-            this.btFormNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btFormNuevo.UseVisualStyleBackColor = true;
-            this.btFormNuevo.Visible = false;
-            this.btFormNuevo.Click += new System.EventHandler(this.btFormNuevo_Click);
-            // 
-            // btLimpiar
-            // 
-            this.btLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.btLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLimpiar.Location = new System.Drawing.Point(748, 577);
-            this.btLimpiar.Name = "btLimpiar";
-            this.btLimpiar.Size = new System.Drawing.Size(64, 23);
-            this.btLimpiar.TabIndex = 11;
-            this.btLimpiar.Text = "Limpiar";
-            this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btLimpiar.UseVisualStyleBackColor = true;
-            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
             // groupBox2
             // 
@@ -624,20 +474,6 @@
             this.dtFechaIni.Size = new System.Drawing.Size(93, 20);
             this.dtFechaIni.TabIndex = 7;
             // 
-            // btCartel
-            // 
-            this.btCartel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCartel.Image = global::Events4ALL.Properties.Resources.photo;
-            this.btCartel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCartel.Location = new System.Drawing.Point(742, 225);
-            this.btCartel.Name = "btCartel";
-            this.btCartel.Size = new System.Drawing.Size(109, 23);
-            this.btCartel.TabIndex = 9;
-            this.btCartel.Text = "Cambiar imágen";
-            this.btCartel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btCartel.UseVisualStyleBackColor = true;
-            this.btCartel.Click += new System.EventHandler(this.btCartel_Click);
-            // 
             // tbDescripcion
             // 
             this.tbDescripcion.Location = new System.Drawing.Point(19, 92);
@@ -681,6 +517,130 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Cartel";
             // 
+            // errPrvEspectaculo
+            // 
+            this.errPrvEspectaculo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errPrvEspectaculo.ContainerControl = this;
+            this.errPrvEspectaculo.Icon = ((System.Drawing.Icon)(resources.GetObject("errPrvEspectaculo.Icon")));
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 35F;
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::Events4ALL.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 51;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 35F;
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // btLimpBusqueda
+            // 
+            this.btLimpBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpBusqueda.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.btLimpBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLimpBusqueda.Location = new System.Drawing.Point(738, 117);
+            this.btLimpBusqueda.Name = "btLimpBusqueda";
+            this.btLimpBusqueda.Size = new System.Drawing.Size(64, 23);
+            this.btLimpBusqueda.TabIndex = 8;
+            this.btLimpBusqueda.Text = "Limpiar";
+            this.btLimpBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpBusqueda.UseVisualStyleBackColor = true;
+            this.btLimpBusqueda.Click += new System.EventHandler(this.btLimpBusqueda_Click);
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBuscar.Location = new System.Drawing.Point(808, 117);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(64, 23);
+            this.btBuscar.TabIndex = 9;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
+            // 
+            // btnGuardarEsp
+            // 
+            this.btnGuardarEsp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarEsp.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.btnGuardarEsp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarEsp.Location = new System.Drawing.Point(818, 577);
+            this.btnGuardarEsp.Name = "btnGuardarEsp";
+            this.btnGuardarEsp.Size = new System.Drawing.Size(69, 23);
+            this.btnGuardarEsp.TabIndex = 10;
+            this.btnGuardarEsp.Text = "Guardar";
+            this.btnGuardarEsp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardarEsp.UseVisualStyleBackColor = true;
+            this.btnGuardarEsp.Visible = false;
+            this.btnGuardarEsp.Click += new System.EventHandler(this.btnGuardarEsp_Click);
+            // 
+            // btFormNuevo
+            // 
+            this.btFormNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btFormNuevo.Image = global::Events4ALL.Properties.Resources.mas;
+            this.btFormNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btFormNuevo.Location = new System.Drawing.Point(743, 577);
+            this.btFormNuevo.Name = "btFormNuevo";
+            this.btFormNuevo.Size = new System.Drawing.Size(69, 23);
+            this.btFormNuevo.TabIndex = 12;
+            this.btFormNuevo.Text = "Nuevo";
+            this.btFormNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btFormNuevo.UseVisualStyleBackColor = true;
+            this.btFormNuevo.Visible = false;
+            this.btFormNuevo.Click += new System.EventHandler(this.btFormNuevo_Click);
+            // 
+            // btInsertar
+            // 
+            this.btInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btInsertar.Image = global::Events4ALL.Properties.Resources.add_save;
+            this.btInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btInsertar.Location = new System.Drawing.Point(818, 577);
+            this.btInsertar.Name = "btInsertar";
+            this.btInsertar.Size = new System.Drawing.Size(69, 23);
+            this.btInsertar.TabIndex = 13;
+            this.btInsertar.Text = "Insertar";
+            this.btInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btInsertar.UseVisualStyleBackColor = true;
+            this.btInsertar.Click += new System.EventHandler(this.btInsertar_Click);
+            // 
+            // btLimpiar
+            // 
+            this.btLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
+            this.btLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLimpiar.Location = new System.Drawing.Point(748, 577);
+            this.btLimpiar.Name = "btLimpiar";
+            this.btLimpiar.Size = new System.Drawing.Size(64, 23);
+            this.btLimpiar.TabIndex = 11;
+            this.btLimpiar.Text = "Limpiar";
+            this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btLimpiar.UseVisualStyleBackColor = true;
+            this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
+            // 
+            // btCartel
+            // 
+            this.btCartel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCartel.Image = global::Events4ALL.Properties.Resources.photo;
+            this.btCartel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCartel.Location = new System.Drawing.Point(742, 225);
+            this.btCartel.Name = "btCartel";
+            this.btCartel.Size = new System.Drawing.Size(109, 23);
+            this.btCartel.TabIndex = 9;
+            this.btCartel.Text = "Cambiar imágen";
+            this.btCartel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btCartel.UseVisualStyleBackColor = true;
+            this.btCartel.Click += new System.EventHandler(this.btCartel_Click);
+            // 
             // pbCartel
             // 
             this.pbCartel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -693,11 +653,71 @@
             this.pbCartel.TabIndex = 0;
             this.pbCartel.TabStop = false;
             // 
-            // errPrvEspectaculo
+            // IdEsp
             // 
-            this.errPrvEspectaculo.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errPrvEspectaculo.ContainerControl = this;
-            this.errPrvEspectaculo.Icon = ((System.Drawing.Icon)(resources.GetObject("errPrvEspectaculo.Icon")));
+            this.IdEsp.FillWeight = 20F;
+            this.IdEsp.HeaderText = "Id";
+            this.IdEsp.Name = "IdEsp";
+            this.IdEsp.ReadOnly = true;
+            this.IdEsp.ToolTipText = "Editar";
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 140F;
+            this.Column1.HeaderText = "Título";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 70F;
+            this.Column6.HeaderText = "Tipo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 70F;
+            this.Column2.HeaderText = "Sala asignada";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 50F;
+            this.Column4.HeaderText = "Precio";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 80F;
+            this.Column3.HeaderText = "Fecha Inicio";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 80F;
+            this.Column5.HeaderText = "Fecha Fin";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 35F;
+            this.Column8.HeaderText = "Editar";
+            this.Column8.Image = global::Events4ALL.Properties.Resources.edit;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 35F;
+            this.Column7.HeaderText = "Eliminar";
+            this.Column7.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Espectaculos
             // 
@@ -716,8 +736,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -767,6 +787,10 @@
         private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.Label lbGenero;
+        private System.Windows.Forms.Button btFormNuevo;
+        private System.Windows.Forms.Button btInsertar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEsp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -776,7 +800,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column7;
-        private System.Windows.Forms.Button btFormNuevo;
-        private System.Windows.Forms.Button btInsertar;
     }
 }
