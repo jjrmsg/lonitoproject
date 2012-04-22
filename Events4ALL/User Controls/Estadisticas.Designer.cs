@@ -564,7 +564,7 @@
             // 
             // loadButton2
             // 
-            this.loadButton2.Location = new System.Drawing.Point(110, 22);
+            this.loadButton2.Location = new System.Drawing.Point(130, 22);
             this.loadButton2.Name = "loadButton2";
             this.loadButton2.Size = new System.Drawing.Size(52, 20);
             this.loadButton2.TabIndex = 8;
@@ -933,6 +933,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Estadisticas";
             this.Size = new System.Drawing.Size(907, 635);
+            this.VisibleChanged += new System.EventHandler(this.Estadisticas_VisibleChanged);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

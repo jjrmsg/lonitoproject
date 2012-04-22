@@ -70,8 +70,9 @@ namespace Events4ALL
                     comboTitulo.Items.Add(r["Titulo"].ToString());
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -301,7 +302,7 @@ namespace Events4ALL
                     labelEntradas.Text = "-";
                     labelDinero.Text = "-";
                     labelEspec.Text = "-";
-                    MessageBox.Show("El cliente no existe");
+                    errorAnyo.SetError(textNIF, "El cliente no existe");
                 }
             }
         }
@@ -459,44 +460,58 @@ namespace Events4ALL
             DataSet ds = new DataSet();
             ds = espEN.ObtenerDatosEspectaculo(titulo);
 
-            foreach (DataRow r in ds.Tables[0].Rows)
+            try
             {
-                labelID.Text = r["IDEspectaculo"].ToString();
-                labelTipo.Text = r["Tipo"].ToString();
-                if (labelTipo.Text == "Cine")
+                foreach (DataRow r in ds.Tables[0].Rows)
                 {
-                    labelGenero.Text = r["Genero"].ToString();
-                }
-                else
-                {
-                    labelGenero.Text = "NA";
-                }
+                    labelID.Text = r["IDEspectaculo"].ToString();
+                    labelTipo.Text = r["Tipo"].ToString();
+                    if (labelTipo.Text == "Cine")
+                    {
+                        labelGenero.Text = r["Genero"].ToString();
+                    }
+                    else
+                    {
+                        labelGenero.Text = "NA";
+                    }
 
-                Image cartel = espEN.ObtenerImagenEspectaculo(int.Parse(r["IDEspectaculo"].ToString()));
-                if (cartel != null)
-                {
-                    try
+                    Image cartel = espEN.ObtenerImagenEspectaculo(int.Parse(r["IDEspectaculo"].ToString()));
+                    if (cartel != null)
                     {
-                        pictureBox3.Image = cartel;
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
+                        try
+                        {
+                            pictureBox3.Image = cartel;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             ds = vEN.ObtenerRanking('d');
             int i=1;
 
-            foreach(DataRow r in ds.Tables[0].Rows)
+            try
             {
-                if (r["Titulo"].ToString().Equals(titulo))
+                foreach (DataRow r in ds.Tables[0].Rows)
                 {
-                    labelRanking.Text = i.ToString()+"º";
-                    break;
+                    if (r["Titulo"].ToString().Equals(titulo))
+                    {
+                        labelRanking.Text = i.ToString() + "º";
+                        break;
+                    }
+                    i++;
                 }
-                i++;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -538,6 +553,12 @@ namespace Events4ALL
             }
 
 
+        }
+
+        private void Estadisticas_VisibleChanged(object sender, EventArgs e)
+        {
+            comboTitulo.Items.Clear();
+            LoadEspectaculos();
         }
     }
 }

@@ -76,11 +76,15 @@ namespace Events4ALL.User_Controls
         //Envia la contestación por mail a la dirección de correo del cliente, se ejecuta en un thread diferente
         private void mailButton_Click(object sender, EventArgs e)
         {
-            Mail mail = new Mail(responseText.Text, mimail, IDMensaje, new MailCallback(ResultCallback));
-            Thread th1 = new Thread(new ThreadStart(mail.sendMail));
-            th1.Start();
-            statusLabel.Visible = true;
-            statusLabel.Text = "Enviando...";
+            if (!string.IsNullOrEmpty(mimail))
+            {
+                Mail mail = new Mail(responseText.Text, mimail, IDMensaje, new MailCallback(ResultCallback));
+                Thread th1 = new Thread(new ThreadStart(mail.sendMail));
+                th1.Start();
+                statusLabel.Visible = true;
+                statusLabel.Text = "Enviando...";
+            }
+
         }
 
         //Este método se ejecuta cuando el mensaje ha sido enviado, muestra un mensaje y limpia los datos
@@ -122,6 +126,12 @@ namespace Events4ALL.User_Controls
                     msgEN.deleteMessage(msgGridView.Rows[r.Index].Cells["ID"].Value.ToString());
                     msgGridView.Rows.RemoveAt(r.Index);
                 }
+                textNombre.Text = "";
+                textApellidos.Text = "";
+                textAsunto.Text = "";
+                textConsulta.Text = "";
+                mimail = "";
+                IDMensaje = "";
             }
         }
 
