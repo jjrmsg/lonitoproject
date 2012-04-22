@@ -150,11 +150,11 @@ namespace Events4ALL.CAD
                 SqlDataAdapter da;
                 if (orden == 'd')
                 {
-                    da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas DESC;", c);
+                    da = new SqlDataAdapter("select e.Titulo, e.IDEspectaculo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo, e.IDEspectaculo order by Entradas DESC;", c);
                 }
                 else
                 {
-                    da = new SqlDataAdapter("select e.Titulo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo order by Entradas asc;", c);
+                    da = new SqlDataAdapter("select e.Titulo, e.IDEspectaculo, count(*) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo group by e.Titulo, e.IDEspectaculo order by Entradas asc;", c);
                 }
                 da.Fill(bdvirtual);
             }

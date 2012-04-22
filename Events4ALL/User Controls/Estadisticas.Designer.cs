@@ -55,6 +55,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tipoChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelRentable = new System.Windows.Forms.Label();
             this.loadButton = new System.Windows.Forms.Button();
             this.textAnyo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.errorAnyo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorMes = new System.Windows.Forms.ErrorProvider(this.components);
-            this.labelRentable = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -256,6 +256,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Recaudación";
+            // 
+            // labelRentable
+            // 
+            this.labelRentable.AutoSize = true;
+            this.labelRentable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRentable.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelRentable.Location = new System.Drawing.Point(672, 268);
+            this.labelRentable.Name = "labelRentable";
+            this.labelRentable.Size = new System.Drawing.Size(48, 16);
+            this.labelRentable.TabIndex = 8;
+            this.labelRentable.Text = "--------";
             // 
             // loadButton
             // 
@@ -729,7 +740,7 @@
             // 
             this.labelRanking.AutoSize = true;
             this.labelRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRanking.Location = new System.Drawing.Point(250, 9);
+            this.labelRanking.Location = new System.Drawing.Point(237, 8);
             this.labelRanking.Name = "labelRanking";
             this.labelRanking.Size = new System.Drawing.Size(30, 39);
             this.labelRanking.TabIndex = 0;
@@ -824,10 +835,11 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.akira;
+            this.pictureBox3.Image = global::Events4ALL.Properties.Resources.image_default;
             this.pictureBox3.Location = new System.Drawing.Point(197, 17);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(144, 186);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
@@ -913,17 +925,6 @@
             this.errorMes.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorMes.ContainerControl = this;
             this.errorMes.Icon = ((System.Drawing.Icon)(resources.GetObject("errorMes.Icon")));
-            // 
-            // labelRentable
-            // 
-            this.labelRentable.AutoSize = true;
-            this.labelRentable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRentable.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelRentable.Location = new System.Drawing.Point(704, 268);
-            this.labelRentable.Name = "labelRentable";
-            this.labelRentable.Size = new System.Drawing.Size(48, 16);
-            this.labelRentable.TabIndex = 8;
-            this.labelRentable.Text = "--------";
             // 
             // Estadisticas
             // 

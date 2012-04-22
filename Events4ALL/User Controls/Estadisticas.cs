@@ -43,7 +43,7 @@ namespace Events4ALL
             espectaculos = new Dictionary<int, decimal>();
             generoVentas = new Dictionary<string, int>();
             tipos = new Dictionary<string, int>() { {"Teatro", 1}, {"Cine", 2}, {"Concierto", 3} };
-            generos = new Dictionary<string, int>() { { "Aventura", 1 }, { "Romantica", 2 }, { "Comedia", 3 }, { "Acción", 4 }, { "Terror", 5 } };
+            generos = new Dictionary<string, int>() { { "Aventura", 1 }, { "Romántica", 2 }, { "Comedia", 3 }, { "Acción", 4 }, { "Terror", 5 } };
 
             numerosMeses = new Dictionary<string, int>()
             {
@@ -471,6 +471,20 @@ namespace Events4ALL
                 {
                     labelGenero.Text = "NA";
                 }
+
+                Image cartel = espEN.ObtenerImagenEspectaculo(int.Parse(r["IDEspectaculo"].ToString()));
+                Console.WriteLine("Nuuuum: " + int.Parse(r["IDEspectaculo"].ToString()));
+                if (cartel != null)
+                {
+                    try
+                    {
+                        pictureBox3.Image = cartel;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
             }
 
             ds = vEN.ObtenerRanking('d');
@@ -515,6 +529,7 @@ namespace Events4ALL
                         }
                     }
                     chartRanking.Series["Entradas"].Points.Add(p);
+
                     numEspectaculos--;
                 }
             }
@@ -522,6 +537,8 @@ namespace Events4ALL
             {
                 Console.WriteLine(ex.Message);
             }
+
+
         }
     }
 }
