@@ -473,7 +473,6 @@ namespace Events4ALL
                 }
 
                 Image cartel = espEN.ObtenerImagenEspectaculo(int.Parse(r["IDEspectaculo"].ToString()));
-                Console.WriteLine("Nuuuum: " + int.Parse(r["IDEspectaculo"].ToString()));
                 if (cartel != null)
                 {
                     try
