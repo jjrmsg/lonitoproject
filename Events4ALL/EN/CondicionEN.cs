@@ -304,5 +304,25 @@ namespace Events4ALL.EN
         {
             conCAD.Save();
         }
+
+        public void InsertarCondicionConCliente(string idCliente, int idCondicion)
+        {
+            conCAD.InsertarCondicionConCliente(idCliente, idCondicion);
+        }
+
+        public DataSet NumeroDeEventosAsistidosClientePorTipo(string nif, string tipoevento)
+        {
+            return conCAD.NumeroDeEventosAsistidosClientePorTipo(nif, tipoevento);
+        }
+
+        public DataSet ObtenerCondicionesConClientes()
+        {
+            return conCAD.ObtenerCondicionesConClientes();
+        }
+
+        public void SaveCondicionesConClientes()
+        {
+            conCAD.SaveCondicionesConClientes();
+        }
     }
 }

@@ -554,12 +554,12 @@
             // 
             // comboBox_PE_espectaculo
             // 
+            this.comboBox_PE_espectaculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PE_espectaculo.FormattingEnabled = true;
             this.comboBox_PE_espectaculo.Location = new System.Drawing.Point(93, 12);
             this.comboBox_PE_espectaculo.Name = "comboBox_PE_espectaculo";
             this.comboBox_PE_espectaculo.Size = new System.Drawing.Size(251, 21);
             this.comboBox_PE_espectaculo.TabIndex = 1;
-            this.comboBox_PE_espectaculo.Text = "Selecciona un espectaculo";
             this.comboBox_PE_espectaculo.SelectedIndexChanged += new System.EventHandler(this.comboBox_PE_espectaculo_SelectedIndexChanged);
             this.comboBox_PE_espectaculo.Click += new System.EventHandler(this.comboBox_PE_espectaculo_Click);
             // 
@@ -856,6 +856,7 @@
             // comboBox_MC_VC_Tcondicion3
             // 
             this.comboBox_MC_VC_Tcondicion3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Tcondicion3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Tcondicion3.Enabled = false;
             this.comboBox_MC_VC_Tcondicion3.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion3.Items.AddRange(new object[] {
@@ -866,11 +867,11 @@
             this.comboBox_MC_VC_Tcondicion3.Name = "comboBox_MC_VC_Tcondicion3";
             this.comboBox_MC_VC_Tcondicion3.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion3.TabIndex = 14;
-            this.comboBox_MC_VC_Tcondicion3.Text = "Tipo condición";
             // 
             // comboBox_MC_VC_Tcondicion2
             // 
             this.comboBox_MC_VC_Tcondicion2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Tcondicion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Tcondicion2.Enabled = false;
             this.comboBox_MC_VC_Tcondicion2.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion2.Items.AddRange(new object[] {
@@ -881,11 +882,11 @@
             this.comboBox_MC_VC_Tcondicion2.Name = "comboBox_MC_VC_Tcondicion2";
             this.comboBox_MC_VC_Tcondicion2.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion2.TabIndex = 13;
-            this.comboBox_MC_VC_Tcondicion2.Text = "Tipo condición";
             // 
             // comboBox_MC_VC_Tcondicion1
             // 
             this.comboBox_MC_VC_Tcondicion1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Tcondicion1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Tcondicion1.FormattingEnabled = true;
             this.comboBox_MC_VC_Tcondicion1.Items.AddRange(new object[] {
             "Dinero gastado",
@@ -895,11 +896,11 @@
             this.comboBox_MC_VC_Tcondicion1.Name = "comboBox_MC_VC_Tcondicion1";
             this.comboBox_MC_VC_Tcondicion1.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Tcondicion1.TabIndex = 12;
-            this.comboBox_MC_VC_Tcondicion1.Text = "Tipo condición";
             // 
             // comboBox_MC_VC_Comparacion3
             // 
             this.comboBox_MC_VC_Comparacion3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Comparacion3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Comparacion3.Enabled = false;
             this.comboBox_MC_VC_Comparacion3.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion3.Items.AddRange(new object[] {
@@ -910,11 +911,11 @@
             this.comboBox_MC_VC_Comparacion3.Name = "comboBox_MC_VC_Comparacion3";
             this.comboBox_MC_VC_Comparacion3.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion3.TabIndex = 10;
-            this.comboBox_MC_VC_Comparacion3.Text = "Comparación";
             // 
             // comboBox_MC_VC_Comparacion2
             // 
             this.comboBox_MC_VC_Comparacion2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Comparacion2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Comparacion2.Enabled = false;
             this.comboBox_MC_VC_Comparacion2.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion2.Items.AddRange(new object[] {
@@ -925,11 +926,11 @@
             this.comboBox_MC_VC_Comparacion2.Name = "comboBox_MC_VC_Comparacion2";
             this.comboBox_MC_VC_Comparacion2.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion2.TabIndex = 9;
-            this.comboBox_MC_VC_Comparacion2.Text = "Comparación";
             // 
             // comboBox_MC_VC_Comparacion1
             // 
             this.comboBox_MC_VC_Comparacion1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_MC_VC_Comparacion1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_MC_VC_Comparacion1.FormattingEnabled = true;
             this.comboBox_MC_VC_Comparacion1.Items.AddRange(new object[] {
             "Mayor",
@@ -939,7 +940,6 @@
             this.comboBox_MC_VC_Comparacion1.Name = "comboBox_MC_VC_Comparacion1";
             this.comboBox_MC_VC_Comparacion1.Size = new System.Drawing.Size(125, 21);
             this.comboBox_MC_VC_Comparacion1.TabIndex = 8;
-            this.comboBox_MC_VC_Comparacion1.Text = "Comparación";
             // 
             // textBox_MC_VC_Cantidad3
             // 
