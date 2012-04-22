@@ -216,8 +216,6 @@ namespace Events4ALL.CAD
                 if (titulo != "")
                     com.Parameters.Add("@titulo", SqlDbType.NVarChar).Value = titulo;
 
-                Console.WriteLine(com.CommandText.ToString());
-
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = com;
                 da.Fill(datosVentas);
