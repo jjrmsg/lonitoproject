@@ -100,8 +100,8 @@ namespace Events4ALL.CAD
             Image im = null;
             BD bd = new BD();
             SqlConnection c = bd.Connect();
-            //try
-            //{
+            try
+            {
                 c.Open();
                 SqlCommand comando = new SqlCommand("select * from Cliente where NIF='" + nif + "'", c);
                 SqlDataReader dr = comando.ExecuteReader();
@@ -117,9 +117,14 @@ namespace Events4ALL.CAD
                     MemoryStream ms = new MemoryStream(bImage);
                     im = Image.FromStream(ms, true, true);
                 }
-          //  }
-
+            }
+            catch
+            {
+            }
+            finally
+            {
                 c.Close();
+            }
 
                 return im;
         }
