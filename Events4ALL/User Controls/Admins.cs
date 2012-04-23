@@ -70,6 +70,8 @@ namespace Events4ALL
 
             Admin_Perfil_boton_Guardar.Text = "Insertar";
             Admin_Perfil_boton_Anadir.Text = "Limpiar";
+            Admin_Perfil_boton_Anadir.Image = Events4ALL.Properties.Resources.clear_2;
+
         }
 
         #region Comprobaciones
@@ -704,6 +706,7 @@ namespace Events4ALL
 
             Admin_Perfil_boton_Guardar.Text = "Insertar";
             Admin_Perfil_boton_Anadir.Text = "Limpiar";
+            Admin_Perfil_boton_Anadir.Image = Events4ALL.Properties.Resources.clear_2;
         }
 
         #endregion
@@ -719,8 +722,16 @@ namespace Events4ALL
         // Llama a la funcion LimpiarDatos() para limpiar el formulario.
         private void Admin_Perfil_boton_Anadir_Click(object sender, EventArgs e)
         {
-            LimpiarDatos();
-            //RellenaDatos();
+            if (edicion)
+            {
+                if (MessageBox.Show("¿Desea ir al formulario de inserción y perder los cambios no guardados?", "Los cambios no guardados se perderan", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+                {
+                    LimpiarDatos();
+                }
+            }
+            else
+                LimpiarDatos();
+            
         }
 
         // Comprueba los datos introducidos en el formulario, los valida mediante llamadas a
@@ -746,23 +757,25 @@ namespace Events4ALL
                 {
                     if (AltaAdminEN_PorPasos())
                     {
-                        idActual = ObtieneID(textBox_NombreUsuario.Text);
+                        //idActual = ObtieneID(textBox_NombreUsuario.Text);
                         // Una vez insertado mostramos el ID que se le ha asignado
-                        label_ID.Text = "ID de Usuario : " + idActual;
-                        label_ID.Visible = true;
+                        //label_ID.Text = "ID de Usuario : " + idActual;
+                        //label_ID.Visible = true;
 
                         // Establecemos edicion a true, ya que si se realiza un modificacion del admin, tendremos que realizar
                         // un update y no un insert
-                        edicion = true;
+                        //edicion = true;
 
-                        textBox_pass1.Text = "";
-                        textBox_pass2.Text = "";
+                        //textBox_pass1.Text = "";
+                        //textBox_pass2.Text = "";
 
-                        textBox_anterior_pass.Enabled = true;
+                        //textBox_anterior_pass.Enabled = true;
                         //boton_eliminar.Enabled = true;
 
-                        Admin_Perfil_boton_Guardar.Text = "Guardar";
-                        Admin_Perfil_boton_Anadir.Text = "Nuevo";
+                        //Admin_Perfil_boton_Guardar.Text = "Guardar";
+                        //Admin_Perfil_boton_Anadir.Text = "Nuevo";
+
+                        LimpiarDatos();
                     }
                 }
                 // ACTUALIZAR
@@ -1359,6 +1372,7 @@ namespace Events4ALL
             
             Admin_Perfil_boton_Guardar.Text = "Guardar";
             Admin_Perfil_boton_Anadir.Text = "Nuevo";
+            Admin_Perfil_boton_Anadir.Image = Events4ALL.Properties.Resources.mas;
 
             Image im;
 
@@ -1368,6 +1382,8 @@ namespace Events4ALL
                 Admin_Perfil_Foto.Image = im;
             else
                 Admin_Perfil_Foto.Image = Events4ALL.Properties.Resources.Events4All;
+
+
 
             tabControl1.SelectTab("Perfil");
         }
