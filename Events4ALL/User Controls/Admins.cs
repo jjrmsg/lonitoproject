@@ -123,11 +123,11 @@ namespace Events4ALL
                 errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Nombre demasiado largo. Máximo 50 carácteres.");
                 return false;
             }
-            if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Nombre.Text))
+            /*if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Nombre.Text))
             {
                 errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Carácteres incorrectos.");
                 return false;
-            }
+            }*/
             // ok
             else
             {
@@ -153,11 +153,11 @@ namespace Events4ALL
                 errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Apellidos demasiado largos. Máximo 50 caracteres.");
                 return false;
             }
-            if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Apellidos.Text))
+            /*if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Apellidos.Text))
             {
                 errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Carácteres incorrectos.");
                 return false;
-            }
+            }*/
             // ok
             else
             {
@@ -208,11 +208,11 @@ namespace Events4ALL
                 errorProviderLocalidad.SetError(Label_Localidad, "Localidad demasiado larga. Máximo 50 carácteres.");
                 return false;
             }
-            if (!validar.CompruebaTexto(txtBox_Localidad.Text))
+            /*if (!validar.CompruebaTexto(txtBox_Localidad.Text))
             {
                 errorProviderLocalidad.SetError(Label_Localidad, "Carácteres incorrectos.");
                 return false;
-            }
+            }*/
             // correcto
             else
             {
@@ -240,11 +240,11 @@ namespace Events4ALL
                 return false;
             }
             // mail incorrecto
-            else if ( !validar.CompruebaMail(Admin_Perfil_txtBox_Mail.Text))
+            /*else if ( !validar.CompruebaMail(Admin_Perfil_txtBox_Mail.Text))
             {
                 errorProviderMail.SetError(Admin_Perfil_Label_Mail, "Mail incorrecto.");
                 return false;
-            }
+            }*/
             else
             {
                 errorProviderMail.Clear();
@@ -318,11 +318,11 @@ namespace Events4ALL
                 errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Dirección demasiado larga.");
                 return false;
             }
-            if (!validar.CompruebaTexto(Admin_Perfil_txtBox_Domicilio.Text))
+            /*if (!validar.CompruebaTexto(Admin_Perfil_txtBox_Domicilio.Text))
             {
                 errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Carácteres incorrectos.");
                 return false;
-            }
+            }*/
             // ok
             else
             {
@@ -414,11 +414,11 @@ namespace Events4ALL
                 errorProviderNick.Clear();
                 return true;
             }
-            if (!validar.CompruebaTexto(textBox_NombreUsuario.Text))
+            /*if (!validar.CompruebaTexto(textBox_NombreUsuario.Text))
             {
                 errorProviderNick.SetError(label_NombreUsuario, "Carácteres incorrectos");
                 return false;
-            }
+            }*/
             else
             {
                 errorProviderNick.SetError(label_NombreUsuario, "Introduzca un nombre de usuario.");
