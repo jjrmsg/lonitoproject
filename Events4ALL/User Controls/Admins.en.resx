@@ -560,6 +560,9 @@
   <data name="Admin_Perfil_boton_Guardar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="Admin_Perfil_boton_Guardar.Text" xml:space="preserve">
+    <value>Insertar</value>
+  </data>
   <data name="Admin_Perfil_boton_Anadir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

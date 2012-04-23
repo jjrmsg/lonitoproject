@@ -39,6 +39,14 @@
             this.boton_limpia_busqueda = new System.Windows.Forms.Button();
             this.buttom_Buscar = new System.Windows.Forms.Button();
             this.Resultados_Busqueda = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Perfil = new System.Windows.Forms.TabPage();
             this.boton_eliminar = new System.Windows.Forms.Button();
             this.groupBox_UsPs = new System.Windows.Forms.GroupBox();
@@ -116,14 +124,6 @@
             this.errorProviderPassAnt = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Buscar.SuspendLayout();
             this.groupBox_Busqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resultados_Busqueda)).BeginInit();
@@ -737,6 +737,70 @@
             this.Resultados_Busqueda.ReadOnly = true;
             this.Resultados_Busqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Resultados_Busqueda_CellContentClick);
             this.Resultados_Busqueda.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Resultados_Busqueda_CellMouseClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.FillWeight = 99.61344F;
+            resources.ApplyResources(this.id, "id");
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // NIF
+            // 
+            this.NIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NIF.FillWeight = 77.68187F;
+            resources.ApplyResources(this.NIF, "NIF");
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.usuario.FillWeight = 120F;
+            resources.ApplyResources(this.usuario, "usuario");
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nombre.FillWeight = 115F;
+            resources.ApplyResources(this.Nombre, "Nombre");
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Apellidos.FillWeight = 140F;
+            resources.ApplyResources(this.Apellidos, "Apellidos");
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Mail
+            // 
+            this.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Mail.FillWeight = 160F;
+            resources.ApplyResources(this.Mail, "Mail");
+            this.Mail.Name = "Mail";
+            this.Mail.ReadOnly = true;
+            // 
+            // editar
+            // 
+            this.editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            resources.ApplyResources(this.editar, "editar");
+            this.editar.Image = global::Events4ALL.Properties.Resources.edit;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            // 
+            // borrar
+            // 
+            this.borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            resources.ApplyResources(this.borrar, "borrar");
+            this.borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.borrar.Name = "borrar";
+            this.borrar.ReadOnly = true;
             // 
             // Perfil
             // 
@@ -4600,70 +4664,6 @@
             resources.ApplyResources(this.dataGridViewImageColumn2, "dataGridViewImageColumn2");
             this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.FillWeight = 99.61344F;
-            resources.ApplyResources(this.id, "id");
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // NIF
-            // 
-            this.NIF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NIF.FillWeight = 77.68187F;
-            resources.ApplyResources(this.NIF, "NIF");
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            // 
-            // usuario
-            // 
-            this.usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.usuario.FillWeight = 120F;
-            resources.ApplyResources(this.usuario, "usuario");
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nombre.FillWeight = 115F;
-            resources.ApplyResources(this.Nombre, "Nombre");
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Apellidos.FillWeight = 140F;
-            resources.ApplyResources(this.Apellidos, "Apellidos");
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Mail
-            // 
-            this.Mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Mail.FillWeight = 160F;
-            resources.ApplyResources(this.Mail, "Mail");
-            this.Mail.Name = "Mail";
-            this.Mail.ReadOnly = true;
-            // 
-            // editar
-            // 
-            this.editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            resources.ApplyResources(this.editar, "editar");
-            this.editar.Image = global::Events4ALL.Properties.Resources.edit;
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            // 
-            // borrar
-            // 
-            this.borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            resources.ApplyResources(this.borrar, "borrar");
-            this.borrar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.borrar.Name = "borrar";
-            this.borrar.ReadOnly = true;
             // 
             // Admins
             // 

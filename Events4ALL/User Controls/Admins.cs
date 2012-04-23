@@ -65,6 +65,9 @@ namespace Events4ALL
             boton_eliminar.Enabled = false;
 
             imagenCambiada = false;
+
+            Admin_Perfil_boton_Guardar.Text = "Insertar";
+            Admin_Perfil_boton_Anadir.Text = "Limpiar";
         }
 
         // Carga y muestra todos administradores del sistema al entrar en el pestaña de busqueda.
@@ -702,6 +705,9 @@ namespace Events4ALL
             textBox_anterior_pass.Text = "";
 
             #endregion
+
+            Admin_Perfil_boton_Guardar.Text = "Insertar";
+            Admin_Perfil_boton_Anadir.Text = "Limpiar";
         }
 
         #endregion
@@ -758,6 +764,9 @@ namespace Events4ALL
 
                         textBox_anterior_pass.Enabled = true;
                         boton_eliminar.Enabled = true;
+
+                        Admin_Perfil_boton_Guardar.Text = "Guardar";
+                        Admin_Perfil_boton_Anadir.Text = "Nuevo";
                     }
                 }
                 // ACTUALIZAR
@@ -1331,8 +1340,6 @@ namespace Events4ALL
             else
                 MessageBox.Show("Se ha localizado un error con los estados en la BD.");
 
-            // = muestraAdmin.Tables[0].Rows[0][15] es la foto
-
             textBox_CP_Perfil.Text = muestraAdmin.Tables[0].Rows[0][16].ToString();
 
             if (muestraAdmin.Tables[0].Rows[0][17].ToString() == "0")
@@ -1352,7 +1359,10 @@ namespace Events4ALL
 
             edicion = true;
             boton_eliminar.Enabled = true;
-            textBox_anterior_pass.Enabled = true;
+            textBox_anterior_pass.Enabled = true; 
+            
+            Admin_Perfil_boton_Guardar.Text = "Guardar";
+            Admin_Perfil_boton_Anadir.Text = "Nuevo";
 
             Image im;
 
