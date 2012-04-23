@@ -313,6 +313,7 @@ namespace Events4ALL
             byte[] bImage = new byte[0];
             Image im = null;
             DataSet ds = new DataSet();
+            cliEN.DNI = textNIF.Text;
             ds = cliEN.getClienteByNif(textNIF.Text);
 
             foreach (DataRow row in ds.Tables[0].Rows)

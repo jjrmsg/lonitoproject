@@ -366,6 +366,8 @@ namespace Events4ALL
             en_cliente.Nick = textBoxUsuario.Text;
             en_cliente.Password = textBoxPassword.Text;
 
+            en_cliente.Foto = cliente_Perfil_Foto.Image;
+
             introducido = en_cliente.InsertarCliente();
 
             if (introducido == true)
@@ -412,7 +414,15 @@ namespace Events4ALL
             en_cliente.Nick = textBoxUsuario.Text;
             en_cliente.Password = textBoxPassword.Text;
 
+            //Imagen de Perfil
+            en_cliente.Foto = cliente_Perfil_Foto.Image;
+
             introducido = en_cliente.ActualizarCliente();
+
+            if (introducido == true)
+                MessageBox.Show("Todo OK. Se ha editado con éxito");
+            else if (introducido == false)
+                MessageBox.Show("ERROR. No se ha podido editar el Cliente");
 
             return introducido;
         }
@@ -426,6 +436,21 @@ namespace Events4ALL
             {
 
                 en_cliente.BorrarCliente(textBoxNifC.Text);
+
+            }
+
+
+        }
+
+        private void BorrarClienteBusqueda(string nif)
+        {
+            en_cliente = new ClientesEN();
+
+            if (MessageBox.Show("¿Desea eliminar este Cliente? \n Esta acción se realizará de forma permanente.", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                                 MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+
+                en_cliente.BorrarCliente(nif);
 
             }
 
@@ -537,7 +562,7 @@ namespace Events4ALL
                 }
                 else if (e.ColumnIndex == Resultado_busqueda_cliente.Columns["Borrar"].Index)
                 {
-                    BorrarCliente();
+                    BorrarClienteBusqueda(Resultado_busqueda_cliente[0, e.RowIndex].Value.ToString());
                     MuestraClientes();
                 }
 
@@ -560,10 +585,13 @@ namespace Events4ALL
         {
             en_cliente = new ClientesEN();
 
+            Image im;
+
             nif_actual = Resultado_busqueda_cliente[0, e.RowIndex].Value.ToString();
 
             LimpiarDatos();
             muestraCliente = en_cliente.getClienteByNif(nif_actual);
+            im = en_cliente.ObtieneImagen(nif_actual);
 
             #region Rellenando Los Datos
 
@@ -584,6 +612,11 @@ namespace Events4ALL
             textBoxMovilCli.Text = muestraCliente.Tables[0].Rows[0][11].ToString();
 
             textBoxEmailCli.Text = muestraCliente.Tables[0].Rows[0][12].ToString();
+
+            // Imagen del Perfil
+
+            cliente_Perfil_Foto.Image = im;
+            
 
             textBoxCPCli.Text = muestraCliente.Tables[0].Rows[0][14].ToString();
 
@@ -634,6 +667,7 @@ namespace Events4ALL
             cliente_Perfil_Foto.Image = Events4ALL.Properties.Resources.foto_usuario_defectojpg;
             rButom_H_Cliente.Checked = false;
             rButom_M_Cliente.Checked = false;
+            edicion = false;
 
         }
 

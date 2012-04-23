@@ -94,6 +94,36 @@ namespace Events4ALL.CAD
             return bdvirtual;
         }
 
+        public Image devuelveImagen(string nif)
+        {
+            byte[] bImage = new byte[0];
+            Image im = null;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            //try
+            //{
+                c.Open();
+                SqlCommand comando = new SqlCommand("select * from Cliente where NIF='" + nif + "'", c);
+                SqlDataReader dr = comando.ExecuteReader();
+                dr.Read();
+
+                if (dr["Foto"] != DBNull.Value)
+                {
+                    bImage = (byte[])dr["Foto"];
+                }
+
+                if (bImage != null)
+                {
+                    MemoryStream ms = new MemoryStream(bImage);
+                    im = Image.FromStream(ms, true, true);
+                }
+          //  }
+
+                c.Close();
+
+                return im;
+        }
+
         public bool ExisteCliente(string nif)
         {
             int i=0;
@@ -209,12 +239,23 @@ namespace Events4ALL.CAD
                 string tabla1 = "(Nombre, Apellidos, Usuario, Pass, NIF, ";
                 string tabla2 = "FechaNac, Poblacion, Provincia, Pais, ";
                 string tabla3 = "Direccion, TfnoFijo, TfnoMovil, Mail, ";
-                string tabla4 = "CP, Sexo)";
+                string tabla4 = "CP, Sexo";
+
+                if (nuevoCl.Foto != null)
+                    tabla4 = tabla4 + ", Foto)";
+                else
+                    tabla4 = tabla4 + ")";
+
+
                 string sql2 = " VALUES ('";
                 string valores1 = nuevoCl.Nombre + comilla + nuevoCl.Apellidos + comilla + nuevoCl.Nick + comilla + SHA1helper.Compute(nuevoCl.Password) + comilla + nuevoCl.DNI + comilla;
                 string valores2 = fecha + comilla + nuevoCl.Localidad + comilla + nuevoCl.Provincia + comilla + nuevoCl.Pais + comilla;
                 string valores3 = nuevoCl.Domicilio + comilla + tel1 + comilla + tel2 + comilla + nuevoCl.Mail + comilla;
                 string valores4 = nuevoCl.CP + "'," + nuevoCl.Sexo;
+
+                if (nuevoCl.Foto != null)
+                    valores4 = valores4 + ", @pic";
+
                 string sql3 = ")";
 
                 string sqlFinal = sql1 + tabla1 + tabla2 + tabla3 + tabla4 + sql2 + valores1 + valores2 + valores3 + valores4 + sql3;
@@ -222,6 +263,10 @@ namespace Events4ALL.CAD
                 System.Diagnostics.Debug.Write(sqlFinal);
 
                 SqlCommand comando = new SqlCommand(sqlFinal, c);
+
+                if (nuevoCl.Foto != null)
+                    comando.Parameters.AddWithValue("@pic", pic);
+
                 comando.ExecuteNonQuery();
 
                 error = true;
@@ -293,16 +338,20 @@ namespace Events4ALL.CAD
             string set11 = ", TfnoFijo = '" + nuevoCL.Telefono + "'";
             string set12 = ", TfnoMovil = '" + nuevoCL.Movil + "'";
             string set13 = ", Mail = '" + nuevoCL.Mail + "'";
-            string set14 = ", CP = '" + nuevoCL.CP + "'";
-            string set15 = ", Sexo = " + nuevoCL.Sexo;
+            string set14 = ", Foto = @pic";
+            string set15 = ", CP = '" + nuevoCL.CP + "'";
+            string set16 = ", Sexo = " + nuevoCL.Sexo;
 
             string sql2 = "WHERE NIF='" + nuevoCL.DNI + "'";
 
-            string sqlFinal = sql1 + set1 + set2 + set3 + set4 + set6 + set7 + set8 + set9 + set10 + set11 + set12 + set13 + set14 + set15 + sql2;
+            string sqlFinal = sql1 + set1 + set2 + set3 + set4 + set6 + set7 + set8 + set9 + set10 + set11 + set12 + set13 + set14 + set15 + set16 + sql2;
 
             System.Diagnostics.Debug.Write(sqlFinal);
 
             SqlCommand comando = new SqlCommand(sqlFinal, c);
+            if (nuevoCL.Foto != null)
+                comando.Parameters.AddWithValue("@pic", pic);
+
             comando.ExecuteNonQuery();
 
             error = true;

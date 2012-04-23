@@ -1078,17 +1078,10 @@ namespace Events4ALL
             {
                 condicionEN.ModificarFilaDeDataTable(NumFilaTabla(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)),ref tCondicion);
                 conEN.Save();
-                MessageBox.Show((dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString()));
-                if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString() == "False")
-                {
-                    BorrarCondicionConCliente(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value));
-                }
             }
             #endregion
             button_MC_Guardar.Enabled = false;
             MC_limpiar(1);
-            ActuCondicionConCliente();
-            
             MessageBox.Show("Datos guardados correctamente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
@@ -1133,7 +1126,6 @@ namespace Events4ALL
                 radioButton_MC_TE3_Todos.Checked = false;
                 checkBox_MC_ActPromo.Checked = false;
                 pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
-                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             //caso de limipiar todos menos los combobox del primer bloque
             else if (todo == 0)
@@ -1163,7 +1155,6 @@ namespace Events4ALL
                 radioButton_MC_TE3_Teatro.Checked = false;
                 radioButton_MC_TE3_Todos.Checked = false;
                 pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
-                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             //Solo limpiar segundo bloque
             else if (todo == 2)
@@ -1258,12 +1249,10 @@ namespace Events4ALL
                         byte[] bImage = (byte[])dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value;
                         MemoryStream ms = new MemoryStream(bImage);
                         pictureBox_MC_CartelPromo.Image = Image.FromStream(ms, true, true);
-                        pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     else
                     {
                         pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
-                        pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
 
                     //Para el bloque 2 de las condiciones
@@ -1384,9 +1373,6 @@ namespace Events4ALL
         //Evento para recargar el combobox de espectaculos
         private void comboBox_PE_espectaculo_Click(object sender, EventArgs e)
         {
-            ReloadPromoyPromoEspec();
-            LimpiarPorEspectaculo();
-            LimpiarDatosPromociones();
             CargarComboBox();
         }
 
@@ -1469,12 +1455,10 @@ namespace Events4ALL
                 byte[] bImage = (byte[])tEspec.Rows[idEventoSelec][7];
                 MemoryStream ms = new MemoryStream(bImage);
                 pictureBox_PE_imagEspec.Image = Image.FromStream(ms, true, true);
-                pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else
             {
                 pictureBox_PE_imagEspec.Image = Events4ALL.Properties.Resources.image_default;
-                pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             LimpiarPorEspectaculo();
@@ -1660,7 +1644,6 @@ namespace Events4ALL
                         MC_limpiar(1);
                         button_MC_Guardar.Enabled=false;
                         button_MC_Eliminar.Enabled = false;
-                        BorrarCondicionConCliente(id);
                     }
 
 
@@ -1699,7 +1682,6 @@ namespace Events4ALL
             if (OFich.ShowDialog() == DialogResult.OK)
             {
                 pictureBox_MC_CartelPromo.Image = Image.FromFile(OFich.FileName);
-                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }  
         }
 
@@ -1731,442 +1713,6 @@ namespace Events4ALL
                     }
                 }
             }
-        }
-
-        //Funcion para comprobar una condicion
-        private bool ComprobarCondicion(int tcond, int comp, int cant, int dinero, int entradas, int espectaculos)
-        {
-            bool resul = false;
-
-            if (tcond == 0)
-            {
-                //Dinero gastado
-                if (comp == 0)
-                {
-                    //Mayor
-                    if (dinero > cant) { resul = true; }
-                }
-                else if (comp == 1)
-                {
-                    //Menor
-                    if (dinero < cant) { resul = true; }
-                }
-                else if (comp == 2)
-                {
-                    //Igual
-                    if (dinero == cant) { resul = true; }
-                }
-            }
-            else if (tcond == 1)
-            {
-                //Entradas
-                if (comp == 0)
-                {
-                    //Mayor
-                    if (entradas > cant) { resul = true; }
-                }
-                else if (comp == 1)
-                {
-                    //Menor
-                    if (entradas < cant) { resul = true; }
-                }
-                else if (comp == 2)
-                {
-                    //Igual
-                    if (entradas == cant) { resul = true; }
-                }
-            }
-            else if (tcond == 2)
-            {
-                //Espectaculos
-                if (comp == 0)
-                {
-                    //Mayor
-                    if (espectaculos > cant) { resul = true; }
-                }
-                else if (comp == 1)
-                {
-                    //Menor
-                    if (espectaculos < cant) { resul = true; }
-                }
-                else if (comp == 2)
-                {
-                    //Igual
-                    if (espectaculos == cant) { resul = true; }
-                }
-            }
-
-            return resul;
-        }
-
-        //Funcion para comprobar si el cliente cumple la condicion
-        private bool ComprobarClienteCondicion(string nif, DataRow condicion)
-        {
-            bool resul = false;
-            VentasEN ventasEN = new VentasEN();
-            DataSet estadisticas = new DataSet();
-            DataSet espectaculos = new DataSet(); ;
-            DataSet cine = new DataSet(); ;
-            DataSet teatro = new DataSet(); ;
-            DataSet concierto = new DataSet(); ;
-            int cuantosCineEspectaculos;
-            int cuantosTeatroEspectaculos;
-            int cuantosConciertoEspectaculos;
-            int cineImporte;
-            int teatroImporte;
-            int conciertoImporte;
-            estadisticas = ventasEN.getEstadisticasCliente(nif);
-            espectaculos = ventasEN.getEspectaculosCliente(nif);
-
-            if (Convert.ToInt32(condicion[3]) != -1 && Convert.ToInt32(condicion[8]) == -1 && Convert.ToInt32(condicion[12]) == -1)
-            {
-                #region primera
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-            }
-            else if (Convert.ToInt32(condicion[3]) != -1 && Convert.ToInt32(condicion[8]) != -1 && Convert.ToInt32(condicion[12]) == -1)
-            {
-                //Caso de la primera y segunda condicion
-                #region primera
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-                #region segunda
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-            }
-            else if (Convert.ToInt32(condicion[3]) != -1 && Convert.ToInt32(condicion[8]) != -1 && Convert.ToInt32(condicion[12]) != -1)
-            {
-                //Caso de la primera, segunda y tercera condicion
-                #region primera
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[3]), Convert.ToInt32(condicion[4]), Convert.ToInt32(condicion[5]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-                #region segunda
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[8]), Convert.ToInt32(condicion[9]), Convert.ToInt32(condicion[10]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-                #region tercera
-                if (Convert.ToInt32(condicion[7]) == 0)
-                {
-                    //Cine
-                    cine = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Cine");
-                    cuantosCineEspectaculos = Convert.ToInt32(cine.Tables[0].Rows[0][0]);
-                    if (cuantosCineEspectaculos != 0)
-                    {
-                        cineImporte = Convert.ToInt32(cine.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[12]), Convert.ToInt32(condicion[13]), Convert.ToInt32(condicion[14]), cineImporte, cuantosCineEspectaculos, cuantosCineEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 1)
-                {
-                    //Teatro
-                    teatro = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Teatro");
-                    cuantosTeatroEspectaculos = Convert.ToInt32(teatro.Tables[0].Rows[0][0]);
-                    if (cuantosTeatroEspectaculos != 0)
-                    {
-                        teatroImporte = Convert.ToInt32(teatro.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[12]), Convert.ToInt32(condicion[13]), Convert.ToInt32(condicion[14]), teatroImporte, cuantosTeatroEspectaculos, cuantosTeatroEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 2)
-                {
-                    //Concierto
-                    concierto = conEN.NumeroDeEventosAsistidosClientePorTipo(nif, "Concierto");
-                    cuantosConciertoEspectaculos = Convert.ToInt32(concierto.Tables[0].Rows[0][0]);
-                    if (cuantosConciertoEspectaculos != 0)
-                    {
-                        conciertoImporte = Convert.ToInt32(concierto.Tables[0].Rows[0][1]);
-                        resul = ComprobarCondicion(Convert.ToInt32(condicion[12]), Convert.ToInt32(condicion[13]), Convert.ToInt32(condicion[14]), conciertoImporte, cuantosConciertoEspectaculos, cuantosConciertoEspectaculos);
-                    }
-                }
-                else if (Convert.ToInt32(condicion[7]) == 3)
-                {
-                    //Todos
-                    int d;
-                    if (estadisticas.Tables[0].Rows[0][0] == DBNull.Value) { d = 0; }
-                    else { d = Convert.ToInt32(estadisticas.Tables[0].Rows[0][0]); }
-                    resul = ComprobarCondicion(Convert.ToInt32(condicion[12]), Convert.ToInt32(condicion[13]), Convert.ToInt32(condicion[14]), d, Convert.ToInt32(estadisticas.Tables[0].Rows[0][1]), Convert.ToInt32(espectaculos.Tables[0].Rows[0][0]));
-                }
-                #endregion
-            }
-
-            return resul;
-        }
-
-        //Funcion para actulizar la tabla CondicionConCliente
-        private void ActuCondicionConCliente()
-        {
-            ClientesEN clientesEN=new ClientesEN();
-            DataSet clientes = new DataSet(); 
-            clientes =clientesEN.getClientes();
-
-            //Agregar cliente con condicion
-            foreach (DataRow cliente in clientes.Tables[0].Rows)
-            {
-                foreach (DataRow condicion in tCondicion.Rows)
-                {
-                    if (ComprobarClienteCondicion(cliente[0].ToString(),condicion) && condicion[16].ToString()=="True")//Comprobarque cliente cumple condicion
-                    {
-                        try
-                        {
-                            conEN.InsertarCondicionConCliente(cliente[0].ToString(), Convert.ToInt32(condicion[0]));
-                        }
-                        catch
-                        {
-                        }
-                    }
-                }
-            }
-
-            
-            //conEN.SaveCondicionesConClientes();
-        }
-
-        //Funcion para borrar en la tabla CondicionConCliente por idevento
-        private void BorrarCondicionConCliente(int id)
-        {
-            //borrar clientes con condicion que no existan
-            DataSet CondConCli = new DataSet();
-            CondConCli = conEN.ObtenerCondicionesConClientes();
-            DataTable ccc = new DataTable();
-            ccc = CondConCli.Tables["CondicionConCliente"];
-            int i = 0;
-                foreach (DataRow condCli in ccc.Rows)
-                {
-                    if (condCli.RowState.ToString() != "Deleted")
-                    {
-                        if (Convert.ToInt32(condCli[1]) == id)
-                        {
-                            condCli.Delete();
-                            i++;
-                        }
-                    }
-                }
-                conEN.SaveCondicionesConClientes();
-        }
-
-        //Funcion para recargar los DataSet de promociones y promociones con espectaculos
-        private void ReloadPromoyPromoEspec()
-        {
-            espec.Clear();
-            tEspec.Clear();
-            tEspecConPromo.Clear();
-            tPromocion.Clear();
-            espec = proEN.ObtenerEspectaculos();
-            tEspec = espec.Tables["Espectaculo"];
-            tEspecConPromo = espec.Tables["PromocionConEvento"];
-            tPromocion = espec.Tables["Promocion"];
-        }
-
-        //Funcion para limpiar los datos del espectaculo
-        private void LimpiarDatosPromociones()
-        {
-            label_PE_TTitulo.Text = "";
-            label_PE_TTipo.Text = "";
-            label_PE_TFechaIni.Text = "";
-            label_PE_TFechaFin.Text = "";
-            label_PE_TPrecio.Text = "";
-            label_PE_TDescripcion.Text = "";
-            pictureBox_PE_imagEspec.Image = Events4ALL.Properties.Resources.image_default;
-            pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

@@ -152,7 +152,7 @@ namespace Events4ALL.EN
 
             fecha = DateTime.Parse("01/01/2100");
 
-            foto = null;
+            foto = Events4ALL.Properties.Resources.foto_usuario_defectojpg;
 
             cad_cliente = new ClientesCAD();
 
@@ -230,6 +230,11 @@ namespace Events4ALL.EN
         public bool ExisteCliente(string nif)
         {
             return cad_cliente.ExisteCliente(nif);
+        }
+
+        public Image ObtieneImagen(string nif)
+        {
+            return cad_cliente.devuelveImagen(nif);
         }
 
         public void BorrarCliente(string nif)
