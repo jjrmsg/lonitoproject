@@ -95,7 +95,7 @@ namespace Events4ALL
                     }
                     else
                     {
-                        MessageBox.Show("El usuario o password son erroneos" + SHA1pass);
+                        MessageBox.Show("El usuario o password son erroneos");
                     }
                 }
                 catch
