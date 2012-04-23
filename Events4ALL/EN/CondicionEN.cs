@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -188,7 +188,7 @@ namespace Events4ALL.EN
             idCondicion = id;
             nombre = nom;
             descripcion = desc;
-            
+
             tCondicion1 = tcond1;
             comparacion1 = comp1;
             cantidad1 = cant1;
@@ -303,6 +303,26 @@ namespace Events4ALL.EN
         public void Save()
         {
             conCAD.Save();
+        }
+
+        public void InsertarCondicionConCliente(string idCliente, int idCondicion)
+        {
+            conCAD.InsertarCondicionConCliente(idCliente, idCondicion);
+        }
+
+        public DataSet NumeroDeEventosAsistidosClientePorTipo(string nif, string tipoevento)
+        {
+            return conCAD.NumeroDeEventosAsistidosClientePorTipo(nif, tipoevento);
+        }
+
+        public DataSet ObtenerCondicionesConClientes()
+        {
+            return conCAD.ObtenerCondicionesConClientes();
+        }
+
+        public void SaveCondicionesConClientes()
+        {
+            conCAD.SaveCondicionesConClientes();
         }
     }
 }
