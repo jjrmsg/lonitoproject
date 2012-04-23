@@ -217,7 +217,7 @@
             this.pictureBox_PE_imagEspec.Location = new System.Drawing.Point(350, 295);
             this.pictureBox_PE_imagEspec.Name = "pictureBox_PE_imagEspec";
             this.pictureBox_PE_imagEspec.Size = new System.Drawing.Size(537, 267);
-            this.pictureBox_PE_imagEspec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_PE_imagEspec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_PE_imagEspec.TabIndex = 8;
             this.pictureBox_PE_imagEspec.TabStop = false;
             // 
@@ -1031,7 +1031,7 @@
             this.pictureBox_MC_CartelPromo.Location = new System.Drawing.Point(451, 461);
             this.pictureBox_MC_CartelPromo.Name = "pictureBox_MC_CartelPromo";
             this.pictureBox_MC_CartelPromo.Size = new System.Drawing.Size(439, 114);
-            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox_MC_CartelPromo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_MC_CartelPromo.TabIndex = 18;
             this.pictureBox_MC_CartelPromo.TabStop = false;
             // 

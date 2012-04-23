@@ -1133,6 +1133,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Todos.Checked = false;
                 checkBox_MC_ActPromo.Checked = false;
                 pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
+                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             //caso de limipiar todos menos los combobox del primer bloque
             else if (todo == 0)
@@ -1162,6 +1163,7 @@ namespace Events4ALL
                 radioButton_MC_TE3_Teatro.Checked = false;
                 radioButton_MC_TE3_Todos.Checked = false;
                 pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
+                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             //Solo limpiar segundo bloque
             else if (todo == 2)
@@ -1256,10 +1258,12 @@ namespace Events4ALL
                         byte[] bImage = (byte[])dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[17].Value;
                         MemoryStream ms = new MemoryStream(bImage);
                         pictureBox_MC_CartelPromo.Image = Image.FromStream(ms, true, true);
+                        pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     else
                     {
                         pictureBox_MC_CartelPromo.Image = Events4ALL.Properties.Resources.image_default;
+                        pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
 
                     //Para el bloque 2 de las condiciones
@@ -1380,6 +1384,9 @@ namespace Events4ALL
         //Evento para recargar el combobox de espectaculos
         private void comboBox_PE_espectaculo_Click(object sender, EventArgs e)
         {
+            ReloadPromoyPromoEspec();
+            LimpiarPorEspectaculo();
+            LimpiarDatosPromociones();
             CargarComboBox();
         }
 
@@ -1462,10 +1469,12 @@ namespace Events4ALL
                 byte[] bImage = (byte[])tEspec.Rows[idEventoSelec][7];
                 MemoryStream ms = new MemoryStream(bImage);
                 pictureBox_PE_imagEspec.Image = Image.FromStream(ms, true, true);
+                pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             else
             {
                 pictureBox_PE_imagEspec.Image = Events4ALL.Properties.Resources.image_default;
+                pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             LimpiarPorEspectaculo();
@@ -1690,6 +1699,7 @@ namespace Events4ALL
             if (OFich.ShowDialog() == DialogResult.OK)
             {
                 pictureBox_MC_CartelPromo.Image = Image.FromFile(OFich.FileName);
+                pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.StretchImage;
             }  
         }
 
@@ -2131,6 +2141,32 @@ namespace Events4ALL
                     }
                 }
                 conEN.SaveCondicionesConClientes();
+        }
+
+        //Funcion para recargar los DataSet de promociones y promociones con espectaculos
+        private void ReloadPromoyPromoEspec()
+        {
+            espec.Clear();
+            tEspec.Clear();
+            tEspecConPromo.Clear();
+            tPromocion.Clear();
+            espec = proEN.ObtenerEspectaculos();
+            tEspec = espec.Tables["Espectaculo"];
+            tEspecConPromo = espec.Tables["PromocionConEvento"];
+            tPromocion = espec.Tables["Promocion"];
+        }
+
+        //Funcion para limpiar los datos del espectaculo
+        private void LimpiarDatosPromociones()
+        {
+            label_PE_TTitulo.Text = "";
+            label_PE_TTipo.Text = "";
+            label_PE_TFechaIni.Text = "";
+            label_PE_TFechaFin.Text = "";
+            label_PE_TPrecio.Text = "";
+            label_PE_TDescripcion.Text = "";
+            pictureBox_PE_imagEspec.Image = Events4ALL.Properties.Resources.image_default;
+            pictureBox_PE_imagEspec.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }
