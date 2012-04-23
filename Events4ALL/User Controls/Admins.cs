@@ -1189,17 +1189,20 @@ namespace Events4ALL
         // Muestra los datos en el formulario del administrados que se ha seleccionado en el Datagrid. 
         private void Resultados_Busqueda_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            en_admin = new AdminEN();
-            
-            if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+            if (e.RowIndex >= 0)
             {
-                LimpiaBusqueda();
-                RellenaDatos_AdminSeleccionado(sender, e);
-            }
-            else
-            {
-                en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
-                MuestraAdmins();
+                en_admin = new AdminEN();
+
+                if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+                {
+                    LimpiaBusqueda();
+                    RellenaDatos_AdminSeleccionado(sender, e);
+                }
+                else
+                {
+                    en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
+                    MuestraAdmins();
+                }
             }
         }
 
