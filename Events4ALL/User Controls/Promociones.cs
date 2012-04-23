@@ -1078,7 +1078,6 @@ namespace Events4ALL
             {
                 condicionEN.ModificarFilaDeDataTable(NumFilaTabla(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value)), ref tCondicion);
                 conEN.Save();
-                MessageBox.Show((dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString()));
                 if (dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[16].Value.ToString() == "False")
                 {
                     BorrarCondicionConCliente(Convert.ToInt32(dataGridView_MC_ListaPromosCond.SelectedRows[0].Cells[0].Value));
@@ -1332,7 +1331,7 @@ namespace Events4ALL
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    MessageBox.Show("No has seleccionado ninguna fila", "Seleccionar condición", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    //MessageBox.Show("No has seleccionado ninguna fila", "Seleccionar condición", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     MC_limpiar(1);
                     button_MC_Eliminar.Enabled = false;
                 }
@@ -1668,7 +1667,7 @@ namespace Events4ALL
             }
             catch
             {
-                MessageBox.Show("No hay ninguna fila seleccionada", "Eliminar condición", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                //MessageBox.Show("No hay ninguna fila seleccionada", "Eliminar condición", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
 
@@ -1695,7 +1694,6 @@ namespace Events4ALL
 
             OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
 
-            pictureBox_MC_CartelPromo.SizeMode = PictureBoxSizeMode.CenterImage;
             if (OFich.ShowDialog() == DialogResult.OK)
             {
                 pictureBox_MC_CartelPromo.Image = Image.FromFile(OFich.FileName);
