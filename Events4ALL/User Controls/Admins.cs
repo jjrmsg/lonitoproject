@@ -1193,17 +1193,22 @@ namespace Events4ALL
             {
                 en_admin = new AdminEN();
 
-                if (e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+                if (e.ColumnIndex == Resultados_Busqueda.Columns["editar"].Index)
                 {
                     System.Diagnostics.Debug.Write("\nSelecciono = " + Resultados_Busqueda[0, e.RowIndex].Value.ToString() + "\n");
 
                     RellenaDatos_AdminSeleccionado(sender, e);
                     LimpiaBusqueda();
                 }
-                else
+                else if (e.ColumnIndex == Resultados_Busqueda.Columns["borrar"].Index)
                 {
-                    en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
-                    MuestraAdmins();
+                    if (MessageBox.Show("¿Desea eliminar este administrador? \nEste cambio se realizará de forma permanente.",
+                                    "Cuidado", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)
+                                    == DialogResult.Yes)
+                    {
+                        en_admin.BorraAdmin(Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString()));
+                        MuestraAdmins();
+                    }
                 }
             }
         }

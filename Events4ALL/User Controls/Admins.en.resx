@@ -795,13 +795,22 @@
     <value>Search</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Apellidos.Width" type="System.Int32, mscorlib">
-    <value>150</value>
+  <data name="id.Width" type="System.Int32, mscorlib">
+    <value>43</value>
   </data>
-  <data name="Mail.Width" type="System.Int32, mscorlib">
-    <value>185</value>
+  <data name="NIF.Width" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="usuario.Width" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Nombre.Width" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="Apellidos.Width" type="System.Int32, mscorlib">
+    <value>140</value>
   </data>
   <data name="borrar.Width" type="System.Int32, mscorlib">
-    <value>40</value>
+    <value>41</value>
   </data>
 </root>
