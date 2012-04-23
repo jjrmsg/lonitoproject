@@ -1193,10 +1193,12 @@ namespace Events4ALL
             {
                 en_admin = new AdminEN();
 
-                if (e.RowIndex < 0 || e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
+                if (e.ColumnIndex != Resultados_Busqueda.Columns["borrar"].Index)
                 {
-                    LimpiaBusqueda();
+                    System.Diagnostics.Debug.Write("\nSelecciono = " + Resultados_Busqueda[0, e.RowIndex].Value.ToString() + "\n");
+
                     RellenaDatos_AdminSeleccionado(sender, e);
+                    LimpiaBusqueda();
                 }
                 else
                 {
@@ -1215,6 +1217,8 @@ namespace Events4ALL
             
             idActual = Convert.ToInt16(Resultados_Busqueda[0, e.RowIndex].Value.ToString());
             muestraAdmin = en_admin.getAdmin(idActual);
+
+            System.Diagnostics.Debug.Write("\nID del Admin seleccionado = " + idActual + "\n");
 
             #region Rellenando Datos
 
