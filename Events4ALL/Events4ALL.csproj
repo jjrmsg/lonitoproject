@@ -273,6 +273,7 @@
     <Content Include="imgs\edit.png" />
     <Content Include="imgs\reload.png" />
     <Content Include="imgs\true.png" />
+    <None Include="Resources\mas.png" />
     <Content Include="version.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
