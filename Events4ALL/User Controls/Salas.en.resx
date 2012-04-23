@@ -409,9 +409,6 @@
   <data name="numSecciones.HeaderText" xml:space="preserve">
     <value>Nº Sections</value>
   </data>
-  <data name="Espectaculo.HeaderText" xml:space="preserve">
-    <value>Show</value>
-  </data>
   <data name="Editar.HeaderText" xml:space="preserve">
     <value>Edit</value>
   </data>
