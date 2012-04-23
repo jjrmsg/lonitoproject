@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Events4ALL.EN;
 using Events4ALL.CAD;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace Events4ALL
 {
@@ -304,7 +305,7 @@ namespace Events4ALL
             {
                 if (ctrl is TextBox && ctrl.Visible==true)
                 {
-                    if (ctrl.Text == "" || (Convert.ToInt16(ctrl.Text)<1 || Convert.ToInt16(ctrl.Text)>999))
+                    if (!Regex.Match(ctrl.Text,@"^\d{1,3}$").Success || (Convert.ToInt16(ctrl.Text)<1))
                     {
                         validado = false;
                         errorProvider2.SetError(ctrl,"Formato incorrecto");
