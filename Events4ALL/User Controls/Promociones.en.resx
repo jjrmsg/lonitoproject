@@ -716,6 +716,9 @@
   <data name="label_PE_TFechaIni.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="groupBox_PE_DatosEspec.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
   <data name="label_PE_Espectaculo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

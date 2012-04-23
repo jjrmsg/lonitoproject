@@ -10,6 +10,8 @@ using System.Net.Mail;
 using System.Net;
 using System.Threading;
 using Events4ALL.EN;
+using System.Configuration;
+using System.Globalization;
 
 namespace Events4ALL.User_Controls
 {
@@ -24,6 +26,7 @@ namespace Events4ALL.User_Controls
 
         public Mensajes()
         {
+
             InitializeComponent();
 
             status = statusLabel.Text;
