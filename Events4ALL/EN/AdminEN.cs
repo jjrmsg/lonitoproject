@@ -294,7 +294,7 @@ namespace Events4ALL.EN
         public int ActualizarAdmin(int id, string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c,
                                    string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c,
                                    string mail_c, string ec_c, Image foto_c, int sexo_c, string nick_c, string pass_c, string pass2_c,
-                                   DateTime fecha_c)
+                                   DateTime fecha_c, bool Imagen)
         {
             cad_admin = new AdminCAD();
 
@@ -455,7 +455,7 @@ namespace Events4ALL.EN
                     System.Diagnostics.Debug.Write("EC");
                 }
 
-                if (foto_c != null)
+                if (Imagen)
                 {
                     updateFoto = true;
                     modificado = true;

@@ -734,6 +734,7 @@
             this.errorProviderProvincia.SetIconPadding(this.Resultados_Busqueda, ((int)(resources.GetObject("Resultados_Busqueda.IconPadding17"))));
             this.Resultados_Busqueda.Name = "Resultados_Busqueda";
             this.Resultados_Busqueda.ReadOnly = true;
+            this.Resultados_Busqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Resultados_Busqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Resultados_Busqueda_CellContentClick);
             this.Resultados_Busqueda.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Resultados_Busqueda_CellMouseClick);
             // 

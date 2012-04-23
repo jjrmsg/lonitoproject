@@ -109,8 +109,8 @@ namespace Events4ALL
 
         // Establece mediante un errorProvider en el formulario, si el apartado Nombre es correcto.
         private bool CompruebaNombre()
-        { 
-            
+        {
+            validar = new Validaciones();
             // vacio
             if( Admin_Perfil_txtBox_Nombre.Text.Length == 0 )
             {
@@ -121,6 +121,11 @@ namespace Events4ALL
             else if (Admin_Perfil_txtBox_Nombre.Text.Length >= 50)
             {
                 errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Nombre demasiado largo. Máximo 50 carácteres.");
+                return false;
+            }
+            if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Nombre.Text))
+            {
+                errorProviderNombre.SetError(Admin_Perfil_Label_Nombre, "Carácteres incorrectos.");
                 return false;
             }
             // ok
@@ -134,6 +139,8 @@ namespace Events4ALL
         // Establece mediante un errorProvider en el formulario, si el apartado Apellidos es correcto.
         private bool CompruebaApellidos()
         {
+            validar = new Validaciones();
+
             // vacio
             if (Admin_Perfil_txtBox_Apellidos.Text.Length == 0)
             {
@@ -144,6 +151,11 @@ namespace Events4ALL
             else if (Admin_Perfil_txtBox_Apellidos.Text.Length >= 50)
             {
                 errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Apellidos demasiado largos. Máximo 50 caracteres.");
+                return false;
+            }
+            if(!validar.CompruebaTexto(Admin_Perfil_txtBox_Apellidos.Text))
+            {
+                errorProviderApellidos.SetError(Admin_Perfil_Label_Apellidos, "Carácteres incorrectos.");
                 return false;
             }
             // ok
@@ -194,6 +206,11 @@ namespace Events4ALL
             else if( txtBox_Localidad.Text.Length >= 50)
             {
                 errorProviderLocalidad.SetError(Label_Localidad, "Localidad demasiado larga. Máximo 50 carácteres.");
+                return false;
+            }
+            if (!validar.CompruebaTexto(txtBox_Localidad.Text))
+            {
+                errorProviderLocalidad.SetError(Label_Localidad, "Carácteres incorrectos.");
                 return false;
             }
             // correcto
@@ -288,6 +305,7 @@ namespace Events4ALL
         // Establece mediante un errorProvider en el formulario, si el apartado Domicilio es correcto.
         private bool CompruebaDomicilio()
         { 
+            validar = new Validaciones();
             // vacio
             if( Admin_Perfil_txtBox_Domicilio.Text.Length == 0 )
             {
@@ -298,6 +316,11 @@ namespace Events4ALL
             else if (Admin_Perfil_txtBox_Domicilio.Text.Length > 42)
             {
                 errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Dirección demasiado larga.");
+                return false;
+            }
+            if (!validar.CompruebaTexto(Admin_Perfil_txtBox_Domicilio.Text))
+            {
+                errorProviderDomicilo.SetError(Admin_Perfil_Label_Domicilio, "Carácteres incorrectos.");
                 return false;
             }
             // ok
@@ -379,6 +402,8 @@ namespace Events4ALL
         // que no exista otro usuario con el mismo Nick.
         private bool CompruebaNick()
         {
+            validar = new Validaciones();
+
             if (textBox_NombreUsuario.Text.Length == 0)
             {
                 errorProviderNick.SetError(label_NombreUsuario, "Introduzca un nombre de usuario.");
@@ -388,6 +413,11 @@ namespace Events4ALL
             {
                 errorProviderNick.Clear();
                 return true;
+            }
+            if (!validar.CompruebaTexto(textBox_NombreUsuario.Text))
+            {
+                errorProviderNick.SetError(label_NombreUsuario, "Carácteres incorrectos");
+                return false;
             }
             else
             {
@@ -813,7 +843,7 @@ namespace Events4ALL
                                                 comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
                                                 Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
                                                 Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
-                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
+                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value,imagenCambiada);
 
                         System.Diagnostics.Debug.Write("El error en actualizar 1." + error);
 
@@ -833,7 +863,7 @@ namespace Events4ALL
                                                 comboBoxDirec.Text + " " + Admin_Perfil_txtBox_Domicilio.Text, textBox_CP_Perfil.Text,
                                                 Admin_Perfil_txtBox_Tel1.Text, Admin_Perfil_txtBox_Tel2.Text,
                                                 Admin_Perfil_txtBox_Mail.Text, ec, Admin_Perfil_Foto.Image, sexo, textBox_NombreUsuario.Text,
-                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value);
+                                                textBox_pass1.Text, textBox_pass2.Text, dateTimePicker1.Value, imagenCambiada);
 
                         System.Diagnostics.Debug.Write("El error en actualizar 2." + error);
 

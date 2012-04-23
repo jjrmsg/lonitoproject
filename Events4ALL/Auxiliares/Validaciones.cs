@@ -13,6 +13,7 @@ namespace Events4ALL.Auxiliares
 
         #region Valida NIF
 
+        // Comprueba que el DNI sea correcto
         public bool CompruebaNIF(string nif)
         {
             bool error = false;
@@ -41,6 +42,7 @@ namespace Events4ALL.Auxiliares
             return error;
         }
 
+        // Devuelve los numeros del DNI
         public Int32 DevuelveNumero(string nif)
         {
             Int32 numero = 0;
@@ -50,11 +52,13 @@ namespace Events4ALL.Auxiliares
             return numero;
         }
 
+        // devuelve la letra del DNI
         public char DevuelveLetra(string nif)
         {
             return nif[8];
         }
 
+        // obtiene la letra del numero en base al dni
         public char ObtieneLetra(Int32 numero)
         {
             Int32 indice = numero % 23;
@@ -63,6 +67,14 @@ namespace Events4ALL.Auxiliares
 
         #endregion
 
+        public bool CompruebaTexto(string texto)
+        {
+            Regex recp = new Regex("^[a-zA-Z_]$");
+
+            return recp.IsMatch(texto);
+        }
+    
+        // Comprueba que el codigo postal tenga 6 digitos
         public bool CompruebaCP(string cp)
         {
             // definicion de la expresion regular
@@ -71,6 +83,7 @@ namespace Events4ALL.Auxiliares
             return recp.IsMatch(cp);
         }
 
+        // Comprueba algunos campos basicos de un correo electronico
         public bool CompruebaMail(string mail)
         {
             Regex ermail = new Regex("\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
@@ -78,6 +91,7 @@ namespace Events4ALL.Auxiliares
             return ermail.IsMatch(mail);
         }
 
+        // comprueba que el telefono introducido sea 000 000000 o 000000000
         public bool CompruebaTelefono(string tel)
         {
             Regex ertel = new Regex("[0-9]{2,3}-? ?[0-9]{6,7}$");
@@ -85,14 +99,14 @@ namespace Events4ALL.Auxiliares
             return ertel.IsMatch(tel);
         }
 
-
+        // Comprueba que sea un numero
         public static bool EsNumeroEntero(String cadena)
         {
             Regex patronNumerico = new Regex("^[0-9]+$");
             return patronNumerico.IsMatch(cadena);
         }
 
-        
+        // Comprueba una seguridad minima en el Password
         public string CompruebaPass(string pass)
         {
             // longitud 6, me da igual que no tenga numero o si xD
