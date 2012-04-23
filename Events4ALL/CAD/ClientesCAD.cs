@@ -6,6 +6,9 @@ using Events4ALL.Auxiliares;
 using System.Data;
 using System.Data.SqlClient;
 using Events4ALL.EN;
+using System.Data;
+using System.Drawing;
+using System.IO;
 
 namespace Events4ALL.CAD
 {
@@ -166,6 +169,19 @@ namespace Events4ALL.CAD
 
         public bool InsertarCliente(ClientesEN nuevoCl)
         {
+
+            byte[] pic = null;
+            if (nuevoCl.Foto != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                nuevoCl.Foto.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
+
             bool error = false;
             BD bd = new BD();
             SqlConnection c = bd.Connect();
@@ -225,6 +241,99 @@ namespace Events4ALL.CAD
             }*/
 
             return error;
+        }
+
+
+        public bool ActualizarCliente(ClientesEN nuevoCL)
+        {
+
+            byte[] pic = null;
+            if (nuevoCL.Foto != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                nuevoCL.Foto.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
+            bool error = false;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            c.Open();
+
+            string fecha = nuevoCL.Fecha.ToString();
+            string anyo = "" + fecha[6] + fecha[7] + fecha[8] + fecha[9];
+            string mes = "" + fecha[3] + fecha[4];
+            string dia = "" + fecha[0] + fecha[1];
+            fecha = anyo + '/' + mes + '/' + dia;
+
+            //string comilla = "', '";
+
+            string tel1 = "";
+            string tel2 = "";
+
+            tel1 = nuevoCL.Telefono;
+            tel2 = nuevoCL.Movil;
+
+
+            string sql1 = "UPDATE Cliente SET ";
+            string set1 = "Nombre = '" + nuevoCL.Nombre + "'";
+            string set2 = ", Apellidos = '" + nuevoCL.Apellidos + "'";
+            string set3 = ", Usuario = '" + nuevoCL.Nick + "'";
+            string set4 = ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
+         // string set5 = ", NIF = '" + nuevoCL.DNI + "'";
+            string set6 = ", FechaNac = '" + fecha + "'";
+            string set7 = ", Poblacion = '" + nuevoCL.Localidad + "'";
+            string set8 = ", Provincia = '" + nuevoCL.Provincia + "'";
+            string set9 = ", Pais = '" + nuevoCL.Pais + "'";
+            string set10 = ", Direccion = '" + nuevoCL.Domicilio + "'";
+            string set11 = ", TfnoFijo = '" + nuevoCL.Telefono + "'";
+            string set12 = ", TfnoMovil = '" + nuevoCL.Movil + "'";
+            string set13 = ", Mail = '" + nuevoCL.Mail + "'";
+            string set14 = ", CP = '" + nuevoCL.CP + "'";
+            string set15 = ", Sexo = " + nuevoCL.Sexo;
+
+            string sql2 = "WHERE NIF='" + nuevoCL.DNI + "'";
+
+            string sqlFinal = sql1 + set1 + set2 + set3 + set4 + set6 + set7 + set8 + set9 + set10 + set11 + set12 + set13 + set14 + set15 + sql2;
+
+            System.Diagnostics.Debug.Write(sqlFinal);
+
+            SqlCommand comando = new SqlCommand(sqlFinal, c);
+            comando.ExecuteNonQuery();
+
+            error = true;
+
+            c.Close();
+
+            return error;
+
+        }
+
+        public bool BorraCliente(string nif)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            String sql1 = "DELETE FROM Cliente WHERE NIF = '" + nif + "'";
+            bool error = false;
+
+            conn = bd.Connect();
+            conn.Open();
+
+            SqlCommand comando = new SqlCommand(sql1, conn);
+
+            comando.ExecuteNonQuery();
+
+            error = true;
+
+            conn.Close();
+
+            return error;
+
         }
 
         #endregion

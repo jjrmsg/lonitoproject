@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Events4ALL.CAD;
 using System.Data;
+using System.Drawing;
 
 namespace Events4ALL.EN
 {
@@ -26,7 +27,7 @@ namespace Events4ALL.EN
         private string movil;
         private string mail;
         private string estadoCivil;
-        private string foto;
+        private Image foto;
         private int sexo; // 0 - hombre, 1 - mujer
         private DateTime fecha;
         private string nick;
@@ -115,7 +116,7 @@ namespace Events4ALL.EN
             set { sexo = value; }
         }
 
-        public string Foto
+        public Image Foto
         {
             get { return foto; }
             set { foto = value; }
@@ -145,11 +146,13 @@ namespace Events4ALL.EN
 
         public ClientesEN()
         {
-            nif = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = estadoCivil = nick = pass = foto = string.Empty;
+            nif = nombre = apellidos = pais = provincia = localidad = domicilio = cp = telefono = movil = mail = estadoCivil = nick = pass = string.Empty;
 
             sexo = -1;
 
             fecha = DateTime.Parse("01/01/2100");
+
+            foto = null;
 
             cad_cliente = new ClientesCAD();
 
@@ -157,7 +160,7 @@ namespace Events4ALL.EN
         
 
         public ClientesEN(string dni_c, string nombre_c, string apellidos_c, string pais_c, string provincia_c, string localidad_c, string domicilio_c, string cp_c, string telefono_c, string movil_c, string mail_c,
-                          string estadoCivil_c, string foto_c, int sexo_c, DateTime fecha_c, string nick_c, string pass_c)
+                          string estadoCivil_c, Image foto_c, int sexo_c, DateTime fecha_c, string nick_c, string pass_c)
         {
             nif = dni_c;
             nombre = nombre_c;
@@ -198,6 +201,16 @@ namespace Events4ALL.EN
 
         }
 
+        public bool ActualizarCliente()
+        {
+            bool error = false;
+
+            error = cad_cliente.ActualizarCliente(this);
+
+            return error;
+
+        }
+
         public DataSet getClientes()
         {
             return cad_cliente.getClientes();
@@ -209,7 +222,7 @@ namespace Events4ALL.EN
         }
 
 
-        public DataSet getClienteByNif()
+        public DataSet getClienteByNif(string nif)
         {
             return cad_cliente.getClienteByNif(nif);
         }
@@ -217,6 +230,15 @@ namespace Events4ALL.EN
         public bool ExisteCliente(string nif)
         {
             return cad_cliente.ExisteCliente(nif);
+        }
+
+        public void BorrarCliente(string nif)
+        {
+            cad_cliente = new ClientesCAD();
+            bool borrado = false;
+
+            borrado = cad_cliente.BorraCliente(nif);
+
         }
 
 

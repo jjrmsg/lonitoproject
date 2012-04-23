@@ -78,6 +78,8 @@
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
             this.textBox_filtro_busqueda = new System.Windows.Forms.TextBox();
             this.comboBox_filtro_busqueda = new System.Windows.Forms.ComboBox();
@@ -104,10 +106,10 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.formCliente.Controls.Add(this.FichaCliente);
             this.formCliente.Controls.Add(this.BuscarCliente);
-            this.formCliente.Location = new System.Drawing.Point(3, 1);
+            this.formCliente.Location = new System.Drawing.Point(3, 0);
             this.formCliente.Name = "formCliente";
             this.formCliente.SelectedIndex = 0;
-            this.formCliente.Size = new System.Drawing.Size(901, 632);
+            this.formCliente.Size = new System.Drawing.Size(901, 633);
             this.formCliente.TabIndex = 1;
             this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
             // 
@@ -127,9 +129,9 @@
             this.FichaCliente.Location = new System.Drawing.Point(4, 22);
             this.FichaCliente.Name = "FichaCliente";
             this.FichaCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.FichaCliente.Size = new System.Drawing.Size(893, 606);
+            this.FichaCliente.Size = new System.Drawing.Size(893, 607);
             this.FichaCliente.TabIndex = 0;
-            this.FichaCliente.Text = "Ficha";
+            this.FichaCliente.Text = "Perfil";
             this.FichaCliente.UseVisualStyleBackColor = true;
             // 
             // boton_eliminar_cliente
@@ -143,6 +145,7 @@
             this.boton_eliminar_cliente.Text = "Borrar";
             this.boton_eliminar_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.boton_eliminar_cliente.UseVisualStyleBackColor = true;
+            this.boton_eliminar_cliente.Click += new System.EventHandler(this.boton_eliminar_cliente_Click);
             // 
             // textBoxPassword
             // 
@@ -181,7 +184,7 @@
             this.buttonLimpiarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLimpiarCliente.Image = global::Events4ALL.Properties.Resources.clear_2;
             this.buttonLimpiarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiarCliente.Location = new System.Drawing.Point(710, 554);
+            this.buttonLimpiarCliente.Location = new System.Drawing.Point(710, 555);
             this.buttonLimpiarCliente.Name = "buttonLimpiarCliente";
             this.buttonLimpiarCliente.Size = new System.Drawing.Size(70, 23);
             this.buttonLimpiarCliente.TabIndex = 8;
@@ -195,7 +198,7 @@
             this.buttonGuardarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGuardarCliente.Image = global::Events4ALL.Properties.Resources.add_save;
             this.buttonGuardarCliente.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buttonGuardarCliente.Location = new System.Drawing.Point(786, 554);
+            this.buttonGuardarCliente.Location = new System.Drawing.Point(786, 555);
             this.buttonGuardarCliente.Name = "buttonGuardarCliente";
             this.buttonGuardarCliente.Size = new System.Drawing.Size(70, 23);
             this.buttonGuardarCliente.TabIndex = 7;
@@ -216,6 +219,7 @@
             this.buttonFotoCliente.Text = "Seleccionar Foto...";
             this.buttonFotoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonFotoCliente.UseVisualStyleBackColor = true;
+            this.buttonFotoCliente.Click += new System.EventHandler(this.buttonFotoCliente_Click);
             // 
             // cliente_Perfil_Foto
             // 
@@ -809,7 +813,7 @@
             this.BuscarCliente.Location = new System.Drawing.Point(4, 22);
             this.BuscarCliente.Name = "BuscarCliente";
             this.BuscarCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.BuscarCliente.Size = new System.Drawing.Size(893, 606);
+            this.BuscarCliente.Size = new System.Drawing.Size(893, 607);
             this.BuscarCliente.TabIndex = 1;
             this.BuscarCliente.Text = "Busqueda";
             this.BuscarCliente.UseVisualStyleBackColor = true;
@@ -822,6 +826,7 @@
             this.Resultado_busqueda_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.Resultado_busqueda_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Resultado_busqueda_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Resultado_busqueda_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Resultado_busqueda_cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -830,56 +835,75 @@
             this.Nombre,
             this.Apellidos,
             this.Localidad,
-            this.Provincia});
+            this.Provincia,
+            this.Editar,
+            this.Borrar});
             this.Resultado_busqueda_cliente.Location = new System.Drawing.Point(20, 140);
             this.Resultado_busqueda_cliente.Name = "Resultado_busqueda_cliente";
             this.Resultado_busqueda_cliente.ReadOnly = true;
-            this.Resultado_busqueda_cliente.Size = new System.Drawing.Size(849, 448);
+            this.Resultado_busqueda_cliente.Size = new System.Drawing.Size(849, 449);
             this.Resultado_busqueda_cliente.TabIndex = 3;
             this.Resultado_busqueda_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.Resultado_busqueda_cliente.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Resultado_busqueda_clienteCellMouseClick);
             // 
             // NIF
             // 
+            this.NIF.FillWeight = 71.2275F;
             this.NIF.HeaderText = "NIF";
             this.NIF.Name = "NIF";
             this.NIF.ReadOnly = true;
             this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NIF.Width = 80;
             // 
             // Usuario
             // 
+            this.Usuario.FillWeight = 71.2275F;
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 110;
             // 
             // Nombre
             // 
+            this.Nombre.FillWeight = 90.2275F;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 126;
             // 
             // Apellidos
             // 
+            this.Apellidos.FillWeight = 150.0456F;
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 200;
             // 
             // Localidad
             // 
+            this.Localidad.FillWeight = 80.2275F;
             this.Localidad.HeaderText = "Localidad";
             this.Localidad.Name = "Localidad";
             this.Localidad.ReadOnly = true;
-            this.Localidad.Width = 130;
             // 
             // Provincia
             // 
+            this.Provincia.FillWeight = 71.2275F;
             this.Provincia.HeaderText = "Provincia";
             this.Provincia.Name = "Provincia";
             this.Provincia.ReadOnly = true;
-            this.Provincia.Width = 110;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 50.58931F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Borrar
+            // 
+            this.Borrar.FillWeight = 50.2275F;
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.ReadOnly = true;
             // 
             // groupBoxBusquedaCliente
             // 
@@ -1021,15 +1045,17 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label label_filtro_busqueda;
+        private System.Windows.Forms.ComboBox comboBox_filtro_busqueda;
+        private System.Windows.Forms.TextBox textBox_filtro_busqueda;
+        private System.Windows.Forms.Button boton_eliminar_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
-        private System.Windows.Forms.Label label_filtro_busqueda;
-        private System.Windows.Forms.ComboBox comboBox_filtro_busqueda;
-        private System.Windows.Forms.TextBox textBox_filtro_busqueda;
-        private System.Windows.Forms.Button boton_eliminar_cliente;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Borrar;
     }
 }

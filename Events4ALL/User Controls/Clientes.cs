@@ -17,12 +17,14 @@ namespace Events4ALL
         #region Variables
 
         private Validaciones validarCliente;
+        private bool edicion;
 
         string patronNombre = @"^[a-zA-Z]*\w*$";
         //string patronCP = @"^\d{5}$";
 
         private ClientesEN en_cliente;
         private DataSet muestraCliente;
+        private string nif_actual;
 
 
         #endregion
@@ -33,6 +35,7 @@ namespace Events4ALL
 
             //Creamos objeto para validar
             validarCliente = new Validaciones();
+            edicion = false;
    
         }
 
@@ -272,6 +275,25 @@ namespace Events4ALL
 
 #endregion
 
+        #region Foto Perfil
+
+        private void buttonFotoCliente_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFich = new OpenFileDialog();
+            OFich.ShowHelp = true;
+
+            OFich.Filter = "Archivos de imagen (*.bmp;*.jpg;*.gif)|*.bmp;*.jpg;*.gif|Todos los archivos|*.*";
+            cliente_Perfil_Foto.SizeMode = PictureBoxSizeMode.StretchImage;
+           // Admin_Perfil_Foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (OFich.ShowDialog() == DialogResult.OK)
+            {
+                cliente_Perfil_Foto.Image = Image.FromFile(OFich.FileName);
+                // imagenCambiada = true;
+            }
+        }
+
+
+        #endregion
 
         #region Guardar
 
@@ -279,14 +301,34 @@ namespace Events4ALL
         {
             bool error = false;
 
-            if(ValidaCampos())
+
+            // NUEVO CLIENTE
+            if(ValidaCampos() && !edicion)
             {
                 MessageBox.Show("Todo OK");
                 //ClientesEN teta;
 
                 error = AltaCliente();
             }
+            
+            // ACTUALIZAR CLIENTE
+            else if (ValidaCampos() && edicion)
+            {
+                MessageBox.Show("Preparando para actualizar...");
+                error = EditarCliente();
 
+            }
+
+        }
+
+        #endregion
+
+        #region Borrar
+
+        private void boton_eliminar_cliente_Click(object sender, EventArgs e)
+        {
+            BorrarCliente();
+            LimpiarDatos();
         }
 
         #endregion
@@ -335,7 +377,59 @@ namespace Events4ALL
                 MessageBox.Show("FALLO. Introducido es FALSE");
             }
 
+            LimpiarDatos();
             return introducido;
+        }
+
+        private bool EditarCliente()
+        {
+            en_cliente = new ClientesEN();
+            bool introducido = false;
+
+            en_cliente.DNI = textBoxNifC.Text;
+            en_cliente.Nombre = textBoxNombreC.Text;
+            en_cliente.Apellidos = textBoxApellidosC.Text;
+            en_cliente.Domicilio = textBoxDomiciCli.Text;
+            en_cliente.CP = textBoxCPCli.Text;
+            en_cliente.Pais = comboBoxPaisCli.Text;
+            en_cliente.Provincia = comboBoxProvCli.Text;
+            en_cliente.Localidad = textBoxLocaliCli.Text;
+            en_cliente.Telefono = textBoxTelfCli.Text;
+            en_cliente.Movil = textBoxMovilCli.Text;
+            en_cliente.Mail = textBoxEmailCli.Text;
+
+            en_cliente.Fecha = dateTimePickerCli.Value;
+
+            if (rButom_H_Cliente.Checked == true)
+            {
+                en_cliente.Sexo = 0;
+            }
+            else if (rButom_M_Cliente.Checked == true)
+            {
+                en_cliente.Sexo = 1;
+            }
+
+            en_cliente.Nick = textBoxUsuario.Text;
+            en_cliente.Password = textBoxPassword.Text;
+
+            introducido = en_cliente.ActualizarCliente();
+
+            return introducido;
+        }
+
+        private void BorrarCliente()
+        {
+            en_cliente = new ClientesEN();
+
+            if (MessageBox.Show("¿Desea eliminar este Cliente? \n Esta acción se realizará de forma permanente.", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                                 MessageBoxDefaultButton.Button2 ) == DialogResult.Yes)
+            {
+
+                en_cliente.BorrarCliente(textBoxNifC.Text);
+
+            }
+
+
         }
 
         #endregion
@@ -428,11 +522,100 @@ namespace Events4ALL
             }
         }
 
+
+        private void Resultado_busqueda_clienteCellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            en_cliente = new ClientesEN();
+
+            if (e.RowIndex >= 0)
+            {
+
+                if (e.ColumnIndex == Resultado_busqueda_cliente.Columns["Editar"].Index)
+                {
+                    RellenaDatos_ClienteSeleccionado(sender, e);
+                    formCliente.SelectTab("FichaCliente");
+                }
+                else if (e.ColumnIndex == Resultado_busqueda_cliente.Columns["Borrar"].Index)
+                {
+                    BorrarCliente();
+                    MuestraClientes();
+                }
+
+
+
+            }
+
+          /*  if(e.RowIndex < 0 || e.ColumnIndex != Resultado_busqueda_cliente.Columns["borrar"].Index)
+            {
+                // Rellenamos los datos del cliente
+                //MessageBox.Show("Rellenamos campos de Cliente");
+
+                RellenaDatos_ClienteSeleccionado(sender, e);
+                formCliente.SelectTab("FichaCliente");
+            }
+            */
+        }
+
+        private void RellenaDatos_ClienteSeleccionado(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            en_cliente = new ClientesEN();
+
+            nif_actual = Resultado_busqueda_cliente[0, e.RowIndex].Value.ToString();
+
+            LimpiarDatos();
+            muestraCliente = en_cliente.getClienteByNif(nif_actual);
+
+            #region Rellenando Los Datos
+
+            textBoxNombreC.Text = muestraCliente.Tables[0].Rows[0][0].ToString();
+            textBoxApellidosC.Text = muestraCliente.Tables[0].Rows[0][1].ToString();
+            textBoxUsuario.Text = muestraCliente.Tables[0].Rows[0][2].ToString();
+            // muestraCliente.Tables[0].Rows[0][3] es el pass. No mostrar
+            textBoxNifC.Text = muestraCliente.Tables[0].Rows[0][4].ToString();
+
+            dateTimePickerCli.Value = (DateTime)muestraCliente.Tables[0].Rows[0][5];
+
+            textBoxLocaliCli.Text = muestraCliente.Tables[0].Rows[0][6].ToString();
+            comboBoxProvCli.Text = muestraCliente.Tables[0].Rows[0][7].ToString();
+            comboBoxPaisCli.Text = muestraCliente.Tables[0].Rows[0][8].ToString();
+            textBoxDomiciCli.Text = muestraCliente.Tables[0].Rows[0][9].ToString();
+
+            textBoxTelfCli.Text = muestraCliente.Tables[0].Rows[0][10].ToString();
+            textBoxMovilCli.Text = muestraCliente.Tables[0].Rows[0][11].ToString();
+
+            textBoxEmailCli.Text = muestraCliente.Tables[0].Rows[0][12].ToString();
+
+            textBoxCPCli.Text = muestraCliente.Tables[0].Rows[0][14].ToString();
+
+            if (muestraCliente.Tables[0].Rows[0][15].ToString() == "0")
+            {
+                rButom_H_Cliente.Checked = true;
+                rButom_M_Cliente.Checked = false;
+               // MessageBox.Show("Es Hombre");
+            }
+            else if (muestraCliente.Tables[0].Rows[0][15].ToString() == "1")
+            {
+                rButom_H_Cliente.Checked = false;
+                rButom_M_Cliente.Checked = true;
+                //MessageBox.Show("Es Mujer");
+            }
+
+            /*else
+            {
+                MessageBox.Show("FALLO al seleccionar el SEXO");
+            }*/
+
+            #endregion
+
+            edicion = true;
+
+        }
+
         #endregion
 
         #region Limpiar
 
-        private void buttonLimpiarCliente_Click(object sender, EventArgs e)
+        private void LimpiarDatos()
         {
             //Limpiamos los campos
             textBoxNombreC.Text = "";
@@ -446,11 +629,23 @@ namespace Events4ALL
             textBoxTelfCli.Text = "";
             textBoxMovilCli.Text = "";
             textBoxEmailCli.Text = "";
+            textBoxUsuario.Text = "";
+            textBoxPassword.Text = "";
+            cliente_Perfil_Foto.Image = Events4ALL.Properties.Resources.foto_usuario_defectojpg;
             rButom_H_Cliente.Checked = false;
             rButom_M_Cliente.Checked = false;
+
+        }
+
+        private void buttonLimpiarCliente_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
 
         #endregion
+
+        
+        
 
         
 
