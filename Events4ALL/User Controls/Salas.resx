@@ -2335,7 +2335,7 @@
     <value>0</value>
   </data>
   <data name="tabAñadirSala.Text" xml:space="preserve">
-    <value>Añadir</value>
+    <value>Salas</value>
   </data>
   <data name="&gt;&gt;tabAñadirSala.Name" xml:space="preserve">
     <value>tabAñadirSala</value>
