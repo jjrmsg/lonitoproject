@@ -69,7 +69,7 @@ namespace Events4ALL.EN
                 numSecciones = numSecciones_c;
                 descripcion = descripcion_c;
                 aforo = aforo_c;
-                estadoSala = 1; //1 quiere decir que la sala esta libre
+                //estadoSala = libre_c; //1 quiere decir que la sala esta libre
                 secciones = secciones_c;
             }
 
@@ -105,10 +105,10 @@ namespace Events4ALL.EN
                 return salasTipo;
             }
             //Pasa los parametros necesarios al cad para que pueda realizar la select
-            public DataSet SalaSelect(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
+            public DataSet SalaSelect(int idSala, String tipo, int aforo_min, int aforo_max, int estado, DateTime fini, DateTime ffin)
             {
                 SalasCAD sala = new SalasCAD();
-                DataSet selectSala = sala.SalaSelectCAD(idSala,tipo,aforo_min,aforo_max,estado);
+                DataSet selectSala = sala.SalaSelectCAD(idSala,tipo,aforo_min,aforo_max,estado,fini,ffin);
                 return selectSala;
             }
             //recupera la sala segun la id que se le pasa

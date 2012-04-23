@@ -256,6 +256,7 @@ namespace Events4ALL
                 }
                 #endregion
                 int capacidad = aforo(secciones, intSeccion);
+
                 SalasEN salaEn = new SalasEN(Convert.ToInt16(textIdSala.Text), comboTipo.Text, Convert.ToInt16(comboNumSeccion.Text), textDescripcion.Text, capacidad, secciones);
 
                 if (labelUpdate.Text == "falso")
@@ -405,7 +406,7 @@ namespace Events4ALL
                 numSala = Convert.ToInt16(textBox1.Text);
 
             SalasEN select = new SalasEN();
-            DataSet resultado = select.SalaSelect(numSala, comboBuscarTipoSala.Text, aforoMin, aforoMax, estado);
+            DataSet resultado = select.SalaSelect(numSala, comboBuscarTipoSala.Text, aforoMin, aforoMax, estado,dateTimePicker1.Value,dateTimePicker2.Value);
 
             dataGridBuscarSala.Rows.Clear();
             foreach (DataRow sala in resultado.Tables[0].Rows)
@@ -529,6 +530,21 @@ namespace Events4ALL
                 limpiar();
             else
                 limpiarBusquedaSala();
+        }
+
+        private void checkLibre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkLibre.Checked == true)
+            {
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = false;
+                dateTimePicker2.Enabled = false;
+            }
+                
         }
     }
 }

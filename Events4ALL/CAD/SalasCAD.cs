@@ -180,7 +180,7 @@ namespace Events4ALL.CAD
             return datosSalas;
         }
         //Realiza una select con los parametros especificados y regresa un dataset
-        public DataSet SalaSelectCAD(int idSala, String tipo, int aforo_min, int aforo_max, int estado)
+        public DataSet SalaSelectCAD(int idSala, String tipo, int aforo_min, int aforo_max, int estado,DateTime fini,DateTime ffin)
         {
             string idSalaBusca="";
             string aforoMax="";
@@ -195,22 +195,39 @@ namespace Events4ALL.CAD
                 aforoMax = aforo_max.ToString();
             if (aforo_min != 0)
                 aforoMin = aforo_min.ToString();
-                
-            String comando = "SELECT s.NumSala, s.tipo, s.Aforo, s.NumSeccion FROM Sala s  where (''='')";
+
+            String comando = "SELECT s.NumSala, s.tipo, s.Aforo, s.NumSeccion FROM      ReservaSala AS r INNER JOIN Espectaculo AS e ON r.IDEspectaculo = e.IDEspectaculo RIGHT OUTER JOIN Sala AS s ON r.IDSala = s.NumSala where (''='')";
             if(idSala!=0 || aforo_max!=0 || aforo_min!=0 || tipo!="" ||estado==1)
             {
+                string fechaIni = fini.ToString();
+                string anyo = "" + fechaIni[6] + fechaIni[7] + fechaIni[8] + fechaIni[9];
+                string mes = "" + fechaIni[3] + fechaIni[4];
+                string dia = "" + fechaIni[0] + fechaIni[1];
+                fechaIni = anyo + '/' + mes + '/' + dia;
+                string fechaFin = ffin.ToString();
+                string anyofin = "" + fechaFin[6] + fechaFin[7] + fechaFin[8] + fechaFin[9];
+                string mesfin = "" + fechaFin[3] + fechaFin[4];
+                string diafin = "" + fechaFin[0] + fechaFin[1];
+                fechaFin = anyofin + '/' + mesfin + '/' + diafin;
+
                 string comando2="";
                 if(idSala!=0)
                     comando2 = " and s.Numsala="+idSala;
                 if (tipo != "")
                     comando2 = comando2 + " and s.tipo='"+tipo+"'";
-                if(estado==1)//libre
-                    comando2 = comando2 + " and s.EstadoSala="+estado;
+                if (estado == 1)//con where
+                {
+                    comando2 = comando2 + " and (('" + fechaFin + "'>e.FechaFin and '" + fechaIni + "'>e.FechaFin) or ('";
+                    comando2 = comando2 + fechaIni + "'<e.FechaIni and '" + fechaFin + "'<e.FechaIni))";
+                }
                 if (aforo_max != 0 || aforo_min != 0)
                     comando2 = comando2 + " and s.Aforo BETWEEN "+aforo_min+" and "+aforo_max;
-                comando = comando + comando2;
-            }
 
+                comando=comando+comando2+" group by s.NumSala, s.tipo, s.Aforo, s.NumSeccion ";
+
+            }
+            else
+                comando = comando + " group by s.NumSala, s.tipo, s.Aforo, s.NumSeccion ";
             try
             {
                 conn = bd.Connect();
