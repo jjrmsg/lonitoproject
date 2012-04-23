@@ -414,7 +414,7 @@ namespace Events4ALL
                                  sala[1].ToString(),
                                  sala[2].ToString(),
                                  sala[3].ToString(),
-                                 sala[4].ToString()};
+                                };
                 dataGridBuscarSala.Rows.Add(row);
             }
         }
@@ -428,7 +428,7 @@ namespace Events4ALL
         private void dataGridBuscarSala_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //dataGridBuscarSala[e.ColumnIndex, e.RowIndex].Value.ToString();
-            if (e.ColumnIndex == 5)//Caso de updates
+            if (e.ColumnIndex == 4)//Caso de updates
             {
                 //ver que fila vamos a editar para ello almacenaremos el numero de la sala
                 string numeroSala = dataGridBuscarSala[0, e.RowIndex].Value.ToString();
@@ -499,7 +499,7 @@ namespace Events4ALL
                 #endregion
 
             }
-            if (e.ColumnIndex == 6)
+            if (e.ColumnIndex == 5)
             {
                 string numeroSala=dataGridBuscarSala[0, e.RowIndex].Value.ToString();
                 if (MessageBox.Show("Esta seguro de borrar la sala " + numeroSala, "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)

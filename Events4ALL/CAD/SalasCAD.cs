@@ -196,7 +196,7 @@ namespace Events4ALL.CAD
             if (aforo_min != 0)
                 aforoMin = aforo_min.ToString();
                 
-            String comando = "SELECT s.NumSala, s.tipo, s.Aforo, s.NumSeccion, e.Titulo FROM      ReservaSala AS r INNER JOIN Espectaculo AS e ON r.IDEspectaculo = e.IDEspectaculo RIGHT OUTER JOIN Sala AS s ON r.IDSala = s.NumSala where (''='')";
+            String comando = "SELECT s.NumSala, s.tipo, s.Aforo, s.NumSeccion FROM Sala s  where (''='')";
             if(idSala!=0 || aforo_max!=0 || aforo_min!=0 || tipo!="" ||estado==1)
             {
                 string comando2="";

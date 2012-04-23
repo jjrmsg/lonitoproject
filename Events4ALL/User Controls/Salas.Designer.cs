@@ -98,13 +98,6 @@
             this.labelIdSala = new System.Windows.Forms.Label();
             this.tabBusquedaSala = new System.Windows.Forms.TabPage();
             this.dataGridBuscarSala = new System.Windows.Forms.DataGridView();
-            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Espectaculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBuscarSala = new System.Windows.Forms.GroupBox();
             this.buttonLimpiarBusquedaSala = new System.Windows.Forms.Button();
             this.checkLibre = new System.Windows.Forms.CheckBox();
@@ -120,6 +113,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -823,7 +822,6 @@
             this.tipoSala,
             this.aforoSala,
             this.numSecciones,
-            this.Espectaculo,
             this.Editar,
             this.Eliminar});
             this.dataGridBuscarSala.GridColor = System.Drawing.SystemColors.ActiveBorder;
@@ -833,56 +831,6 @@
             this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 425);
             this.dataGridBuscarSala.TabIndex = 3;
             this.dataGridBuscarSala.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBuscarSala_CellContentClick);
-            // 
-            // numSala
-            // 
-            this.numSala.FillWeight = 50F;
-            this.numSala.HeaderText = "NºSala";
-            this.numSala.Name = "numSala";
-            this.numSala.ReadOnly = true;
-            // 
-            // tipoSala
-            // 
-            this.tipoSala.FillWeight = 101.8613F;
-            this.tipoSala.HeaderText = "Tipo Sala";
-            this.tipoSala.Name = "tipoSala";
-            this.tipoSala.ReadOnly = true;
-            // 
-            // aforoSala
-            // 
-            this.aforoSala.FillWeight = 101.8613F;
-            this.aforoSala.HeaderText = "Aforo Sala";
-            this.aforoSala.Name = "aforoSala";
-            this.aforoSala.ReadOnly = true;
-            // 
-            // numSecciones
-            // 
-            this.numSecciones.FillWeight = 101.8613F;
-            this.numSecciones.HeaderText = "Nº Secciones";
-            this.numSecciones.Name = "numSecciones";
-            this.numSecciones.ReadOnly = true;
-            // 
-            // Espectaculo
-            // 
-            this.Espectaculo.FillWeight = 101.8613F;
-            this.Espectaculo.HeaderText = "Espectaculo";
-            this.Espectaculo.Name = "Espectaculo";
-            this.Espectaculo.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 30F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 30F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
             // 
             // groupBuscarSala
             // 
@@ -1037,6 +985,50 @@
             this.errorProvider2.ContainerControl = this;
             this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
             // 
+            // numSala
+            // 
+            this.numSala.FillWeight = 50F;
+            this.numSala.HeaderText = "NºSala";
+            this.numSala.Name = "numSala";
+            this.numSala.ReadOnly = true;
+            // 
+            // tipoSala
+            // 
+            this.tipoSala.FillWeight = 101.8613F;
+            this.tipoSala.HeaderText = "Tipo Sala";
+            this.tipoSala.Name = "tipoSala";
+            this.tipoSala.ReadOnly = true;
+            // 
+            // aforoSala
+            // 
+            this.aforoSala.FillWeight = 101.8613F;
+            this.aforoSala.HeaderText = "Aforo Sala";
+            this.aforoSala.Name = "aforoSala";
+            this.aforoSala.ReadOnly = true;
+            // 
+            // numSecciones
+            // 
+            this.numSecciones.FillWeight = 101.8613F;
+            this.numSecciones.HeaderText = "Nº Secciones";
+            this.numSecciones.Name = "numSecciones";
+            this.numSecciones.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 30F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 30F;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // Salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1139,18 +1131,17 @@
         private System.Windows.Forms.CheckBox checkLibre;
         private System.Windows.Forms.Label labelSalasLibres;
         private System.Windows.Forms.PictureBox pictureTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numSala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoSala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aforoSala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numSecciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Espectaculo;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         public System.Windows.Forms.TextBox textIdSala;
         private System.Windows.Forms.Button buttonLimpiarBusquedaSala;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Label labAforo;
         private System.Windows.Forms.Label labelUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numSala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoSala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aforoSala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numSecciones;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }
