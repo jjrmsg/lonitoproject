@@ -76,6 +76,21 @@ namespace Events4ALL
             MuestraAdmins();
         }
 
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+            MuestraAdmins();
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            MuestraAdmins();
+        }
+
+        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            MuestraAdmins();
+        }
+
         #region Comprobaciones
 
         // Establece mediante un errorProvider en el formulario, si el apartado NIF es correcto.
@@ -1535,11 +1550,6 @@ namespace Events4ALL
         private void Resultados_Busqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void tabControl1_Enter(object sender, EventArgs e)
-        {
-            // MuestraAdmins();
         }
 
         // Basura xD

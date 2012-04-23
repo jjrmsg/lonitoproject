@@ -4482,8 +4482,8 @@
             // tabControl1
             // 
             resources.ApplyResources(this.tabControl1, "tabControl1");
-            this.tabControl1.Controls.Add(this.Perfil);
             this.tabControl1.Controls.Add(this.Buscar);
+            this.tabControl1.Controls.Add(this.Perfil);
             this.errorProviderMail.SetError(this.tabControl1, resources.GetString("tabControl1.Error"));
             this.errorProviderPais.SetError(this.tabControl1, resources.GetString("tabControl1.Error1"));
             this.errorProviderDomicilo.SetError(this.tabControl1, resources.GetString("tabControl1.Error2"));
@@ -4540,6 +4540,8 @@
             this.errorProviderMov.SetIconPadding(this.tabControl1, ((int)(resources.GetObject("tabControl1.IconPadding17"))));
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.tabControl1.TabIndexChanged += new System.EventHandler(this.tabControl1_TabIndexChanged);
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
