@@ -36,12 +36,25 @@ namespace Events4ALL
             //Creamos objeto para validar
             validarCliente = new Validaciones();
             edicion = false;
+            MuestraClientes();
    
         }
 
         private void formCliente_Click(object sender, EventArgs e)
         {
             MuestraClientes();
+        }
+
+        private void buttonNuevoCliente_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea ir al formulario de insercción y perder los cambios no guardados?", "Los cambios no guardados se perderan",
+                               MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
+            {
+                LimpiarDatos();
+                edicion = false;
+            }
+
+
         }
 
         #region WTF
@@ -339,44 +352,53 @@ namespace Events4ALL
         {
             en_cliente = new ClientesEN();
             bool introducido = false;
+           // bool dniRepetido = false;
 
-            en_cliente.DNI = textBoxNifC.Text;
-            en_cliente.Nombre = textBoxNombreC.Text;
-            en_cliente.Apellidos = textBoxApellidosC.Text;
-            en_cliente.Domicilio = textBoxDomiciCli.Text;
-            en_cliente.CP = textBoxCPCli.Text;
-            en_cliente.Pais = comboBoxPaisCli.Text;
-            en_cliente.Provincia = comboBoxProvCli.Text;
-            en_cliente.Localidad = textBoxLocaliCli.Text;
-            en_cliente.Telefono = textBoxTelfCli.Text;
-            en_cliente.Movil = textBoxMovilCli.Text;
-            en_cliente.Mail = textBoxEmailCli.Text;
-
-            en_cliente.Fecha = dateTimePickerCli.Value;
-
-            if (rButom_H_Cliente.Checked == true)
+            if(en_cliente.CompruebaExistenciaNif(textBoxNifC.Text))
             {
-                en_cliente.Sexo = 0;
-            }
-            else if (rButom_M_Cliente.Checked == true)
-            {
-                en_cliente.Sexo = 1;
+                errorProvider1.SetError(labelNifCliente, "El NIF ya existe");
             }
 
-            en_cliente.Nick = textBoxUsuario.Text;
-            en_cliente.Password = textBoxPassword.Text;
+            else
+            {
+                en_cliente.DNI = textBoxNifC.Text;
+                en_cliente.Nombre = textBoxNombreC.Text;
+                en_cliente.Apellidos = textBoxApellidosC.Text;
+                en_cliente.Domicilio = textBoxDomiciCli.Text;
+                en_cliente.CP = textBoxCPCli.Text;
+                en_cliente.Pais = comboBoxPaisCli.Text;
+                en_cliente.Provincia = comboBoxProvCli.Text;
+                en_cliente.Localidad = textBoxLocaliCli.Text;
+                en_cliente.Telefono = textBoxTelfCli.Text;
+                en_cliente.Movil = textBoxMovilCli.Text;
+                en_cliente.Mail = textBoxEmailCli.Text;
 
-            en_cliente.Foto = cliente_Perfil_Foto.Image;
+                en_cliente.Fecha = dateTimePickerCli.Value;
 
-            introducido = en_cliente.InsertarCliente();
+                if (rButom_H_Cliente.Checked == true)
+                {
+                    en_cliente.Sexo = 0;
+                }
+                else if (rButom_M_Cliente.Checked == true)
+                {
+                    en_cliente.Sexo = 1;
+                }
+
+                en_cliente.Nick = textBoxUsuario.Text;
+                en_cliente.Password = textBoxPassword.Text;
+
+                en_cliente.Foto = cliente_Perfil_Foto.Image;
+
+                introducido = en_cliente.InsertarCliente();
+            }
 
             if (introducido == true)
             {
-                MessageBox.Show("Todo OK. Introducido es TRUE");
+                MessageBox.Show("Los datos se han introducido satisfactoriamente.");
             }
             else if (introducido == false)
             {
-                MessageBox.Show("FALLO. Introducido es FALSE");
+                MessageBox.Show("Error. Se ha producido un fallo cuando se intentaba insertar el Cliente.");
             }
 
             LimpiarDatos();
@@ -388,36 +410,44 @@ namespace Events4ALL
             en_cliente = new ClientesEN();
             bool introducido = false;
 
-            en_cliente.DNI = textBoxNifC.Text;
-            en_cliente.Nombre = textBoxNombreC.Text;
-            en_cliente.Apellidos = textBoxApellidosC.Text;
-            en_cliente.Domicilio = textBoxDomiciCli.Text;
-            en_cliente.CP = textBoxCPCli.Text;
-            en_cliente.Pais = comboBoxPaisCli.Text;
-            en_cliente.Provincia = comboBoxProvCli.Text;
-            en_cliente.Localidad = textBoxLocaliCli.Text;
-            en_cliente.Telefono = textBoxTelfCli.Text;
-            en_cliente.Movil = textBoxMovilCli.Text;
-            en_cliente.Mail = textBoxEmailCli.Text;
-
-            en_cliente.Fecha = dateTimePickerCli.Value;
-
-            if (rButom_H_Cliente.Checked == true)
+            /*if (en_cliente.CompruebaExistenciaNif(textBoxNifC.Text))
             {
-                en_cliente.Sexo = 0;
-            }
-            else if (rButom_M_Cliente.Checked == true)
-            {
-                en_cliente.Sexo = 1;
-            }
+                errorProvider1.SetError(labelNifCliente, "El NIF ya existe");
+            }*/
 
-            en_cliente.Nick = textBoxUsuario.Text;
-            en_cliente.Password = textBoxPassword.Text;
+            //else
+           // {
+                en_cliente.DNI = textBoxNifC.Text;
+                en_cliente.Nombre = textBoxNombreC.Text;
+                en_cliente.Apellidos = textBoxApellidosC.Text;
+                en_cliente.Domicilio = textBoxDomiciCli.Text;
+                en_cliente.CP = textBoxCPCli.Text;
+                en_cliente.Pais = comboBoxPaisCli.Text;
+                en_cliente.Provincia = comboBoxProvCli.Text;
+                en_cliente.Localidad = textBoxLocaliCli.Text;
+                en_cliente.Telefono = textBoxTelfCli.Text;
+                en_cliente.Movil = textBoxMovilCli.Text;
+                en_cliente.Mail = textBoxEmailCli.Text;
 
-            //Imagen de Perfil
-            en_cliente.Foto = cliente_Perfil_Foto.Image;
+                en_cliente.Fecha = dateTimePickerCli.Value;
 
-            introducido = en_cliente.ActualizarCliente();
+                if (rButom_H_Cliente.Checked == true)
+                {
+                    en_cliente.Sexo = 0;
+                }
+                else if (rButom_M_Cliente.Checked == true)
+                {
+                    en_cliente.Sexo = 1;
+                }
+
+                en_cliente.Nick = textBoxUsuario.Text;
+                en_cliente.Password = textBoxPassword.Text;
+
+                //Imagen de Perfil
+                en_cliente.Foto = cliente_Perfil_Foto.Image;
+
+                introducido = en_cliente.ActualizarCliente();
+            //}
 
             if (introducido == true)
                 MessageBox.Show("Todo OK. Se ha editado con éxito");
@@ -677,6 +707,8 @@ namespace Events4ALL
         }
 
         #endregion
+
+        
 
         
         

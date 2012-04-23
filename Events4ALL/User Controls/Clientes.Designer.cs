@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.formCliente = new System.Windows.Forms.TabControl();
             this.FichaCliente = new System.Windows.Forms.TabPage();
-            this.boton_eliminar_cliente = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -86,6 +85,7 @@
             this.label_filtro_busqueda = new System.Windows.Forms.Label();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonNuevoCliente = new System.Windows.Forms.Button();
             this.formCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
@@ -101,11 +101,11 @@
             // formCliente
             // 
             this.formCliente.AccessibleDescription = "Formulario Cliente";
-            this.formCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.formCliente.Controls.Add(this.FichaCliente);
+            this.formCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.formCliente.Controls.Add(this.BuscarCliente);
+            this.formCliente.Controls.Add(this.FichaCliente);
             this.formCliente.Location = new System.Drawing.Point(3, 0);
             this.formCliente.Name = "formCliente";
             this.formCliente.SelectedIndex = 0;
@@ -116,7 +116,7 @@
             // FichaCliente
             // 
             this.FichaCliente.AccessibleDescription = "Ficha Cliente";
-            this.FichaCliente.Controls.Add(this.boton_eliminar_cliente);
+            this.FichaCliente.Controls.Add(this.buttonNuevoCliente);
             this.FichaCliente.Controls.Add(this.textBoxPassword);
             this.FichaCliente.Controls.Add(this.textBoxUsuario);
             this.FichaCliente.Controls.Add(this.labelPassword);
@@ -133,19 +133,6 @@
             this.FichaCliente.TabIndex = 0;
             this.FichaCliente.Text = "Perfil";
             this.FichaCliente.UseVisualStyleBackColor = true;
-            // 
-            // boton_eliminar_cliente
-            // 
-            this.boton_eliminar_cliente.Image = global::Events4ALL.Properties.Resources.delete;
-            this.boton_eliminar_cliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.boton_eliminar_cliente.Location = new System.Drawing.Point(638, 554);
-            this.boton_eliminar_cliente.Name = "boton_eliminar_cliente";
-            this.boton_eliminar_cliente.Size = new System.Drawing.Size(66, 23);
-            this.boton_eliminar_cliente.TabIndex = 61;
-            this.boton_eliminar_cliente.Text = "Borrar";
-            this.boton_eliminar_cliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.boton_eliminar_cliente.UseVisualStyleBackColor = true;
-            this.boton_eliminar_cliente.Click += new System.EventHandler(this.boton_eliminar_cliente_Click);
             // 
             // textBoxPassword
             // 
@@ -235,8 +222,8 @@
             // 
             // comboBoxProvinciaCli
             // 
-            this.comboBoxProvinciaCli.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxProvinciaCli.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxProvinciaCli.Controls.Add(this.textBoxNifC);
             this.comboBoxProvinciaCli.Controls.Add(this.comboBoxProvCli);
             this.comboBoxProvinciaCli.Controls.Add(this.dateTimePickerCli);
@@ -823,9 +810,9 @@
             this.Resultado_busqueda_cliente.AllowUserToAddRows = false;
             this.Resultado_busqueda_cliente.AllowUserToDeleteRows = false;
             this.Resultado_busqueda_cliente.AllowUserToOrderColumns = true;
-            this.Resultado_busqueda_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.Resultado_busqueda_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Resultado_busqueda_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Resultado_busqueda_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Resultado_busqueda_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -841,6 +828,7 @@
             this.Resultado_busqueda_cliente.Location = new System.Drawing.Point(20, 140);
             this.Resultado_busqueda_cliente.Name = "Resultado_busqueda_cliente";
             this.Resultado_busqueda_cliente.ReadOnly = true;
+            this.Resultado_busqueda_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Resultado_busqueda_cliente.Size = new System.Drawing.Size(849, 449);
             this.Resultado_busqueda_cliente.TabIndex = 3;
             this.Resultado_busqueda_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -907,8 +895,8 @@
             // 
             // groupBoxBusquedaCliente
             // 
-            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxBusquedaCliente.Controls.Add(this.textBox_filtro_busqueda);
             this.groupBoxBusquedaCliente.Controls.Add(this.comboBox_filtro_busqueda);
             this.groupBoxBusquedaCliente.Controls.Add(this.label_filtro_busqueda);
@@ -971,6 +959,19 @@
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
+            // 
+            // buttonNuevoCliente
+            // 
+            this.buttonNuevoCliente.Image = global::Events4ALL.Properties.Resources.mas;
+            this.buttonNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevoCliente.Location = new System.Drawing.Point(628, 555);
+            this.buttonNuevoCliente.Name = "buttonNuevoCliente";
+            this.buttonNuevoCliente.Size = new System.Drawing.Size(70, 23);
+            this.buttonNuevoCliente.TabIndex = 13;
+            this.buttonNuevoCliente.Text = "Nuevo";
+            this.buttonNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevoCliente.UseVisualStyleBackColor = true;
+            this.buttonNuevoCliente.Click += new System.EventHandler(this.buttonNuevoCliente_Click);
             // 
             // Clientes
             // 
@@ -1048,7 +1049,6 @@
         private System.Windows.Forms.Label label_filtro_busqueda;
         private System.Windows.Forms.ComboBox comboBox_filtro_busqueda;
         private System.Windows.Forms.TextBox textBox_filtro_busqueda;
-        private System.Windows.Forms.Button boton_eliminar_cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn NIF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -1057,5 +1057,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
+        private System.Windows.Forms.Button buttonNuevoCliente;
     }
 }

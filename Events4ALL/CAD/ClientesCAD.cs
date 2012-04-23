@@ -54,20 +54,22 @@ namespace Events4ALL.CAD
             SqlConnection c = bd.Connect();
             DataSet bdvirtual = new DataSet();
 
-            //try
-            //{
+            try
+            {
                 string sql = "select NIF, Usuario, Nombre, Apellidos, Poblacion, Provincia from Cliente";
                 SqlDataAdapter dtAdapter = new SqlDataAdapter(sql, c);
                 dtAdapter.Fill(bdvirtual, "Cliente");
 
-            //}
+            }
 
-           /* catch
+            catch
             {
 
-            }*/
-
-            c.Close();
+            }
+            finally
+            {
+                c.Close();
+            }
 
             return bdvirtual;
 
@@ -126,7 +128,7 @@ namespace Events4ALL.CAD
                 c.Close();
             }
 
-                return im;
+            return im;
         }
 
         public bool ExisteCliente(string nif)
@@ -221,8 +223,8 @@ namespace Events4ALL.CAD
             BD bd = new BD();
             SqlConnection c = bd.Connect();
 
-           //try
-           //{
+           try
+           {
                 c.Open();
 
                 string fecha = nuevoCl.Fecha.ToString();
@@ -277,18 +279,17 @@ namespace Events4ALL.CAD
                 error = true;
 
                 c.Close();
+           }
 
-           /* }
-
-            catch
+            catch(Exception ex)
             {
-
+                throw ex;
             }
 
             finally
             {
                 c.Close();
-            }*/
+            }
 
             return error;
         }
@@ -312,56 +313,68 @@ namespace Events4ALL.CAD
             BD bd = new BD();
             SqlConnection c = bd.Connect();
 
-            c.Open();
+            try
+            {
 
-            string fecha = nuevoCL.Fecha.ToString();
-            string anyo = "" + fecha[6] + fecha[7] + fecha[8] + fecha[9];
-            string mes = "" + fecha[3] + fecha[4];
-            string dia = "" + fecha[0] + fecha[1];
-            fecha = anyo + '/' + mes + '/' + dia;
+                c.Open();
 
-            //string comilla = "', '";
+                string fecha = nuevoCL.Fecha.ToString();
+                string anyo = "" + fecha[6] + fecha[7] + fecha[8] + fecha[9];
+                string mes = "" + fecha[3] + fecha[4];
+                string dia = "" + fecha[0] + fecha[1];
+                fecha = anyo + '/' + mes + '/' + dia;
 
-            string tel1 = "";
-            string tel2 = "";
+                //string comilla = "', '";
 
-            tel1 = nuevoCL.Telefono;
-            tel2 = nuevoCL.Movil;
+                string tel1 = "";
+                string tel2 = "";
+
+                tel1 = nuevoCL.Telefono;
+                tel2 = nuevoCL.Movil;
 
 
-            string sql1 = "UPDATE Cliente SET ";
-            string set1 = "Nombre = '" + nuevoCL.Nombre + "'";
-            string set2 = ", Apellidos = '" + nuevoCL.Apellidos + "'";
-            string set3 = ", Usuario = '" + nuevoCL.Nick + "'";
-            string set4 = ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
-         // string set5 = ", NIF = '" + nuevoCL.DNI + "'";
-            string set6 = ", FechaNac = '" + fecha + "'";
-            string set7 = ", Poblacion = '" + nuevoCL.Localidad + "'";
-            string set8 = ", Provincia = '" + nuevoCL.Provincia + "'";
-            string set9 = ", Pais = '" + nuevoCL.Pais + "'";
-            string set10 = ", Direccion = '" + nuevoCL.Domicilio + "'";
-            string set11 = ", TfnoFijo = '" + nuevoCL.Telefono + "'";
-            string set12 = ", TfnoMovil = '" + nuevoCL.Movil + "'";
-            string set13 = ", Mail = '" + nuevoCL.Mail + "'";
-            string set14 = ", Foto = @pic";
-            string set15 = ", CP = '" + nuevoCL.CP + "'";
-            string set16 = ", Sexo = " + nuevoCL.Sexo;
+                string sql1 = "UPDATE Cliente SET ";
+                string set1 = "Nombre = '" + nuevoCL.Nombre + "'";
+                string set2 = ", Apellidos = '" + nuevoCL.Apellidos + "'";
+                string set3 = ", Usuario = '" + nuevoCL.Nick + "'";
+                string set4 = ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
+                // string set5 = ", NIF = '" + nuevoCL.DNI + "'";
+                string set6 = ", FechaNac = '" + fecha + "'";
+                string set7 = ", Poblacion = '" + nuevoCL.Localidad + "'";
+                string set8 = ", Provincia = '" + nuevoCL.Provincia + "'";
+                string set9 = ", Pais = '" + nuevoCL.Pais + "'";
+                string set10 = ", Direccion = '" + nuevoCL.Domicilio + "'";
+                string set11 = ", TfnoFijo = '" + nuevoCL.Telefono + "'";
+                string set12 = ", TfnoMovil = '" + nuevoCL.Movil + "'";
+                string set13 = ", Mail = '" + nuevoCL.Mail + "'";
+                string set14 = ", Foto = @pic";
+                string set15 = ", CP = '" + nuevoCL.CP + "'";
+                string set16 = ", Sexo = " + nuevoCL.Sexo;
 
-            string sql2 = "WHERE NIF='" + nuevoCL.DNI + "'";
+                string sql2 = "WHERE NIF='" + nuevoCL.DNI + "'";
 
-            string sqlFinal = sql1 + set1 + set2 + set3 + set4 + set6 + set7 + set8 + set9 + set10 + set11 + set12 + set13 + set14 + set15 + set16 + sql2;
+                string sqlFinal = sql1 + set1 + set2 + set3 + set4 + set6 + set7 + set8 + set9 + set10 + set11 + set12 + set13 + set14 + set15 + set16 + sql2;
 
-            System.Diagnostics.Debug.Write(sqlFinal);
+                System.Diagnostics.Debug.Write(sqlFinal);
 
-            SqlCommand comando = new SqlCommand(sqlFinal, c);
-            if (nuevoCL.Foto != null)
-                comando.Parameters.AddWithValue("@pic", pic);
+                SqlCommand comando = new SqlCommand(sqlFinal, c);
+                if (nuevoCL.Foto != null)
+                    comando.Parameters.AddWithValue("@pic", pic);
 
-            comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
 
-            error = true;
+                error = true;
+            }
 
-            c.Close();
+            catch (Exception ex)
+            {
+                //Captura la excepcion
+                throw ex;
+            }
+            finally
+            {
+                c.Close();
+            }
 
             return error;
 
@@ -375,19 +388,29 @@ namespace Events4ALL.CAD
             String sql1 = "DELETE FROM Cliente WHERE NIF = '" + nif + "'";
             bool error = false;
 
-            conn = bd.Connect();
-            conn.Open();
 
-            SqlCommand comando = new SqlCommand(sql1, conn);
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
 
-            comando.ExecuteNonQuery();
+                SqlCommand comando = new SqlCommand(sql1, conn);
 
-            error = true;
+                comando.ExecuteNonQuery();
 
-            conn.Close();
+                error = true;
+            }
+            catch (Exception ex)
+            {
+                //Captura la excepcion
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
 
             return error;
-
         }
 
         #endregion

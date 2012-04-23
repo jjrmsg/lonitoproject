@@ -152,7 +152,9 @@ namespace Events4ALL.EN
 
             fecha = DateTime.Parse("01/01/2100");
 
-            foto = Events4ALL.Properties.Resources.foto_usuario_defectojpg;
+            //foto = Events4ALL.Properties.Resources.foto_usuario_defectojpg;
+
+            foto = null;
 
             cad_cliente = new ClientesCAD();
 
@@ -194,8 +196,17 @@ namespace Events4ALL.EN
         public bool InsertarCliente()
         {
             bool error = false;
+            bool dni = false;
 
-            error = cad_cliente.InsertarCliente(this);
+            if (cad_cliente.ExisteCliente(this.DNI))
+            {
+                dni = true;
+            }
+
+            if (dni == false)
+            {
+                error = cad_cliente.InsertarCliente(this);
+            }
 
             return error;
 
@@ -244,6 +255,11 @@ namespace Events4ALL.EN
 
             borrado = cad_cliente.BorraCliente(nif);
 
+        }
+
+        public bool CompruebaExistenciaNif(string nif)
+        {
+            return cad_cliente.ExisteCliente(nif);
         }
 
 
