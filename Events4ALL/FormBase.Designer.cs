@@ -48,16 +48,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.inicio1 = new Events4ALL.Inicio();
-            this.estadisticas1 = new Events4ALL.Estadisticas();
-            this.clientes1 = new Events4ALL.Clientes();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.admins1 = new Events4ALL.Admins();
             this.espectaculos1 = new Events4ALL.Espectaculos();
             this.ventas1 = new Events4ALL.Ventas();
             this.mensajes1 = new Events4ALL.User_Controls.Mensajes();
             this.salas1 = new Events4ALL.Salas();
             this.promociones1 = new Events4ALL.Promociones();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.inicio1 = new Events4ALL.Inicio();
+            this.estadisticas1 = new Events4ALL.Estadisticas();
+            this.clientes1 = new Events4ALL.Clientes();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAdmin)).BeginInit();
             this.panel2.SuspendLayout();
@@ -213,20 +213,11 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
-            // inicio1
+            // panel1
             // 
-            resources.ApplyResources(this.inicio1, "inicio1");
-            this.inicio1.Name = "inicio1";
-            // 
-            // estadisticas1
-            // 
-            resources.ApplyResources(this.estadisticas1, "estadisticas1");
-            this.estadisticas1.Name = "estadisticas1";
-            // 
-            // clientes1
-            // 
-            resources.ApplyResources(this.clientes1, "clientes1");
-            this.clientes1.Name = "clientes1";
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Name = "panel1";
             // 
             // admins1
             // 
@@ -258,11 +249,20 @@
             resources.ApplyResources(this.promociones1, "promociones1");
             this.promociones1.Name = "promociones1";
             // 
-            // panel1
+            // inicio1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(this.inicio1, "inicio1");
+            this.inicio1.Name = "inicio1";
+            // 
+            // estadisticas1
+            // 
+            resources.ApplyResources(this.estadisticas1, "estadisticas1");
+            this.estadisticas1.Name = "estadisticas1";
+            // 
+            // clientes1
+            // 
+            resources.ApplyResources(this.clientes1, "clientes1");
+            this.clientes1.Name = "clientes1";
             // 
             // FormBase
             // 
