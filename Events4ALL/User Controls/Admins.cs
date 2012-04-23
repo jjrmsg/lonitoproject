@@ -43,6 +43,8 @@ namespace Events4ALL
             
             InitializeComponent();
 
+            MuestraAdmins();
+
             dateTimePicker1.Value = DateTime.Parse(IniciaFechaHoy());
 
             if (!edicion)
@@ -62,33 +64,12 @@ namespace Events4ALL
             edicion = false;
 
             idActual = -1;
-            boton_eliminar.Enabled = false;
+            //boton_eliminar.Enabled = false;
 
             imagenCambiada = false;
 
             Admin_Perfil_boton_Guardar.Text = "Insertar";
             Admin_Perfil_boton_Anadir.Text = "Limpiar";
-        }
-
-        // Carga y muestra todos administradores del sistema al entrar en el pestaña de busqueda.
-        private void tabControl1_Click(object sender, EventArgs e)
-        {
-            MuestraAdmins();
-        }
-
-        private void tabControl1_Enter(object sender, EventArgs e)
-        {
-            MuestraAdmins();
-        }
-
-        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            MuestraAdmins();
-        }
-
-        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
-        {
-            MuestraAdmins();
         }
 
         #region Comprobaciones
@@ -715,7 +696,7 @@ namespace Events4ALL
             edicion = false;
             textBox_anterior_pass.Enabled = false;
             idActual = -1;
-            boton_eliminar.Enabled = false;
+            //boton_eliminar.Enabled = false;
             errorProviderPassAnt.Clear();
             textBox_anterior_pass.Text = "";
 
@@ -778,7 +759,7 @@ namespace Events4ALL
                         textBox_pass2.Text = "";
 
                         textBox_anterior_pass.Enabled = true;
-                        boton_eliminar.Enabled = true;
+                        //boton_eliminar.Enabled = true;
 
                         Admin_Perfil_boton_Guardar.Text = "Guardar";
                         Admin_Perfil_boton_Anadir.Text = "Nuevo";
@@ -1373,7 +1354,7 @@ namespace Events4ALL
             #endregion
 
             edicion = true;
-            boton_eliminar.Enabled = true;
+            //boton_eliminar.Enabled = true;
             textBox_anterior_pass.Enabled = true; 
             
             Admin_Perfil_boton_Guardar.Text = "Guardar";
@@ -1563,6 +1544,36 @@ namespace Events4ALL
         {
             //numericUpDown_Fec1.Enabled = true;
             //numericUpDown_Fec2.Enabled = true;
+        }
+
+        #endregion
+
+        #region Cerdada hermosa
+
+        // Carga y muestra todos administradores del sistema al entrar en el pestaña de busqueda.
+        private void tabControl1_Click(object sender, EventArgs e)
+        {
+            MuestraAdmins();
+        }
+
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+            MuestraAdmins();
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            //MuestraAdmins();
+        }
+
+        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            MuestraAdmins();
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            //MuestraAdmins();
         }
 
         #endregion

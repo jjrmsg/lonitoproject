@@ -48,7 +48,6 @@
             this.editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Perfil = new System.Windows.Forms.TabPage();
-            this.boton_eliminar = new System.Windows.Forms.Button();
             this.groupBox_UsPs = new System.Windows.Forms.GroupBox();
             this.textBox_anterior_pass = new System.Windows.Forms.TextBox();
             this.label_anterior_pass = new System.Windows.Forms.Label();
@@ -805,7 +804,6 @@
             // Perfil
             // 
             resources.ApplyResources(this.Perfil, "Perfil");
-            this.Perfil.Controls.Add(this.boton_eliminar);
             this.Perfil.Controls.Add(this.groupBox_UsPs);
             this.Perfil.Controls.Add(this.Admin_Perfil_boton_Foto);
             this.Perfil.Controls.Add(this.Admin_Perfil_boton_Guardar);
@@ -868,68 +866,6 @@
             this.errorProviderSexo.SetIconPadding(this.Perfil, ((int)(resources.GetObject("Perfil.IconPadding17"))));
             this.Perfil.Name = "Perfil";
             this.Perfil.UseVisualStyleBackColor = true;
-            // 
-            // boton_eliminar
-            // 
-            resources.ApplyResources(this.boton_eliminar, "boton_eliminar");
-            this.errorProviderNif.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error"));
-            this.errorProviderNombre.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error1"));
-            this.errorProviderNick.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error2"));
-            this.errorProviderFNAC.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error3"));
-            this.errorProviderTEL.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error4"));
-            this.errorProviderMov.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error5"));
-            this.errorProviderMail.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error6"));
-            this.errorProviderPassAnt.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error7"));
-            this.errorProviderPassInv.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error8"));
-            this.errorProviderPassDif.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error9"));
-            this.errorProviderSexo.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error10"));
-            this.errorProviderCP.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error11"));
-            this.errorProviderApellidos.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error12"));
-            this.errorProviderPais.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error13"));
-            this.errorProviderLocalidad.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error14"));
-            this.errorProviderEC.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error15"));
-            this.errorProviderProvincia.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error16"));
-            this.errorProviderDomicilo.SetError(this.boton_eliminar, resources.GetString("boton_eliminar.Error17"));
-            this.errorProviderCP.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment"))));
-            this.errorProviderLocalidad.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment1"))));
-            this.errorProviderMov.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment2"))));
-            this.errorProviderDomicilo.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment3"))));
-            this.errorProviderNif.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment4"))));
-            this.errorProviderNombre.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment5"))));
-            this.errorProviderApellidos.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment6"))));
-            this.errorProviderPais.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment7"))));
-            this.errorProviderMail.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment8"))));
-            this.errorProviderFNAC.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment9"))));
-            this.errorProviderPassDif.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment10"))));
-            this.errorProviderPassAnt.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment11"))));
-            this.errorProviderPassInv.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment12"))));
-            this.errorProviderEC.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment13"))));
-            this.errorProviderProvincia.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment14"))));
-            this.errorProviderSexo.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment15"))));
-            this.errorProviderTEL.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment16"))));
-            this.errorProviderNick.SetIconAlignment(this.boton_eliminar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("boton_eliminar.IconAlignment17"))));
-            this.errorProviderCP.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding"))));
-            this.errorProviderLocalidad.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding1"))));
-            this.errorProviderApellidos.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding2"))));
-            this.errorProviderFNAC.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding3"))));
-            this.errorProviderPais.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding4"))));
-            this.errorProviderTEL.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding5"))));
-            this.errorProviderSexo.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding6"))));
-            this.errorProviderEC.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding7"))));
-            this.errorProviderProvincia.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding8"))));
-            this.errorProviderMov.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding9"))));
-            this.errorProviderDomicilo.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding10"))));
-            this.errorProviderMail.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding11"))));
-            this.errorProviderPassInv.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding12"))));
-            this.errorProviderPassDif.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding13"))));
-            this.errorProviderNick.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding14"))));
-            this.errorProviderNombre.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding15"))));
-            this.errorProviderNif.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding16"))));
-            this.errorProviderPassAnt.SetIconPadding(this.boton_eliminar, ((int)(resources.GetObject("boton_eliminar.IconPadding17"))));
-            this.boton_eliminar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.boton_eliminar.Name = "boton_eliminar";
-            this.boton_eliminar.UseVisualStyleBackColor = true;
-            this.boton_eliminar.Click += new System.EventHandler(this.boton_eliminar_Click);
             // 
             // groupBox_UsPs
             // 
@@ -4541,6 +4477,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             this.tabControl1.TabIndexChanged += new System.EventHandler(this.tabControl1_TabIndexChanged);
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
@@ -4848,7 +4785,6 @@
         private System.Windows.Forms.Button boton_limpia_busqueda;
         private System.Windows.Forms.TextBox textBox_anterior_pass;
         private System.Windows.Forms.Label label_anterior_pass;
-        private System.Windows.Forms.Button boton_eliminar;
         private System.Windows.Forms.ErrorProvider errorProviderPassAnt;
         private System.Windows.Forms.Label label_filtro;
         private System.Windows.Forms.ComboBox comboBox_filtro;

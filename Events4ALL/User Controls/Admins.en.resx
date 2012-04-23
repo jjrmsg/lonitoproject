@@ -118,151 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="errorProviderNif.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="errorProviderNombre.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="errorProviderNick.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="errorProviderTEL.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="errorProviderMov.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
   <data name="errorProviderMail.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
-        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
-        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
-        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
-        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
-        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
-        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
-        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
-        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
-        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
-        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
-        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
-        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
-        //8AAP//AAD//w==
-</value>
-  </data>
-  <data name="errorProviderPassAnt.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -310,7 +166,7 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="errorProviderSexo.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProviderNick.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -334,7 +190,7 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="errorProviderCP.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProviderPassAnt.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -382,7 +238,7 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="errorProviderPais.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProviderCP.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -430,7 +286,7 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="errorProviderEC.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProviderNombre.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -454,7 +310,31 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <data name="errorProviderProvincia.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="errorProviderNif.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="errorProviderPais.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
         AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
@@ -502,10 +382,127 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="boton_eliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="errorProviderMov.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
   </data>
+  <data name="errorProviderTEL.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="errorProviderProvincia.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="errorProviderEC.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <data name="errorProviderSexo.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQB3qoEAfK//AIS3/wCMv/8Alcj/AJzP/wCi1f8AotX/AJzP/wCVyP8AjL//AIS3/wB8
+        r/8Ad6qB////Af///wEAeaz/ALfq/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8At+r/AHms/////wH///8BAH2w/w3P//8Nz///Dc///w3P//8Nz///AHeq/zMzM/8Nz///Dc///w3P
+        //8Nz///Dc///wB9sP////8B////AQCAs4EPqtn/HtP//x7T//8e0///HtP//wB3qv8zMzP/HtP//x7T
+        //8e0///HtP//w+q2f8AgLOB////Af///wH///8BAIW4/zLY//8y2P//Mtj//zLY//8y2P//Mtj//zLY
+        //8y2P//Mtj//zLY//8Ahbj/////Af///wH///8B////AQCJvIEls97/Sd3//0nd//9J3f//JKrU/z6I
+        mf9J3f//Sd3//0nd//8ls97/AIm8gf///wH///8B////Af///wH///8BAI7B/2Lj//9i4///YuP//xmS
+        v/8/X2b/YuP//2Lj//9i4///AI7B/////wH///8B////Af///wH///8B////AQCTxoE+vuP/e+j//3vo
+        //8Ad6r/MzMz/3vo//976P//Pr7j/wCTxoH///8B////Af///wH///8B////Af///wH///8BAJjL/5Tu
+        //+U7v//AHeq/zMzM/+U7v//lO7//wCYy/////8B////Af///wH///8B////Af///wH///8B////AQCc
+        z4FWyOf/q/P//wB3qv8zMzP/q/P//1bI5/8AnM+B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAKHU/7/4//+/+P//v/j//7/4//8AodT/////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8B////AQCk14Fo0Ov/0Pz//9D8//9o0Ov/AKTXgf///wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8BAKjb/93////d////AKjb/////wH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////AQCq3UEAqt3/AKrd/wCq3UH///8B////Af///wH///8B////Af//
+        /wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af//
+        /wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA
+        //8AAP//AAD//w==
+</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label_anterior_pass.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -560,11 +557,17 @@
   <data name="Admin_Perfil_boton_Guardar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="Admin_Perfil_boton_Guardar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>750, 554</value>
+  </data>
   <data name="Admin_Perfil_boton_Guardar.Text" xml:space="preserve">
     <value>Insertar</value>
   </data>
   <data name="Admin_Perfil_boton_Anadir.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="Admin_Perfil_boton_Anadir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 554</value>
   </data>
   <data name="Admin_Perfil_Foto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
