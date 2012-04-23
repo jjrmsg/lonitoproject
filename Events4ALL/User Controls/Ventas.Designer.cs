@@ -29,9 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridVentas = new System.Windows.Forms.DataGridView();
+            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbVenta = new System.Windows.Forms.CheckBox();
             this.cbEspectaculo = new System.Windows.Forms.CheckBox();
@@ -47,15 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.IdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
@@ -65,34 +67,23 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(901, 632);
-            this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.dataGridVentas);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(893, 606);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Búsqueda";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dataGridVentas
             // 
+            resources.ApplyResources(this.dataGridVentas, "dataGridVentas");
             this.dataGridVentas.AllowUserToAddRows = false;
-            this.dataGridVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridVentas.BackgroundColor = System.Drawing.Color.White;
             this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -105,18 +96,66 @@
             this.Importe,
             this.Column5,
             this.Eliminar});
-            this.dataGridVentas.Location = new System.Drawing.Point(6, 175);
             this.dataGridVentas.Name = "dataGridVentas";
             this.dataGridVentas.ReadOnly = true;
             this.dataGridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridVentas.Size = new System.Drawing.Size(878, 425);
-            this.dataGridVentas.TabIndex = 8;
             this.dataGridVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridVentas_CellClick);
+            // 
+            // IdVenta
+            // 
+            this.IdVenta.FillWeight = 20F;
+            resources.ApplyResources(this.IdVenta, "IdVenta");
+            this.IdVenta.Name = "IdVenta";
+            this.IdVenta.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            resources.ApplyResources(this.Column2, "Column2");
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            resources.ApplyResources(this.Column4, "Column4");
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.FillWeight = 60F;
+            resources.ApplyResources(this.Importe, "Importe");
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            resources.ApplyResources(this.Column5, "Column5");
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 35F;
+            resources.ApplyResources(this.Eliminar, "Eliminar");
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.cbVenta);
             this.groupBox1.Controls.Add(this.cbEspectaculo);
             this.groupBox1.Controls.Add(this.dtFechEspectaculo);
@@ -131,212 +170,111 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btLimpiar);
             this.groupBox1.Controls.Add(this.btBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(878, 151);
-            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda de ventas";
             // 
             // cbVenta
             // 
-            this.cbVenta.AutoSize = true;
-            this.cbVenta.Location = new System.Drawing.Point(20, 112);
+            resources.ApplyResources(this.cbVenta, "cbVenta");
             this.cbVenta.Name = "cbVenta";
-            this.cbVenta.Size = new System.Drawing.Size(101, 17);
-            this.cbVenta.TabIndex = 68;
-            this.cbVenta.Text = "Fecha de venta";
             this.cbVenta.UseVisualStyleBackColor = true;
             this.cbVenta.CheckedChanged += new System.EventHandler(this.cbVenta_CheckedChanged);
             // 
             // cbEspectaculo
             // 
-            this.cbEspectaculo.AutoSize = true;
-            this.cbEspectaculo.Location = new System.Drawing.Point(521, 73);
+            resources.ApplyResources(this.cbEspectaculo, "cbEspectaculo");
             this.cbEspectaculo.Name = "cbEspectaculo";
-            this.cbEspectaculo.Size = new System.Drawing.Size(134, 17);
-            this.cbEspectaculo.TabIndex = 67;
-            this.cbEspectaculo.Text = "Fecha del espectáculo";
             this.cbEspectaculo.UseVisualStyleBackColor = true;
             this.cbEspectaculo.CheckedChanged += new System.EventHandler(this.cbEspectaculo_CheckedChanged);
             // 
             // dtFechEspectaculo
             // 
-            this.dtFechEspectaculo.Enabled = false;
+            resources.ApplyResources(this.dtFechEspectaculo, "dtFechEspectaculo");
             this.dtFechEspectaculo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechEspectaculo.Location = new System.Drawing.Point(661, 71);
             this.dtFechEspectaculo.Name = "dtFechEspectaculo";
-            this.dtFechEspectaculo.Size = new System.Drawing.Size(92, 20);
-            this.dtFechEspectaculo.TabIndex = 66;
             // 
             // dtFechVenta
             // 
-            this.dtFechVenta.Enabled = false;
+            resources.ApplyResources(this.dtFechVenta, "dtFechVenta");
             this.dtFechVenta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechVenta.Location = new System.Drawing.Point(127, 109);
             this.dtFechVenta.Name = "dtFechVenta";
-            this.dtFechVenta.Size = new System.Drawing.Size(92, 20);
-            this.dtFechVenta.TabIndex = 64;
             // 
             // cbTipo
             // 
+            resources.ApplyResources(this.cbTipo, "cbTipo");
             this.cbTipo.DisplayMember = "1;2";
             this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Items.AddRange(new object[] {
-            "Cine",
-            "Teatro",
-            "Concierto"});
-            this.cbTipo.Location = new System.Drawing.Point(431, 71);
+            resources.GetString("cbTipo.Items"),
+            resources.GetString("cbTipo.Items1"),
+            resources.GetString("cbTipo.Items2")});
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(77, 21);
-            this.cbTipo.TabIndex = 62;
             // 
             // labelTipo
             // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(321, 74);
+            resources.ApplyResources(this.labelTipo, "labelTipo");
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(104, 13);
-            this.labelTipo.TabIndex = 61;
-            this.labelTipo.Text = "Tipo de espectáculo";
             // 
             // tbTitulo
             // 
-            this.tbTitulo.Location = new System.Drawing.Point(119, 71);
+            resources.ApplyResources(this.tbTitulo, "tbTitulo");
             this.tbTitulo.Name = "tbTitulo";
-            this.tbTitulo.Size = new System.Drawing.Size(186, 20);
-            this.tbTitulo.TabIndex = 60;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 74);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Título espectáculo";
             // 
             // tbDni
             // 
-            this.tbDni.Location = new System.Drawing.Point(324, 35);
+            resources.ApplyResources(this.tbDni, "tbDni");
             this.tbDni.Name = "tbDni";
-            this.tbDni.Size = new System.Drawing.Size(108, 20);
-            this.tbDni.TabIndex = 58;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(256, 38);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Dni cliente";
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(119, 35);
+            resources.ApplyResources(this.tbNombre, "tbNombre");
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(131, 20);
-            this.tbNombre.TabIndex = 56;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 38);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Nombre cliente";
             // 
             // btLimpiar
             // 
-            this.btLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btLimpiar, "btLimpiar");
             this.btLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.btLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLimpiar.Location = new System.Drawing.Point(738, 122);
             this.btLimpiar.Name = "btLimpiar";
-            this.btLimpiar.Size = new System.Drawing.Size(64, 23);
-            this.btLimpiar.TabIndex = 52;
-            this.btLimpiar.Text = "Limpiar";
-            this.btLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btLimpiar.UseVisualStyleBackColor = true;
             this.btLimpiar.Click += new System.EventHandler(this.btLimpiar_Click);
             // 
             // btBuscar
             // 
-            this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btBuscar, "btBuscar");
             this.btBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.btBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuscar.Location = new System.Drawing.Point(808, 122);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(64, 23);
-            this.btBuscar.TabIndex = 0;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btBuscar.UseVisualStyleBackColor = true;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
-            // IdVenta
+            // dataGridViewImageColumn1
             // 
-            this.IdVenta.FillWeight = 20F;
-            this.IdVenta.HeaderText = "Id";
-            this.IdVenta.Name = "IdVenta";
-            this.IdVenta.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre cliente";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DNI";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Título espectaculo";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tipo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            this.Importe.FillWeight = 60F;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Fecha de venta";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 35F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.dataGridViewImageColumn1.FillWeight = 35F;
+            resources.ApplyResources(this.dataGridViewImageColumn1, "dataGridViewImageColumn1");
+            this.dataGridViewImageColumn1.Image = global::Events4ALL.Properties.Resources.delete;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // Ventas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
             this.Name = "Ventas";
-            this.Size = new System.Drawing.Size(907, 635);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
@@ -368,6 +306,7 @@
         public System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.CheckBox cbVenta;
         private System.Windows.Forms.CheckBox cbEspectaculo;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

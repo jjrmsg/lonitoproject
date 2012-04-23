@@ -117,28 +117,1308 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="numSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tipoSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="aforoSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="numSecciones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelColumna2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna9.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna8.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textDescripcion.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="textColumna10.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila10.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonLimpiarBusquedaSala.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSecciones.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelDescripcion.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="&gt;&gt;labelNumSeccion.Name" xml:space="preserve">
+    <value>labelNumSeccion</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonLimpiar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textFila7.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelFila10.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;textFila5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna3.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna8.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="labelAforo2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMax.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="textColumna3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabBusquedaSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion4.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila9.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="textFila3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 95</value>
+  </data>
+  <data name="labelAforo.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="labelSeccion4.Text" xml:space="preserve">
+    <value>Sección D</value>
+  </data>
+  <data name="labelFila6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 192</value>
+  </data>
+  <data name="textFila1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion5.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="labelColumna1.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;labelDescripcion.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelSeccion2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna8.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila9.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelSeccion2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSalasLibres.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila10.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textFila4.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textFila7.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonLimpiar.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion5.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila7.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labAforo.Name" xml:space="preserve">
+    <value>labAforo</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBoxSecciones.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 184</value>
+  </data>
+  <data name="labelColumna4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelColumna8.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna6.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="labelColumna2.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;textColumna3.Name" xml:space="preserve">
+    <value>textColumna3</value>
+  </data>
+  <data name="labelFila8.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion7.Name" xml:space="preserve">
+    <value>labelSeccion7</value>
+  </data>
+  <data name="&gt;&gt;textColumna4.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="comboBuscarTipoSala.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna7.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="dataGridBuscarSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 425</value>
+  </data>
+  <data name="textFila9.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna10.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textFila2.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="comboBuscarTipoSala.Items1" xml:space="preserve">
+    <value>Cine</value>
+  </data>
+  <data name="labelDescripcion.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="textColumna8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="&gt;&gt;errorProvider2.Name" xml:space="preserve">
+    <value>errorProvider2</value>
+  </data>
+  <data name="textFila3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelIdSala.Text" xml:space="preserve">
+    <value>Nº Sala</value>
+  </data>
+  <data name="&gt;&gt;textColumna2.Name" xml:space="preserve">
+    <value>textColumna2</value>
+  </data>
+  <data name="labelFila8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 252</value>
+  </data>
+  <data name="textFila10.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textAforoBusquedaMin.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textAforoBusquedaMax.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;labelFila5.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="labelColumna9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFila7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="&gt;&gt;labelFila4.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;labelColumna7.Name" xml:space="preserve">
+    <value>labelColumna7</value>
+  </data>
+  <data name="&gt;&gt;labelUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureTipo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna3.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="textFila1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBuscarSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelBuscarIdSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelBuscarIdSala.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna2.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="comboNumSeccion.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna4.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textAforoBusquedaMax.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textAforoBusquedaMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 86</value>
+  </data>
+  <data name="&gt;&gt;textFila9.Name" xml:space="preserve">
+    <value>textFila9</value>
+  </data>
+  <data name="labelBuscarTipoSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna4.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="tabAñadirSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 274</value>
+  </data>
+  <data name="labelFila4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 128</value>
+  </data>
+  <data name="labelColumna3.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila8.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelIdSala.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBuscarTipoSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
+  </data>
+  <data name="labelSeccion1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelIdSala.Name" xml:space="preserve">
+    <value>labelIdSala</value>
+  </data>
+  <data name="labelSeccion4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkLibre.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="textFila5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 98</value>
+  </data>
+  <data name="tabBusquedaSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabBusquedaSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila1.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textAforoBusquedaMin.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna7.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelSeccion8.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 192</value>
+  </data>
+  <data name="labelDescripcion.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textDescripcion.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelNumSeccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila4.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="textFila3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna3.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textFila6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="buttonLimpiar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;textFila7.Name" xml:space="preserve">
+    <value>textFila7</value>
+  </data>
+  <data name="textFila1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion7.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labelFila9.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="textColumna5.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion3.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion4.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="textDescripcion.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;comboNumSeccion.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;textFila1.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textFila5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila3.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="textColumna7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna10.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboNumSeccion.Items6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textFila7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;comboTipo.Name" xml:space="preserve">
+    <value>comboTipo</value>
+  </data>
+  <data name="&gt;&gt;labelColumna1.Name" xml:space="preserve">
+    <value>labelColumna1</value>
+  </data>
+  <data name="&gt;&gt;Eliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonBuscar.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabAñadirSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="pictureTipo.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelTipo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna6.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="tabBusquedaSala.Text" xml:space="preserve">
+    <value>Búsqueda</value>
+  </data>
+  <data name="&gt;&gt;textColumna4.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="textColumna3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabAñadirSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion8.Text" xml:space="preserve">
+    <value>Sección H</value>
+  </data>
+  <data name="labelColumna8.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="labelColumna8.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion1.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="labelFila10.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila10.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textFila10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textIdSala.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="groupBuscarSala.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="textFila10.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;labelColumna9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelBuscarTipoSala.Text" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="textColumna9.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="labelColumna1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna9.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="labelColumna9.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion9.Name" xml:space="preserve">
+    <value>labelSeccion9</value>
+  </data>
+  <data name="labelSeccion9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="labAforo.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila3.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textDescripcion.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboNumSeccion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonBuscar.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabAñadirSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelBuscarIdSala.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textColumna1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelAforo.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelColumna8.Name" xml:space="preserve">
+    <value>labelColumna8</value>
+  </data>
+  <data name="labelColumna8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textFila2.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;textFila8.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="comboNumSeccion.Items1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="comboNumSeccion.Items7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textFila4.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="groupBoxSecciones.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="labelColumna3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 125</value>
+  </data>
+  <data name="comboBuscarTipoSala.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="labelFila6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;groupBuscarSala.Name" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="labelFila5.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkLibre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="labelColumna5.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textAforoBusquedaMin.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="labelBuscarTipoSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelBuscarIdSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 35</value>
+  </data>
+  <data name="labelSeccion9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 66</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarIdSala.Name" xml:space="preserve">
+    <value>labelBuscarIdSala</value>
+  </data>
+  <data name="comboNumSeccion.Items5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textFila6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;comboNumSeccion.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="textFila6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila8.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textColumna5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 159</value>
+  </data>
+  <data name="textColumna3.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="labelUpdate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelBuscarIdSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion7.Text" xml:space="preserve">
+    <value>Sección G</value>
+  </data>
+  <data name="textIdSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>901, 632</value>
+  </data>
+  <data name="comboTipo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 61</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="labelSeccion8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textFila2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFila6.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="labelAforo2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila5.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion3.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelColumna7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textIdSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textAforoBusquedaMin.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila7.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelSeccion4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Name" xml:space="preserve">
+    <value>errorProvider1</value>
+  </data>
+  <data name="textFila1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila7.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="buttonAñadirSala.Text" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="labelSeccion7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelIdSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 66</value>
+  </data>
+  <data name="labelIdSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pictureTipo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="tabBusquedaSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSeccion9.Text" xml:space="preserve">
+    <value>Sección I</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBuscarSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="labelColumna9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 277</value>
+  </data>
+  <data name="pictureTipo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion7.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 128</value>
+  </data>
+  <data name="&gt;&gt;aforoSala.Name" xml:space="preserve">
+    <value>aforoSala</value>
+  </data>
+  <data name="labelSeccion5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion4.Name" xml:space="preserve">
+    <value>labelSeccion4</value>
+  </data>
+  <data name="labelNumSeccion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFila8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila2.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="&gt;&gt;textColumna2.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="dataGridBuscarSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 175</value>
+  </data>
+  <data name="tabAñadirSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="&gt;&gt;labelFila2.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textColumna10.Name" xml:space="preserve">
+    <value>textColumna10</value>
+  </data>
+  <data name="labelColumna6.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBuscarTipoSala.Items3" xml:space="preserve">
+    <value>Concierto</value>
+  </data>
+  <data name="comboBuscarTipoSala.Items2" xml:space="preserve">
+    <value>Teatro</value>
+  </data>
+  <data name="labelSeccion6.Text" xml:space="preserve">
+    <value>Sección F</value>
+  </data>
+  <data name="labelSeccion5.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="textColumna10.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="labelSeccion6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelAforo.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 222</value>
+  </data>
+  <data name="textFila3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboNumSeccion.Items4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelColumna5.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="textColumna2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelAforo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonAñadirSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonAñadirSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="labelFila3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textFila1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna10.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna5.Name" xml:space="preserve">
+    <value>textColumna5</value>
+  </data>
+  <data name="labelColumna7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textColumna10.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textColumna7.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;pictureTipo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSalasLibres.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textFila7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 219</value>
+  </data>
+  <data name="labelColumna6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila5.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;comboBuscarTipoSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSalasLibres.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelNumSeccion.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonAñadirSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>812, 577</value>
+  </data>
+  <data name="labelUpdate.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 151</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 249</value>
+  </data>
+  <data name="labelSeccion2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textFila8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;checkLibre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textIdSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="textColumna4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelFila7.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila5.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonLimpiarBusquedaSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="labelFila9.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="labelBuscarIdSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion5.Text" xml:space="preserve">
+    <value>Sección E</value>
+  </data>
+  <data name="buttonAñadirSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion2.Name" xml:space="preserve">
+    <value>labelSeccion2</value>
+  </data>
+  <data name="&gt;&gt;textIdSala.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelSeccion10.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila6.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;textFila8.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelIdSala.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="textColumna10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="groupBuscarSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelTipo.Text" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="textDescripcion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="labelSeccion3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna8.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFila5.Name" xml:space="preserve">
+    <value>labelFila5</value>
+  </data>
+  <data name="textFila6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="labelColumna8.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="comboNumSeccion.Items10" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="buttonLimpiar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>744, 577</value>
+  </data>
+  <data name="&gt;&gt;labelFila1.Name" xml:space="preserve">
+    <value>labelFila1</value>
+  </data>
+  <data name="checkLibre.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 159</value>
+  </data>
+  <data name="&gt;&gt;textColumna8.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="labelFila9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 277</value>
+  </data>
+  <data name="labelColumna4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labAforo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboNumSeccion.Items3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Eliminar.Name" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="groupBoxSecciones.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelNumSeccion.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkLibre.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSeccion3.Text" xml:space="preserve">
+    <value>Sección C</value>
+  </data>
+  <data name="labelColumna1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dataGridBuscarSala.Name" xml:space="preserve">
+    <value>dataGridBuscarSala</value>
+  </data>
+  <data name="labelFila6.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="&gt;&gt;labelNumSeccion.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="labelTipo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboTipo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 162</value>
+  </data>
+  <data name="&gt;&gt;labelTipo.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="textFila7.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiarBusquedaSala.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="labelSeccion8.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTipo.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonBuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;numSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabBusquedaSala.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelColumna1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelTipo.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="textColumna5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna10.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelFila1.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion3.Name" xml:space="preserve">
+    <value>labelSeccion3</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarTipoSala.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="buttonAñadirSala.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;pictureTipo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textColumna8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelIdSala.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion6.Name" xml:space="preserve">
+    <value>labelSeccion6</value>
+  </data>
+  <data name="pictureTipo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna5.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="comboTipo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMin.Name" xml:space="preserve">
+    <value>textAforoBusquedaMin</value>
+  </data>
+  <data name="comboTipo.Items3" xml:space="preserve">
+    <value>Concierto</value>
+  </data>
+  <data name="labelFila9.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion1.Text" xml:space="preserve">
+    <value>Sección A</value>
+  </data>
+  <data name="textFila10.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMin.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="labelColumna4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboNumSeccion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 92</value>
+  </data>
+  <data name="labelFila4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="&gt;&gt;textFila5.Name" xml:space="preserve">
+    <value>textFila5</value>
+  </data>
+  <data name="groupBuscarSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labAforo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -163,9 +1443,1479 @@
         //8AAP//AAD//w==
 </value>
   </data>
-  <metadata name="errorProvider2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>147, 17</value>
-  </metadata>
+  <data name="&gt;&gt;labelFila3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Editar.HeaderText" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="&gt;&gt;labelFila10.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textColumna6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelFila7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;pictureTipo.Name" xml:space="preserve">
+    <value>pictureTipo</value>
+  </data>
+  <data name="&gt;&gt;textFila1.Name" xml:space="preserve">
+    <value>textFila1</value>
+  </data>
+  <data name="textAforoBusquedaMax.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="checkLibre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 119</value>
+  </data>
+  <data name="&gt;&gt;checkLibre.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelSeccion2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="buttonLimpiar.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelFila7.Name" xml:space="preserve">
+    <value>labelFila7</value>
+  </data>
+  <data name="labelColumna10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 307</value>
+  </data>
+  <data name="comboNumSeccion.Items2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelFila3.Name" xml:space="preserve">
+    <value>labelFila3</value>
+  </data>
+  <data name="&gt;&gt;labelColumna4.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;labelColumna3.Name" xml:space="preserve">
+    <value>labelColumna3</value>
+  </data>
+  <data name="labelDescripcion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textColumna4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 125</value>
+  </data>
+  <data name="labelColumna4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="labelColumna2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion10.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBuscarSala.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;labelColumna3.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="groupBuscarSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelAforo2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 89</value>
+  </data>
+  <data name="labelTipo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="labelIdSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila7.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tipoSala.HeaderText" xml:space="preserve">
+    <value>Tipo Sala</value>
+  </data>
+  <data name="labelSalasLibres.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;errorProvider1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelIdSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion10.Name" xml:space="preserve">
+    <value>labelSeccion10</value>
+  </data>
+  <data name="&gt;&gt;labelFila9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="textFila4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBuscarTipoSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelColumna1.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="labelSeccion8.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila10.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxSecciones.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelColumna6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelColumna4.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion2.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelDescripcion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila4.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiar.Name" xml:space="preserve">
+    <value>buttonLimpiar</value>
+  </data>
+  <data name="&gt;&gt;tipoSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBuscarTipoSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;textColumna10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSecciones.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAñadirSala.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="&gt;&gt;labelColumna3.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelAforo2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelUpdate.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion9.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelAforo2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>12, 13</value>
+  </data>
+  <data name="&gt;&gt;textColumna2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelColumna5.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelUpdate.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelDescripcion.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarTipoSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila6.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;labelIdSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelColumna3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBuscarSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 163</value>
+  </data>
+  <data name="labelSeccion3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelColumna1.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBuscarTipoSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 249</value>
+  </data>
+  <data name="&gt;&gt;textIdSala.Name" xml:space="preserve">
+    <value>textIdSala</value>
+  </data>
+  <data name="labelFila2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion6.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 162</value>
+  </data>
+  <data name="dataGridBuscarSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion2.Text" xml:space="preserve">
+    <value>Sección B</value>
+  </data>
+  <data name="labelFila1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridBuscarSala.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;numSala.Name" xml:space="preserve">
+    <value>numSala</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMax.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pictureTipo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila8.Name" xml:space="preserve">
+    <value>labelFila8</value>
+  </data>
+  <data name="textFila5.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna7.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textIdSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="&gt;&gt;textFila10.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textFila4.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;checkLibre.Name" xml:space="preserve">
+    <value>checkLibre</value>
+  </data>
+  <data name="pictureTipo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMax.Name" xml:space="preserve">
+    <value>textAforoBusquedaMax</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarIdSala.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="&gt;&gt;labelColumna10.Name" xml:space="preserve">
+    <value>labelColumna10</value>
+  </data>
+  <data name="&gt;&gt;tabAñadirSala.Name" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="textColumna2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelDescripcion.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelAforo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonBuscar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelFila4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelColumna1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="labelSeccion1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textColumna9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion8.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="textFila8.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonAñadirSala.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="labelFila3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textDescripcion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 78</value>
+  </data>
+  <data name="&gt;&gt;textColumna4.Name" xml:space="preserve">
+    <value>textColumna4</value>
+  </data>
+  <data name="labelColumna1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="comboBuscarTipoSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labelFila10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textColumna7.Name" xml:space="preserve">
+    <value>textColumna7</value>
+  </data>
+  <data name="labelTipo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila2.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="labelNumSeccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="labelSeccion10.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 277</value>
+  </data>
+  <data name="&gt;&gt;tabAñadirSala.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;labelColumna10.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonLimpiar.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="textFila7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="&gt;&gt;Editar.Name" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="&gt;&gt;labelFila3.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textColumna4.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabControl1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 33</value>
+  </data>
+  <data name="textFila3.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna9.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelBuscarIdSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna6.Name" xml:space="preserve">
+    <value>textColumna6</value>
+  </data>
+  <data name="labelTipo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 64</value>
+  </data>
+  <data name="labelSeccion9.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>907, 635</value>
+  </data>
+  <data name="textFila6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 219</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion6.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="dataGridBuscarSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelAforo.Name" xml:space="preserve">
+    <value>labelAforo</value>
+  </data>
+  <data name="&gt;&gt;Editar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="dataGridBuscarSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelBuscarTipoSala.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="labelSeccion3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelBuscarTipoSala.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tabBusquedaSala.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textFila4.Name" xml:space="preserve">
+    <value>textFila4</value>
+  </data>
+  <data name="labelFila8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelColumna9.Name" xml:space="preserve">
+    <value>labelColumna9</value>
+  </data>
+  <data name="labelSeccion7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelAforo2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila5.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna4.Name" xml:space="preserve">
+    <value>labelColumna4</value>
+  </data>
+  <data name="&gt;&gt;textFila7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textFila1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 162</value>
+  </data>
+  <data name="buttonBuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>811, 134</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;buttonAñadirSala.Name" xml:space="preserve">
+    <value>buttonAñadirSala</value>
+  </data>
+  <data name="labelFila6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila4.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="comboTipo.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila9.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="checkLibre.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="labelFila4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila6.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBuscarSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila4.Name" xml:space="preserve">
+    <value>labelFila4</value>
+  </data>
+  <data name="&gt;&gt;textColumna10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboNumSeccion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="labelFila10.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="labelSeccion9.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textAforoBusquedaMin.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textDescripcion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textColumna7.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;textFila4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila10.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labAforo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 151</value>
+  </data>
+  <data name="groupBoxSecciones.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="textColumna9.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 98</value>
+  </data>
+  <data name="labelFila6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna5.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelAforo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 89</value>
+  </data>
+  <data name="buttonLimpiar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="labelFila8.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion3.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textIdSala.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelSeccion2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 63</value>
+  </data>
+  <data name="dataGridBuscarSala.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tabControl1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion5.Name" xml:space="preserve">
+    <value>labelSeccion5</value>
+  </data>
+  <data name="textFila7.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion8.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila8.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 63</value>
+  </data>
+  <data name="tabControl1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Eliminar.HeaderText" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="labelColumna4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelDescripcion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 19</value>
+  </data>
+  <data name="&gt;&gt;labelIdSala.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion8.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelUpdate.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkLibre.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 274</value>
+  </data>
+  <data name="labelDescripcion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="labelAforo2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila9.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBoxSecciones.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboNumSeccion.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboNumSeccion.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="labelTipo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 66</value>
+  </data>
+  <data name="labelColumna5.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textDescripcion.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonBuscar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textBox1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion9.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="labelFila5.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;buttonAñadirSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBuscarTipoSala.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="textColumna2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tipoSala.Name" xml:space="preserve">
+    <value>tipoSala</value>
+  </data>
+  <data name="$this.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBox1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="comboTipo.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelColumna2.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFila5.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="buttonLimpiar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion6.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="textBox1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila10.Name" xml:space="preserve">
+    <value>labelFila10</value>
+  </data>
+  <data name="&gt;&gt;comboTipo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelUpdate.Name" xml:space="preserve">
+    <value>labelUpdate</value>
+  </data>
+  <data name="labelFila5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="labAforo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textFila9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboTipo.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila9.Name" xml:space="preserve">
+    <value>labelFila9</value>
+  </data>
+  <data name="labelSeccion4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 252</value>
+  </data>
+  <data name="labelSeccion10.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="labAforo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="labelFila7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 222</value>
+  </data>
+  <data name="comboTipo.Items2" xml:space="preserve">
+    <value>Teatro</value>
+  </data>
+  <data name="&gt;&gt;labelColumna5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Text" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion9.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelSalasLibres.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSeccion9.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelColumna2.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="tabControl1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila7.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="tabBusquedaSala.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;textDescripcion.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelSeccion2.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila8.Name" xml:space="preserve">
+    <value>textFila8</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSalasLibres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labAforo.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="labelNumSeccion.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelNumSeccion.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelColumna2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textDescripcion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 35</value>
+  </data>
+  <data name="labelSeccion5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelColumna5.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna1.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="tabAñadirSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="labelSeccion6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion7.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 222</value>
+  </data>
+  <data name="tabAñadirSala.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelColumna10.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="groupBoxSecciones.Size" type="System.Drawing.Size, System.Drawing">
+    <value>881, 356</value>
+  </data>
+  <data name="textAforoBusquedaMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiar.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelFila4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureTipo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 146</value>
+  </data>
+  <data name="&gt;&gt;textFila3.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="labelColumna6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 192</value>
+  </data>
+  <data name="labelUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="textColumna3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabAñadirSala.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="textFila3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="textColumna4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna7.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="labelNumSeccion.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="labelSeccion5.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion7.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textAforoBusquedaMin.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelBuscarTipoSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelNumSeccion.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboTipo.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFila8.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="dataGridBuscarSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila8.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabBusquedaSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>893, 606</value>
+  </data>
+  <data name="textFila2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSalasLibres.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;numSecciones.Name" xml:space="preserve">
+    <value>numSecciones</value>
+  </data>
+  <data name="labelColumna9.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textIdSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;tabBusquedaSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textAforoBusquedaMax.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelFila1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBuscarSala.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelFila7.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion4.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelBuscarTipoSala.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="textColumna4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;groupBuscarSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 36</value>
+  </data>
+  <data name="&gt;&gt;textFila6.Name" xml:space="preserve">
+    <value>textFila6</value>
+  </data>
+  <data name="&gt;&gt;textIdSala.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="labelFila5.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelFila5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion5.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labAforo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textAforoBusquedaMax.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila2.Name" xml:space="preserve">
+    <value>textFila2</value>
+  </data>
+  <data name="labelFila8.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="textColumna4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="buttonAñadirSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSalasLibres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 119</value>
+  </data>
+  <data name="pictureTipo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>692, 19</value>
+  </data>
+  <data name="labelIdSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="comboNumSeccion.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSalasLibres.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="labelDescripcion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="labelSalasLibres.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna10.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonBuscar.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSecciones.Name" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textFila6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 189</value>
+  </data>
+  <data name="labelColumna10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelNumSeccion.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabBusquedaSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="labelSeccion4.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna7.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textDescripcion.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelTipo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonLimpiar.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna9.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;comboNumSeccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aforoSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelBuscarTipoSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabAñadirSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>893, 606</value>
+  </data>
+  <data name="&gt;&gt;labelTipo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textFila6.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="textColumna9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="&gt;&gt;labelDescripcion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numSecciones.HeaderText" xml:space="preserve">
+    <value>Nº Secciones</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="labelIdSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion2.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="textFila2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila3.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="buttonBuscar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelUpdate.Text" xml:space="preserve">
+    <value>falso</value>
+  </data>
+  <data name="textFila1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna3.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="labelFila6.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;errorProvider2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 36</value>
+  </data>
+  <data name="labelColumna4.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;textColumna1.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="labelFila9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="labelColumna6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelAforo2.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="&gt;&gt;labelSalasLibres.Name" xml:space="preserve">
+    <value>labelSalasLibres</value>
+  </data>
+  <data name="labelSeccion1.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila4.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiarBusquedaSala.Name" xml:space="preserve">
+    <value>buttonLimpiarBusquedaSala</value>
+  </data>
+  <data name="buttonLimpiar.Text" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="labelFila9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelFila2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 307</value>
+  </data>
+  <data name="labelDescripcion.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna6.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="labelFila9.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labAforo.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="tabBusquedaSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelTipo.Name" xml:space="preserve">
+    <value>labelTipo</value>
+  </data>
+  <data name="labelSeccion10.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxSecciones.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila2.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila5.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelNumSeccion.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna9.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="pictureTipo.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboTipo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelBuscarIdSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabAñadirSala.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="textFila3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila3.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelColumna6.Name" xml:space="preserve">
+    <value>labelColumna6</value>
+  </data>
+  <data name="&gt;&gt;dataGridBuscarSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textFila1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFila1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelColumna6.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="textColumna9.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna6.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 95</value>
+  </data>
+  <data name="dataGridBuscarSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarIdSala.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;groupBuscarSala.Parent" xml:space="preserve">
+    <value>tabBusquedaSala</value>
+  </data>
+  <data name="&gt;&gt;labelTipo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;buttonAñadirSala.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labelSalasLibres.Text" xml:space="preserve">
+    <value>Buscar Libres</value>
+  </data>
+  <data name="textFila5.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="labelColumna9.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila4.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
   <data name="errorProvider2.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -190,4 +2940,922 @@
         //8AAP//AAD//w==
 </value>
   </data>
+  <data name="&gt;&gt;textColumna5.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="labelSeccion6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBuscarTipoSala.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tabBusquedaSala.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="textColumna4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;textColumna8.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelUpdate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textColumna1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna7.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion10.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelBuscarIdSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="labelDescripcion.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna8.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion10.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila6.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna7.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelAforo2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="labelFila3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelColumna2.Name" xml:space="preserve">
+    <value>labelColumna2</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelColumna6.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelTipo.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion10.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboTipo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelIdSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 38</value>
+  </data>
+  <data name="labelSalasLibres.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna10.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textFila8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAñadirSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna9.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="labelSeccion4.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="labelAforo2.Text" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="labelSeccion10.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila9.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna1.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelFila9.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="dataGridBuscarSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboNumSeccion.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonAñadirSala.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="textFila10.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;buttonBuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonAñadirSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila9.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBuscarSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBuscarTipoSala.Name" xml:space="preserve">
+    <value>comboBuscarTipoSala</value>
+  </data>
+  <data name="&gt;&gt;labelColumna7.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="labelFila5.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="pictureTipo.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;buttonBuscar.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="&gt;&gt;labelAforo.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="labelSeccion10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 307</value>
+  </data>
+  <data name="labelSeccion5.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboNumSeccion.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelAforo2.Name" xml:space="preserve">
+    <value>labelAforo2</value>
+  </data>
+  <data name="textBox1.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelNumSeccion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 95</value>
+  </data>
+  <data name="labelFila5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion4.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textAforoBusquedaMin.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila6.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="$this.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonBuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="textColumna5.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="textColumna10.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelDescripcion.Name" xml:space="preserve">
+    <value>labelDescripcion</value>
+  </data>
+  <data name="labelNumSeccion.Text" xml:space="preserve">
+    <value>Nº Secciones</value>
+  </data>
+  <data name="textColumna9.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelAforo.Text" xml:space="preserve">
+    <value>Aforo entre</value>
+  </data>
+  <data name="&gt;&gt;labelColumna5.Name" xml:space="preserve">
+    <value>labelColumna5</value>
+  </data>
+  <data name="textFila4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonBuscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;dataGridBuscarSala.Parent" xml:space="preserve">
+    <value>tabBusquedaSala</value>
+  </data>
+  <data name="textColumna6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 189</value>
+  </data>
+  <data name="textColumna6.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textFila6.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelAforo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelColumna9.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;pictureTipo.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="textColumna1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelFila6.Name" xml:space="preserve">
+    <value>labelFila6</value>
+  </data>
+  <data name="&gt;&gt;labelFila4.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelFila1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textColumna1.Name" xml:space="preserve">
+    <value>textColumna1</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion1.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;labelFila2.Name" xml:space="preserve">
+    <value>labelFila2</value>
+  </data>
+  <data name="&gt;&gt;textFila1.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="textAforoBusquedaMin.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>741, 134</value>
+  </data>
+  <data name="labelFila2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="&gt;&gt;textFila9.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelFila2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboTipo.Items1" xml:space="preserve">
+    <value>Cine</value>
+  </data>
+  <data name="textAforoBusquedaMax.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion8.Name" xml:space="preserve">
+    <value>labelSeccion8</value>
+  </data>
+  <data name="labelColumna3.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;textDescripcion.Name" xml:space="preserve">
+    <value>textDescripcion</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSecciones.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelColumna7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textColumna1.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila10.Name" xml:space="preserve">
+    <value>textFila10</value>
+  </data>
+  <data name="&gt;&gt;tabAñadirSala.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion1.Name" xml:space="preserve">
+    <value>labelSeccion1</value>
+  </data>
+  <data name="textFila10.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna6.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="buttonAñadirSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="labelBuscarTipoSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 61</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAforo2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonBuscar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="labelColumna5.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna7.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion6.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;textFila3.Name" xml:space="preserve">
+    <value>textFila3</value>
+  </data>
+  <data name="&gt;&gt;textDescripcion.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion8.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="labelColumna4.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textFila5.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="checkLibre.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila8.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="textColumna2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;comboTipo.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="&gt;&gt;labelColumna8.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="groupBoxSecciones.Text" xml:space="preserve">
+    <value>Secciones</value>
+  </data>
+  <data name="labelColumna7.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarIdSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna7.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila8.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna10.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textIdSala.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tabAñadirSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion1.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelSalasLibres.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="textFila3.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila5.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonLimpiar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonBuscar.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkLibre.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 128</value>
+  </data>
+  <data name="textFila7.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="labAforo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textFila8.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila3.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion10.Text" xml:space="preserve">
+    <value>Sección J</value>
+  </data>
+  <data name="labelUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;labelFila7.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="tabControl1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna10.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;textFila7.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;labelColumna8.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="buttonLimpiar.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBuscarSala.Text" xml:space="preserve">
+    <value>Busqueda de Sala</value>
+  </data>
+  <data name="labelAforo2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion3.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="buttonLimpiar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="buttonLimpiarBusquedaSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 23</value>
+  </data>
+  <data name="textColumna1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 33</value>
+  </data>
+  <data name="textFila2.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelBuscarTipoSala.Name" xml:space="preserve">
+    <value>labelBuscarTipoSala</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion5.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Salas</value>
+  </data>
+  <data name="labelBuscarTipoSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textAforoBusquedaMax.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelBuscarTipoSala.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion9.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelColumna2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="labelFila1.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="textColumna5.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila4.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;labelColumna9.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labelFila10.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="&gt;&gt;textColumna9.Name" xml:space="preserve">
+    <value>textColumna9</value>
+  </data>
+  <data name="labelColumna5.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna8.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelUpdate.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila4.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna5.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboNumSeccion.Items9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelColumna3.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna8.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna10.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textAforoBusquedaMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelFila3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 304</value>
+  </data>
+  <data name="labelFila6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="&gt;&gt;labAforo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelFila3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 98</value>
+  </data>
+  <data name="textIdSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;dataGridBuscarSala.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textFila9.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila8.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="labelColumna2.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBoxSecciones.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="labelFila3.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelSeccion7.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="labelFila3.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="comboTipo.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="numSala.HeaderText" xml:space="preserve">
+    <value>NºSala</value>
+  </data>
+  <data name="textFila9.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textColumna5.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;numSecciones.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelColumna2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="comboBuscarTipoSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelColumna9.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelDescripcion.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;buttonBuscar.Name" xml:space="preserve">
+    <value>buttonBuscar</value>
+  </data>
+  <data name="labelSeccion1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 36</value>
+  </data>
+  <data name="groupBoxSecciones.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila2.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 304</value>
+  </data>
+  <data name="&gt;&gt;checkLibre.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="buttonAñadirSala.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="textColumna9.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboBuscarTipoSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="buttonLimpiar.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelColumna4.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="&gt;&gt;textFila10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="comboBuscarTipoSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 58</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 32</value>
+  </data>
+  <data name="&gt;&gt;textColumna6.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="labelColumna10.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="labelSeccion10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSeccion8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 252</value>
+  </data>
+  <data name="labelIdSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textFila9.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textFila9.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textAforoBusquedaMin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 86</value>
+  </data>
+  <data name="labelFila4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="textFila8.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelSeccion10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="labelSeccion4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;labelFila6.Parent" xml:space="preserve">
+    <value>groupBoxSecciones</value>
+  </data>
+  <data name="textColumna7.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textFila10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelColumna5.Text" xml:space="preserve">
+    <value>Nº Columnas</value>
+  </data>
+  <data name="$this.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila10.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelColumna2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textFila8.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabBusquedaSala.Name" xml:space="preserve">
+    <value>tabBusquedaSala</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="checkLibre.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSeccion6.IconAlignment1" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textIdSala.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelFila3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="&gt;&gt;labelUpdate.Parent" xml:space="preserve">
+    <value>tabAñadirSala</value>
+  </data>
+  <data name="labelFila5.Text" xml:space="preserve">
+    <value>Nº Filas</value>
+  </data>
+  <data name="labelBuscarTipoSala.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 13</value>
+  </data>
+  <data name="&gt;&gt;comboNumSeccion.Name" xml:space="preserve">
+    <value>comboNumSeccion</value>
+  </data>
+  <data name="&gt;&gt;labelFila7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSeccion9.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="labAforo.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboNumSeccion.Items8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labelSeccion6.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="tabAñadirSala.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;labelSeccion7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBoxSecciones.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textColumna2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 20</value>
+  </data>
+  <data name="labelSeccion8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="comboTipo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="textColumna9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;textDescripcion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelSalasLibres.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="labelAforo.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>groupBuscarSala</value>
+  </data>
+  <data name="textColumna3.Error1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelFila9.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labAforo.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonBuscar.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="labelBuscarIdSala.IconPadding" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelFila4.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="aforoSala.HeaderText" xml:space="preserve">
+    <value>Aforo Sala</value>
+  </data>
+  <data name="textDescripcion.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelBuscarIdSala.Text" xml:space="preserve">
+    <value>Nº Sala</value>
+  </data>
+  <data name="comboNumSeccion.IconPadding1" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="buttonBuscar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelSeccion7.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="labelUpdate.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleRight</value>
+  </data>
+  <data name="labelColumna7.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="textIdSala.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 35</value>
+  </data>
+  <data name="tabBusquedaSala.Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textColumna8.Name" xml:space="preserve">
+    <value>textColumna8</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="numSecciones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="numSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="errorProvider2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>147, 17</value>
+  </metadata>
+  <metadata name="aforoSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tipoSala.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

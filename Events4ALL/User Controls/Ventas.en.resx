@@ -117,50 +117,105 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>Client name</value>
+  </data>
+  <data name="Column2.HeaderText" xml:space="preserve">
+    <value>NIF</value>
+  </data>
+  <data name="Column3.HeaderText" xml:space="preserve">
+    <value>Show title</value>
+  </data>
+  <data name="Column4.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Importe.HeaderText" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Column5.HeaderText" xml:space="preserve">
+    <value>Date of sale</value>
+  </data>
+  <data name="Eliminar.HeaderText" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbVenta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 15</value>
+  <data name="cbVenta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 17</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Message list</value>
+  <data name="cbVenta.Text" xml:space="preserve">
+    <value>Date of sale</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Details</value>
+  <data name="cbEspectaculo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="cbEspectaculo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 73</value>
   </data>
-  <data name="statusLabel.Text" xml:space="preserve">
-    <value>Sending...</value>
+  <data name="cbEspectaculo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
   </data>
-  <data name="mailButton.Text" xml:space="preserve">
-    <value>Send</value>
+  <data name="cbEspectaculo.Text" xml:space="preserve">
+    <value>Show date</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="labelTipo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Response</value>
+  <data name="labelTipo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 74</value>
+  </data>
+  <data name="labelTipo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="labelTipo.Text" xml:space="preserve">
+    <value>Show type</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>53, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Issue</value>
+    <value>Show title</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Subject</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Surname</value>
+    <value>Client NIF</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>62, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Name</value>
+    <value>Client name</value>
+  </data>
+  <data name="btLimpiar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btLimpiar.Text" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btBuscar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btBuscar.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Sales search</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
 </root>

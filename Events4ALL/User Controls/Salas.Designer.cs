@@ -98,6 +98,12 @@
             this.labelIdSala = new System.Windows.Forms.Label();
             this.tabBusquedaSala = new System.Windows.Forms.TabPage();
             this.dataGridBuscarSala = new System.Windows.Forms.DataGridView();
+            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBuscarSala = new System.Windows.Forms.GroupBox();
             this.buttonLimpiarBusquedaSala = new System.Windows.Forms.Button();
             this.checkLibre = new System.Windows.Forms.CheckBox();
@@ -113,12 +119,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.numSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aforoSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numSecciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabAñadirSala.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipo)).BeginInit();
@@ -132,21 +132,23 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabAñadirSala);
             this.tabControl1.Controls.Add(this.tabBusquedaSala);
-            this.tabControl1.Location = new System.Drawing.Point(3, 0);
+            this.errorProvider2.SetError(this.tabControl1, resources.GetString("tabControl1.Error"));
+            this.errorProvider1.SetError(this.tabControl1, resources.GetString("tabControl1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.tabControl1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabControl1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.tabControl1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabControl1.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.tabControl1, ((int)(resources.GetObject("tabControl1.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.tabControl1, ((int)(resources.GetObject("tabControl1.IconPadding1"))));
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(901, 632);
-            this.tabControl1.TabIndex = 1;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // tabAñadirSala
             // 
+            resources.ApplyResources(this.tabAñadirSala, "tabAñadirSala");
             this.tabAñadirSala.Controls.Add(this.labelUpdate);
             this.tabAñadirSala.Controls.Add(this.labAforo);
             this.tabAñadirSala.Controls.Add(this.pictureTipo);
@@ -161,110 +163,123 @@
             this.tabAñadirSala.Controls.Add(this.comboNumSeccion);
             this.tabAñadirSala.Controls.Add(this.labelNumSeccion);
             this.tabAñadirSala.Controls.Add(this.labelIdSala);
-            this.tabAñadirSala.Location = new System.Drawing.Point(4, 22);
+            this.errorProvider1.SetError(this.tabAñadirSala, resources.GetString("tabAñadirSala.Error"));
+            this.errorProvider2.SetError(this.tabAñadirSala, resources.GetString("tabAñadirSala.Error1"));
+            this.errorProvider2.SetIconAlignment(this.tabAñadirSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabAñadirSala.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.tabAñadirSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabAñadirSala.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.tabAñadirSala, ((int)(resources.GetObject("tabAñadirSala.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.tabAñadirSala, ((int)(resources.GetObject("tabAñadirSala.IconPadding1"))));
             this.tabAñadirSala.Name = "tabAñadirSala";
-            this.tabAñadirSala.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAñadirSala.Size = new System.Drawing.Size(893, 606);
-            this.tabAñadirSala.TabIndex = 0;
-            this.tabAñadirSala.Text = "Añadir";
             this.tabAñadirSala.UseVisualStyleBackColor = true;
             // 
             // labelUpdate
             // 
-            this.labelUpdate.AutoSize = true;
-            this.labelUpdate.Location = new System.Drawing.Point(61, 151);
+            resources.ApplyResources(this.labelUpdate, "labelUpdate");
+            this.errorProvider1.SetError(this.labelUpdate, resources.GetString("labelUpdate.Error"));
+            this.errorProvider2.SetError(this.labelUpdate, resources.GetString("labelUpdate.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelUpdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelUpdate.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelUpdate, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelUpdate.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelUpdate, ((int)(resources.GetObject("labelUpdate.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelUpdate, ((int)(resources.GetObject("labelUpdate.IconPadding1"))));
             this.labelUpdate.Name = "labelUpdate";
-            this.labelUpdate.Size = new System.Drawing.Size(29, 13);
-            this.labelUpdate.TabIndex = 18;
-            this.labelUpdate.Text = "falso";
-            this.labelUpdate.Visible = false;
             // 
             // labAforo
             // 
-            this.labAforo.AutoSize = true;
-            this.labAforo.Location = new System.Drawing.Point(330, 151);
+            resources.ApplyResources(this.labAforo, "labAforo");
+            this.errorProvider1.SetError(this.labAforo, resources.GetString("labAforo.Error"));
+            this.errorProvider2.SetError(this.labAforo, resources.GetString("labAforo.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labAforo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labAforo.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labAforo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labAforo.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labAforo, ((int)(resources.GetObject("labAforo.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labAforo, ((int)(resources.GetObject("labAforo.IconPadding1"))));
             this.labAforo.Name = "labAforo";
-            this.labAforo.Size = new System.Drawing.Size(0, 13);
-            this.labAforo.TabIndex = 17;
             this.labAforo.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureTipo
             // 
-            this.pictureTipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pictureTipo, "pictureTipo");
             this.pictureTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.errorProvider1.SetError(this.pictureTipo, resources.GetString("pictureTipo.Error"));
+            this.errorProvider2.SetError(this.pictureTipo, resources.GetString("pictureTipo.Error1"));
+            this.errorProvider1.SetIconAlignment(this.pictureTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureTipo.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.pictureTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureTipo.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.pictureTipo, ((int)(resources.GetObject("pictureTipo.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.pictureTipo, ((int)(resources.GetObject("pictureTipo.IconPadding1"))));
             this.pictureTipo.Image = global::Events4ALL.Properties.Resources.Events4All;
             this.pictureTipo.InitialImage = global::Events4ALL.Properties.Resources.Events4All;
-            this.pictureTipo.Location = new System.Drawing.Point(692, 19);
             this.pictureTipo.Name = "pictureTipo";
-            this.pictureTipo.Size = new System.Drawing.Size(173, 146);
-            this.pictureTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureTipo.TabIndex = 16;
             this.pictureTipo.TabStop = false;
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.buttonLimpiar, "buttonLimpiar");
+            this.errorProvider1.SetError(this.buttonLimpiar, resources.GetString("buttonLimpiar.Error"));
+            this.errorProvider2.SetError(this.buttonLimpiar, resources.GetString("buttonLimpiar.Error1"));
+            this.errorProvider1.SetIconAlignment(this.buttonLimpiar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonLimpiar.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.buttonLimpiar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonLimpiar.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.buttonLimpiar, ((int)(resources.GetObject("buttonLimpiar.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.buttonLimpiar, ((int)(resources.GetObject("buttonLimpiar.IconPadding1"))));
             this.buttonLimpiar.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiar.Location = new System.Drawing.Point(744, 577);
             this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(62, 23);
-            this.buttonLimpiar.TabIndex = 15;
-            this.buttonLimpiar.Text = "Limpiar";
-            this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // labelDescripcion
             // 
-            this.labelDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(225, 19);
+            resources.ApplyResources(this.labelDescripcion, "labelDescripcion");
+            this.errorProvider1.SetError(this.labelDescripcion, resources.GetString("labelDescripcion.Error"));
+            this.errorProvider2.SetError(this.labelDescripcion, resources.GetString("labelDescripcion.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelDescripcion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelDescripcion.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelDescripcion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelDescripcion.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelDescripcion, ((int)(resources.GetObject("labelDescripcion.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelDescripcion, ((int)(resources.GetObject("labelDescripcion.IconPadding1"))));
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.labelDescripcion.TabIndex = 14;
-            this.labelDescripcion.Text = "Descripción";
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDescripcion.Location = new System.Drawing.Point(228, 35);
-            this.textDescripcion.Multiline = true;
+            resources.ApplyResources(this.textDescripcion, "textDescripcion");
+            this.errorProvider2.SetError(this.textDescripcion, resources.GetString("textDescripcion.Error"));
+            this.errorProvider1.SetError(this.textDescripcion, resources.GetString("textDescripcion.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textDescripcion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textDescripcion.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textDescripcion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textDescripcion.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textDescripcion, ((int)(resources.GetObject("textDescripcion.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textDescripcion, ((int)(resources.GetObject("textDescripcion.IconPadding1"))));
             this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(395, 78);
-            this.textDescripcion.TabIndex = 13;
             // 
             // comboTipo
             // 
+            resources.ApplyResources(this.comboTipo, "comboTipo");
             this.comboTipo.DisplayMember = "1;2";
             this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider2.SetError(this.comboTipo, resources.GetString("comboTipo.Error"));
+            this.errorProvider1.SetError(this.comboTipo, resources.GetString("comboTipo.Error1"));
             this.comboTipo.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.comboTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboTipo.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.comboTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboTipo.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.comboTipo, ((int)(resources.GetObject("comboTipo.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.comboTipo, ((int)(resources.GetObject("comboTipo.IconPadding1"))));
             this.comboTipo.Items.AddRange(new object[] {
-            "",
-            "Cine",
-            "Teatro",
-            "Concierto"});
-            this.comboTipo.Location = new System.Drawing.Point(95, 61);
+            resources.GetString("comboTipo.Items"),
+            resources.GetString("comboTipo.Items1"),
+            resources.GetString("comboTipo.Items2"),
+            resources.GetString("comboTipo.Items3")});
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.Size = new System.Drawing.Size(77, 21);
-            this.comboTipo.TabIndex = 10;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
             // labelTipo
             // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Location = new System.Drawing.Point(17, 64);
+            resources.ApplyResources(this.labelTipo, "labelTipo");
+            this.errorProvider1.SetError(this.labelTipo, resources.GetString("labelTipo.Error"));
+            this.errorProvider2.SetError(this.labelTipo, resources.GetString("labelTipo.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelTipo.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelTipo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelTipo.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelTipo, ((int)(resources.GetObject("labelTipo.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelTipo, ((int)(resources.GetObject("labelTipo.IconPadding1"))));
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(28, 13);
-            this.labelTipo.TabIndex = 9;
-            this.labelTipo.Text = "Tipo";
             // 
             // groupBoxSecciones
             // 
-            this.groupBoxSecciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBoxSecciones, "groupBoxSecciones");
             this.groupBoxSecciones.Controls.Add(this.labelColumna10);
             this.groupBoxSecciones.Controls.Add(this.labelSeccion10);
             this.groupBoxSecciones.Controls.Add(this.textColumna10);
@@ -315,505 +330,658 @@
             this.groupBoxSecciones.Controls.Add(this.textColumna1);
             this.groupBoxSecciones.Controls.Add(this.textFila1);
             this.groupBoxSecciones.Controls.Add(this.labelFila1);
-            this.groupBoxSecciones.Location = new System.Drawing.Point(6, 184);
+            this.errorProvider2.SetError(this.groupBoxSecciones, resources.GetString("groupBoxSecciones.Error"));
+            this.errorProvider1.SetError(this.groupBoxSecciones, resources.GetString("groupBoxSecciones.Error1"));
+            this.errorProvider2.SetIconAlignment(this.groupBoxSecciones, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("groupBoxSecciones.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.groupBoxSecciones, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("groupBoxSecciones.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.groupBoxSecciones, ((int)(resources.GetObject("groupBoxSecciones.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.groupBoxSecciones, ((int)(resources.GetObject("groupBoxSecciones.IconPadding1"))));
             this.groupBoxSecciones.Name = "groupBoxSecciones";
-            this.groupBoxSecciones.Size = new System.Drawing.Size(881, 356);
-            this.groupBoxSecciones.TabIndex = 8;
             this.groupBoxSecciones.TabStop = false;
-            this.groupBoxSecciones.Text = "Secciones";
-            this.groupBoxSecciones.Visible = false;
             // 
             // labelColumna10
             // 
-            this.labelColumna10.AutoSize = true;
-            this.labelColumna10.Location = new System.Drawing.Point(382, 307);
+            resources.ApplyResources(this.labelColumna10, "labelColumna10");
+            this.errorProvider1.SetError(this.labelColumna10, resources.GetString("labelColumna10.Error"));
+            this.errorProvider2.SetError(this.labelColumna10, resources.GetString("labelColumna10.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna10.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna10.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna10, ((int)(resources.GetObject("labelColumna10.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna10, ((int)(resources.GetObject("labelColumna10.IconPadding1"))));
             this.labelColumna10.Name = "labelColumna10";
-            this.labelColumna10.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna10.TabIndex = 54;
-            this.labelColumna10.Text = "Nº Columnas";
             // 
             // labelSeccion10
             // 
-            this.labelSeccion10.AutoSize = true;
-            this.labelSeccion10.Location = new System.Drawing.Point(69, 307);
+            resources.ApplyResources(this.labelSeccion10, "labelSeccion10");
+            this.errorProvider1.SetError(this.labelSeccion10, resources.GetString("labelSeccion10.Error"));
+            this.errorProvider2.SetError(this.labelSeccion10, resources.GetString("labelSeccion10.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion10.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion10.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion10, ((int)(resources.GetObject("labelSeccion10.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion10, ((int)(resources.GetObject("labelSeccion10.IconPadding1"))));
             this.labelSeccion10.Name = "labelSeccion10";
-            this.labelSeccion10.Size = new System.Drawing.Size(54, 13);
-            this.labelSeccion10.TabIndex = 53;
-            this.labelSeccion10.Text = "Sección J";
             // 
             // textColumna10
             // 
-            this.textColumna10.Location = new System.Drawing.Point(456, 304);
+            resources.ApplyResources(this.textColumna10, "textColumna10");
+            this.errorProvider2.SetError(this.textColumna10, resources.GetString("textColumna10.Error"));
+            this.errorProvider1.SetError(this.textColumna10, resources.GetString("textColumna10.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna10.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna10.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna10, ((int)(resources.GetObject("textColumna10.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna10, ((int)(resources.GetObject("textColumna10.IconPadding1"))));
             this.textColumna10.Name = "textColumna10";
-            this.textColumna10.Size = new System.Drawing.Size(25, 20);
-            this.textColumna10.TabIndex = 52;
             // 
             // textFila10
             // 
-            this.textFila10.Location = new System.Drawing.Point(268, 304);
+            resources.ApplyResources(this.textFila10, "textFila10");
+            this.errorProvider2.SetError(this.textFila10, resources.GetString("textFila10.Error"));
+            this.errorProvider1.SetError(this.textFila10, resources.GetString("textFila10.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila10.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila10.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila10, ((int)(resources.GetObject("textFila10.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila10, ((int)(resources.GetObject("textFila10.IconPadding1"))));
             this.textFila10.Name = "textFila10";
-            this.textFila10.Size = new System.Drawing.Size(25, 20);
-            this.textFila10.TabIndex = 51;
             // 
             // labelFila10
             // 
-            this.labelFila10.AutoSize = true;
-            this.labelFila10.Location = new System.Drawing.Point(219, 307);
+            resources.ApplyResources(this.labelFila10, "labelFila10");
+            this.errorProvider1.SetError(this.labelFila10, resources.GetString("labelFila10.Error"));
+            this.errorProvider2.SetError(this.labelFila10, resources.GetString("labelFila10.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila10.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila10, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila10.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila10, ((int)(resources.GetObject("labelFila10.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila10, ((int)(resources.GetObject("labelFila10.IconPadding1"))));
             this.labelFila10.Name = "labelFila10";
-            this.labelFila10.Size = new System.Drawing.Size(43, 13);
-            this.labelFila10.TabIndex = 50;
-            this.labelFila10.Text = "Nº Filas";
             // 
             // labelColumna9
             // 
-            this.labelColumna9.AutoSize = true;
-            this.labelColumna9.Location = new System.Drawing.Point(382, 277);
+            resources.ApplyResources(this.labelColumna9, "labelColumna9");
+            this.errorProvider1.SetError(this.labelColumna9, resources.GetString("labelColumna9.Error"));
+            this.errorProvider2.SetError(this.labelColumna9, resources.GetString("labelColumna9.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna9.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna9.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna9, ((int)(resources.GetObject("labelColumna9.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna9, ((int)(resources.GetObject("labelColumna9.IconPadding1"))));
             this.labelColumna9.Name = "labelColumna9";
-            this.labelColumna9.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna9.TabIndex = 49;
-            this.labelColumna9.Text = "Nº Columnas";
             // 
             // labelSeccion9
             // 
-            this.labelSeccion9.AutoSize = true;
-            this.labelSeccion9.Location = new System.Drawing.Point(69, 277);
+            resources.ApplyResources(this.labelSeccion9, "labelSeccion9");
+            this.errorProvider1.SetError(this.labelSeccion9, resources.GetString("labelSeccion9.Error"));
+            this.errorProvider2.SetError(this.labelSeccion9, resources.GetString("labelSeccion9.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion9.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion9.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion9, ((int)(resources.GetObject("labelSeccion9.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion9, ((int)(resources.GetObject("labelSeccion9.IconPadding1"))));
             this.labelSeccion9.Name = "labelSeccion9";
-            this.labelSeccion9.Size = new System.Drawing.Size(52, 13);
-            this.labelSeccion9.TabIndex = 48;
-            this.labelSeccion9.Text = "Sección I";
             // 
             // textColumna9
             // 
-            this.textColumna9.Location = new System.Drawing.Point(456, 274);
+            resources.ApplyResources(this.textColumna9, "textColumna9");
+            this.errorProvider2.SetError(this.textColumna9, resources.GetString("textColumna9.Error"));
+            this.errorProvider1.SetError(this.textColumna9, resources.GetString("textColumna9.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna9.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna9.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna9, ((int)(resources.GetObject("textColumna9.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna9, ((int)(resources.GetObject("textColumna9.IconPadding1"))));
             this.textColumna9.Name = "textColumna9";
-            this.textColumna9.Size = new System.Drawing.Size(25, 20);
-            this.textColumna9.TabIndex = 47;
             // 
             // textFila9
             // 
-            this.textFila9.Location = new System.Drawing.Point(268, 274);
+            resources.ApplyResources(this.textFila9, "textFila9");
+            this.errorProvider2.SetError(this.textFila9, resources.GetString("textFila9.Error"));
+            this.errorProvider1.SetError(this.textFila9, resources.GetString("textFila9.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila9.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila9.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila9, ((int)(resources.GetObject("textFila9.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila9, ((int)(resources.GetObject("textFila9.IconPadding1"))));
             this.textFila9.Name = "textFila9";
-            this.textFila9.Size = new System.Drawing.Size(25, 20);
-            this.textFila9.TabIndex = 46;
             // 
             // labelFila9
             // 
-            this.labelFila9.AutoSize = true;
-            this.labelFila9.Location = new System.Drawing.Point(219, 277);
+            resources.ApplyResources(this.labelFila9, "labelFila9");
+            this.errorProvider1.SetError(this.labelFila9, resources.GetString("labelFila9.Error"));
+            this.errorProvider2.SetError(this.labelFila9, resources.GetString("labelFila9.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila9.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila9, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila9.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila9, ((int)(resources.GetObject("labelFila9.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila9, ((int)(resources.GetObject("labelFila9.IconPadding1"))));
             this.labelFila9.Name = "labelFila9";
-            this.labelFila9.Size = new System.Drawing.Size(43, 13);
-            this.labelFila9.TabIndex = 45;
-            this.labelFila9.Text = "Nº Filas";
             // 
             // labelColumna8
             // 
-            this.labelColumna8.AutoSize = true;
-            this.labelColumna8.Location = new System.Drawing.Point(382, 252);
+            resources.ApplyResources(this.labelColumna8, "labelColumna8");
+            this.errorProvider1.SetError(this.labelColumna8, resources.GetString("labelColumna8.Error"));
+            this.errorProvider2.SetError(this.labelColumna8, resources.GetString("labelColumna8.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna8.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna8.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna8, ((int)(resources.GetObject("labelColumna8.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna8, ((int)(resources.GetObject("labelColumna8.IconPadding1"))));
             this.labelColumna8.Name = "labelColumna8";
-            this.labelColumna8.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna8.TabIndex = 44;
-            this.labelColumna8.Text = "Nº Columnas";
             // 
             // labelSeccion8
             // 
-            this.labelSeccion8.AutoSize = true;
-            this.labelSeccion8.Location = new System.Drawing.Point(69, 252);
+            resources.ApplyResources(this.labelSeccion8, "labelSeccion8");
+            this.errorProvider1.SetError(this.labelSeccion8, resources.GetString("labelSeccion8.Error"));
+            this.errorProvider2.SetError(this.labelSeccion8, resources.GetString("labelSeccion8.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion8.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion8.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion8, ((int)(resources.GetObject("labelSeccion8.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion8, ((int)(resources.GetObject("labelSeccion8.IconPadding1"))));
             this.labelSeccion8.Name = "labelSeccion8";
-            this.labelSeccion8.Size = new System.Drawing.Size(57, 13);
-            this.labelSeccion8.TabIndex = 43;
-            this.labelSeccion8.Text = "Sección H";
             // 
             // textColumna8
             // 
-            this.textColumna8.Location = new System.Drawing.Point(456, 249);
+            resources.ApplyResources(this.textColumna8, "textColumna8");
+            this.errorProvider2.SetError(this.textColumna8, resources.GetString("textColumna8.Error"));
+            this.errorProvider1.SetError(this.textColumna8, resources.GetString("textColumna8.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna8.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna8.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna8, ((int)(resources.GetObject("textColumna8.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna8, ((int)(resources.GetObject("textColumna8.IconPadding1"))));
             this.textColumna8.Name = "textColumna8";
-            this.textColumna8.Size = new System.Drawing.Size(25, 20);
-            this.textColumna8.TabIndex = 42;
             // 
             // textFila8
             // 
-            this.textFila8.Location = new System.Drawing.Point(268, 249);
+            resources.ApplyResources(this.textFila8, "textFila8");
+            this.errorProvider2.SetError(this.textFila8, resources.GetString("textFila8.Error"));
+            this.errorProvider1.SetError(this.textFila8, resources.GetString("textFila8.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila8.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila8.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila8, ((int)(resources.GetObject("textFila8.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila8, ((int)(resources.GetObject("textFila8.IconPadding1"))));
             this.textFila8.Name = "textFila8";
-            this.textFila8.Size = new System.Drawing.Size(25, 20);
-            this.textFila8.TabIndex = 41;
             // 
             // labelFila8
             // 
-            this.labelFila8.AutoSize = true;
-            this.labelFila8.Location = new System.Drawing.Point(219, 252);
+            resources.ApplyResources(this.labelFila8, "labelFila8");
+            this.errorProvider1.SetError(this.labelFila8, resources.GetString("labelFila8.Error"));
+            this.errorProvider2.SetError(this.labelFila8, resources.GetString("labelFila8.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila8.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila8, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila8.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila8, ((int)(resources.GetObject("labelFila8.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila8, ((int)(resources.GetObject("labelFila8.IconPadding1"))));
             this.labelFila8.Name = "labelFila8";
-            this.labelFila8.Size = new System.Drawing.Size(43, 13);
-            this.labelFila8.TabIndex = 40;
-            this.labelFila8.Text = "Nº Filas";
             // 
             // labelColumna7
             // 
-            this.labelColumna7.AutoSize = true;
-            this.labelColumna7.Location = new System.Drawing.Point(382, 222);
+            resources.ApplyResources(this.labelColumna7, "labelColumna7");
+            this.errorProvider1.SetError(this.labelColumna7, resources.GetString("labelColumna7.Error"));
+            this.errorProvider2.SetError(this.labelColumna7, resources.GetString("labelColumna7.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna7.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna7.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna7, ((int)(resources.GetObject("labelColumna7.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna7, ((int)(resources.GetObject("labelColumna7.IconPadding1"))));
             this.labelColumna7.Name = "labelColumna7";
-            this.labelColumna7.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna7.TabIndex = 39;
-            this.labelColumna7.Text = "Nº Columnas";
             // 
             // labelSeccion7
             // 
-            this.labelSeccion7.AutoSize = true;
-            this.labelSeccion7.Location = new System.Drawing.Point(69, 222);
+            resources.ApplyResources(this.labelSeccion7, "labelSeccion7");
+            this.errorProvider1.SetError(this.labelSeccion7, resources.GetString("labelSeccion7.Error"));
+            this.errorProvider2.SetError(this.labelSeccion7, resources.GetString("labelSeccion7.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion7.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion7.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion7, ((int)(resources.GetObject("labelSeccion7.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion7, ((int)(resources.GetObject("labelSeccion7.IconPadding1"))));
             this.labelSeccion7.Name = "labelSeccion7";
-            this.labelSeccion7.Size = new System.Drawing.Size(57, 13);
-            this.labelSeccion7.TabIndex = 38;
-            this.labelSeccion7.Text = "Sección G";
             // 
             // textColumna7
             // 
-            this.textColumna7.Location = new System.Drawing.Point(456, 219);
+            resources.ApplyResources(this.textColumna7, "textColumna7");
+            this.errorProvider2.SetError(this.textColumna7, resources.GetString("textColumna7.Error"));
+            this.errorProvider1.SetError(this.textColumna7, resources.GetString("textColumna7.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna7.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna7.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna7, ((int)(resources.GetObject("textColumna7.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna7, ((int)(resources.GetObject("textColumna7.IconPadding1"))));
             this.textColumna7.Name = "textColumna7";
-            this.textColumna7.Size = new System.Drawing.Size(25, 20);
-            this.textColumna7.TabIndex = 37;
             // 
             // textFila7
             // 
-            this.textFila7.Location = new System.Drawing.Point(268, 219);
+            resources.ApplyResources(this.textFila7, "textFila7");
+            this.errorProvider2.SetError(this.textFila7, resources.GetString("textFila7.Error"));
+            this.errorProvider1.SetError(this.textFila7, resources.GetString("textFila7.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila7.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila7.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila7, ((int)(resources.GetObject("textFila7.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila7, ((int)(resources.GetObject("textFila7.IconPadding1"))));
             this.textFila7.Name = "textFila7";
-            this.textFila7.Size = new System.Drawing.Size(25, 20);
-            this.textFila7.TabIndex = 36;
             // 
             // labelFila7
             // 
-            this.labelFila7.AutoSize = true;
-            this.labelFila7.Location = new System.Drawing.Point(219, 222);
+            resources.ApplyResources(this.labelFila7, "labelFila7");
+            this.errorProvider1.SetError(this.labelFila7, resources.GetString("labelFila7.Error"));
+            this.errorProvider2.SetError(this.labelFila7, resources.GetString("labelFila7.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila7.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila7, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila7.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila7, ((int)(resources.GetObject("labelFila7.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila7, ((int)(resources.GetObject("labelFila7.IconPadding1"))));
             this.labelFila7.Name = "labelFila7";
-            this.labelFila7.Size = new System.Drawing.Size(43, 13);
-            this.labelFila7.TabIndex = 35;
-            this.labelFila7.Text = "Nº Filas";
             // 
             // labelColumna6
             // 
-            this.labelColumna6.AutoSize = true;
-            this.labelColumna6.Location = new System.Drawing.Point(382, 192);
+            resources.ApplyResources(this.labelColumna6, "labelColumna6");
+            this.errorProvider1.SetError(this.labelColumna6, resources.GetString("labelColumna6.Error"));
+            this.errorProvider2.SetError(this.labelColumna6, resources.GetString("labelColumna6.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna6.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna6.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna6, ((int)(resources.GetObject("labelColumna6.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna6, ((int)(resources.GetObject("labelColumna6.IconPadding1"))));
             this.labelColumna6.Name = "labelColumna6";
-            this.labelColumna6.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna6.TabIndex = 34;
-            this.labelColumna6.Text = "Nº Columnas";
             // 
             // labelSeccion6
             // 
-            this.labelSeccion6.AutoSize = true;
-            this.labelSeccion6.Location = new System.Drawing.Point(69, 192);
+            resources.ApplyResources(this.labelSeccion6, "labelSeccion6");
+            this.errorProvider1.SetError(this.labelSeccion6, resources.GetString("labelSeccion6.Error"));
+            this.errorProvider2.SetError(this.labelSeccion6, resources.GetString("labelSeccion6.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion6.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion6.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion6, ((int)(resources.GetObject("labelSeccion6.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion6, ((int)(resources.GetObject("labelSeccion6.IconPadding1"))));
             this.labelSeccion6.Name = "labelSeccion6";
-            this.labelSeccion6.Size = new System.Drawing.Size(55, 13);
-            this.labelSeccion6.TabIndex = 33;
-            this.labelSeccion6.Text = "Sección F";
             // 
             // textColumna6
             // 
-            this.textColumna6.Location = new System.Drawing.Point(456, 189);
+            resources.ApplyResources(this.textColumna6, "textColumna6");
+            this.errorProvider2.SetError(this.textColumna6, resources.GetString("textColumna6.Error"));
+            this.errorProvider1.SetError(this.textColumna6, resources.GetString("textColumna6.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna6.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna6.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna6, ((int)(resources.GetObject("textColumna6.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna6, ((int)(resources.GetObject("textColumna6.IconPadding1"))));
             this.textColumna6.Name = "textColumna6";
-            this.textColumna6.Size = new System.Drawing.Size(25, 20);
-            this.textColumna6.TabIndex = 32;
             // 
             // textFila6
             // 
-            this.textFila6.Location = new System.Drawing.Point(268, 189);
+            resources.ApplyResources(this.textFila6, "textFila6");
+            this.errorProvider2.SetError(this.textFila6, resources.GetString("textFila6.Error"));
+            this.errorProvider1.SetError(this.textFila6, resources.GetString("textFila6.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila6.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila6.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila6, ((int)(resources.GetObject("textFila6.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila6, ((int)(resources.GetObject("textFila6.IconPadding1"))));
             this.textFila6.Name = "textFila6";
-            this.textFila6.Size = new System.Drawing.Size(25, 20);
-            this.textFila6.TabIndex = 31;
             // 
             // labelFila6
             // 
-            this.labelFila6.AutoSize = true;
-            this.labelFila6.Location = new System.Drawing.Point(219, 192);
+            resources.ApplyResources(this.labelFila6, "labelFila6");
+            this.errorProvider1.SetError(this.labelFila6, resources.GetString("labelFila6.Error"));
+            this.errorProvider2.SetError(this.labelFila6, resources.GetString("labelFila6.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila6.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila6, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila6.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila6, ((int)(resources.GetObject("labelFila6.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila6, ((int)(resources.GetObject("labelFila6.IconPadding1"))));
             this.labelFila6.Name = "labelFila6";
-            this.labelFila6.Size = new System.Drawing.Size(43, 13);
-            this.labelFila6.TabIndex = 30;
-            this.labelFila6.Text = "Nº Filas";
             // 
             // labelColumna5
             // 
-            this.labelColumna5.AutoSize = true;
-            this.labelColumna5.Location = new System.Drawing.Point(382, 162);
+            resources.ApplyResources(this.labelColumna5, "labelColumna5");
+            this.errorProvider1.SetError(this.labelColumna5, resources.GetString("labelColumna5.Error"));
+            this.errorProvider2.SetError(this.labelColumna5, resources.GetString("labelColumna5.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna5.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna5.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna5, ((int)(resources.GetObject("labelColumna5.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna5, ((int)(resources.GetObject("labelColumna5.IconPadding1"))));
             this.labelColumna5.Name = "labelColumna5";
-            this.labelColumna5.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna5.TabIndex = 29;
-            this.labelColumna5.Text = "Nº Columnas";
             // 
             // labelSeccion5
             // 
-            this.labelSeccion5.AutoSize = true;
-            this.labelSeccion5.Location = new System.Drawing.Point(69, 162);
+            resources.ApplyResources(this.labelSeccion5, "labelSeccion5");
+            this.errorProvider1.SetError(this.labelSeccion5, resources.GetString("labelSeccion5.Error"));
+            this.errorProvider2.SetError(this.labelSeccion5, resources.GetString("labelSeccion5.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion5.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion5.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion5, ((int)(resources.GetObject("labelSeccion5.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion5, ((int)(resources.GetObject("labelSeccion5.IconPadding1"))));
             this.labelSeccion5.Name = "labelSeccion5";
-            this.labelSeccion5.Size = new System.Drawing.Size(56, 13);
-            this.labelSeccion5.TabIndex = 28;
-            this.labelSeccion5.Text = "Sección E";
             // 
             // textColumna5
             // 
-            this.textColumna5.Location = new System.Drawing.Point(456, 159);
+            resources.ApplyResources(this.textColumna5, "textColumna5");
+            this.errorProvider2.SetError(this.textColumna5, resources.GetString("textColumna5.Error"));
+            this.errorProvider1.SetError(this.textColumna5, resources.GetString("textColumna5.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna5.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna5.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna5, ((int)(resources.GetObject("textColumna5.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna5, ((int)(resources.GetObject("textColumna5.IconPadding1"))));
             this.textColumna5.Name = "textColumna5";
-            this.textColumna5.Size = new System.Drawing.Size(25, 20);
-            this.textColumna5.TabIndex = 27;
             // 
             // textFila5
             // 
-            this.textFila5.Location = new System.Drawing.Point(268, 159);
+            resources.ApplyResources(this.textFila5, "textFila5");
+            this.errorProvider2.SetError(this.textFila5, resources.GetString("textFila5.Error"));
+            this.errorProvider1.SetError(this.textFila5, resources.GetString("textFila5.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila5.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila5.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila5, ((int)(resources.GetObject("textFila5.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila5, ((int)(resources.GetObject("textFila5.IconPadding1"))));
             this.textFila5.Name = "textFila5";
-            this.textFila5.Size = new System.Drawing.Size(25, 20);
-            this.textFila5.TabIndex = 26;
             // 
             // labelFila5
             // 
-            this.labelFila5.AutoSize = true;
-            this.labelFila5.Location = new System.Drawing.Point(219, 162);
+            resources.ApplyResources(this.labelFila5, "labelFila5");
+            this.errorProvider1.SetError(this.labelFila5, resources.GetString("labelFila5.Error"));
+            this.errorProvider2.SetError(this.labelFila5, resources.GetString("labelFila5.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila5.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila5, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila5.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila5, ((int)(resources.GetObject("labelFila5.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila5, ((int)(resources.GetObject("labelFila5.IconPadding1"))));
             this.labelFila5.Name = "labelFila5";
-            this.labelFila5.Size = new System.Drawing.Size(43, 13);
-            this.labelFila5.TabIndex = 25;
-            this.labelFila5.Text = "Nº Filas";
             // 
             // labelColumna4
             // 
-            this.labelColumna4.AutoSize = true;
-            this.labelColumna4.Location = new System.Drawing.Point(382, 128);
+            resources.ApplyResources(this.labelColumna4, "labelColumna4");
+            this.errorProvider1.SetError(this.labelColumna4, resources.GetString("labelColumna4.Error"));
+            this.errorProvider2.SetError(this.labelColumna4, resources.GetString("labelColumna4.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna4.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna4.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna4, ((int)(resources.GetObject("labelColumna4.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna4, ((int)(resources.GetObject("labelColumna4.IconPadding1"))));
             this.labelColumna4.Name = "labelColumna4";
-            this.labelColumna4.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna4.TabIndex = 24;
-            this.labelColumna4.Text = "Nº Columnas";
             // 
             // labelSeccion4
             // 
-            this.labelSeccion4.AutoSize = true;
-            this.labelSeccion4.Location = new System.Drawing.Point(69, 128);
+            resources.ApplyResources(this.labelSeccion4, "labelSeccion4");
+            this.errorProvider1.SetError(this.labelSeccion4, resources.GetString("labelSeccion4.Error"));
+            this.errorProvider2.SetError(this.labelSeccion4, resources.GetString("labelSeccion4.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion4.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion4.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion4, ((int)(resources.GetObject("labelSeccion4.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion4, ((int)(resources.GetObject("labelSeccion4.IconPadding1"))));
             this.labelSeccion4.Name = "labelSeccion4";
-            this.labelSeccion4.Size = new System.Drawing.Size(57, 13);
-            this.labelSeccion4.TabIndex = 23;
-            this.labelSeccion4.Text = "Sección D";
             // 
             // textColumna4
             // 
-            this.textColumna4.Location = new System.Drawing.Point(456, 125);
+            resources.ApplyResources(this.textColumna4, "textColumna4");
+            this.errorProvider2.SetError(this.textColumna4, resources.GetString("textColumna4.Error"));
+            this.errorProvider1.SetError(this.textColumna4, resources.GetString("textColumna4.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna4.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna4.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna4, ((int)(resources.GetObject("textColumna4.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna4, ((int)(resources.GetObject("textColumna4.IconPadding1"))));
             this.textColumna4.Name = "textColumna4";
-            this.textColumna4.Size = new System.Drawing.Size(25, 20);
-            this.textColumna4.TabIndex = 22;
             // 
             // textFila4
             // 
-            this.textFila4.Location = new System.Drawing.Point(268, 125);
+            resources.ApplyResources(this.textFila4, "textFila4");
+            this.errorProvider2.SetError(this.textFila4, resources.GetString("textFila4.Error"));
+            this.errorProvider1.SetError(this.textFila4, resources.GetString("textFila4.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila4.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila4.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila4, ((int)(resources.GetObject("textFila4.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila4, ((int)(resources.GetObject("textFila4.IconPadding1"))));
             this.textFila4.Name = "textFila4";
-            this.textFila4.Size = new System.Drawing.Size(25, 20);
-            this.textFila4.TabIndex = 21;
             // 
             // labelFila4
             // 
-            this.labelFila4.AutoSize = true;
-            this.labelFila4.Location = new System.Drawing.Point(219, 128);
+            resources.ApplyResources(this.labelFila4, "labelFila4");
+            this.errorProvider1.SetError(this.labelFila4, resources.GetString("labelFila4.Error"));
+            this.errorProvider2.SetError(this.labelFila4, resources.GetString("labelFila4.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila4.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila4.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila4, ((int)(resources.GetObject("labelFila4.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila4, ((int)(resources.GetObject("labelFila4.IconPadding1"))));
             this.labelFila4.Name = "labelFila4";
-            this.labelFila4.Size = new System.Drawing.Size(43, 13);
-            this.labelFila4.TabIndex = 20;
-            this.labelFila4.Text = "Nº Filas";
             // 
             // labelColumna3
             // 
-            this.labelColumna3.AutoSize = true;
-            this.labelColumna3.Location = new System.Drawing.Point(382, 98);
+            resources.ApplyResources(this.labelColumna3, "labelColumna3");
+            this.errorProvider1.SetError(this.labelColumna3, resources.GetString("labelColumna3.Error"));
+            this.errorProvider2.SetError(this.labelColumna3, resources.GetString("labelColumna3.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna3.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna3.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna3, ((int)(resources.GetObject("labelColumna3.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna3, ((int)(resources.GetObject("labelColumna3.IconPadding1"))));
             this.labelColumna3.Name = "labelColumna3";
-            this.labelColumna3.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna3.TabIndex = 19;
-            this.labelColumna3.Text = "Nº Columnas";
             // 
             // labelSeccion3
             // 
-            this.labelSeccion3.AutoSize = true;
-            this.labelSeccion3.Location = new System.Drawing.Point(69, 98);
+            resources.ApplyResources(this.labelSeccion3, "labelSeccion3");
+            this.errorProvider1.SetError(this.labelSeccion3, resources.GetString("labelSeccion3.Error"));
+            this.errorProvider2.SetError(this.labelSeccion3, resources.GetString("labelSeccion3.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion3.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion3.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion3, ((int)(resources.GetObject("labelSeccion3.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion3, ((int)(resources.GetObject("labelSeccion3.IconPadding1"))));
             this.labelSeccion3.Name = "labelSeccion3";
-            this.labelSeccion3.Size = new System.Drawing.Size(56, 13);
-            this.labelSeccion3.TabIndex = 18;
-            this.labelSeccion3.Text = "Sección C";
             // 
             // textColumna3
             // 
-            this.textColumna3.Location = new System.Drawing.Point(456, 95);
+            resources.ApplyResources(this.textColumna3, "textColumna3");
+            this.errorProvider2.SetError(this.textColumna3, resources.GetString("textColumna3.Error"));
+            this.errorProvider1.SetError(this.textColumna3, resources.GetString("textColumna3.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna3.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna3.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna3, ((int)(resources.GetObject("textColumna3.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna3, ((int)(resources.GetObject("textColumna3.IconPadding1"))));
             this.textColumna3.Name = "textColumna3";
-            this.textColumna3.Size = new System.Drawing.Size(25, 20);
-            this.textColumna3.TabIndex = 17;
             // 
             // textFila3
             // 
-            this.textFila3.Location = new System.Drawing.Point(268, 95);
+            resources.ApplyResources(this.textFila3, "textFila3");
+            this.errorProvider2.SetError(this.textFila3, resources.GetString("textFila3.Error"));
+            this.errorProvider1.SetError(this.textFila3, resources.GetString("textFila3.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila3.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila3.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila3, ((int)(resources.GetObject("textFila3.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila3, ((int)(resources.GetObject("textFila3.IconPadding1"))));
             this.textFila3.Name = "textFila3";
-            this.textFila3.Size = new System.Drawing.Size(25, 20);
-            this.textFila3.TabIndex = 16;
             // 
             // labelFila3
             // 
-            this.labelFila3.AutoSize = true;
-            this.labelFila3.Location = new System.Drawing.Point(219, 98);
+            resources.ApplyResources(this.labelFila3, "labelFila3");
+            this.errorProvider1.SetError(this.labelFila3, resources.GetString("labelFila3.Error"));
+            this.errorProvider2.SetError(this.labelFila3, resources.GetString("labelFila3.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila3.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila3, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila3.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila3, ((int)(resources.GetObject("labelFila3.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila3, ((int)(resources.GetObject("labelFila3.IconPadding1"))));
             this.labelFila3.Name = "labelFila3";
-            this.labelFila3.Size = new System.Drawing.Size(43, 13);
-            this.labelFila3.TabIndex = 15;
-            this.labelFila3.Text = "Nº Filas";
             // 
             // labelColumna2
             // 
-            this.labelColumna2.AutoSize = true;
-            this.labelColumna2.Location = new System.Drawing.Point(382, 66);
+            resources.ApplyResources(this.labelColumna2, "labelColumna2");
+            this.errorProvider1.SetError(this.labelColumna2, resources.GetString("labelColumna2.Error"));
+            this.errorProvider2.SetError(this.labelColumna2, resources.GetString("labelColumna2.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna2.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna2, ((int)(resources.GetObject("labelColumna2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna2, ((int)(resources.GetObject("labelColumna2.IconPadding1"))));
             this.labelColumna2.Name = "labelColumna2";
-            this.labelColumna2.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna2.TabIndex = 14;
-            this.labelColumna2.Text = "Nº Columnas";
             // 
             // labelSeccion2
             // 
-            this.labelSeccion2.AutoSize = true;
-            this.labelSeccion2.Location = new System.Drawing.Point(69, 66);
+            resources.ApplyResources(this.labelSeccion2, "labelSeccion2");
+            this.errorProvider1.SetError(this.labelSeccion2, resources.GetString("labelSeccion2.Error"));
+            this.errorProvider2.SetError(this.labelSeccion2, resources.GetString("labelSeccion2.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion2.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion2, ((int)(resources.GetObject("labelSeccion2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion2, ((int)(resources.GetObject("labelSeccion2.IconPadding1"))));
             this.labelSeccion2.Name = "labelSeccion2";
-            this.labelSeccion2.Size = new System.Drawing.Size(56, 13);
-            this.labelSeccion2.TabIndex = 13;
-            this.labelSeccion2.Text = "Sección B";
             // 
             // textColumna2
             // 
-            this.textColumna2.Location = new System.Drawing.Point(456, 63);
+            resources.ApplyResources(this.textColumna2, "textColumna2");
+            this.errorProvider2.SetError(this.textColumna2, resources.GetString("textColumna2.Error"));
+            this.errorProvider1.SetError(this.textColumna2, resources.GetString("textColumna2.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna2.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna2.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna2, ((int)(resources.GetObject("textColumna2.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna2, ((int)(resources.GetObject("textColumna2.IconPadding1"))));
             this.textColumna2.Name = "textColumna2";
-            this.textColumna2.Size = new System.Drawing.Size(25, 20);
-            this.textColumna2.TabIndex = 12;
             // 
             // textFila2
             // 
-            this.textFila2.Location = new System.Drawing.Point(268, 63);
+            resources.ApplyResources(this.textFila2, "textFila2");
+            this.errorProvider2.SetError(this.textFila2, resources.GetString("textFila2.Error"));
+            this.errorProvider1.SetError(this.textFila2, resources.GetString("textFila2.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila2.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila2.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila2, ((int)(resources.GetObject("textFila2.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila2, ((int)(resources.GetObject("textFila2.IconPadding1"))));
             this.textFila2.Name = "textFila2";
-            this.textFila2.Size = new System.Drawing.Size(25, 20);
-            this.textFila2.TabIndex = 11;
             // 
             // labelFila2
             // 
-            this.labelFila2.AutoSize = true;
-            this.labelFila2.Location = new System.Drawing.Point(219, 66);
+            resources.ApplyResources(this.labelFila2, "labelFila2");
+            this.errorProvider1.SetError(this.labelFila2, resources.GetString("labelFila2.Error"));
+            this.errorProvider2.SetError(this.labelFila2, resources.GetString("labelFila2.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila2.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila2, ((int)(resources.GetObject("labelFila2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila2, ((int)(resources.GetObject("labelFila2.IconPadding1"))));
             this.labelFila2.Name = "labelFila2";
-            this.labelFila2.Size = new System.Drawing.Size(43, 13);
-            this.labelFila2.TabIndex = 10;
-            this.labelFila2.Text = "Nº Filas";
             // 
             // labelColumna1
             // 
-            this.labelColumna1.AutoSize = true;
-            this.labelColumna1.Location = new System.Drawing.Point(382, 36);
+            resources.ApplyResources(this.labelColumna1, "labelColumna1");
+            this.errorProvider1.SetError(this.labelColumna1, resources.GetString("labelColumna1.Error"));
+            this.errorProvider2.SetError(this.labelColumna1, resources.GetString("labelColumna1.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelColumna1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna1.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelColumna1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelColumna1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelColumna1, ((int)(resources.GetObject("labelColumna1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelColumna1, ((int)(resources.GetObject("labelColumna1.IconPadding1"))));
             this.labelColumna1.Name = "labelColumna1";
-            this.labelColumna1.Size = new System.Drawing.Size(68, 13);
-            this.labelColumna1.TabIndex = 4;
-            this.labelColumna1.Text = "Nº Columnas";
             // 
             // labelSeccion1
             // 
-            this.labelSeccion1.AutoSize = true;
-            this.labelSeccion1.Location = new System.Drawing.Point(69, 36);
+            resources.ApplyResources(this.labelSeccion1, "labelSeccion1");
+            this.errorProvider1.SetError(this.labelSeccion1, resources.GetString("labelSeccion1.Error"));
+            this.errorProvider2.SetError(this.labelSeccion1, resources.GetString("labelSeccion1.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSeccion1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion1.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSeccion1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSeccion1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSeccion1, ((int)(resources.GetObject("labelSeccion1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSeccion1, ((int)(resources.GetObject("labelSeccion1.IconPadding1"))));
             this.labelSeccion1.Name = "labelSeccion1";
-            this.labelSeccion1.Size = new System.Drawing.Size(56, 13);
-            this.labelSeccion1.TabIndex = 3;
-            this.labelSeccion1.Text = "Sección A";
             // 
             // textColumna1
             // 
-            this.textColumna1.Location = new System.Drawing.Point(456, 33);
+            resources.ApplyResources(this.textColumna1, "textColumna1");
+            this.errorProvider2.SetError(this.textColumna1, resources.GetString("textColumna1.Error"));
+            this.errorProvider1.SetError(this.textColumna1, resources.GetString("textColumna1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textColumna1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textColumna1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textColumna1.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textColumna1, ((int)(resources.GetObject("textColumna1.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textColumna1, ((int)(resources.GetObject("textColumna1.IconPadding1"))));
             this.textColumna1.Name = "textColumna1";
-            this.textColumna1.Size = new System.Drawing.Size(25, 20);
-            this.textColumna1.TabIndex = 2;
             // 
             // textFila1
             // 
-            this.textFila1.Location = new System.Drawing.Point(268, 33);
+            resources.ApplyResources(this.textFila1, "textFila1");
+            this.errorProvider2.SetError(this.textFila1, resources.GetString("textFila1.Error"));
+            this.errorProvider1.SetError(this.textFila1, resources.GetString("textFila1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textFila1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textFila1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textFila1.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textFila1, ((int)(resources.GetObject("textFila1.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textFila1, ((int)(resources.GetObject("textFila1.IconPadding1"))));
             this.textFila1.Name = "textFila1";
-            this.textFila1.Size = new System.Drawing.Size(25, 20);
-            this.textFila1.TabIndex = 1;
             // 
             // labelFila1
             // 
-            this.labelFila1.AutoSize = true;
-            this.labelFila1.Location = new System.Drawing.Point(219, 36);
+            resources.ApplyResources(this.labelFila1, "labelFila1");
+            this.errorProvider1.SetError(this.labelFila1, resources.GetString("labelFila1.Error"));
+            this.errorProvider2.SetError(this.labelFila1, resources.GetString("labelFila1.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelFila1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila1.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelFila1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelFila1.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelFila1, ((int)(resources.GetObject("labelFila1.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelFila1, ((int)(resources.GetObject("labelFila1.IconPadding1"))));
             this.labelFila1.Name = "labelFila1";
-            this.labelFila1.Size = new System.Drawing.Size(43, 13);
-            this.labelFila1.TabIndex = 0;
-            this.labelFila1.Text = "Nº Filas";
             // 
             // textIdSala
             // 
-            this.textIdSala.Enabled = false;
-            this.textIdSala.Location = new System.Drawing.Point(95, 35);
+            resources.ApplyResources(this.textIdSala, "textIdSala");
+            this.errorProvider2.SetError(this.textIdSala, resources.GetString("textIdSala.Error"));
+            this.errorProvider1.SetError(this.textIdSala, resources.GetString("textIdSala.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textIdSala.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textIdSala.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textIdSala, ((int)(resources.GetObject("textIdSala.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textIdSala, ((int)(resources.GetObject("textIdSala.IconPadding1"))));
             this.textIdSala.Name = "textIdSala";
-            this.textIdSala.Size = new System.Drawing.Size(77, 20);
-            this.textIdSala.TabIndex = 7;
             // 
             // buttonAñadirSala
             // 
-            this.buttonAñadirSala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.buttonAñadirSala, "buttonAñadirSala");
+            this.errorProvider1.SetError(this.buttonAñadirSala, resources.GetString("buttonAñadirSala.Error"));
+            this.errorProvider2.SetError(this.buttonAñadirSala, resources.GetString("buttonAñadirSala.Error1"));
+            this.errorProvider1.SetIconAlignment(this.buttonAñadirSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonAñadirSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.buttonAñadirSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonAñadirSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.buttonAñadirSala, ((int)(resources.GetObject("buttonAñadirSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.buttonAñadirSala, ((int)(resources.GetObject("buttonAñadirSala.IconPadding1"))));
             this.buttonAñadirSala.Image = global::Events4ALL.Properties.Resources.add_save;
-            this.buttonAñadirSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAñadirSala.Location = new System.Drawing.Point(812, 577);
             this.buttonAñadirSala.Name = "buttonAñadirSala";
-            this.buttonAñadirSala.Size = new System.Drawing.Size(75, 23);
-            this.buttonAñadirSala.TabIndex = 6;
-            this.buttonAñadirSala.Text = "Guardar";
-            this.buttonAñadirSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAñadirSala.UseVisualStyleBackColor = true;
             this.buttonAñadirSala.Click += new System.EventHandler(this.buttonAñadirSala_Click);
             // 
             // comboNumSeccion
             // 
+            resources.ApplyResources(this.comboNumSeccion, "comboNumSeccion");
             this.comboNumSeccion.DisplayMember = "1;2";
             this.comboNumSeccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider2.SetError(this.comboNumSeccion, resources.GetString("comboNumSeccion.Error"));
+            this.errorProvider1.SetError(this.comboNumSeccion, resources.GetString("comboNumSeccion.Error1"));
             this.comboNumSeccion.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.comboNumSeccion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboNumSeccion.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.comboNumSeccion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboNumSeccion.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.comboNumSeccion, ((int)(resources.GetObject("comboNumSeccion.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.comboNumSeccion, ((int)(resources.GetObject("comboNumSeccion.IconPadding1"))));
             this.comboNumSeccion.Items.AddRange(new object[] {
-            "",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.comboNumSeccion.Location = new System.Drawing.Point(95, 92);
+            resources.GetString("comboNumSeccion.Items"),
+            resources.GetString("comboNumSeccion.Items1"),
+            resources.GetString("comboNumSeccion.Items2"),
+            resources.GetString("comboNumSeccion.Items3"),
+            resources.GetString("comboNumSeccion.Items4"),
+            resources.GetString("comboNumSeccion.Items5"),
+            resources.GetString("comboNumSeccion.Items6"),
+            resources.GetString("comboNumSeccion.Items7"),
+            resources.GetString("comboNumSeccion.Items8"),
+            resources.GetString("comboNumSeccion.Items9"),
+            resources.GetString("comboNumSeccion.Items10")});
             this.comboNumSeccion.Name = "comboNumSeccion";
-            this.comboNumSeccion.Size = new System.Drawing.Size(77, 21);
-            this.comboNumSeccion.TabIndex = 3;
             this.comboNumSeccion.SelectedIndexChanged += new System.EventHandler(this.comboNumMat_SelectedIndexChanged);
             // 
             // labelNumSeccion
             // 
-            this.labelNumSeccion.AutoSize = true;
-            this.labelNumSeccion.Location = new System.Drawing.Point(17, 95);
+            resources.ApplyResources(this.labelNumSeccion, "labelNumSeccion");
+            this.errorProvider1.SetError(this.labelNumSeccion, resources.GetString("labelNumSeccion.Error"));
+            this.errorProvider2.SetError(this.labelNumSeccion, resources.GetString("labelNumSeccion.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelNumSeccion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelNumSeccion.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelNumSeccion, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelNumSeccion.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelNumSeccion, ((int)(resources.GetObject("labelNumSeccion.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelNumSeccion, ((int)(resources.GetObject("labelNumSeccion.IconPadding1"))));
             this.labelNumSeccion.Name = "labelNumSeccion";
-            this.labelNumSeccion.Size = new System.Drawing.Size(72, 13);
-            this.labelNumSeccion.TabIndex = 2;
-            this.labelNumSeccion.Text = "Nº Secciones";
             // 
             // labelIdSala
             // 
-            this.labelIdSala.AutoSize = true;
-            this.labelIdSala.Location = new System.Drawing.Point(17, 38);
+            resources.ApplyResources(this.labelIdSala, "labelIdSala");
+            this.errorProvider1.SetError(this.labelIdSala, resources.GetString("labelIdSala.Error"));
+            this.errorProvider2.SetError(this.labelIdSala, resources.GetString("labelIdSala.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelIdSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelIdSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelIdSala, ((int)(resources.GetObject("labelIdSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelIdSala, ((int)(resources.GetObject("labelIdSala.IconPadding1"))));
             this.labelIdSala.Name = "labelIdSala";
-            this.labelIdSala.Size = new System.Drawing.Size(43, 13);
-            this.labelIdSala.TabIndex = 1;
-            this.labelIdSala.Text = "Nº Sala";
             // 
             // tabBusquedaSala
             // 
+            resources.ApplyResources(this.tabBusquedaSala, "tabBusquedaSala");
             this.tabBusquedaSala.Controls.Add(this.dataGridBuscarSala);
             this.tabBusquedaSala.Controls.Add(this.groupBuscarSala);
-            this.tabBusquedaSala.Location = new System.Drawing.Point(4, 22);
+            this.errorProvider1.SetError(this.tabBusquedaSala, resources.GetString("tabBusquedaSala.Error"));
+            this.errorProvider2.SetError(this.tabBusquedaSala, resources.GetString("tabBusquedaSala.Error1"));
+            this.errorProvider2.SetIconAlignment(this.tabBusquedaSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabBusquedaSala.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.tabBusquedaSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("tabBusquedaSala.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.tabBusquedaSala, ((int)(resources.GetObject("tabBusquedaSala.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.tabBusquedaSala, ((int)(resources.GetObject("tabBusquedaSala.IconPadding1"))));
             this.tabBusquedaSala.Name = "tabBusquedaSala";
-            this.tabBusquedaSala.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBusquedaSala.Size = new System.Drawing.Size(893, 606);
-            this.tabBusquedaSala.TabIndex = 1;
-            this.tabBusquedaSala.Text = "Búsqueda";
             this.tabBusquedaSala.UseVisualStyleBackColor = true;
             // 
             // dataGridBuscarSala
             // 
+            resources.ApplyResources(this.dataGridBuscarSala, "dataGridBuscarSala");
             this.dataGridBuscarSala.AllowUserToAddRows = false;
             this.dataGridBuscarSala.AllowUserToOrderColumns = true;
-            this.dataGridBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridBuscarSala.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridBuscarSala.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridBuscarSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -824,18 +992,64 @@
             this.numSecciones,
             this.Editar,
             this.Eliminar});
+            this.errorProvider1.SetError(this.dataGridBuscarSala, resources.GetString("dataGridBuscarSala.Error"));
+            this.errorProvider2.SetError(this.dataGridBuscarSala, resources.GetString("dataGridBuscarSala.Error1"));
             this.dataGridBuscarSala.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridBuscarSala.Location = new System.Drawing.Point(6, 175);
+            this.errorProvider2.SetIconAlignment(this.dataGridBuscarSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dataGridBuscarSala.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.dataGridBuscarSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dataGridBuscarSala.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.dataGridBuscarSala, ((int)(resources.GetObject("dataGridBuscarSala.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.dataGridBuscarSala, ((int)(resources.GetObject("dataGridBuscarSala.IconPadding1"))));
             this.dataGridBuscarSala.Name = "dataGridBuscarSala";
             this.dataGridBuscarSala.ReadOnly = true;
-            this.dataGridBuscarSala.Size = new System.Drawing.Size(881, 425);
-            this.dataGridBuscarSala.TabIndex = 3;
             this.dataGridBuscarSala.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridBuscarSala_CellContentClick);
+            // 
+            // numSala
+            // 
+            this.numSala.FillWeight = 50F;
+            resources.ApplyResources(this.numSala, "numSala");
+            this.numSala.Name = "numSala";
+            this.numSala.ReadOnly = true;
+            // 
+            // tipoSala
+            // 
+            this.tipoSala.FillWeight = 101.8613F;
+            resources.ApplyResources(this.tipoSala, "tipoSala");
+            this.tipoSala.Name = "tipoSala";
+            this.tipoSala.ReadOnly = true;
+            // 
+            // aforoSala
+            // 
+            this.aforoSala.FillWeight = 101.8613F;
+            resources.ApplyResources(this.aforoSala, "aforoSala");
+            this.aforoSala.Name = "aforoSala";
+            this.aforoSala.ReadOnly = true;
+            // 
+            // numSecciones
+            // 
+            this.numSecciones.FillWeight = 101.8613F;
+            resources.ApplyResources(this.numSecciones, "numSecciones");
+            this.numSecciones.Name = "numSecciones";
+            this.numSecciones.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 30F;
+            resources.ApplyResources(this.Editar, "Editar");
+            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 30F;
+            resources.ApplyResources(this.Eliminar, "Eliminar");
+            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // groupBuscarSala
             // 
-            this.groupBuscarSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBuscarSala, "groupBuscarSala");
             this.groupBuscarSala.Controls.Add(this.buttonLimpiarBusquedaSala);
             this.groupBuscarSala.Controls.Add(this.checkLibre);
             this.groupBuscarSala.Controls.Add(this.labelSalasLibres);
@@ -848,194 +1062,186 @@
             this.groupBuscarSala.Controls.Add(this.labelBuscarTipoSala);
             this.groupBuscarSala.Controls.Add(this.labelBuscarIdSala);
             this.groupBuscarSala.Controls.Add(this.textBox1);
-            this.groupBuscarSala.Location = new System.Drawing.Point(6, 6);
+            this.errorProvider2.SetError(this.groupBuscarSala, resources.GetString("groupBuscarSala.Error"));
+            this.errorProvider1.SetError(this.groupBuscarSala, resources.GetString("groupBuscarSala.Error1"));
+            this.errorProvider2.SetIconAlignment(this.groupBuscarSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("groupBuscarSala.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.groupBuscarSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("groupBuscarSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.groupBuscarSala, ((int)(resources.GetObject("groupBuscarSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.groupBuscarSala, ((int)(resources.GetObject("groupBuscarSala.IconPadding1"))));
             this.groupBuscarSala.Name = "groupBuscarSala";
-            this.groupBuscarSala.Size = new System.Drawing.Size(881, 163);
-            this.groupBuscarSala.TabIndex = 2;
             this.groupBuscarSala.TabStop = false;
-            this.groupBuscarSala.Text = "Busqueda de Sala";
             // 
             // buttonLimpiarBusquedaSala
             // 
-            this.buttonLimpiarBusquedaSala.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            resources.ApplyResources(this.buttonLimpiarBusquedaSala, "buttonLimpiarBusquedaSala");
+            this.errorProvider1.SetError(this.buttonLimpiarBusquedaSala, resources.GetString("buttonLimpiarBusquedaSala.Error"));
+            this.errorProvider2.SetError(this.buttonLimpiarBusquedaSala, resources.GetString("buttonLimpiarBusquedaSala.Error1"));
+            this.errorProvider1.SetIconAlignment(this.buttonLimpiarBusquedaSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonLimpiarBusquedaSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.buttonLimpiarBusquedaSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonLimpiarBusquedaSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.buttonLimpiarBusquedaSala, ((int)(resources.GetObject("buttonLimpiarBusquedaSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.buttonLimpiarBusquedaSala, ((int)(resources.GetObject("buttonLimpiarBusquedaSala.IconPadding1"))));
             this.buttonLimpiarBusquedaSala.Image = global::Events4ALL.Properties.Resources.clear_2;
-            this.buttonLimpiarBusquedaSala.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiarBusquedaSala.Location = new System.Drawing.Point(741, 134);
             this.buttonLimpiarBusquedaSala.Name = "buttonLimpiarBusquedaSala";
-            this.buttonLimpiarBusquedaSala.Size = new System.Drawing.Size(64, 23);
-            this.buttonLimpiarBusquedaSala.TabIndex = 19;
-            this.buttonLimpiarBusquedaSala.Text = "Limpiar";
-            this.buttonLimpiarBusquedaSala.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpiarBusquedaSala.UseVisualStyleBackColor = true;
             this.buttonLimpiarBusquedaSala.Click += new System.EventHandler(this.buttonLimpiarBusquedaSala_Click);
             // 
             // checkLibre
             // 
-            this.checkLibre.AutoSize = true;
-            this.checkLibre.Location = new System.Drawing.Point(84, 119);
+            resources.ApplyResources(this.checkLibre, "checkLibre");
+            this.errorProvider1.SetError(this.checkLibre, resources.GetString("checkLibre.Error"));
+            this.errorProvider2.SetError(this.checkLibre, resources.GetString("checkLibre.Error1"));
+            this.errorProvider2.SetIconAlignment(this.checkLibre, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("checkLibre.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.checkLibre, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("checkLibre.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.checkLibre, ((int)(resources.GetObject("checkLibre.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.checkLibre, ((int)(resources.GetObject("checkLibre.IconPadding1"))));
             this.checkLibre.Name = "checkLibre";
-            this.checkLibre.Size = new System.Drawing.Size(15, 14);
-            this.checkLibre.TabIndex = 18;
             this.checkLibre.UseVisualStyleBackColor = true;
             // 
             // labelSalasLibres
             // 
-            this.labelSalasLibres.AutoSize = true;
-            this.labelSalasLibres.Location = new System.Drawing.Point(6, 119);
+            resources.ApplyResources(this.labelSalasLibres, "labelSalasLibres");
+            this.errorProvider1.SetError(this.labelSalasLibres, resources.GetString("labelSalasLibres.Error"));
+            this.errorProvider2.SetError(this.labelSalasLibres, resources.GetString("labelSalasLibres.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelSalasLibres, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSalasLibres.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelSalasLibres, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelSalasLibres.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelSalasLibres, ((int)(resources.GetObject("labelSalasLibres.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelSalasLibres, ((int)(resources.GetObject("labelSalasLibres.IconPadding1"))));
             this.labelSalasLibres.Name = "labelSalasLibres";
-            this.labelSalasLibres.Size = new System.Drawing.Size(71, 13);
-            this.labelSalasLibres.TabIndex = 17;
-            this.labelSalasLibres.Text = "Buscar Libres";
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            resources.ApplyResources(this.buttonBuscar, "buttonBuscar");
+            this.errorProvider1.SetError(this.buttonBuscar, resources.GetString("buttonBuscar.Error"));
+            this.errorProvider2.SetError(this.buttonBuscar, resources.GetString("buttonBuscar.Error1"));
+            this.errorProvider1.SetIconAlignment(this.buttonBuscar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonBuscar.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.buttonBuscar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("buttonBuscar.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.buttonBuscar, ((int)(resources.GetObject("buttonBuscar.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.buttonBuscar, ((int)(resources.GetObject("buttonBuscar.IconPadding1"))));
             this.buttonBuscar.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(811, 134);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(64, 23);
-            this.buttonBuscar.TabIndex = 3;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // textAforoBusquedaMax
             // 
-            this.textAforoBusquedaMax.Location = new System.Drawing.Point(133, 86);
+            resources.ApplyResources(this.textAforoBusquedaMax, "textAforoBusquedaMax");
+            this.errorProvider2.SetError(this.textAforoBusquedaMax, resources.GetString("textAforoBusquedaMax.Error"));
+            this.errorProvider1.SetError(this.textAforoBusquedaMax, resources.GetString("textAforoBusquedaMax.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textAforoBusquedaMax, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textAforoBusquedaMax.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textAforoBusquedaMax, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textAforoBusquedaMax.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textAforoBusquedaMax, ((int)(resources.GetObject("textAforoBusquedaMax.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textAforoBusquedaMax, ((int)(resources.GetObject("textAforoBusquedaMax.IconPadding1"))));
             this.textAforoBusquedaMax.Name = "textAforoBusquedaMax";
-            this.textAforoBusquedaMax.Size = new System.Drawing.Size(25, 20);
-            this.textAforoBusquedaMax.TabIndex = 16;
             // 
             // labelAforo2
             // 
-            this.labelAforo2.AutoSize = true;
-            this.labelAforo2.Location = new System.Drawing.Point(115, 89);
+            resources.ApplyResources(this.labelAforo2, "labelAforo2");
+            this.errorProvider1.SetError(this.labelAforo2, resources.GetString("labelAforo2.Error"));
+            this.errorProvider2.SetError(this.labelAforo2, resources.GetString("labelAforo2.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelAforo2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelAforo2.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelAforo2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelAforo2.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelAforo2, ((int)(resources.GetObject("labelAforo2.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelAforo2, ((int)(resources.GetObject("labelAforo2.IconPadding1"))));
             this.labelAforo2.Name = "labelAforo2";
-            this.labelAforo2.Size = new System.Drawing.Size(12, 13);
-            this.labelAforo2.TabIndex = 15;
-            this.labelAforo2.Text = "y";
             // 
             // textAforoBusquedaMin
             // 
-            this.textAforoBusquedaMin.Location = new System.Drawing.Point(84, 86);
+            resources.ApplyResources(this.textAforoBusquedaMin, "textAforoBusquedaMin");
+            this.errorProvider2.SetError(this.textAforoBusquedaMin, resources.GetString("textAforoBusquedaMin.Error"));
+            this.errorProvider1.SetError(this.textAforoBusquedaMin, resources.GetString("textAforoBusquedaMin.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textAforoBusquedaMin, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textAforoBusquedaMin.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textAforoBusquedaMin, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textAforoBusquedaMin.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textAforoBusquedaMin, ((int)(resources.GetObject("textAforoBusquedaMin.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textAforoBusquedaMin, ((int)(resources.GetObject("textAforoBusquedaMin.IconPadding1"))));
             this.textAforoBusquedaMin.Name = "textAforoBusquedaMin";
-            this.textAforoBusquedaMin.Size = new System.Drawing.Size(25, 20);
-            this.textAforoBusquedaMin.TabIndex = 14;
             // 
             // labelAforo
             // 
-            this.labelAforo.AutoSize = true;
-            this.labelAforo.Location = new System.Drawing.Point(6, 89);
+            resources.ApplyResources(this.labelAforo, "labelAforo");
+            this.errorProvider1.SetError(this.labelAforo, resources.GetString("labelAforo.Error"));
+            this.errorProvider2.SetError(this.labelAforo, resources.GetString("labelAforo.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelAforo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelAforo.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelAforo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelAforo.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelAforo, ((int)(resources.GetObject("labelAforo.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelAforo, ((int)(resources.GetObject("labelAforo.IconPadding1"))));
             this.labelAforo.Name = "labelAforo";
-            this.labelAforo.Size = new System.Drawing.Size(59, 13);
-            this.labelAforo.TabIndex = 13;
-            this.labelAforo.Text = "Aforo entre";
             // 
             // comboBuscarTipoSala
             // 
+            resources.ApplyResources(this.comboBuscarTipoSala, "comboBuscarTipoSala");
             this.comboBuscarTipoSala.DisplayMember = "1;2";
             this.comboBuscarTipoSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorProvider2.SetError(this.comboBuscarTipoSala, resources.GetString("comboBuscarTipoSala.Error"));
+            this.errorProvider1.SetError(this.comboBuscarTipoSala, resources.GetString("comboBuscarTipoSala.Error1"));
             this.comboBuscarTipoSala.FormattingEnabled = true;
+            this.errorProvider1.SetIconAlignment(this.comboBuscarTipoSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBuscarTipoSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.comboBuscarTipoSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("comboBuscarTipoSala.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.comboBuscarTipoSala, ((int)(resources.GetObject("comboBuscarTipoSala.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.comboBuscarTipoSala, ((int)(resources.GetObject("comboBuscarTipoSala.IconPadding1"))));
             this.comboBuscarTipoSala.Items.AddRange(new object[] {
-            "",
-            "Cine",
-            "Teatro",
-            "Concierto"});
-            this.comboBuscarTipoSala.Location = new System.Drawing.Point(84, 58);
+            resources.GetString("comboBuscarTipoSala.Items"),
+            resources.GetString("comboBuscarTipoSala.Items1"),
+            resources.GetString("comboBuscarTipoSala.Items2"),
+            resources.GetString("comboBuscarTipoSala.Items3")});
             this.comboBuscarTipoSala.Name = "comboBuscarTipoSala";
-            this.comboBuscarTipoSala.Size = new System.Drawing.Size(74, 21);
-            this.comboBuscarTipoSala.TabIndex = 12;
             // 
             // labelBuscarTipoSala
             // 
-            this.labelBuscarTipoSala.AutoSize = true;
-            this.labelBuscarTipoSala.Location = new System.Drawing.Point(6, 61);
+            resources.ApplyResources(this.labelBuscarTipoSala, "labelBuscarTipoSala");
+            this.errorProvider1.SetError(this.labelBuscarTipoSala, resources.GetString("labelBuscarTipoSala.Error"));
+            this.errorProvider2.SetError(this.labelBuscarTipoSala, resources.GetString("labelBuscarTipoSala.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelBuscarTipoSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelBuscarTipoSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelBuscarTipoSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelBuscarTipoSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelBuscarTipoSala, ((int)(resources.GetObject("labelBuscarTipoSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelBuscarTipoSala, ((int)(resources.GetObject("labelBuscarTipoSala.IconPadding1"))));
             this.labelBuscarTipoSala.Name = "labelBuscarTipoSala";
-            this.labelBuscarTipoSala.Size = new System.Drawing.Size(28, 13);
-            this.labelBuscarTipoSala.TabIndex = 11;
-            this.labelBuscarTipoSala.Text = "Tipo";
             // 
             // labelBuscarIdSala
             // 
-            this.labelBuscarIdSala.AutoSize = true;
-            this.labelBuscarIdSala.Location = new System.Drawing.Point(6, 35);
+            resources.ApplyResources(this.labelBuscarIdSala, "labelBuscarIdSala");
+            this.errorProvider1.SetError(this.labelBuscarIdSala, resources.GetString("labelBuscarIdSala.Error"));
+            this.errorProvider2.SetError(this.labelBuscarIdSala, resources.GetString("labelBuscarIdSala.Error1"));
+            this.errorProvider1.SetIconAlignment(this.labelBuscarIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelBuscarIdSala.IconAlignment"))));
+            this.errorProvider2.SetIconAlignment(this.labelBuscarIdSala, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("labelBuscarIdSala.IconAlignment1"))));
+            this.errorProvider1.SetIconPadding(this.labelBuscarIdSala, ((int)(resources.GetObject("labelBuscarIdSala.IconPadding"))));
+            this.errorProvider2.SetIconPadding(this.labelBuscarIdSala, ((int)(resources.GetObject("labelBuscarIdSala.IconPadding1"))));
             this.labelBuscarIdSala.Name = "labelBuscarIdSala";
-            this.labelBuscarIdSala.Size = new System.Drawing.Size(43, 13);
-            this.labelBuscarIdSala.TabIndex = 0;
-            this.labelBuscarIdSala.Text = "Nº Sala";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 32);
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.errorProvider2.SetError(this.textBox1, resources.GetString("textBox1.Error"));
+            this.errorProvider1.SetError(this.textBox1, resources.GetString("textBox1.Error1"));
+            this.errorProvider2.SetIconAlignment(this.textBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textBox1.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this.textBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("textBox1.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this.textBox1, ((int)(resources.GetObject("textBox1.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this.textBox1, ((int)(resources.GetObject("textBox1.IconPadding1"))));
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            resources.ApplyResources(this.errorProvider1, "errorProvider1");
             // 
             // errorProvider2
             // 
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider2.ContainerControl = this;
-            this.errorProvider2.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider2.Icon")));
-            // 
-            // numSala
-            // 
-            this.numSala.FillWeight = 50F;
-            this.numSala.HeaderText = "NºSala";
-            this.numSala.Name = "numSala";
-            this.numSala.ReadOnly = true;
-            // 
-            // tipoSala
-            // 
-            this.tipoSala.FillWeight = 101.8613F;
-            this.tipoSala.HeaderText = "Tipo Sala";
-            this.tipoSala.Name = "tipoSala";
-            this.tipoSala.ReadOnly = true;
-            // 
-            // aforoSala
-            // 
-            this.aforoSala.FillWeight = 101.8613F;
-            this.aforoSala.HeaderText = "Aforo Sala";
-            this.aforoSala.Name = "aforoSala";
-            this.aforoSala.ReadOnly = true;
-            // 
-            // numSecciones
-            // 
-            this.numSecciones.FillWeight = 101.8613F;
-            this.numSecciones.HeaderText = "Nº Secciones";
-            this.numSecciones.Name = "numSecciones";
-            this.numSecciones.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 30F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 30F;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            resources.ApplyResources(this.errorProvider2, "errorProvider2");
             // 
             // Salas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
+            this.errorProvider2.SetError(this, resources.GetString("$this.Error"));
+            this.errorProvider1.SetError(this, resources.GetString("$this.Error1"));
+            this.errorProvider2.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment"))));
+            this.errorProvider1.SetIconAlignment(this, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("$this.IconAlignment1"))));
+            this.errorProvider2.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding"))));
+            this.errorProvider1.SetIconPadding(this, ((int)(resources.GetObject("$this.IconPadding1"))));
             this.Name = "Salas";
-            this.Size = new System.Drawing.Size(907, 635);
             this.tabControl1.ResumeLayout(false);
             this.tabAñadirSala.ResumeLayout(false);
             this.tabAñadirSala.PerformLayout();

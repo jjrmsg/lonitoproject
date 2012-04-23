@@ -139,12 +139,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\Logs.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\Logs.Designer.cs">
-      <DependentUpon>Logs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="User Controls\Mensajes.cs">
       <SubType>UserControl</SubType>
@@ -212,8 +206,20 @@
     <EmbeddedResource Include="User Controls\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Espectaculos.en.resx">
+      <DependentUpon>Espectaculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Espectaculos.es.resx">
+      <DependentUpon>Espectaculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Espectaculos.resx">
       <DependentUpon>Espectaculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Estadisticas.en.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Estadisticas.es.resx">
+      <DependentUpon>Estadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Estadisticas.resx">
       <DependentUpon>Estadisticas.cs</DependentUpon>
@@ -221,20 +227,32 @@
     <EmbeddedResource Include="User Controls\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\Logs.resx">
-      <DependentUpon>Logs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Mensajes.en.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Promociones.en.resx">
+      <DependentUpon>Promociones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Promociones.es.resx">
+      <DependentUpon>Promociones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Promociones.resx">
       <DependentUpon>Promociones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Salas.en.resx">
+      <DependentUpon>Salas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Salas.es.resx">
+      <DependentUpon>Salas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Salas.resx">
       <DependentUpon>Salas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\Ventas.en.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
