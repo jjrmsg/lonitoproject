@@ -30,7 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.formCliente = new System.Windows.Forms.TabControl();
+            this.BuscarCliente = new System.Windows.Forms.TabPage();
+            this.Resultado_busqueda_cliente = new System.Windows.Forms.DataGridView();
+            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
+            this.textBox_filtro_busqueda = new System.Windows.Forms.TextBox();
+            this.comboBox_filtro_busqueda = new System.Windows.Forms.ComboBox();
+            this.label_filtro_busqueda = new System.Windows.Forms.Label();
+            this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.FichaCliente = new System.Windows.Forms.TabPage();
+            this.buttonNuevoCliente = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -69,32 +85,16 @@
             this.labelNombreCliente = new System.Windows.Forms.Label();
             this.labelNifCliente = new System.Windows.Forms.Label();
             this.textBoxNombreC = new System.Windows.Forms.TextBox();
-            this.BuscarCliente = new System.Windows.Forms.TabPage();
-            this.Resultado_busqueda_cliente = new System.Windows.Forms.DataGridView();
-            this.NIF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.groupBoxBusquedaCliente = new System.Windows.Forms.GroupBox();
-            this.textBox_filtro_busqueda = new System.Windows.Forms.TextBox();
-            this.comboBox_filtro_busqueda = new System.Windows.Forms.ComboBox();
-            this.label_filtro_busqueda = new System.Windows.Forms.Label();
-            this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.buttonNuevoCliente = new System.Windows.Forms.Button();
             this.formCliente.SuspendLayout();
+            this.BuscarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Resultado_busqueda_cliente)).BeginInit();
+            this.groupBoxBusquedaCliente.SuspendLayout();
             this.FichaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).BeginInit();
             this.comboBoxProvinciaCli.SuspendLayout();
             this.groupContactoCliente.SuspendLayout();
             this.groupBoxSexo.SuspendLayout();
-            this.BuscarCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Resultado_busqueda_cliente)).BeginInit();
-            this.groupBoxBusquedaCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,169 @@
             this.formCliente.Size = new System.Drawing.Size(901, 633);
             this.formCliente.TabIndex = 1;
             this.formCliente.Click += new System.EventHandler(this.formCliente_Click);
+            // 
+            // BuscarCliente
+            // 
+            this.BuscarCliente.AccessibleDescription = "Buscar Cliente";
+            this.BuscarCliente.Controls.Add(this.Resultado_busqueda_cliente);
+            this.BuscarCliente.Controls.Add(this.groupBoxBusquedaCliente);
+            this.BuscarCliente.Location = new System.Drawing.Point(4, 22);
+            this.BuscarCliente.Name = "BuscarCliente";
+            this.BuscarCliente.Padding = new System.Windows.Forms.Padding(3);
+            this.BuscarCliente.Size = new System.Drawing.Size(893, 607);
+            this.BuscarCliente.TabIndex = 1;
+            this.BuscarCliente.Text = "Busqueda";
+            this.BuscarCliente.UseVisualStyleBackColor = true;
+            // 
+            // Resultado_busqueda_cliente
+            // 
+            this.Resultado_busqueda_cliente.AllowUserToAddRows = false;
+            this.Resultado_busqueda_cliente.AllowUserToDeleteRows = false;
+            this.Resultado_busqueda_cliente.AllowUserToOrderColumns = true;
+            this.Resultado_busqueda_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Resultado_busqueda_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Resultado_busqueda_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Resultado_busqueda_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Resultado_busqueda_cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NIF,
+            this.Usuario,
+            this.Nombre,
+            this.Apellidos,
+            this.Localidad,
+            this.Provincia,
+            this.Editar,
+            this.Borrar});
+            this.Resultado_busqueda_cliente.Location = new System.Drawing.Point(20, 140);
+            this.Resultado_busqueda_cliente.Name = "Resultado_busqueda_cliente";
+            this.Resultado_busqueda_cliente.ReadOnly = true;
+            this.Resultado_busqueda_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Resultado_busqueda_cliente.Size = new System.Drawing.Size(849, 449);
+            this.Resultado_busqueda_cliente.TabIndex = 3;
+            this.Resultado_busqueda_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.Resultado_busqueda_cliente.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Resultado_busqueda_clienteCellMouseClick);
+            // 
+            // NIF
+            // 
+            this.NIF.FillWeight = 71.2275F;
+            this.NIF.HeaderText = "NIF";
+            this.NIF.Name = "NIF";
+            this.NIF.ReadOnly = true;
+            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Usuario
+            // 
+            this.Usuario.FillWeight = 71.2275F;
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 90.2275F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellidos
+            // 
+            this.Apellidos.FillWeight = 150.0456F;
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
+            // 
+            // Localidad
+            // 
+            this.Localidad.FillWeight = 80.2275F;
+            this.Localidad.HeaderText = "Localidad";
+            this.Localidad.Name = "Localidad";
+            this.Localidad.ReadOnly = true;
+            // 
+            // Provincia
+            // 
+            this.Provincia.FillWeight = 71.2275F;
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.FillWeight = 50.58931F;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Borrar
+            // 
+            this.Borrar.FillWeight = 50.2275F;
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.ReadOnly = true;
+            // 
+            // groupBoxBusquedaCliente
+            // 
+            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxBusquedaCliente.Controls.Add(this.textBox_filtro_busqueda);
+            this.groupBoxBusquedaCliente.Controls.Add(this.comboBox_filtro_busqueda);
+            this.groupBoxBusquedaCliente.Controls.Add(this.label_filtro_busqueda);
+            this.groupBoxBusquedaCliente.Controls.Add(this.buttonBuscarCliente);
+            this.groupBoxBusquedaCliente.Location = new System.Drawing.Point(20, 19);
+            this.groupBoxBusquedaCliente.Name = "groupBoxBusquedaCliente";
+            this.groupBoxBusquedaCliente.Size = new System.Drawing.Size(849, 80);
+            this.groupBoxBusquedaCliente.TabIndex = 2;
+            this.groupBoxBusquedaCliente.TabStop = false;
+            this.groupBoxBusquedaCliente.Text = "Búsqueda";
+            // 
+            // textBox_filtro_busqueda
+            // 
+            this.textBox_filtro_busqueda.Location = new System.Drawing.Point(254, 32);
+            this.textBox_filtro_busqueda.Name = "textBox_filtro_busqueda";
+            this.textBox_filtro_busqueda.Size = new System.Drawing.Size(139, 20);
+            this.textBox_filtro_busqueda.TabIndex = 67;
+            // 
+            // comboBox_filtro_busqueda
+            // 
+            this.comboBox_filtro_busqueda.FormattingEnabled = true;
+            this.comboBox_filtro_busqueda.Items.AddRange(new object[] {
+            "Mostrar Todos",
+            "NIF",
+            "Nombre",
+            "Apellido",
+            "Usuario",
+            "Pais",
+            "Provincia",
+            "Localidad",
+            "Sexo"});
+            this.comboBox_filtro_busqueda.Location = new System.Drawing.Point(82, 32);
+            this.comboBox_filtro_busqueda.Name = "comboBox_filtro_busqueda";
+            this.comboBox_filtro_busqueda.Size = new System.Drawing.Size(127, 21);
+            this.comboBox_filtro_busqueda.TabIndex = 66;
+            // 
+            // label_filtro_busqueda
+            // 
+            this.label_filtro_busqueda.AutoSize = true;
+            this.label_filtro_busqueda.Location = new System.Drawing.Point(23, 35);
+            this.label_filtro_busqueda.Name = "label_filtro_busqueda";
+            this.label_filtro_busqueda.Size = new System.Drawing.Size(53, 13);
+            this.label_filtro_busqueda.TabIndex = 65;
+            this.label_filtro_busqueda.Text = "Filtrar por:";
+            // 
+            // buttonBuscarCliente
+            // 
+            this.buttonBuscarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscarCliente.Image = global::Events4ALL.Properties.Resources.search_icon;
+            this.buttonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscarCliente.Location = new System.Drawing.Point(749, 51);
+            this.buttonBuscarCliente.Name = "buttonBuscarCliente";
+            this.buttonBuscarCliente.Size = new System.Drawing.Size(94, 23);
+            this.buttonBuscarCliente.TabIndex = 64;
+            this.buttonBuscarCliente.Text = "Buscar";
+            this.buttonBuscarCliente.UseVisualStyleBackColor = true;
+            this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
             // 
             // FichaCliente
             // 
@@ -133,6 +296,19 @@
             this.FichaCliente.TabIndex = 0;
             this.FichaCliente.Text = "Perfil";
             this.FichaCliente.UseVisualStyleBackColor = true;
+            // 
+            // buttonNuevoCliente
+            // 
+            this.buttonNuevoCliente.Image = global::Events4ALL.Properties.Resources.mas;
+            this.buttonNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevoCliente.Location = new System.Drawing.Point(710, 555);
+            this.buttonNuevoCliente.Name = "buttonNuevoCliente";
+            this.buttonNuevoCliente.Size = new System.Drawing.Size(70, 23);
+            this.buttonNuevoCliente.TabIndex = 13;
+            this.buttonNuevoCliente.Text = "Nuevo";
+            this.buttonNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevoCliente.UseVisualStyleBackColor = true;
+            this.buttonNuevoCliente.Click += new System.EventHandler(this.buttonNuevoCliente_Click);
             // 
             // textBoxPassword
             // 
@@ -792,186 +968,10 @@
             this.textBoxNombreC.TabIndex = 1;
             this.textBoxNombreC.TextChanged += new System.EventHandler(this.textBoxNombreC_TextChanged);
             // 
-            // BuscarCliente
-            // 
-            this.BuscarCliente.AccessibleDescription = "Buscar Cliente";
-            this.BuscarCliente.Controls.Add(this.Resultado_busqueda_cliente);
-            this.BuscarCliente.Controls.Add(this.groupBoxBusquedaCliente);
-            this.BuscarCliente.Location = new System.Drawing.Point(4, 22);
-            this.BuscarCliente.Name = "BuscarCliente";
-            this.BuscarCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.BuscarCliente.Size = new System.Drawing.Size(893, 607);
-            this.BuscarCliente.TabIndex = 1;
-            this.BuscarCliente.Text = "Busqueda";
-            this.BuscarCliente.UseVisualStyleBackColor = true;
-            // 
-            // Resultado_busqueda_cliente
-            // 
-            this.Resultado_busqueda_cliente.AllowUserToAddRows = false;
-            this.Resultado_busqueda_cliente.AllowUserToDeleteRows = false;
-            this.Resultado_busqueda_cliente.AllowUserToOrderColumns = true;
-            this.Resultado_busqueda_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Resultado_busqueda_cliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Resultado_busqueda_cliente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Resultado_busqueda_cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Resultado_busqueda_cliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NIF,
-            this.Usuario,
-            this.Nombre,
-            this.Apellidos,
-            this.Localidad,
-            this.Provincia,
-            this.Editar,
-            this.Borrar});
-            this.Resultado_busqueda_cliente.Location = new System.Drawing.Point(20, 140);
-            this.Resultado_busqueda_cliente.Name = "Resultado_busqueda_cliente";
-            this.Resultado_busqueda_cliente.ReadOnly = true;
-            this.Resultado_busqueda_cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Resultado_busqueda_cliente.Size = new System.Drawing.Size(849, 449);
-            this.Resultado_busqueda_cliente.TabIndex = 3;
-            this.Resultado_busqueda_cliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            this.Resultado_busqueda_cliente.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Resultado_busqueda_clienteCellMouseClick);
-            // 
-            // NIF
-            // 
-            this.NIF.FillWeight = 71.2275F;
-            this.NIF.HeaderText = "NIF";
-            this.NIF.Name = "NIF";
-            this.NIF.ReadOnly = true;
-            this.NIF.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Usuario
-            // 
-            this.Usuario.FillWeight = 71.2275F;
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 90.2275F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.FillWeight = 150.0456F;
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            // 
-            // Localidad
-            // 
-            this.Localidad.FillWeight = 80.2275F;
-            this.Localidad.HeaderText = "Localidad";
-            this.Localidad.Name = "Localidad";
-            this.Localidad.ReadOnly = true;
-            // 
-            // Provincia
-            // 
-            this.Provincia.FillWeight = 71.2275F;
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            this.Provincia.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.FillWeight = 50.58931F;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Events4ALL.Properties.Resources.edit;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Borrar
-            // 
-            this.Borrar.FillWeight = 50.2275F;
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = global::Events4ALL.Properties.Resources.delete;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.ReadOnly = true;
-            // 
-            // groupBoxBusquedaCliente
-            // 
-            this.groupBoxBusquedaCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxBusquedaCliente.Controls.Add(this.textBox_filtro_busqueda);
-            this.groupBoxBusquedaCliente.Controls.Add(this.comboBox_filtro_busqueda);
-            this.groupBoxBusquedaCliente.Controls.Add(this.label_filtro_busqueda);
-            this.groupBoxBusquedaCliente.Controls.Add(this.buttonBuscarCliente);
-            this.groupBoxBusquedaCliente.Location = new System.Drawing.Point(20, 19);
-            this.groupBoxBusquedaCliente.Name = "groupBoxBusquedaCliente";
-            this.groupBoxBusquedaCliente.Size = new System.Drawing.Size(849, 80);
-            this.groupBoxBusquedaCliente.TabIndex = 2;
-            this.groupBoxBusquedaCliente.TabStop = false;
-            this.groupBoxBusquedaCliente.Text = "Búsqueda";
-            // 
-            // textBox_filtro_busqueda
-            // 
-            this.textBox_filtro_busqueda.Location = new System.Drawing.Point(254, 32);
-            this.textBox_filtro_busqueda.Name = "textBox_filtro_busqueda";
-            this.textBox_filtro_busqueda.Size = new System.Drawing.Size(139, 20);
-            this.textBox_filtro_busqueda.TabIndex = 67;
-            // 
-            // comboBox_filtro_busqueda
-            // 
-            this.comboBox_filtro_busqueda.FormattingEnabled = true;
-            this.comboBox_filtro_busqueda.Items.AddRange(new object[] {
-            "Mostrar Todos",
-            "NIF",
-            "Nombre",
-            "Apellido",
-            "Usuario",
-            "Pais",
-            "Provincia",
-            "Localidad",
-            "Sexo"});
-            this.comboBox_filtro_busqueda.Location = new System.Drawing.Point(82, 32);
-            this.comboBox_filtro_busqueda.Name = "comboBox_filtro_busqueda";
-            this.comboBox_filtro_busqueda.Size = new System.Drawing.Size(127, 21);
-            this.comboBox_filtro_busqueda.TabIndex = 66;
-            // 
-            // label_filtro_busqueda
-            // 
-            this.label_filtro_busqueda.AutoSize = true;
-            this.label_filtro_busqueda.Location = new System.Drawing.Point(23, 35);
-            this.label_filtro_busqueda.Name = "label_filtro_busqueda";
-            this.label_filtro_busqueda.Size = new System.Drawing.Size(53, 13);
-            this.label_filtro_busqueda.TabIndex = 65;
-            this.label_filtro_busqueda.Text = "Filtrar por:";
-            // 
-            // buttonBuscarCliente
-            // 
-            this.buttonBuscarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscarCliente.Image = global::Events4ALL.Properties.Resources.search_icon;
-            this.buttonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscarCliente.Location = new System.Drawing.Point(749, 51);
-            this.buttonBuscarCliente.Name = "buttonBuscarCliente";
-            this.buttonBuscarCliente.Size = new System.Drawing.Size(94, 23);
-            this.buttonBuscarCliente.TabIndex = 64;
-            this.buttonBuscarCliente.Text = "Buscar";
-            this.buttonBuscarCliente.UseVisualStyleBackColor = true;
-            this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
-            // 
-            // buttonNuevoCliente
-            // 
-            this.buttonNuevoCliente.Image = global::Events4ALL.Properties.Resources.mas;
-            this.buttonNuevoCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevoCliente.Location = new System.Drawing.Point(628, 555);
-            this.buttonNuevoCliente.Name = "buttonNuevoCliente";
-            this.buttonNuevoCliente.Size = new System.Drawing.Size(70, 23);
-            this.buttonNuevoCliente.TabIndex = 13;
-            this.buttonNuevoCliente.Text = "Nuevo";
-            this.buttonNuevoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonNuevoCliente.UseVisualStyleBackColor = true;
-            this.buttonNuevoCliente.Click += new System.EventHandler(this.buttonNuevoCliente_Click);
             // 
             // Clientes
             // 
@@ -981,6 +981,10 @@
             this.Name = "Clientes";
             this.Size = new System.Drawing.Size(907, 635);
             this.formCliente.ResumeLayout(false);
+            this.BuscarCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Resultado_busqueda_cliente)).EndInit();
+            this.groupBoxBusquedaCliente.ResumeLayout(false);
+            this.groupBoxBusquedaCliente.PerformLayout();
             this.FichaCliente.ResumeLayout(false);
             this.FichaCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cliente_Perfil_Foto)).EndInit();
@@ -990,10 +994,6 @@
             this.groupContactoCliente.PerformLayout();
             this.groupBoxSexo.ResumeLayout(false);
             this.groupBoxSexo.PerformLayout();
-            this.BuscarCliente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Resultado_busqueda_cliente)).EndInit();
-            this.groupBoxBusquedaCliente.ResumeLayout(false);
-            this.groupBoxBusquedaCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

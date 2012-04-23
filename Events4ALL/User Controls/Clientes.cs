@@ -43,6 +43,8 @@ namespace Events4ALL
         private void formCliente_Click(object sender, EventArgs e)
         {
             MuestraClientes();
+            buttonLimpiarCliente.Visible = true;
+            buttonNuevoCliente.Visible = false;
         }
 
         private void buttonNuevoCliente_Click(object sender, EventArgs e)
@@ -52,6 +54,8 @@ namespace Events4ALL
             {
                 LimpiarDatos();
                 edicion = false;
+                buttonNuevoCliente.Visible = false;
+                buttonLimpiarCliente.Visible = true;
             }
 
 
@@ -327,7 +331,7 @@ namespace Events4ALL
             // ACTUALIZAR CLIENTE
             else if (ValidaCampos() && edicion)
             {
-                MessageBox.Show("Preparando para actualizar...");
+                //MessageBox.Show("Preparando para actualizar...");
                 error = EditarCliente();
 
             }
@@ -409,6 +413,7 @@ namespace Events4ALL
         {
             en_cliente = new ClientesEN();
             bool introducido = false;
+            string aux_nif = textBoxNifC.Text;
 
             /*if (en_cliente.CompruebaExistenciaNif(textBoxNifC.Text))
             {
@@ -620,6 +625,8 @@ namespace Events4ALL
             nif_actual = Resultado_busqueda_cliente[0, e.RowIndex].Value.ToString();
 
             LimpiarDatos();
+            buttonNuevoCliente.Visible = true;
+            buttonLimpiarCliente.Visible = false;
             muestraCliente = en_cliente.getClienteByNif(nif_actual);
             im = en_cliente.ObtieneImagen(nif_actual);
 
