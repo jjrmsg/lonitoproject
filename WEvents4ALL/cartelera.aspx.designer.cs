@@ -7,9 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WEvents4ALL {
-    
-    
-    public partial class Formulario_web15 {
-    }
+
+
+public partial class  {
 }
