@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="css/MasterStyle.css" rel="stylesheet" type="text/css" />
+    <link href="css/cartelera.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
