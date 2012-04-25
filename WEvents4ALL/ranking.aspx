@@ -33,18 +33,29 @@
                 <p>Hook</p>
             </td>
             <td>
-                <p>8</p>
+                <p>8.1</p>
             </td>
         </tr>
                 <tr>
             <td>
-                <img alt="fot_hook" src="/img/carteles/inmortales.png" width="50" height="50"/>
+                <img alt="fot_inmortales" src="/img/carteles/los_inmortales.jpg" width="50" height="50"/>
             </td>
             <td>
-                <p>Los Inmortales</p>
+                <p>Los Inmortals</p>
             </td>
             <td>
                 <p>7.6</p>
+            </td>
+        </tr>
+                <tr>
+            <td>
+                <img alt="fot_vengadores" src="/img/carteles/los vengadores.jpg" width="50" height="50"/>
+            </td>
+            <td>
+                <p>Los Vengadores</p>
+            </td>
+            <td>
+                <p>7.2</p>
             </td>
         </tr>
     </table>

@@ -1,0 +1,16 @@
+﻿body 
+{
+}
+
+table
+{
+    border-collapse:collapse;
+    padding:10px;
+   border-style:solid;
+}
+
+table td
+{
+       border-style:solid;
+    border-width: 1px;
+}

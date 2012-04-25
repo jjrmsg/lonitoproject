@@ -56,6 +56,7 @@
     <Content Include="css\MasterStyle.css" />
     <Content Include="contacto.aspx" />
     <Content Include="cartelera.aspx" />
+    <Content Include="css\ranking.css" />
     <Content Include="espectaculo.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="login.aspx" />
