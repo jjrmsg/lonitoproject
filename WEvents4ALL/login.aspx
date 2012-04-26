@@ -2,24 +2,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
 
- <!-- <div class="login"> -->
+ 
+ <div id="acceso" class="login">
     
 
-    <div id="PanelUsuario" class="login">
-
-        <asp:Label ID="Usuario" runat="server" Text="Usuario"></asp:Label>
-        <asp:Label ID="Password" runat="server" Text="Password"></asp:Label>
-    
+    <fieldset>
+        <label for="usuario">Usuario:</label>
+        <input id="usuario" name="user" size="10" type="text" />
+        <br />
+        <label for="password">Password:</label>
+        <input id="password" name="pass" size="10" type="password" />
+        <br />
+        <br />
+        <input id="Submit1" type="submit" value="Entrar" />
     
    <!-- <p> -->
-        <asp:TextBox ID="TextBoxUsuario" runat="server"></asp:TextBox>
-        <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox>
-    
 
-    <input id="Submit1" type="submit" value="submit" />
-    
-    </div>
+   </fieldset>
 
+    
+    
+ </div>   
 
 
 </asp:Content>

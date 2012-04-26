@@ -3,9 +3,27 @@
     
 }
 
-.login
+#acceso
 {
+    border-style: none;
+    border-color: inherit;
+    border-width: 10px;
     float:right;
-    background-color:Blue;
+    width:197px;
+    height: 190px;
 }
+
+#acceso label
+{
+    float:left;
+    width: 70px;
+    
+}
+
+#acceso input
+{
+    margin: 1px;
+}
+
+
 

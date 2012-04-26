@@ -1,5 +1,20 @@
-﻿body 
+﻿#registro
 {
+    border-style: none;
+    border-color: inherit;
+    border-width: 10px;
     float:left;
-    background-color: Blue;
+    width: 992px;
+    text-align: justify;
+}
+
+#registro input
+{
+    margin-top: 5px;
+    
+}
+
+#registro select
+{
+    margin-top: 5px;   
 }
