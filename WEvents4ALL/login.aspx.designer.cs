@@ -12,38 +12,38 @@
 public partial class  {
     
     /// <summary>
-    /// Control Label1.
+    /// Control Usuario.
     /// </summary>
     /// <remarks>
     /// Campo generado automáticamente.
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label1;
+    protected global::System.Web.UI.WebControls.Label Usuario;
     
     /// <summary>
-    /// Control Label2.
+    /// Control Password.
     /// </summary>
     /// <remarks>
     /// Campo generado automáticamente.
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label2;
+    protected global::System.Web.UI.WebControls.Label Password;
     
     /// <summary>
-    /// Control TextBox1.
+    /// Control TextBoxUsuario.
     /// </summary>
     /// <remarks>
     /// Campo generado automáticamente.
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox1;
+    protected global::System.Web.UI.WebControls.TextBox TextBoxUsuario;
     
     /// <summary>
-    /// Control TextBox2.
+    /// Control TextBoxPassword.
     /// </summary>
     /// <remarks>
     /// Campo generado automáticamente.
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox TextBox2;
+    protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
 }
