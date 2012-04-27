@@ -20,11 +20,11 @@
 .bloque
 {
     clear:both;
-    width:1195px;
+    width:1199px;
     height:150px;
     margin-top:20px;
     margin-bottom:20px;
-    border: 5px outset #cccccc;
+    border: 1px solid #cccccc;
 }
 
 .cartel
