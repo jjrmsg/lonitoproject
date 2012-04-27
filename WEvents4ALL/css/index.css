@@ -33,11 +33,11 @@
     width: 100%;
     height: auto;
     margin: 2px 20px 10px 4px;
-    -webkit-box-shadow: 2px 2px 5px #999;
-    -moz-box-shadow: 2px 2px 5px #999;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    padding: 5px 0px 8px 10px;
+    -moz-box-shadow: inset 0px 0px 20px silver;
+    -webkit-box-shadow: inset 0px 0px 20px silver;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 5px 0px 8px 5px;
 }
 
 .cabecera
@@ -55,10 +55,8 @@
 .cuerpo img 
 {
     width: 120px; height: 170px;    
-    -webkit-box-shadow: 2px 2px 5px #999;
-    -moz-box-shadow: 2px 2px 5px #999;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .imgNoticia
