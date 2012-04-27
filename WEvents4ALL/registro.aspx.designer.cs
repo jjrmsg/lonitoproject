@@ -8,8 +8,51 @@
 //------------------------------------------------------------------------------
 
 
-namespace WEvents4ALL
-{
-    public partial class registro {
-    }
+
+public partial class  {
+    
+    /// <summary>
+    /// Control PanelNombre.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelNombre;
+    
+    /// <summary>
+    /// Control PanelUsuario.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelUsuario;
+    
+    /// <summary>
+    /// Control PanelDatosPersonales1.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelDatosPersonales1;
+    
+    /// <summary>
+    /// Control PanelPaises.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelPaises;
+    
+    /// <summary>
+    /// Control PanelDatosPersonales2.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelDatosPersonales2;
 }

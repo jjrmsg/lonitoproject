@@ -11,16 +11,35 @@
 #registro input
 {
     margin-top: 5px;
+    margin-right: 5px;
     
 }
 
 #registro select
 {
-    margin-top: 5px;   
+    margin-top: 5px; 
+    margin-left: 5px;
+    margin-right: 5px;  
 }
 
 #registro panel
 {
     display:block;
     margin-bottom: 2px;   
+}
+
+.direccion
+{
+    display:block;
+}
+
+
+.telefonos label
+{
+    margin-right: 1px;
+}
+
+.telefonos input
+{
+    margin-right: 2px;
 }
