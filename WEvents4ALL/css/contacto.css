@@ -1,8 +1,5 @@
-﻿/*body 
-{
-}
-
-label
+﻿
+.contact_label
 {
     float:left;
     position:relative;
@@ -10,28 +7,23 @@ label
     display:block;
     width:150px;
 }
-input
-{
-    width:144px;
-}
-select
-{
-width:150px;
-}
 
-textarea
+.contact_imput_down
+{
+    width:151px;
+}
+.contact_textarea
 {
     
     height:300px;
-    width:800px;
-   padding-left:10px;
+    width:600px;
    padding-right:5px;
    padding-top:5px;
    padding-bottom:5px;
     margin-bottom:5px;
 }
 
-.bot_enviar
+.contact_bot_enviar
 {
     width:75px;
-}*/
+}

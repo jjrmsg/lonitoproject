@@ -1,39 +1,37 @@
-﻿/*body 
-{
-}
-
-table
+﻿.rank_table
 {
     margin:0 auto;
     width:400px;
     border-collapse:collapse;
-    padding:10px;
    border-style:solid;
     border-spacing: 0;
- 
-}
-h2
+} 
+
+.rank_h2
 {
     margin:0 auto;
-    width:150px;
+    width:90px;
     margin-bottom:5px;
 }
 .colfoto
 {
-
+    padding:0px;
     width:80px;
+
 }
 .restocol
 {
     text-align:center;
 }
-table td
+.rank_table td
 {
        border-style:solid;
     border-width: 1px;
 }
-img
+.rank_img
 {
+    padding:0px;
+    margin:0px;
     width:80px;
     height:80px;
-}*/
+}
