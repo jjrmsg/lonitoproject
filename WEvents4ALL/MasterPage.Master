@@ -16,11 +16,185 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="TopBar">
+<p id="top"></p>
+		<div id="cabecera">
+			<a href="index.aspx"><img id="logo" src="" alt="logo"/></a>
 
-    </div>
+			<!-- Formulario de entrada -->
+			<div id="loginForm">
+				<p>Entrada de usuarios</p>
+				<p class="tabled">
+					<label for="nombre">Nombre: </label>
+					<input type="text" id="nombre" name="nombre" />
+				</p>
+				<p class="tabled">
+					<label for="contrasenya">Contraseña: </label>
+					<input type="password" id="contrasenya" name="contrasenya" />
+				</p>
+				<p>
+					<span class="errorMsj" id="login_info"></span>
+					<input type="submit" value="Entrar" />
+				</p>
+
+			</div>
+
+			<ul id="navBar">
+				<li class="seleccion"><a title="Ir a la pagina de inicio" href="index.aspx">Inicio</a></li>
+				<li><a title="Ir a la página de registro" href="registro.aspx">Registro</a></li>
+				<li><a title="Ir a la página de búsquedas" href="cartelera.aspx">Cartelera</a></li>
+                <li><a title="Ir a la pagina de inicio" href="ranking.aspx">Ranking</a></li>
+				<li><a title="Ir a la página de registro" href="registro.aspx">Contacto</a></li>
+				<li><a title="Ir a la página de búsquedas" href="perfil.aspx">Perfil</a></li>
+            </ul>
+		</div>
+
+		<div class="wrap">
+			<div id="main-content">
+				<div class="content-box" >
+					 <asp:ContentPlaceHolder ID="Content1" runat="server">
+                    </asp:ContentPlaceHolder>
+				</div>				
+			</div>
+			<div id="sidebar">
+				<div class="sidebar-box">
+					<div>
+					<h3>Búsqueda rápida:</h3>
+						<p><input type="text" name="texto" value="buscar"/></p>
+						<p>
+							<input type="submit" value="Buscar"/>
+							<a title="Buscar imagenes" href="#">Búsqueda avanzada</a>
+						</p>
+					</div>
+				</div>
+
+
+				<!-- Caja de contenido secundario-->
+				<div class="sidebar-box">
+					<h3>Próximos estrenos:</h3>
+					<div class="imageBlock">
+						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los%20vengadores.jpg" />
+						<a title="Ver detalles de esta foto" href="#">Los Vengadores</a>
+						<p>
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+						</p>
+					</div>
+					<div class="imageBlock">
+						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los%20vengadores.jpg" />
+						<a title="Ver detalles de esta foto" href="#">Los Vengadores</a>
+						<p>
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+						</p>
+					</div>
+                    <div class="imageBlock">
+						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los%20vengadores.jpg" />
+						<a title="Ver detalles de esta foto" href="#">Los Vengadores</a>
+						<p>
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+							<img alt="star" src="img/layout/star-icon.png" />
+						</p>
+					</div>
+					<p class="block-selector">
+						<span>Comentadas -</span>
+						<span class="selected">Votadas -</span>
+						<span>Añadidas</span>
+					</p>
+				</div>
+
+				<!-- Caja de contenido secundario-->
+				<div class="sidebar-box">
+					<h3>Usuarios:</h3>
+					<div class="imageBlock">
+						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
+						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<p>(hace 22 minutos)</p>
+					</div>
+					<div class="imageBlock">
+						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
+						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<p>(hace 22 minutos)</p>
+					</div>
+					<div class="imageBlock">
+						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
+						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<p>(hace 22 minutos)</p>
+					</div>
+					<div class="imageBlock">
+						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
+						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<p>(hace 22 minutos)</p>
+					</div>
+					<p class="block-selector">
+						<span class="selected">Nuevos -</span>
+						<span>Populares</span>
+					</p>
+				</div>
+
+				<!-- Caja de contenido secundario-->
+				<div class="sidebar-box">
+					<h3>Enlaces:</h3>
+					<ul>
+						<li><a title="Ir a la pagina de inicio" href="index.html">Inicio</a></li>
+						<li><a title="Ir a la página de registro" href="registro.html">Registro</a></li>
+						<li><a title="Ir a la página de búsquedas" href="busqueda.html">Búsqueda</a></li>
+						<li><a title="Ir a resultados de búsqueda" href="busqueda.html">Resultados búsqueda</a></li>
+						<li><a title="Ir a la página de detalles" href="detalle_foto.html">Detalles foto</a></li>
+						<li><a title="Ir al perfil del usuario" href="perfil.html">Perfil</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div id="pieDePagina">
+			<a title="Ir arriba" id="goTop" href="#top"><img src="img/layout/gotop_icon.png" alt="Ir arriba" style="border: 0"/></a>
+			<!-- Envoltura del contenido del pie de pagina -->
+			<div id="f-inner">
+				<!-- Columna del pie de pagina -->
+				<div id="fcol1">
+					<h2><img src='img/layout/rss_ico.png' alt='Imagen rss'/> RSS</h2>
+					<ul>
+						<li><a title="Suscribirse a nuevos espectáculos" href="#">Nuevos espectáculos</a></li>
+                        <li><a title="Suscribirse a nuevas ofertas" href="#">Nuevas ofertas</a></li>
+					</ul>
+				</div>
+
+				<!-- Columna del pie de pagina -->
+				<div id="fcol2">
+					<h2><img src='img/layout/contacto_ico.png' alt='Imagen contacto'/> Contacto</h2>
+					<ul>
+						<li><a title="Contacta con nosotros" href="contacto.aspx">General</a></li>
+					</ul>
+				</div>
+
+				<!-- Columna del pie de pagina -->
+				<div id="fcol3">
+					<h2><img src='img/layout/theme-change-icon.png' alt='Imagen estilo'/> Estilos</h2>
+					<ul id="listadoEstilos">
+					</ul>
+				</div>
+			</div>
+			<p id="valid-icons">
+				<!-- Logos de validacion de antipixel.com -->
+				<a href="http://validator.w3.org/">
+					<img src="img/layout/valid-xhtml.gif" alt="Valid XHTML 1.0 Strict" />
+				</a>
+				<a href="http://jigsaw.w3.org/css-validator/">
+					<img src="img/layout/valid-css.gif" alt="¡CSS Válido!" />
+				</a>
+			</p>
+		</div>
+
+
+
+
+
+
     
-    <div id="Bar">
+    <!--<div id="Bar">
             <ul id="trans-nav">
                 <li><a href="/index.aspx" class="house">Inicio</a></li>
                 <li><a href="/login.aspx" class="house">Login</a></li>
@@ -34,10 +208,9 @@
 
     <div id="wrap">
         <div id="Content">
-            <asp:ContentPlaceHolder ID="Content1" runat="server">
-            </asp:ContentPlaceHolder>
+
         </div>
-    </div>
+    </div>-->
 
     </form>
 </body>
