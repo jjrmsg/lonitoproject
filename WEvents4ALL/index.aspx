@@ -2,15 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
 
-<div id="bannerContent">
-    <div id="carrusel">
-        <img id="banner" src="/img/layout/banner.png" alt="" title="" />
-    </div>
-    <div id="recomendado">
-        <img id="banner2" src="/img/layout/banner2.png" alt="" title="" />
-    </div>
-</div>
 
+<div id="carrusel">
+    <img id="banner" src="/img/layout/banner.png" alt="" title="" />
+</div>
+<br />
+<hr />
 
 <div id="noticias">
     <div class="new">
