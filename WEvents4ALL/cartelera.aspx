@@ -10,22 +10,7 @@
             Height="40px" Width="80px" />
     </div>
 
-    <div id="calendario" class="calendario">
-        <asp:Calendar ID="Calendar1" runat="server" Height="150px" Width="150px" 
-            BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" 
-            Font-Size="7pt" ForeColor="Black" NextPrevFormat="FullMonth" 
-            SelectedDate="04/27/2012 16:39:54" ShowDayHeader="False">
-            <DayHeaderStyle Font-Bold="True" Font-Size="7pt" />
-            <DayStyle Font-Size="7pt" />
-            <NextPrevStyle Font-Bold="True" Font-Size="7pt" ForeColor="#333333" 
-                VerticalAlign="Bottom" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <SelectedDayStyle BackColor="#333399" ForeColor="White" Font-Size="7pt" />
-            <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" 
-                Font-Bold="True" Font-Size="7pt" ForeColor="#333399" />
-            <TodayDayStyle BackColor="#CCCCCC" />
-        </asp:Calendar>
-    </div>
+
     
 
     <div id="b1" class="bloque">
