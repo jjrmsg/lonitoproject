@@ -1,12 +1,64 @@
 ﻿body {
 }
 
-.derecha
-{
-    float:right;
-}
-
-.izquierda
+.menu
 {
     float:left;
+    width:600px;
+    height:150px;
+    margin-bottom:20px;
 }
+
+.calendario
+{
+    float:left;
+    width:600px;
+    height:150px;
+    margin-bottom:20px;
+}
+
+.bloque
+{
+    clear:both;
+    width:1200px;
+    height:200px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.cartel
+{
+    width:200px;
+    height:200px;
+    background-color:inherit;
+    float:left;
+}
+
+.tamCartel
+{
+    width:200px;
+    height:200px;
+}
+
+.titulo
+{
+    text-align:left;
+    float:left;
+    margin-left:10px;
+    margin-top:90px;
+    width:120px;
+    text-shadow: -3px 5px 4px #777;
+    color:#004080;
+}
+
+.fecha
+{
+    text-align:left;
+    float:left;
+    margin-left:20px;
+    margin-top:90px;
+    width:120px;
+    text-shadow: -3px 5px 4px #777;
+    color:#004080;
+}
+
