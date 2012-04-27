@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class  perfil {
     
     /// <summary>
     /// ImagePerfil control.

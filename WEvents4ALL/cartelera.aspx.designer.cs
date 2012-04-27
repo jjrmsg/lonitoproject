@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class  cartelera {
     
     /// <summary>
     /// Control Button1.
