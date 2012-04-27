@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Events4All</title>
+    <link rel="Stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/contacto.css" />
     <link rel="stylesheet" type="text/css" href="css/ranking.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
@@ -20,7 +21,15 @@
     </div>
     
     <div id="Bar">
-
+            <ul id="trans-nav">
+                <li><a href="/index.aspx" class="house">Inicio</a></li>
+                <li><a href="/login.aspx" class="house">Login</a></li>
+                <li><a href="/registro.aspx" class="house">Registro</a></li>
+                <li><a href="/perfil.aspx" class="house">Perfil</a></li>
+                <li><a href="/cartelera.aspx" class="house">Cartelera</a></li>
+                <li><a href="/ranking.aspx" class="house">Ranking</a></li>
+                <li><a href="/contacto.aspx" class="house">Contacto</a></li>
+            </ul>
     </div>
 
     <div id="wrap">

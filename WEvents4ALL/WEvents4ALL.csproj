@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Include="css\cartelera.css" />
     <Content Include="css\contacto.css" />
+    <Content Include="css\index.css" />
     <Content Include="css\login.css" />
     <Content Include="css\MasterStyle.css" />
     <Content Include="contacto.aspx" />
