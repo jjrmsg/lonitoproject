@@ -95,7 +95,7 @@
 		                 <asp:ListItem>Noviembre</asp:ListItem> 
 		                 <asp:ListItem>Diciembre</asp:ListItem> 
 	                 </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="80">
+                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="60">
 	                     <asp:ListItem>1900</asp:ListItem> 
 		                 <asp:ListItem>1901</asp:ListItem> 
 		                 <asp:ListItem>1902</asp:ListItem> 
