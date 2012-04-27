@@ -8,6 +8,8 @@
 //------------------------------------------------------------------------------
 
 
-
-public partial class  {
+namespace WEvents4ALL
+{
+    public partial class index {
+    }
 }

@@ -7,7 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
+namespace WEvents4ALL
+{
 
+public partial class  login{
+}
 
-public partial class  {
 }
