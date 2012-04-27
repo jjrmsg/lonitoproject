@@ -41,8 +41,9 @@
 
 .cabecera
 {
-   background-color:#D8D8D8;
+   margin: 0px 0px 5px 0px;
    color: #585858;
+   border-bottom: 1px solid #58D3F7;
 }
 
 .cuerpo
