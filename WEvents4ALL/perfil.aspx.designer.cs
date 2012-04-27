@@ -12,15 +12,6 @@
 public partial class  {
     
     /// <summary>
-    /// Label_Foto control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label Label_Foto;
-    
-    /// <summary>
     /// ImagePerfil control.
     /// </summary>
     /// <remarks>
@@ -453,24 +444,6 @@ public partial class  {
     protected global::System.Web.UI.WebControls.DropDownList DropDownList_Sexo;
     
     /// <summary>
-    /// TableCell_73 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TableCell TableCell_73;
-    
-    /// <summary>
-    /// TableCell_74 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TableCell TableCell_74;
-    
-    /// <summary>
     /// TableCell_81 control.
     /// </summary>
     /// <remarks>
@@ -496,24 +469,6 @@ public partial class  {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.TableCell TableCell_82;
-    
-    /// <summary>
-    /// TableCell_83 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TableCell TableCell_83;
-    
-    /// <summary>
-    /// TableCell_84 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TableCell TableCell_84;
     
     /// <summary>
     /// TableCell_91 control.

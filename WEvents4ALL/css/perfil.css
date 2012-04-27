@@ -1,2 +1,18 @@
 ﻿body {
 }
+
+.tablica
+{
+   border: 8px solid;
+   border-color: blue;
+    
+   line-height:20px; /* tamaño del interliniado */
+    
+   margin-left:300px;
+    
+   padding: 20px;
+    
+   text-align: left;    
+    
+   Width:800px; 
+}

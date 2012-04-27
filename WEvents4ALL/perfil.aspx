@@ -1,26 +1,28 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="asp:TableRow runat="server" BorderStyle="None"ue" CodeBehind="perfil.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="perfil.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 <!--<link rel="stylesheet" type="text/css" href="/css/estilos.css" media="screen" />-->
 
-<div id="perfil">
-    <form id="perfil" action="mi_funcion_de_guardado()">
+<div id="perfil_general">
+    <form id="perfil" action="">
     
-        <asp:Label ID="Label_Foto" runat="server" Text="Fotograf&iacute;a :"></asp:Label>
-        <br />
-	    <asp:Image ID="ImagePerfil" ImageUrl="/img/foto_usuario_defecto.jpg" runat="server" Width="200"/>
-        <br/>
-        <asp:Label ID="Label_IntroFoto" runat="server" Text="(Tama&ntilde;o m&aacute;ximo 50KB)"></asp:Label>
-        <br/>
-	    <input type="file" name="foto_usuario" />
+        <div class="fotico">
+	        <asp:Image ID="ImagePerfil" ImageUrl="/img/foto_usuario_defecto.jpg" runat="server" Width="200" Height="200"/>
+            <br/>
+            <asp:Label ID="Label_IntroFoto" runat="server" Text="(Tama&ntilde;o m&aacute;ximo 50KB)"></asp:Label>
+            <br/>
+	        <input type="file" name="foto_usuario" />
+        </div>
+        <div class="tablica">
 
-        <br />
-
-        <asp:Table ID="datos" runat="server" Width="1000px" BorderStyle="None">
+        <asp:Table ID="datos" runat="server" BorderStyle="None" Width="700px">
 
             <asp:TableRow runat="server" BorderStyle="None"> 
+                
                 <asp:TableCell ID="TableCell_11" runat="server" BorderStyle="None" HorizontalAlign="Left">
                     <asp:Label ID="Label_Nombre" runat="server" Text="Nombre :"></asp:Label>
                 </asp:TableCell>
+
+
                 <asp:TableCell ID="TableCell_12" runat="server" BorderStyle="None" HorizontalAlign="Left">
                     <input type="text" name="nombre1" id="nombre"/>
                 </asp:TableCell>
@@ -42,10 +44,10 @@
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_23" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                    <asp:Label ID="Label_FN" runat="server" Text="Fecha de nacimiento"></asp:Label>
+                    <asp:Label ID="Label_FN" runat="server" Text="Fecha de nacimiento :"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_24" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                     <asp:DropDownList ID="DropDownList_dia" runat="server">
+                     <asp:DropDownList ID="DropDownList_dia" runat="server" Width="60">
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
@@ -78,7 +80,7 @@
                         <asp:ListItem>30</asp:ListItem>
                         <asp:ListItem>31</asp:ListItem>
                      </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_Mes" runat="server">
+                     <asp:DropDownList ID="DropDownList_Mes" runat="server" Width="60">
 	                     <asp:ListItem></asp:ListItem> 
 		                 <asp:ListItem>Enero</asp:ListItem> 
 		                 <asp:ListItem>Febrero</asp:ListItem> 
@@ -93,7 +95,7 @@
 		                 <asp:ListItem>Noviembre</asp:ListItem> 
 		                 <asp:ListItem>Diciembre</asp:ListItem> 
 	                 </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_ano" runat="server">
+                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="80">
 	                     <asp:ListItem>1900</asp:ListItem> 
 		                 <asp:ListItem>1901</asp:ListItem> 
 		                 <asp:ListItem>1902</asp:ListItem> 
@@ -554,10 +556,7 @@
                     </asp:DropDownList>
 	            </asp:TableCell>
 
-                <asp:TableCell ID="TableCell_73" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_74" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                </asp:TableCell>
+                
             </asp:TableRow>
 
             <asp:TableRow runat="server" BorderStyle="None">
@@ -568,10 +567,6 @@
                     <input type="text" name="pass3" id="pass3"/>
                 </asp:TableCell>
 
-                <asp:TableCell ID="TableCell_83" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_84" runat="server" BorderStyle="None" HorizontalAlign="Left">
-                </asp:TableCell>
             </asp:TableRow>
         
             <asp:TableRow runat="server" BorderStyle="None">
@@ -589,7 +584,7 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>    
-
+        </div>
         <input class="botoncejo" type="submit" value="Enviar" />
         <input class="botoncejo" type="reset" value="Borrar" />
     </form>
