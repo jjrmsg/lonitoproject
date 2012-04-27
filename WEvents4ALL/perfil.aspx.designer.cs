@@ -237,13 +237,13 @@ public partial class  {
     protected global::System.Web.UI.WebControls.TableCell TableCell_34;
     
     /// <summary>
-    /// DropDownList_Paiss control.
+    /// DropDownList_Prov control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList DropDownList_Paiss;
+    protected global::System.Web.UI.WebControls.DropDownList DropDownList_Prov;
     
     /// <summary>
     /// TableCell_41 control.

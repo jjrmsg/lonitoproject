@@ -1,2 +1,41 @@
 ﻿body {
 }
+
+.fotico
+{
+   padding-left:250px;  
+    
+}
+
+.tablica
+{
+    Width:850px;    
+    
+}
+
+.fila
+{
+    background-color:Red;
+    Width:10px;  
+}
+
+.labels_perfil
+{
+    Width:110px;
+    padding-left:10px; 
+}
+
+.introduce_texto
+{
+    Width:175px;
+}
+
+.datos_perfil
+{
+   padding-left:0px;
+}
+
+.Botones
+{
+    padding-left:300px;
+}
