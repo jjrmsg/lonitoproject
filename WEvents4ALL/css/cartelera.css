@@ -24,7 +24,8 @@
     height:150px;
     margin-top:20px;
     margin-bottom:20px;
-    border: 1px solid #cccccc;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
 }
 
 .cartel
