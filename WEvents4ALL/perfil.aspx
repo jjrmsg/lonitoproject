@@ -25,14 +25,14 @@
 
 
                 <asp:TableCell ID="TableCell_12" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="nombre1" id="nombre" class="introduce_texto" value="Manolo"/>
+                    <input type="text" name="nombre1" id="nombre" class="introduce_texto" value="Manolo" readonly="readonly" />
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_13" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                     <asp:Label ID="Label_Apellido" runat="server" Text="Apellidos :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_14" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="apellido" id="apellido" class="introduce_texto" value="García Escobar"/>
+                    <input type="text" name="apellido" id="apellido" class="introduce_texto" value="García Escobar" readonly="readonly"/>
                 </asp:TableCell>
             </asp:TableRow>
         
@@ -41,14 +41,14 @@
                     <asp:Label ID="Label_NIF" runat="server" Text="NIF :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_22" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="nombre" id="dni" class="introduce_texto" value="59417626R"/>
+                    <input type="text" name="nombre" id="dni" class="introduce_texto" value="59417626R" readonly="readonly"/>
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_23" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                     <asp:Label ID="Label_FN" runat="server" Text="Fecha de nacimiento :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_24" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                     <asp:DropDownList ID="DropDownList_dia" runat="server" Width="38">
+                     <asp:DropDownList ID="DropDownList_dia" runat="server" Width="38" Enabled=false>
                         <asp:ListItem>19</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
@@ -83,7 +83,7 @@
                         <asp:ListItem>30</asp:ListItem>
                         <asp:ListItem>31</asp:ListItem>
                      </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_Mes" runat="server" Width="38">
+                     <asp:DropDownList ID="DropDownList_Mes" runat="server" Width="38" Enabled=false>
                          <asp:ListItem>9</asp:ListItem>
 	                     <asp:ListItem></asp:ListItem> 
 		                 <asp:ListItem>1</asp:ListItem> 
@@ -99,7 +99,7 @@
 		                 <asp:ListItem>11</asp:ListItem> 
 		                 <asp:ListItem>12</asp:ListItem> 
 	                 </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="54">
+                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="54" Enabled=false>
                          <asp:ListItem>1931</asp:ListItem>
                          <asp:ListItem></asp:ListItem>
 	                     <asp:ListItem>1900</asp:ListItem> 
@@ -230,7 +230,7 @@
                     <asp:Label ID="Label_Pais" runat="server" Text="Pa&iacute;s de residencia :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_32" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <asp:DropDownList ID="DropDownList_Pais" runat="server">
+                    <asp:DropDownList ID="DropDownList_Pais" runat="server" Enabled=false>
                         <asp:ListItem>España</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
 						<asp:ListItem>Albania</asp:ListItem> 
@@ -448,7 +448,7 @@
                     <asp:Label ID="Label_Prov" runat="server" Text="Provincia :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_34" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <asp:DropDownList ID="DropDownList_Prov" runat="server">
+                    <asp:DropDownList ID="DropDownList_Prov" runat="server" Enabled=false>
                          <asp:ListItem>Almería</asp:ListItem>
 			             <asp:ListItem></asp:ListItem> 			
                          <asp:ListItem>Álava</asp:ListItem>                     
@@ -511,14 +511,14 @@
                     <asp:Label ID="Label_CP" runat="server" Text="C&oacute;digo Postal :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_42" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="cp" id="cp" class="introduce_texto" value="96472"/>
+                    <input type="text" name="cp" id="cp" class="introduce_texto" value="96472" readonly="readonly"/>
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_43" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                     <asp:Label ID="Label_Local" runat="server" Text="Localidad :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_44" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="localidad1" id="localidad" class="introduce_texto" value="Almería"/>
+                    <input type="text" name="localidad1" id="localidad" class="introduce_texto" value="Almería" readonly="readonly"/>
                 </asp:TableCell>
             </asp:TableRow>
         
@@ -527,14 +527,14 @@
                     <asp:Label ID="Label_Dom" runat="server" Text="Domicilio :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_52" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="domicilo" id="dom" class="introduce_texto" value="Ave. Del Gitanillo Nº82"/>
+                    <input type="text" name="domicilo" id="dom" class="introduce_texto" value="Ave. Del Gitanillo Nº82" readonly="readonly"/>
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_53" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                 <asp:Label ID="Label_Mail" runat="server" Text="Email:" ></asp:Label>
                     </asp:TableCell>
                 <asp:TableCell ID="TableCell_54" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="mail1" id="mail" class="introduce_texto" value="micarro@melorobaron.com"/>
+                    <input type="text" name="mail1" id="mail" class="introduce_texto" value="micarro@melorobaron.com" readonly="readonly"/>
                 </asp:TableCell>
             </asp:TableRow>
         
@@ -543,14 +543,14 @@
                     <asp:Label ID="Label_tel1" runat="server" Text="Tel&eacute;fono :"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_62" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="tel1" id="tel1" class="introduce_texto" value="966 317865"/>
+                    <input type="text" name="tel1" id="tel1" class="introduce_texto" value="966 317865" readonly="readonly"/>
                 </asp:TableCell>
 
                 <asp:TableCell ID="TableCell_63" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                     <asp:Label ID="Label_tel2" runat="server" Text="M&oacute;vil :"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_64" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="tel2" id="tel2" class="introduce_texto" value="680 658876"/>
+                    <input type="text" name="tel2" id="tel2" class="introduce_texto" value="680 658876" readonly="readonly"/>
                 </asp:TableCell>
             </asp:TableRow>
         
@@ -559,7 +559,7 @@
                     <asp:Label ID="Label_sexo" runat="server" Text="Sexo:" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_72" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-	                 <asp:DropDownList ID="DropDownList_Sexo" runat="server">
+	                 <asp:DropDownList ID="DropDownList_Sexo" runat="server" Enabled=false>
 	                     <asp:ListItem>Hombre</asp:ListItem>
                          <asp:ListItem>Mujer</asp:ListItem>   
                     </asp:DropDownList>
@@ -573,7 +573,7 @@
                     <asp:Label ID="Label_pass3" runat="server" Text="Nueva Contrase&ntilde;a :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_82" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass3" id="pass3" class="introduce_texto"/>
+                    <input type="text" name="pass3" id="pass3" class="introduce_texto" readonly="readonly"/>
                 </asp:TableCell>
 
             </asp:TableRow>
@@ -583,13 +583,13 @@
                     <asp:Label ID="Label_pass" runat="server" Text="Contrase&ntilde;a :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_92" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass" id="pass" class="introduce_texto"/></asp:TableCell>
+                    <input type="text" name="pass" id="pass" class="introduce_texto" readonly="readonly"/></asp:TableCell>
 
                 <asp:TableCell ID="TableCell_93" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
                     <asp:Label ID="Label_pass2" runat="server" Text="Repita Contrase&ntilde;a :" ></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell ID="TableCell_94" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass2" id="pass2" class="introduce_texto"/>
+                    <input type="text" name="pass2" id="pass2" class="introduce_texto" readonly="readonly"/>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>    
