@@ -45,7 +45,7 @@
 				<li><a title="Ir a la página de registro" href="registro.aspx">Registro</a></li>
 				<li><a title="Ir a la página de búsquedas" href="cartelera.aspx">Cartelera</a></li>
                 <li><a title="Ir a la pagina de inicio" href="ranking.aspx">Ranking</a></li>
-				<li><a title="Ir a la página de registro" href="registro.aspx">Contacto</a></li>
+				<li><a title="Ir a la página de registro" href="contacto.aspx">Contacto</a></li>
 				<li><a title="Ir a la página de búsquedas" href="perfil.aspx">Perfil</a></li>
             </ul>
 		</div>
@@ -83,8 +83,8 @@
 						</p>
 					</div>
 					<div class="imageBlock">
-						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los%20vengadores.jpg" />
-						<a title="Ver detalles de esta foto" href="#">Los Vengadores</a>
+						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los_inmortales.jpg" />
+						<a title="Ver detalles de esta foto" href="#">Los Inmortales</a>
 						<p>
 							<img alt="star" src="img/layout/star-icon.png" />
 							<img alt="star" src="img/layout/star-icon.png" />
@@ -92,8 +92,8 @@
 						</p>
 					</div>
                     <div class="imageBlock">
-						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/los%20vengadores.jpg" />
-						<a title="Ver detalles de esta foto" href="#">Los Vengadores</a>
+						<img class="thumb" alt="Carnegie hall con tráfico." src="img/carteles/cazafan.gif" />
+						<a title="Ver detalles de esta foto" href="#">Cazafantasmas</a>
 						<p>
 							<img alt="star" src="img/layout/star-icon.png" />
 							<img alt="star" src="img/layout/star-icon.png" />
@@ -117,17 +117,17 @@
 					</div>
 					<div class="imageBlock">
 						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
-						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<a title="Ver detalles de esta foto" href="perfil.html">Bordalas</a>
 						<p>(hace 22 minutos)</p>
 					</div>
 					<div class="imageBlock">
 						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
-						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<a title="Ver detalles de esta foto" href="perfil.html">Mourinho</a>
 						<p>(hace 22 minutos)</p>
 					</div>
 					<div class="imageBlock">
 						<img class="thumb" alt="Guardiola." src="img/carteles/hook.png" />
-						<a title="Ver detalles de esta foto" href="perfil.html">Guardiola</a>
+						<a title="Ver detalles de esta foto" href="perfil.html">Ferrando</a>
 						<p>(hace 22 minutos)</p>
 					</div>
 					<p class="block-selector">
@@ -140,12 +140,11 @@
 				<div class="sidebar-box">
 					<h3>Enlaces:</h3>
 					<ul>
-						<li><a title="Ir a la pagina de inicio" href="index.html">Inicio</a></li>
-						<li><a title="Ir a la página de registro" href="registro.html">Registro</a></li>
-						<li><a title="Ir a la página de búsquedas" href="busqueda.html">Búsqueda</a></li>
-						<li><a title="Ir a resultados de búsqueda" href="busqueda.html">Resultados búsqueda</a></li>
-						<li><a title="Ir a la página de detalles" href="detalle_foto.html">Detalles foto</a></li>
-						<li><a title="Ir al perfil del usuario" href="perfil.html">Perfil</a></li>
+						<li><a title="Ir a la pagina de inicio" href="index.aspxl">Inicio</a></li>
+						<li><a title="Ir a la página de registro" href="registro.aspx">Registro</a></li>
+						<li><a title="Ir al perfil del usuario" href="perfil.aspx">Perfil</a></li>
+                        <li><a title="Ir al ranking" href="ranking.aspx">Ranking</a></li>
+                        <li><a title="Ir al formulario de contacto" href="contacto.aspx">Contacto</a></li>
 					</ul>
 				</div>
 
