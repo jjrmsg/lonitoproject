@@ -3,11 +3,11 @@
    
     <div id="botones" class="menu">
         <asp:Button ID="Button1" runat="server" Text="Cine" BorderStyle="Outset" 
-            Height="150px" Width="160px"/>
+            Height="40px" Width="80px"/>
         <asp:Button ID="Button2" runat="server" Text="Concierto" BorderStyle="Outset" 
-            Height="150px" Width="160px" />
+            Height="40px" Width="80px" />
         <asp:Button ID="Button3" runat="server" Text="Teatro" BorderStyle="Outset" 
-            Height="150px" Width="160px" />
+            Height="40px" Width="80px" />
     </div>
 
     <div id="calendario" class="calendario">

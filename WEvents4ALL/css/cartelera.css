@@ -4,9 +4,10 @@
 .menu
 {
     float:left;
-    width:600px;
-    height:150px;
-    margin-bottom:20px;
+    width:400px;
+    height:90px;
+    margin-left:200px;
+    margin-top:50px;
 }
 
 .calendario
