@@ -3,16 +3,18 @@
 
 <div id="registro" class="reg" style="height: 475px" >
 
-    <fieldset style="height: 291px; width: 970px">
+    <fieldset style="height: 384px; width: 964px">
 
+        <asp:Panel ID="PanelNombre" runat="server">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nom" id="nombre" size="20" maxlength="30" />
-
         <label for="apellidos">Apellidos:</label>
         <input type="text"" name="apell" id="apellidos" size="40" maxlength="40" />
+        </asp:Panel>
         
         <br />
 
+        <asp:Panel ID="PanelUsuario" runat="server">
         <label for="usuario">Usuario:</label>
         <input type="text" name="user" id="usuario" size="20" maxlength="30" />
 
@@ -21,9 +23,11 @@
 
         <label for="repetirPassword">Repetir Password:</label>
         <input type="password" name="passR" id="repetirPassword" size="20" maxlength="30" />
+        </asp:Panel>
 
         <br />
 
+        <asp:Panel ID="PanelDatosPersonales1" runat="server">
         <label for="NIF">NIF:</label>
         <input type="text" name="nif" id="NIF" size="10" maxlength="9" />
 
@@ -32,9 +36,11 @@
 
         <label for="fechaN">Fecha de Nacimiento:</label>
         <input type="text" name="fechaNac" id="fechaN" />
+        </asp:Panel>
 
         <br />
 
+        <asp:Panel ID="PanelPaises" runat="server">
         <label for="pais">Pais:</label>
         <select name="country" id="pais">
         <option value="España">España</option>
@@ -57,6 +63,7 @@
         <option value="Elche">Elche</option>
         <option value="Alicante">Alicante</option>
         </select>
+        </asp:Panel>
 
         <br />
 
@@ -68,12 +75,15 @@
 
         <br />
 
+
+        <asp:Panel ID="PanelDatosPersonales2" runat="server">
         <label for="telefono">Telefono:</label>
         <input type="text" name="tlf" id="telefono" size="10" maxlength="9" />
 
         <label for="movil">Movil:</label>
         <input type="text" name="mvl" id="movil" size="10" maxlength="9" />
 
+        <br />
         <br />
       
         <label for="hombre">Hombre</label>
@@ -85,6 +95,7 @@
         <input type="radio" name="sexo" value="Mujer" id="mujer" />
 
         <br />
+        </asp:Panel>
 
         <input type="submit" value="Enviar" />
 
