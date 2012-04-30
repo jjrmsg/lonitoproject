@@ -1,34 +1,15 @@
 ﻿body {
 }
 
-.menu
-{
-    float:left;
-    width:400px;
-    height:90px;
-    margin-left:200px;
-    margin-top:50px;
-}
-
-.calendario
-{
-    float:left;
-    width:600px;
-    height:150px;
-    margin-bottom:20px;
-}
-
 .bloque
 {
     clear:both;
-    width:1199px;
     height:150px;
     margin-top:20px;
     margin-bottom:20px;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .cartel
@@ -52,7 +33,6 @@
     float:left;
     margin-left:10px;
     margin-top:65px;
-    width:120px;
     color:#004080;
 }
 
@@ -62,7 +42,45 @@
     float:left;
     margin-left:40px;
     margin-top:65px;
-    width:120px;
     color:#004080;
 }
 
+#tipoEvento
+{
+    list-style-type:none;
+    overflow:hidden;
+    background-color:transparent;
+    float:left;
+    padding:5px;
+    -webkit-box-shadow: inset 0px 0px 20px silver;
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+#tipoEvento li
+{
+    float: left;
+    padding: 3px 20px 3px 20px;
+
+}
+
+#tipoEvento li+li
+{
+    border-left: 1px solid orange;
+}
+
+#tipoEvento li a
+{
+    color:Blue;
+}
+
+#tipoEvento li a:hover
+{
+    color:Fuchsia;
+    text-decoration:none;
+}
+
+.tipoEventoSel
+{
+    text-decoration:underline;
+}
