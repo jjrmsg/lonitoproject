@@ -6,10 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Events4ALL.CAD;
-using Events4ALL.EN;
+using Entities;
 using System.Collections;
-using Events4ALL.Auxiliares;
+using Auxiliares;
 using System.IO;
 using System.Drawing.Imaging;
 

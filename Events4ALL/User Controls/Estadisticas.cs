@@ -9,10 +9,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-using Events4ALL.Auxiliares;
-using Events4ALL.EN;
+using Entities;
 using Events4ALL.User_Controls;
 using System.Windows.Forms.DataVisualization.Charting;
+using Auxiliares;
 
 namespace Events4ALL
 {

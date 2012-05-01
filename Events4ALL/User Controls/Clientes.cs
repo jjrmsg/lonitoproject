@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using Events4ALL.Auxiliares;
-using Events4ALL.EN;
+using Entities;
+using Auxiliares;
 
 namespace Events4ALL
 {

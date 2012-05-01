@@ -18,10 +18,10 @@
             <label for="usuario">Usuario:</label>
             <input type="text" name="user" id="usuario" size="20" maxlength="30" />
 
-            <label for="password">Password:</label>
+            <label for="password">Pass:</label>
             <input type="password" name="pass" id="password" size="22" maxlength="30" />
 
-            <label for="repetirPassword">Repetir Password:</label>
+            <label for="repetirPassword">Repite Pass:</label>
             <input type="password" name="passR" id="repetirPassword" size="22" maxlength="30" />
         </asp:Panel>
 
@@ -34,7 +34,7 @@
             <label for="email">Email:</label>
             <input type="text" name="correo" id="email" size="40" maxlength="30"  />
 
-            <label for="fechaN">Fecha de Nacimiento:</label>
+            <label for="fechaN">Fecha Nac:</label>
             <input type="text" name="fechaNac" id="fechaN" size="18" />
         </asp:Panel>
 

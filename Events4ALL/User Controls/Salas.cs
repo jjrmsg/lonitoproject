@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Events4ALL.EN;
-using Events4ALL.CAD;
+using Entities;
+
 using System.Collections;
 using System.Text.RegularExpressions;
 

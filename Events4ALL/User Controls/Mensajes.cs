@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using System.Threading;
-using Events4ALL.EN;
+using Entities;
 using System.Configuration;
 using System.Globalization;
 

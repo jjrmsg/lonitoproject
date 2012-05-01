@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
 using System.IO;
-using Events4ALL.Auxiliares;
+using Auxiliares;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections.Specialized;

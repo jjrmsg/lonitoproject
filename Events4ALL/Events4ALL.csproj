@@ -51,6 +51,9 @@
   <PropertyGroup>
     <ApplicationIcon>imgs\Icono Events4All.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Events4ALL.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -70,26 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auxiliares\BD.cs" />
-    <Compile Include="Auxiliares\SHA1helper.cs" />
-    <Compile Include="Auxiliares\Validaciones.cs" />
-    <Compile Include="CAD\AdminCAD.cs" />
-    <Compile Include="CAD\ClientesCAD.cs" />
-    <Compile Include="CAD\CondicionCAD.cs" />
-    <Compile Include="CAD\MensajesCAD.cs" />
-    <Compile Include="CAD\PromocionCAD.cs" />
-    <Compile Include="CAD\EspectaculosCAD.cs" />
-    <Compile Include="CAD\SalasCAD.cs" />
-    <Compile Include="CAD\VentasCAD.cs" />
     <Compile Include="ComboFlags.cs" />
-    <Compile Include="EN\ClientesEN.cs" />
-    <Compile Include="EN\CondicionEN.cs" />
-    <Compile Include="EN\EspectaculosEN.cs" />
-    <Compile Include="EN\MensajesEN.cs" />
-    <Compile Include="EN\PromocionEN.cs" />
-    <Compile Include="EN\AdminEN.cs" />
-    <Compile Include="EN\SalasEN.cs" />
-    <Compile Include="EN\VentasEN.cs" />
     <Compile Include="Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,7 +316,16 @@
     <Content Include="imgs\tag_orange.png" />
     <None Include="imgs\update.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Auxiliares\Auxiliares.csproj">
+      <Project>{47A630D8-3DCD-40DA-BB30-4D43B42CA0EF}</Project>
+      <Name>Auxiliares</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{542107CE-23DC-42DE-A3AF-F47DB6576058}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
