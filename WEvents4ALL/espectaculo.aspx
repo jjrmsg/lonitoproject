@@ -9,7 +9,7 @@
                 <div class="span8">
                     <ul class="nav nav-list">
                         <li class="nav-header">Titulo</li>
-                        <li>Ajhussi</li>
+                        <li>Ajhussi<% string a = gato; %></li>
                         <li class="nav-header">Descripción</li>
                         <li>La única conexión de ex-agente especial CHA Tae-sik al resto del mundo es una niña, So-mi, que vive cerca. La madre de So-mi, Hyo-jeong contrabandea drogas de una organización de tráfico de drogas y confía con el producto a Tae-sik, sin hacérselo saber.</li>
                         <li class="nav-header">Tipo de espectáculo</li>

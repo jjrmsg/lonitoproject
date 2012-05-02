@@ -2,7 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 <h3>Ranking</h3>
 
+    <p><%=random%></p>
     <%
+       
         string tipo = Request.QueryString["tipo"];
         Response.Write("<ul id=\"tipoEvento\">");
         if (tipo == "teatro")
@@ -33,17 +35,24 @@
 
        Response.Write("<ul class=\"rank_lista\">");
 
-
-       foreach (System.Data.DataRow da in resultado.Tables[0].Rows)
+       try
        {
-           /*  titulo = da[0].ToString();
-             ventas=Convert.ToInt16(da[0].ToString());*/
-           Response.Write("<li class=\"rank_fila\">");
-           Response.Write("<img alt=\"" + titulo + "\" src=\"/img/carteles/cazafan.gif\"  class=\"rank_img\"/>");
-           Response.Write("<p class=\"rank_tit\">" + titulo + "<span class=\"rank_nota\">" + ventas + "</span></p>");
-           Response.Write("</li>");
-       }	
-        Response.Write("</ul>");
+           foreach (System.Data.DataRow da in resultado.Tables[0].Rows)
+           {
+               /*  titulo = da[0].ToString();
+                 ventas=Convert.ToInt16(da[0].ToString());*/
+               Response.Write("<li class=\"rank_fila\">");
+               Response.Write("<img alt=\"" + titulo + "\" src=\"/img/carteles/cazafan.gif\"  class=\"rank_img\"/>");
+               Response.Write("<p class=\"rank_tit\">" + titulo + "<span class=\"rank_nota\">" + ventas + "</span></p>");
+               Response.Write("</li>");
+           }
+       }
+       catch (Exception ex)
+       {
+           Response.Write(ex.Message);
+       }
+           Response.Write("</ul>");
+       
     %>
    
 

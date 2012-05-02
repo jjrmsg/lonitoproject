@@ -16,10 +16,10 @@ namespace WEvents4ALL
         public VentasEN vent = new VentasEN();
         public string random = "lalalalalal";
 
-        /*public void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
-            resultado=vent.ObtenerRanking('d');
-        }*/
+            resultado = vent.ObtenerRanking('d');
+        }
 
     }
 }

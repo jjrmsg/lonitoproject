@@ -9,9 +9,10 @@ namespace WEvents4ALL
 {
     public partial class espectaculo : System.Web.UI.Page
     {
+        public string gato = "gagagato";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            gato = "pollo";
         }
     }
 }
