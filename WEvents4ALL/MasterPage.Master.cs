@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WEvents4ALL
 {
-    public partial class MAsterPage : System.Web.UI.MasterPage
+    public partial class MasterPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

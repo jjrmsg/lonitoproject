@@ -7,7 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-
-
-public partial class ranking {
+namespace WEvents4ALL {
+    
+    
+    public partial class ranking {
+    }
 }

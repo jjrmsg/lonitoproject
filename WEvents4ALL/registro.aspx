@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="registro.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="registro.aspx.cs" Inherits="WEvents4ALL.registro"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
 <div id="registro" class="reg" style="height: 475px" >

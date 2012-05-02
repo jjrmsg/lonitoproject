@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WEvents4ALL
 {
-    public partial class Formulario_web12 : System.Web.UI.Page
+    public partial class ranking : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

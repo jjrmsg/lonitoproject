@@ -146,7 +146,19 @@
   <ItemGroup>
     <Content Include="MasterPage.Master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Auxiliares\Auxiliares.csproj">
+      <Project>{47A630D8-3DCD-40DA-BB30-4D43B42CA0EF}</Project>
+      <Name>Auxiliares</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{542107CE-23DC-42DE-A3AF-F47DB6576058}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

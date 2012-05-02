@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="cartelera.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="cartelera.aspx.cs" Inherits="WEvents4ALL.cartelera"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
    <h3>Cartelera</h3>
 

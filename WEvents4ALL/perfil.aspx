@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="perfil.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="perfil.aspx.cs" Inherits="WEvents4ALL.perfil"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 <!--<link rel="stylesheet" type="text/css" href="/css/estilos.css" media="screen" />-->
 

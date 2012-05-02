@@ -7,7 +7,9 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-
-
-public partial class index {
+namespace WEvents4ALL {
+    
+    
+    public partial class index {
+    }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WEvents4ALL.index"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
 
@@ -19,6 +19,7 @@
                 <img id="cart" src="/img/layout/dark.jpg" alt="" title="" />
             </div>
             <div class="descripcion">
+                <%= Application["Peli"] %>
                 Batman (Christian Bale) regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos. 
             </div>
         </div>
