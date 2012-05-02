@@ -14,7 +14,6 @@ namespace WEvents4ALL
     {
         public DataSet resultado = new DataSet();
         public VentasEN vent = new VentasEN();
-        public string random = "lalalalalal";
 
         public void Page_Load(object sender, EventArgs e)
         {
