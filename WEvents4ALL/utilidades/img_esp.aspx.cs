@@ -9,18 +9,18 @@ using Entities;
 
 namespace WEvents4ALL.utilidades
 {
-    public partial class imagenes : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         public byte[] bImage = new byte[0];
         protected void Page_Load(object sender, EventArgs e)
-        {                        
+        {
             string id = Request.QueryString["id"];
             DataSet datosEsp = null;
             EspectaculosEN espEN = new EspectaculosEN();
 
             try
             {
-                datosEsp = espEN.ObtenerEspectaculoPorID(id);            
+                datosEsp = espEN.ObtenerEspectaculoPorID(id);
                 System.Data.DataRow espectaculo = datosEsp.Tables[0].Rows[0];
                 bImage = (byte[])espectaculo["Cartel"];
 
@@ -30,7 +30,7 @@ namespace WEvents4ALL.utilidades
             catch
             {
                 Response.StatusCode = 404;
-            }            
+            }  
         }
     }
 }

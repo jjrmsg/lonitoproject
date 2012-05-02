@@ -10,6 +10,6 @@
 namespace WEvents4ALL.utilidades {
     
     
-    public partial class imagenes {
+    public partial class WebForm1 {
     }
 }
