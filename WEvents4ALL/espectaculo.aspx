@@ -2,33 +2,60 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
     
-    <div class="row">
-        <div class="span12">
-            <h3>Ajhussi</h3>
-            <div class="row">
-                <div class="span8">
-                    <ul class="nav nav-list">
-                        <li class="nav-header">Titulo</li>
-                        <li>Ajhussi<% string a = gato; %></li>
-                        <li class="nav-header">Descripción</li>
-                        <li>La única conexión de ex-agente especial CHA Tae-sik al resto del mundo es una niña, So-mi, que vive cerca. La madre de So-mi, Hyo-jeong contrabandea drogas de una organización de tráfico de drogas y confía con el producto a Tae-sik, sin hacérselo saber.</li>
-                        <li class="nav-header">Tipo de espectáculo</li>
-                        <li>Cine</li>
-                        <li class="nav-header">Fecha de inicio</li>
-                        <li>08-05-2012</li>
-                        <li class="nav-header">Fecha de fin</li>
-                        <li>12-06-2012</li>
-                        <li class="nav-header">Sala</li>
-                        <li>Sala 1</li>
-                        <li class="nav-header">Horarios</li>
-                        <li>16:00 | 18:00 | 20:00 | 22:00 | 00:00</li>
-                    </ul>
-                    <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button>
-                </div>
-                <div class="span2 offset2 pull-right">
-                    <img id="imgEspectaculo" src="img/layout/ahjussi.jpg" alt="Ahjussi" title="" />
-                </div>
+<div class="row">
+    <div class="span10 offset1">
+    <%  
+    try
+    {
+        System.Data.DataRow espectaculo = datosEsp.Tables[0].Rows[0];
+    %>
+        <h3><%=espectaculo["Titulo"].ToString()%></h3>
+        <br />
+        <div class="row">
+            <div class="span8">
+                <ul class="nav nav-list">
+                    <li class="nav-header">Titulo</li>
+                    <li><%=espectaculo["Titulo"].ToString()%></li>
+                    <li class="nav-header">Descripción</li>
+                    <li><%=espectaculo["Descripcion"].ToString()%></li>
+                    <li class="nav-header">Tipo de espectáculo</li>
+                    <li><%=espectaculo["Tipo"].ToString()%></li>
+                    <li class="nav-header">Fecha de inicio</li>
+                    <li><%=espectaculo["FechaIni"].ToString()%></li>
+                    <li class="nav-header">Fecha de fin</li>
+                    <li><%=espectaculo["FechaFin"].ToString()%></li>
+                    <li class="nav-header">Sala</li>
+                    <li>Sala <%=espectaculo["IdSala"].ToString()%></li>
+                    <li class="nav-header">Horarios</li>
+                    <li>16:00 | 18:00 | 20:00 | 22:00 | 00:00</li>
+
+                </ul>
+                <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button>
             </div>
+            <div class="span2 pull-right">
+                <img id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
+            </div>
+        </div>
+
+    <%  
+    } catch
+    {
+    %>
+        <h3>No se pudo recuperar el espectaculo</h3>
+    
+    <%  
+    }
+    %>
+
+
+
+
+
+
+
+    
+                        
+                    
 
             <div id="especCompra">
                 <br />

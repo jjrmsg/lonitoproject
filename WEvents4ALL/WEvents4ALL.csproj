@@ -69,6 +69,7 @@
     <Content Include="ranking.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="utilidades\img_esp.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -142,6 +143,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utilidades\img_esp.aspx.cs">
+      <DependentUpon>img_esp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="utilidades\img_esp.aspx.designer.cs">
+      <DependentUpon>img_esp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />

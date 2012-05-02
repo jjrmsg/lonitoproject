@@ -4,15 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using Entities;
 
 namespace WEvents4ALL
 {
     public partial class espectaculo : System.Web.UI.Page
     {
-        public string gato = "gagagato";
+        public DataSet datosEsp = null;            
         protected void Page_Load(object sender, EventArgs e)
         {
-            gato = "pollo";
+            string id = Request.QueryString["id"];
+
+            EspectaculosEN espEN = new EspectaculosEN();
+            try
+            {
+                datosEsp = espEN.ObtenerEspectaculoPorID(id);
+            }
+            catch
+            {
+                Response.StatusCode = 404;
+            }   
         }
     }
 }
