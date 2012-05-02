@@ -1,6 +1,5 @@
 ﻿.rank_fila
 {
-    
     list-style:none;
     float:left;
     position:relative;
@@ -22,11 +21,9 @@
 }
 .rank_tit
 {
-    margin-top:20px;
-    
+    margin-top:45px;
     font-size:40px;
     text-align:center;
-
 }
 
 .rank_nota
