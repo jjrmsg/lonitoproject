@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class contacto {
     
     /// <summary>
     /// Control contacto_DropDownList1.

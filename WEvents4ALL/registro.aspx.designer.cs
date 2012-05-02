@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class ragistro {
     
     /// <summary>
     /// Control PanelNombre.
