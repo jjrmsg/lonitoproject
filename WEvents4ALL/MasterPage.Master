@@ -6,6 +6,13 @@
 <head runat="server">
     <title>Events4All</title>
     <script src="js/contacto.js" type="text/javascript" ></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link rel="Stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/contacto.css" />
     <link rel="stylesheet" type="text/css" href="css/ranking.css" />
@@ -16,13 +23,7 @@
     
     <link href="css/MasterStyle.css" rel="stylesheet" type="text/css" />
     <link href="css/cartelera.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-        }
-    </style>
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,13 +49,47 @@
 			    </div>
 		    </div>
 	    </div>
-
+        
         <div class="container">
-            <asp:ContentPlaceHolder ID="Content1" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="row">
+                <div class="span10 offset1">
+                    <!-- MENSAJES DE AVISO -->
+                    <asp:MultiView ID="MultiViewAlerts" runat="server">
+                        <asp:View ID="ErrorView" runat="server">
+                            <div class="alert alert-error">
+                                <button class="close" data-dismiss="alert">×</button>
+                                <h4 class="alert-heading"><asp:Label ID="errorViewTitle" runat="server" Text="Ocurrió un error"></asp:Label></h4>
+                                <p><asp:Label ID="errorViewMsg" runat="server" Text="Ocurrió un error al realizar la acción.."></asp:Label></p>
+                            </div>                
+                        </asp:View>
+                        <asp:View ID="SuccessView" runat="server">
+                            <div class="alert alert-success">
+                                <button class="close" data-dismiss="alert">×</button>
+                                <h4 class="alert-heading"><asp:Label ID="successViewTitle" runat="server" Text="Acción realizada"></asp:Label></h4>
+                                <p><asp:Label ID="successViewMsg" runat="server" Text="La acción se ha realizado correctamente."></asp:Label></p>
+                            </div>
+                        </asp:View>
+                        <asp:View ID="InfoView" runat="server">
+                            <div class="alert alert-info">
+                                <button class="close" data-dismiss="alert">×</button>
+                                <h4 class="alert-heading"><asp:Label ID="infoViewTitle" runat="server" Text="Ocurrió un error"></asp:Label></h4>
+                                <p><asp:Label ID="infoViewMsg" runat="server" Text="Ocurrió un error al realizar la acción."></asp:Label></p>
+                            </div>  
+                        </asp:View>
+                    </asp:MultiView>
+                </div> 
+            </div> 
+
+            <div class="row">
+                <div class="span10 offset1">
+                    <!-- Contenido de la pagina -->
+                    <asp:ContentPlaceHolder ID="Content1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div> 
+            </div> 
         </div>
     </form>
-    <script src="js/jquery-1.7.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

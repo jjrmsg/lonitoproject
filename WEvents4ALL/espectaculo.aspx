@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="espectaculo.aspx.cs" Inherits="WEvents4ALL.espectaculo"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
-    
-<div class="row">
-    <div class="span10 offset1">
+<div class="boxContent">
     <%  
     try
     {
@@ -87,8 +85,6 @@
     <div class="row" 
     </div>
 
-    <div >
-        
         
     </div>
     <script>
