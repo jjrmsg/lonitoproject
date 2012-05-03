@@ -3,7 +3,7 @@
 
 
 
-<div id="carrusel">
+<!--<div id="carrusel">
     <img id="banner" src="/img/layout/banner.png" alt="" title="" />
 </div>
 <br />
@@ -19,52 +19,29 @@
                 <img id="cart" src="/img/layout/dark.jpg" alt="" title="" />
             </div>
             <div class="descripcion">
-                <%= Application["Peli"] %>
                 Batman (Christian Bale) regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos. 
             </div>
         </div>
     </div>
-    <div class="new">
-        <div class="cabecera">
-            <b>Ira de Titantes</b>
-        </div>
-        <div class="cuerpo">
-            <div class="imgNoticia">
-                <img id="Img1" src="/img/layout/ira.jpg" alt="" title="" />
-            </div>
-            <div class="descripcion">
-                La historia de “Ira de titanes 3D” se desarrolla diez años después de los sucesos que vimos en “Furia de titanes”, encontrándonos con un Perseo (Sam Worthington) que quiere vivir de forma tranquila con su hijo Helio.
-            </div>
-        </div>
-    </div>
-    <div class="new">
-        <div class="cabecera">
-            <b>Queen Symphonic Rhapsody</b>
-        </div>
-        <div class="cuerpo">
-            <div class="imgNoticia">
-                <img id="Img2" src="/img/layout/queen.jpg" alt="" title="" />
-            </div>
-            <div class="descripcion">
-                El homenaje a la mítica banda británica 'Queen Symphonic Rhapsody' combina la música clásica y el rock en directo con cantantes de primer nivel mundial como Angela Brooks, Thomas Vikström (Therion), Mats Levén y la soprano Mayca Teba.
-            </div>
-        </div>
-    </div>
+</div>-->
 
-    <div class="new">
-        <div class="cabecera">
-            <b>Ahjussi</b>
-        </div>
-        <div class="cuerpo">
-            <div class="imgNoticia">
-                <img id="Img3" src="/img/layout/ahjussi.jpg" alt="" title="" />
+<div class="row">
+    <div class="span10 offset1">
+        <%foreach(System.Data.DataRow r in esp.Tables[0].Rows) { %>
+            <div class="well">
+                <div class="titulo_n">
+                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
+                </div>
+                <div class="poster_n">
+                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                    <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
+                </div>
+                <div class="descripcion_n">
+                    <%= r["Descripcion"].ToString() %>
+                </div>
             </div>
-            <div class="descripcion">
-                La única conexión de ex-agente especial CHA Tae-sik al resto del mundo es una niña, So-mi, que vive cerca. La madre de So-mi, Hyo-jeong contrabandea drogas de una organización de tráfico de drogas y confía con el producto a Tae-sik, sin hacérselo saber.
-            </div>
-        </div>
+        <%} %>
     </div>
-
 </div>
 
 

@@ -12,18 +12,12 @@ namespace WEvents4ALL
 
     public partial class index : System.Web.UI.Page
     {
-        EspectaculosEN esEN = new EspectaculosEN();
+        public EspectaculosEN esEN = new EspectaculosEN();
+        public DataSet esp = new DataSet();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet d = new DataSet();
-            d = esEN.ObtenerDatosEspectaculo("El lago de los cisnes");
-
-
-                foreach (DataRow da in d.Tables[0].Rows)
-                {
-                    Application["Peli"] = da["IDEspectaculo"].ToString();
-                }
-
+            esp = esEN.ObtenerEspectaculos();
         }
     }
 }
