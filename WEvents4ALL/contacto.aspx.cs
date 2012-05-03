@@ -19,9 +19,8 @@ namespace WEvents4ALL
         {
             try
             {
-                string tipo=contacto_DropDownList1.SelectedIndex.ToString();
-                tipo = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
-                string texto = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
+                string tipo = contacto_DropDownList1.SelectedValue.ToString();
+                string texto = TextArea1.Value.ToString();
                 MensajesEN mensaje = new MensajesEN();
                 mensaje.insertMessageEn(tipo,texto);
             }

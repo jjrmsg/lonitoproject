@@ -22,6 +22,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.DropDownList contacto_DropDownList1;
         
         /// <summary>
+        /// Control TextArea1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea1;
+        
+        /// <summary>
         /// Control bot_enviar.
         /// </summary>
         /// <remarks>
