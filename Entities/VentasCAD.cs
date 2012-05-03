@@ -168,6 +168,31 @@ namespace Entities
             return bdvirtual;
         }
 
+        //obtiene una lista ordenada descendente de las ventas segun el tipo de espectaculo
+        public DataSet ObtenerRankingTipo(string tipo)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da;
+                string cadena = "select e.Titulo, e.IDEspectaculo, count(*) Entradas from Ventas v, Espectaculo e, Sala s, ReservaSala rs where v.IDEspectaculo=e.IDEspectaculo and s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo and s.tipo='" + tipo;
+                cadena=cadena+"' group by e.Titulo, e.IDEspectaculo order by Entradas DESC";
+                da = new SqlDataAdapter(cadena,c);
+                da.Fill(bdvirtual);
+            }
+            catch
+            {
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
+
         // Busca y devuelve ventas de la bd que cumplen unas restricciones.
         public DataSet BuscarVenta(string nombre, string dni, string titulo, string tipo, string fEsp, string fVenta)
         {

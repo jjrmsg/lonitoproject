@@ -17,7 +17,10 @@ namespace WEvents4ALL
 
         public void Page_Load(object sender, EventArgs e)
         {
-            resultado = vent.ObtenerRanking('d');
+            string tipo = Request.QueryString["tipo"];
+            if (tipo != "Concierto" && tipo!="Teatro")
+                tipo = "Cine";
+            resultado = vent.ObtenerRankingTipo(tipo);
         }
 
     }

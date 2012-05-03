@@ -60,6 +60,13 @@ namespace Entities
             return vCAD.ObtenerRanking(orden);
         }
 
+        //Obtiene el ranking de una determinada categoria(musica,cine,teatro)
+        public DataSet ObtenerRankingTipo(string tipo)
+        {
+            VentasCAD vCAD = new VentasCAD();
+            return vCAD.ObtenerRankingTipo(tipo);
+        }
+
         // Busca ventas en la bd que cumplan las restricciones.
         public DataSet BuscarVenta(string nombre, string dni, string titulo, string tipo, string fEsp, string fVenta)
         {

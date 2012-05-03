@@ -2,27 +2,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 <h3>Ranking</h3>
 
+
    <%
        
         string tipo = Request.QueryString["tipo"];
         Response.Write("<ul id=\"tipoEvento\">");
-        if (tipo == "teatro")
+        if (tipo == "Teatro")
         {
-            Response.Write("<li><a href=\"?tipo=cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=concierto\">Concierto</a></li>");
-            Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=teatro\">Teatro</a></li>");
+            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=Teatro\">Teatro</a></li>");
         }
-        else if (tipo == "concierto")
+        else if (tipo == "Concierto")
         {
-            Response.Write("<li><a href=\"?tipo=cine\">Cine</a></li>");
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=teatro\">Teatro</a></li>");
+            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
         }
         else
         {
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=teatro\">Teatro</a></li>");
+            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
         }
         Response.Write("</ul>");
         
