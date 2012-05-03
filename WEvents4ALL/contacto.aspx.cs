@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using Entities;
 using System.Web.UI.WebControls;
 
 namespace WEvents4ALL
@@ -13,5 +14,22 @@ namespace WEvents4ALL
         {
 
         }
+
+        protected void EventoClick(Object sender, EventArgs e)
+        {
+            try
+            {
+                string tipo=contacto_DropDownList1.SelectedIndex.ToString();
+                tipo = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
+                string texto = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
+                MensajesEN mensaje = new MensajesEN();
+                mensaje.insertMessageEn(tipo,texto);
+            }
+            catch (Exception ex)
+            {
+                throw(ex);
+            }
+        }
+
     }
 }

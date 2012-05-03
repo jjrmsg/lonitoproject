@@ -45,5 +45,10 @@ namespace Entities
         {
             return msgCAD.getNumMessages();
         }
+
+        public void insertMessageEn(string asunto,string contenido)
+        {
+            msgCAD.insertMessage(asunto,contenido);
+        }
     }
 }

@@ -125,5 +125,29 @@ namespace Entities
             }
             return rows;
         }
+
+        public void insertMessage(string asunto,string contenido)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                string fecha = DateTime.Now.ToShortDateString();
+                c.Open();
+                string insert="insert into Mensaje (Cliente,Asunto,Contenido,Estado,Fecha) values ('1111118D','"+asunto;
+                insert = insert + "','"+contenido+"','1','"+fecha+"');";
+                SqlCommand com = new SqlCommand(insert, c);
+                com.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw(ex);
+            }
+            finally
+            {
+                c.Close();
+            }
+        }
     }
 }
