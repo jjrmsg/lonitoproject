@@ -51,7 +51,7 @@
     float: left;
     position: relative;
     margin: 70px 0px 0px 30px;
-    
+    border-radius: 5px;
     border: 1px solid #E6E6E6;
 }
 
