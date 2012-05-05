@@ -404,5 +404,31 @@ namespace Entities
             }
             return im;
         }
+
+        //obtiene una lista ordenada ascendente de los espectaculos segun el tipo
+        public DataSet ObtenerEspectaculoPorTipo(string tipo)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet bdvirtual = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da;
+                string cadena = "select e.Titulo, e.IDEspectaculo, e.Descripcion from Ventas v, Espectaculo e, Sala s, ReservaSala rs where v.IDEspectaculo=e.IDEspectaculo and s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo and s.tipo='" + tipo;
+                cadena = cadena + "'group by e.Titulo, e.IDEspectaculo, e.Descripcion order by e.Titulo ASC";
+                da = new SqlDataAdapter(cadena, c);
+                da.Fill(bdvirtual);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                c.Close();
+            }
+            return bdvirtual;
+        }
     }
 }

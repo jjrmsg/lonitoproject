@@ -84,3 +84,53 @@
 {
     text-decoration:underline;
 }
+
+.well
+{
+    float:left;
+    position:relative;
+    width: 100%;
+    height: auto;
+    padding: 5px 0px 8px 5px;
+}
+
+.titulo_n
+{
+   margin: 0px 0px 5px 0px;
+   color: #585858;
+   border-bottom: 1px solid #58D3F7;
+}
+
+.titulo_n a 
+{
+    text-decoration: none
+}
+
+.poster_n
+{
+    float:left;
+    position:relative;
+    width:12%;
+    margin: 20px 0px 0px 0px; 
+    text-align:center;
+}
+
+
+.poster_n img 
+{
+    width: auto; 
+    height: 170px;    
+    margin: 0px 0px 20px 0px;
+    box-shadow: 10px 10px 5px #888;
+}
+
+.descripcion_n
+{
+    margin: 20px 0px 0px 50px;
+    float:left;
+    position:relative;
+    width:60%;
+    font-size:14px;
+    color: #6E6E6E;
+    text-align: justify;
+}

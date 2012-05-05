@@ -107,5 +107,12 @@ namespace Entities
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerImagenEspectaculo(id);
         }
+
+        //obtiene una lista ordenada ascendente de los espectaculos segun el tipo
+        public DataSet ObtenerEspectaculoPorTipo(string tipo)
+        {
+            EspectaculosCAD vCAD = new EspectaculosCAD();
+            return vCAD.ObtenerEspectaculoPorTipo(tipo);
+        }
     }
 }
