@@ -1,48 +1,50 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="cartelera.aspx.cs" Inherits="WEvents4ALL.cartelera"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
    
-
-   <%string tipo = Request.QueryString["tipo"];
-     Response.Write("<ul id=\"tipoEvento\">");
-     if (tipo == "Teatro")
-     {
-         Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-         Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-         Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=Teatro\">Teatro</a></li>");
-     }
-     else if (tipo == "Concierto")
-     {
-         Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-         Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Concierto\">Concierto</a></li>");
-         Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-     }
-     else
-     {
-         Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Cine\">Cine</a></li>");
-         Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-         Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-     }
-     Response.Write("</ul>");
+   <h3>Cartelera</h3>
+   <%
+        string tipo = Request.QueryString["tipo"];
+        Response.Write("<ul id=\"tipoEvento\">");
+        if (tipo == "Teatro")
+        {
+            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=Teatro\">Teatro</a></li>");
+        }
+        else if (tipo == "Concierto")
+        {
+            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
+        }
+        else
+        {
+            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Cine\">Cine</a></li>");
+            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
+            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
+        }
+        Response.Write("</ul>");
      %>
 
-   <div class="row">
-    <div class="span10 offset1">
+
         <%foreach(System.Data.DataRow r in resultado.Tables[0].Rows) { %>
-            <div class="well">
-                <div class="titulo_n">
-                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
-                </div>
-                <div class="poster_n">
-                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                    <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
-                </div>
-                <div class="descripcion_n">
-                    <%= r["Descripcion"].ToString() %>
+            <div class="boxContent">
+                <div class="row">
+                    <div class="span9">
+                        <div class="titulo_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
+                        </div>
+                        <div class="poster_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                            <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
+                        </div>
+                        <div class="descripcion_n">
+                            <%= r["Descripcion"].ToString() %>
+                        </div>
+                    </div>
                 </div>
             </div>
         <%} %>
-    </div>
-</div>
    
    <!--<h3>Cartelera</h3>
 

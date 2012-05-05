@@ -50,11 +50,18 @@
     list-style-type:none;
     overflow:hidden;
     background-color:transparent;
-    float:left;
+    width:38%;
     padding:5px;
-    -webkit-box-shadow: inset 0px 0px 20px silver;
+    /*-webkit-box-shadow: inset 0px 0px 20px silver;*/
+    -webkit-box-shadow: 2px 2px 5px black;
     border-radius:5px;
     margin-bottom:20px;
+    margin-left:0px;
+    font-family:Georgia,"Times New Roman",Times,serif;
+    font-weight:normal;   
+    font-size:2em;  
+    text-transform:capitalize;  
+    line-height:1.2em;  
 }
 
 #tipoEvento li
@@ -66,17 +73,17 @@
 
 #tipoEvento li+li
 {
-    border-left: 1px solid orange;
+    border-left: 1px solid lightsteelblue;
 }
 
 #tipoEvento li a
 {
-    color:Blue;
+    color:gray;
 }
 
 #tipoEvento li a:hover
 {
-    color:Fuchsia;
+    color:White;
     text-decoration:none;
 }
 
@@ -133,4 +140,9 @@
     font-size:14px;
     color: #6E6E6E;
     text-align: justify;
+}
+
+.boxContent
+{
+    margin: 0px 0px 10px 0px;
 }
