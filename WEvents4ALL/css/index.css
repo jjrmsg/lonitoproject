@@ -59,3 +59,15 @@
 {
     margin: 4px 0px 6px 0px;
 }
+
+.carousel img
+{
+    height: 300px;
+    width: 100%;
+}
+
+.carousel
+{
+    padding: 2px 2px 2px 2px;
+    border: 1px solid white;
+}

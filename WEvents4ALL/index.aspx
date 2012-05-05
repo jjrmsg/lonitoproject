@@ -48,9 +48,27 @@
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));
 
+    //Carrusel de imágenes
+    $('.carousel').carousel()
+    $('.carousel').carousel({
+        interval: 2000
+    })
 </script>
 
 <html itemscope itemtype="http://schema.org/Blog">
+
+
+<div id="myCarousel" class="carousel">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+            <div class="active item"><img src="/img/layout/banner.jpg" alt=""></div>
+            <div class="item"><img src="/img/layout/banner2.jpg" alt=""></div>
+            <div class="item"><img src="/img/layout/banner3.jpg" alt=""></div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 
 <%foreach(System.Data.DataRow r in esp.Tables[0].Rows) { %>
     <div class="boxContent">
