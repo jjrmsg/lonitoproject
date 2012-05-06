@@ -70,28 +70,38 @@
       <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 
-<%foreach(System.Data.DataRow r in esp.Tables[0].Rows) { %>
-    <div class="boxContent">
-        <div class="row">
-            <div class="span9">
-                <div class="titulo_n">
-                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString() %></h3></span></a>
-                </div>
-                <div class="poster_n">
-                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                    <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
-                </div>
-                <div class="descripcion_n">
-                    <span itemprop="description"><%= r["Descripcion"].ToString() %>
-                </div>
-                <div class="social_n">
-                    <div class="socialBox"><g:plusone annotation="none"></g:plusone></div>
-                    <div class="socialBox"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a></div>
-                    <div class="socialBox"><div class="fb-like" data-href="http://www.events4all.com" data-send="false" data-layout="button_count" data-width="390" data-show-faces="false" data-font="tahoma"></div></div>
+<%
+    try
+    {
+        foreach (System.Data.DataRow r in esp.Tables[0].Rows)
+        { %>
+            <div class="boxContent">
+                <div class="row">
+                    <div class="span9">
+                        <div class="titulo_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
+                        </div>
+                        <div class="poster_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                            <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
+                        </div>
+                        <div class="descripcion_n">
+                            <span itemprop="description"><%= r["Descripcion"].ToString()%>
+                        </div>
+                        <div class="social_n">
+                            <div class="socialBox"><g:plusone annotation="none"></g:plusone></div>
+                            <div class="socialBox"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a></div>
+                            <div class="socialBox"><div class="fb-like" data-href="http://www.events4all.com" data-send="false" data-layout="button_count" data-width="390" data-show-faces="false" data-font="tahoma"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-<%} %>
+    <%  }
+    }
+    catch(Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+    %>
 
 </asp:Content>
