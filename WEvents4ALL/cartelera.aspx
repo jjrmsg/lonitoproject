@@ -26,25 +26,31 @@
         Response.Write("</ul>");
      %>
 
-
-        <%foreach(System.Data.DataRow r in resultado.Tables[0].Rows) { %>
-            <div class="caixaContenedora">
-                <div class="row">
-                    <div class="span9">
-                        <div class="titol_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
-                        </div>
-                        <div class="cartell_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                            <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
-                        </div>
-                        <div class="descripcio_n">
-                            <%= r["Descripcion"].ToString() %>
+        <%try{
+            foreach(System.Data.DataRow r in resultado.Tables[0].Rows) { %>
+                <div class="boxContent">
+                    <div class="row">
+                        <div class="span9">
+                            <div class="titol_n">
+                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
+                            </div>
+                            <div class="cartell_n">
+                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                                <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
+                            </div>
+                            <div class="descripcio_n">
+                                <%= r["Descripcion"].ToString() %>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <%} %>
+            <%} %>
+        <%}
+        catch(Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        %>
    
    <!--<h3>Cartelera</h3>
 
