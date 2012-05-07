@@ -13,16 +13,17 @@ namespace WEvents4ALL
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
+        }   
 
         protected void EventoClick(Object sender, EventArgs e)
         {
             try
             {
+                string idsession = Session["NickUsuario"].ToString();
                 string tipo = contacto_DropDownList1.SelectedValue.ToString();
                 string texto = TextArea1.Value.ToString();
                 MensajesEN mensaje = new MensajesEN();
-                mensaje.insertMessageEn(tipo,texto);
+                mensaje.insertMessageEn(idsession,tipo,texto);
             }
             catch (Exception ex)
             {

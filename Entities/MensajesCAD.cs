@@ -126,7 +126,7 @@ namespace Entities
             return rows;
         }
 
-        public void insertMessage(string asunto,string contenido)
+        public void insertMessage(string nick,string asunto,string contenido)
         {
             BD bd = new BD();
             SqlConnection c = bd.Connect();
