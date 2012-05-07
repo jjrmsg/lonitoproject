@@ -19,14 +19,28 @@ namespace WEvents4ALL
         {
             try
             {
-                string idsession = Session["NickUsuario"].ToString();
+                string idsession = "";
+                /* idsession=Session["NickUsuario"].ToString();*/
                 string tipo = contacto_DropDownList1.SelectedValue.ToString();
                 string texto = TextArea1.Value.ToString();
                 MensajesEN mensaje = new MensajesEN();
                 mensaje.insertMessageEn(idsession,tipo,texto);
+
+                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                mv.ActiveViewIndex = 1;
+                Label lbTitle = (Label)Master.FindControl("successViewTitle");
+                Label lbMsg = (Label)Master.FindControl("successViewMsg");
+                lbTitle.Text = "Enviado";
+                lbMsg.Text = "Su mensaje se envio correctamente";
             }
             catch (Exception ex)
             {
+                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                mv.ActiveViewIndex = 0;
+                Label lbTitle = (Label)Master.FindControl("errorViewTitle");
+                Label lbMsg = (Label)Master.FindControl("errorViewMsg");
+                lbTitle.Text = "Ocurrió un error";
+                lbMsg.Text = "Tiene que seleccionar un asuntoOO.";
                 throw(ex);
             }
         }
