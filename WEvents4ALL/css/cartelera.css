@@ -96,7 +96,8 @@
 {
    margin: 0px 0px 5px 0px;
    color: #585858;
-   border-bottom: 1px solid #58D3F7;
+   border-bottom: 1px solid #FE9A2E;
+   width: 100%;
 }
 
 .titol_n a 
@@ -108,7 +109,7 @@
 {
     float:left;
     position:relative;
-    width:12%;
+    width:15%;
     margin: 20px 0px 0px 0px; 
     text-align:center;
 }
@@ -127,7 +128,7 @@
     margin: 20px 0px 0px 50px;
     float:left;
     position:relative;
-    width:82%;
+    width:79%;
     font-size:14px;
     color: #6E6E6E;
     text-align: justify;
@@ -144,4 +145,13 @@
     text-shadow: 0 1px 1px white;
     padding: 25px 20px;
     -webkit-border-radius: 5px;
+}
+
+.cartelera_img
+{
+    border-radius: 5px;
+    float:left;
+    position:relative;
+    width:100px;
+    height:100px;
 }

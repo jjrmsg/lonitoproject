@@ -3,47 +3,54 @@
    
    <h3>Cartelera</h3>
    <%
+       
         string tipo = Request.QueryString["tipo"];
-        Response.Write("<ul id=\"tipoEvento\">");
-        if (tipo == "Teatro")
-        {
-            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
+
+       %>
+       <div class="btn-group" data-toggle="buttons-radio">
+       
+
+         <%if (tipo == "Teatro")
+        {%>
+                    <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn active" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+       <% }
         else if (tipo == "Concierto")
-        {
-            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
+        {%>
+                    <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn active" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+        <%}
         else
-        {
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
-        Response.Write("</ul>");
-     %>
+        {%>
+                    <a class="btn active" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+        <%}%>
+        </div>
 
         <%try{
-            foreach(System.Data.DataRow r in resultado.Tables[0].Rows) { %>
-                <div class="boxContent">
-                    <div class="row">
-                        <div class="span9">
-                            <div class="titol_n">
-                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
-                            </div>
-                            <div class="cartell_n">
-                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="rank_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                                <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
-                            </div>
-                            <div class="descripcio_n">
-                                <%= r["Descripcion"].ToString() %>
+            foreach(System.Data.DataRow r in resultado.Tables[0].Rows) {
+                if (System.DateTime.Now < Convert.ToDateTime(r["FechaFin"]))
+                {%>
+                    <div class="caixaContenidora">
+                        <div class="row">
+                            <div class="span9">
+                                <div class="titol_n">
+                                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
+                                </div>
+                                <div class="cartell_n">
+                                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="cartelera_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                                    <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Comprar</a>
+                                </div>
+                                <div class="descripcio_n">
+                                    <%= r["Descripcion"].ToString() %>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <%} %>
             <%} %>
         <%}
         catch(Exception e)

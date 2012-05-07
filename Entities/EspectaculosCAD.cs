@@ -415,8 +415,8 @@ namespace Entities
             {
                 c.Open();
                 SqlDataAdapter da;
-                string cadena = "select e.Titulo, e.IDEspectaculo, e.Descripcion from Ventas v, Espectaculo e, Sala s, ReservaSala rs where v.IDEspectaculo=e.IDEspectaculo and s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo and s.tipo='" + tipo;
-                cadena = cadena + "'group by e.Titulo, e.IDEspectaculo, e.Descripcion order by e.Titulo ASC";
+                string cadena = "select e.Titulo, e.IDEspectaculo, e.Descripcion, e.FechaIni, e.FechaFin from Ventas v, Espectaculo e, Sala s, ReservaSala rs where v.IDEspectaculo=e.IDEspectaculo and s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo and s.tipo='" + tipo;
+                cadena = cadena + "'group by e.Titulo, e.IDEspectaculo, e.Descripcion,e.FechaIni, e.FechaFin order by e.Titulo ASC";
                 da = new SqlDataAdapter(cadena, c);
                 da.Fill(bdvirtual);
             }
