@@ -49,16 +49,17 @@
     } (document, 'script', 'facebook-jssdk'));
 
     //Carrusel de imágenes
-    $('.carousel').carousel()
-    $('.carousel').carousel({
-        interval: 2000
-    })
+    $(document).ready(function () {
+        $('.carousel').carousel({
+            interval: 5000
+        });
+    });
 </script>
 
 <html itemscope itemtype="http://schema.org/Blog">
 
 
-<div id="myCarousel" class="carousel">
+<div id="myCarousel" class="carousel slide">
       <!-- Carousel items -->
       <div class="carousel-inner">
             <div class="active item"><img src="/img/layout/banner.jpg" alt=""></div>

@@ -51,6 +51,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="api\esp_suggest.aspx" />
+    <Content Include="api\sala_data.aspx" />
     <Content Include="css\cartelera.css" />
     <Content Include="css\contacto.css" />
     <Content Include="css\espectaculo.css" />
@@ -64,6 +66,7 @@
     <Content Include="css\registro.css" />
     <Content Include="espectaculo.aspx" />
     <Content Include="js\contacto.js" />
+    <Content Include="js\master.js" />
     <Content Include="logout.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="login.aspx" />
@@ -80,6 +83,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\esp_suggest.aspx.cs">
+      <DependentUpon>esp_suggest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\esp_suggest.aspx.designer.cs">
+      <DependentUpon>esp_suggest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\sala_data.aspx.cs">
+      <DependentUpon>sala_data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\sala_data.aspx.designer.cs">
+      <DependentUpon>sala_data.aspx</DependentUpon>
+    </Compile>
     <Compile Include="contacto.aspx.cs">
       <DependentUpon>contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
