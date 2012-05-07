@@ -69,7 +69,7 @@
                             } %>
 					    </ul>
                         <div class="navbar-search pull-right dropdown" id="quickSearchWrap">
-                            <input type="text" id="quickSearch" data-provide="typeahead" class="search-query span2" placeholder="Buscar" />
+                            <input type="text" id="quickSearch" autocomplete="off" data-provide="typeahead" class="search-query span2" placeholder="Buscar" />
                             <ul class="dropdown-menu span3" id="quickSearchResults">
 							</ul>
                         </div>

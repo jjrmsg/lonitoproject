@@ -6,33 +6,34 @@
    <%
        
         string tipo = Request.QueryString["tipo"];
-        Response.Write("<ul id=\"tipoEvento\">");
-        if (tipo == "Teatro")
-        {
-            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a  class=\"tipoEventoSel\" href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
+
+       %>
+       <div class="btn-group" data-toggle="buttons-radio">
+       
+
+         <%if (tipo == "Teatro")
+        {%>
+                    <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn active" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+       <% }
         else if (tipo == "Concierto")
-        {
-            Response.Write("<li><a href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
+        {%>
+                    <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn active" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+        <%}
         else
-        {
-            Response.Write("<li><a class=\"tipoEventoSel\" href=\"?tipo=Cine\">Cine</a></li>");
-            Response.Write("<li><a href=\"?tipo=Concierto\">Concierto</a></li>");
-            Response.Write("<li><a href=\"?tipo=Teatro\">Teatro</a></li>");
-        }
-        Response.Write("</ul>");
-        
-        
-        
-        string foto="";
+        {%>
+                    <a class="btn active" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                    <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                    <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+        <%}%>
+        </div>
+  
+        <%
         string titulo = "";
         string id = "";
-       // string titulo=random;
        int ventas=0;
        int cont=0;
        Response.Write("<ul class=\"rank_lista\">");
