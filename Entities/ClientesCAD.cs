@@ -414,5 +414,39 @@ namespace Entities
 
         #endregion
 
+
+        public DataSet ExisteUsuarioNickPass(string nick, string pass)
+        {
+            // Declaramos la conexion
+            BD bd = new BD();
+            SqlConnection conn = null;
+            DataSet bdvirtual = new DataSet();
+
+            /*string SHA1pass = SHA1helper.Compute(pass);*/
+            string SHA1pass = pass;
+
+            // Creamos la query
+            String query = "SELECT * ";
+            query += "FROM Cliente ";
+            query += "WHERE Usuario COLLATE Latin1_General_CS_AS ='" + nick + "' and Pass ='" + SHA1pass + "'";
+            
+            try
+            {
+                conn = bd.Connect();
+
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                da.Fill(bdvirtual);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return bdvirtual;
+        }
     }
 }

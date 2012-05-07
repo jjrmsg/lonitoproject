@@ -262,6 +262,11 @@ namespace Entities
             return cad_cliente.ExisteCliente(nif);
         }
 
+        public DataSet ExisteUsuarioNickPass(string nick, string pass)
+        {
+            return cad_cliente.ExisteUsuarioNickPass(nick, pass);
+        }
+
 
         #endregion
     }

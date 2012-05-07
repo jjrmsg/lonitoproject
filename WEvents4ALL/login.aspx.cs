@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entities;
+using System.Data;
 
 namespace WEvents4ALL
 {
@@ -16,14 +18,20 @@ namespace WEvents4ALL
 
         protected void Login_Usuario(object sender, EventArgs e)
         {
-            if (tbLoginUser.Text == "neo" && tbLoginPass.Text == "gato")
+
+            /*nick, pass*/
+            ClientesEN cliEN = new ClientesEN();
+            DataSet ds = cliEN.ExisteUsuarioNickPass(tbLoginUser.Text, tbLoginPass.Text);
+
+            try
             {
-                Session["IdUsuario"] = "1";
-                Session["NickUsuario"] = tbLoginUser.Text;
+                DataRow usuario = ds.Tables[0].Rows[0];
+                Session["IdUsuario"] = usuario["NIF"].ToString();
+                Session["NickUsuario"] = usuario["Usuario"].ToString();
                 Session["RolUsuario"] = "user";
                 Response.Redirect("index.aspx");
             }
-            else
+            catch (Exception ex)
             {
                 MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
                 mv.ActiveViewIndex = 0;
