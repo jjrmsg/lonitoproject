@@ -40,7 +40,7 @@ img#imgEspectaculo
     float: right;
     clear: both;
 }
-
+*/
 #especCompra 
 {
     display: none;
@@ -49,7 +49,7 @@ img#imgEspectaculo
     border-radius: 5px;  
     overflow: hidden;  
 }
-
+/*
 #confirmCompra 
 {
     font-weight: bold;

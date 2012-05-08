@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="espectaculo.aspx.cs" Inherits="WEvents4ALL.espectaculo"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
-
-    <div class="boxContent">
+<div class="row">
+	<div class="span10">
     <%  
     string salaEspID = "";
-    try
-    {
+    try {
         System.Data.DataRow espectaculo = datosEsp.Tables[0].Rows[0];
     %>
         <h3><%=espectaculo["Titulo"].ToString()%></h3>
@@ -29,16 +28,15 @@
                     <% salaEspID = espectaculo["IdSala"].ToString(); %>
                     <li class="nav-header">Horarios</li>
                     <li>16:00 | 18:00 | 20:00 | 22:00 | 00:00</li>
-                </ul>
-                <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button>
+                </ul>                
             </div>
             <div class="span2 pull-right">
                 <img id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
             </div>
         </div>
-
+        <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button><br /><br />
         <div id="especCompra">
-            <br /><br /><br />
+            <br />
             <h3>Compra de entradas para "<%=espectaculo["Titulo"].ToString()%>"</h3>
             <br /><br />
             <asp:Label ID="Label1" runat="server" Text="Horario:"></asp:Label>
@@ -69,7 +67,8 @@
     }
     %>
 
-    </div>
+     </div>
+</div>
 
 
 	<script type="text/javascript">

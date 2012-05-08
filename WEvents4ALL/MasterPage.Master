@@ -78,9 +78,9 @@
 		    </div>
 	    </div>
         
-        <div class="container">
+        <div class="container boxContent">
             <div class="row">
-                <div class="span10 offset1">
+                <div class="span10">
                     <!-- MENSAJES DE AVISO -->
                     <asp:MultiView ID="MultiViewAlerts" runat="server">
                         <asp:View ID="ErrorView" runat="server">
@@ -106,16 +106,14 @@
                         </asp:View>
                     </asp:MultiView>
                 </div> 
-            </div> 
+            </div>
+            <!-- Contenido de la pagina -->
+            <asp:ContentPlaceHolder ID="Content1" runat="server">
+            </asp:ContentPlaceHolder>             
+       </div> 
 
-            <div class="row">
-                <div class="span10 offset1">
-                    <!-- Contenido de la pagina -->
-                    <asp:ContentPlaceHolder ID="Content1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </div> 
-            </div> 
-        </div>
+            
+
     </form>
 
 </body>

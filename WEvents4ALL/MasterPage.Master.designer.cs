@@ -9,7 +9,7 @@
 
 
 
-public partial class  MasterPage{
+public partial class  {
     
     /// <summary>
     /// Control form1.
