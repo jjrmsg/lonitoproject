@@ -5,7 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Events4All</title>
-
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
     <link rel="Stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="Stylesheet" type="text/css" href="css/MasterStyle.css" />
     <link rel="Stylesheet" type="text/css" href="css/cartelera.css" />
@@ -16,11 +20,7 @@
     <link rel="Stylesheet" type="text/css" href="css/registro.css" />
     <link rel="Stylesheet" type="text/css" href="css/perfil.css" />
     <link rel="Stylesheet" type="text/css" href="css/espectaculo.css" />
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-        }
-    </style>
+
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>

@@ -3,39 +3,33 @@
 
 
 <div class="row">
-	<div class="span10 offset1 boxContent">
-
+	<div class="span10">
+        <div class="form-horizontal" id="formLogin">
+            <fieldset>
+                <legend>Entrada de usuarios</legend>
+                <div class="control-group">
+                    <label class="control-label" for="inputLogNick">Nick</label>
+                    <div class="controls">
+                        <asp:TextBox ID="tbLoginUser" runat="server"></asp:TextBox>
+                        <span class="help-inline hide">Debe poner un usuario valido.</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputLogPass">Contraseña</label>
+                    <div class="controls">
+                        <asp:TextBox ID="tbLoginPass" runat="server" TextMode="Password"></asp:TextBox>
+                        <span class="help-inline hide">Debe poner una contraseña valida.</span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <asp:Button ID="btLogin" runat="server" Text="Entrar" 
+                        CssClass="btn btn-primary" onclick="Login_Usuario" />
+                </div>
+            </fieldset>
+        </div>  
     </div>
 </div>
 
-
-
-
-
-    <div class="boxContent">
-    <div class="form-horizontal" id="formLogin">
-        <fieldset>
-            <legend>Entrada de usuarios</legend>
-            <div class="control-group">
-                <label class="control-label" for="inputLogNick">Nick</label>
-                <div class="controls">
-                    <asp:TextBox ID="tbLoginUser" runat="server"></asp:TextBox>
-                    <span class="help-inline hide">Debe poner un usuario valido.</span>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label" for="inputLogPass">Contraseña</label>
-                <div class="controls">
-                    <asp:TextBox ID="tbLoginPass" runat="server" TextMode="Password"></asp:TextBox>
-                    <span class="help-inline hide">Debe poner una contraseña valida.</span>
-                </div>
-            </div>
-            <div class="form-actions">
-                <asp:Button ID="btLogin" runat="server" Text="Entrar" 
-                    CssClass="btn btn-primary" onclick="Login_Usuario" />
-            </div>
-        </fieldset>
-    </div>  
 	<script>
 
 	    $(document).ready(function () {
