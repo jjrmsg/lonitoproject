@@ -23,8 +23,10 @@ namespace WEvents4ALL
                 /* idsession=Session["NickUsuario"].ToString();*/
                 string tipo = contacto_DropDownList1.SelectedValue.ToString();
                 string texto = TextArea1.Value.ToString();
+                string mail = TextBox1.Text.ToString();
+
                 MensajesEN mensaje = new MensajesEN();
-                mensaje.insertMessageEn(idsession,tipo,texto);
+                mensaje.insertMessageEn(idsession,mail,tipo,texto);
 
                 MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
                 mv.ActiveViewIndex = 1;

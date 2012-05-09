@@ -4,6 +4,8 @@
 
     <br />
     <div class="contacto_cuerpo">
+        <label class="contact_label">Mail</label><asp:TextBox ID="TextBox1" runat="server" CssClass="contact_imput_down"></asp:TextBox>        
+        <span class="rank_help-inline2"> *Mail invalido</span><br />
         <label class="contact_label">Asunto</label><asp:DropDownList ID="contacto_DropDownList1" runat="server" CssClass="contact_imput_down">
                     <asp:ListItem Value=""></asp:ListItem>
                     <asp:ListItem >Error en web</asp:ListItem>
@@ -21,9 +23,11 @@
         <script>
             $(document).ready(function () {
                 $('.rank_help-inline').hide();
+                $('.rank_help-inline2').hide();
                 $('#form1').on('submit', function (e) {
                     console.log('yes');
-
+                    $('.rank_help-inline').hide();
+                    $('.rank_help-inline2').hide();
                     $('.contacto_cuerpo').removeClass('error');
                     if (validarContacto() == false)
                         e.preventDefault();
@@ -35,8 +39,14 @@
 
 	            //validacion que fuerza a que se seleccione un tema
 	            var asunto = $('#Content1_contacto_DropDownList1');
+	            var mail = $('#Content1_TextBox1');
+	            var regexMail = /^(.+\@.+\.[a-z]{2,4})$/;
 	            if (asunto.val() == "") {
 	                asunto.parents('div.contacto_cuerpo').addClass('error').find('.rank_help-inline').show();
+	                correcto = false;
+	            }
+	            if (mail.val() == "" || !regexMail.test(mail.val())) {
+	                asunto.parents('div.contacto_cuerpo').addClass('error').find('.rank_help-inline2').show();
 	                correcto = false;
 	            }
 

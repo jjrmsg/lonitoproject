@@ -52,7 +52,23 @@
                    <img class="rank_img" alt="<%= titulo %>" src="utilidades/img_esp.aspx?id=<%=da["IDEspectaculo"].ToString()%>" />
                    <%        
 
-                       Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id=" + id + "\">" + titulo + "</a><span class=\"rank_nota\">(" + ventas + " votos) <i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>");
+                       Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id=" + id + "\">" + titulo + "</a><span class=\"rank_nota\">(" + ventas + " votos)");
+                       switch(ventas/5){
+                           case 0: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i></span></p>");
+                               break;
+                           case 1: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star\"></i></span></p>");
+                               break;
+                           case 2: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>"); 
+                               break;
+                           case 3: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>");
+                               break;
+                           case 4: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>");
+                               break;
+                           default: Response.Write("<i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>");
+                               break;                        
+                       }
+                       //Response.Write("<i class=\"icon-star\"></i>");
+                      
                    Response.Write("</li>");
                }
                cont++;
