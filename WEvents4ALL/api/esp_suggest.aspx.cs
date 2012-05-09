@@ -34,6 +34,7 @@ namespace WEvents4ALL.api
                     Dictionary<string, object> resData = new Dictionary<string, object>();
                     resData.Add("id", r["Id"].ToString());
                     resData.Add("titulo", r["Titulo"].ToString());
+                    resData.Add("tipo", r["Tipo"].ToString());
                     resultados.SetValue(resData, i);
                 }
 

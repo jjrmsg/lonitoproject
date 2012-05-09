@@ -1,13 +1,36 @@
 var broadcastPathIntervalID;
 $(document).ready(function(){
-	$("#quickSearch").on('keyup', function() {
+	$("#quickSearch").on('keyup', function(e) {
 		
-		clearTimeout(broadcastPathIntervalID);
-		broadcastPathIntervalID = setTimeout(function() {
-			console.log("GET");
-			getSuggest();
-			
-		}, 200);		
+		if(e.keyCode==38)
+		{
+			var actualSel = $("#quickSearchResults li.active");			
+			var sig = actualSel.prev();
+			if(actualSel.length == 0)
+				sig = $("#quickSearchResults li").last();
+			actualSel.removeClass("active");
+			sig.addClass("active");
+			e.preventDefault();e.stopPropagation()
+		}
+		else if(e.keyCode==40)
+		{
+			var actualSel = $("#quickSearchResults li.active");			
+			var sig = actualSel.next();
+			if(actualSel.length == 0)
+				sig = $("#quickSearchResults li").first();
+			actualSel.removeClass("active");
+			sig.addClass("active");
+			e.preventDefault();e.stopPropagation()
+		}
+		else
+		{
+			clearTimeout(broadcastPathIntervalID);
+			broadcastPathIntervalID = setTimeout(function() {
+				console.log("GET");
+				getSuggest();
+				
+			}, 200);	
+		}	
 	});	
 	
 	
@@ -50,8 +73,18 @@ function getSuggest()
 						return '<strong>' + match + '</strong>'
 					});					
 
+					var imagenTipo = '';
+					if (data[i].tipo == 'Teatro')
+						imagenTipo = '<i style="opacity: 0.5" class="icon-star" title="Teatro"></i> '
+					else if (data[i].tipo == 'Cine')
+						imagenTipo = '<i style="opacity: 0.5" class="icon-film" title="Cine"></i> '
+					else if (data[i].tipo == 'Concierto')
+						imagenTipo = '<i style="opacity: 0.5" class="icon-music" title="Concierto"></i> '
+					else
+						console.log(data[i].tipo);
+						
 					var enlace = $("<a></a>", {
-						html: highlightText,
+						html: imagenTipo+highlightText,
 						href: "/espectaculo.aspx?id="+data[i].id
 					}).appendTo(res);
 				}

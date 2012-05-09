@@ -49,7 +49,7 @@ namespace WEvents4ALL
             CriticasEN criEn = new CriticasEN();
             try
             {
-                criEn.Insertar(Session["IdUsuario"].ToString(), Request.QueryString["ild"], tbTituloCritica.Text, tbTextoCritica.Text);
+                criEn.Insertar(Session["IdUsuario"].ToString(), Request.QueryString["id"], tbTituloCritica.Text, tbTextoCritica.Text);
                 Response.Redirect(Request.RawUrl);
             }
             catch (Exception ex) {
