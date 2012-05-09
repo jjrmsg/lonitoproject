@@ -448,5 +448,45 @@ namespace Entities
             }
             return bdvirtual;
         }
+
+        public DataSet ObtenerUsuarioPorID(string id)
+        {
+            // Declaramos la conexion
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet datosUsuario = null;
+
+            // Creamos la query
+            string query = "SELECT * ";
+            query += "FROM Cliente ";
+            query += "WHERE idCliente = @idCli";
+
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                com.Parameters.Add("@idCli", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
+                sqlAdaptader.SelectCommand = com;
+
+                datosUsuario = new DataSet();
+                sqlAdaptader.Fill(datosUsuario);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return datosUsuario;
+        }
     }
 }

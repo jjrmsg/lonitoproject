@@ -269,5 +269,11 @@ namespace Entities
 
 
         #endregion
+
+        public DataSet ObtenerUsuarioPorID(string id)
+        {
+            ClientesCAD cliCAD = new ClientesCAD();
+            return cliCAD.ObtenerUsuarioPorID(id);
+        }
     }
 }

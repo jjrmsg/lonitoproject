@@ -74,6 +74,7 @@
     <Content Include="registro.aspx" />
     <Content Include="index.aspx" />
     <Content Include="utilidades\img_esp.aspx" />
+    <Content Include="utilidades\img_user.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="utilidades\img_esp.aspx.designer.cs">
       <DependentUpon>img_esp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utilidades\img_user.aspx.cs">
+      <DependentUpon>img_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="utilidades\img_user.aspx.designer.cs">
+      <DependentUpon>img_user.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

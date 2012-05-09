@@ -26,7 +26,7 @@ namespace WEvents4ALL
             try
             {
                 DataRow usuario = ds.Tables[0].Rows[0];
-                Session["IdUsuario"] = usuario["NIF"].ToString();
+                Session["IdUsuario"] = usuario["idCliente"].ToString();
                 Session["NickUsuario"] = usuario["Usuario"].ToString();
                 Session["RolUsuario"] = "user";
                 Response.Redirect("index.aspx");

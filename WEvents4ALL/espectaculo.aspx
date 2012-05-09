@@ -31,7 +31,15 @@
                     </ul>                
                 </div>
                 <div class="span2 pull-right">
-                    <img id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
+                    <img class="pull-right" id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
+                    <ul class='star-rating pull-right'>
+	                    <li class='current-rating'> style='width:105px;' Currently 3.5/5 Stars.</li>
+	                    <li><a href='#' title='1 star out of 5' class='one-star'>1</a></li>
+	                    <li><a href='#' title='2 stars out of 5' class='two-stars'>2</a></li>
+	                    <li><a href='#' title='3 stars out of 5' class='three-stars'>3</a></li>
+	                    <li><a href='#' title='4 stars out of 5' class='four-stars'>4</a></li>
+	                    <li><a href='#' title='5 stars out of 5' class='five-stars'>5</a></li>
+                    </ul>		
                 </div>
             </div>
             <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button><br /><br />
@@ -68,6 +76,55 @@
         %>
 
          </div>
+    </div>
+    <hr />
+    <div class="row">
+	    <div class="span10">
+            
+        <% 
+        try
+        { %>
+            <h3><%= datosCrit.Tables[0].Rows.Count %> Críticas</h3>
+            <ul class="criticasList"><%
+            foreach (System.Data.DataRow critica in datosCrit.Tables[0].Rows)
+            {
+            %>
+                <li class="criticaEsp">
+                    <div class="avatar-box">
+                        <img src="/utilidades/img_user.aspx?id=<%= critica["idCliente"].ToString()%>" alt="avatar" />
+                    </div>
+                    <div class="content">
+                        <div class="critica-info">
+                            <p><%=critica["titulo"].ToString()%></p>
+                        </div>
+                        <p><%=critica["texto"].ToString()%></p>
+                    </div>
+                </li> 
+            <%
+            }
+            %></ul><%
+        }
+        catch (Exception ex)
+        { %>
+            <h3>0 Críticas</h3><%
+        }
+        %>                  
+            
+            
+        <% if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
+           { %>
+            <div class="well">
+                <label>Título</label>
+                <asp:TextBox ID="tbTituloCritica" runat="server" CssClass="span3"></asp:TextBox>
+                <label>Texto
+                    <asp:TextBox ID="tbTextoCritica" runat="server" Height="100px" 
+                    TextMode="MultiLine" Width="306px"></asp:TextBox>
+                </label>
+                <asp:Button ID="nuevaCritica" runat="server" Text="Enviar" 
+                    CssClass="btn btn-primary" onclick="nuevaCritica_Click" />
+            </div>
+        <% } %>
+        </div>
     </div>
 
 
@@ -129,6 +186,8 @@
         };
 
         $("#btnComprarClose").on('click', function () {
+            // Quitamos cualquier popover que estuviese abierto
+            $(".popover").remove();
             $("#especCompra").css('display', 'none');
             $("#btnComprar").fadeIn('slow');        
         });

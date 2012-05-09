@@ -47,6 +47,8 @@
     <Compile Include="ClientesEN.cs" />
     <Compile Include="CondicionCAD.cs" />
     <Compile Include="CondicionEN.cs" />
+    <Compile Include="CriticasCAD.cs" />
+    <Compile Include="CriticasEN.cs" />
     <Compile Include="EspectaculosCAD.cs" />
     <Compile Include="EspectaculosEN.cs" />
     <Compile Include="MensajesCAD.cs" />
