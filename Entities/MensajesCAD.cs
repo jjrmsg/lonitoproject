@@ -133,6 +133,8 @@ namespace Entities
 
             try
             {
+                /*if (asunto != "")
+                    asunto = "'" + asunto + "'";*/
                 string fecha = DateTime.Now.ToShortDateString();
                 c.Open();
                 string insert="insert into Mensaje (Cliente,Asunto,Contenido,Estado,Fecha) values ('1111118D','"+asunto;

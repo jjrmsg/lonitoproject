@@ -52,7 +52,7 @@
                    <img class="rank_img" alt="<%= titulo %>" src="utilidades/img_esp.aspx?id=<%=da["IDEspectaculo"].ToString()%>" />
                    <%        
 
-                   Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id="+id+"\">" + titulo + "</a><span class=\"rank_nota\">" + ventas + "</span></p>");
+                       Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id=" + id + "\">" + titulo + "</a><span class=\"rank_nota\">(" + ventas + " votos) <i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i><i class=\"icon-star\"></i></span></p>");
                    Response.Write("</li>");
                }
                cont++;

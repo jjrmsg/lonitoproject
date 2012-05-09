@@ -40,8 +40,7 @@ namespace WEvents4ALL
                 Label lbTitle = (Label)Master.FindControl("errorViewTitle");
                 Label lbMsg = (Label)Master.FindControl("errorViewMsg");
                 lbTitle.Text = "Ocurrió un error";
-                lbMsg.Text = "Tiene que seleccionar un asuntoOO.";
-                throw(ex);
+                lbMsg.Text = "Su mensaje no fue enviado, intentelo mas tarde";
             }
         }
 
