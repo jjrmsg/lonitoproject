@@ -43,12 +43,12 @@
                                     <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="cartelera_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
                                     <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
                                 </div>
-                                <div class="horario">
-                                    <p><h4>16:00</h4></p>
-                                    <p><h4>18:00</h4></p>
-                                    <p><h4>20:00</h4></p>
-                                    <p><h4>22:00</h4></p>
-                                </div>
+
+                                    <div class="horario"><div class="badge badge-info">16:00</div></div>
+                                    <div class="horario"><div class="badge badge-info">18:00</div></div>
+                                    <div class="horario"><div class="badge badge-info">20:00</div></div>
+                                    <div class="horario"><div class="badge badge-info">22:00</div></div>
+
                         </div>
                     </div>
                 <%} %>
