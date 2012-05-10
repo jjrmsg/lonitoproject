@@ -2,236 +2,44 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 <!--<link rel="stylesheet" type="text/css" href="/css/estilos.css" media="screen" />-->
 
-<div id="perfil_general">
-    <form id="perfil" action="">
-    
-        <div class="fotico">
-	        <asp:Image ID="ImagePerfil" ImageUrl="/img/foto_usuario_defecto.jpg" runat="server" Width="200" Height="200"/>
-            <br/>
-            <asp:Label ID="Label_IntroFoto" runat="server" Text="(Tama&ntilde;o m&aacute;ximo 50KB)"></asp:Label>
-            <br/>
-	        <input type="file" name="foto_usuario" />
-        </div>
-        
-        <div class="tablica">
-
-        <asp:Table ID="datos" runat="server" BorderStyle="None" >
-
-            <asp:TableRow runat="server" BorderStyle="None" CssClass="fila"> 
-                
-                <asp:TableCell ID="TableCell_11" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Nombre" runat="server" Text="Nombre :" ></asp:Label>
-                </asp:TableCell>
-
-
-                <asp:TableCell ID="TableCell_12" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="nombre1" id="nombre" class="introduce_texto" value="Manolo" readonly="readonly" />
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_13" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Apellido" runat="server" Text="Apellidos :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_14" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="apellido" id="apellido" class="introduce_texto" value="García Escobar" readonly="readonly"/>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None" >
-                <asp:TableCell ID="TableCell_21" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_NIF" runat="server" Text="NIF :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_22" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="nombre" id="dni" class="introduce_texto" value="59417626R" readonly="readonly"/>
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_23" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_FN" runat="server" Text="Fecha de nacimiento :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_24" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                     <asp:DropDownList ID="DropDownList_dia" runat="server" Width="38" Enabled=false>
-                        <asp:ListItem>19</asp:ListItem>
-                        <asp:ListItem></asp:ListItem>
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>
-                        <asp:ListItem>13</asp:ListItem>
-                        <asp:ListItem>14</asp:ListItem>
-                        <asp:ListItem>15</asp:ListItem>
-                        <asp:ListItem>16</asp:ListItem>
-                        <asp:ListItem>17</asp:ListItem>
-                        <asp:ListItem>18</asp:ListItem>
-                        <asp:ListItem>19</asp:ListItem>
-                        <asp:ListItem>20</asp:ListItem>
-                        <asp:ListItem>21</asp:ListItem>
-                        <asp:ListItem>22</asp:ListItem>
-                        <asp:ListItem>23</asp:ListItem>
-                        <asp:ListItem>24</asp:ListItem>
-                        <asp:ListItem>25</asp:ListItem>
-                        <asp:ListItem>26</asp:ListItem>
-                        <asp:ListItem>27</asp:ListItem>
-                        <asp:ListItem>28</asp:ListItem>
-                        <asp:ListItem>29</asp:ListItem>
-                        <asp:ListItem>30</asp:ListItem>
-                        <asp:ListItem>31</asp:ListItem>
-                     </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_Mes" runat="server" Width="38" Enabled=false>
-                         <asp:ListItem>9</asp:ListItem>
-	                     <asp:ListItem></asp:ListItem> 
-		                 <asp:ListItem>1</asp:ListItem> 
-		                 <asp:ListItem>2</asp:ListItem> 
-		                 <asp:ListItem>3</asp:ListItem> 
-		                 <asp:ListItem>4</asp:ListItem> 
-		                 <asp:ListItem>5</asp:ListItem> 
-		                 <asp:ListItem>6</asp:ListItem> 
-		                 <asp:ListItem>7</asp:ListItem> 
-		                 <asp:ListItem>8</asp:ListItem> 
-		                 <asp:ListItem>9</asp:ListItem> 
-		                 <asp:ListItem>10</asp:ListItem> 
-		                 <asp:ListItem>11</asp:ListItem> 
-		                 <asp:ListItem>12</asp:ListItem> 
-	                 </asp:DropDownList>
-                     <asp:DropDownList ID="DropDownList_ano" runat="server" Width="54" Enabled=false>
-                         <asp:ListItem>1931</asp:ListItem>
-                         <asp:ListItem></asp:ListItem>
-	                     <asp:ListItem>1900</asp:ListItem> 
-		                 <asp:ListItem>1901</asp:ListItem> 
-		                 <asp:ListItem>1902</asp:ListItem> 
-		                 <asp:ListItem>1903</asp:ListItem> 
-		                 <asp:ListItem>1904</asp:ListItem> 
-		                 <asp:ListItem>1905</asp:ListItem> 
-						 <asp:ListItem>1906</asp:ListItem> 
-						 <asp:ListItem>1907</asp:ListItem> 
-						 <asp:ListItem>1908</asp:ListItem> 
-						 <asp:ListItem>1909</asp:ListItem> 
-						 <asp:ListItem>1910</asp:ListItem> 	
-						 <asp:ListItem>1911</asp:ListItem> 
-						 <asp:ListItem>1912</asp:ListItem> 
-						 <asp:ListItem>1913</asp:ListItem> 
-						 <asp:ListItem>1914</asp:ListItem> 
-						 <asp:ListItem>1915</asp:ListItem> 
-						 <asp:ListItem>1916</asp:ListItem> 
-						 <asp:ListItem>1917</asp:ListItem> 
-						 <asp:ListItem>1918</asp:ListItem> 
-						 <asp:ListItem>1919</asp:ListItem> 
-						 <asp:ListItem>1920</asp:ListItem> 
-						 <asp:ListItem>1921</asp:ListItem> 
-						 <asp:ListItem>1922</asp:ListItem> 
-						 <asp:ListItem>1923</asp:ListItem> 
-						 <asp:ListItem>1924</asp:ListItem> 
-						 <asp:ListItem>1925</asp:ListItem> 
-						 <asp:ListItem>1926</asp:ListItem> 
-						 <asp:ListItem>1927</asp:ListItem> 
-						 <asp:ListItem>1928</asp:ListItem> 
-						 <asp:ListItem>1929</asp:ListItem> 
-						 <asp:ListItem>1930</asp:ListItem> 
-						 <asp:ListItem>1931</asp:ListItem> 
-						 <asp:ListItem>1932</asp:ListItem> 
-						 <asp:ListItem>1933</asp:ListItem> 
-						 <asp:ListItem>1934</asp:ListItem> 
-						 <asp:ListItem>1935</asp:ListItem> 
-						 <asp:ListItem>1936</asp:ListItem> 
-						 <asp:ListItem>1937</asp:ListItem> 
-						 <asp:ListItem>1938</asp:ListItem> 
-						 <asp:ListItem>1939</asp:ListItem> 
-						 <asp:ListItem>1940</asp:ListItem> 
-						 <asp:ListItem>1941</asp:ListItem> 
-						 <asp:ListItem>1942</asp:ListItem> 
-						 <asp:ListItem>1943</asp:ListItem> 
-						 <asp:ListItem>1944</asp:ListItem> 
-						 <asp:ListItem>1945</asp:ListItem> 
-						 <asp:ListItem>1946</asp:ListItem> 
-						 <asp:ListItem>1947</asp:ListItem> 
-						 <asp:ListItem>1948</asp:ListItem> 
-						 <asp:ListItem>1949</asp:ListItem> 
-						 <asp:ListItem>1950</asp:ListItem> 
-						 <asp:ListItem>1951</asp:ListItem> 
-						 <asp:ListItem>1952</asp:ListItem> 
-						 <asp:ListItem>1953</asp:ListItem> 
-						 <asp:ListItem>1954</asp:ListItem> 
-						 <asp:ListItem>1955</asp:ListItem> 
-						 <asp:ListItem>1956</asp:ListItem> 
-						 <asp:ListItem>1957</asp:ListItem> 
-						 <asp:ListItem>1958</asp:ListItem> 
-						 <asp:ListItem>1959</asp:ListItem> 
-						 <asp:ListItem>1960</asp:ListItem> 
-						 <asp:ListItem>1961</asp:ListItem> 
-						 <asp:ListItem>1962</asp:ListItem> 
-						 <asp:ListItem>1963</asp:ListItem> 
-						 <asp:ListItem>1964</asp:ListItem> 
-						 <asp:ListItem>1965</asp:ListItem> 
-						 <asp:ListItem>1966</asp:ListItem> 
-						 <asp:ListItem>1967</asp:ListItem> 
-						 <asp:ListItem>1968</asp:ListItem> 
-						 <asp:ListItem>1969</asp:ListItem> 
-						 <asp:ListItem>1970</asp:ListItem> 
-						 <asp:ListItem>1971</asp:ListItem> 
-						 <asp:ListItem>1972</asp:ListItem> 
-						 <asp:ListItem>1973</asp:ListItem> 
-						 <asp:ListItem>1974</asp:ListItem> 
-						 <asp:ListItem>1975</asp:ListItem> 
-						 <asp:ListItem>1976</asp:ListItem> 
-						 <asp:ListItem>1977</asp:ListItem> 
-						 <asp:ListItem>1978</asp:ListItem> 
-						 <asp:ListItem>1979</asp:ListItem> 
-						 <asp:ListItem>1980</asp:ListItem> 
-						 <asp:ListItem>1981</asp:ListItem> 
-						 <asp:ListItem>1982</asp:ListItem> 
-						 <asp:ListItem>1983</asp:ListItem> 
-						 <asp:ListItem>1984</asp:ListItem> 
-						 <asp:ListItem>1985</asp:ListItem> 
-						 <asp:ListItem>1986</asp:ListItem> 
-						 <asp:ListItem>1987</asp:ListItem> 
-						 <asp:ListItem>1988</asp:ListItem> 
-						 <asp:ListItem>1989</asp:ListItem> 
-						 <asp:ListItem>1990</asp:ListItem> 
-						 <asp:ListItem>1991</asp:ListItem> 
-						 <asp:ListItem>1992</asp:ListItem> 
-						 <asp:ListItem>1993</asp:ListItem> 
-						 <asp:ListItem>1994</asp:ListItem> 
-						 <asp:ListItem>1995</asp:ListItem> 
-						 <asp:ListItem>1996</asp:ListItem> 
-						 <asp:ListItem>1997</asp:ListItem> 
-						 <asp:ListItem>1998</asp:ListItem> 
-						 <asp:ListItem>1999</asp:ListItem> 
-						 <asp:ListItem>2000</asp:ListItem> 
-						 <asp:ListItem>2001</asp:ListItem> 
-						 <asp:ListItem>2002</asp:ListItem> 
-						 <asp:ListItem>2003</asp:ListItem> 
-						 <asp:ListItem>2004</asp:ListItem> 
-						 <asp:ListItem>2005</asp:ListItem> 
-						 <asp:ListItem>2006</asp:ListItem> 
-						 <asp:ListItem>2007</asp:ListItem> 
-						 <asp:ListItem>2008</asp:ListItem> 
-						 <asp:ListItem>2009</asp:ListItem> 
-						 <asp:ListItem>2010</asp:ListItem> 
-						 <asp:ListItem>2011</asp:ListItem>
-                         <asp:ListItem>2012</asp:ListItem> 
-                         <asp:ListItem>2013</asp:ListItem> 
-                         <asp:ListItem>2014</asp:ListItem> 
-                         <asp:ListItem>2015</asp:ListItem> 
-                         <asp:ListItem>2016</asp:ListItem> 
-                         <asp:ListItem>2017</asp:ListItem> 
-                         <asp:ListItem>2018</asp:ListItem>  
-					 </asp:DropDownList>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-	        <asp:TableRow runat="server" BorderStyle="None"> 
-                <asp:TableCell ID="TableCell_31" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Pais" runat="server" Text="Pa&iacute;s de residencia :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_32" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <asp:DropDownList ID="DropDownList_Pais" runat="server" Enabled=false>
-                        <asp:ListItem>España</asp:ListItem>
+<!--<div id="perfil_general">-->
+<div class="row">
+    <div class="span10">
+        <ul class="nav nav-tabs" >
+            <li class="active">
+                <a href="#">Perfil</a>
+            </li>
+            <li>
+                <a href="#">Últimas Compras</a>
+            </li>
+        </ul> 
+    </div>
+    <div class="span10" id="datos">
+        <form id="perfil" class="form-horizontal">             
+            <fieldset class="form-horizontal">
+            <legend>Datos Personales</legend>
+                <br />
+                <div class="span3" id="fotico">
+	                <asp:Image ID="ImagePerfil" ImageUrl="/img/foto_usuario_defecto.jpg" runat="server" Width="200" Height="200"/>
+                    <br/>
+                    <asp:Label CssClass="labels" ID="Label_IntroFoto" runat="server" Text="(Tama&ntilde;o m&aacute;ximo 50KB)"></asp:Label>
+                    <br/>
+	                <input type="file" name="foto_usuario" />
+                </div>     
+                <!-- Primera Columna -->
+                <!-- Nombre DNI Pais Localidad Domicilio Telefono  -->
+                <div class="span3" id="datos_izquierda_1">
+                    <asp:Label CssClass="labels" ID="Label_Nombre" runat="server" Text="Nombre :" ></asp:Label>
+                    <br />
+                    <input type="text" name="nombre1" id="nombre" class="datos_entrada"  />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_NIF" runat="server" Text="NIF :" ></asp:Label>
+                    <br />
+                    <input type="text" name="nombre" id="dni" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_Pais" runat="server" Text="Pa&iacute;s de residencia :" ></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="DropDownList_Pais" CssClass="datos_entrada" runat="server">
                         <asp:ListItem></asp:ListItem>
 						<asp:ListItem>Albania</asp:ListItem> 
 						<asp:ListItem>Alemania</asp:ListItem> 
@@ -442,14 +250,40 @@
 						<asp:ListItem>Zambia</asp:ListItem> 
 						<asp:ListItem>Zimbabue</asp:ListItem> 
 	                </asp:DropDownList>
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_33" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Prov" runat="server" Text="Provincia :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_34" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <asp:DropDownList ID="DropDownList_Prov" runat="server" Enabled=false>
-                         <asp:ListItem>Almería</asp:ListItem>
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_Local" runat="server" Text="Localidad :" ></asp:Label>
+                    <br />
+                    <input type="text" name="localidad1" id="localidad" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_Dom" runat="server" Text="Domicilio :" ></asp:Label>
+                    <br />
+                    <input type="text" name="domicilo" id="dom" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_tel1" runat="server" Text="Tel&eacute;fono :"></asp:Label>
+                    <br />
+                    <input type="text" name="tel1" id="tel1" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_sexo" runat="server" Text="Sexo:" ></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="DropDownList_Sexo" runat="server" CssClass="datos_entrada">
+	                    <asp:ListItem>Hombre</asp:ListItem>
+                        <asp:ListItem>Mujer</asp:ListItem>   
+                    </asp:DropDownList>
+                </div>
+                <!-- Segunda Columna -->
+                <!-- Apellidos Fecha Provincia CP Mail Movil -->
+                <div class="span3" id="datos_derecha_1">
+                    <asp:Label CssClass="labels" ID="Label_Apellido" runat="server" Text="Apellidos :" ></asp:Label>
+                    <br />
+                    <input type="text" name="apellido" id="apellido" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label1_Fecha" runat="server" Text="Fecha de Nacimiento :" ></asp:Label>
+                    <br />
+                    <input type="text" name="nombre" id="Text1" class="datos_entrada"/>
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_Provincia" runat="server" Text="Provincia :" ></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="DropDownList_Prov" runat="server"  CssClass="datos_entrada">
 			             <asp:ListItem></asp:ListItem> 			
                          <asp:ListItem>Álava</asp:ListItem>                     
                          <asp:ListItem>Albacete</asp:ListItem> 
@@ -503,103 +337,54 @@
                          <asp:ListItem>Zamora</asp:ListItem> 
                          <asp:ListItem>Zaragoza</asp:ListItem> 
                      </asp:DropDownList>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None">
-                <asp:TableCell ID="TableCell_41" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_CP" runat="server" Text="C&oacute;digo Postal :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_42" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="cp" id="cp" class="introduce_texto" value="96472" readonly="readonly"/>
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_43" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Local" runat="server" Text="Localidad :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_44" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="localidad1" id="localidad" class="introduce_texto" value="Almería" readonly="readonly"/>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None">
-                <asp:TableCell ID="TableCell_51" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_Dom" runat="server" Text="Domicilio :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_52" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="domicilo" id="dom" class="introduce_texto" value="Ave. Del Gitanillo Nº82" readonly="readonly"/>
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_53" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                <asp:Label ID="Label_Mail" runat="server" Text="Email:" ></asp:Label>
-                    </asp:TableCell>
-                <asp:TableCell ID="TableCell_54" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="mail1" id="mail" class="introduce_texto" value="micarro@melorobaron.com" readonly="readonly"/>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None">
-                <asp:TableCell ID="TableCell_61" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_tel1" runat="server" Text="Tel&eacute;fono :"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_62" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="tel1" id="tel1" class="introduce_texto" value="966 317865" readonly="readonly"/>
-                </asp:TableCell>
-
-                <asp:TableCell ID="TableCell_63" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_tel2" runat="server" Text="M&oacute;vil :"></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_64" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="tel2" id="tel2" class="introduce_texto" value="680 658876" readonly="readonly"/>
-                </asp:TableCell>
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None">
-                <asp:TableCell ID="TableCell_71" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_sexo" runat="server" Text="Sexo:" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_72" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-	                 <asp:DropDownList ID="DropDownList_Sexo" runat="server" Enabled=false>
-	                     <asp:ListItem>Hombre</asp:ListItem>
-                         <asp:ListItem>Mujer</asp:ListItem>   
-                    </asp:DropDownList>
-	            </asp:TableCell>
-
-                
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None">
-                <asp:TableCell ID="TableCell_81" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_pass3" runat="server" Text="Nueva Contrase&ntilde;a :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_82" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass3" id="pass3" class="introduce_texto" readonly="readonly"/>
-                </asp:TableCell>
-
-            </asp:TableRow>
-        
-            <asp:TableRow runat="server" BorderStyle="None" >
-                <asp:TableCell ID="TableCell_91" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_pass" runat="server" Text="Contrase&ntilde;a :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_92" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass" id="pass" class="introduce_texto" readonly="readonly"/></asp:TableCell>
-
-                <asp:TableCell ID="TableCell_93" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="labels_perfil">
-                    <asp:Label ID="Label_pass2" runat="server" Text="Repita Contrase&ntilde;a :" ></asp:Label>
-                </asp:TableCell>
-                <asp:TableCell ID="TableCell_94" runat="server" BorderStyle="None" HorizontalAlign="Left" CssClass="datos_perfil">
-                    <input type="text" name="pass2" id="pass2" class="introduce_texto" readonly="readonly"/>
-                </asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>    
-        </div>
-
-        <div class="Botones">
-            <input class="botoncejo" type="submit" value="Enviar" />
-            <input class="botoncejo" type="reset" value="Borrar" />
-        </div>
-    </form>
-
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_CP" runat="server" Text="C&oacute;digo Postal :" ></asp:Label>
+                    <br />
+                    <input type="text" name="cp" id="cp" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_Mail" runat="server" Text="Email:" ></asp:Label>
+                    <br />
+                    <input type="text" name="mail1" id="mail" class="datos_entrada" />
+                    <br />
+                    <asp:Label CssClass="labels" ID="Label_tel2" runat="server" Text="M&oacute;vil :"></asp:Label>
+                    <br />
+                    <input type="text" name="tel2" id="tel2" class="datos_entrada" />
+                    <br />
+                </div>
+            </fieldset>
+            <br />
+            <fieldset class="usuario">
+                <legend>Cambio de Contraseña</legend>
+                <div class="span3">
+                    <asp:Label CssClass="labels" ID="Label_pass3" runat="server" Text="Nueva Contrase&ntilde;a :" ></asp:Label>
+                    <br />
+                    <input type="text" name="pass3" id="pass3" class="datos_entrada" />
+                    <br />
+                </div>
+                <div class="span3">
+                    <asp:Label CssClass="labels" ID="Label_pass" runat="server" Text="Contrase&ntilde;a Anterior :" ></asp:Label>
+                    <br />
+                    <input type="text" name="pass" id="pass" class="datos_entrada" />
+                    <br />
+                </div>
+                <div class="span3">
+                    <asp:Label CssClass="labels" ID="Label_pass2" runat="server" Text="Repita Contrase&ntilde;a :" ></asp:Label>
+                    <br />
+                    <input type="text" name="pass2" id="pass2" class="datos_entrada" />
+                    <br />
+                </div>
+            </fieldset>
+            <div class="form-actions" id="botonEditar">
+                <button class="btn btn-primary">
+                    <i class="icon-check"></i>
+                     Guardar Cambios
+                </button>
+                <button class="btn">
+                    <i class="icon-repeat"></i>
+                     Cancelar
+                </button>
+            </div>
+        </form>
+    </div> 
 </div>
 </asp:Content>
