@@ -34,37 +34,21 @@
             foreach(System.Data.DataRow r in resultado.Tables[0].Rows) {
                 //if (System.DateTime.Now < Convert.ToDateTime(r["FechaFin"]))
                 {%>
-                    <div class="caixaContenidora">
+                    <div class="well" id="caixaContenidora">
                         <div class="row">
                                 <div class="titol_n">
                                     <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><h3><%= r["Titulo"].ToString() %></h3></a>
                                 </div>
                                 <div class="cartell_n">
                                     <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="cartelera_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                                    
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">16:00</div>
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">18:00</div>
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">20:00</div>
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">22:00</div>
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">00:00</div>
-                                </div>
-                                <div class="fecha_posicion">
-                                    <div class="boton_cartelera">02:00</div>
-                                </div>
-                                <div class="detalles_posicion">
                                     <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
                                 </div>
-                              
+                                <div class="horario">
+                                    <p><h4>16:00</h4></p>
+                                    <p><h4>18:00</h4></p>
+                                    <p><h4>20:00</h4></p>
+                                    <p><h4>22:00</h4></p>
+                                </div>
                         </div>
                     </div>
                 <%} %>
