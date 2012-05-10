@@ -7,10 +7,16 @@
     <div class="span10">
         <ul class="nav nav-tabs" >
             <li class="active">
-                <a href="#">Perfil</a>
+                <a href="#">
+                    <i class="icon-user"></i>
+                    Perfil
+                </a>
             </li>
             <li>
-                <a href="#">Últimas Compras</a>
+                <a href="#">
+                    <i class="icon-shopping-cart"></i>
+                    Últimas Compras
+                </a>
             </li>
         </ul> 
     </div>
@@ -20,11 +26,18 @@
             <legend>Datos Personales</legend>
                 <br />
                 <div class="span3" id="fotico">
-	                <asp:Image ID="ImagePerfil" ImageUrl="/img/foto_usuario_defecto.jpg" runat="server" Width="200" Height="200"/>
-                    <br/>
-                    <asp:Label CssClass="labels" ID="Label_IntroFoto" runat="server" Text="(Tama&ntilde;o m&aacute;ximo 50KB)"></asp:Label>
-                    <br/>
-	                <input type="file" name="foto_usuario" />
+                    <div class="thumbnail">
+                        <img src="/img/foto_usuario_defecto.jpg" alt="Avatar del Usuario">
+                        <div class="caption" id="botonFoto">
+                            <h5>
+                            <i class="icon-picture"></i>
+                                Cambiar Foto
+                            </h5>
+                            <p>
+                                <input type="file" name="foto_usuario" class="btn btn-mini" />
+                            </p>
+                        </div>
+                    </div>
                 </div>     
                 <!-- Primera Columna -->
                 <!-- Nombre DNI Pais Localidad Domicilio Telefono  -->
