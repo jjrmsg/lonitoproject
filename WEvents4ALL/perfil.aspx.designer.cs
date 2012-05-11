@@ -22,6 +22,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_Nombre;
         
         /// <summary>
+        /// TextBox_Nombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Nombre;
+        
+        /// <summary>
         /// Label_NIF control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_NIF;
+        
+        /// <summary>
+        /// TextBox_NIF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NIF;
         
         /// <summary>
         /// Label_Pais control.
@@ -58,6 +76,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_Local;
         
         /// <summary>
+        /// TextBox_Localidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Localidad;
+        
+        /// <summary>
         /// Label_Dom control.
         /// </summary>
         /// <remarks>
@@ -67,6 +94,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_Dom;
         
         /// <summary>
+        /// TextBox_Domicilio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Domicilio;
+        
+        /// <summary>
         /// Label_tel1 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +110,15 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_tel1;
+        
+        /// <summary>
+        /// TextBox_Telefono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Telefono;
         
         /// <summary>
         /// Label_sexo control.
@@ -103,6 +148,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_Apellido;
         
         /// <summary>
+        /// TextBox_Apellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Apellido;
+        
+        /// <summary>
         /// Label1_Fecha control.
         /// </summary>
         /// <remarks>
@@ -110,6 +164,24 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1_Fecha;
+        
+        /// <summary>
+        /// FN_DIA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList FN_DIA;
+        
+        /// <summary>
+        /// TextBox_FN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_FN;
         
         /// <summary>
         /// Label_Provincia control.
@@ -139,6 +211,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_CP;
         
         /// <summary>
+        /// TextBox_CP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_CP;
+        
+        /// <summary>
         /// Label_Mail control.
         /// </summary>
         /// <remarks>
@@ -146,6 +227,15 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Mail;
+        
+        /// <summary>
+        /// TextBox_Mail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Mail;
         
         /// <summary>
         /// Label_tel2 control.
@@ -157,6 +247,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_tel2;
         
         /// <summary>
+        /// TextBox_Movil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Movil;
+        
+        /// <summary>
         /// Label_pass3 control.
         /// </summary>
         /// <remarks>
@@ -164,6 +263,15 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_pass3;
+        
+        /// <summary>
+        /// TextBox_PASS_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PASS_3;
         
         /// <summary>
         /// Label_pass control.
@@ -175,6 +283,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label_pass;
         
         /// <summary>
+        /// TextBox_PASS_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PASS_1;
+        
+        /// <summary>
         /// Label_pass2 control.
         /// </summary>
         /// <remarks>
@@ -182,6 +299,15 @@ namespace WEvents4ALL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_pass2;
+        
+        /// <summary>
+        /// TextBox_PASS_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PASS_2;
         
         /// <summary>
         /// Label1 control.

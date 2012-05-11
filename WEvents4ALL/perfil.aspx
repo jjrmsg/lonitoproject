@@ -20,11 +20,14 @@
         
         <!-- Contenido de cada pestaña -->
         <div class="tab-content">
+        <!-- Pestaña Perfil --> 
             <div class="tab-pane active" id="tabPerfil">
-                <form id="perfil" class="form-horizontal">             
+                <div id="formulario" class="form-horizontal">
+                    <!-- Datos Personales -->              
                     <fieldset class="form-horizontal">
                     <legend>Datos Personales</legend>
                         <br />
+                        <!-- Seccion Foto --> 
                         <div class="span3" id="fotico">
                             <div class="thumbnail">
                                 <img src="/img/foto_usuario_defecto.jpg" alt="Avatar del Usuario">
@@ -44,11 +47,11 @@
                         <div class="span3" id="datos_izquierda_1">
                             <asp:Label CssClass="labels" ID="Label_Nombre" runat="server" Text="Nombre :" ></asp:Label>
                             <br />
-                            <input type="text" name="nombre1" id="nombre" class="datos_entrada"  />
+                            <asp:TextBox ID="TextBox_Nombre" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_NIF" runat="server" Text="NIF :" ></asp:Label>
                             <br />
-                            <input type="text" name="nombre" id="dni" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_NIF" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Pais" runat="server" Text="Pa&iacute;s de residencia :" ></asp:Label>
                             <br />
@@ -266,15 +269,15 @@
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Local" runat="server" Text="Localidad :" ></asp:Label>
                             <br />
-                            <input type="text" name="localidad1" id="localidad" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Localidad" runat="server" />>
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Dom" runat="server" Text="Domicilio :" ></asp:Label>
                             <br />
-                            <input type="text" name="domicilo" id="dom" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Domicilio" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_tel1" runat="server" Text="Tel&eacute;fono :"></asp:Label>
                             <br />
-                            <input type="text" name="tel1" id="tel1" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Telefono" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_sexo" runat="server" Text="Sexo:" ></asp:Label>
                             <br />
@@ -288,11 +291,20 @@
                         <div class="span3" id="datos_derecha_1">
                             <asp:Label CssClass="labels" ID="Label_Apellido" runat="server" Text="Apellidos :" ></asp:Label>
                             <br />
-                            <input type="text" name="apellido" id="apellido" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Apellido" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label1_Fecha" runat="server" Text="Fecha de Nacimiento :" ></asp:Label>
                             <br />
-                            <input type="text" name="nombre" id="Text1" class="datos_entrada"/>
+                            <asp:DropDownList ID="FN_DIA" runat="server"  CssClass="datos_entrada">
+                            <%
+                                for (int i = 0; i < 31; i++ )
+                                {
+                                    i++;
+                                } 
+                                   
+                            %>
+                            <asp:DropDownList />
+                            <asp:TextBox ID="TextBox_FN" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Provincia" runat="server" Text="Provincia :" ></asp:Label>
                             <br />
@@ -353,60 +365,62 @@
                             <br />
                             <asp:Label CssClass="labels" ID="Label_CP" runat="server" Text="C&oacute;digo Postal :" ></asp:Label>
                             <br />
-                            <input type="text" name="cp" id="cp" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_CP" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Mail" runat="server" Text="Email:" ></asp:Label>
                             <br />
-                            <input type="text" name="mail1" id="mail" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Mail" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_tel2" runat="server" Text="M&oacute;vil :"></asp:Label>
                             <br />
-                            <input type="text" name="tel2" id="tel2" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_Movil" runat="server" />
                             <br />
                         </div>
                     </fieldset>
                     <br />
+                    <!-- Cambio de Pass --> 
                     <fieldset class="usuario">
                         <legend>Cambio de Contraseña</legend>
+                        <br />
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass3" runat="server" Text="Nueva Contrase&ntilde;a :" ></asp:Label>
                             <br />
-                            <input type="text" name="pass3" id="pass3" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_PASS_3" runat="server" />
                             <br />
                         </div>
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass" runat="server" Text="Contrase&ntilde;a Anterior :" ></asp:Label>
                             <br />
-                            <input type="text" name="pass" id="pass" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_PASS_1" runat="server" />
                             <br />
                         </div>
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass2" runat="server" Text="Repita Contrase&ntilde;a :" ></asp:Label>
                             <br />
-                            <input type="text" name="pass2" id="pass2" class="datos_entrada" />
+                            <asp:TextBox ID="TextBox_PASS_2" runat="server" />
                             <br />
                         </div>
                     </fieldset>
+                    <!-- Botones de Accion --> 
                     <div class="form-actions" id="botonEditar">
                         <button class="btn btn-primary">
                             <i class="icon-check"></i>
                                 Guardar Cambios
                         </button>
                         <button class="btn">
-                            <i class="icon-repeat"></i>
-                                Cancelar
+                            Cancelar
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
-
+        <!-- Pestaña Historial --> 
             <div class="tab-pane" id="tabCompras">
                 <asp:Label CssClass="labels" ID="Label1" runat="server" Text="Prueba de Funcionamiento :D - Pene" ></asp:Label>
             </div>
         </div> 
     </div>
-    
 </div>
+<!-- Javascript Copiado a pelo de lo indicado en el CSS de twitter. A saber que hace xD --> 
 <script type="text/javascript">
     /* ========================================================
     * bootstrap-tab.js v2.0.3
