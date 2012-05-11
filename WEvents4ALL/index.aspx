@@ -1,29 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WEvents4ALL.index"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
-
-
-<!--<div id="carrusel">
-    <img id="banner" src="/img/layout/banner.png" alt="" title="" />
-</div>
-<br />
-<hr />
-
-<div id="noticias">
-    <div class="new">
-        <div class="cabecera">
-            <b>El caballero oscuro</b>
-        </div>
-        <div class="cuerpo">
-            <div class="imgNoticia">
-                <img id="cart" src="/img/layout/dark.jpg" alt="" title="" />
-            </div>
-            <div class="descripcion">
-                Batman (Christian Bale) regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos. 
-            </div>
-        </div>
-    </div>
-</div>-->
 <script type="text/javascript">
 
     //Google+
@@ -69,34 +46,44 @@
       <!-- Carousel nav -->
       <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
       <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
+</div> 
 
 <%
     try
     {
         foreach (System.Data.DataRow r in esp.Tables[0].Rows)
         { %>
-            <div class="boxContent">
-                <div class="row">
-                    <div class="span9">
-                        <div class="titulo_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
-                        </div>
-                        <div class="poster_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                            <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
-                        </div>
-                        <div class="descripcion_n">
-                            <span itemprop="description"><%= r["Descripcion"].ToString()%>
-                        </div>
-                        <div class="social_n">
-                            <div class="socialBox"><g:plusone annotation="none"></g:plusone></div>
-                            <div class="socialBox"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a></div>
-                            <div class="socialBox"><div class="fb-like" data-href="http://www.events4all.com" data-send="false" data-layout="button_count" data-width="390" data-show-faces="false" data-font="tahoma"></div></div>
+            <div class="span7">
+                <div class="well" id="noticia">
+                    <div class="row">
+                        <div class="span7">
+                            <div class="titulo_n">
+                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
+                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="span7">
+                            <div class="poster_n">
+                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                            </div>
+                            <div class="descripcion_n">
+                                <span itemprop="description"><%= r["Descripcion"].ToString()%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span7">
+                            <div id="social_n">
+                                <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
+                                <div class="socialBox"><g:plusone annotation="none"></g:plusone>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a></div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-            </div>
     <%  }
     }
     catch(Exception e)
@@ -104,5 +91,39 @@
         Console.WriteLine(e.Message);
     }
     %>
+            <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'search',
+                search: '#Events4All',
+                interval: 30000,
+                title: '',
+                subject: '',
+                width: 250,
+                height: 300,
+                theme: {
+                    shell: {
+                        background: '#d0d7db',
+                        color: '#121212'
+                    },
+                    tweets: {
+                        background: '#ffffff',
+                        color: '#444444',
+                        links: '#3d9fcc'
+                    }
+                },
+                features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    behavior: 'default'
+                }
+            }).render().start();
+        </script>
+
+
+
+
 
 </asp:Content>

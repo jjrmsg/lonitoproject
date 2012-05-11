@@ -316,7 +316,7 @@ namespace Entities
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala", c);
+                SqlDataAdapter da = new SqlDataAdapter("select * from Espectaculo e, ReservaSala r, Sala s where e.IDEspectaculo=r.IDEspectaculo and r.IDSala=s.NumSala order by e.IDEspectaculo desc", c);
                 da.Fill(bdvirtual);
             }
             catch
