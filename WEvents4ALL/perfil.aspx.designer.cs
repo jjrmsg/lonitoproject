@@ -166,15 +166,6 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.Label Label1_Fecha;
         
         /// <summary>
-        /// FN_DIA control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FN_DIA;
-        
-        /// <summary>
         /// TextBox_FN control.
         /// </summary>
         /// <remarks>

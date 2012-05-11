@@ -295,15 +295,6 @@
                             <br />
                             <asp:Label CssClass="labels" ID="Label1_Fecha" runat="server" Text="Fecha de Nacimiento :" ></asp:Label>
                             <br />
-                            <asp:DropDownList ID="FN_DIA" runat="server"  CssClass="datos_entrada">
-                            <%
-                                for (int i = 0; i < 31; i++ )
-                                {
-                                    i++;
-                                } 
-                                   
-                            %>
-                            <asp:DropDownList />
                             <asp:TextBox ID="TextBox_FN" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Provincia" runat="server" Text="Provincia :" ></asp:Label>
