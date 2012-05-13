@@ -269,7 +269,7 @@
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Local" runat="server" Text="Localidad :" ></asp:Label>
                             <br />
-                            <asp:TextBox ID="TextBox_Localidad" runat="server" />>
+                            <asp:TextBox ID="TextBox_Localidad" runat="server" />
                             <br />
                             <asp:Label CssClass="labels" ID="Label_Dom" runat="server" Text="Domicilio :" ></asp:Label>
                             <br />
@@ -358,7 +358,7 @@
                             <br />
                             <asp:TextBox ID="TextBox_CP" runat="server" />
                             <br />
-                            <asp:Label CssClass="labels" ID="Label_Mail" runat="server" Text="Email:" ></asp:Label>
+                            <asp:Label CssClass="labels" ID="Label_Mail" runat="server" Text="Correo Electrónico :" ></asp:Label>
                             <br />
                             <asp:TextBox ID="TextBox_Mail" runat="server" />
                             <br />
@@ -376,19 +376,19 @@
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass3" runat="server" Text="Nueva Contrase&ntilde;a :" ></asp:Label>
                             <br />
-                            <asp:TextBox ID="TextBox_PASS_3" runat="server" />
+                            <asp:TextBox ID="TextBox_PASS_3" runat="server" TextMode="Password"/>
                             <br />
                         </div>
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass" runat="server" Text="Contrase&ntilde;a Anterior :" ></asp:Label>
                             <br />
-                            <asp:TextBox ID="TextBox_PASS_1" runat="server" />
+                            <asp:TextBox ID="TextBox_PASS_1" runat="server" TextMode="Password"/>
                             <br />
                         </div>
                         <div class="span3">
                             <asp:Label CssClass="labels" ID="Label_pass2" runat="server" Text="Repita Contrase&ntilde;a :" ></asp:Label>
                             <br />
-                            <asp:TextBox ID="TextBox_PASS_2" runat="server" />
+                            <asp:TextBox ID="TextBox_PASS_2" runat="server" TextMode="Password"/>
                             <br />
                         </div>
                     </fieldset>
