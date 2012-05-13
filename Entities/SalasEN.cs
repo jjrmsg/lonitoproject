@@ -125,5 +125,11 @@ namespace Entities
                 borrada= sala.BorrarSalaCAD(numSala);
                 return borrada;
             }
+            //recupera la sala del espectaculo que se le pasa la id
+            public DataSet RecuperarSalaEspectaculo(string id)
+            {
+                SalasCAD salaCad = new SalasCAD();
+                return salaCad.RecuperarSalaEspectaculo(id);
+            }
     }
 }

@@ -17,28 +17,44 @@ namespace WEvents4ALL.api
         {            
             SalasEN salaEn = new SalasEN();
             DataSet salaRecuperar = new DataSet();
+            VentasEN ventEN = new VentasEN();
+            DataSet datosVentas = new DataSet();
 
             try
             {
-                string idSalaIN = Request.QueryString["id"];
-                salaRecuperar = salaEn.RecuperarSala(idSalaIN);
-                int nSecciones = Convert.ToInt16(salaRecuperar.Tables[0].Rows[0][3].ToString());
+                string idEspectaculo = Request.QueryString["id"];
+                salaRecuperar = salaEn.RecuperarSalaEspectaculo(idEspectaculo);
+
+                int nSecciones = Convert.ToInt16(salaRecuperar.Tables[0].Rows.Count);
 
                 Dictionary<string, object> dict = new Dictionary<string, object>();
-                dict.Add("idSala", idSalaIN);
                 dict.Add("numSecciones", nSecciones);
 
                 object[] secciones = new object[nSecciones];
 
-                for (int i = 0; i < nSecciones; i++)
+                int contSeccion = 0;
+                foreach (DataRow seccion in salaRecuperar.Tables[0].Rows)
                 {
                     Dictionary<string, object> seccData = new Dictionary<string, object>();
-                    seccData.Add("filas", salaRecuperar.Tables[0].Rows[i][6].ToString());
-                    seccData.Add("columnas", salaRecuperar.Tables[0].Rows[i][7].ToString());
+                    seccData.Add("filas", seccion["NumFilas"].ToString());
+                    seccData.Add("columnas", seccion["NumColumnas"].ToString());
 
-                    secciones.SetValue(seccData, i);
+                    secciones.SetValue(seccData, contSeccion);
+                    contSeccion++;
                 }
                 dict.Add("secciones", secciones);
+
+                datosVentas = ventEN.getVentasEspectaculoId(idEspectaculo);
+                int nVentas = Convert.ToInt16(datosVentas.Tables[0].Rows.Count);
+
+                object[] ventas = new object[nVentas];
+                int contVentas = 0;
+                foreach (DataRow venta in datosVentas.Tables[0].Rows)
+                {
+                    ventas.SetValue(venta["NumAsiento"].ToString(), contVentas);
+                    contVentas++;
+                }
+                dict.Add("ventas", ventas);
 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 sJson = serializer.Serialize((object)dict);

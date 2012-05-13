@@ -319,6 +319,49 @@ namespace Entities
                 c.Close();
             }
         }
+
+        public DataSet RecuperarSalaEspectaculo(string id)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet datosSala = null;
+
+            // Creamos la query.
+            String query = "SELECT Seccion.Id, Seccion.NumSala, Seccion.NumSeccion, Seccion.NumFilas, Seccion.NumColumnas ";
+            query += "FROM Espectaculo INNER JOIN ";
+            query += "ReservaSala ON Espectaculo.IDEspectaculo = ReservaSala.IDEspectaculo INNER JOIN ";
+            query += "Sala ON ReservaSala.IDSala = Sala.NumSala INNER JOIN ";
+            query += "Seccion ON Sala.NumSala = Seccion.NumSala ";
+            query += "WHERE (Espectaculo.IDEspectaculo = @idEsp)";
+
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                com.Parameters.Add("@idEsp", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
+                sqlAdaptader.SelectCommand = com;
+
+                datosSala = new DataSet();
+                sqlAdaptader.Fill(datosSala);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return datosSala;
+
+        }
     }
 
 }

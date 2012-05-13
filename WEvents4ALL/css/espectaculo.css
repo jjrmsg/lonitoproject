@@ -70,24 +70,35 @@ img#imgEspectaculo
 
 		
 		
-		.seccionBox {
-			border: 1px solid silver;
-			border-radius: 3px;
-			float: left;
-			overflow: hidden;
-			margin: 10px;
-			padding: 10px;
-		}
+.seccionBox {
+	border: 1px solid silver;
+	border-radius: 3px;
+	float: left;
+	overflow: hidden;
+	margin: 10px;
+	padding: 10px;
+}
 		
-		.asiento {
-			float: left;
-			margin: 2px;
-			cursor: pointer;
-			width: 10px;
-			height: 8px;
-			border: 1px solid gray;
-		}
-		
+.asiento {
+	float: left;
+	margin: 2px;
+	cursor: pointer;
+	width: 10px;
+	height: 8px;
+	border: 1px solid gray;
+}
+
+.asiento.sold {
+    background-color: Red;
+}
+
+.asiento.selected {
+    background-color: Blue;
+}
+
+.asiento.reserved {
+    background-color: Green;
+}	
 
 
 /*             styles for the star rater                */	

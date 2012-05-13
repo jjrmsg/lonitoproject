@@ -80,5 +80,11 @@ namespace Entities
             VentasCAD vCAD = new VentasCAD();
             return vCAD.EliminarVenta(idVenta);
         }
+
+        public DataSet getVentasEspectaculoId(string id)
+        {
+            VentasCAD ventCAD = new VentasCAD();
+            return ventCAD.getVentasEspectaculoId(id);
+        }
     }
 }

@@ -218,16 +218,23 @@
     </div>
 
 	<script type="text/javascript">
-	    $.getJSON('/api/sala_data.aspx', { id: '<%=salaEspID%>' }, function (data) {
-            console.log(data);
-            $("#drawZone").empty();
-            for (i in data.secciones)
-            {
-                var fil = data.secciones[i].filas;
-                var col = data.secciones[i].columnas;
-                dibujar(fil,col);
-            }
-        });
+	    $.getJSON('/api/sala_data.aspx', { id: '<%=espID%>' }, function (data) {
+	        console.log(data);
+	        $("#drawZone").empty();
+	        for (i in data.secciones) {
+	            var fil = data.secciones[i].filas;
+	            var col = data.secciones[i].columnas;
+	            dibujar(fil, col);
+	        }
+	        for (i in data.ventas) {
+	            var datosPosVenta = data.ventas[i].split('-');
+	            var seccion = datosPosVenta[0] - 1;
+	            var fila = datosPosVenta[1] - 1;
+	            var asiento = datosPosVenta[2] - 1;
+	            $(".seccionBox:eq(" + seccion + ") .fila:eq(" + fila + ") .asiento:eq(" + asiento + ")").addClass('sold');
+	            console.log(datosPosVenta);
+	        }
+	    });
 
         function dibujar (filas, colum) {
 			
@@ -253,17 +260,30 @@
 
 		$('.asiento').live('click', function (event) {
 		    $(".popover").remove();
+		    $(".asiento.selected").removeClass('selected');
 		    var posAsiento = "";
 		    posAsiento = $(this).parents(".seccionBox").index() + 1 + ":";
 		    posAsiento += $(this).parent(".fila").index() + 1 + ":";
 		    posAsiento += $(this).index() + 1;
-		    $(this).css("backgroundColor","blue");
+
+		    var contentPopover = '';
+		    if ($(this).hasClass('selected')) {
+		        contentPopover = 'Ya la has comprado.';
+		    }
+		    else if ($(this).hasClass('sold')) {
+		        contentPopover = 'Lo siento, vendido.';
+		    }
+		    else {
+		        $(this).addClass("selected");
+		        contentPopover = '<a href="#" id="addVenta" class="btn btn-info"><i class="icon-plus icon-white"></i> Añadir a la compra</a>';
+		    }
+
 		    $(this).popover({
 		        placement: 'right',
 
 		        trigger: 'manual',
 		        title: 'Asiento ' + posAsiento + '<span class="close"  data-dismiss="popover">×</span>',
-		        content: '<a href="#" class="btn btn-info"><i class="icon-plus icon-white"></i> Añadir a la compra</a>'
+		        content: contentPopover
 		    });
 		    $(this).popover('show');
 		});
@@ -290,7 +310,14 @@
             $.get('/api/esp_vote.aspx', { nota: valIndex, esp: '<%=espID%>' }, function (data) {
                 console.log(data);
             });
-        }); 
+        });
+
+        $("#addVenta").live('click', function (e) {
+            $(".asiento.selected").addClass('reserved');
+            $(".asiento.selected").removeClass('selected');
+            $(".popover").remove();
+            e.preventDefault();
+        });
 
     </script>
 </asp:Content>
