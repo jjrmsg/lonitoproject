@@ -3,31 +3,33 @@
 
 <div id="registro" class="reg" style="height: 475px" >
 
+<script type="text/javascript">
+    function mostrar() {
+
+        var doc = document.getElementById("PanelNombre");
+
+        //doc.style.visibility = "hidden";
+        doc.style.display = "none";
+
+
+
+        //alert('Estas dentro del Javascript');
+
+    }
+
+    
+
+    </script>
+
     <fieldset style="height: 384px; width: 964px">
 
-        <asp:Panel ID="PanelNombre" runat="server">
+        <div id="PanelNombre" >
             <label for="nombre">Nombre:</label>
             <input type="text" name="nom" id="nombre" size="20" maxlength="30" />
+
             <label for="apellidos">Apellidos:</label>
             <input type="text"" name="apell" id="apellidos" size="40" maxlength="40" />
-        </asp:Panel>
-        
-        <br />
 
-        <asp:Panel ID="PanelUsuario" runat="server">
-            <label for="usuario">Usuario:</label>
-            <input type="text" name="user" id="usuario" size="20" maxlength="30" />
-
-            <label for="password">Pass:</label>
-            <input type="password" name="pass" id="password" size="22" maxlength="30" />
-
-            <label for="repetirPassword">Repite Pass:</label>
-            <input type="password" name="passR" id="repetirPassword" size="22" maxlength="30" />
-        </asp:Panel>
-
-        <br />
-
-        <asp:Panel ID="PanelDatosPersonales1" runat="server">
             <label for="NIF">NIF:</label>
             <input type="text" name="nif" id="NIF" size="10" maxlength="9" />
 
@@ -36,11 +38,25 @@
 
             <label for="fechaN">Fecha Nac:</label>
             <input type="text" name="fechaNac" id="fechaN" size="18" />
-        </asp:Panel>
+        </div>
+        
+        <br />
+
+        <div id="PanelUsuario" >
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="user" id="usuario" size="20" maxlength="30" />
+
+            <label for="password">Pass:</label>
+            <input type="password" name="pass" id="password" size="22" maxlength="30" />
+
+            <label for="repetirPassword">Repite Pass:</label>
+            <input type="password" name="passR" id="repetirPassword" size="22" maxlength="30" />
+       </div>
 
         <br />
 
-        <asp:Panel ID="PanelPaises" runat="server">
+ <!--
+        <div id="Paises" >
             <label for="pais">Pais:</label>
             <select name="country" id="pais">
                 <option value="España">España</option>
@@ -63,12 +79,12 @@
                 <option value="Elche">Elche</option>
                 <option value="Alicante">Alicante</option>
             </select>
-        </asp:Panel>
+        </div>
 
         <br />
 
 
-        <asp:Panel ID="PanelDatosPersonales2" runat="server">
+        <div id="PanelDatosPersonales" >
 
             <div class="direccion">
 
@@ -101,14 +117,13 @@
             <input type="radio" name="sexo" value="Mujer" id="mujer" />
 
             <br />
-        </asp:Panel>
+        </div>
 
-        <input type="submit" value="Enviar" />
+     -->
+
+        <input type="submit" value="Enviar" onclick="mostrar()" />
 
     </fieldset>
-
-</div>
-
 
 
 </asp:Content>
