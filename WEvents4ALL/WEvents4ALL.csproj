@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="api\esp_vote.aspx" />
     <Content Include="api\esp_suggest.aspx" />
     <Content Include="api\sala_data.aspx" />
     <Content Include="css\cartelera.css" />
@@ -67,6 +68,7 @@
     <Content Include="css\registro.css" />
     <Content Include="espectaculo.aspx" />
     <Content Include="js\contacto.js" />
+    <Content Include="js\espectaculo.js" />
     <Content Include="js\master.js" />
     <Content Include="logout.aspx" />
     <Content Include="perfil.aspx" />
@@ -85,6 +87,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\esp_vote.aspx.cs">
+      <DependentUpon>esp_vote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\esp_vote.aspx.designer.cs">
+      <DependentUpon>esp_vote.aspx</DependentUpon>
+    </Compile>
     <Compile Include="api\esp_suggest.aspx.cs">
       <DependentUpon>esp_suggest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -139,6 +139,7 @@ namespace Events4ALL
 
                 tbTitulo.Text = espectaculo["Titulo"].ToString();
                 tbDescripcion.Text = espectaculo["Descripcion"].ToString();
+                tbMedia.Text = espectaculo["Media"].ToString();
                 cbTipo.Text = espectaculo["Tipo"].ToString();
                 if (espectaculo["Tipo"].ToString() == "Cine")
                     cbGenero.Text = espectaculo["Genero"].ToString();
@@ -220,6 +221,7 @@ namespace Events4ALL
             errPrvEspectaculo.Clear();
             tbTitulo.Text = "";
             tbDescripcion.Text = "";
+            tbMedia.Text = "";
             cbTipo.SelectedIndex = -1;
             cbGenero.SelectedIndex = -1;
             lbGenero.Visible = false;
@@ -263,6 +265,7 @@ namespace Events4ALL
 
                 EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
                                                                 tbDescripcion.Text,
+                                                                tbMedia.Text,
                                                                 numPrecio.Value,
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
@@ -288,6 +291,7 @@ namespace Events4ALL
 
                 EspectaculosEN espectaculo = new EspectaculosEN(tbTitulo.Text,
                                                                 tbDescripcion.Text,
+                                                                tbMedia.Text,
                                                                 numPrecio.Value,
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
@@ -364,7 +368,5 @@ namespace Events4ALL
             }
             return valido;
         }
-
-
     }
 }

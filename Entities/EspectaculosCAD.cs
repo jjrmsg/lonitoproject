@@ -39,7 +39,7 @@ namespace Entities
         }
 
         // Inserta un espectáculo en la BD a partir de unos datos y devuelve true si la inserción se completa correctamente.
-        public bool Insertar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
+        public bool Insertar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
         {
             // Tranformamos el cartel del espectáculo a un array de bytes.
             byte[] pic = null;
@@ -58,10 +58,10 @@ namespace Entities
             BD bd = new BD();
 
             // Creamos la query a partir de los datos.
-            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Precio, Genero, FechaIni, FechaFin";
+            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Media, Precio, Genero, FechaIni, FechaFin";
             if (cartel != null)
                 comEspectaculo += ", Cartel";
-            comEspectaculo += ") values (@titulo, @desc, @precio, @genero, @fechIni, @fechFin";
+            comEspectaculo += ") values (@titulo, @desc, @media, @precio, @genero, @fechIni, @fechFin";
             if (cartel != null)
                 comEspectaculo += ", @pic";
             comEspectaculo += ");";
@@ -81,6 +81,7 @@ namespace Entities
                 SqlCommand com = new SqlCommand(comEspectaculo, conn);
                 com.Parameters.Add("@titulo", SqlDbType.NVarChar).Value = titulo;
                 com.Parameters.Add("@desc", SqlDbType.NVarChar).Value = descripcion;
+                com.Parameters.Add("@media", SqlDbType.Text).Value = media;
                 com.Parameters.Add("@precio", SqlDbType.Money).Value = precio;
                 if (genero != "")   // Si tiene genero
                     com.Parameters.Add("@genero", SqlDbType.VarChar).Value = genero;
@@ -105,7 +106,7 @@ namespace Entities
         }
 
         // Edita un espectáculo en la BD a partir de unos datos y devuelve true si la edición se completa correctamente.
-        public bool Editar(string titulo, string descripcion, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel, int idEspectaculo)
+        public bool Editar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel, int idEspectaculo)
         {
             // Tranformamos el cartel del espectáculo a un array de bytes.
             byte[] pic = null;
@@ -125,7 +126,7 @@ namespace Entities
 
             // Creamos la query a partir de los datos.
             String query = "UPDATE Espectaculo set ";
-            query += "Titulo = @titulo, Descripcion = @desc, Precio = @precio, Genero = @genero";
+            query += "Titulo = @titulo, Descripcion = @desc, Media = @media, Precio = @precio, Genero = @genero";
             query += ", FechaIni = @fechIni, FechaFin = @fechFin";
             if (cartel != null)
                 query += ", Cartel = @pic ";
@@ -145,6 +146,7 @@ namespace Entities
                 SqlCommand com = new SqlCommand(query, conn);
                 com.Parameters.Add("@titulo", SqlDbType.NVarChar).Value = titulo;
                 com.Parameters.Add("@desc", SqlDbType.NVarChar).Value = descripcion;
+                com.Parameters.Add("@media", SqlDbType.Text).Value = media;
                 com.Parameters.Add("@precio", SqlDbType.Money).Value = precio;
                 if (genero != "")   // Si tiene genero
                     com.Parameters.Add("@genero", SqlDbType.VarChar).Value = genero;

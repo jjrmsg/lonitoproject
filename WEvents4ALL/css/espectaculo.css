@@ -49,6 +49,13 @@ img#imgEspectaculo
     border-radius: 5px;  
     overflow: hidden;  
 }
+
+#wrapVideo
+{
+    margin: auto;
+    width: 480px;
+}
+
 /*
 #confirmCompra 
 {
@@ -76,6 +83,9 @@ img#imgEspectaculo
 			float: left;
 			margin: 2px;
 			cursor: pointer;
+			width: 10px;
+			height: 8px;
+			border: 1px solid gray;
 		}
 		
 

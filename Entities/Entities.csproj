@@ -60,6 +60,8 @@
     <Compile Include="SalasEN.cs" />
     <Compile Include="VentasCAD.cs" />
     <Compile Include="VentasEN.cs" />
+    <Compile Include="VotosCAD.cs" />
+    <Compile Include="VotosEN.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Auxiliares\Auxiliares.csproj">

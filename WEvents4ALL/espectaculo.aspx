@@ -5,6 +5,7 @@
 	    <div class="span10">
         <%  
         string salaEspID = "";
+        string espID = "";
         try {
             System.Data.DataRow espectaculo = datosEsp.Tables[0].Rows[0];
         %>
@@ -15,6 +16,7 @@
                     <ul class="nav nav-list">
                         <li class="nav-header">Titulo</li>
                         <li><%=espectaculo["Titulo"].ToString()%></li>
+                        <% espID = espectaculo["IdEspectaculo"].ToString(); %>
                         <li class="nav-header">Descripción</li>
                         <li><%=espectaculo["Descripcion"].ToString()%></li>
                         <li class="nav-header">Tipo de espectáculo</li>
@@ -31,17 +33,95 @@
                     </ul>                
                 </div>
                 <div class="span2 pull-right">
-                    <img class="pull-right" id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
-                    <ul class='star-rating pull-right'>
+                    <img class="pull-right"  style="clear: both" id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
+                    <ul class='star-rating pull-right' style="clear: both">
 	                    <li class='current-rating'> style='width:105px;' Currently 3.5/5 Stars.</li>
-	                    <li><a href='#' title='1 star out of 5' class='one-star'>1</a></li>
-	                    <li><a href='#' title='2 stars out of 5' class='two-stars'>2</a></li>
-	                    <li><a href='#' title='3 stars out of 5' class='three-stars'>3</a></li>
-	                    <li><a href='#' title='4 stars out of 5' class='four-stars'>4</a></li>
-	                    <li><a href='#' title='5 stars out of 5' class='five-stars'>5</a></li>
-                    </ul>		
-                </div>
+	                    <li class='starRate'><a href='#' title='1 estrella de 5' class='one-star'>1</a></li>
+	                    <li class='starRate'><a href='#' title='2 estrellas de 5' class='two-stars'>2</a></li>
+	                    <li class='starRate'><a href='#' title='3 estrellas de 5' class='three-stars'>3</a></li>
+	                    <li class='starRate'><a href='#' title='4 estrellas de 5' class='four-stars'>4</a></li>
+	                    <li class='starRate'><a href='#' title='5 estrellas de 5' class='five-stars'>5</a></li>
+                    </ul>
+                    <br />
+                    <% if (espectaculo["Media"] != DBNull.Value && espectaculo["Media"] != "")
+                       {%>
+                    <a class="btn btn-mini btn-inverse pull-right"  style="clear: both" data-toggle="modal" href="#myModal" ><i class="icon-facetime-video icon-white"></i> Ver video relacionado</a>	
+                    <div class="modal hide fade in" id="myModal">
+                        <div class="modal-body" >                
+                            <div id="wrapVideo">
+                                <div id="videoDiv">Cargando...</div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                        </div>
+                    </div>
+                
+                    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        google.load("swfobject", "2.1");
+                    </script>    
+                    <script type="text/javascript">
+                        function _run() {
+                            /*
+                            * Simple player embed
+                            */
+
+                            // The video to load.
+                            var videoID = getId('<%=espectaculo["Media"].ToString()%>');
+                            // Lets Flash from another domain call JavaScript
+                            var params = { allowScriptAccess: "always" };
+                            // The element id of the Flash embed
+                            var atts = { id: "ytPlayer" };
+                            // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+                            swfobject.embedSWF("http://www.youtube.com/v/" + videoID + "?version=3&enablejsapi=1&playerapiid=player1",
+                                           "videoDiv", "480", "295", "9", null, null, params, atts);
+                        }
+
+                        function getId(url) {
+                            var video_id = url.split('v=')[1];
+                            var ampersandPosition = video_id.indexOf('&');
+                            if (ampersandPosition != -1) {
+                                video_id = video_id.substring(0, ampersandPosition);
+                            }
+
+                            return video_id;
+                        }
+                        google.setOnLoadCallback(_run);
+                    </script>
+                    <% } %>
+                
+                
+                
+                
+                
+                
+                
+                
+                 </div>
             </div>
+
+
+
+
+
+
+
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
             <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button><br /><br />
             <div id="especCompra">
                 <span class="close" id="btnComprarClose" >×</span>
@@ -64,23 +144,19 @@
                 <p class="pull-right">Importe: 36 € <button class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i> Comprar</button></p>
             </div>
             <br />
-
         <%  
         } catch
         {
         %>
-            <h3>No se pudo recuperar el espectaculo</h3>
-    
+            <h3>No se pudo recuperar el espectaculo</h3>    
         <%  
         }
         %>
-
-         </div>
+        </div>
     </div>
     <hr />
     <div class="row">
-	    <div class="span10">
-            
+	    <div class="span10">            
         <% 
         try
         { %>
@@ -108,11 +184,9 @@
         { %>
             <h3>0 Críticas</h3><%
         }
-        %>                  
-            
-            
-        <% if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
-           { %>
+                                   
+        if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
+        { %>
             <div class="well">
                 <label>Título</label>
                 <asp:TextBox ID="tbTituloCritica" runat="server" CssClass="span3"></asp:TextBox>
@@ -123,10 +197,11 @@
                 <asp:Button ID="nuevaCritica" runat="server" Text="Enviar" 
                     CssClass="btn btn-primary" onclick="nuevaCritica_Click" />
             </div>
-        <% } %>
+        <% 
+        } 
+        %>
         </div>
     </div>
-
 
 	<script type="text/javascript">
 	    $.getJSON('/api/sala_data.aspx', { id: '<%=salaEspID%>' }, function (data) {
@@ -156,23 +231,24 @@
 				{
 					var asiento = $("<div></div>", {
 						class: "asiento",
-						text: "o"
+						text: ""
 					}).appendTo(fila);									
 				}
 			}
 		}
 
 		$('.asiento').live('click', function (event) {
-            $(".popover").remove();
+		    $(".popover").remove();
 		    var posAsiento = "";
 		    posAsiento = $(this).parents(".seccionBox").index() + 1 + ":";
 		    posAsiento += $(this).parent(".fila").index() + 1 + ":";
 		    posAsiento += $(this).index() + 1;
+		    $(this).css("backgroundColor","blue");
 		    $(this).popover({
 		        placement: 'right',
 
 		        trigger: 'manual',
-		        title: 'Asiento ' + posAsiento,
+		        title: 'Asiento ' + posAsiento + '<span class="close"  data-dismiss="popover">×</span>',
 		        content: '<a href="#" class="btn btn-info"><i class="icon-plus icon-white"></i> Añadir a la compra</a>'
 		    });
 		    $(this).popover('show');
@@ -191,7 +267,16 @@
             $("#especCompra").css('display', 'none');
             $("#btnComprar").fadeIn('slow');        
         });
-    
+
+        var a;
+        $(".starRate").on('click', function (e) {
+            var valIndex = $(this).index();
+            e.preventDefault();
+            $.get('/api/esp_vote.aspx', { nota: valIndex, esp: '<%=espID%>' }, function (data) {
+                console.log(data);
+            });
+        }); 
+
     </script>
 </asp:Content>
 
