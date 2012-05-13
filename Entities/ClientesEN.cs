@@ -270,10 +270,18 @@ namespace Entities
 
         #endregion
 
+        // Obtiene un usuario a partir de su de de cliente.
         public DataSet ObtenerUsuarioPorID(string id)
         {
             ClientesCAD cliCAD = new ClientesCAD();
             return cliCAD.ObtenerUsuarioPorID(id);
+        }
+
+        // Obtiene una puntuacion de un cliente en un espectaculo.
+        public int getPuntuacionEsp(string cliId, string espId)
+        {
+            ClientesCAD cliCAD = new ClientesCAD();
+            return cliCAD.getPuntuacionEsp(cliId, espId);
         }
     }
 }

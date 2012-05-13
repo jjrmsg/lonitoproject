@@ -488,5 +488,48 @@ namespace Entities
             }
             return datosUsuario;
         }
+
+        public int getPuntuacionEsp(string cliId, string espId)
+        {
+            int nota = 0;
+
+            // Declaramos la conexion
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            // Creamos la query
+            string query = "SELECT nota ";
+            query += "FROM Votos ";
+            query += "WHERE idUsuario = @idCli AND idEspectaculo = @idEsp";
+            
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                com.Parameters.Add("@idCli", SqlDbType.Int).Value = cliId;
+                com.Parameters.Add("@idEsp", SqlDbType.Int).Value = espId;
+
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+
+                nota = Convert.ToInt32(dr["nota"]);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                /*throw ex;*/
+                nota = 0;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return nota;
+        }
     }
 }

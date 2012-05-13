@@ -33,88 +33,102 @@
                     </ul>                
                 </div>
                 <div class="span2 pull-right">
-                    <img class="pull-right"  style="clear: both" id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
-                    <ul class='star-rating pull-right' style="clear: both">
-	                    <li class='current-rating'> style='width:105px;' Currently 3.5/5 Stars.</li>
-	                    <li class='starRate'><a href='#' title='1 estrella de 5' class='one-star'>1</a></li>
-	                    <li class='starRate'><a href='#' title='2 estrellas de 5' class='two-stars'>2</a></li>
-	                    <li class='starRate'><a href='#' title='3 estrellas de 5' class='three-stars'>3</a></li>
-	                    <li class='starRate'><a href='#' title='4 estrellas de 5' class='four-stars'>4</a></li>
-	                    <li class='starRate'><a href='#' title='5 estrellas de 5' class='five-stars'>5</a></li>
-                    </ul>
-                    <br />
-                    <% if (espectaculo["Media"] != DBNull.Value && espectaculo["Media"] != "")
-                       {%>
-                    <a class="btn btn-mini btn-inverse pull-right"  style="clear: both" data-toggle="modal" href="#myModal" ><i class="icon-facetime-video icon-white"></i> Ver video relacionado</a>	
-                    <div class="modal hide fade in" id="myModal">
-                        <div class="modal-body" >                
-                            <div id="wrapVideo">
-                                <div id="videoDiv">Cargando...</div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                    <div class="row">
+                        <div class="span2">
+                            <img class="pull-right"  style="clear: both" id="imgEspectaculo" src="utilidades/img_esp.aspx?id=<%=espectaculo["IDEspectaculo"].ToString()%>" alt="<%=espectaculo["Titulo"].ToString()%>" title="Cartel de <%=espectaculo["Titulo"].ToString()%>" />
                         </div>
                     </div>
-                
-                    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-                    <script type="text/javascript">
-                        google.load("swfobject", "2.1");
-                    </script>    
-                    <script type="text/javascript">
-                        function _run() {
-                            /*
-                            * Simple player embed
-                            */
+                    <div class="row">
+                        <div class="span2">
+                        <% 
+                        if (espectaculo["NotMedia"] != DBNull.Value && espectaculo["NotMedia"] != "")
+                        { 
+                        %>
+                            <h2 class="pull-right">Nota: <%= espectaculo["NotMedia"] %></h2>       
+                        <%}
+                        else
+                        {%>
+                            <h2 class="pull-right">Nota: -</h2>  
+                        <%} %>
+                        </div>
+                    </div>
 
-                            // The video to load.
-                            var videoID = getId('<%=espectaculo["Media"].ToString()%>');
-                            // Lets Flash from another domain call JavaScript
-                            var params = { allowScriptAccess: "always" };
-                            // The element id of the Flash embed
-                            var atts = { id: "ytPlayer" };
-                            // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
-                            swfobject.embedSWF("http://www.youtube.com/v/" + videoID + "?version=3&enablejsapi=1&playerapiid=player1",
-                                           "videoDiv", "480", "295", "9", null, null, params, atts);
-                        }
+                    <%
+                    if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
+                    { %>   
+                    <div class="row">
+                        <span class="pull-right">Tu puntuación</span>
+                        <div class="span2">
+                            <ul class='star-rating pull-right' style="clear: both">
+                        <%
 
-                        function getId(url) {
-                            var video_id = url.split('v=')[1];
-                            var ampersandPosition = video_id.indexOf('&');
-                            if (ampersandPosition != -1) {
-                                video_id = video_id.substring(0, ampersandPosition);
-                            }
+                        string puntuacionUserPx = (puntUser * 25).ToString();
+                        %>                        
+                        <li class='current-rating' id="ratingControler" style='width: <%= puntuacionUserPx %>px;' title='Currently 3.5/5 Stars.'></li>
+	                            <li class='starRate'><a href='#' title='1 estrella de 5' class='one-star'>1</a></li>
+	                            <li class='starRate'><a href='#' title='2 estrellas de 5' class='two-stars'>2</a></li>
+	                            <li class='starRate'><a href='#' title='3 estrellas de 5' class='three-stars'>3</a></li>
+	                            <li class='starRate'><a href='#' title='4 estrellas de 5' class='four-stars'>4</a></li>
+	                            <li class='starRate'><a href='#' title='5 estrellas de 5' class='five-stars'>5</a></li>
+                            </ul>
+                        <%                        
+                     }
+                     %>
 
-                            return video_id;
-                        }
-                        google.setOnLoadCallback(_run);
-                    </script>
-                    <% } %>
+
+                    <div class="row">
+                        <div class="span2">
+                        <% if (espectaculo["Media"] != DBNull.Value && espectaculo["Media"] != "")
+                       {%>
+                            <a class="btn btn-mini btn-inverse pull-right"  style="clear: both" data-toggle="modal" href="#myModal" ><i class="icon-facetime-video icon-white"></i> Ver video relacionado</a>	
+                            <div class="modal hide fade in" id="myModal">
+                                <div class="modal-body" >                
+                                    <div id="wrapVideo">
+                                        <div id="videoDiv">Cargando...</div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-primary" data-dismiss="modal">Cerrar</a>
+                                </div>
+                            </div>
                 
-                
-                
-                
-                
-                
-                
-                
+                            <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                google.load("swfobject", "2.1");
+                            </script>    
+                            <script type="text/javascript">
+                                function _run() {
+                                    /*
+                                    * Simple player embed
+                                    */
+
+                                    // The video to load.
+                                    var videoID = getId('<%=espectaculo["Media"].ToString()%>');
+                                    // Lets Flash from another domain call JavaScript
+                                    var params = { allowScriptAccess: "always", allowfullscreen: "true" };
+                                    // The element id of the Flash embed
+                                    var atts = { id: "ytPlayer" };
+                                    // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+                                    swfobject.embedSWF("http://www.youtube.com/v/" + videoID + "?version=3&enablejsapi=1&playerapiid=player1",
+                                                   "videoDiv", "480", "295", "9", null, null, params, atts);
+                                }
+
+                                function getId(url) {
+                                    var video_id = url.split('v=')[1];
+                                    var ampersandPosition = video_id.indexOf('&');
+                                    if (ampersandPosition != -1) {
+                                        video_id = video_id.substring(0, ampersandPosition);
+                                    }
+
+                                    return video_id;
+                                }
+                                google.setOnLoadCallback(_run);
+                            </script>
+                            <% } %>
+                        </div>
+                    </div>                
                  </div>
             </div>
-
-
-
-
-
-
-
-
-            
-            
-
-
-
-
-
 
 
 
@@ -271,6 +285,7 @@
         var a;
         $(".starRate").on('click', function (e) {
             var valIndex = $(this).index();
+            $('#ratingControler').css("width",(valIndex*25)+"px");
             e.preventDefault();
             $.get('/api/esp_vote.aspx', { nota: valIndex, esp: '<%=espID%>' }, function (data) {
                 console.log(data);

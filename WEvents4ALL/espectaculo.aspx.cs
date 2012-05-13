@@ -13,7 +13,8 @@ namespace WEvents4ALL
     public partial class espectaculo : System.Web.UI.Page
     {
         public DataSet datosEsp = null;
-        public DataSet datosCrit = null;   
+        public DataSet datosCrit = null;
+        public int puntUser = 3; 
         protected void Page_Load(object sender, EventArgs e)
         {
             string id = Request.QueryString["id"];
@@ -29,12 +30,14 @@ namespace WEvents4ALL
 
 
             EspectaculosEN espEN = new EspectaculosEN();
-            CriticasEN criEn = new CriticasEN();
+            CriticasEN criEN = new CriticasEN();
+            ClientesEN cliEN = new ClientesEN();
 
             try
             {
                 datosEsp = espEN.ObtenerEspectaculoPorID(id);
-                datosCrit = criEn.getCriticasEspectaculo(id);
+                datosCrit = criEN.getCriticasEspectaculo(id);
+                puntUser = cliEN.getPuntuacionEsp("3", id);
             }
             catch
             {

@@ -281,13 +281,14 @@ namespace Entities
             DataSet bdvirtual = new DataSet();
 
             // Creamos la query
-            string query = "SELECT esp.*, tipo Tipo, NumSala IdSala ";
-            query += "FROM  Espectaculo AS esp ";
-            query += "LEFT OUTER JOIN ReservaSala res ";
-            query += "ON res.IDEspectaculo = esp.IDEspectaculo ";
-            query += "LEFT OUTER JOIN Sala AS sal ";
-            query += "ON res.IDSala = sal.NumSala ";
+            string query = "SELECT esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Cartel, esp.Media, esp.LinkInfo, "; 
+            query += "sal.tipo AS Tipo, sal.NumSala AS IdSala, AVG(Votos.nota) AS NotMedia "; 
+            query += "FROM Espectaculo AS esp LEFT OUTER JOIN "; 
+            query += "Votos ON esp.IDEspectaculo = Votos.idEspectaculo LEFT OUTER JOIN "; 
+            query += "ReservaSala AS res ON res.IDEspectaculo = esp.IDEspectaculo LEFT OUTER JOIN "; 
+            query += "Sala AS sal ON res.IDSala = sal.NumSala ";
             query += "WHERE esp.IDEspectaculo = " + id;
+            query += "GROUP BY esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Cartel, esp.Media, esp.LinkInfo, sal.tipo, sal.NumSala "; 
 
             try
             {
