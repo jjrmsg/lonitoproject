@@ -54,38 +54,38 @@
         <div class="span7">
         <%foreach (System.Data.DataRow r in esp.Tables[0].Rows)
         { %>
-            <div class="span7">
-                <div class="well" id="noticia">
-                    <div class="row">
-                        <div class="span7">
-                            <div class="titulo_n">
-                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
-                            </div>
+            
+            <div class="well" id="noticia">
+                <div class="row">
+                    <div class="span7">
+                        <div class="titulo_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="span7">
-                            <div class="poster_n">
-                                <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                            </div>
-                            <div class="descripcion_n">
-                                <span itemprop="description"><%= r["Descripcion"].ToString()%>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span7">
-                            <div id="social_n">
-                                <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
-                                <div class="socialBox">
-                                    <g:plusone annotation="none"></g:plusone>
-                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="span7">
+                        <div class="poster_n">
+                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                        </div>
+                        <div class="descripcion_n">
+                            <span itemprop="description"><%= r["Descripcion"].ToString()%>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span7">
+                        <div id="social_n">
+                            <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
+                            <div class="socialBox">
+                                <g:plusone annotation="none"></g:plusone>
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+               
             
     <%  }%>
         </div>
@@ -99,7 +99,7 @@
                     interval: 30000,
                     title: '',
                     subject: '',
-                    width: 238,
+                    width: 210,
                     height: 300,
                     theme: {
                         shell: {
