@@ -50,8 +50,9 @@
 
 <%
     try
-    {
-        foreach (System.Data.DataRow r in esp.Tables[0].Rows)
+    {%>
+        <div class="span7">
+        <%foreach (System.Data.DataRow r in esp.Tables[0].Rows)
         { %>
             <div class="span7">
                 <div class="well" id="noticia">
@@ -76,54 +77,54 @@
                         <div class="span7">
                             <div id="social_n">
                                 <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
-                                <div class="socialBox"><g:plusone annotation="none"></g:plusone>
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a></div>
-                            
+                                <div class="socialBox">
+                                    <g:plusone annotation="none"></g:plusone>
+                                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     </div>
                 </div>
-    <%  }
-    }
+            
+    <%  }%>
+        </div>
+            <div class="span2">
+            <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+                new TWTR.Widget({
+                    version: 2,
+                    type: 'search',
+                    search: '#Events4All',
+                    interval: 30000,
+                    title: '',
+                    subject: '',
+                    width: 238,
+                    height: 300,
+                    theme: {
+                        shell: {
+                            background: '#eeeeee',
+                            color: '#121212'
+                        },
+                        tweets: {
+                            background: '#ffffff',
+                            color: '#444444',
+                            links: '#3d9fcc'
+                        }
+                    },
+                    features: {
+                        scrollbar: false,
+                        loop: true,
+                        live: true,
+                        behavior: 'default'
+                    }
+                }).render().start();
+            </script>
+        </div>
+    <%}
     catch(Exception e)
     {
         Console.WriteLine(e.Message);
     }
     %>
-            <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <script>
-            new TWTR.Widget({
-                version: 2,
-                type: 'search',
-                search: '#Events4All',
-                interval: 30000,
-                title: '',
-                subject: '',
-                width: 250,
-                height: 300,
-                theme: {
-                    shell: {
-                        background: '#d0d7db',
-                        color: '#121212'
-                    },
-                    tweets: {
-                        background: '#ffffff',
-                        color: '#444444',
-                        links: '#3d9fcc'
-                    }
-                },
-                features: {
-                    scrollbar: false,
-                    loop: true,
-                    live: true,
-                    behavior: 'default'
-                }
-            }).render().start();
-        </script>
-
-
-
-
-
 </asp:Content>
