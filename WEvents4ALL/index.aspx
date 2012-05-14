@@ -89,38 +89,47 @@
             
     <%  }%>
         </div>
-            <div class="span2">
-            <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-            <script>
-                new TWTR.Widget({
-                    version: 2,
-                    type: 'search',
-                    search: '#Events4All',
-                    interval: 30000,
-                    title: '',
-                    subject: '',
-                    width: 210,
-                    height: 300,
-                    theme: {
-                        shell: {
-                            background: '#eeeeee',
-                            color: '#121212'
-                        },
-                        tweets: {
-                            background: '#ffffff',
-                            color: '#444444',
-                            links: '#3d9fcc'
-                        }
+        <div class="span2">
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+            new TWTR.Widget({
+                version: 2,
+                type: 'search',
+                search: '#Events4All',
+                interval: 30000,
+                title: '',
+                subject: '',
+                width: 210,
+                height: 300,
+                theme: {
+                    shell: {
+                        background: '#eeeeee',
+                        color: '#121212'
                     },
-                    features: {
-                        scrollbar: false,
-                        loop: true,
-                        live: true,
-                        behavior: 'default'
+                    tweets: {
+                        background: '#ffffff',
+                        color: '#444444',
+                        links: '#3d9fcc'
                     }
-                }).render().start();
-            </script>
+                },
+                features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    behavior: 'default'
+                }
+            }).render().start();
+        </script>
+        <div class="verticalBanner">
+            <img src="/img/layout/vertical_banner.jpg">
         </div>
+        <div class="verticalBanner">
+            <img src="/img/layout/10perc_discount.png">
+        </div>
+        <div class="verticalBanner">
+            <img src="/img/layout/vertical_banner2.png">
+        </div>
+    </div>
     <%}
     catch(Exception e)
     {
