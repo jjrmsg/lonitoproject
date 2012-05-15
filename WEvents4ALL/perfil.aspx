@@ -10,7 +10,7 @@
                     Perfil
                 </a>
             </li>
-            <li>
+            <li> 
                 <a href="#tabCompras" data-toggle="tab">
                     <i class="icon-shopping-cart"></i>
                     Últimas Compras
@@ -46,6 +46,7 @@
                         <!-- Nombre DNI Pais Localidad Domicilio Telefono  -->
                         <div class="span3" id="datos_izquierda_1">
                             <asp:Label CssClass="labels" ID="Label_Nombre" runat="server" Text="Nombre :" ></asp:Label>
+                            <span class="rank_help-inline"> *Nombre Inválido</span>
                             <br />
                             <asp:TextBox ID="TextBox_Nombre" runat="server" />
                             <br />
@@ -394,13 +395,10 @@
                     </fieldset>
                     <!-- Botones de Accion --> 
                     <div class="form-actions" id="botonEditar">
-                        <button class="btn btn-primary">
-                            <i class="icon-check"></i>
-                                Guardar Cambios
-                        </button>
-                        <button class="btn">
-                            Cancelar
-                        </button>
+                        <asp:Button CssClass="btn btn-primary" ID="bGuardar" runat="server" 
+                                    Text="Guardar Cambios" onclick="bGuardar_Click" />
+                        <asp:Button ID="bCancel" CssClass="btn" runat="server" Text="Cancelar" 
+                                    onclick="bCancelar_Click"/>
                     </div>
                 </div>
             </div>
@@ -411,8 +409,77 @@
         </div> 
     </div>
 </div>
-<!-- Javascript Copiado a pelo de lo indicado en el CSS de twitter. A saber que hace xD --> 
+ 
 <script type="text/javascript">
+    /* Javascript de Validaciones */
+
+    $(document).ready(function () {
+        $('.rank_help-inline').hide();
+        $('#form1').on('submit', function (e) {
+            console.log('yes');
+            $('.rank_help-inline').hide();
+            if (ValidaFormulario() == false)
+                e.preventDefault();
+        });
+    });
+
+    function ValidaFormulario() {
+        var correcto = true;
+        
+        var RegExText = /^([a-zA-Z]{3,50})$/;
+
+        var Nombre = $('#Content1_TextBox_Nombre');
+
+        if (Nombre.val() == "" || !RegExText(Nombre.val())) {
+            Nombre.find('.rank_help-inline').show();
+            correcto = false;
+        }
+
+        return correcto;
+    }
+
+    function compruebaMail(texto) {
+        var error = true;
+        var atpos = texto.indexOf("@");
+        var dotpos = texto.lastIndexOf(".");
+
+        if (atpos < 1 || dotpos < (atpos + 2) || (dotpos + 2) >= texto.length) {
+            msg += "- Mail Incorrecto.\n";
+        }
+        else error = false;
+
+        return error;
+    }
+
+    function comFecha(d, m, a) {
+        var error = true;
+        // meses dias = 31 ( 1 - 3 - 5 - 7 - 8 - 10 - 12)
+        // meses dias = 30 ( 4 - 6 - 9  - 11 )
+
+        if (a >= 1900 && (m < 13 && m > 0) && (d > 0 && d < 32)) {
+            if (d > 28) // Conflicto al ser bisiesto?
+            {
+                if ((m == 4 || m == 6 || m == 9 || m == 11) && d < 31)
+                    error = false;
+                else if ((m == 7 || m == 5 || m == 3 || m == 1 || m == 8 || m == 10 || m == 12) && d <= 31)
+                    error = false;
+                else if (m == 2 && Bisiesto(a) && d == 29)
+                    error = false;
+            }
+            else error = false;
+        }
+
+        return error;
+    }
+
+    function Bisiesto(a) {
+        var bisiesto = false;
+        if ((a % 4 == 0) && ((a % 100 != 0)) || (a % 400 == 0))
+            bisiesto = true;
+        return bisiesto;
+    }
+
+/* Javascript Copiado a pelo de lo indicado en el CSS de twitter. A saber que hace xD */
     /* ========================================================
     * bootstrap-tab.js v2.0.3
     * http://twitter.github.com/bootstrap/javascript.html#tabs

@@ -301,6 +301,24 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.TextBox TextBox_PASS_2;
         
         /// <summary>
+        /// bGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bGuardar;
+        
+        /// <summary>
+        /// bCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bCancel;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
