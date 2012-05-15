@@ -17,6 +17,7 @@ namespace Entities
         private string fechFin;
         private decimal precio;
         private string genero;
+        private string horarios;
         private Image cartel;
         public int idEspectaculo { get; set; }
 
@@ -27,7 +28,7 @@ namespace Entities
         }
 
         // Constructor de la entidad Espectáculos.
-        public EspectaculosEN(string titulo, string descripcion, string media, decimal precio, string genero, string fechIni, string fechFin, Image cartel)
+        public EspectaculosEN(string titulo, string descripcion, string media, decimal precio, string genero, string fechIni, string fechFin, string horarios, Image cartel)
         {
             this.titulo = titulo;
             this.descripcion = descripcion;
@@ -36,6 +37,7 @@ namespace Entities
             this.fechFin = fechFin;
             this.precio = precio;
             this.genero = genero;
+            this.horarios = horarios;
             this.cartel = cartel;
         }
 
@@ -50,14 +52,14 @@ namespace Entities
         public bool Insertar(string salaReserva)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
-            return espCAD.Insertar(titulo, descripcion, media, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel);
+            return espCAD.Insertar(titulo, descripcion, media, precio.ToString(), genero, fechIni, fechFin, salaReserva, horarios, cartel);
         }
 
         // Edita un espectáculo en la bd.
         public bool Editar(string salaReserva, int idEspectaculo)
         {
             EspectaculosCAD espCAD = new EspectaculosCAD();
-            return espCAD.Editar(titulo, descripcion, media, precio.ToString(), genero, fechIni, fechFin, salaReserva, cartel, idEspectaculo);
+            return espCAD.Editar(titulo, descripcion, media, precio.ToString(), genero, fechIni, fechFin, salaReserva, horarios, cartel, idEspectaculo);
         }
 
         // Elimina un espectáculo de la bd a partir de una id.

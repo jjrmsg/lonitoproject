@@ -63,6 +63,8 @@
             this.btInsertar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbMedia = new System.Windows.Forms.Label();
+            this.tbMedia = new System.Windows.Forms.TextBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.lbGenero = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
@@ -86,8 +88,13 @@
             this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tbMedia = new System.Windows.Forms.TextBox();
-            this.lbMedia = new System.Windows.Forms.Label();
+            this.lbHorarios = new System.Windows.Forms.Label();
+            this.btBorrarHorario = new System.Windows.Forms.Button();
+            this.numHoraHorario = new System.Windows.Forms.NumericUpDown();
+            this.numMinHorario = new System.Windows.Forms.NumericUpDown();
+            this.btAddHorario = new System.Windows.Forms.Button();
+            this.listHorarios = new System.Windows.Forms.ListBox();
+            this.lbHorSeparador = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).BeginInit();
@@ -98,6 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -369,6 +378,13 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.lbHorSeparador);
+            this.groupBox2.Controls.Add(this.listHorarios);
+            this.groupBox2.Controls.Add(this.btAddHorario);
+            this.groupBox2.Controls.Add(this.numMinHorario);
+            this.groupBox2.Controls.Add(this.numHoraHorario);
+            this.groupBox2.Controls.Add(this.btBorrarHorario);
+            this.groupBox2.Controls.Add(this.lbHorarios);
             this.groupBox2.Controls.Add(this.lbMedia);
             this.groupBox2.Controls.Add(this.tbMedia);
             this.groupBox2.Controls.Add(this.cbGenero);
@@ -393,6 +409,16 @@
             this.groupBox2.Controls.Add(this.pbCartel);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // lbMedia
+            // 
+            resources.ApplyResources(this.lbMedia, "lbMedia");
+            this.lbMedia.Name = "lbMedia";
+            // 
+            // tbMedia
+            // 
+            resources.ApplyResources(this.tbMedia, "tbMedia");
+            this.tbMedia.Name = "tbMedia";
             // 
             // cbGenero
             // 
@@ -546,15 +572,55 @@
             this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
-            // tbMedia
+            // lbHorarios
             // 
-            resources.ApplyResources(this.tbMedia, "tbMedia");
-            this.tbMedia.Name = "tbMedia";
+            resources.ApplyResources(this.lbHorarios, "lbHorarios");
+            this.lbHorarios.Name = "lbHorarios";
             // 
-            // lbMedia
+            // btBorrarHorario
             // 
-            resources.ApplyResources(this.lbMedia, "lbMedia");
-            this.lbMedia.Name = "lbMedia";
+            resources.ApplyResources(this.btBorrarHorario, "btBorrarHorario");
+            this.btBorrarHorario.Name = "btBorrarHorario";
+            this.btBorrarHorario.UseVisualStyleBackColor = true;
+            this.btBorrarHorario.Click += new System.EventHandler(this.btBorrarHorario_Click);
+            // 
+            // numHoraHorario
+            // 
+            resources.ApplyResources(this.numHoraHorario, "numHoraHorario");
+            this.numHoraHorario.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numHoraHorario.Name = "numHoraHorario";
+            // 
+            // numMinHorario
+            // 
+            resources.ApplyResources(this.numMinHorario, "numMinHorario");
+            this.numMinHorario.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numMinHorario.Name = "numMinHorario";
+            // 
+            // btAddHorario
+            // 
+            resources.ApplyResources(this.btAddHorario, "btAddHorario");
+            this.btAddHorario.Name = "btAddHorario";
+            this.btAddHorario.UseVisualStyleBackColor = true;
+            this.btAddHorario.Click += new System.EventHandler(this.btAddHorario_Click);
+            // 
+            // listHorarios
+            // 
+            this.listHorarios.FormattingEnabled = true;
+            resources.ApplyResources(this.listHorarios, "listHorarios");
+            this.listHorarios.Name = "listHorarios";
+            // 
+            // lbHorSeparador
+            // 
+            resources.ApplyResources(this.lbHorSeparador, "lbHorSeparador");
+            this.lbHorSeparador.Name = "lbHorSeparador";
             // 
             // Espectaculos
             // 
@@ -574,6 +640,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -638,5 +706,12 @@
         private System.Windows.Forms.DataGridViewImageColumn Column7;
         private System.Windows.Forms.Label lbMedia;
         private System.Windows.Forms.TextBox tbMedia;
+        private System.Windows.Forms.Label lbHorarios;
+        private System.Windows.Forms.Button btBorrarHorario;
+        private System.Windows.Forms.Button btAddHorario;
+        private System.Windows.Forms.NumericUpDown numMinHorario;
+        private System.Windows.Forms.NumericUpDown numHoraHorario;
+        private System.Windows.Forms.ListBox listHorarios;
+        private System.Windows.Forms.Label lbHorSeparador;
     }
 }

@@ -780,11 +780,182 @@
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="lbHorSeparador.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbHorSeparador.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbHorSeparador.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 415</value>
+  </data>
+  <data name="lbHorSeparador.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 13</value>
+  </data>
+  <data name="lbHorSeparador.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lbHorSeparador.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="&gt;&gt;lbHorSeparador.Name" xml:space="preserve">
+    <value>lbHorSeparador</value>
+  </data>
+  <data name="&gt;&gt;lbHorSeparador.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbHorSeparador.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lbHorSeparador.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listHorarios.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 441</value>
+  </data>
+  <data name="listHorarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 69</value>
+  </data>
+  <data name="listHorarios.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;listHorarios.Name" xml:space="preserve">
+    <value>listHorarios</value>
+  </data>
+  <data name="&gt;&gt;listHorarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listHorarios.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;listHorarios.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btAddHorario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 412</value>
+  </data>
+  <data name="btAddHorario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="btAddHorario.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="btAddHorario.Text" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="&gt;&gt;btAddHorario.Name" xml:space="preserve">
+    <value>btAddHorario</value>
+  </data>
+  <data name="&gt;&gt;btAddHorario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btAddHorario.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btAddHorario.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="numMinHorario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>108, 412</value>
+  </data>
+  <data name="numMinHorario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="numMinHorario.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;numMinHorario.Name" xml:space="preserve">
+    <value>numMinHorario</value>
+  </data>
+  <data name="&gt;&gt;numMinHorario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numMinHorario.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;numMinHorario.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="numHoraHorario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 412</value>
+  </data>
+  <data name="numHoraHorario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="numHoraHorario.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;numHoraHorario.Name" xml:space="preserve">
+    <value>numHoraHorario</value>
+  </data>
+  <data name="&gt;&gt;numHoraHorario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numHoraHorario.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;numHoraHorario.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btBorrarHorario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btBorrarHorario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 516</value>
+  </data>
+  <data name="btBorrarHorario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 23</value>
+  </data>
+  <data name="btBorrarHorario.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btBorrarHorario.Text" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="&gt;&gt;btBorrarHorario.Name" xml:space="preserve">
+    <value>btBorrarHorario</value>
+  </data>
+  <data name="&gt;&gt;btBorrarHorario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btBorrarHorario.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btBorrarHorario.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbHorarios.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbHorarios.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 386</value>
+  </data>
+  <data name="lbHorarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lbHorarios.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lbHorarios.Text" xml:space="preserve">
+    <value>Horarios</value>
+  </data>
+  <data name="&gt;&gt;lbHorarios.Name" xml:space="preserve">
+    <value>lbHorarios</value>
+  </data>
+  <data name="&gt;&gt;lbHorarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbHorarios.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;lbHorarios.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="lbMedia.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbMedia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 225</value>
+    <value>15, 173</value>
   </data>
   <data name="lbMedia.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -805,10 +976,10 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbMedia.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="tbMedia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 222</value>
+    <value>68, 170</value>
   </data>
   <data name="tbMedia.Size" type="System.Drawing.Size, System.Drawing">
     <value>319, 20</value>
@@ -826,7 +997,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;tbMedia.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="cbGenero.Items" xml:space="preserve">
     <value>Acción</value>
@@ -844,7 +1015,7 @@
     <value>Terror</value>
   </data>
   <data name="cbGenero.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 278</value>
+    <value>121, 224</value>
   </data>
   <data name="cbGenero.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -865,13 +1036,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cbGenero.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="lbGenero.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbGenero.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 262</value>
+    <value>118, 208</value>
   </data>
   <data name="lbGenero.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -895,7 +1066,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbGenero.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>10</value>
   </data>
   <data name="cbTipo.Items" xml:space="preserve">
     <value>Cine</value>
@@ -907,7 +1078,7 @@
     <value>Concierto</value>
   </data>
   <data name="cbTipo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 278</value>
+    <value>18, 224</value>
   </data>
   <data name="cbTipo.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 21</value>
@@ -925,13 +1096,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cbTipo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>11</value>
   </data>
   <data name="lbTipo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbTipo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 262</value>
+    <value>15, 208</value>
   </data>
   <data name="lbTipo.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 13</value>
@@ -952,10 +1123,10 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbTipo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>12</value>
   </data>
   <data name="numPrecio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 374</value>
+    <value>274, 224</value>
   </data>
   <data name="numPrecio.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -973,13 +1144,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;numPrecio.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>13</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 376</value>
+    <value>271, 208</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -1000,13 +1171,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>14</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 335</value>
+    <value>15, 265</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -1027,13 +1198,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>15</value>
   </data>
   <data name="cbSala.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cbSala.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 332</value>
+    <value>95, 262</value>
   </data>
   <data name="cbSala.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -1051,10 +1222,10 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cbSala.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>16</value>
   </data>
   <data name="dtFechaFin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 465</value>
+    <value>95, 344</value>
   </data>
   <data name="dtFechaFin.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 20</value>
@@ -1072,13 +1243,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;dtFechaFin.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>17</value>
   </data>
   <data name="lbFechaFin.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbFechaFin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 469</value>
+    <value>46, 348</value>
   </data>
   <data name="lbFechaFin.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
@@ -1099,13 +1270,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbFechaFin.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>18</value>
   </data>
   <data name="lbDescripcion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 72</value>
+    <value>15, 64</value>
   </data>
   <data name="lbDescripcion.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
@@ -1126,13 +1297,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbDescripcion.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>19</value>
   </data>
   <data name="lbFechaIni.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbFechaIni.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 443</value>
+    <value>46, 322</value>
   </data>
   <data name="lbFechaIni.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -1153,10 +1324,10 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbFechaIni.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>20</value>
   </data>
   <data name="dtFechaIni.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 439</value>
+    <value>95, 318</value>
   </data>
   <data name="dtFechaIni.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 20</value>
@@ -1174,7 +1345,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;dtFechaIni.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>21</value>
   </data>
   <data name="btCartel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1207,16 +1378,16 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;btCartel.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>22</value>
   </data>
   <data name="tbDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 92</value>
+    <value>18, 84</value>
   </data>
   <data name="tbDescripcion.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="tbDescripcion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>670, 109</value>
+    <value>670, 76</value>
   </data>
   <data name="tbDescripcion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1231,7 +1402,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;tbDescripcion.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>23</value>
   </data>
   <data name="tbTitulo.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 34</value>
@@ -1252,13 +1423,13 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;tbTitulo.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>24</value>
   </data>
   <data name="lbFechas.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbFechas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 419</value>
+    <value>14, 304</value>
   </data>
   <data name="lbFechas.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1279,7 +1450,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbFechas.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>25</value>
   </data>
   <data name="lbTitulo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1306,7 +1477,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;lbTitulo.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>26</value>
   </data>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1336,7 +1507,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>27</value>
   </data>
   <data name="pbCartel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1363,7 +1534,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;pbCartel.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>28</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>

@@ -155,6 +155,14 @@ namespace Events4ALL
                     MemoryStream ms = new MemoryStream(bImage);
                     pbCartel.Image = Image.FromStream(ms, true, true);
                 }
+
+                string[] listadoHorarios = espectaculo["Horarios"].ToString().Split(',');
+                foreach (string h in listadoHorarios)
+                {
+                    listHorarios.Items.Add(h);
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -232,6 +240,9 @@ namespace Events4ALL
             numPrecio.Value = 0;
             dtFechaIni.Value = DateTime.Today;
             dtFechaFin.Value = DateTime.Today;
+            numHoraHorario.Value = 0;
+            numMinHorario.Value = 0;
+            listHorarios.Items.Clear();
             pbCartel.Image = Events4ALL.Properties.Resources.image_default;
             imagenCambiada = false;
         }
@@ -259,6 +270,14 @@ namespace Events4ALL
         {
             if (Validar() == true)
             {
+                string horarios ="";
+                foreach (Object h in listHorarios.Items)
+                {
+                    if (horarios != "")
+                        horarios += ",";
+                    horarios += h.ToString();
+                }
+
                 Image cartel = null;
                 if (imagenCambiada == true)
                     cartel = pbCartel.Image;
@@ -270,6 +289,7 @@ namespace Events4ALL
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
                                                                 dtFechaFin.Text,
+                                                                horarios,
                                                                 cartel);
                 if (espectaculo.Insertar(cbSala.Text))
                 {
@@ -285,6 +305,14 @@ namespace Events4ALL
         {
             if (Validar() == true)
             {
+                string horarios = "";
+                foreach (Object h in listHorarios.Items)
+                {
+                    if (horarios != "")
+                        horarios += ",";
+                    horarios += h.ToString();
+                }
+
                 Image cartel = null;
                 if (imagenCambiada == true)
                     cartel = pbCartel.Image;
@@ -296,6 +324,7 @@ namespace Events4ALL
                                                                 cbGenero.Text,
                                                                 dtFechaIni.Text,
                                                                 dtFechaFin.Text,
+                                                                horarios,
                                                                 cartel);
 
                 if (espectaculo.Editar(cbSala.Text, idEspectaculo))
@@ -358,6 +387,12 @@ namespace Events4ALL
                 valido = false;
             }
 
+            if (listHorarios.Items.Count <= 0)
+            {
+                errPrvEspectaculo.SetError(lbHorarios, "Debe añadir al menos un horario");
+                valido = false;
+            }
+
             DateTime dtIni = dtFechaIni.Value.Date;
             DateTime dtFin = dtFechaFin.Value.Date;
             // La fecha de inicio debe ser menos que la de fin.
@@ -367,6 +402,29 @@ namespace Events4ALL
                 valido = false;
             }
             return valido;
+        }
+
+        private void btAddHorario_Click(object sender, EventArgs e)
+        {
+            string horario = "";
+            decimal hora = numHoraHorario.Value;
+            if(hora < 10)
+                horario += "0";
+            horario += hora.ToString();
+            horario += ":";
+            decimal minutos = numMinHorario.Value;
+            if (minutos < 10)
+                horario += "0";
+            horario += minutos.ToString();
+            listHorarios.Items.Add(horario);
+        }
+
+        private void btBorrarHorario_Click(object sender, EventArgs e)
+        {
+            if (listHorarios.SelectedIndex >= 0)
+            {
+                listHorarios.Items.RemoveAt(listHorarios.SelectedIndex);
+            }
         }
     }
 }

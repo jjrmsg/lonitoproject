@@ -39,7 +39,7 @@ namespace Entities
         }
 
         // Inserta un espectáculo en la BD a partir de unos datos y devuelve true si la inserción se completa correctamente.
-        public bool Insertar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel)
+        public bool Insertar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, string horarios, Image cartel)
         {
             // Tranformamos el cartel del espectáculo a un array de bytes.
             byte[] pic = null;
@@ -58,10 +58,10 @@ namespace Entities
             BD bd = new BD();
 
             // Creamos la query a partir de los datos.
-            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Media, Precio, Genero, FechaIni, FechaFin";
+            String comEspectaculo = "INSERT INTO Espectaculo (Titulo, Descripcion, Media, Precio, Genero, FechaIni, FechaFin, Horarios";
             if (cartel != null)
                 comEspectaculo += ", Cartel";
-            comEspectaculo += ") values (@titulo, @desc, @media, @precio, @genero, @fechIni, @fechFin";
+            comEspectaculo += ") values (@titulo, @desc, @media, @precio, @genero, @fechIni, @fechFin, @hor";
             if (cartel != null)
                 comEspectaculo += ", @pic";
             comEspectaculo += ");";
@@ -89,6 +89,7 @@ namespace Entities
                     com.Parameters.Add("@genero", SqlDbType.VarChar).Value = System.DBNull.Value;
                 com.Parameters.Add("@fechIni", SqlDbType.Date).Value = fechIni;
                 com.Parameters.Add("@fechFin", SqlDbType.Date).Value = fechFin;
+                com.Parameters.Add("@hor", SqlDbType.NVarChar).Value = horarios;
                 if (cartel != null)
                     com.Parameters.AddWithValue("@pic", pic);
 
@@ -106,7 +107,7 @@ namespace Entities
         }
 
         // Edita un espectáculo en la BD a partir de unos datos y devuelve true si la edición se completa correctamente.
-        public bool Editar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, Image cartel, int idEspectaculo)
+        public bool Editar(string titulo, string descripcion, string media, string precio, string genero, string fechIni, string fechFin, string salaReserva, string horarios, Image cartel, int idEspectaculo)
         {
             // Tranformamos el cartel del espectáculo a un array de bytes.
             byte[] pic = null;
@@ -127,7 +128,7 @@ namespace Entities
             // Creamos la query a partir de los datos.
             String query = "UPDATE Espectaculo set ";
             query += "Titulo = @titulo, Descripcion = @desc, Media = @media, Precio = @precio, Genero = @genero";
-            query += ", FechaIni = @fechIni, FechaFin = @fechFin";
+            query += ", FechaIni = @fechIni, FechaFin = @fechFin, Horarios = @hor";
             if (cartel != null)
                 query += ", Cartel = @pic ";
             query += " WHERE IDEspectaculo = '" + idEspectaculo + "'";
@@ -154,6 +155,7 @@ namespace Entities
                     com.Parameters.Add("@genero", SqlDbType.VarChar).Value = System.DBNull.Value;
                 com.Parameters.Add("@fechIni", SqlDbType.Date).Value = fechIni;
                 com.Parameters.Add("@fechFin", SqlDbType.Date).Value = fechFin;
+                com.Parameters.Add("@hor", SqlDbType.NVarChar).Value = horarios;
                 if (cartel != null) // Si tiene carterl
                     com.Parameters.AddWithValue("@pic", pic);
 
@@ -281,14 +283,14 @@ namespace Entities
             DataSet bdvirtual = new DataSet();
 
             // Creamos la query
-            string query = "SELECT esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Cartel, esp.Media, esp.LinkInfo, "; 
+            string query = "SELECT esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Horarios, esp.Cartel, esp.Media, esp.LinkInfo, "; 
             query += "sal.tipo AS Tipo, sal.NumSala AS IdSala, AVG(Votos.nota) AS NotMedia "; 
             query += "FROM Espectaculo AS esp LEFT OUTER JOIN "; 
             query += "Votos ON esp.IDEspectaculo = Votos.idEspectaculo LEFT OUTER JOIN "; 
             query += "ReservaSala AS res ON res.IDEspectaculo = esp.IDEspectaculo LEFT OUTER JOIN "; 
             query += "Sala AS sal ON res.IDSala = sal.NumSala ";
             query += "WHERE esp.IDEspectaculo = " + id;
-            query += "GROUP BY esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Cartel, esp.Media, esp.LinkInfo, sal.tipo, sal.NumSala "; 
+            query += "GROUP BY esp.IDEspectaculo, esp.Titulo, esp.Descripcion, esp.FechaIni, esp.FechaFin, esp.Precio, esp.Genero, esp.Horarios, esp.Cartel, esp.Media, esp.LinkInfo, sal.tipo, sal.NumSala "; 
 
             try
             {
