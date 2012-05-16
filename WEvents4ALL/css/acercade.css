@@ -1,5 +1,14 @@
-﻿#map_canvas {
+﻿#mapa_content {
     margin: 0;
     padding: 0;
     height: 300px;
+    border: 1px solid black;
+}
+
+#mapa_content2 {
+    margin: 0px 0px 5px 0px;
+    padding: 0;
+    width: 90%;
+    height: 300px;
+    border: 1px solid black;
 }
