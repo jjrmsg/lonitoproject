@@ -54,6 +54,7 @@
     <Content Include="api\esp_vote.aspx" />
     <Content Include="api\esp_suggest.aspx" />
     <Content Include="api\sala_data.aspx" />
+    <Content Include="css\acercade.css" />
     <Content Include="css\cartelera.css" />
     <Content Include="css\contacto.css" />
     <Content Include="css\espectaculo.css" />
@@ -68,12 +69,14 @@
     <Content Include="css\registro.css" />
     <Content Include="espectaculo.aspx" />
     <Content Include="acercade.aspx" />
+    <Content Include="js\acercade.js" />
     <Content Include="js\contacto.js" />
     <Content Include="js\espectaculo.js" />
     <Content Include="js\master.js" />
     <Content Include="logout.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="pruebamaps.aspx" />
     <Content Include="ranking.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="index.aspx" />
@@ -157,6 +160,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pruebamaps.aspx.cs">
+      <DependentUpon>pruebamaps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pruebamaps.aspx.designer.cs">
+      <DependentUpon>pruebamaps.aspx</DependentUpon>
     </Compile>
     <Compile Include="ranking.aspx.cs">
       <DependentUpon>ranking.aspx</DependentUpon>

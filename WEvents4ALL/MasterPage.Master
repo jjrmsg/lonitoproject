@@ -1,6 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs"%>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -20,7 +19,7 @@
     <link rel="Stylesheet" type="text/css" href="css/registro.css" />
     <link rel="Stylesheet" type="text/css" href="css/perfil.css" />
     <link rel="Stylesheet" type="text/css" href="css/espectaculo.css" />
-
+    <link rel="Stylesheet" type="text/css" href="css/acercade.css" />
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
