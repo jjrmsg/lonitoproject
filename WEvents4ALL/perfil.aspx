@@ -48,7 +48,7 @@
                             <!-- Nombre --> 
                             <div class="control-group" >
                                 <label class="control-label">Nombre :</label>
-                                <span class="rank_help-inline"> *Fail 1</span>
+                                <span class="rank_help-inline"> *Nombre Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Nombre" runat="server" />
                                 <br />
@@ -56,7 +56,7 @@
                             <!-- NIF --> 
                             <div class="control-group">
                                 <label class="control-label">NIF :</label>
-                                <span class="rank_help-inline"> *Fail 2</span>
+                                <span class="rank_help-inline"> *NIF inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_NIF" runat="server" />
                                 <br />
@@ -281,7 +281,7 @@
                             <!-- Localidad -->
                             <div class="control-group">
                                 <label class="control-label">Localidad :</label>
-                                <span class="rank_help-inline"> *Fail 3</span>
+                                <span class="rank_help-inline"> *Localidad Inválida.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Localidad" runat="server" />
                                 <br />
@@ -289,7 +289,7 @@
                             <!-- Domicilio -->
                             <div class="control-group">
                                 <label class="control-label">Domicilio :</label>
-                                <span class="rank_help-inline"> *Fail 4</span>
+                                <span class="rank_help-inline"> *Domicilio Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Domicilio" runat="server" />
                                 <br />
@@ -297,7 +297,7 @@
                             <!-- Telefono -->    
                             <div class="control-group">
                                 <label class="control-label">Teléfono :</label>
-                                <span class="rank_help-inline"> *Fail 5</span>
+                                <span class="rank_help-inline"> *Teléfono Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Telefono" runat="server" />
                                 <br />
@@ -319,7 +319,7 @@
                             <!-- Apellidos -->
                             <div class="control-group">
                                 <label class="control-label">Apellidos :</label>
-                                <span class="rank_help-inline"> *Fail 6</span>
+                                <span class="rank_help-inline"> *Apellidos Inválidos.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Apellido" runat="server" />
                                 <br />
@@ -327,7 +327,7 @@
                             <!-- Fecha de Nacimiento -->
                             <div class="control-group">
                                 <label class="control-label">Fecha de Nacimiento :</label>
-                                <span class="rank_help-inline"> *Fail 7</span>
+                                <span class="rank_help-inline"> *Fecha con formato incorrecto. MM/DD/YYYY.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_FN" runat="server" />
                                 <br />
@@ -395,7 +395,7 @@
                             <!-- CP -->
                             <div class="control-group">
                                 <label class="control-label">Código Postal :</label>
-                                <span class="rank_help-inline"> *Fail 8</span>
+                                <span class="rank_help-inline"> *Codigo Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_CP" runat="server" />
                                 <br />
@@ -403,7 +403,7 @@
                             <!-- Mail -->
                             <div class="control-group">
                                 <label class="control-label">Correo Electrónico :</label>
-                                <span class="rank_help-inline"> *Fail 9</span>
+                                <span class="rank_help-inline"> *Correo Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Mail" runat="server" />
                                 <br />
@@ -411,7 +411,7 @@
                             <!-- Movil -->
                             <div class="control-group">
                                 <label class="control-label">Móvil :</label>
-                                <span class="rank_help-inline"> *Fail 10</span>
+                                <span class="rank_help-inline"> *Móvil inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Movil" runat="server" />
                                 <br />
@@ -424,22 +424,30 @@
                         <legend>Cambio de Contraseña</legend>
                         <br />
                         <div class="span3">
-                            <label class="control-label">Nueva Contraseña :</label>
-                            <br />
-                            <asp:TextBox ID="TextBox_PASS_3" runat="server" TextMode="Password"/>
-                            <br />
+                            <div class="control-group">
+                                <label class="control-label">Nueva Contraseña :</label>
+                                <span class="rank_help-inline"> *No Válido.</span>
+                                <br />
+                                <asp:TextBox ID="TextBox_PASS_3" runat="server" TextMode="Password"/>
+                                <br />
+                            </div>
                         </div>
                         <div class="span3">
-                            <label class="control-label">Contraseña anterior :</label>
-                            <br />
-                            <asp:TextBox ID="TextBox_PASS_1" runat="server" TextMode="Password"/>
-                            <br />
+                            <div class="control-group">
+                                <label class="control-label">Contraseña anterior :</label>
+                                <span class="rank_help-inline"> *No Coinciden.</span>
+                                <br />
+                                <asp:TextBox ID="TextBox_PASS_1" runat="server" TextMode="Password"/>
+                                <br />
+                            </div>
                         </div>
                         <div class="span3">
-                            <label class="control-label">Repita contraseña :</label>
-                            <br />
-                            <asp:TextBox ID="TextBox_PASS_2" runat="server" TextMode="Password"/>
-                            <br />
+                            <div class="control-group">
+                                <label class="control-label">Repita contraseña :</label>
+                                <br />
+                                <asp:TextBox ID="TextBox_PASS_2" runat="server" TextMode="Password"/>
+                                <br />
+                            </div>
                         </div>
                     </fieldset>
                     <!-- Botones de Accion --> 
@@ -460,6 +468,7 @@
 </div>
  
 <script type="text/javascript">
+ 
     /* Javascript de Validaciones */
 
     $(document).ready(function () {
@@ -481,6 +490,7 @@
         var RegExCP = /^\d{5}$/;
         var RegExMail = /^(.+\@.+\..+)$/;
         var RegExFecha = /^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$/;
+        var RegExPass = /^([a-zA-Z1-9]{3,50})$/;
 
 
         /* BLOQUE IZQUIERDO  Nombre DNI Pais Localidad Domicilio Telefono */
@@ -498,6 +508,12 @@
         var Movil = $('#Content1_TextBox_Movil');
         var eMail = $('#Content1_TextBox_Mail');
         var Fecha = $('#Content1_TextBox_FN');
+
+        /* Bloque Contraseñas */
+
+        var PNuevo = $('#Content1_TextBox_PASS_3');
+        var PViejo = $('#Content1_TextBox_PASS_1');
+        var PRepetido = $('#Content1_TextBox_PASS_2');
 
         // Bloque Derecho
         //alert(Apellido.val());
@@ -574,6 +590,45 @@
             Fecha.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
             //alert("Fail Fecha");
             correcto = false;
+        }
+        else {
+            var fecha2 = Fecha.val().toString();
+            var dia;
+            var mes;
+            var ano;
+
+            dia = fecha2[0] + fecha2[1];
+            mes = fecha2[3] + fecha2[4];
+            ano = fecha2[6] + fecha2[7] + fecha2[8] + fecha2[9];
+
+            //alert(dia);
+            //alert(mes);
+            //alert(ano);
+
+            if (comFecha(dia, mes, ano)) {
+                Fecha.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+                //alert("Fail Fecha");
+                correcto = false;
+            }
+        }
+
+        //Parte Comprobacion de Contraseña
+        // Si no estan vacios
+        if (PNuevo.val() != "" || PViejo.val() != "" || PRepetido.val() != "") {
+
+            if (PViejo.val() != PRepetido.val()) {
+                PViejo.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+                PRepetido.parent('div.control-group').addClass('error');
+                //alert("Fail Fecha");
+                correcto = false;
+            }
+
+            if (!RegExPass.test(PNuevo.val())) {
+                PNuevo.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+                //alert("Fail Fecha");
+                correcto = false;
+            }
+
         }
         
         return correcto;
