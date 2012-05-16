@@ -319,6 +319,7 @@
                             <!-- Apellidos -->
                             <div class="control-group">
                                 <label class="control-label">Apellidos :</label>
+                                <span class="rank_help-inline"> *Fail 6</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Apellido" runat="server" />
                                 <br />
@@ -326,6 +327,7 @@
                             <!-- Fecha de Nacimiento -->
                             <div class="control-group">
                                 <label class="control-label">Fecha de Nacimiento :</label>
+                                <span class="rank_help-inline"> *Fail 7</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_FN" runat="server" />
                                 <br />
@@ -335,64 +337,65 @@
                                 <label class="control-label">Provincia :</label>
                                 <br />
                                 <asp:DropDownList ID="DropDownList_Prov" runat="server"  CssClass="datos_entrada">
-			                    <asp:ListItem></asp:ListItem> 			
-                                <asp:ListItem>Álava</asp:ListItem>                     
-                                <asp:ListItem>Albacete</asp:ListItem> 
-                                <asp:ListItem>Alicante</asp:ListItem> 
-                                <asp:ListItem>Almería</asp:ListItem> 
-                                <asp:ListItem>Asturias</asp:ListItem> 
-                                <asp:ListItem>Avila</asp:ListItem> 
-                                <asp:ListItem>Badajoz</asp:ListItem> 
-                                <asp:ListItem>Barcelona</asp:ListItem> 
-                                <asp:ListItem>Burgos</asp:ListItem> 
-                                <asp:ListItem>Cáceres</asp:ListItem> 
-                                <asp:ListItem>Cádiz</asp:ListItem> 
-                                <asp:ListItem>Cantabria</asp:ListItem> 
-                                <asp:ListItem>Castellón</asp:ListItem> 
-                                <asp:ListItem>Ceuta</asp:ListItem> 
-                                <asp:ListItem>Ciudad Real</asp:ListItem> 
-                                <asp:ListItem>Córdoba</asp:ListItem> 
-                                <asp:ListItem>Cuenca</asp:ListItem> 
-                                <asp:ListItem>Gerona</asp:ListItem> 
-                                <asp:ListItem>Granada</asp:ListItem> 
-                                <asp:ListItem>Guadalajara</asp:ListItem> 
-                                <asp:ListItem>Huelva</asp:ListItem> 
-                                <asp:ListItem>Huesca</asp:ListItem> 
-                                <asp:ListItem>Islas Baleares</asp:ListItem> 
-                                <asp:ListItem>Jaén </asp:ListItem> 
-                                <asp:ListItem>La Coruña</asp:ListItem> 
-                                <asp:ListItem>La Rioja</asp:ListItem> 
-                                <asp:ListItem>Las Palmas</asp:ListItem> 
-                                <asp:ListItem>León</asp:ListItem> 
-                                <asp:ListItem>Lérida</asp:ListItem> 
-                                <asp:ListItem>Lugo</asp:ListItem> 
-                                <asp:ListItem>Madrid</asp:ListItem> 
-                                <asp:ListItem>Málaga</asp:ListItem> 
-                                <asp:ListItem>Melilla</asp:ListItem> 
-                                <asp:ListItem>Murcia</asp:ListItem> 
-                                <asp:ListItem>Navarra</asp:ListItem> 
-                                <asp:ListItem>Orense</asp:ListItem> 
-                                <asp:ListItem>Palencia</asp:ListItem> 
-                                <asp:ListItem>Pontevedra</asp:ListItem> 
-                                <asp:ListItem>S.C. De Tenerife</asp:ListItem> 
-                                <asp:ListItem>Salamanca</asp:ListItem> 
-                                <asp:ListItem>Segovia</asp:ListItem> 
-                                <asp:ListItem>Sevilla</asp:ListItem> 
-                                <asp:ListItem>Soria</asp:ListItem> 
-                                <asp:ListItem>Tarragona</asp:ListItem> 
-                                <asp:ListItem>Teruel</asp:ListItem> 
-                                <asp:ListItem>Toledo</asp:ListItem> 
-                                <asp:ListItem>Valencia</asp:ListItem> 
-                                <asp:ListItem>Valladolid</asp:ListItem> 
-                                <asp:ListItem>Vizcaya</asp:ListItem> 
-                                <asp:ListItem>Zamora</asp:ListItem> 
-                                <asp:ListItem>Zaragoza</asp:ListItem> 
-                            </asp:DropDownList>
+			                        <asp:ListItem></asp:ListItem> 			
+                                    <asp:ListItem>Álava</asp:ListItem>                     
+                                    <asp:ListItem>Albacete</asp:ListItem> 
+                                    <asp:ListItem>Alicante</asp:ListItem> 
+                                    <asp:ListItem>Almería</asp:ListItem> 
+                                    <asp:ListItem>Asturias</asp:ListItem> 
+                                    <asp:ListItem>Avila</asp:ListItem> 
+                                    <asp:ListItem>Badajoz</asp:ListItem> 
+                                    <asp:ListItem>Barcelona</asp:ListItem> 
+                                    <asp:ListItem>Burgos</asp:ListItem> 
+                                    <asp:ListItem>Cáceres</asp:ListItem> 
+                                    <asp:ListItem>Cádiz</asp:ListItem> 
+                                    <asp:ListItem>Cantabria</asp:ListItem> 
+                                    <asp:ListItem>Castellón</asp:ListItem> 
+                                    <asp:ListItem>Ceuta</asp:ListItem> 
+                                    <asp:ListItem>Ciudad Real</asp:ListItem> 
+                                    <asp:ListItem>Córdoba</asp:ListItem> 
+                                    <asp:ListItem>Cuenca</asp:ListItem> 
+                                    <asp:ListItem>Gerona</asp:ListItem> 
+                                    <asp:ListItem>Granada</asp:ListItem> 
+                                    <asp:ListItem>Guadalajara</asp:ListItem> 
+                                    <asp:ListItem>Huelva</asp:ListItem> 
+                                    <asp:ListItem>Huesca</asp:ListItem> 
+                                    <asp:ListItem>Islas Baleares</asp:ListItem> 
+                                    <asp:ListItem>Jaén </asp:ListItem> 
+                                    <asp:ListItem>La Coruña</asp:ListItem> 
+                                    <asp:ListItem>La Rioja</asp:ListItem> 
+                                    <asp:ListItem>Las Palmas</asp:ListItem> 
+                                    <asp:ListItem>León</asp:ListItem> 
+                                    <asp:ListItem>Lérida</asp:ListItem> 
+                                    <asp:ListItem>Lugo</asp:ListItem> 
+                                    <asp:ListItem>Madrid</asp:ListItem> 
+                                    <asp:ListItem>Málaga</asp:ListItem> 
+                                    <asp:ListItem>Melilla</asp:ListItem> 
+                                    <asp:ListItem>Murcia</asp:ListItem> 
+                                    <asp:ListItem>Navarra</asp:ListItem> 
+                                    <asp:ListItem>Orense</asp:ListItem> 
+                                    <asp:ListItem>Palencia</asp:ListItem> 
+                                    <asp:ListItem>Pontevedra</asp:ListItem> 
+                                    <asp:ListItem>S.C. De Tenerife</asp:ListItem> 
+                                    <asp:ListItem>Salamanca</asp:ListItem> 
+                                    <asp:ListItem>Segovia</asp:ListItem> 
+                                    <asp:ListItem>Sevilla</asp:ListItem> 
+                                    <asp:ListItem>Soria</asp:ListItem> 
+                                    <asp:ListItem>Tarragona</asp:ListItem> 
+                                    <asp:ListItem>Teruel</asp:ListItem> 
+                                    <asp:ListItem>Toledo</asp:ListItem> 
+                                    <asp:ListItem>Valencia</asp:ListItem> 
+                                    <asp:ListItem>Valladolid</asp:ListItem> 
+                                    <asp:ListItem>Vizcaya</asp:ListItem> 
+                                    <asp:ListItem>Zamora</asp:ListItem> 
+                                    <asp:ListItem>Zaragoza</asp:ListItem> 
+                                </asp:DropDownList>
                                 <br />
                             </div>
                             <!-- CP -->
                             <div class="control-group">
                                 <label class="control-label">Código Postal :</label>
+                                <span class="rank_help-inline"> *Fail 8</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_CP" runat="server" />
                                 <br />
@@ -400,6 +403,7 @@
                             <!-- Mail -->
                             <div class="control-group">
                                 <label class="control-label">Correo Electrónico :</label>
+                                <span class="rank_help-inline"> *Fail 9</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Mail" runat="server" />
                                 <br />
@@ -407,6 +411,7 @@
                             <!-- Movil -->
                             <div class="control-group">
                                 <label class="control-label">Móvil :</label>
+                                <span class="rank_help-inline"> *Fail 10</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Movil" runat="server" />
                                 <br />
@@ -473,6 +478,9 @@
         var RegExText = /^([a-zA-Z\s]{3,50})$/;
         var RegExDNI = /^(\d{8}[A-Z])$/
         var RegExTel = /^\d{9}$/;
+        var RegExCP = /^\d{5}$/;
+        var RegExMail = /^(.+\@.+\..+)$/;
+        var RegExFecha = /^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$/;
 
 
         /* BLOQUE IZQUIERDO  Nombre DNI Pais Localidad Domicilio Telefono */
@@ -483,56 +491,92 @@
         var Dom = $('#Content1_TextBox_Domicilio');
         var Tel = $('#Content1_TextBox_Telefono');
 
+        /* BLOQUE DERECHO  Apellido Fecha Provincia CP Mail Movil */
+
+        var Apellido = $('#Content1_TextBox_Apellido');
+        var CP = $('#Content1_TextBox_CP');
+        var Movil = $('#Content1_TextBox_Movil');
+        var eMail = $('#Content1_TextBox_Mail');
+        var Fecha = $('#Content1_TextBox_FN');
+
+        // Bloque Derecho
+        //alert(Apellido.val());
+        //alert(CP.val());
+        //alert(Mail.val());
+        //alert(Movil.val());
+
+        // Bloque Izquierdo
         /*alert(Nombre.val());
         alert(Dni.val());
         alert(Local.val());
         alert(Dom.val());
         alert(Tel.val());*/
 
+        /* BLOQUE IZQUIERDO  Nombre DNI Pais Localidad Domicilio Telefono */
+
         if (Nombre.val() == "" || !RegExText.test(Nombre.val())) {
             Nombre.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
-            alert("Fail Nombre");
+            //alert("Fail Nombre");
             correcto = false;
         }
 
         if (Dni.val() == "" || !RegExDNI.test(Dni.val())) {
             Dni.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
-            alert("Fail DNI");
+            //alert("Fail DNI");
             correcto = false;
         }
 
         if (Local.val() == "" || !RegExText.test(Local.val())) {
             Local.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
-            alert("Fail Local");
+            //alert("Fail Local");
             correcto = false;
         }
 
         if (Dom.val() == "" || !RegExText.test(Dom.val())) {
             Dom.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
-            alert("Fail Domicilio");
+            //alert("Fail Domicilio");
             correcto = false;
         }
 
         if (Tel.val() == "" || !RegExTel.test(Tel.val())) {
             Tel.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
-            alert("Fail Telefono");
+            //alert("Fail Telefono");
             correcto = false;
         }
 
-        return correcto;
-    }
-
-    function compruebaMail(texto) {
-        var error = true;
-        var atpos = texto.indexOf("@");
-        var dotpos = texto.lastIndexOf(".");
-
-        if (atpos < 1 || dotpos < (atpos + 2) || (dotpos + 2) >= texto.length) {
-            msg += "- Mail Incorrecto.\n";
+        /* BLOQUE DERECHO  Apellido Fecha Provincia CP Mail Movil */
+        
+        if (Apellido.val() == "" || !RegExText.test(Apellido.val())) {
+            Apellido.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+            //alert("Fail Apellido");
+            correcto = false;
         }
-        else error = false;
+    
+        if (CP.val() == "" || !RegExCP.test(CP.val())) {
+            CP.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+            //alert("Fail CP");
+            correcto = false;
+        }
 
-        return error;
+        if (Movil.val() == "" || !RegExTel.test(Movil.val())) {
+            Movil.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+            //alert("Fail Movil");
+            correcto = false;
+        }
+       
+        if (eMail.val() == "" || !RegExMail.test(eMail.val())) {
+            eMail.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+            //alert("Fail Mail");
+            correcto = false;
+        }
+
+        if (Fecha.val() == "" || !RegExFecha.test(Fecha.val())) {
+            Fecha.parent('div.control-group').addClass('error').find('.rank_help-inline').show();
+            //alert("Fail Fecha");
+            correcto = false;
+        }
+        
+        return correcto;
     }
 
     function comFecha(d, m, a) {

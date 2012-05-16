@@ -89,7 +89,7 @@ namespace WEvents4ALL
 
                 if (r["Sexo"].ToString() == "0")
                     DropDownList_Sexo.Text = "Hombre";
-                if (r["Sexo"].ToString() == "1")
+                else if (r["Sexo"].ToString() == "1")
                     DropDownList_Sexo.Text = "Mujer";
                 else
                     DropDownList_Sexo.Text = "";
