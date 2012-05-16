@@ -43,11 +43,15 @@
                                     <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="cartelera_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
                                     <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
                                 </div>
-
-                                    <div class="horario"><div class="badge badge-info">16:00</div></div>
-                                    <div class="horario"><div class="badge badge-info">18:00</div></div>
-                                    <div class="horario"><div class="badge badge-info">20:00</div></div>
-                                    <div class="horario"><div class="badge badge-info">22:00</div></div>
+                                    <%
+                                        char[] delimiterChars = {','};
+                                        string text = r["Horarios"].ToString();
+                                        string[] words = text.Split(delimiterChars);
+                                        foreach (string s in words)
+                                        {%>
+                                            <div class="horario"> <a class="badge badge-info" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"> <%=s%></a></div>
+                                        <%}
+                                    %>
 
                         </div>
                     </div>
