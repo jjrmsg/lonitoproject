@@ -91,6 +91,8 @@ namespace WEvents4ALL
                     DropDownList_Sexo.Text = "Hombre";
                 if (r["Sexo"].ToString() == "1")
                     DropDownList_Sexo.Text = "Mujer";
+                else
+                    DropDownList_Sexo.Text = "";
 
                 // Fecha Provisional... que ya veremos si cambio.... xD
                 string fecha = r["FechaNac"].ToString();
