@@ -49,7 +49,7 @@
                                         string[] words = text.Split(delimiterChars);
                                         foreach (string s in words)
                                         {%>
-                                            <div class="horario"> <a class="badge badge-info" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"> <%=s%></a></div>
+                                            <div class="horario"> <span class="badge badge-info"> <%=s%></span></div>
                                         <%}
                                     %>
 
