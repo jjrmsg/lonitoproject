@@ -43,6 +43,8 @@
 					    <ul class="nav">
 						    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
 						    <li><a href="/cartelera.aspx">Cartelera</a></li>
+                            <li><a href="/contacto.aspx">Contacto</a></li>
+                            <li><a href="/acercade.aspx">Acerca de</a></li>
 					    </ul>
                         
 					    <ul class="nav pull-right">

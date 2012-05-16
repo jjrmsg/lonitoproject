@@ -67,6 +67,7 @@
     <Content Include="css\ranking.css" />
     <Content Include="css\registro.css" />
     <Content Include="espectaculo.aspx" />
+    <Content Include="acercade.aspx" />
     <Content Include="js\contacto.js" />
     <Content Include="js\espectaculo.js" />
     <Content Include="js\master.js" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="espectaculo.aspx.designer.cs">
       <DependentUpon>espectaculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="acercade.aspx.cs">
+      <DependentUpon>acercade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acercade.aspx.designer.cs">
+      <DependentUpon>acercade.aspx</DependentUpon>
     </Compile>
     <Compile Include="logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
