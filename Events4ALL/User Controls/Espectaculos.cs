@@ -243,6 +243,7 @@ namespace Events4ALL
             numHoraHorario.Value = 0;
             numMinHorario.Value = 0;
             listHorarios.Items.Clear();
+            btBorrarHorario.Enabled = false;
             pbCartel.Image = Events4ALL.Properties.Resources.image_default;
             imagenCambiada = false;
         }
@@ -416,7 +417,20 @@ namespace Events4ALL
             if (minutos < 10)
                 horario += "0";
             horario += minutos.ToString();
-            listHorarios.Items.Add(horario);
+
+            bool existe = false;
+            foreach (Object h in listHorarios.Items)
+            {
+                if (h.ToString() == horario)
+                    existe = true;
+            }
+
+            if (existe == false){
+                listHorarios.Items.Add(horario);
+                errPrvEspectaculo.SetError(btAddHorario, null);
+            }
+            else
+                errPrvEspectaculo.SetError(btAddHorario, "El horario ya existe");
         }
 
         private void btBorrarHorario_Click(object sender, EventArgs e)
@@ -424,6 +438,16 @@ namespace Events4ALL
             if (listHorarios.SelectedIndex >= 0)
             {
                 listHorarios.Items.RemoveAt(listHorarios.SelectedIndex);
+                btBorrarHorario.Enabled = false;
+
+            }
+        }
+
+        private void listHorarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listHorarios.SelectedIndex >= 0)
+            {
+                btBorrarHorario.Enabled = true;
             }
         }
     }

@@ -63,6 +63,13 @@
             this.btInsertar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbHorSeparador = new System.Windows.Forms.Label();
+            this.listHorarios = new System.Windows.Forms.ListBox();
+            this.btAddHorario = new System.Windows.Forms.Button();
+            this.numMinHorario = new System.Windows.Forms.NumericUpDown();
+            this.numHoraHorario = new System.Windows.Forms.NumericUpDown();
+            this.btBorrarHorario = new System.Windows.Forms.Button();
+            this.lbHorarios = new System.Windows.Forms.Label();
             this.lbMedia = new System.Windows.Forms.Label();
             this.tbMedia = new System.Windows.Forms.TextBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
@@ -88,13 +95,6 @@
             this.errPrvEspectaculo = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lbHorarios = new System.Windows.Forms.Label();
-            this.btBorrarHorario = new System.Windows.Forms.Button();
-            this.numHoraHorario = new System.Windows.Forms.NumericUpDown();
-            this.numMinHorario = new System.Windows.Forms.NumericUpDown();
-            this.btAddHorario = new System.Windows.Forms.Button();
-            this.listHorarios = new System.Windows.Forms.ListBox();
-            this.lbHorSeparador = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEspectaculos)).BeginInit();
@@ -102,11 +102,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioBuscar)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -410,6 +410,57 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
+            // lbHorSeparador
+            // 
+            resources.ApplyResources(this.lbHorSeparador, "lbHorSeparador");
+            this.lbHorSeparador.Name = "lbHorSeparador";
+            // 
+            // listHorarios
+            // 
+            this.listHorarios.FormattingEnabled = true;
+            resources.ApplyResources(this.listHorarios, "listHorarios");
+            this.listHorarios.Name = "listHorarios";
+            this.listHorarios.SelectedIndexChanged += new System.EventHandler(this.listHorarios_SelectedIndexChanged);
+            // 
+            // btAddHorario
+            // 
+            resources.ApplyResources(this.btAddHorario, "btAddHorario");
+            this.btAddHorario.Name = "btAddHorario";
+            this.btAddHorario.UseVisualStyleBackColor = true;
+            this.btAddHorario.Click += new System.EventHandler(this.btAddHorario_Click);
+            // 
+            // numMinHorario
+            // 
+            resources.ApplyResources(this.numMinHorario, "numMinHorario");
+            this.numMinHorario.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numMinHorario.Name = "numMinHorario";
+            // 
+            // numHoraHorario
+            // 
+            resources.ApplyResources(this.numHoraHorario, "numHoraHorario");
+            this.numHoraHorario.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numHoraHorario.Name = "numHoraHorario";
+            // 
+            // btBorrarHorario
+            // 
+            resources.ApplyResources(this.btBorrarHorario, "btBorrarHorario");
+            this.btBorrarHorario.Name = "btBorrarHorario";
+            this.btBorrarHorario.UseVisualStyleBackColor = true;
+            this.btBorrarHorario.Click += new System.EventHandler(this.btBorrarHorario_Click);
+            // 
+            // lbHorarios
+            // 
+            resources.ApplyResources(this.lbHorarios, "lbHorarios");
+            this.lbHorarios.Name = "lbHorarios";
+            // 
             // lbMedia
             // 
             resources.ApplyResources(this.lbMedia, "lbMedia");
@@ -572,56 +623,6 @@
             this.dataGridViewImageColumn2.Image = global::Events4ALL.Properties.Resources.delete;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
-            // lbHorarios
-            // 
-            resources.ApplyResources(this.lbHorarios, "lbHorarios");
-            this.lbHorarios.Name = "lbHorarios";
-            // 
-            // btBorrarHorario
-            // 
-            resources.ApplyResources(this.btBorrarHorario, "btBorrarHorario");
-            this.btBorrarHorario.Name = "btBorrarHorario";
-            this.btBorrarHorario.UseVisualStyleBackColor = true;
-            this.btBorrarHorario.Click += new System.EventHandler(this.btBorrarHorario_Click);
-            // 
-            // numHoraHorario
-            // 
-            resources.ApplyResources(this.numHoraHorario, "numHoraHorario");
-            this.numHoraHorario.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numHoraHorario.Name = "numHoraHorario";
-            // 
-            // numMinHorario
-            // 
-            resources.ApplyResources(this.numMinHorario, "numMinHorario");
-            this.numMinHorario.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.numMinHorario.Name = "numMinHorario";
-            // 
-            // btAddHorario
-            // 
-            resources.ApplyResources(this.btAddHorario, "btAddHorario");
-            this.btAddHorario.Name = "btAddHorario";
-            this.btAddHorario.UseVisualStyleBackColor = true;
-            this.btAddHorario.Click += new System.EventHandler(this.btAddHorario_Click);
-            // 
-            // listHorarios
-            // 
-            this.listHorarios.FormattingEnabled = true;
-            resources.ApplyResources(this.listHorarios, "listHorarios");
-            this.listHorarios.Name = "listHorarios";
-            // 
-            // lbHorSeparador
-            // 
-            resources.ApplyResources(this.lbHorSeparador, "lbHorSeparador");
-            this.lbHorSeparador.Name = "lbHorSeparador";
-            // 
             // Espectaculos
             // 
             resources.ApplyResources(this, "$this");
@@ -637,11 +638,11 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCartel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPrvEspectaculo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHoraHorario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinHorario)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -95,7 +95,7 @@
             new TWTR.Widget({
                 version: 2,
                 type: 'search',
-                search: '#Events4All',
+                search: 'Events4All #Events4All',
                 interval: 30000,
                 title: '',
                 subject: '',
