@@ -490,7 +490,7 @@
         var RegExCP = /^\d{5}$/;
         var RegExMail = /^(.+\@.+\..+)$/;
         var RegExFecha = /^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$/;
-        var RegExPass = /^([a-zA-Z1-9]{3,50})$/;
+        var RegExPass = /^([a-zA-Z0-9]{3,50})$/;
 
 
         /* BLOQUE IZQUIERDO  Nombre DNI Pais Localidad Domicilio Telefono */

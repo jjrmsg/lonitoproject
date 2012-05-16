@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Entities;
 using Auxiliares;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace WEvents4ALL
 {
@@ -33,8 +34,6 @@ namespace WEvents4ALL
         // 2 - Si es un Fail, ya vere...
         protected void bGuardar_Click(object sender, EventArgs e)
         {
-            TextBox_NIF.Text = "Pene";
-
             /*if(ValidaDatos())
             {
                 ClientesEN actualiza = new ClientesEN(TextBox_NIF.Text,TextBox_Nombre.Text,TextBox_Apellido.Text,
@@ -62,6 +61,9 @@ namespace WEvents4ALL
         {
             valida = new Validaciones();
             bool error = false;
+
+
+
 
             return error;
         }
@@ -121,5 +123,208 @@ namespace WEvents4ALL
 
             return Convert.ToDateTime(mes+'/'+dia+'/'+ano);
         }
+
+        #region Validacion de Datos
+
+        string patronNombre = @"^[a-zA-Z]*\w*$";
+        string patronTelefono = @"^\d{9}$";
+        string patronFecha = @"^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$";
+        string patronCP = @"^\d{5}$";
+        string patronMail = @"^(.+\@.+\..+)$";
+        string patronPass = @"^([a-zA-Z0-9]{3,50})$";
+
+        // Comprueba todos los booleanos de los campos, y si alguno falla, devuelve error
+        private bool ValidaCampos()
+        {
+            bool error = true;
+            // 13 campos
+
+            #region Columna Izquierda
+                // Nombre
+                if (!CompruebaTexto(TextBox_Nombre.Text))
+                    error = false;
+                // NIF
+                if (!CompruebaNif(TextBox_NIF.Text))
+                    error = false;
+                // Pais
+                if (DropDownList_Pais.Text == "")
+                    error = false;
+                // Localidad
+                if (!CompruebaTexto(TextBox_Localidad.Text))
+                    error = false;
+                // Domicilio
+                if (!CompruebaTexto(TextBox_Domicilio.Text))
+                    error = false;
+                // Telefono
+                if (!CompruebaTexto(TextBox_Telefono.Text))
+                    error = false;
+                // Sexo
+                if (!CompruebaSexo(DropDownList_Sexo.Text))
+                    error = false;
+            #endregion
+
+            #region Columna Derecha
+                // Apellidos
+                if (!CompruebaTexto(TextBox_Apellido.Text))
+                    error = false;
+                // Fecha
+                if (!CompruebaFecha(TextBox_FN.Text))
+                    error = false;
+                // Provincia
+                if (DropDownList_Prov.Text == "")
+                    error = false;
+                // CP
+                if (!CompruebaCP(TextBox_CP.Text))
+                    error = false;
+                // Mail
+                if (!CompruebaMail(TextBox_Mail.Text))
+                    error = false;
+                // Movil
+                if (!CompruebaTexto(TextBox_Movil.Text))
+                    error = false;
+            #endregion
+
+            #region Pass
+
+                if (TextBox_PASS_1.Text != "" || TextBox_PASS_2.Text != "" || TextBox_PASS_3.Text != "")
+                {
+                    if (TextBox_PASS_1.Text != TextBox_PASS_3.Text)
+                        error = true;
+                    if (!Regex.Match(TextBox_PASS_3.Text, patronPass).Success)
+                        error = true;
+                }
+
+            #endregion
+
+            return error;
+        }
+
+        private bool CompruebaTexto(string texto)
+        {
+            if (!Regex.Match(texto, patronNombre).Success)
+            {
+                //errorProvider1.SetError(labelNombreCliente, "Nombre incorrecto");
+                return false;
+            }
+
+            else if (texto == "")
+            {
+                //errorProvider1.SetError(labelNombreCliente, "Debe rellenar el nombre");
+                return false;
+            }
+            else
+            {
+                //errorProvider1.SetError(labelNombreCliente, String.Empty);
+                return true;
+            }
+        }
+
+        private bool CompruebaNif(string texto)
+        {
+            if (!valida.CompruebaNIF(texto))
+            {
+                //errorProvider1.SetError(labelNifCliente, "NIF incorrecto");
+                return false;
+            }
+
+            else if (texto == "")
+            {
+                //errorProvider1.SetError(labelNifCliente, "Debe rellenar el NIF");
+                return false;
+            }
+
+            else
+                //errorProvider1.SetError(labelNifCliente, String.Empty);
+            return true;
+        }
+
+        private bool CompruebaMail(string texto)
+        {
+            if (texto != "" && Regex.Match(texto, patronMail).Success)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CompruebaNumero(string texto)
+        {
+            if (!Regex.Match(texto, patronTelefono).Success)
+            {
+                //errorProvider1.SetError(labelNombreCliente, "Nombre incorrecto");
+                return false;
+            }
+
+            else if (texto == "")
+            {
+                //errorProvider1.SetError(labelNombreCliente, "Debe rellenar el nombre");
+                return false;
+            }
+            else
+            {
+                //errorProvider1.SetError(labelNombreCliente, String.Empty);
+                return true;
+            }
+        }
+
+        private bool CompruebaSexo(string texto)
+        {
+            if(texto == "" || texto == "Hombre" || texto == "Mujer")
+            {
+                return true;
+            }
+            else
+	            return false;
+        }
+
+        private bool CompruebaCP(string texto)
+        {
+            if (texto == "" || Regex.Match(texto, patronCP).Success)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CompruebaFecha(string texto) 
+        {
+            var error = true;
+
+            if (!Regex.Match(texto, patronFecha).Success)
+                error = false;
+            else
+            {
+                int d = texto[0] + texto[1];
+                int m = texto[3] + texto[4];
+                int a = texto[6] + texto[7] + texto[8] + texto[9];
+
+                // meses dias = 31 ( 1 - 3 - 5 - 7 - 8 - 10 - 12)
+                // meses dias = 30 ( 4 - 6 - 9  - 11 )
+
+                if (a >= 1900 && (m < 13 && m > 0) && (d > 0 && d < 32))
+                {
+                    if (d > 28) // Conflicto al ser bisiesto?
+                    {
+                        if ((m == 4 || m == 6 || m == 9 || m == 11) && d < 31)
+                            error = false;
+                        else if ((m == 7 || m == 5 || m == 3 || m == 1 || m == 8 || m == 10 || m == 12) && d <= 31)
+                            error = false;
+                        else if (m == 2 && Bisiesto(a) && d == 29)
+                            error = false;
+                    }
+                    else error = false;
+                }
+            }
+            
+            return error;
+        }
+
+        private bool Bisiesto(int a) 
+        {
+            var bisiesto = false;
+            if ((a % 4 == 0) && ((a % 100 != 0)) || (a % 400 == 0))
+                bisiesto = true;
+            return bisiesto;
+        }
+
+        #endregion
     }
 }
