@@ -412,6 +412,92 @@ namespace Entities
             return error;
         }
 
+        #region Made In Lirio
+
+        public bool ActualizaCliente(ClientesEN nuevoCL, int id)
+        {
+            byte[] pic = null;
+            if (nuevoCL.Foto != null)
+            {
+                MemoryStream tmpStream = new MemoryStream();
+                nuevoCL.Foto.Save(tmpStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                tmpStream.Position = 0;
+                pic = new byte[tmpStream.Length];
+                tmpStream.Read(pic, 0, System.Convert.ToInt32(tmpStream.Length));
+                pic = tmpStream.ToArray();
+            }
+
+            bool error = false;
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+
+                c.Open();
+
+                string fecha = nuevoCL.Fecha.ToString();
+                string anyo = "" + fecha[6] + fecha[7] + fecha[8] + fecha[9];
+                string mes = "" + fecha[3] + fecha[4];
+                string dia = "" + fecha[0] + fecha[1];
+                fecha = anyo + '/' + mes + '/' + dia;
+
+                //string comilla = "', '";
+
+                string tel1 = "";
+                string tel2 = "";
+
+                tel1 = nuevoCL.Telefono;
+                tel2 = nuevoCL.Movil;
+
+                
+                string sql = "UPDATE Cliente SET ";
+                sql = sql + "Nombre = '" + nuevoCL.Nombre + "'";
+                sql = sql + ", Apellidos = '" + nuevoCL.Apellidos + "'";
+                sql = sql + ", Usuario = '" + nuevoCL.Nick + "'";
+                sql = sql + ", NIF = '" + nuevoCL.DNI + "'";
+                sql = sql + ", FechaNac = '" + fecha + "'";
+                sql = sql + ", Poblacion = '" + nuevoCL.Localidad + "'";
+                sql = sql + ", Provincia = '" + nuevoCL.Provincia + "'";
+                sql = sql + ", Pais = '" + nuevoCL.Pais + "'";
+                sql = sql + ", Direccion = '" + nuevoCL.Domicilio + "'";
+                sql = sql + ", TfnoFijo = '" + nuevoCL.Telefono + "'";
+                sql = sql + ", TfnoMovil = '" + nuevoCL.Movil + "'";
+                sql = sql + ", Mail = '" + nuevoCL.Mail + "'";
+                sql = sql + ", CP = '" + nuevoCL.CP + "'";
+                if (nuevoCL.Sexo >= 0)
+                    sql = sql + ", Sexo = " + nuevoCL.Sexo;
+                if (nuevoCL.Password != "")
+                    sql = sql + ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
+                //string set14 = ", Foto = @pic";
+                sql = sql + "WHERE idCliente='" + id + "'";
+
+                System.Diagnostics.Debug.Write(sql);
+
+                SqlCommand comando = new SqlCommand(sql, c);
+                if (nuevoCL.Foto != null)
+                    comando.Parameters.AddWithValue("@pic", pic);
+
+                comando.ExecuteNonQuery();
+
+                error = true;
+            }
+
+            catch (Exception ex)
+            {
+                //Captura la excepcion
+                throw ex;
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            return error;
+        }
+
+        #endregion
+
         #endregion
 
 
@@ -471,6 +557,8 @@ namespace Entities
                 SqlCommand com = new SqlCommand(query, conn);
                 com.Parameters.Add("@idCli", SqlDbType.Int).Value = id;
 
+                System.Diagnostics.Debug.Write(com.CommandText);
+
                 SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
                 sqlAdaptader.SelectCommand = com;
 
@@ -480,7 +568,7 @@ namespace Entities
             catch (Exception ex)
             {
                 // Captura la condición general y la reenvía. 
-                throw ex;
+                //throw ex;
             }
             finally
             {

@@ -13,17 +13,21 @@ namespace WEvents4ALL
 {
     public partial class perfil : System.Web.UI.Page
     {
-        ClientesEN cliente = new ClientesEN();
+        ClientesEN cliente;
         DataSet perfilCliente = new DataSet();
         Validaciones valida;
+        string nick;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // obtengo los datos del cliente bastardo
-            perfilCliente = cliente.ObtenerUsuarioPorID("3");
+            cliente = new ClientesEN();
 
-            // En un principio, sin meter valor predeterminado, seria de la siguiente forma
-            //perfilCliente = cliente.ObtenerUsuarioPorID(Session["idCliente"].ToString());
+            // obtengo los datos del cliente bastardo
+            if (Session["IdUsuario"] != null)
+                perfilCliente = cliente.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
+            else
+                Response.Redirect("index.aspx");
+            
 
             // Relleno los datos del cliente a partir del DataSet recibido.
             RellenaDatos();
@@ -34,18 +38,111 @@ namespace WEvents4ALL
         // 2 - Si es un Fail, ya vere...
         protected void bGuardar_Click(object sender, EventArgs e)
         {
-            /*if(ValidaDatos())
+            bool error = false;
+            // 0 = Desconocido // 1 = datos // 2 = pass. No coinciden // 3 = La contraseña no es correta // 4 = nose ha almacenado
+            int tipoE = 0;
+            // se usara para realizar el cambio.
+            string contrasena = "";
+
+            if (ValidaDatos())
             {
-                ClientesEN actualiza = new ClientesEN(TextBox_NIF.Text,TextBox_Nombre.Text,TextBox_Apellido.Text,
-                                                      DropDownList_Pais.Text, DropDownList_Prov.Text, TextBox_Localidad.Text,
-                                                      TextBox_Domicilio.Text, TextBox_CP.Text, TextBox_Telefono.Text,
-                                                      TextBox_Movil.Text,TextBox_Mail.Text, null, null,
-                                                      0,Fecha(),null,null);
+                // Ahora pasamos a comprobar si la contraseña es correcta
+                if (TextBox_PASS_3.Text != "" && TextBox_PASS_2.Text != "" && TextBox_PASS_1.Text != "" &&
+                   (TextBox_PASS_2.Text == TextBox_PASS_1.Text)) // si no estan vacios y son iguales
+                {
+                    DataSet pass = cliente.ExisteUsuarioNickPass(nick, TextBox_PASS_2.Text);
 
+                    try
+                    {
+                        DataRow usuario = pass.Tables[0].Rows[0];
+                        nick = usuario["Usuario"].ToString();
 
+                        contrasena = TextBox_PASS_3.Text;
+                    }
+                    catch
+                    {
+                        tipoE = 3;
+                        error = true;
+                        contrasena = "";
+                    }
+                }
+                    
+                // Si no se modifica la contraseña, pasaremos a actualiar el cliente en la BD
+
+                ClientesEN nvCliente = new ClientesEN();
+                
+                nvCliente.DNI = TextBox_NIF.Text;
+                nvCliente.Nombre = TextBox_Nombre.Text;
+                nvCliente.Apellidos = TextBox_Apellido.Text;
+                nvCliente.Pais = DropDownList_Pais.Text;
+                nvCliente.Provincia = DropDownList_Prov.Text;
+                nvCliente.Localidad = TextBox_Localidad.Text;
+                nvCliente.Domicilio = TextBox_Domicilio.Text;
+                nvCliente.CP = TextBox_CP.Text;
+                nvCliente.Telefono = TextBox_Telefono.Text;
+                nvCliente.Movil = TextBox_Movil.Text;
+                nvCliente.Mail = TextBox_Mail.Text;
+                nvCliente.Fecha = Convert.ToDateTime(TextBox_FN.Text);
+                nvCliente.Password = contrasena;
+
+                if (DropDownList_Sexo.Text == "Hombre")
+                    nvCliente.Sexo = 0;
+                else if (DropDownList_Sexo.Text == "Mujer")
+                    nvCliente.Sexo = 1;
+                else
+                    nvCliente.Sexo = -1;
+
+                if (!nvCliente.ActualizaCliente(nvCliente, Convert.ToInt32(Session["IdUsuario"].ToString())))
+                {
+                    error = true;
+                    tipoE = 4;
+                }
+                // Si todo va bien....
+                else
+                {
+                    MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                    mv.ActiveViewIndex = 1;
+                    perfilCliente = cliente.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
+                    RellenaDatos();
+                }
             }
-            */
-            // Valida Pass Ojo.
+            else
+            {
+                error = true;
+                tipoE = 1; 
+            }
+
+            if(error)
+            {
+                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                mv.ActiveViewIndex = 0;
+                Label lbTitle = (Label)Master.FindControl("errorViewTitle");
+                Label lbMsg = (Label)Master.FindControl("errorViewMsg");
+
+                switch (tipoE)
+                {
+                    case 0:
+                        lbTitle.Text = "0 - Ocurrió un Error Inesperado.";
+                        lbMsg.Text = "No se han podido realizar los cambios. Intentelo más tarde.";
+                        break;
+                    case 1:
+                        lbTitle.Text = "1 - Ocurrió un Error.";
+                        lbMsg.Text = "Se ha localizado un error en los datos. Verifiquelos y vuelva a intentarlo.";
+                        break;
+                    case 2:
+                        lbTitle.Text = "2 - Ocurrió un Error.";
+                        lbMsg.Text = "La constraseñas no coinciden.";
+                        break;
+                    case 3:
+                        lbTitle.Text = "3 - Ocurrió un Error.";
+                        lbMsg.Text = "La no es correcta. Vuelva a intentarlo.";
+                        break;
+                    case 4:
+                        lbTitle.Text = "4 - Ocurrió un Error.";
+                        lbMsg.Text = "No se han podido almacenar los cambios. Intentelo después.";
+                        break;
+                }
+            }
         }
 
         // Restaura los datos del Dataset actual.
@@ -62,8 +159,19 @@ namespace WEvents4ALL
             valida = new Validaciones();
             bool error = false;
 
+            error = ValidaCampos();
 
-
+            // Esto se producira cuando algun campo del formulario sea erroneo
+            // javascript ha fallado
+            if (error)
+            {
+                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                mv.ActiveViewIndex = 0;
+                Label lbTitle = (Label)Master.FindControl("errorViewTitle");
+                Label lbMsg = (Label)Master.FindControl("errorViewMsg");
+                lbTitle.Text = "Ocurrió un error";
+                lbMsg.Text = "Ha surgido un error. Vuelva a intentarlo más tarde.";
+            }
 
             return error;
         }
@@ -74,6 +182,9 @@ namespace WEvents4ALL
         {
             foreach (System.Data.DataRow r in perfilCliente.Tables[0].Rows)
             {
+                // Obtencion del NICK
+                nick = r["Usuario"].ToString();
+
                 // Grupo de TextBoxes
                 TextBox_Nombre.Text = r["Nombre"].ToString();
                 TextBox_Apellido.Text = r["Apellidos"].ToString();

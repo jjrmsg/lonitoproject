@@ -283,5 +283,14 @@ namespace Entities
             ClientesCAD cliCAD = new ClientesCAD();
             return cliCAD.getPuntuacionEsp(cliId, espId);
         }
+
+        #region Made In Lirio 
+
+        public bool ActualizaCliente(ClientesEN cliente, int id)
+        {
+            return cad_cliente.ActualizaCliente(cliente,id);
+        }
+
+        #endregion
     }
 }
