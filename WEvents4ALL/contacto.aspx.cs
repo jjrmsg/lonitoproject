@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using Entities;
+using System.Collections;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace WEvents4ALL
 {
@@ -12,21 +14,38 @@ namespace WEvents4ALL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session.Count > 0)
+            {
+                ClientesEN cli=new ClientesEN();
+                DataSet ds = new DataSet();
+                ds = cli.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
+                TextBox1.Text=ds.Tables[0].Rows[0][13].ToString();
+            }
         }   
 
         protected void EventoClick(Object sender, EventArgs e)
         {
             try
             {
-                string idsession = "";
-                /* idsession=Session["NickUsuario"].ToString();*/
+                DataSet ds = new DataSet();
+                string dni = "";
+                string id = "";
+
+                if (Session.Count>0)
+                {
+                    id = Session["IdUsuario"].ToString();
+                    ClientesEN cli = new ClientesEN();
+                    ds = cli.ObtenerUsuarioPorID(id);
+                    dni = ds.Tables[0].Rows[0][5].ToString();
+                }
+
+
                 string tipo = contacto_DropDownList1.SelectedValue.ToString();
                 string texto = TextArea1.Value.ToString();
                 string mail = TextBox1.Text.ToString();
 
                 MensajesEN mensaje = new MensajesEN();
-                mensaje.insertMessageEn(idsession,mail,tipo,texto);
+                mensaje.insertMessageEn(dni, mail, tipo, texto);
 
                 MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
                 mv.ActiveViewIndex = 1;

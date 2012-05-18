@@ -126,7 +126,7 @@ namespace Entities
             return rows;
         }
 
-        public void insertMessage(string nick,string mail,string asunto,string contenido)
+        public void insertMessage(string dni,string mail,string asunto,string contenido)
         {
             BD bd = new BD();
             SqlConnection c = bd.Connect();
@@ -137,8 +137,8 @@ namespace Entities
                     asunto = "'" + asunto + "'";*/
                 string fecha = DateTime.Now.ToShortDateString();
                 c.Open();
-                string insert="insert into Mensaje (Cliente,Asunto,Contenido,Estado,Fecha) values ('1111118D','"+asunto;
-                insert = insert + "','"+contenido+"','1','"+fecha+"');";
+                string insert="insert into Mensaje (Cliente,Asunto,Contenido,Estado,Fecha,email) values ('"+dni+"','"+asunto;
+                insert = insert + "','"+contenido+"','1','"+fecha+"','"+mail+"');";
                 SqlCommand com = new SqlCommand(insert, c);
                 com.ExecuteNonQuery();
             }
