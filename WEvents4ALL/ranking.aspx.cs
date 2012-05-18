@@ -13,14 +13,15 @@ namespace WEvents4ALL
     public partial class ranking : System.Web.UI.Page
     {
         public DataSet resultado = new DataSet();
-        public VentasEN vent = new VentasEN();
+        public VotosEN vot = new VotosEN();
+       
 
         public void Page_Load(object sender, EventArgs e)
         {
             string tipo = Request.QueryString["tipo"];
             if (tipo != "Concierto" && tipo!="Teatro")
                 tipo = "Cine";
-            resultado = vent.ObtenerRankingTipo(tipo);
+            resultado = vot.SacarVotosEn(tipo);
         }
 
     }

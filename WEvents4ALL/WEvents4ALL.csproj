@@ -76,7 +76,6 @@
     <Content Include="logout.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="login.aspx" />
-    <Content Include="pruebamaps.aspx" />
     <Content Include="ranking.aspx" />
     <Content Include="registro.aspx" />
     <Content Include="index.aspx" />
@@ -160,13 +159,6 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="pruebamaps.aspx.cs">
-      <DependentUpon>pruebamaps.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pruebamaps.aspx.designer.cs">
-      <DependentUpon>pruebamaps.aspx</DependentUpon>
     </Compile>
     <Compile Include="ranking.aspx.cs">
       <DependentUpon>ranking.aspx</DependentUpon>

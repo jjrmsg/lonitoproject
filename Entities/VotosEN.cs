@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Entities
 {
@@ -16,6 +17,12 @@ namespace Entities
         {
             VotosCAD votCAD = new VotosCAD();
             return votCAD.setVoto(user, esp, nota);
+        }
+
+        public DataSet SacarVotosEn(string tipo)
+        {
+            VotosCAD votCAD = new VotosCAD();
+            return votCAD.SacarVotosCAD(tipo);
         }
     }
 }

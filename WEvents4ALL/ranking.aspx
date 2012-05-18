@@ -34,7 +34,8 @@
         <%
         string titulo = "";
         string id = "";
-       int ventas=0;
+       int numVotos=0;
+       int nota;
        int cont=0;
        Response.Write("<ul class=\"rank_lista\">");
 
@@ -45,15 +46,16 @@
                if (cont < 5)
                {
                    titulo = da[0].ToString();
-                   ventas = Convert.ToInt16(da[2].ToString());
+                   numVotos = Convert.ToInt16(da[2].ToString());
+                   nota = Convert.ToInt16(da[3].ToString());
                    Response.Write("<li class=\"rank_fila\">");
                    id = da[1].ToString();
                    %>
-                   <img class="rank_img" alt="<%= titulo %>" src="utilidades/img_esp.aspx?id=<%=da["IDEspectaculo"].ToString()%>" />
+                   <img class="rank_img" alt="<%= titulo %>" src="utilidades/img_esp.aspx?id=<%=id%>" />
                    <%        
 
-                       Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id=" + id + "\">" + titulo + "</a><span class=\"rank_nota\">(" + ventas + " votos)");
-                       switch(ventas/5){
+                       Response.Write("<p class=\"rank_tit\"><a href=\"espectaculo.aspx?id=" + id + "\">" + titulo + "</a><span class=\"rank_nota\">(" + numVotos + " votos)");
+                       switch(nota){
                            case 0: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i></span></p>");
                                break;
                            case 1: Response.Write("<i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star-empty\"></i><i class=\"icon-star\"></i></span></p>");

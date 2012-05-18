@@ -76,5 +76,36 @@ namespace Entities
             }
             return afectadas;
         }
+
+        public DataSet SacarVotosCAD(String tipo)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            DataSet datos = null;
+            String comando = "select e.Titulo,e.IDEspectaculo,count(*),avg(v.nota) nota from Votos v, Espectaculo e,Sala s, ReservaSala x  where ";
+            comando = comando + "v.idEspectaculo=e.IDEspectaculo and s.NumSala=x.IDSala and x.IDEspectaculo=e.IDEspectaculo and s.tipo='"+tipo;
+            comando = comando + "' group by e.Titulo,e.IDEspectaculo order by nota desc";
+
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando, conn);
+                datos = new DataSet();
+                sqlAdaptador.Fill(datos);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+
+            }
+            return datos;
+        }
     }
 }
