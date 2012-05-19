@@ -96,7 +96,7 @@ namespace WEvents4ALL
                     else
                         nvCliente.Sexo = -1;
 
-                    HttpPostedFile imagen = foto.PostedFile;
+                    //nvCliente.Foto = System.Drawing.Image.FromFile(foto.FileName);
 
 
                     if (!nvCliente.ActualizaCliente(nvCliente, Convert.ToInt32(Session["IdUsuario"].ToString())))

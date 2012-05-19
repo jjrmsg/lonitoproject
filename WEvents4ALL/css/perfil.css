@@ -1,7 +1,21 @@
 ﻿body {
 }
 
+.label_perfil
+{
+    text-align:left;
+    padding-top:0px;
+    float: left;
+    width: 140px;
+}
+
 #botonFoto
 {
-    margin-left: 17px;
+    margin-left: 18px;
+}
+
+#imgUsuario
+{
+    width:200px;
+    height:200px;
 }

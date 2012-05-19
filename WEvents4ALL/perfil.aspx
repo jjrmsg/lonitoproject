@@ -30,13 +30,14 @@
                         <!-- Seccion Foto --> 
                         <div class="span3" id="fotico">
                             <div class="thumbnail">
+                            <div class="caption" id="botonFoto">
                             <%
                                 try
                                 {
                                     System.Data.DataRow usuario = perfilCliente.Tables[0].Rows[0];
                                     
                                     %>
-                                    <img class="pull-right"  style="clear: both" 
+                                    <img   style="clear: both" 
                                         id="imgUsuario" 
                                         src="utilidades/img_user.aspx?id=<%=usuario["idCliente"].ToString()%>" 
                                         alt="<%=usuario["Nombre"].ToString()%>" 
@@ -44,16 +45,15 @@
                                 <% }
                                 catch
                                 { %>
-                                    <img class="pull-right"  style="clear: both" src="/img/foto_usuario_defecto.jpg" alt="No se ha podido cargar la imagen">
+                                    <img   style="clear: both" src="/img/foto_usuario_defecto.jpg" alt="No se ha podido cargar la imagen">
                                 <% } %>
-                                <div class="caption" id="botonFoto">
+                                
                                     <h5>
                                     <i class="icon-picture"></i>
                                         Cambiar Foto
                                     </h5>
                                     <p>
-                                        <asp:FileUpload ID="foto" runat="server" />
-                                        <input type="file" name="foto_usuario" class="btn btn-mini" />
+                                        <asp:FileUpload ID="foto" Width="200px" CssClass="btn btn-mini" runat="server" />
                                     </p>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                         <div class="span3" id="datos_izquierda_1">
                             <!-- Nombre --> 
                             <div class="control-group" >
-                                <label class="control-label">Nombre :</label>
+                                <label class="label_perfil">Nombre :</label>
                                 <span class="rank_help-inline"> *Nombre Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Nombre" runat="server" />
@@ -71,7 +71,7 @@
                             </div>
                             <!-- NIF --> 
                             <div class="control-group">
-                                <label class="control-label">NIF :</label>
+                                <label class="label_perfil">NIF :</label>
                                 <span class="rank_help-inline"> *NIF inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_NIF" runat="server" />
@@ -79,7 +79,7 @@
                             </div>
                             <!-- Pais -->
                             <div class="control-group">
-                                <label class="control-label" >País de Residencia :</label>
+                                <label class="label_perfil" >País de Residencia :</label>
                                 <br />
                                 <asp:DropDownList ID="DropDownList_Pais" CssClass="datos_entrada" runat="server">
                                     <asp:ListItem></asp:ListItem>
@@ -296,7 +296,7 @@
                             </div>
                             <!-- Localidad -->
                             <div class="control-group">
-                                <label class="control-label">Localidad :</label>
+                                <label class="label_perfil">Localidad :</label>
                                 <span class="rank_help-inline"> *Localidad Inválida.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Localidad" runat="server" />
@@ -304,7 +304,7 @@
                             </div>
                             <!-- Domicilio -->
                             <div class="control-group">
-                                <label class="control-label">Domicilio :</label>
+                                <label class="label_perfil">Domicilio :</label>
                                 <span class="rank_help-inline"> *Domicilio Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Domicilio" runat="server" />
@@ -312,7 +312,7 @@
                             </div>
                             <!-- Telefono -->    
                             <div class="control-group">
-                                <label class="control-label">Teléfono :</label>
+                                <label class="label_perfil">Teléfono :</label>
                                 <span class="rank_help-inline"> *Teléfono Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Telefono" runat="server" />
@@ -320,7 +320,7 @@
                             </div>
                             <!-- Sexo -->    
                             <div class="control-group">
-                                <label class="control-label">Sexo :</label>
+                                <label class="label_perfil">Sexo :</label>
                                 <br />
                                 <asp:DropDownList ID="DropDownList_Sexo" runat="server" CssClass="datos_entrada">
                                     <asp:ListItem></asp:ListItem>
@@ -334,7 +334,7 @@
                         <div class="span3" id="datos_derecha_1">
                             <!-- Apellidos -->
                             <div class="control-group">
-                                <label class="control-label">Apellidos :</label>
+                                <label class="label_perfil">Apellidos :</label>
                                 <span class="rank_help-inline"> *Apellidos Inválidos.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Apellido" runat="server" />
@@ -342,7 +342,7 @@
                             </div>
                             <!-- Fecha de Nacimiento -->
                             <div class="control-group">
-                                <label class="control-label">Fecha de Nacimiento :</label>
+                                <label class="label_perfil">Fecha de Nacimiento :</label>
                                 <span class="rank_help-inline"> *Fecha con formato incorrecto. MM/DD/YYYY.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_FN" runat="server" />
@@ -350,7 +350,7 @@
                             </div>
                             <!-- Provincia -->
                             <div class="control-group">
-                                <label class="control-label">Provincia :</label>
+                                <label class="label_perfil">Provincia :</label>
                                 <br />
                                 <asp:DropDownList ID="DropDownList_Prov" runat="server"  CssClass="datos_entrada">
 			                        <asp:ListItem></asp:ListItem> 			
@@ -410,7 +410,7 @@
                             </div>
                             <!-- CP -->
                             <div class="control-group">
-                                <label class="control-label">Código Postal :</label>
+                                <label class="label_perfil">Código Postal :</label>
                                 <span class="rank_help-inline"> *Codigo Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_CP" runat="server" />
@@ -418,7 +418,7 @@
                             </div>
                             <!-- Mail -->
                             <div class="control-group">
-                                <label class="control-label">Correo Electrónico :</label>
+                                <label class="label_perfil">Correo Electrónico :</label>
                                 <span class="rank_help-inline"> *Correo Inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Mail" runat="server" />
@@ -426,7 +426,7 @@
                             </div>
                             <!-- Movil -->
                             <div class="control-group">
-                                <label class="control-label">Móvil :</label>
+                                <label class="label_perfil">Móvil :</label>
                                 <span class="rank_help-inline"> *Móvil inválido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_Movil" runat="server" />
@@ -441,7 +441,7 @@
                         <br />
                         <div class="span3">
                             <div class="control-group">
-                                <label class="control-label">Nueva Contraseña :</label>
+                                <label class="label_perfil">Nueva Contraseña :</label>
                                 <span class="rank_help-inline"> *No Válido.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_PASS_3" runat="server" TextMode="Password"/>
@@ -450,7 +450,7 @@
                         </div>
                         <div class="span3">
                             <div class="control-group">
-                                <label class="control-label">Contraseña anterior :</label>
+                                <label class="label_perfil">Contraseña anterior :</label>
                                 <span class="rank_help-inline"> *No Coinciden.</span>
                                 <br />
                                 <asp:TextBox ID="TextBox_PASS_1" runat="server" TextMode="Password"/>
@@ -459,7 +459,7 @@
                         </div>
                         <div class="span3">
                             <div class="control-group">
-                                <label class="control-label">Repita contraseña :</label>
+                                <label class="label_perfil">Repita contraseña :</label>
                                 <br />
                                 <asp:TextBox ID="TextBox_PASS_2" runat="server" TextMode="Password"/>
                                 <br />
@@ -477,7 +477,7 @@
             </div>
         <!-- Pestaña Historial --> 
             <div class="tab-pane" id="tabCompras">
-                <asp:Label CssClass="labels" ID="Label1" runat="server" Text="Prueba de Funcionamiento :D - Pene" ></asp:Label>
+                <asp:Label CssClass="labels" ID="Label1" runat="server" Text="En obras..." ></asp:Label>
             </div>
         </div> 
     </div>
