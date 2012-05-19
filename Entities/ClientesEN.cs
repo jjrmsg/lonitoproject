@@ -291,6 +291,11 @@ namespace Entities
             return cad_cliente.ActualizaCliente(cliente,id);
         }
 
+        public bool VerificaPassCliente(string pass, int id)
+        {
+            return cad_cliente.VerificaPassCliente(pass,id);
+        }
+
         #endregion
     }
 }

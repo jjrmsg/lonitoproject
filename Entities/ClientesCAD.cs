@@ -454,7 +454,6 @@ namespace Entities
                 string sql = "UPDATE Cliente SET ";
                 sql = sql + "Nombre = '" + nuevoCL.Nombre + "'";
                 sql = sql + ", Apellidos = '" + nuevoCL.Apellidos + "'";
-                sql = sql + ", Usuario = '" + nuevoCL.Nick + "'";
                 sql = sql + ", NIF = '" + nuevoCL.DNI + "'";
                 sql = sql + ", FechaNac = '" + fecha + "'";
                 sql = sql + ", Poblacion = '" + nuevoCL.Localidad + "'";
@@ -469,7 +468,7 @@ namespace Entities
                     sql = sql + ", Sexo = " + nuevoCL.Sexo;
                 if (nuevoCL.Password != "")
                     sql = sql + ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
-                //string set14 = ", Foto = @pic";
+                sql = sql + ", Foto = @pic";
                 sql = sql + "WHERE idCliente='" + id + "'";
 
                 System.Diagnostics.Debug.Write(sql);
@@ -494,6 +493,39 @@ namespace Entities
             }
 
             return error;
+        }
+
+        public bool VerificaPassCliente(string pass, int id)
+        {
+            bool concuerda = false;
+
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+
+            try
+            {
+                c.Open();
+
+                SqlCommand com = new SqlCommand("select Pass from Cliente where idCliente='" + id + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+
+                dr.Read();
+
+                string passCod = SHA1helper.Compute(pass);
+
+                if (passCod == dr[0].ToString())
+                    concuerda = true;
+
+                dr.Close();
+            }
+            catch
+            { }
+            finally
+            {
+                c.Close();
+            }
+
+            return concuerda;
         }
 
         #endregion

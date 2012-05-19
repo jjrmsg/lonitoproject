@@ -30,13 +30,29 @@
                         <!-- Seccion Foto --> 
                         <div class="span3" id="fotico">
                             <div class="thumbnail">
-                                <img src="/img/foto_usuario_defecto.jpg" alt="Avatar del Usuario">
+                            <%
+                                try
+                                {
+                                    System.Data.DataRow usuario = perfilCliente.Tables[0].Rows[0];
+                                    
+                                    %>
+                                    <img class="pull-right"  style="clear: both" 
+                                        id="imgUsuario" 
+                                        src="utilidades/img_user.aspx?id=<%=usuario["idCliente"].ToString()%>" 
+                                        alt="<%=usuario["Nombre"].ToString()%>" 
+                                        title="Foto de <%=usuario["Nombre"].ToString()%>" />
+                                <% }
+                                catch
+                                { %>
+                                    <img class="pull-right"  style="clear: both" src="/img/foto_usuario_defecto.jpg" alt="No se ha podido cargar la imagen">
+                                <% } %>
                                 <div class="caption" id="botonFoto">
                                     <h5>
                                     <i class="icon-picture"></i>
                                         Cambiar Foto
                                     </h5>
                                     <p>
+                                        <asp:FileUpload ID="foto" runat="server" />
                                         <input type="file" name="foto_usuario" class="btn btn-mini" />
                                     </p>
                                 </div>

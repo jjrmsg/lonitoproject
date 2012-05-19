@@ -13,24 +13,27 @@ namespace WEvents4ALL
 {
     public partial class perfil : System.Web.UI.Page
     {
-        ClientesEN cliente;
-        DataSet perfilCliente = new DataSet();
-        Validaciones valida;
-        string nick;
+        public ClientesEN cliente;
+        public DataSet perfilCliente = new DataSet();
+        public Validaciones valida;
+        public string nick;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             cliente = new ClientesEN();
-
+            
             // obtengo los datos del cliente bastardo
             if (Session["IdUsuario"] != null)
+            {
                 perfilCliente = cliente.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
+            }
             else
                 Response.Redirect("index.aspx");
-            
+            System.Diagnostics.Debug.Write("\nPage_Load");
 
-            // Relleno los datos del cliente a partir del DataSet recibido.
-            RellenaDatos();
+            // Relleno los datos del cliente si es la primera vez que accede, a partir del DataSet recibido.
+            if (TextBox_Nombre.Text == "" && TextBox_Apellido.Text == "" && TextBox_NIF.Text == "" && TextBox_FN.Text == "")
+                RellenaDatos();
         }
 
         // Valida los datos :
@@ -38,72 +41,77 @@ namespace WEvents4ALL
         // 2 - Si es un Fail, ya vere...
         protected void bGuardar_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.Write("\nbGuardar " + TextBox_Nombre.Text);
+
             bool error = false;
             // 0 = Desconocido // 1 = datos // 2 = pass. No coinciden // 3 = La contraseña no es correta // 4 = nose ha almacenado
             int tipoE = 0;
             // se usara para realizar el cambio.
             string contrasena = "";
 
-            if (ValidaDatos())
+            if (ValidaCampos())
             {
                 // Ahora pasamos a comprobar si la contraseña es correcta
-                if (TextBox_PASS_3.Text != "" && TextBox_PASS_2.Text != "" && TextBox_PASS_1.Text != "" &&
-                   (TextBox_PASS_2.Text == TextBox_PASS_1.Text)) // si no estan vacios y son iguales
+                if (TextBox_PASS_3.Text != "" && TextBox_PASS_2.Text != "" && TextBox_PASS_1.Text != "") 
                 {
-                    DataSet pass = cliente.ExisteUsuarioNickPass(nick, TextBox_PASS_2.Text);
-
-                    try
+                    if (TextBox_PASS_2.Text != TextBox_PASS_1.Text)
                     {
-                        DataRow usuario = pass.Tables[0].Rows[0];
-                        nick = usuario["Usuario"].ToString();
-
-                        contrasena = TextBox_PASS_3.Text;
+                        tipoE = 2;
+                        error = true;
+                        contrasena = "";
                     }
-                    catch
+                    else if (!cliente.VerificaPassCliente(TextBox_PASS_2.Text, Convert.ToInt32(Session["IdUsuario"].ToString())))
                     {
                         tipoE = 3;
                         error = true;
                         contrasena = "";
                     }
+                    else
+                        contrasena = TextBox_PASS_3.Text;
                 }
                     
                 // Si no se modifica la contraseña, pasaremos a actualiar el cliente en la BD
-
-                ClientesEN nvCliente = new ClientesEN();
-                
-                nvCliente.DNI = TextBox_NIF.Text;
-                nvCliente.Nombre = TextBox_Nombre.Text;
-                nvCliente.Apellidos = TextBox_Apellido.Text;
-                nvCliente.Pais = DropDownList_Pais.Text;
-                nvCliente.Provincia = DropDownList_Prov.Text;
-                nvCliente.Localidad = TextBox_Localidad.Text;
-                nvCliente.Domicilio = TextBox_Domicilio.Text;
-                nvCliente.CP = TextBox_CP.Text;
-                nvCliente.Telefono = TextBox_Telefono.Text;
-                nvCliente.Movil = TextBox_Movil.Text;
-                nvCliente.Mail = TextBox_Mail.Text;
-                nvCliente.Fecha = Convert.ToDateTime(TextBox_FN.Text);
-                nvCliente.Password = contrasena;
-
-                if (DropDownList_Sexo.Text == "Hombre")
-                    nvCliente.Sexo = 0;
-                else if (DropDownList_Sexo.Text == "Mujer")
-                    nvCliente.Sexo = 1;
-                else
-                    nvCliente.Sexo = -1;
-
-                if (!nvCliente.ActualizaCliente(nvCliente, Convert.ToInt32(Session["IdUsuario"].ToString())))
+                if (!error)
                 {
-                    error = true;
-                    tipoE = 4;
-                }
-                // Si todo va bien....
-                else
-                {
-                    MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
-                    mv.ActiveViewIndex = 1;
-                    perfilCliente = cliente.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
-                    RellenaDatos();
+                    ClientesEN nvCliente = new ClientesEN();
+
+                    nvCliente.DNI = TextBox_NIF.Text;
+                    nvCliente.Nombre = TextBox_Nombre.Text;
+                    nvCliente.Apellidos = TextBox_Apellido.Text;
+                    nvCliente.Pais = DropDownList_Pais.Text;
+                    nvCliente.Provincia = DropDownList_Prov.Text;
+                    nvCliente.Localidad = TextBox_Localidad.Text;
+                    nvCliente.Domicilio = TextBox_Domicilio.Text;
+                    nvCliente.CP = TextBox_CP.Text;
+                    nvCliente.Telefono = TextBox_Telefono.Text;
+                    nvCliente.Movil = TextBox_Movil.Text;
+                    nvCliente.Mail = TextBox_Mail.Text;
+                    nvCliente.Fecha = Convert.ToDateTime(TextBox_FN.Text);
+                    nvCliente.Password = contrasena;
+
+                    if (DropDownList_Sexo.Text == "Hombre")
+                        nvCliente.Sexo = 0;
+                    else if (DropDownList_Sexo.Text == "Mujer")
+                        nvCliente.Sexo = 1;
+                    else
+                        nvCliente.Sexo = -1;
+
+                    HttpPostedFile imagen = foto.PostedFile;
+
+
+                    if (!nvCliente.ActualizaCliente(nvCliente, Convert.ToInt32(Session["IdUsuario"].ToString())))
+                    {
+                        error = true;
+                        tipoE = 4;
+                    }
+                    // Si todo va bien....
+                    else
+                    {
+                        MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                        mv.ActiveViewIndex = 1;
+                        perfilCliente = cliente.ObtenerUsuarioPorID(Session["IdUsuario"].ToString());
+                        RellenaDatos();
+                    }
                 }
             }
             else
@@ -135,7 +143,7 @@ namespace WEvents4ALL
                         break;
                     case 3:
                         lbTitle.Text = "3 - Ocurrió un Error.";
-                        lbMsg.Text = "La no es correcta. Vuelva a intentarlo.";
+                        lbMsg.Text = "La contraseña anterior no es correcta. Vuelva a intentarlo.";
                         break;
                     case 4:
                         lbTitle.Text = "4 - Ocurrió un Error.";
@@ -150,30 +158,6 @@ namespace WEvents4ALL
         {
             // Restauro los datos a partir del DataSet de la carga.
             RellenaDatos();
-        }
-
-        // Valida los datos y establece los mensajes de error pertinentes en la pagina.
-        // Retorna un booleano si son correctos o no.
-        protected bool ValidaDatos()
-        {
-            valida = new Validaciones();
-            bool error = false;
-
-            error = ValidaCampos();
-
-            // Esto se producira cuando algun campo del formulario sea erroneo
-            // javascript ha fallado
-            if (error)
-            {
-                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
-                mv.ActiveViewIndex = 0;
-                Label lbTitle = (Label)Master.FindControl("errorViewTitle");
-                Label lbMsg = (Label)Master.FindControl("errorViewMsg");
-                lbTitle.Text = "Ocurrió un error";
-                lbMsg.Text = "Ha surgido un error. Vuelva a intentarlo más tarde.";
-            }
-
-            return error;
         }
 
         // Rellena los datos a partir del DataSet de la carga.
@@ -237,62 +221,102 @@ namespace WEvents4ALL
 
         #region Validacion de Datos
 
-        string patronNombre = @"^[a-zA-Z]*\w*$";
-        string patronTelefono = @"^\d{9}$";
+        string patronNombre = @"[a-zA-Z\s]{3,50}";
+        string patronTelefono = @"\d{9}";
         string patronFecha = @"^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$";
         string patronCP = @"^\d{5}$";
         string patronMail = @"^(.+\@.+\..+)$";
         string patronPass = @"^([a-zA-Z0-9]{3,50})$";
 
-        // Comprueba todos los booleanos de los campos, y si alguno falla, devuelve error
+        // Valida los datos y establece los mensajes de error pertinentes en la pagina.
+        // Retorna un booleano si son correctos o no.
         private bool ValidaCampos()
         {
             bool error = true;
             // 13 campos
-
+            
             #region Columna Izquierda
                 // Nombre
-                if (!CompruebaTexto(TextBox_Nombre.Text))
+                if (!Regex.Match(TextBox_Nombre.Text, patronNombre).Success)
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail nombre - " + TextBox_Nombre.Text);
+                }
                 // NIF
                 if (!CompruebaNif(TextBox_NIF.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail nif");
+                }
                 // Pais
                 if (DropDownList_Pais.Text == "")
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail pais");
+                }
                 // Localidad
-                if (!CompruebaTexto(TextBox_Localidad.Text))
+                if (!Regex.Match(TextBox_Localidad.Text, patronNombre).Success)
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail localidad - " + TextBox_Localidad.Text);
+                }
                 // Domicilio
-                if (!CompruebaTexto(TextBox_Domicilio.Text))
+                if (!Regex.Match(TextBox_Domicilio.Text, patronNombre).Success)
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail direccion");
+                }
                 // Telefono
-                if (!CompruebaTexto(TextBox_Telefono.Text))
+                if (!Regex.Match(TextBox_Telefono.Text, patronTelefono).Success)
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail telefono");
+                }
                 // Sexo
                 if (!CompruebaSexo(DropDownList_Sexo.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail sex");
+                }
             #endregion
-
+                
             #region Columna Derecha
                 // Apellidos
-                if (!CompruebaTexto(TextBox_Apellido.Text))
+                if (!Regex.Match(TextBox_Apellido.Text, patronNombre).Success)
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail apellido");
+                }
                 // Fecha
                 if (!CompruebaFecha(TextBox_FN.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail fecha");
+                }
                 // Provincia
                 if (DropDownList_Prov.Text == "")
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail provincia");
+                }
                 // CP
                 if (!CompruebaCP(TextBox_CP.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail CP");
+                }
                 // Mail
                 if (!CompruebaMail(TextBox_Mail.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail mail");
+                }
                 // Movil
-                if (!CompruebaTexto(TextBox_Movil.Text))
+                if (!CompruebaNumero(TextBox_Movil.Text))
+                {
                     error = false;
+                    System.Diagnostics.Debug.Write("\nFail movil");
+                }
             #endregion
 
             #region Pass
@@ -310,43 +334,22 @@ namespace WEvents4ALL
             return error;
         }
 
-        private bool CompruebaTexto(string texto)
-        {
-            if (!Regex.Match(texto, patronNombre).Success)
-            {
-                //errorProvider1.SetError(labelNombreCliente, "Nombre incorrecto");
-                return false;
-            }
-
-            else if (texto == "")
-            {
-                //errorProvider1.SetError(labelNombreCliente, "Debe rellenar el nombre");
-                return false;
-            }
-            else
-            {
-                //errorProvider1.SetError(labelNombreCliente, String.Empty);
-                return true;
-            }
-        }
-
         private bool CompruebaNif(string texto)
         {
+            valida = new Validaciones();
+
             if (!valida.CompruebaNIF(texto))
             {
-                //errorProvider1.SetError(labelNifCliente, "NIF incorrecto");
                 return false;
             }
 
             else if (texto == "")
             {
-                //errorProvider1.SetError(labelNifCliente, "Debe rellenar el NIF");
                 return false;
             }
 
             else
-                //errorProvider1.SetError(labelNifCliente, String.Empty);
-            return true;
+                return true;
         }
 
         private bool CompruebaMail(string texto)
