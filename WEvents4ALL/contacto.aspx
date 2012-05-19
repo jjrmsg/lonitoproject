@@ -18,7 +18,7 @@
         <textarea id="TextArea1" rows="30" cols="80" class="contact_textarea" runat=server></textarea>
      </div><br />
         <asp:Button ID="bot_enviar" runat="server" Text="Enviar" 
-        CssClass="contact_bot_enviar" OnClick="EventoClick" />
+        CssClass="btn btn-primary" OnClick="EventoClick"  />
         
         <script>
             $(document).ready(function () {

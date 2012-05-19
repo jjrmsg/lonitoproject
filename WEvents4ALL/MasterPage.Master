@@ -20,6 +20,7 @@
     <link rel="Stylesheet" type="text/css" href="css/perfil.css" />
     <link rel="Stylesheet" type="text/css" href="css/espectaculo.css" />
     <link rel="Stylesheet" type="text/css" href="css/acercade.css" />
+    <link rel="Stylesheet" type="text/css" href="css/busquedaAvanzada.css" />
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>

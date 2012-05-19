@@ -54,7 +54,9 @@
     <Content Include="api\esp_vote.aspx" />
     <Content Include="api\esp_suggest.aspx" />
     <Content Include="api\sala_data.aspx" />
+    <Content Include="busquedaAvanzada.aspx" />
     <Content Include="css\acercade.css" />
+    <Content Include="css\busquedaAvanzada.css" />
     <Content Include="css\cartelera.css" />
     <Content Include="css\contacto.css" />
     <Content Include="css\espectaculo.css" />
@@ -110,6 +112,13 @@
     </Compile>
     <Compile Include="api\sala_data.aspx.designer.cs">
       <DependentUpon>sala_data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="busquedaAvanzada.aspx.cs">
+      <DependentUpon>busquedaAvanzada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busquedaAvanzada.aspx.designer.cs">
+      <DependentUpon>busquedaAvanzada.aspx</DependentUpon>
     </Compile>
     <Compile Include="contacto.aspx.cs">
       <DependentUpon>contacto.aspx</DependentUpon>

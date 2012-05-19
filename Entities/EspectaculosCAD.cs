@@ -435,5 +435,36 @@ namespace Entities
             }
             return bdvirtual;
         }
+
+        public DataSet ObtenerEspectaculoBusAV(string tipo,string fechaini, string fechafin, string nombre)
+        {
+            BD bd = new BD();
+            SqlConnection c = bd.Connect();
+            DataSet resultado = new DataSet();
+            try
+            {
+                c.Open();
+                SqlDataAdapter da;
+                string cadena = "select e.Titulo, e.IDEspectaculo, e.FechaIni, e.FechaFin from Ventas v, Espectaculo e, Sala s, ReservaSala rs where s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo ";
+
+                if (tipo != "")
+                    cadena = cadena + "and s.tipo='"+tipo+"' ";
+                if (nombre != "")
+                    cadena = cadena + "and e.Titulo LIKE '%"+nombre+"%' ";
+
+                cadena = cadena + " group by e.Titulo, e.IDEspectaculo,e.FechaIni, e.FechaFin order by e.Titulo ASC";
+                da = new SqlDataAdapter(cadena, c);
+                da.Fill(resultado);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                c.Close();
+            }
+            return resultado;
+        }
     }
 }

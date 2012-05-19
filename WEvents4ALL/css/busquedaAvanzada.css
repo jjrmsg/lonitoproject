@@ -1,0 +1,24 @@
+﻿body {
+}
+.bus_av_label
+{
+    float:left;
+    position:relative;
+    
+    display:block;
+    width:150px;
+}
+
+.bus_av_imput
+{
+    width:150px;
+}
+
+.bus_av_imput_date
+{
+    margin-right:0px;
+}
+.icon-th
+{
+    margin-right:0px;
+}

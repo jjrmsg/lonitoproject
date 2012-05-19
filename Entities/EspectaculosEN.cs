@@ -118,5 +118,10 @@ namespace Entities
             EspectaculosCAD vCAD = new EspectaculosCAD();
             return vCAD.ObtenerEspectaculoPorTipo(tipo);
         }
+        public DataSet ObtenerEspectaculoBuscAv(string tipo, string fechaini, string fechafin, string nombre)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.ObtenerEspectaculoBusAV(tipo,fechaini,fechafin,nombre);
+        }
     }
 }
