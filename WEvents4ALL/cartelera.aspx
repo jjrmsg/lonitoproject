@@ -32,7 +32,7 @@
 
         <%try{
             foreach(System.Data.DataRow r in resultado.Tables[0].Rows) {
-                //if (System.DateTime.Now < Convert.ToDateTime(r["FechaFin"]))
+                if (System.DateTime.Now < Convert.ToDateTime(r["FechaFin"]))
                 {%>
                     <div class="well" id="caixaContenidora">
                         <div class="row">
