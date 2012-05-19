@@ -28,6 +28,12 @@
     margin-bottom: 2px;   
 }
 
+#progress-count
+{
+    background-color: #0099FF;
+    height: 100%;   
+}
+
 .direccion
 {
     display:block;
@@ -42,4 +48,14 @@
 .telefonos input
 {
     margin-right: 2px;
+}
+
+.barraProceso
+{
+    background-color: White;
+    border: 1px solid #CCCCCC;
+    height: 16px;
+    padding: 2px;
+    margin-bottom: 7px;
+    
 }
