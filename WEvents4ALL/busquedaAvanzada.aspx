@@ -17,12 +17,12 @@
     <p>
         <span class="bus_av_label">Fecha inicio </span>
 			  <div class="input-append date" id="bus_av_dp1" data-date="01-01-2012" data-date-format="dd-mm-yyyy">
-				<input class="span2" size="16" type="text" value="01-01-2012">
+				<input class="span2" size="16" type="text" value="01-01-2012" id="fechaini" runat="server" readonly>
 				<span class="add-on"><i class="icon-th"></i></span>
 			  </div><br />
                 <span class="bus_av_label">Fecha fin </span>
         <div class="input-append date" id="bus_av_dp2" data-date="31-12-2012" data-date-format="dd-mm-yyyy">
-          <input class="span2" size="16" type="text" value="31-12-2012" >
+          <input class="span2" size="16" type="text" value="31-12-2012" id="fechafin" runat="server" readonly>
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
     </p>

@@ -436,16 +436,31 @@ namespace Entities
             return bdvirtual;
         }
 
-        public DataSet ObtenerEspectaculoBusAV(string tipo,string fechaini, string fechafin, string nombre)
+        public DataSet ObtenerEspectaculoBusAV(string tipo,string fini, string ffin, string nombre)
         {
             BD bd = new BD();
             SqlConnection c = bd.Connect();
             DataSet resultado = new DataSet();
             try
             {
+                string fechaIni = fini.ToString();
+                string anyo = "" + fechaIni[6] + fechaIni[7] + fechaIni[8] + fechaIni[9];
+                string mes = "" + fechaIni[3] + fechaIni[4];
+                string dia = "" + fechaIni[0] + fechaIni[1];
+                fechaIni = anyo + '/' + mes + '/' + dia;
+                string fechaFin = ffin.ToString();
+                string anyofin = "" + fechaFin[6] + fechaFin[7] + fechaFin[8] + fechaFin[9];
+                string mesfin = "" + fechaFin[3] + fechaFin[4];
+                string diafin = "" + fechaFin[0] + fechaFin[1];
+                fechaFin = anyofin + '/' + mesfin + '/' + diafin;
+
+
                 c.Open();
                 SqlDataAdapter da;
                 string cadena = "select e.Titulo, e.IDEspectaculo, e.FechaIni, e.FechaFin from Ventas v, Espectaculo e, Sala s, ReservaSala rs where s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo ";
+
+                cadena = cadena + " and (('" + fechaFin + "'>=e.FechaFin and '" + fechaIni + "'<=e.FechaFin) or ('";
+                cadena = cadena + fechaIni + "'<=e.FechaIni and '" + fechaFin + "'>=e.FechaIni)) ";
 
                 if (tipo != "")
                     cadena = cadena + "and s.tipo='"+tipo+"' ";

@@ -19,13 +19,16 @@ namespace WEvents4ALL
         protected void Page_Load(object sender, EventArgs e)
         {
             fechahoy =DateTime.Now.ToShortTimeString();
-            Application["fechahoy"]=fechahoy;
+
         }
 
         protected void EventoClick_bus_av(Object sender, EventArgs e)
         {
             resultado = new DataSet();
-            resultado = esEN.ObtenerEspectaculoBuscAv(DropDownList1.Text, "", "", TextBox1.Text);
+            string fechai = fechaini.Value.ToString();
+            string fechaf = fechafin.Value.ToString();
+
+            resultado = esEN.ObtenerEspectaculoBuscAv(DropDownList1.Text, fechai,fechaf, TextBox1.Text);
         }
     }
 }

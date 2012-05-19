@@ -7,6 +7,7 @@ using Entities;
 using System.Collections;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace WEvents4ALL
 {
@@ -31,6 +32,7 @@ namespace WEvents4ALL
                 string dni = "";
                 string id = "";
 
+                //Caso de que usuario este iniciado le cargamos el mail que facilito en el registro
                 if (Session.Count>0)
                 {
                     id = Session["IdUsuario"].ToString();
@@ -44,15 +46,19 @@ namespace WEvents4ALL
                 string texto = TextArea1.Value.ToString();
                 string mail = TextBox1.Text.ToString();
 
-                MensajesEN mensaje = new MensajesEN();
-                mensaje.insertMessageEn(dni, mail, tipo, texto);
+                //validacion en el lado del servidor
+                if (valido(tipo,mail) == true)
+                {
+                    MensajesEN mensaje = new MensajesEN();
+                    mensaje.insertMessageEn(dni, mail, tipo, texto);
 
-                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
-                mv.ActiveViewIndex = 1;
-                Label lbTitle = (Label)Master.FindControl("successViewTitle");
-                Label lbMsg = (Label)Master.FindControl("successViewMsg");
-                lbTitle.Text = "Enviado";
-                lbMsg.Text = "Su mensaje se envio correctamente";
+                    MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                    mv.ActiveViewIndex = 1;
+                    Label lbTitle = (Label)Master.FindControl("successViewTitle");
+                    Label lbMsg = (Label)Master.FindControl("successViewMsg");
+                    lbTitle.Text = "Enviado";
+                    lbMsg.Text = "Su mensaje se envio correctamente";
+                }
             }
             catch (Exception ex)
             {
@@ -65,5 +71,18 @@ namespace WEvents4ALL
             }
         }
 
+        private bool valido(string tema,string mail)
+        {
+            bool valido = true;
+            string patron = @"^[A-Za-z0-9]+@[A-Za-z]+\.[a-z]{2,4}";
+
+            if (tema == "")
+                valido = false;
+
+            if (!Regex.Match(mail,patron).Success)
+                valido = false;
+
+            return valido;
+        }
     }
 }
