@@ -40,6 +40,12 @@
 
        try
        {
+           if (resultado != null)
+           {
+               int totalfilas = resultado.Tables[0].Rows.Count;
+               if (totalfilas == 0)
+                   Response.Write("<br /><p>No hay resultados para su busqueda</p>");
+           }
            if(resultado!=null)
                foreach (System.Data.DataRow da in resultado.Tables[0].Rows)
                {

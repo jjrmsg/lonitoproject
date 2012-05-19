@@ -460,7 +460,7 @@ namespace Entities
                 string cadena = "select e.Titulo, e.IDEspectaculo, e.FechaIni, e.FechaFin from Ventas v, Espectaculo e, Sala s, ReservaSala rs where s.NumSala=rs.IDSala and e.IDEspectaculo=rs.IDEspectaculo ";
 
                 cadena = cadena + " and (('" + fechaFin + "'>=e.FechaFin and '" + fechaIni + "'<=e.FechaFin) or ('";
-                cadena = cadena + fechaIni + "'<=e.FechaIni and '" + fechaFin + "'>=e.FechaIni)) ";
+                cadena = cadena + fechaIni + "'<=e.FechaIni and '" + fechaFin + "'>=e.FechaIni) or (e.FechaIni<='"+fechaIni+"' and e.FechaFin>='"+fechaFin+"')) ";
 
                 if (tipo != "")
                     cadena = cadena + "and s.tipo='"+tipo+"' ";

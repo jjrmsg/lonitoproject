@@ -47,7 +47,7 @@ namespace WEvents4ALL
                 string mail = TextBox1.Text.ToString();
 
                 //validacion en el lado del servidor
-                if (valido(tipo,mail) == true)
+                if (valido(tipo, mail) == true)
                 {
                     MensajesEN mensaje = new MensajesEN();
                     mensaje.insertMessageEn(dni, mail, tipo, texto);
@@ -58,6 +58,15 @@ namespace WEvents4ALL
                     Label lbMsg = (Label)Master.FindControl("successViewMsg");
                     lbTitle.Text = "Enviado";
                     lbMsg.Text = "Su mensaje se envio correctamente";
+                }
+                else
+                {
+                    MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                    mv.ActiveViewIndex = 0;
+                    Label lbTitle = (Label)Master.FindControl("errorViewTitle");
+                    Label lbMsg = (Label)Master.FindControl("errorViewMsg");
+                    lbTitle.Text = "Ocurrió un error";
+                    lbMsg.Text = "Su mensaje no fue enviado, es incorrecto";
                 }
             }
             catch (Exception ex)
