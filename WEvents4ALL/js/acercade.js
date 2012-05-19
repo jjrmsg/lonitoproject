@@ -8,21 +8,13 @@ function initialize() {
 
     var myLatlng = new google.maps.LatLng(38.270142, -0.686175);
 
-    var myOptions = {
-        zoom: 13,
-        center: new google.maps.LatLng(38.267985, -0.699168),
-        disableDefaultUI: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById('mapa_content'), myOptions);
-
     var myOptions2 = {
-        zoom: 15,
+        zoom: 13,
         center: myLatlng,
         disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    map2 = new google.maps.Map(document.getElementById('mapa_content2'), myOptions2);
+    map2 = new google.maps.Map(document.getElementById('mapa_content'), myOptions2);
     directionsDisplay.setMap(map2);
     directionsDisplay.setOptions({ suppressMarkers: true });
 
@@ -30,7 +22,7 @@ function initialize() {
         position: myLatlng,
         map: map2,
         title: "Events4All",
-        icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-eda11d/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/theater.png'
+        icon: 'img/layout/theater.png'
     });
 
 
@@ -51,7 +43,7 @@ function initialize() {
                     position: initialLocation,
                     map: map2,
                     title: "Tu",
-                    icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-ffc11f/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/male-2.png'
+                    icon: 'img/layout/user.png'
                 });
                 var request = {
                     origin: start,
@@ -83,7 +75,7 @@ function initialize() {
                     position: initialLocation,
                     map: map2,
                     title: "Tu",
-                    icon: 'http://mapicons.nicolasmollet.com/wp-content/uploads/mapicons/shape-default/color-ffc11f/shapecolor-color/shadow-1/border-dark/symbolstyle-contrast/symbolshadowstyle-dark/gradient-iphone/male-2.png'
+                    icon: 'img/layout/user.png'
                 });
                 var request = {
                     origin: start,
@@ -110,3 +102,23 @@ function initialize() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+//Mapa de instalaciones
+$(document).ready(function () {
+
+
+    $('#instal area[href][title]').qtip({
+        content: {
+            text: false 
+        },
+        position: {
+            target: 'mouse',
+            adjust: { x: 13, y: 0 }
+        },
+        style: 'blue' 
+    });
+
+
+
+
+});

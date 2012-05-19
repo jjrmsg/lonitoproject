@@ -131,5 +131,12 @@ namespace Entities
                 SalasCAD salaCad = new SalasCAD();
                 return salaCad.RecuperarSalaEspectaculo(id);
             }
+            
+            //Recupera todas las salas
+            public DataSet getSalas()
+            {
+                SalasCAD salaCad = new SalasCAD();
+                return salaCad.getSalas();
+            }
     }
 }

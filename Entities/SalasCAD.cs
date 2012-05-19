@@ -362,6 +362,34 @@ namespace Entities
             return datosSala;
 
         }
+
+        //Extrae la info de todas las salas
+        public DataSet getSalas()
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet sala = null;
+            string comando1 = "SELECT * FROM  Sala";
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter(comando1, conn);
+                sala = new DataSet();
+                sqlAdaptador.Fill(sala);
+                return sala;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+
+            }
+        }
     }
 
 }
