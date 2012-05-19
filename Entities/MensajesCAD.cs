@@ -39,15 +39,19 @@ namespace Entities
         }
 
         //Obtiene los datos de un mensaje concreto sabiendo su ID
-        public DataSet getMessageByID(string id)
+        public DataSet getMessageByID(string id, bool anon)
         {
             BD bd = new BD();
             DataSet mensaje = new DataSet();
             SqlConnection c = bd.Connect();
+            SqlDataAdapter da=new SqlDataAdapter();
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Mensaje m, Cliente c where m.IDMensaje='"+id+"' and m.Cliente=c.NIF", c);
+                if (anon)
+                    da = new SqlDataAdapter("select * from Mensaje m where m.IDMensaje='"+id+"'", c);
+                else
+                    da = new SqlDataAdapter("select * from Mensaje m, Cliente c where m.IDMensaje='"+id+"' and m.email=c.Mail", c);
                 da.Fill(mensaje);
             }
             catch

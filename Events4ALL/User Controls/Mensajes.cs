@@ -102,23 +102,42 @@ namespace Events4ALL.User_Controls
         //Carga los datos de un mensaje cuando pinchas en el y borra el mensaje si le das al boton de eliminar
         private void msgGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            bool anon = false;
             if (e.RowIndex < 0 || e.ColumnIndex != msgGridView.Columns["Eliminar"].Index)
             {
                 //textBox1.Text = msgGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 foreach (DataGridViewRow r in msgGridView.SelectedRows)
                 {
                     DataSet mensaje = new DataSet();
-                    mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString());
+
+                    mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), false);
+                    if (mensaje.Tables[0].Rows.Count == 0)
+                    {
+                        anon = true;
+                        mensaje = msgEN.getMessageByID(msgGridView.Rows[e.RowIndex].Cells["ID"].Value.ToString(), true);
+                    }
                     r.DefaultCellStyle.SelectionBackColor = Color.Gainsboro;
 
                     foreach (DataRow row in mensaje.Tables[0].Rows)
                     {
-                        textNombre.Text = row["Nombre"].ToString();
-                        textApellidos.Text = row["Apellidos"].ToString();
-                        textAsunto.Text = row["Asunto"].ToString();
-                        textConsulta.Text = row["Contenido"].ToString();
-                        mimail = row["Mail"].ToString();
-                        IDMensaje = row["IDMensaje"].ToString();
+                        if (anon)
+                        {
+                            textNombre.Text = "Anónimo";
+                            textApellidos.Text = "Anónimo";
+                            textAsunto.Text = row["Asunto"].ToString();
+                            textConsulta.Text = row["Contenido"].ToString();
+                            mimail = row["email"].ToString();
+                            IDMensaje = row["IDMensaje"].ToString();
+                        }
+                        else
+                        {
+                            textNombre.Text = row["Nombre"].ToString();
+                            textApellidos.Text = row["Apellidos"].ToString();
+                            textAsunto.Text = row["Asunto"].ToString();
+                            textConsulta.Text = row["Contenido"].ToString();
+                            mimail = row["Mail"].ToString();
+                            IDMensaje = row["IDMensaje"].ToString();
+                        }
                     }
                 }
             }

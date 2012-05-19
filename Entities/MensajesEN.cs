@@ -23,9 +23,9 @@ namespace Entities
         }
 
         //Obtiene un mensaje en concreto en función de su ID
-        public DataSet getMessageByID(string id)
+        public DataSet getMessageByID(string id, bool anon)
         {
-            return msgCAD.getMessageByID(id);
+            return msgCAD.getMessageByID(id, anon);
         }
 
         //Marca un mensaje como leido
