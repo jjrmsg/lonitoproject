@@ -16,13 +16,13 @@
     
     <p>
         <span class="bus_av_label">Fecha inicio </span>
-			  <div class="input-append date" id="bus_av_dp1" data-date="" data-date-format="dd-mm-yyyy">
-				<input class="span2" size="16" type="text" value="">
+			  <div class="input-append date" id="bus_av_dp1" data-date="01-01-2012" data-date-format="dd-mm-yyyy">
+				<input class="span2" size="16" type="text" value="01-01-2012">
 				<span class="add-on"><i class="icon-th"></i></span>
 			  </div><br />
                 <span class="bus_av_label">Fecha fin </span>
-        <div class="input-append date" id="bus_av_dp2" data-date="" data-date-format="dd-mm-yyyy">
-          <input class="span2" size="16" type="text" value="" >
+        <div class="input-append date" id="bus_av_dp2" data-date="31-12-2012" data-date-format="dd-mm-yyyy">
+          <input class="span2" size="16" type="text" value="31-12-2012" >
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
     </p>
@@ -67,7 +67,7 @@
 
 <script>
     $('#bus_av_dp1').datepicker();
-    alert("hoal");
+    $('#bus_av_dp2').datepicker();
 </script>
 
 </asp:Content>

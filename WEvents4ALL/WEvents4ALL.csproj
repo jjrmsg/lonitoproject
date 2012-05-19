@@ -59,6 +59,7 @@
     <Content Include="css\busquedaAvanzada.css" />
     <Content Include="css\cartelera.css" />
     <Content Include="css\contacto.css" />
+    <Content Include="css\datepicker.css" />
     <Content Include="css\espectaculo.css" />
     <Content Include="css\index.css" />
     <Content Include="css\login.css" />
@@ -72,6 +73,7 @@
     <Content Include="espectaculo.aspx" />
     <Content Include="acercade.aspx" />
     <Content Include="js\acercade.js" />
+    <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\contacto.js" />
     <Content Include="js\espectaculo.js" />
     <Content Include="js\master.js" />
