@@ -36,9 +36,10 @@
         var doc5 = document.getElementById("boton_enviarDatos");
         var doc6 = document.getElementById("progress-count");
         var doc7 = document.getElementById("boton_siguiente");
-        progreso = progreso + 10;
+
 
         if (pasos == 0) {
+            progreso = progreso + 20;
             doc1.style.display = "block";
             doc2.style.display = "none";
             doc5.style.display = "none";
@@ -47,6 +48,7 @@
         }
 
         else if (pasos == 1) {
+            progreso = progreso + 30;
             doc1.style.display = "none";
             doc2.style.display = "none";
             doc3.style.display = "block";
@@ -56,6 +58,7 @@
         }
 
         else if (pasos == 2) {
+            progreso = progreso + 40;
             doc3.style.display = "none";
             doc4.style.display = "block";
             doc5.style.display = "block";
@@ -110,11 +113,11 @@
 
             <label for="password">Pass:</label>
             <!-- <input type="password" name="pass" id="password" size="22" maxlength="30" /> -->
-            <asp:TextBox ID="textbox_pass" runat="server" />
+            <asp:TextBox ID="textbox_pass" runat="server" TextMode="Password" />
 
             <label for="repetirPassword">Repite Pass:</label>
             <!-- <input type="password" name="passR" id="repetirPassword" size="22" maxlength="30" /> -->
-            <asp:TextBox ID="textbox_rePass" runat="server" />
+            <asp:TextBox ID="textbox_rePass" runat="server" TextMode="Password" />
        </div>
 
         <br />
@@ -464,14 +467,16 @@
 
             <!-- input type="submit" value="Enviar" onclick="Registro_Cliente" /> -->
             <asp:Button CssClass="btn btn-primary" ID="bGuardar" runat="server" 
-                                    Text="Guardar Cambios" onclick="Registro_Cliente" />
+                                    Text="Enviar Datos" onclick="Registro_Cliente" />
 
        </div>
 
       <!-- </form> -->
 
       <div id="boton_siguiente" > 
-       <button id="siguiente" type="button" onclick="siguientePaso()" style="">Siguiente</button>
+         <button id="siguiente" type="button" onclick="siguientePaso()" style="">Siguiente</button>
+            
+
        </div>
 
     </fieldset>

@@ -34,6 +34,7 @@ namespace WEvents4ALL
             nuevoCliente.DNI = textbox_NIFC.Text;
             nuevoCliente.Nombre = textbox_nombreC.Text;
             nuevoCliente.Apellidos = textbox_apellidosC.Text;
+            nuevoCliente.Domicilio = textbox_domicilioC.Text;
             nuevoCliente.Pais = DropDownList_Pais.Text;
             nuevoCliente.Provincia = DropDownList_Prov.Text;
             nuevoCliente.Localidad = textbox_localidadC.Text;
