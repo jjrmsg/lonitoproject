@@ -32,7 +32,7 @@ namespace WEvents4ALL
             Label lbTittle = (Label)Master.FindControl("errorViewTitle");
             Label lbMsg = (Label)Master.FindControl("errorViewMsg");
 
-            if (ValidaCamposCliente())
+            if ((ValidaCamposCliente()) && (!nuevoCliente.CompruebaExistenciaNif(textbox_NIFC.Text)))
             {
 
                 nuevoCliente.DNI = textbox_NIFC.Text;
