@@ -148,17 +148,18 @@ namespace Events4ALL
             WebClient wc = new WebClient();
             wc.Proxy = null;
             wc.DownloadFile(new Uri(urlVersion), "version.txt");
-            MessageBox.Show("El programa se reiniciará para aplicar los cambios");
+            //MessageBox.Show("El programa se reiniciará para aplicar los cambios");
             Process proceso = new Process();
             proceso.StartInfo.UseShellExecute = false;
             proceso.StartInfo.RedirectStandardOutput = true;
             proceso.StartInfo.RedirectStandardError = false;
             proceso.StartInfo.CreateNoWindow = false;
             proceso.StartInfo.FileName = "Updater.exe";
+            Application.Exit();
             proceso.Start();
           
             
-            Application.Exit();
+            
         }
 
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
