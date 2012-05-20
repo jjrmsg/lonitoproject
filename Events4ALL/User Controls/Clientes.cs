@@ -632,38 +632,38 @@ namespace Events4ALL
 
             #region Rellenando Los Datos
 
-            textBoxNombreC.Text = muestraCliente.Tables[0].Rows[0][0].ToString();
-            textBoxApellidosC.Text = muestraCliente.Tables[0].Rows[0][1].ToString();
-            textBoxUsuario.Text = muestraCliente.Tables[0].Rows[0][2].ToString();
-            // muestraCliente.Tables[0].Rows[0][3] es el pass. No mostrar
-            textBoxNifC.Text = muestraCliente.Tables[0].Rows[0][4].ToString();
+            textBoxNombreC.Text = muestraCliente.Tables[0].Rows[0][1].ToString();
+            textBoxApellidosC.Text = muestraCliente.Tables[0].Rows[0][2].ToString();
+            textBoxUsuario.Text = muestraCliente.Tables[0].Rows[0][3].ToString();
+            // muestraCliente.Tables[0].Rows[0][4] es el pass. No mostrar
+            textBoxNifC.Text = muestraCliente.Tables[0].Rows[0][5].ToString();
 
-            dateTimePickerCli.Value = (DateTime)muestraCliente.Tables[0].Rows[0][5];
+            dateTimePickerCli.Value = (DateTime)muestraCliente.Tables[0].Rows[0][6];
 
-            textBoxLocaliCli.Text = muestraCliente.Tables[0].Rows[0][6].ToString();
-            comboBoxProvCli.Text = muestraCliente.Tables[0].Rows[0][7].ToString();
-            comboBoxPaisCli.Text = muestraCliente.Tables[0].Rows[0][8].ToString();
-            textBoxDomiciCli.Text = muestraCliente.Tables[0].Rows[0][9].ToString();
+            textBoxLocaliCli.Text = muestraCliente.Tables[0].Rows[0][7].ToString();
+            comboBoxProvCli.Text = muestraCliente.Tables[0].Rows[0][8].ToString();
+            comboBoxPaisCli.Text = muestraCliente.Tables[0].Rows[0][9].ToString();
+            textBoxDomiciCli.Text = muestraCliente.Tables[0].Rows[0][10].ToString();
 
-            textBoxTelfCli.Text = muestraCliente.Tables[0].Rows[0][10].ToString();
-            textBoxMovilCli.Text = muestraCliente.Tables[0].Rows[0][11].ToString();
+            textBoxTelfCli.Text = muestraCliente.Tables[0].Rows[0][11].ToString();
+            textBoxMovilCli.Text = muestraCliente.Tables[0].Rows[0][12].ToString();
 
-            textBoxEmailCli.Text = muestraCliente.Tables[0].Rows[0][12].ToString();
+            textBoxEmailCli.Text = muestraCliente.Tables[0].Rows[0][13].ToString();
 
             // Imagen del Perfil
 
             cliente_Perfil_Foto.Image = im;
             
 
-            textBoxCPCli.Text = muestraCliente.Tables[0].Rows[0][14].ToString();
+            textBoxCPCli.Text = muestraCliente.Tables[0].Rows[0][15].ToString();
 
-            if (muestraCliente.Tables[0].Rows[0][15].ToString() == "0")
+            if (muestraCliente.Tables[0].Rows[0][16].ToString() == "0")
             {
                 rButom_H_Cliente.Checked = true;
                 rButom_M_Cliente.Checked = false;
                // MessageBox.Show("Es Hombre");
             }
-            else if (muestraCliente.Tables[0].Rows[0][15].ToString() == "1")
+            else if (muestraCliente.Tables[0].Rows[0][16].ToString() == "1")
             {
                 rButom_H_Cliente.Checked = false;
                 rButom_M_Cliente.Checked = true;

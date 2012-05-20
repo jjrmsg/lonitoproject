@@ -540,8 +540,8 @@ namespace Entities
             SqlConnection conn = null;
             DataSet bdvirtual = new DataSet();
 
-            /*string SHA1pass = SHA1helper.Compute(pass);*/
-            string SHA1pass = pass;
+            string SHA1pass = SHA1helper.Compute(pass);
+            //string SHA1pass = pass;
 
             // Creamos la query
             String query = "SELECT * ";
