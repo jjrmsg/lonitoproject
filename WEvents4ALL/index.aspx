@@ -51,6 +51,13 @@
 <%
     try
     {%>
+        <div class="span10">
+            <div class="row">
+                <div class="span10">
+                    <h2>Últimos espectáculos</h2>
+                </div>
+            </div>
+        </div>
         <div class="span7">
         <%foreach (System.Data.DataRow r in esp.Tables[0].Rows)
         { %>
