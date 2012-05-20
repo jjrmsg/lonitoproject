@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="cartell_n">
                                     <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img class="cartelera_img" alt=<%= r["Titulo"].ToString() %> src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                                    <a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
+                                    <a class="btn btn-mini btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a>
                                 </div>
                                     <%
                                         char[] delimiterChars = {','};
