@@ -86,36 +86,39 @@
                     </div>
 
                     <div class="span3">
-                        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-                        <script>
-                            new TWTR.Widget({
-                                version: 2,
-                                type: 'search',
-                                search: 'Events4All #Events4All',
-                                interval: 30000,
-                                title: '',
-                                subject: '',
-                                width: 210,
-                                height: 300,
-                                theme: {
-                                    shell: {
-                                        background: '#eeeeee',
-                                        color: '#121212'
+                        <div class="verticalBanner">
+                            <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+                            <script>
+                            
+                                new TWTR.Widget({
+                                    version: 2,
+                                    type: 'search',
+                                    search: 'Events4All #Events4All',
+                                    interval: 30000,
+                                    title: '',
+                                    subject: '',
+                                    width: 210,
+                                    height: 300,
+                                    theme: {
+                                        shell: {
+                                            background: '#eeeeee',
+                                            color: '#121212'
+                                        },
+                                        tweets: {
+                                            background: '#ffffff',
+                                            color: '#444444',
+                                            links: '#3d9fcc'
+                                        }
                                     },
-                                    tweets: {
-                                        background: '#ffffff',
-                                        color: '#444444',
-                                        links: '#3d9fcc'
+                                    features: {
+                                        scrollbar: false,
+                                        loop: true,
+                                        live: true,
+                                        behavior: 'default'
                                     }
-                                },
-                                features: {
-                                    scrollbar: false,
-                                    loop: true,
-                                    live: true,
-                                    behavior: 'default'
-                                }
-                            }).render().start();
-                        </script>
+                                }).render().start();
+                            </script>
+                        </div>
                         <div class="verticalBanner">
                             <img src="/img/layout/vertical_banner.jpg" />
                         </div>
