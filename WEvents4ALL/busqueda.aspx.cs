@@ -18,9 +18,9 @@ namespace WEvents4ALL
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            // No marcamos nada en la barra de enlaces
+            // Marcamos en la barra de enlaces que estamos en busqueda
             MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
-            mvLinks.ActiveViewIndex = 0;
+            mvLinks.ActiveViewIndex = 6;
 
             fechahoy =DateTime.Now.ToShortTimeString();
             if (Request.QueryString["texto"] != "")
