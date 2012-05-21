@@ -17,6 +17,10 @@ namespace WEvents4ALL
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Marcamos en la barra de enlaces que estamos en cartelera
+            MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
+            mvLinks.ActiveViewIndex = 2;
+
             string tipo = Request.QueryString["tipo"];
             if (tipo != "Concierto" && tipo != "Teatro")
             {

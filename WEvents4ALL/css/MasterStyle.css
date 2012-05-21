@@ -11,13 +11,7 @@ body {
 .boxContent {
 	background-color: white;
 	background-image: url('../img/layout/bgContent_pattern.png');
-	/*-moz-box-shadow: 0 3px 1px #222;
-	-webkit-box-shadow: 0 3px 1px #222;
-	box-shadow: 0 3px 1px #222;
-	color: #3E4248;
-	text-shadow: 0 1px 1px white;
-	*/padding: 20px;/*
-	-webkit-border-radius: 5px;*/
+	padding: 20px;
 }
 
 .navbar .brand {
@@ -48,4 +42,9 @@ body {
 #quickSearchWrap .btn {
     height: 15px;
     margin-top: 6px;
+}
+
+#quickSearchResults 
+{
+    overflow: hidden;
 }

@@ -17,17 +17,11 @@ namespace WEvents4ALL
         public int puntUser = 3; 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // No marcamos nada en la barra de enlaces
+            MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
+            mvLinks.ActiveViewIndex = 0;
+
             string id = Request.QueryString["id"];
-
-            /* Muestra un mensaje 
-            MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
-            mv.ActiveViewIndex = 1;  
-            Label lbTitle = (Label)Master.FindControl("successViewTitle");
-            Label lbMsg = (Label)Master.FindControl("successViewMsg");
-            lbTitle.Text = "Titulo de mensaje desde espectaculo";
-            lbMsg.Text = "Mensaje desde espectaculo";
-             ----------------- */
-
 
             EspectaculosEN espEN = new EspectaculosEN();
             CriticasEN criEN = new CriticasEN();

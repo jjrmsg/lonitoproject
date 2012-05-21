@@ -22,6 +22,10 @@ namespace WEvents4ALL
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Marcamos en la barra de enlaces que estamos en acerca de
+            MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
+            mvLinks.ActiveViewIndex = 4;
+
             int i=1;
             salas = sEN.getSalas();
             foreach (DataRow r in salas.Tables[0].Rows)

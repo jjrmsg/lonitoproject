@@ -16,13 +16,6 @@ $(document).ready(function () {
             hideResults();
         }, 150);
     });
-
-    $("#quickSearchWrap button").on('click', function () {
-        var url = "busquedaAvanzada.aspx";
-        if ($("#quickSearch").val() != "")
-            url += "?texto=" + $("#quickSearch").val();
-        location.href = url;
-    });
 });
 
 

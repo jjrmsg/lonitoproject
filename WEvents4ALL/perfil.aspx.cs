@@ -20,6 +20,10 @@ namespace WEvents4ALL
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // No marcamos nada en la barra de enlaces
+            MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
+            mvLinks.ActiveViewIndex = 0;
+
             cliente = new ClientesEN();
             
             // obtengo los datos del cliente bastardo

@@ -90,7 +90,7 @@
                         <div class="span2">
                         <% if (espectaculo["Media"] != DBNull.Value && espectaculo["Media"] != "")
                        {%>
-                            <a class="btn btn-mini btn-inverse pull-right"  style="clear: both" data-toggle="modal" href="#myModal" ><i class="icon-facetime-video icon-white"></i> Ver video relacionado</a>	
+                            <a id="mediaButton" class="btn btn-mini btn-inverse pull-right"  style="clear: both" data-toggle="modal" href="#myModal" ><i class="icon-facetime-video icon-white"></i> Ver video relacionado</a>	
                             <div class="modal hide fade in" id="myModal">
                                 <div class="modal-body" >                
                                     <div id="wrapVideo">
@@ -143,7 +143,10 @@
                 </div>
             </div>
 
-
+            <%
+            if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
+            { 
+            %>
             <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button><br /><br />
             <div class="row">
                 <div class="span10">
@@ -173,6 +176,13 @@
                     </div>
                 </div>
             </div>
+            <% 
+            }
+            else
+            {
+                %><p class="pull-right">Debes estar <a href="login.aspx">identificado</a> para poder comprar.</p><% 
+            }
+            %>
             <br /> 
                     
         <%  

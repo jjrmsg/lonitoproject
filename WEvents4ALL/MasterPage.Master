@@ -6,7 +6,7 @@
     protected void LinkSearch_Click(object sender, EventArgs e)
     {
         if(LinkSearch == (LinkButton)sender)
-            Response.Redirect("busquedaAvanzada.aspx?texto=" + quickSearch.Text);
+            Response.Redirect("busqueda.aspx?texto=" + quickSearch.Text);
     }
 </script>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -51,15 +51,41 @@
 				    <a class="brand" href="/index.aspx"><img src="img/layout/logo.png">Events4All</a>
 				    <div class="nav-collapse">
 					    <ul class="nav">
-						    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
-						    <li><a href="/cartelera.aspx">Cartelera</a></li>
-                            <li><a href="/contacto.aspx">Contacto</a></li>
-                            <li><a href="/acercade.aspx">Acerca de</a></li>
+                            <asp:MultiView ID="LinksAcceso" runat="server">
+                                <asp:View ID="NadaActivo" runat="server">
+                                    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li><a href="/cartelera.aspx">Cartelera</a></li><li><a href="/ranking.aspx">Ranking</a></li>
+                                    <li><a href="/acercade.aspx">Acerca de</a></li><li><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                                <asp:View ID="IndiceActivo" runat="server">
+                                    <li class="active"><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li><a href="/cartelera.aspx">Cartelera</a></li><li><a href="/ranking.aspx">Ranking</a></li>
+                                    <li><a href="/acercade.aspx">Acerca de</a></li><li><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                                <asp:View ID="CarteleraActivo" runat="server">
+                                    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li class="active"><a href="/cartelera.aspx">Cartelera</a></li><li><a href="/ranking.aspx">Ranking</a></li>
+                                    <li><a href="/acercade.aspx">Acerca de</a></li><li><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                                <asp:View ID="RankingActivo" runat="server">
+                                    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li><a href="/cartelera.aspx">Cartelera</a></li><li class="active"><a href="/ranking.aspx">Ranking</a></li>
+                                    <li><a href="/acercade.aspx">Acerca de</a></li><li><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                                <asp:View ID="AcercadeActivo" runat="server">
+                                    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li><a href="/cartelera.aspx">Cartelera</a></li><li><a href="/ranking.aspx">Ranking</a></li>
+                                    <li class="active"><a href="/acercade.aspx">Acerca de</a></li><li><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                                <asp:View ID="ContactaActivo" runat="server">
+                                    <li><a href="/index.aspx"><i class="icon-home icon-white"></i> Inicio</a></li>
+						            <li><a href="/cartelera.aspx">Cartelera</a></li><li><a href="/ranking.aspx">Ranking</a></li>
+                                    <li><a href="/acercade.aspx">Acerca de</a></li><li class="active"><a href="/contacto.aspx">Contacta</a></li>
+                                </asp:View>
+                            </asp:MultiView>
 					    </ul>
                         
-					    <ul class="nav pull-right">
-
-                            
+					    <ul class="nav pull-right">                            
                             
                             <%
                             if (Session["NickUsuario"] != null && Session["NickUsuario"] != "")
@@ -67,7 +93,7 @@
                                 <li class="dropdown">
 							        <a href="#"	class="dropdown-toggle"	data-toggle="dropdown"><i class="icon-user icon-white"></i> <%= Session["NickUsuario"] %><b class="caret"></b></a>
 							        <ul class="dropdown-menu">
-								        <li><a href="/perfil.aspx"><i class="icon-cog"></i> Preferencias</a></li>
+								        <li><a href="/perfil.aspx"><i class="icon-cog"></i> Perfil</a></li>
 								        <li class="divider"></li>
 								        <li><a href="/logout.aspx"><i class="icon-off"></i> Cerrar sesion</a></li>
 							        </ul>

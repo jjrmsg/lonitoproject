@@ -9,7 +9,6 @@ function actualizaDrawZone() {
             dibujar(fil, col);
         }
 
-
         for (i in data.ventas) {
             var datosPosVenta = data.ventas[i].split('-');
             var seccion = datosPosVenta[0] - 1;
@@ -26,20 +25,15 @@ actualizaDrawZone();
 $('#Content1_DropDownHorarios, #Content1_DropDownFechas').on('change', actualizaDrawZone);
 
 function dibujar(filas, colum) {
-    var seccion = $("<div></div>", {
-        class: "seccionBox"
-    }).appendTo("#drawZone");
+    var seccion = $("<div></div>").addClass("seccionBox").appendTo("#drawZone");
 
     for (var j = 0; j < filas; j++) {
-        var fila = $("<div></div>", {
-            class: "fila"
-        }).appendTo(seccion);
+        var fila = $("<div></div>").addClass("fila").appendTo(seccion);
 
         for (var k = 0; k < colum; k++) {
             var asiento = $("<div></div>", {
-                class: "asiento",
                 text: ""
-            }).appendTo(fila);
+            }).addClass("asiento").appendTo(fila);
         }
     }
 }
@@ -76,10 +70,10 @@ $('.asiento').live('click', function (event) {
 });
 
 // Click en boton de compra
-document.getElementById("btnComprar").onclick = function (e) {
+document.getElementById("btnComprar").onclick = function (ev) {
     $("#especCompra").slideDown();
     this.style.display = "none";
-    e.preventDefault();
+    return false;
 };
 
 // Click en boton cerrar zona de compra
@@ -203,10 +197,12 @@ $(".buttonReservaLista").live('mouseleave', function (e) {
 function muestraReservasUsuario(ventas) {
     $("#listaReservas").empty();
     var sumaImporte = 0;
+    var numVentas = 0;
     for (i in ventas) {
 
         if (ventas[i].espectaculo == espValues.idEspectaculo)
         {
+
             $("<button>").
                     html(ventas[i].asiento + ' (' + ventas[i].fecha + ' ' + ventas[i].hora + ') <i class="icon-remove icon-white"></i>').
                     addClass('btn btn-mini btn-warning buttonReservaLista').
@@ -225,8 +221,9 @@ function muestraReservasUsuario(ventas) {
                 var asiento = datosPosVenta[2] - 1;
                 $(".seccionBox:eq(" + seccion + ") .fila:eq(" + fila + ") .asiento:eq(" + asiento + ")").addClass('reserved');
             }
+            numVentas++;
         }
     }
     $("#importeCompra").html(sumaImporte);
-    $('#contReservas').html(ventas.length);
+    $('#contReservas').html(numVentas);
 }

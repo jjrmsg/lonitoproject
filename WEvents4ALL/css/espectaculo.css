@@ -1,10 +1,11 @@
-#especCompra 
+#imgEspectaculo 
 {
-    display: none;
-    padding: 15px 15px 0 15px;
-    -webkit-box-shadow: inset 0px 0px 20px silver;
-    border-radius: 5px;  
-    overflow: hidden;  
+    margin: 20px 0;
+}
+
+#mediaButton 
+{
+    margin: 20px 0;
 }
 
 #wrapVideo
@@ -12,6 +13,18 @@
     margin: auto;
     width: 480px;
 }
+
+#especCompra 
+{
+    display: none;
+    padding: 15px 15px 0 15px;
+    -webkit-box-shadow: inset 0px 0px 20px silver;
+    -moz-box-shadow: inset 0px 0px 20px silver;
+    box-shadow: inset 0px 0px 20px silver;
+    border-radius: 5px;  
+    overflow: hidden;  
+}
+
 
 
 #drawZone 
@@ -48,103 +61,21 @@
 }
 
 .asiento.sold {
-    background-color: Red;
+    background-color: #00CC33;
 }
 
 .asiento.selected {
-    background-color: Blue;
+    background-color: #0066CC;
 }
 
 .asiento.reserved {
-    background-color: Green;
+    background-color: #00CC33;
 }	
 
+.fila { float: left; clear: both;}
 
 
-/*             styles for the star rater                */	
-	.star-rating{
-		list-style:none;
-		margin: 0px;
-		padding:0px;
-		width: 125px;
-		height: 25px;
-		position: relative;
-		overflow:hidden;
-		background: url('../img/layout/stars.gif') top left repeat-x;		
-	}
-	.star-rating li{
-		padding:0px;
-		margin:0px;
-		width:25px;
-		height:25px;
-		/*\*/
-		float: left;
-		/* */
-	}
-	.star-rating li a{
-		display:block;
-		width:25px;
-		height: 25px;
-		line-height:25px;		
-		text-decoration: none;
-		text-indent: -9000px;
-		z-index: 20;
-		position: absolute;
-		padding: 0px;
-		overflow:hidden;
-	}
-	.star-rating li a:hover{
-		background: url('../img/layout/stars.gif') left bottom;
-		z-index: 2;
-		left: 0px;
-		border:none;
-	}
-	.star-rating a.one-star{
-		left: 0px;
-	}
-	.star-rating a.one-star:hover{
-		width:25px;
-	}
-	.star-rating a.two-stars{
-		left:25px;
-	}
-	.star-rating a.two-stars:hover{
-		width: 50px;
-	}
-	.star-rating a.three-stars{
-		left: 50px;
-	}
-	.star-rating a.three-stars:hover{
-		width: 75px;
-	}
-	.star-rating a.four-stars{
-		left: 75px;
-	}	
-	.star-rating a.four-stars:hover{
-		width: 100px;
-	}
-	.star-rating a.five-stars{
-		left: 100px;
-	}
-	.star-rating a.five-stars:hover{
-		width: 125px;
-	}
-	.star-rating li.current-rating{
-		background: url('../img/layout/stars.gif') left center;
-		position: absolute;
-		height: 25px;
-		display: block;
-		text-indent: -9000px;
-		z-index: 1;
-	}
-	
-	/* remove halo effect in firefox   */
-	a:active{
-		outline: none;
-	}		
-		
-
-
+/* criticas */
 .criticaEsp
 {
     margin: 0px 0 10px 0;
@@ -179,3 +110,89 @@
 .criticaEsp .critica-info p {
     font-weight: bold;
 }
+
+
+/* estilo votacion estrellas */	
+.star-rating{
+	list-style:none;
+	margin: 0px;
+	padding:0px;
+	width: 125px;
+	height: 25px;
+	position: relative;
+	overflow:hidden;
+	background: url('../img/layout/stars.gif') top left repeat-x;		
+}
+.star-rating li{
+	padding:0px;
+	margin:0px;
+	width:25px;
+	height:25px;
+	/*\*/
+	float: left;
+	/* */
+}
+.star-rating li a{
+	display:block;
+	width:25px;
+	height: 25px;
+	line-height:25px;		
+	text-decoration: none;
+	text-indent: -9000px;
+	z-index: 20;
+	position: absolute;
+	padding: 0px;
+	overflow:hidden;
+}
+.star-rating li a:hover{
+	background: url('../img/layout/stars.gif') left bottom;
+	z-index: 2;
+	left: 0px;
+	border:none;
+}
+.star-rating a.one-star{
+	left: 0px;
+}
+.star-rating a.one-star:hover{
+	width:25px;
+}
+.star-rating a.two-stars{
+	left:25px;
+}
+.star-rating a.two-stars:hover{
+	width: 50px;
+}
+.star-rating a.three-stars{
+	left: 50px;
+}
+.star-rating a.three-stars:hover{
+	width: 75px;
+}
+.star-rating a.four-stars{
+	left: 75px;
+}	
+.star-rating a.four-stars:hover{
+	width: 100px;
+}
+.star-rating a.five-stars{
+	left: 100px;
+}
+.star-rating a.five-stars:hover{
+	width: 125px;
+}
+.star-rating li.current-rating{
+	background: url('../img/layout/stars.gif') left center;
+	position: absolute;
+	height: 25px;
+	display: block;
+	text-indent: -9000px;
+	z-index: 1;
+}
+	
+/* remove halo effect in firefox   */
+a:active{
+	outline: none;
+}		
+		
+
+

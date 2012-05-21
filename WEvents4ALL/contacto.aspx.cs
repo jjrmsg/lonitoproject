@@ -15,6 +15,10 @@ namespace WEvents4ALL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Marcamos en la barra de enlaces que estamos en contacto
+            MultiView mvLinks = (MultiView)Master.FindControl("LinksAcceso");
+            mvLinks.ActiveViewIndex = 5;
+
             if (Session.Count > 0)
             {
                 ClientesEN cli=new ClientesEN();
