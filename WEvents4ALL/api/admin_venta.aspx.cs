@@ -36,6 +36,7 @@ namespace WEvents4ALL.api
 
                     Dictionary<string, object> ventData = new Dictionary<string, object>();
 
+                    // Si añadimos una prereserva
                     if (accion == "add")
                     {
                         // Creamos el diccionario que contiene los datos que mostraremos en JSON
@@ -78,9 +79,11 @@ namespace WEvents4ALL.api
                                 ventData.Add("result", "reservadaMismoUser");
                         }
                     }
+                    // Si eliminamos una prereservas
                     else if (accion == "remove")
                     {
                         bool eliminada = false;
+                        //Buscamos coincidencias en el array
                         foreach (Dictionary<string, string> venta in ventasUser)
                         {
                             if (venta["asiento"] == asientoVentIN &&
@@ -88,6 +91,7 @@ namespace WEvents4ALL.api
                                     venta["fecha"] == fechaVentIN &&
                                     venta["hora"] == horaVentIN)
                             {
+                                // Eliminamos si hay una coincidencia
                                 ventasUser.Remove(venta);
                                 eliminada = true;
                                 break;
@@ -101,8 +105,8 @@ namespace WEvents4ALL.api
                             ventData.Add("result", "noeliminada");
                     }
 
+                    // Guardamos y listamos las ventas tras la eliminacion
                     Session["VentasUser"] = ventasUser;
-
                     object[] ventas = new object[ventasUser.Count];
                     int contVentas = 0;
                     foreach (object venta in ventasUser)
@@ -112,7 +116,7 @@ namespace WEvents4ALL.api
                     }
                     ventData.Add("ventas", ventas);
 
-
+                    // Mostramos en formato Json
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     sJson = serializer.Serialize((object)ventData);
                     Response.Write(sJson);

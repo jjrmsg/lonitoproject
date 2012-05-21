@@ -13,10 +13,5 @@ namespace WEvents4ALL
         {
 
         }
-
-        protected void BuscarButton_click(object sender, EventArgs e)
-        {
-            Response.Redirect("cartelera.aspx");
-        }
     }
 }

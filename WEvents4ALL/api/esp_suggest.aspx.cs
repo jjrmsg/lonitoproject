@@ -19,6 +19,7 @@ namespace WEvents4ALL.api
 
             try
             {
+                // Buscamos espectaculos que coincidan con el texto indicado
                 string texto = Request.QueryString["texto"];
                 DataSet espectaculos = espectaculoEN.Buscar(texto, "", "", "", "", "", "");
                 int numResults = espectaculos.Tables[0].Rows.Count;
@@ -28,6 +29,7 @@ namespace WEvents4ALL.api
                     numSuggest = espectaculos.Tables[0].Rows.Count;
                 }
                 object[] resultados = new object[numSuggest];
+                // Limitamos las sugerencias a 10 y añadimos al array de resultados
                 for (int i = 0; i < 10 && i < numSuggest; i++)
                 {
                     DataRow r = espectaculos.Tables[0].Rows[i];
@@ -38,6 +40,7 @@ namespace WEvents4ALL.api
                     resultados.SetValue(resData, i);
                 }
 
+                // Mostramos en formato json
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 sJson = serializer.Serialize(resultados);
             }

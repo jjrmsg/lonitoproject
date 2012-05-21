@@ -29,6 +29,7 @@ namespace WEvents4ALL
 
             try
             {
+                // Obtenemos los datos del espectaculo
                 datosEsp = espEN.ObtenerEspectaculoPorID(id);
                 datosCrit = criEN.getCriticasEspectaculo(id);
                 puntUser = cliEN.getPuntuacionEsp("3", id);
@@ -38,7 +39,7 @@ namespace WEvents4ALL
                 foreach(string h in listahorarios)
                     DropDownHorarios.Items.Add(h);
 
-
+                // Carga en el droplist de fecha todos los dias de disponibilidad del espectaculo
                 List<DateTime> rv = new List<DateTime>();
                 DateTime tmpDate = Convert.ToDateTime(datosEsp.Tables[0].Rows[0]["FechaIni"].ToString());
                 DateTime EndingDate = Convert.ToDateTime(datosEsp.Tables[0].Rows[0]["FechaFin"].ToString());
@@ -47,7 +48,6 @@ namespace WEvents4ALL
                     DropDownFechas.Items.Add(tmpDate.ToShortDateString());
                     tmpDate = tmpDate.AddDays(1);
                 } 
-
             }
             catch
             {

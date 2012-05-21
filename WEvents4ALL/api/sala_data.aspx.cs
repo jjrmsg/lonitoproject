@@ -16,6 +16,7 @@ namespace WEvents4ALL.api
         public string sJson = "";
         protected void Page_Load(object sender, EventArgs e)
         {            
+            // Entidades
             SalasEN salaEn = new SalasEN();
             DataSet salaRecuperar = new DataSet();
             VentasEN ventEN = new VentasEN();
@@ -23,6 +24,7 @@ namespace WEvents4ALL.api
 
             try
             {
+                //Recogemos la sala a partir del espectaculo
                 string idEspectaculo = Request.QueryString["id"];
                 salaRecuperar = salaEn.RecuperarSalaEspectaculo(idEspectaculo);
 
@@ -32,7 +34,7 @@ namespace WEvents4ALL.api
                 dict.Add("numSecciones", nSecciones);
 
                 object[] secciones = new object[nSecciones];
-
+                //Rellenamos cada seccion con los datos
                 int contSeccion = 0;
                 foreach (DataRow seccion in salaRecuperar.Tables[0].Rows)
                 {
@@ -48,6 +50,7 @@ namespace WEvents4ALL.api
                 datosVentas = ventEN.getVentasEspectaculoId(idEspectaculo, Request.QueryString["hora"], Request.QueryString["fecha"]);
                 int nVentas = Convert.ToInt16(datosVentas.Tables[0].Rows.Count);
 
+                // Añadimos las ventas en el espectaculo
                 object[] ventas = new object[nVentas];
                 int contVentas = 0;
                 foreach (DataRow venta in datosVentas.Tables[0].Rows)
@@ -57,6 +60,7 @@ namespace WEvents4ALL.api
                 }
                 dict.Add("ventas", ventas);
 
+                // Añadimos las preventas del usuario
                 if (Session["VentasUser"] != null)
                 {
                     ArrayList ventasUser = (ArrayList)Session["VentasUser"];
@@ -70,12 +74,9 @@ namespace WEvents4ALL.api
                     dict.Add("preventas", preventasUsuario);
                 }
 
-
-
+                // Mostramos en formato json
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 sJson = serializer.Serialize((object)dict);
-
-
             }
             catch (Exception ex)
             {

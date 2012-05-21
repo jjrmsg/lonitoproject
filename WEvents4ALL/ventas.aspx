@@ -1,26 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ventas.aspx.cs" Inherits="WEvents4ALL.ventas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
 
-
-
-
-
     <div class="row">
         <div class="span10">
             <h3>Resumen ventas</h3>
             <br />
             <ul class="nav nav-list">
             <% 
-                int totalPrecio = 0;
+                int totalPrecio = 0; // Acumulamos el precio de cada venta para mostrar un total
                 if (listado.Count != 0)
                 {
+                    // Recorremos los espectaculos
                     foreach (Dictionary<string, object> espectaculo in listado)
                     {
                         %><li class="nav-header">
                             <a href="espectaculo.aspx?id=<%= espectaculo["id"]%>"><%= espectaculo["titulo"]%></a>
                         </li>
                         <%
-
+                        // Recorremos todas las ventas de ese espectaculo
                         foreach (Dictionary<string, string> pventa in (ArrayList)espectaculo["preventas"])
                         {
                             %>
@@ -28,7 +25,8 @@
                                 Asiento: <%= pventa["asiento"]%> | Precio: <%= pventa["precio"]%> € | Hora: <%= pventa["hora"]%> | Fecha: <%= pventa["fecha"]%> 
                             </li>
                             <%
-                                totalPrecio += Convert.ToInt32(pventa["precio"]);
+                            // Añadimos el precio de la venta al total
+                            totalPrecio += Convert.ToInt32(pventa["precio"]);
                         }
                     }
                 }
@@ -43,7 +41,9 @@
    
     <div class="row">
         <div class="span10">
-        <%if (listado.Count != 0 && mode==0)
+        <%
+        // Si no hay ventas no mostramos el boton de compra, mostramos el de ir a inicio
+        if (listado.Count != 0 && mode==0)
         {
             %>
             <p class="pull-right">Precio total <%=totalPrecio %> € 
@@ -60,8 +60,5 @@
         %>
         </div>
     </div>
-    
-
-
 
 </asp:Content>
