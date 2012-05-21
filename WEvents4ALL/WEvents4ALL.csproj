@@ -55,7 +55,7 @@
     <Content Include="api\esp_suggest.aspx" />
     <Content Include="api\sala_data.aspx" />
     <Content Include="api\admin_venta.aspx" />
-    <Content Include="busquedaAvanzada.aspx" />
+    <Content Include="busqueda.aspx" />
     <Content Include="css\acercade.css" />
     <Content Include="css\busquedaAvanzada.css" />
     <Content Include="css\cartelera.css" />
@@ -125,12 +125,12 @@
     <Compile Include="api\admin_venta.aspx.designer.cs">
       <DependentUpon>admin_venta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="busquedaAvanzada.aspx.cs">
-      <DependentUpon>busquedaAvanzada.aspx</DependentUpon>
+    <Compile Include="busqueda.aspx.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="busquedaAvanzada.aspx.designer.cs">
-      <DependentUpon>busquedaAvanzada.aspx</DependentUpon>
+    <Compile Include="busqueda.aspx.designer.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
     </Compile>
     <Compile Include="contacto.aspx.cs">
       <DependentUpon>contacto.aspx</DependentUpon>
