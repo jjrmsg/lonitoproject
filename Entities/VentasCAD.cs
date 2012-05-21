@@ -52,7 +52,7 @@ namespace Entities
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select sum(Importe) Dinero, count(v.IDEspectaculo) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo and v.IDCliente='"+nif+"'", c);
+                SqlDataAdapter da = new SqlDataAdapter("select sum(Importe) Dinero, count(v.IDEspectaculo) Entradas from Ventas v, Espectaculo e where v.IDEspectaculo=e.IDEspectaculo and v.nif='"+nif+"'", c);
                 da.Fill(datos);
             }
             catch
@@ -100,7 +100,7 @@ namespace Entities
             try
             {
                 c.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from Ventas v, Espectaculo e, Sala s, ReservaSala r where e.IDEspectaculo=v.IDEspectaculo and e.IDEspectaculo=r.IDEspectaculo and s.NumSala=r.IDSala and v.IDCliente='"+nif+"'", c);
+                SqlDataAdapter da = new SqlDataAdapter("select * from Ventas v, Espectaculo e, Sala s, ReservaSala r where e.IDEspectaculo=v.IDEspectaculo and e.IDEspectaculo=r.IDEspectaculo and s.NumSala=r.IDSala and v.nif='"+nif+"'", c);
                 da.Fill(datosVentas);
             }
             catch
