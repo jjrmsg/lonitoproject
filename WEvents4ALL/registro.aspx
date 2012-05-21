@@ -122,11 +122,13 @@
         var RegExText = /^([a-zA-Z\s]{3,50})$/;
         var RegExDNI = /^(\d{8}[A-Z])$/;
         var RegExMail = /^(.+\@.+\..+)$/;
+        var RegExFecha = /^([0-9]{1,2})\/([0-9]{1,2})\/[0-9][0-9][0-9][0-9]$/;
 
         var regisNombre = $('#Content1_textbox_nombreC');
         var regisApellidos = $('#Content1_textbox_apellidosC');
         var regisDNI = $('#Content1_textbox_NIFC');
         var regisEmail = $('#Content1_textbox_emailC');
+        var regisFecha = $('#Content1_textbox_fechaN');
 
         if (!RegExText.test(regisNombre.val())) {
             alert("El nombre es incorrecto \n");
@@ -145,6 +147,31 @@
 
         if (!RegExMail.test(regisEmail.val())) {
             alert("El email es incorrecto \n");
+            correcto = false;
+        }
+
+        if (!RegExFecha.test(regisFecha.val())) {
+            alert("La fecha de nacimiento es incorrecta \n");
+            correcto = false;
+        }
+
+        // Comprobacion de Fecha de Nacimiento
+
+        var fecha2 = regisFecha.val().toString();
+        var dia = fecha2.substring(0, 2);
+        var mes = fecha2.substring(3, 5);
+        var anyo = fecha2.substring(6, 10);
+
+        //alert(dia);
+        //alert(mes);
+        //alert(anyo);
+
+        var fechaF = new Date(anyo, mes - 1, dia);
+        alert(fechaF);
+        var mesFR = mes - 1;
+
+        if ((fechaF.getDate() != dia) || (fechaF.getMonth() != mesFR) || (fechaF.getFullYear() != anyo)) {
+            alert("La fecha de nacimiento es incorrecta \n");
             correcto = false;
         }
 
@@ -204,11 +231,7 @@
 
             <label for="fechaN">Fecha Nacimiento:</label>
             <!-- <input type="text" name="fechaNac" id="fechaN" size="18" /> -->
-            <!-- <asp:TextBox ID="textbox_fechaN" runat="server" /> -->
-            <div class="input-append date" id="reg_dp1" data-date="01-01-2012" data-date-format="dd-mm-yyyy"> 
-				<input class="span2" size="16" type="text" value="" id="fechaini" runat="server" readonly>
-				<span class="add-on"><i class="icon-th"></i></span>
-			  </div>
+            <asp:TextBox ID="textbox_fechaN" runat="server" />
         </div>
         
 
@@ -593,9 +616,6 @@
        </div>
 
     </fieldset>
-<script>
 
-  $('#reg_dp1').datepicker();
 
-</script>
 </asp:Content>
