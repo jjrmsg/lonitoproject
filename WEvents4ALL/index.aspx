@@ -51,92 +51,86 @@
 <%
     try
     {%>
-        <div class="span10">
-            <div class="row">
-                <div class="span10">
-                    <h2>Últimos espectáculos</h2>
+
+        <div class="row">
+            <div class="span10">
+                <h3>Últimos espectáculos</h3><br />
+                <div class="row">
+                    <div class="span7">
+                    <%foreach (System.Data.DataRow r in esp.Tables[0].Rows)
+                    { %>           
+                        <div class="row">
+                            <div class="span7 well">
+                                <div class="titulo_n">
+                                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
+                                </div>
+                                <div class="poster_n">
+                                    <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
+                                </div>
+                                <div class="descripcion_n">
+                                    <span itemprop="description"><%= r["Descripcion"].ToString()%>
+                                </div>
+  
+                                <div class="row">
+                                    <div class="span7">
+                                        <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
+                                        <div class="socialBox">
+                                            <g:plusone annotation="none"></g:plusone>
+                                            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>            
+                <%  }%>                           
+                    </div>
+
+                    <div class="span3">
+                        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+                        <script>
+                            new TWTR.Widget({
+                                version: 2,
+                                type: 'search',
+                                search: 'Events4All #Events4All',
+                                interval: 30000,
+                                title: '',
+                                subject: '',
+                                width: 210,
+                                height: 300,
+                                theme: {
+                                    shell: {
+                                        background: '#eeeeee',
+                                        color: '#121212'
+                                    },
+                                    tweets: {
+                                        background: '#ffffff',
+                                        color: '#444444',
+                                        links: '#3d9fcc'
+                                    }
+                                },
+                                features: {
+                                    scrollbar: false,
+                                    loop: true,
+                                    live: true,
+                                    behavior: 'default'
+                                }
+                            }).render().start();
+                        </script>
+                        <div class="verticalBanner">
+                            <img src="/img/layout/vertical_banner.jpg" />
+                        </div>
+                        <div class="verticalBanner">
+                            <img src="/img/layout/10perc_discount.png" />
+                        </div>
+                        <div class="verticalBanner">
+                            <img src="/img/layout/vertical_banner2.png" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="span7">
-        <%foreach (System.Data.DataRow r in esp.Tables[0].Rows)
-        { %>
-            
-            <div class="well" id="noticia">
-                <div class="row">
-                    <div class="span7">
-                        <div class="titulo_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><span itemprop="name"><h3><%= r["Titulo"].ToString()%></h3></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span7">
-                        <div class="poster_n">
-                            <a href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><img alt="<%= r["Titulo"].ToString() %>" src="utilidades/img_esp.aspx?id=<%=r["IDEspectaculo"].ToString()%>" /></a>
-                        </div>
-                        <div class="descripcion_n">
-                            <span itemprop="description"><%= r["Descripcion"].ToString()%>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span7">
-                        <div id="social_n">
-                            <div class="detailBox"><a class="btn btn-success" href="/espectaculo.aspx?id=<%= r["IDEspectaculo"].ToString() %>"><i class="icon-tag icon-white"></i> Detalles</a></div>
-                            <div class="socialBox">
-                                <g:plusone annotation="none"></g:plusone>
-                                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.events4all.com" data-text="Estrenamos <%= r["Titulo"].ToString()%>" data-lang="es" data-hashtags="Events4All">Twittear</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-               
-            
-    <%  }%>
-        </div>
-        <div class="span2">
-        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <script>
-            new TWTR.Widget({
-                version: 2,
-                type: 'search',
-                search: 'Events4All #Events4All',
-                interval: 30000,
-                title: '',
-                subject: '',
-                width: 210,
-                height: 300,
-                theme: {
-                    shell: {
-                        background: '#eeeeee',
-                        color: '#121212'
-                    },
-                    tweets: {
-                        background: '#ffffff',
-                        color: '#444444',
-                        links: '#3d9fcc'
-                    }
-                },
-                features: {
-                    scrollbar: false,
-                    loop: true,
-                    live: true,
-                    behavior: 'default'
-                }
-            }).render().start();
-        </script>
-        <div class="verticalBanner">
-            <img src="/img/layout/vertical_banner.jpg">
-        </div>
-        <div class="verticalBanner">
-            <img src="/img/layout/10perc_discount.png">
-        </div>
-        <div class="verticalBanner">
-            <img src="/img/layout/vertical_banner2.png">
-        </div>
-    </div>
+
+
     <%}
     catch(Exception e)
     {
