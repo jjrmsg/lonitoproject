@@ -17,6 +17,7 @@ namespace WEvents4ALL
         public DataSet perfilCliente = new DataSet();
         public Validaciones valida;
         public string nick;
+        public DataSet historial;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,7 +38,12 @@ namespace WEvents4ALL
 
             // Relleno los datos del cliente si es la primera vez que accede, a partir del DataSet recibido.
             if (TextBox_Nombre.Text == "" && TextBox_Apellido.Text == "" && TextBox_NIF.Text == "" && TextBox_FN.Text == "")
+            {
+                VentasEN venta = new VentasEN();
+
                 RellenaDatos();
+                historial = venta.Historial(Convert.ToInt32(Session["IdUsuario"].ToString()));
+            }
         }
 
         // Valida los datos :

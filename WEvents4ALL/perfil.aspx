@@ -477,7 +477,29 @@
             </div>
         <!-- Pestaña Historial --> 
             <div class="tab-pane" id="tabCompras">
-                <asp:Label CssClass="labels" ID="Label1" runat="server" Text="En obras..." ></asp:Label>
+                <div >
+                <% 
+                    try
+                    {
+                        foreach (System.Data.DataRow da in historial.Tables[0].Rows)
+                        {
+                            Response.Write("<div class=\"historial well\">");
+                            Response.Write("<br />");
+                            Response.Write("<label >Espectaculo : " + da[2].ToString() + "</label>");
+                            Response.Write("<label >Fecha : " + da[0].ToString() + "</label>");
+                            Response.Write("<label >Precio : " + da[1].ToString() + "</label>");
+                            Response.Write("</div>");
+                        }
+                    }
+                    catch
+                    {
+                        Response.Write("<div class=\"historial\">");
+                        Response.Write("<br />");
+                        Response.Write("<label>Error al obtener el historial del cliente.</label>");
+                        Response.Write("</div>");
+                    }
+                %>
+                </div>
             </div>
         </div> 
     </div>

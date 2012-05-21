@@ -100,5 +100,12 @@ namespace Entities
             VentasCAD ventCAD = new VentasCAD();
             return ventCAD.Insertar(idEspectaculo, idCliente, fecha, hora, numAsiento, importe);
         }
+
+        public DataSet Historial(int id)
+        { 
+            VentasCAD venta = new VentasCAD();
+
+            return venta.Historial(id);
+        }
     }
 }

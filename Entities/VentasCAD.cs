@@ -410,5 +410,44 @@ namespace Entities
             }
             return ocupado;
         }
+
+        public DataSet Historial(int id)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet datosVentas = null;
+
+            // Creamos la query.
+            String query = "SELECT v.FechaVenta, v.Importe, e.Titulo ";
+            query += "FROM Ventas v, Espectaculo e ";
+            query += "WHERE v.IDCliente=@idCliente AND v.IDEspectaculo=e.IDEspectaculo";
+
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                com.Parameters.Add("@idCliente", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
+                sqlAdaptader.SelectCommand = com;
+
+                datosVentas = new DataSet();
+                sqlAdaptader.Fill(datosVentas);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return datosVentas;
+        }
     }
 }
