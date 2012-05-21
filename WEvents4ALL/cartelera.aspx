@@ -3,37 +3,40 @@
    
 <div class="row">
     <div class="span10">
-       <h3>Cartelera</h3><br />
-       <%
-       string tipo = Request.QueryString["tipo"];
-       %>
-       <div class="btn-group" data-toggle="buttons-radio">
+        <div class="span9">
+           <h3>Cartelera</h3><br />
+           <%
+           string tipo = Request.QueryString["tipo"];
+           %>
+           <div class="btn-group" data-toggle="buttons-radio">
        
 
-         <%if (tipo == "Teatro")
-        {%>
-                    <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-                    <a class="btn active" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-                    <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-       <% }
-        else if (tipo == "Concierto")
-        {%>
-                    <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-                    <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-                    <a class="btn active" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-        <%}
-        else
-        {%>
-                    <a class="btn active" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-                    <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-                    <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-        <%}%>
-        </div><br />
+             <%if (tipo == "Teatro")
+            {%>
+                        <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                        <a class="btn active" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                        <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+           <% }
+            else if (tipo == "Concierto")
+            {%>
+                        <a class="btn" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                        <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                        <a class="btn active" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+            <%}
+            else
+            {%>
+                        <a class="btn active" href="/cartelera.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                        <a class="btn" href="/cartelera.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                        <a class="btn" href="/cartelera.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+            <%}%>
+            </div><br />
+        </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="span9" style="padding-left: 52px;">
+    <div class="span10" style="padding-left: 0px;">
+        <div class="span9">
         <%try{
             int col = 0;
             foreach(System.Data.DataRow r in resultado.Tables[0].Rows) {
@@ -88,7 +91,7 @@
             Console.WriteLine(e.Message);
         }
         %>
-
+        </div>
     </div>
 </div>
 </asp:Content>

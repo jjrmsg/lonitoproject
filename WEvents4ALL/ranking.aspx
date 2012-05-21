@@ -7,26 +7,28 @@ string tipo = Request.QueryString["tipo"];
 
 <div class="row">
     <div class="span10">
-        <h3>Ranking</h3><br />
-        <div class="btn-group" data-toggle="buttons-radio">
-        <%if (tipo == "Teatro")
-        {%>
-            <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-            <a class="btn active" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-            <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-        <% }
-        else if (tipo == "Concierto")
-        {%>
-            <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-            <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-            <a class="btn active" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-        <%}
-        else
-        {%>
-            <a class="btn active" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
-            <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
-            <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
-        <%}%>
+        <div class="span9">
+            <h3>Ranking</h3><br />
+            <div class="btn-group" data-toggle="buttons-radio">
+            <%if (tipo == "Teatro")
+            {%>
+                <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                <a class="btn active" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+            <% }
+            else if (tipo == "Concierto")
+            {%>
+                <a class="btn" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                <a class="btn active" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+            <%}
+            else
+            {%>
+                <a class="btn active" href="/ranking.aspx?tipo=Cine"><i class="icon-film"></i> Cine</a>
+                <a class="btn" href="/ranking.aspx?tipo=Teatro"><i class="icon-star"></i> Teatro</a>
+                <a class="btn" href="/ranking.aspx?tipo=Concierto"><i class="icon-music"></i> Concierto</a>
+            <%}%>
+            </div>
         </div>
     </div>
 </div>
