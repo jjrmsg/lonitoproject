@@ -7,7 +7,7 @@
 
     var progreso = 1;
     var pasos = 0;
-
+    
   
 
     function mostrar() {
@@ -167,7 +167,7 @@
         //alert(anyo);
 
         var fechaF = new Date(anyo, mes - 1, dia);
-        alert(fechaF);
+        //alert(fechaF);
         var mesFR = mes - 1;
 
         if ((fechaF.getDate() != dia) || (fechaF.getMonth() != mesFR) || (fechaF.getFullYear() != anyo)) {
