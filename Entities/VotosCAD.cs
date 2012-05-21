@@ -46,10 +46,12 @@ namespace Entities
                 if (numVotos > 0)
                 {
                     // Creamos la query a partir de los datos.
-                    string queryVotoUpd = "UPDATE Votos set nota = @not, fechaVoto = @fech ";
+                    string queryVotoUpd = "UPDATE Votos set nota = @not, fechaVoto = @fech WHERE idEspectaculo=@esp and idUsuario = @usu";
                     comVoto = new SqlCommand(queryVotoUpd, conn);
                     comVoto.Parameters.Add("@not", SqlDbType.Int).Value = nota;
                     comVoto.Parameters.Add("@fech", SqlDbType.DateTime).Value = DateTime.Now;
+                    comVoto.Parameters.Add("@esp", SqlDbType.Int).Value = esp;
+                    comVoto.Parameters.Add("@usu", SqlDbType.Int).Value = user;
                 }
                 else
                 {
