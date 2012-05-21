@@ -48,6 +48,12 @@ namespace Entities
             return espCAD.getPrecioId(idEspectaculo);
         }
 
+        public decimal getPrecioId(int idEspectaculo)
+        {
+            EspectaculosCAD espCAD; espCAD = new EspectaculosCAD();
+            return espCAD.getPrecioId(idEspectaculo);
+        }
+
         // Inserta el espectáculo en la bd.
         public bool Insertar(string salaReserva)
         {

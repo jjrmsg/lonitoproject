@@ -104,8 +104,9 @@
                             { %>  
                                 <li class="dropdown">
 							        <a href="#"	class="dropdown-toggle"	data-toggle="dropdown"><i class="icon-user icon-white"></i> <%= Session["NickUsuario"] %><b class="caret"></b></a>
-							        <ul class="dropdown-menu">
+							        <ul class="dropdown-menu">                                        
 								        <li><a href="/perfil.aspx"><i class="icon-cog"></i> Perfil</a></li>
+                                        <li><a href="/ventas.aspx"><i class="icon-shopping-cart"></i> Página de ventas</a></li>
 								        <li class="divider"></li>
 								        <li><a href="/logout.aspx"><i class="icon-off"></i> Cerrar sesion</a></li>
 							        </ul>
@@ -123,9 +124,6 @@
                                 runat="server" CssClass="span2"></asp:TextBox>
                             <asp:LinkButton ID="LinkSearch" runat="server" CssClass="btn btn-primary" 
                                 onclick="LinkSearch_Click"><i class="icon-search icon-white"></i></asp:LinkButton>
-
-
-                            <!--<input type="text" id="quickSearch" autocomplete="off" data-provide="typeahead" class="search-query span2" placeholder="Buscar" />-->
                             <ul class="dropdown-menu span3" id="quickSearchResults">
 							</ul>
                         </div>
@@ -141,21 +139,18 @@
                     <asp:MultiView ID="MultiViewAlerts" runat="server">
                         <asp:View ID="ErrorView" runat="server">
                             <div class="alert alert-error">
-                                <!--<button class="close" data-dismiss="alert">×</button>-->
                                 <h4 class="alert-heading"><asp:Label ID="errorViewTitle" runat="server" Text="Ocurrió un error"></asp:Label></h4>
                                 <p><asp:Label ID="errorViewMsg" runat="server" Text="Ocurrió un error al realizar la acción.."></asp:Label></p>
                             </div>                
                         </asp:View>
                         <asp:View ID="SuccessView" runat="server">
                             <div class="alert alert-success">
-                                <!--<button class="close" data-dismiss="alert">×</button>-->
                                 <h4 class="alert-heading"><asp:Label ID="successViewTitle" runat="server" Text="Acción realizada"></asp:Label></h4>
                                 <p><asp:Label ID="successViewMsg" runat="server" Text="La acción se ha realizado correctamente."></asp:Label></p>
                             </div>
                         </asp:View>
                         <asp:View ID="InfoView" runat="server">
                             <div class="alert alert-info">
-                                <!--<button class="close" data-dismiss="alert">×</button>-->
                                 <h4 class="alert-heading"><asp:Label ID="infoViewTitle" runat="server" Text="Ocurrió un error"></asp:Label></h4>
                                 <p><asp:Label ID="infoViewMsg" runat="server" Text="Ocurrió un error al realizar la acción."></asp:Label></p>
                             </div>  
@@ -163,7 +158,6 @@
                     </asp:MultiView>
                 </div> 
             </div>
-            <!-- Contenido de la pagina -->
             <asp:ContentPlaceHolder ID="Content1" runat="server">
             </asp:ContentPlaceHolder>             
        </div>

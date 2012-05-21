@@ -40,6 +40,8 @@
                             }
                         %>
                         <li><%= horariosTexto%></li>
+                        <li class="nav-header">Precio</li>
+                        <li><%=Convert.ToInt32(espectaculo["precio"])%> €</li>
                     </ul>                
                 </div>
                 <div class="span2 pull-right">

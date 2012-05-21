@@ -11,6 +11,7 @@
             <br />
             <ul class="nav nav-list">
             <% 
+                int totalPrecio = 0;
                 if (listado.Count != 0)
                 {
                     foreach (Dictionary<string, object> espectaculo in listado)
@@ -24,9 +25,10 @@
                         {
                             %>
                             <li>
-                                Asiento: <%= pventa["asiento"]%> | Precio: <%= pventa["precio"]%> | Hora: <%= pventa["hora"]%> | Fecha: <%= pventa["fecha"]%> 
+                                Asiento: <%= pventa["asiento"]%> | Precio: <%= pventa["precio"]%> € | Hora: <%= pventa["hora"]%> | Fecha: <%= pventa["fecha"]%> 
                             </li>
                             <%
+                                totalPrecio += Convert.ToInt32(pventa["precio"]);
                         }
                     }
                 }
@@ -44,7 +46,9 @@
         <%if (listado.Count != 0 && mode==0)
         {
             %>
-            <asp:Button ID="terminarCompra" runat="server" Text="Comprar" CssClass="btn btn-primary pull-right" onclick="terminarCompra_Click" />
+            <p class="pull-right">Precio total <%=totalPrecio %> € 
+            <asp:Button ID="terminarCompra" runat="server" Text="Comprar" CssClass="btn btn-primary" onclick="terminarCompra_Click" />
+            </p>
             <%
         }
         else if (mode != 0)
