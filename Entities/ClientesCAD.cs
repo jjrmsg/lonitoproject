@@ -468,7 +468,7 @@ namespace Entities
                     sql = sql + ", Sexo = " + nuevoCL.Sexo;
                 if (nuevoCL.Password != "")
                     sql = sql + ", Pass = '" + SHA1helper.Compute(nuevoCL.Password) + "'";
-                sql = sql + ", Foto = @pic";
+                //sql = sql + ", Foto = @pic";
                 sql = sql + "WHERE idCliente='" + id + "'";
 
                 System.Diagnostics.Debug.Write(sql);
