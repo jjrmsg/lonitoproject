@@ -15,7 +15,8 @@ namespace WEvents4ALL
         
         public EspectaculosEN esEN = new EspectaculosEN();
         public DataSet resultado = null;
-        
+        public string cadena="";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             // Marcamos en la barra de enlaces que estamos en busqueda
@@ -23,24 +24,31 @@ namespace WEvents4ALL
             mvLinks.ActiveViewIndex = 6;
 
             fechahoy =DateTime.Now.ToShortTimeString();
-            if (Request.QueryString["texto"] != "")
+            string fechai = fechaini.Value.ToString();
+            string fechaf = fechafin.Value.ToString();
+
+
+            if(Request.QueryString.Count==4)
             {
-                resultado = new DataSet();
-                string fechai = fechaini.Value.ToString();
-                string fechaf = fechafin.Value.ToString();
-                resultado = esEN.ObtenerEspectaculoBuscAv(DropDownList1.Text, fechai, fechaf,  Request.QueryString["texto"]);
-                TextBox1.Text = Request.QueryString["texto"];
+
+                    resultado = new DataSet();
+
+                    resultado = esEN.ObtenerEspectaculoBuscAv(Request.QueryString["tipo"], Request.QueryString["fechaini"], Request.QueryString["fechafin"], Request.QueryString["texto"]);
+                        
+            }
+            else if(Request.QueryString.Count==1)
+            {
+                resultado = esEN.ObtenerEspectaculoBuscAv("", fechai, fechaf, Request.QueryString["texto"]);
             }
 
         }
 
         protected void EventoClick_bus_av(Object sender, EventArgs e)
         {
-            resultado = new DataSet();
-            string fechai = fechaini.Value.ToString();
-            string fechaf = fechafin.Value.ToString();
 
-            resultado = esEN.ObtenerEspectaculoBuscAv(DropDownList1.Text, fechai,fechaf, TextBox1.Text);
+            cadena = "/busqueda.aspx?texto="+TextBox1.Text+"&tipo="+DropDownList1.Text+"&fechaini="+fechaini.Value+"&fechafin="+fechafin.Value;
+            Response.Redirect(cadena);
+            
         }
     }
 }
