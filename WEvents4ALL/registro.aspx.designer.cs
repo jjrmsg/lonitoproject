@@ -58,6 +58,15 @@ namespace WEvents4ALL {
         protected global::System.Web.UI.WebControls.TextBox textbox_fechaN;
         
         /// <summary>
+        /// Control fechaini.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaini;
+        
+        /// <summary>
         /// Control textbox_usuario.
         /// </summary>
         /// <remarks>

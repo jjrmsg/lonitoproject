@@ -65,6 +65,16 @@ namespace WEvents4ALL
                 {
                     //MessageBox.Show("Los datos se han introducido satisfactoriamente.");
                     //Response.StatusCode = 404;
+                    //Response.Redirect("index.aspx");
+                    DataSet ds = nuevoCliente.ExisteUsuarioNickPass(textbox_usuario.Text, textbox_pass.Text);
+                    DataRow usuario = ds.Tables[0].Rows[0];
+
+                    Session["IdUsuario"] = usuario["idcliente"].ToString();
+                    Session["NickUsuario"] = usuario["Usuario"].ToString();
+                    Session["RolUsuario"] = "user";
+                    Response.Redirect("index.aspx");
+
+
                     lbTittle.Text = "OK - TODO CORRECTO";
                     lbMsg.Text = "Datos introducidos con exito";
 

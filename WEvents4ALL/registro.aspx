@@ -8,6 +8,8 @@
     var progreso = 1;
     var pasos = 0;
 
+  
+
     function mostrar() {
 
         var doc1 = document.getElementById("PanelNombre");
@@ -20,6 +22,7 @@
         doc2.style.display = "none";
         doc3.style.display = "none";
         doc4.style.display = "none";
+        $('.rank_help-inline').hide();
 
 
 
@@ -36,37 +39,132 @@
         var doc5 = document.getElementById("boton_enviarDatos");
         var doc6 = document.getElementById("progress-count");
         var doc7 = document.getElementById("boton_siguiente");
+       // var RegExPass = /^([a-zA-Z0-9]{3,50})$/;
+
+        //var regisPass1 = $('#Content1_textbox_pass');
+        //var regisPass2 = $('#Content1_texbox_repass');
+
 
 
         if (pasos == 0) {
-            progreso = progreso + 20;
-            doc1.style.display = "block";
-            doc2.style.display = "none";
-            doc5.style.display = "none";
-            doc6.style.width = progreso + "%";
-            pasos = 1;
+            var valido1 = ValidarFormulario1();
+
+            if (valido1 == true) {
+                progreso = progreso + 20;
+                doc1.style.display = "block";
+                doc2.style.display = "none";
+                doc5.style.display = "none";
+                doc6.style.width = progreso + "%";
+                pasos = 1;
+                //alert("HAS ENTRADO PARA PASAR AL PASO 1");
+            }
         }
 
         else if (pasos == 1) {
-            progreso = progreso + 30;
-            doc1.style.display = "none";
-            doc2.style.display = "none";
-            doc3.style.display = "block";
-            doc6.style.width = progreso + "%";
-            pasos = 2;
-            //alert("Entraste en Pasos 1");
+            var valido2 = ValidarFormulario2();
+
+           // alert(valido2);
+            if (valido2 == true) {
+                progreso = progreso + 30;
+                doc1.style.display = "none";
+                doc2.style.display = "none";
+                doc3.style.display = "block";
+                doc6.style.width = progreso + "%";
+                pasos = 2;
+                //alert("Entraste en Pasos 1");
+            }
         }
 
         else if (pasos == 2) {
-            progreso = progreso + 40;
-            doc3.style.display = "none";
-            doc4.style.display = "block";
-            doc5.style.display = "block";
-            doc7.style.display = "none";
-            doc6.style.width = progreso + "%";
-            //alert("Entraste en Pasos 2");
+            var valido3 = ValidarFormulario3();
+
+            if (valido3 == true) {
+                progreso = progreso + 40;
+                doc3.style.display = "none";
+                doc4.style.display = "block";
+                doc5.style.display = "block";
+                doc7.style.display = "none";
+                doc6.style.width = progreso + "%";
+                //alert("Entraste en Pasos 2");
+            }
         }
-        
+
+    }
+
+    // Valida Usuario y Password
+    function ValidarFormulario1() {
+
+        var correcto = true;
+
+        var RegExPass = /^([a-zA-Z0-9]{3,50})$/;
+
+        var regisPass1 = $('#Content1_textbox_pass');
+        var regisPass2 = $('#Content1_textbox_rePass');
+
+        if (!RegExPass.test(regisPass1.val())) {
+            alert("El password es incorrecto \n");
+            correcto = false;
+        }
+
+        if (regisPass1.val() != regisPass2.val()) {
+            alert("Los password no coinciden \n");
+            correcto = false;
+        }
+
+        return correcto;
+    }
+
+    // Valida Nombre, Apellidos, Email y NIF
+    function ValidarFormulario2() {
+
+        var correcto = true;
+
+        var RegExText = /^([a-zA-Z\s]{3,50})$/;
+        var RegExDNI = /^(\d{8}[A-Z])$/;
+        var RegExMail = /^(.+\@.+\..+)$/;
+
+        var regisNombre = $('#Content1_textbox_nombreC');
+        var regisApellidos = $('#Content1_textbox_apellidosC');
+        var regisDNI = $('#Content1_textbox_NIFC');
+        var regisEmail = $('#Content1_textbox_emailC');
+
+        if (!RegExText.test(regisNombre.val())) {
+            alert("El nombre es incorrecto \n");
+            correcto = false;
+        }
+
+        if (!RegExText.test(regisApellidos.val())) {
+            alert("Los apellidos son incorrectos \n");
+            correcto = false;
+        }
+
+        if (!RegExDNI.test(regisDNI.val())) {
+            alert("El NIF es incorrecto \n");
+            correcto = false;
+        }
+
+        if (!RegExMail.test(regisEmail.val())) {
+            alert("El email es incorrecto \n");
+            correcto = false;
+        }
+
+        return correcto;
+
+    }
+
+    // Valida Localidad
+    function ValidarFormulario3() {
+
+        var correcto = true;
+        var RegExText = /^([a-zA-Z\s]{3,50})$/;
+        var regisLocalidad = $('#Content1_textbox_localidadC');
+
+        if (!RegExText.test(regisLocalidad.val())) {
+            alert("La localidad es incorrecta \n");
+            correcto = false;
+        }
+
+        return correcto;
     }
 
     window.onload = mostrar;
@@ -85,30 +183,39 @@
        <!-- <form id="registroUsuario" onsubmit="return false;" method="post" action="registro.aspx"> -->
         <div id="PanelNombre" >
             <label for="nombre">Nombre:</label>
+            <span class="rank_help-inline"> *Nombre Incorrecto.</span>
             <!-- <input type="text" name="nom" id="nombre" size="20" maxlength="30" /> -->
             <asp:TextBox ID="textbox_nombreC" runat="server" />
 
             <label for="apellidos">Apellidos:</label>
+            <span class="rank_help-inline"> *Apellidos Incorrecto.</span>
             <!-- <input type="text"" name="apell" id="apellidos" size="40" maxlength="40" /> -->
             <asp:TextBox ID="textbox_apellidosC" runat="server" />
 
             <label for="NIF">NIF:</label>
             <!-- <input type="text" name="nif" id="NIF" size="10" maxlength="9" /> -->
+            <span class="rank_help-inline"> *NIF Incorrecto.</span>
             <asp:TextBox ID="textbox_NIFC" runat="server" />
 
             <label for="email">Email:</label>
             <!-- <input type="text" name="correo" id="email" size="40" maxlength="30"  /> -->
+             <span class="rank_help-inline"> *Email Incorrecto.</span>
             <asp:TextBox ID="textbox_emailC" runat="server" />
 
-            <label for="fechaN">Fecha Nac:</label>
+            <label for="fechaN">Fecha Nacimiento:</label>
             <!-- <input type="text" name="fechaNac" id="fechaN" size="18" /> -->
-            <asp:TextBox ID="textbox_fechaN" runat="server" />
+            <!-- <asp:TextBox ID="textbox_fechaN" runat="server" /> -->
+            <div class="input-append date" id="reg_dp1" data-date="01-01-2012" data-date-format="dd-mm-yyyy"> 
+				<input class="span2" size="16" type="text" value="" id="fechaini" runat="server" readonly>
+				<span class="add-on"><i class="icon-th"></i></span>
+			  </div>
         </div>
         
 
         <div id="PanelUsuario" >
             <label for="usuario">Usuario:</label>
             <!-- <input type="text" name="user" id="usuario" size="20" maxlength="30" /> -->
+            <span class="rank_help-inline"> *Usuario incorrecto.</span>
             <asp:TextBox ID="textbox_usuario" runat="server" />
 
             <label for="password">Pass:</label>
@@ -117,6 +224,7 @@
 
             <label for="repetirPassword">Repite Pass:</label>
             <!-- <input type="password" name="passR" id="repetirPassword" size="22" maxlength="30" /> -->
+             <span class="rank_help-inline"> *Password no coincide.</span>
             <asp:TextBox ID="textbox_rePass" runat="server" TextMode="Password" />
        </div>
 
@@ -412,6 +520,7 @@
                 <option value="Elche">Elche</option>
                 <option value="Alicante">Alicante</option>
             </select> -->
+             <span class="rank_help-inline"> *Localidad incorrecta.</span>
             <asp:TextBox ID="textbox_localidadC" runat="server" />
         </div>
 
@@ -424,10 +533,12 @@
 
                 <label for="domicilio">Domicilio:</label>
                 <!-- <input type="text" name="domici" id="domicilio" size="40" maxlength="40" /> -->
+                 <span class="rank_help-inline"> *Domicilio Incorrecto.</span>
                 <asp:TextBox ID="textbox_domicilioC" runat="server" />
 
                 <label for="CP">Código Postal:</label>
                 <!-- <input type="text" name="cp" id="codigoP" /> -->
+                 <span class="rank_help-inline"> *Código Postal Incorrecto.</span>
                 <asp:TextBox ID="textbox_CodigoPostalC" runat="server" />
 
                 <br />
@@ -437,10 +548,12 @@
             <div class="telefonos">       
                 <label for="telefono">Telefono:</label>
                 <!-- <input type="text" name="tlf" id="telefono" size="14" maxlength="9" /> -->
+                 <span class="rank_help-inline"> *Teléfono incorrecto.</span>
                 <asp:TextBox ID="textbox_telefonoC" runat="server" />
 
                 <label for="movil">Movil:</label>
                 <!-- <input type="text" name="mvl" id="movil" size="14" maxlength="9" /> -->
+                 <span class="rank_help-inline"> *Móvil incorrecto.</span>
                 <asp:TextBox ID="textbox_movilC" runat="server" />
             </div>
 
@@ -480,6 +593,9 @@
        </div>
 
     </fieldset>
+<script>
 
+  $('#reg_dp1').datepicker();
 
+</script>
 </asp:Content>
