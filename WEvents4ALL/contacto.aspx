@@ -4,32 +4,34 @@
 
 <div class="row">
     <div class="span10">
-        <h3>Formulario de Contacto</h3>
-        <br />
-        <div class="contacto_cuerpo">
-            <div class="control-group">
-                <label class="contact_label">Mail</label>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="contact_imput_down"></asp:TextBox>        
-                <span class="rank_help-inline2">Mail invalido</span><br />
-            </div>
+        <div class="span9">
+            <h3>Formulario de Contacto</h3>
+            <br />
+            <div class="contacto_cuerpo well">
+                <div class="control-group">
+                    <label class="contact_label">Mail</label>
+                    <asp:TextBox ID="TextBox1" runat="server" CssClass="contact_imput_down"></asp:TextBox>        
+                    <span class="rank_help-inline2">Mail invalido</span><br />
+                </div>
 
-            <div class="control-group">
-                <label class="contact_label">Asunto</label><asp:DropDownList ID="contacto_DropDownList1" runat="server" CssClass="contact_imput_down">
-                    <asp:ListItem Value=""></asp:ListItem>
-                    <asp:ListItem >Error en web</asp:ListItem>
-                    <asp:ListItem >Ventas</asp:ListItem>
-                    <asp:ListItem >Otros</asp:ListItem>
-                </asp:DropDownList>
-                <span class="rank_help-inline">Debe seleccionar un asunto</span>
+                <div class="control-group">
+                    <label class="contact_label">Asunto</label><asp:DropDownList ID="contacto_DropDownList1" runat="server" CssClass="contact_imput_down">
+                        <asp:ListItem Value=""></asp:ListItem>
+                        <asp:ListItem >Error en web</asp:ListItem>
+                        <asp:ListItem >Ventas</asp:ListItem>
+                        <asp:ListItem >Otros</asp:ListItem>
+                    </asp:DropDownList>
+                    <span class="rank_help-inline">Debe seleccionar un asunto</span>
+                </div>
+                <br />
+                <div class="control-group">
+                    <label>Motivo</label><br />
+                    <textarea id="TextArea1" class="contact_textarea span6" runat=server></textarea>
+                </div>
             </div>
             <br />
-            <div class="control-group">
-                <label>Motivo</label><br />
-                <textarea id="TextArea1" class="contact_textarea span6" runat=server></textarea>
-            </div>
+            <asp:Button ID="bot_enviar" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="EventoClick"  />  
         </div>
-        <br />
-        <asp:Button ID="bot_enviar" runat="server" Text="Enviar" CssClass="btn btn-primary" OnClick="EventoClick"  />  
     </div>
 </div>   
    
