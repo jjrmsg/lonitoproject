@@ -1,50 +1,7 @@
-/*#especInfo 
-{
-    overflow:hidden;
-    margin-bottom: 30px;
-}
-
-#datosEspectaculo
-{
-    width: 550px;
-    margin: 5px;
-    float: left;
-    list-style-type: none;
-}
-
-#datosEspectaculo li
-{
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-#datosEspectaculo li span
-{
-    font-weight: normal;
-    color: Black;
-    margin: 5px 0 0 5px;
-    font-size: 0.905em;
-}
-
-img#imgEspectaculo
-{
-    float: right;
-    width: 120px;
-    border-radius: 5px;
-}
-
-
-#btnComprar 
-{
-    float: right;
-    clear: both;
-}
-*/
 #especCompra 
 {
     display: none;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     -webkit-box-shadow: inset 0px 0px 20px silver;
     border-radius: 5px;  
     overflow: hidden;  
@@ -56,19 +13,21 @@ img#imgEspectaculo
     width: 480px;
 }
 
-/*
-#confirmCompra 
-{
-    font-weight: bold;
-    float: right;
-}*/
 
 #drawZone 
 {
     overflow: hidden;
 }
 
-		
+#listaReservas 
+{
+	list-style-type:  circle;
+}
+
+#listaReservas button
+{
+	margin: 5px;
+}
 		
 .seccionBox {
 	border: 1px solid silver;
@@ -99,6 +58,7 @@ img#imgEspectaculo
 .asiento.reserved {
     background-color: Green;
 }	
+
 
 
 /*             styles for the star rater                */	

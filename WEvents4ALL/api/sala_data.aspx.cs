@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
 using Entities;
 using System.Data;
+using System.Collections;
 
 namespace WEvents4ALL.api
 {
@@ -44,7 +45,7 @@ namespace WEvents4ALL.api
                 }
                 dict.Add("secciones", secciones);
 
-                datosVentas = ventEN.getVentasEspectaculoId(idEspectaculo);
+                datosVentas = ventEN.getVentasEspectaculoId(idEspectaculo, Request.QueryString["hora"], Request.QueryString["fecha"]);
                 int nVentas = Convert.ToInt16(datosVentas.Tables[0].Rows.Count);
 
                 object[] ventas = new object[nVentas];
@@ -55,6 +56,21 @@ namespace WEvents4ALL.api
                     contVentas++;
                 }
                 dict.Add("ventas", ventas);
+
+                if (Session["VentasUser"] != null)
+                {
+                    ArrayList ventasUser = (ArrayList)Session["VentasUser"];
+                    object[] preventasUsuario = new object[ventasUser.Count];
+                    int contPreventas = 0;
+                    foreach (object preventa in ventasUser)
+                    {
+                        preventasUsuario.SetValue(preventa, contPreventas);
+                        contPreventas++;
+                    }
+                    dict.Add("preventas", preventasUsuario);
+                }
+
+
 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 sJson = serializer.Serialize((object)dict);

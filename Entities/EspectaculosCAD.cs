@@ -481,5 +481,51 @@ namespace Entities
             }
             return resultado;
         }
+
+        public DataSet getEspectaculosListaID(System.Collections.ArrayList idEspectaculos)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            DataSet datosSalas = null;
+
+
+            string tempQuery = "";
+            foreach (string id in idEspectaculos)
+            {
+                tempQuery += " or IDEspectaculo = "+id;
+            }
+
+            // Creamos la query.
+            String query = "SELECT IDEspectaculo Id, Titulo ";
+            query += "FROM  Espectaculo ";
+            query += "WHERE ('0'='1')" + tempQuery;
+
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                System.Diagnostics.Debug.WriteLine(com.CommandText.ToString());
+
+                SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
+                sqlAdaptader.SelectCommand = com;
+
+                datosSalas = new DataSet();
+                sqlAdaptader.Fill(datosSalas);
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return datosSalas;
+        }
     }
 }

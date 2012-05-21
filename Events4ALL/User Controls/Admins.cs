@@ -1230,7 +1230,7 @@ namespace Events4ALL
             }
             catch
             {
-                MessageBox.Show("PWNDED, petada hermosa :D");
+                Console.WriteLine("No se pudieron obtener los datos");
             }
         }
 

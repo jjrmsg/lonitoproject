@@ -26,6 +26,7 @@ namespace WEvents4ALL
             try
             {
                 DataRow usuario = ds.Tables[0].Rows[0];
+                Session.Clear();
                 Session["IdUsuario"] = usuario["idCliente"].ToString();
                 Session["NickUsuario"] = usuario["Usuario"].ToString();
                 Session["RolUsuario"] = "user";

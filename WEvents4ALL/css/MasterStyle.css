@@ -9,13 +9,43 @@ body {
 }
 
 .boxContent {
-	background-color: white;/*
+	background-color: white;
 	background-image: url('../img/layout/bgContent_pattern.png');
-	-moz-box-shadow: 0 3px 1px #222;
+	/*-moz-box-shadow: 0 3px 1px #222;
 	-webkit-box-shadow: 0 3px 1px #222;
 	box-shadow: 0 3px 1px #222;
 	color: #3E4248;
 	text-shadow: 0 1px 1px white;
 	*/padding: 20px;/*
 	-webkit-border-radius: 5px;*/
+}
+
+.navbar .brand {
+    padding: 4px 20px 0px;
+}
+
+.navbar-fixed-top .container {
+    width: 95%;
+}
+#quickSearchWrap {
+    margin-top: 1px;
+}
+#quickSearchWrap input {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: middle;
+    height: 15px;
+    background-color: #626262;
+    border-color: black;
+    color: white;
+}
+
+#quickSearchWrap input:focus {
+    background-color: white;
+    border-color: #09f;color: black;
+}
+
+#quickSearchWrap .btn {
+    height: 15px;
+    margin-top: 6px;
 }

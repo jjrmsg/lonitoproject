@@ -9,7 +9,7 @@
 
 
 
-public partial class  {
+public partial class MasterPage {
     
     /// <summary>
     /// Control form1.
@@ -19,6 +19,24 @@ public partial class  {
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    
+    /// <summary>
+    /// Control quickSearch.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox quickSearch;
+    
+    /// <summary>
+    /// Control LinkSearch.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton LinkSearch;
     
     /// <summary>
     /// Control MultiViewAlerts.

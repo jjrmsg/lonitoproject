@@ -19,14 +19,14 @@ namespace WEvents4ALL
         {
             string id = Request.QueryString["id"];
 
-            /* Muestra un mensaje */
+            /* Muestra un mensaje 
             MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
             mv.ActiveViewIndex = 1;  
             Label lbTitle = (Label)Master.FindControl("successViewTitle");
             Label lbMsg = (Label)Master.FindControl("successViewMsg");
             lbTitle.Text = "Titulo de mensaje desde espectaculo";
             lbMsg.Text = "Mensaje desde espectaculo";
-            /* ----------------- */
+             ----------------- */
 
 
             EspectaculosEN espEN = new EspectaculosEN();
@@ -38,6 +38,22 @@ namespace WEvents4ALL
                 datosEsp = espEN.ObtenerEspectaculoPorID(id);
                 datosCrit = criEN.getCriticasEspectaculo(id);
                 puntUser = cliEN.getPuntuacionEsp("3", id);
+
+                // Carga los horarios del espectaculo en la lista de la venta
+                string[] listahorarios = datosEsp.Tables[0].Rows[0]["Horarios"].ToString().Split(',');
+                foreach(string h in listahorarios)
+                    DropDownHorarios.Items.Add(h);
+
+
+                List<DateTime> rv = new List<DateTime>();
+                DateTime tmpDate = Convert.ToDateTime(datosEsp.Tables[0].Rows[0]["FechaIni"].ToString());
+                DateTime EndingDate = Convert.ToDateTime(datosEsp.Tables[0].Rows[0]["FechaFin"].ToString());
+                while (tmpDate <= EndingDate)
+                {
+                    DropDownFechas.Items.Add(tmpDate.ToShortDateString());
+                    tmpDate = tmpDate.AddDays(1);
+                } 
+
             }
             catch
             {
@@ -50,19 +66,42 @@ namespace WEvents4ALL
             //CriticasEN criEN = new CriticasEN();
             //criEN.Insertar(Session["IdUsuario"], tbTituloCritica.Text, tbTextoCritica.Text);
             CriticasEN criEn = new CriticasEN();
+            bool error = false;
+            string errorMsg = "Ocurrió un error al publicar la crítica.";
             try
             {
-                criEn.Insertar(Session["IdUsuario"].ToString(), Request.QueryString["id"], tbTituloCritica.Text, tbTextoCritica.Text);
-                Response.Redirect(Request.RawUrl);
+                if (tbTituloCritica.Text != "" && tbTextoCritica.Text != "")
+                {
+                    criEn.Insertar(Session["IdUsuario"].ToString(), Request.QueryString["id"], tbTituloCritica.Text, tbTextoCritica.Text);
+                    Response.Redirect(Request.RawUrl);
+                }
+                else
+                {
+                    error = true;
+                    errorMsg = "No puede dejar ninguno de los campos vacios";
+                }
             }
-            catch (Exception ex) {
-                MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
-                mv.ActiveViewIndex = 0;
-                Label lbTitle = (Label)Master.FindControl("errorViewTitle");
-                Label lbMsg = (Label)Master.FindControl("errorViewMsg");
-                lbTitle.Text = "Ocurrió un error";
-                lbMsg.Text = "Ocurrió un error al publicar la crítica.";
+            catch (Exception ex)
+            {
+                error = true;
             }
+            finally
+            {
+                if (error == true)
+                {
+                    MultiView mv = (MultiView)Master.FindControl("MultiViewAlerts");
+                    mv.ActiveViewIndex = 0;
+                    Label lbTitle = (Label)Master.FindControl("errorViewTitle");
+                    Label lbMsg = (Label)Master.FindControl("errorViewMsg");
+                    lbTitle.Text = "Ocurrió un error";
+                    lbMsg.Text = errorMsg;
+                }
+            }
+        }
+
+        protected void confirmCompraButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ventas.aspx");
         }
     }
 }

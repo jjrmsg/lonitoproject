@@ -123,5 +123,11 @@ namespace Entities
             EspectaculosCAD espCAD = new EspectaculosCAD();
             return espCAD.ObtenerEspectaculoBusAV(tipo,fechaini,fechafin,nombre);
         }
+
+        public DataSet getEspectaculosListaID(System.Collections.ArrayList idEspectaculos)
+        {
+            EspectaculosCAD espCAD = new EspectaculosCAD();
+            return espCAD.getEspectaculosListaID(idEspectaculos);
+        }
     }
 }

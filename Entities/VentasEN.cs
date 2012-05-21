@@ -81,10 +81,24 @@ namespace Entities
             return vCAD.EliminarVenta(idVenta);
         }
 
-        public DataSet getVentasEspectaculoId(string id)
+        public DataSet getVentasEspectaculoId(string id, string hora, string fecha)
         {
             VentasCAD ventCAD = new VentasCAD();
-            return ventCAD.getVentasEspectaculoId(id);
+            return ventCAD.getVentasEspectaculoId(id, hora, fecha);
+        }
+
+        // Comprueba si un asiento está ocupado a partir de un espectaculo, un horario y una plaza indicada 
+        public bool ExisteVenta(string idEsp, string asiento, string hora, string fecha)
+        {
+            VentasCAD ventCAD = new VentasCAD();
+            return ventCAD.ExisteVenta(idEsp, asiento, hora, fecha);
+        }
+
+        // Comprueba si un asiento está ocupado a partir de un espectaculo, un horario y una plaza indicada 
+        public bool Insertar(string idEspectaculo, string idCliente, string fecha, string hora, string numAsiento, string importe)
+        {
+            VentasCAD ventCAD = new VentasCAD();
+            return ventCAD.Insertar(idEspectaculo, idCliente, fecha, hora, numAsiento, importe);
         }
     }
 }

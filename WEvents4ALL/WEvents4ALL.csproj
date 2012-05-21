@@ -54,6 +54,7 @@
     <Content Include="api\esp_vote.aspx" />
     <Content Include="api\esp_suggest.aspx" />
     <Content Include="api\sala_data.aspx" />
+    <Content Include="api\admin_venta.aspx" />
     <Content Include="busquedaAvanzada.aspx" />
     <Content Include="css\acercade.css" />
     <Content Include="css\busquedaAvanzada.css" />
@@ -72,6 +73,7 @@
     <Content Include="css\registro.css" />
     <Content Include="espectaculo.aspx" />
     <Content Include="acercade.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="js\acercade.js" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\contacto.js" />
@@ -85,6 +87,7 @@
     <Content Include="index.aspx" />
     <Content Include="utilidades\img_esp.aspx" />
     <Content Include="utilidades\img_user.aspx" />
+    <Content Include="ventas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -114,6 +117,13 @@
     </Compile>
     <Compile Include="api\sala_data.aspx.designer.cs">
       <DependentUpon>sala_data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\admin_venta.aspx.cs">
+      <DependentUpon>admin_venta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\admin_venta.aspx.designer.cs">
+      <DependentUpon>admin_venta.aspx</DependentUpon>
     </Compile>
     <Compile Include="busquedaAvanzada.aspx.cs">
       <DependentUpon>busquedaAvanzada.aspx</DependentUpon>
@@ -149,6 +159,9 @@
     </Compile>
     <Compile Include="acercade.aspx.designer.cs">
       <DependentUpon>acercade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
@@ -213,6 +226,13 @@
     </Compile>
     <Compile Include="utilidades\img_user.aspx.designer.cs">
       <DependentUpon>img_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ventas.aspx.cs">
+      <DependentUpon>ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ventas.aspx.designer.cs">
+      <DependentUpon>ventas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -505,15 +505,21 @@ namespace Events4ALL
 
 
             Resultado_busqueda_cliente.Rows.Clear();
-            foreach (DataRow cliente in muestraCliente.Tables[0].Rows)
+            try {
+                foreach (DataRow cliente in muestraCliente.Tables[0].Rows)
+                {
+                    string[] row = { cliente["NIF"].ToString(),
+                                      cliente["Usuario"].ToString(),
+                                      cliente["Nombre"].ToString(),
+                                      cliente["Apellidos"].ToString(),
+                                      cliente["Poblacion"].ToString(),
+                                      cliente["Provincia"].ToString()};
+                    Resultado_busqueda_cliente.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
             {
-                string[] row = { cliente["NIF"].ToString(),
-                                  cliente["Usuario"].ToString(),
-                                  cliente["Nombre"].ToString(),
-                                  cliente["Apellidos"].ToString(),
-                                  cliente["Poblacion"].ToString(),
-                                  cliente["Provincia"].ToString()};
-                Resultado_busqueda_cliente.Rows.Add(row);
+                Console.WriteLine("No se pudieron obtener las salas: " + ex.Message);
             }
         }
 

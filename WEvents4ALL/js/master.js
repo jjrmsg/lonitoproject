@@ -1,51 +1,28 @@
 var broadcastPathIntervalID;
-$(document).ready(function(){
-	$("#quickSearch").on('keyup', function(e) {
-		
-		if(e.keyCode==38)
-		{
-			var actualSel = $("#quickSearchResults li.active");			
-			var sig = actualSel.prev();
-			if(actualSel.length == 0)
-				sig = $("#quickSearchResults li").last();
-			actualSel.removeClass("active");
-			sig.addClass("active");
-			e.preventDefault();e.stopPropagation()
-		}
-		else if(e.keyCode==40)
-		{
-			var actualSel = $("#quickSearchResults li.active");			
-			var sig = actualSel.next();
-			if(actualSel.length == 0)
-				sig = $("#quickSearchResults li").first();
-			actualSel.removeClass("active");
-			sig.addClass("active");
-			e.preventDefault();e.stopPropagation()
-		}
-		else
-		{
-			clearTimeout(broadcastPathIntervalID);
-			broadcastPathIntervalID = setTimeout(function() {
-				console.log("GET");
-				getSuggest();
-				
-			}, 200);	
-		}	
-	});	
-	
-	
-	$("#quickSearch").on('blur', function(e) {		
-		setTimeout(function () { 
-			hideResults();
-		}, 150);
-	});	
-	
-	/*$("#quickSearch").on('focusin', function(e) {	
-		if ($("#quickSearch").val() != "" && $("#quickSearchResults li").length > 0)
-		{		
-			showResults();
-		}
-	});*/
+$(document).ready(function () {
+    $("#quickSearch").on('keyup', function (e) {
+
+        if (e.keyCode != 38 && e.keyCode != 40) {
+            clearTimeout(broadcastPathIntervalID);
+            broadcastPathIntervalID = setTimeout(function () {
+                console.log("GET");
+                getSuggest();
+            }, 200);
+        }
+    });
+
+    $("#quickSearch").on('blur', function (e) {
+        setTimeout(function () {
+            hideResults();
+        }, 150);
+    });
+
+    $("#quickSearchWrap button").on('click', function () {
+        var url = "busquedaAvanzada.aspx";
+        if ($("#quickSearch").val() != "")
+            url += "?texto=" + $("#quickSearch").val();
+        location.href = url;
+    });
 });
 
 

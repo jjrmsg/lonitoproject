@@ -19,6 +19,14 @@ namespace WEvents4ALL
         protected void Page_Load(object sender, EventArgs e)
         {
             fechahoy =DateTime.Now.ToShortTimeString();
+            if (Request.QueryString["texto"] != "")
+            {
+                resultado = new DataSet();
+                string fechai = fechaini.Value.ToString();
+                string fechaf = fechafin.Value.ToString();
+                resultado = esEN.ObtenerEspectaculoBuscAv(DropDownList1.Text, fechai, fechaf,  Request.QueryString["texto"]);
+                TextBox1.Text = Request.QueryString["texto"];
+            }
 
         }
 

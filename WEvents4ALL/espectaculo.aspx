@@ -8,7 +8,7 @@
         string espID = "";
         try {
             System.Data.DataRow espectaculo = datosEsp.Tables[0].Rows[0];
-        %>
+            %>
             <h3><%=espectaculo["Titulo"].ToString()%></h3>
             <br />
             <div class="row">
@@ -22,14 +22,24 @@
                         <li class="nav-header">Tipo de espectáculo</li>
                         <li><%=espectaculo["Tipo"].ToString()%></li>
                         <li class="nav-header">Fecha de inicio</li>
-                        <li><%=espectaculo["FechaIni"].ToString()%></li>
+                        <li><%=Convert.ToDateTime(espectaculo["FechaIni"].ToString()).ToShortDateString()%></li>
                         <li class="nav-header">Fecha de fin</li>
-                        <li><%=espectaculo["FechaFin"].ToString()%></li>
+                        <li><%= Convert.ToDateTime(espectaculo["FechaFin"].ToString()).ToShortDateString() %></li>
                         <li class="nav-header">Sala</li>
                         <li>Sala <%=espectaculo["IdSala"].ToString()%></li>
                         <% salaEspID = espectaculo["IdSala"].ToString(); %>
                         <li class="nav-header">Horarios</li>
-                        <li>16:00 | 18:00 | 20:00 | 22:00 | 00:00</li>
+                        <%
+                            string[] listadoHorarios = espectaculo["Horarios"].ToString().Split(',');
+                            string horariosTexto = "";
+                            foreach (String h in listadoHorarios)
+                            {
+                                if(horariosTexto!="")
+                                    horariosTexto += " | ";
+                                horariosTexto += h;                                    
+                            }
+                        %>
+                        <li><%= horariosTexto%></li>
                     </ul>                
                 </div>
                 <div class="span2 pull-right">
@@ -130,34 +140,41 @@
                  </div>
             </div>
 
-
-
-
-
+                </div>
+            </div>
 
 
             <button class="btn btn-primary pull-right" id="btnComprar">Comprar</button><br /><br />
-            <div id="especCompra">
-                <span class="close" id="btnComprarClose" >×</span>
-                <h3>Compra de entradas para "<%=espectaculo["Titulo"].ToString()%>"</h3>
-                <br /><br />
-                <asp:Label ID="Label1" runat="server" Text="Horario:"></asp:Label>
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem>16:00</asp:ListItem>
-                    <asp:ListItem>18:00</asp:ListItem>
-                    <asp:ListItem>20:00</asp:ListItem>
-                    <asp:ListItem>22:00</asp:ListItem>
-                    <asp:ListItem>00:00</asp:ListItem>
-                </asp:DropDownList>
-                <br /><br />
-                <div id="drawZone">
-	            </div>
-                <br /><br />
-                <h4>4 asientos seleccionados</h4>
-                <p>A 8-5 / A 8-6 / A 8-7 / A 8-8</p>
-                <p class="pull-right">Importe: 36 € <button class="btn btn-primary"><i class="icon-shopping-cart icon-white"></i> Comprar</button></p>
+            <div class="row">
+                <div class="span10">
+                    <div id="especCompra">
+                        <span class="close" id="btnComprarClose" >×</span>
+                        <h3>Compra de entradas para "<%=espectaculo["Titulo"].ToString()%>"</h3>
+                        <br /><br />
+                        <asp:Label ID="Label2" runat="server" Text="Fecha:"></asp:Label>
+                        <asp:DropDownList ID="DropDownFechas" runat="server" CssClass="span2">
+                        </asp:DropDownList><br />
+
+                        <asp:Label ID="Label1" runat="server" Text="Horario:"></asp:Label>
+                        <asp:DropDownList ID="DropDownHorarios" runat="server" CssClass="span1">
+                        </asp:DropDownList>
+                        
+                        <br /><br />
+                        <p style="color: silver;width: 100px;margin: 0 auto;">▲ Orientación ▲</p>
+                        <div id="drawZone">
+	                    </div>
+                        <br /><br />
+                        <h4><span id="contReservas">0</span> asientos seleccionados</h4><br />
+                        <p id="listaReservas">
+                        </p>
+                        <p class="pull-right">Importe: <span id="importeCompra">-</span> € 
+                            <asp:Button ID="confirmCompraButton" runat="server" Text="Ir a la página de compra" onclick="confirmCompraButton_Click" CssClass="btn btn-primary btn-mini" />
+                        </p>
+                    </div>
+                </div>
             </div>
-            <br />
+            <br /> 
+                    
         <%  
         } catch
         {
@@ -166,39 +183,36 @@
         <%  
         }
         %>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-	    <div class="span10">            
-        <% 
-        try
-        { %>
-            <h3><%= datosCrit.Tables[0].Rows.Count %> Críticas</h3>
-            <ul class="criticasList"><%
-            foreach (System.Data.DataRow critica in datosCrit.Tables[0].Rows)
-            {
-            %>
-                <li class="criticaEsp">
-                    <div class="avatar-box">
-                        <img src="/utilidades/img_user.aspx?id=<%= critica["idCliente"].ToString()%>" alt="avatar" />
-                    </div>
-                    <div class="content">
-                        <div class="critica-info">
-                            <p><%=critica["titulo"].ToString()%></p>
+        <hr />
+        <div class="row">
+	        <div class="span10">            
+            <% 
+            try
+            { %>
+                <h3><%= datosCrit.Tables[0].Rows.Count %> Críticas</h3>
+                <ul class="criticasList"><%
+                foreach (System.Data.DataRow critica in datosCrit.Tables[0].Rows)
+                {  %>
+                    <li class="criticaEsp">
+                        <div class="avatar-box">
+                            <img src="/utilidades/img_user.aspx?id=<%= critica["idCliente"].ToString()%>" alt="avatar" />
                         </div>
-                        <p><%=critica["texto"].ToString()%></p>
-                    </div>
-                </li> 
-            <%
-            }
-            %></ul><%
+                        <div class="content">
+                            <div class="critica-info">
+                                <p><%=critica["titulo"].ToString()%></p>
+                            </div>
+                            <p><%=critica["texto"].ToString()%></p>
+                        </div>
+                    </li> 
+                <%
+                }
+                %></ul><%
         }
         catch (Exception ex)
         { %>
             <h3>0 Críticas</h3><%
         }
-                                   
+
         if (Session["IdUsuario"] != null && Session["IdUsuario"] != "")
         { %>
             <div class="well">
@@ -212,114 +226,21 @@
                     CssClass="btn btn-primary" onclick="nuevaCritica_Click" />
             </div>
         <% 
-        } 
+        }
+        else
+        {
+            %><p>Debes estar <a href="login.aspx">identificado</a> para poder escribir una crítica.</p><% 
+        }
         %>
         </div>
     </div>
 
 	<script type="text/javascript">
-	    $.getJSON('/api/sala_data.aspx', { id: '<%=espID%>' }, function (data) {
-	        console.log(data);
-	        $("#drawZone").empty();
-	        for (i in data.secciones) {
-	            var fil = data.secciones[i].filas;
-	            var col = data.secciones[i].columnas;
-	            dibujar(fil, col);
-	        }
-	        for (i in data.ventas) {
-	            var datosPosVenta = data.ventas[i].split('-');
-	            var seccion = datosPosVenta[0] - 1;
-	            var fila = datosPosVenta[1] - 1;
-	            var asiento = datosPosVenta[2] - 1;
-	            $(".seccionBox:eq(" + seccion + ") .fila:eq(" + fila + ") .asiento:eq(" + asiento + ")").addClass('sold');
-	            console.log(datosPosVenta);
-	        }
-	    });
-
-        function dibujar (filas, colum) {
-			
-			var seccion = $("<div></div>", {
-				class: "seccionBox"
-			}).appendTo("#drawZone");
-
-			for(var j = 0; j < filas; j++)
-			{
-				var fila = $("<div></div>", {
-					class: "fila"
-				}).appendTo(seccion);
-					
-				for(var k = 0; k < colum; k++)
-				{
-					var asiento = $("<div></div>", {
-						class: "asiento",
-						text: ""
-					}).appendTo(fila);									
-				}
-			}
-		}
-
-		$('.asiento').live('click', function (event) {
-		    $(".popover").remove();
-		    $(".asiento.selected").removeClass('selected');
-		    var posAsiento = "";
-		    posAsiento = $(this).parents(".seccionBox").index() + 1 + ":";
-		    posAsiento += $(this).parent(".fila").index() + 1 + ":";
-		    posAsiento += $(this).index() + 1;
-
-		    var contentPopover = '';
-		    if ($(this).hasClass('selected')) {
-		        contentPopover = 'Ya la has comprado.';
-		    }
-		    else if ($(this).hasClass('sold')) {
-		        contentPopover = 'Lo siento, vendido.';
-		    }
-		    else {
-		        $(this).addClass("selected");
-		        contentPopover = '<a href="#" id="addVenta" class="btn btn-info"><i class="icon-plus icon-white"></i> Añadir a la compra</a>';
-		    }
-
-		    $(this).popover({
-		        placement: 'right',
-
-		        trigger: 'manual',
-		        title: 'Asiento ' + posAsiento + '<span class="close"  data-dismiss="popover">×</span>',
-		        content: contentPopover
-		    });
-		    $(this).popover('show');
-		});
-
-		
-        document.getElementById("btnComprar").onclick = function (e) {
-            $("#especCompra").slideDown();
-            this.style.display = "none";
-            e.preventDefault();
-        };
-
-        $("#btnComprarClose").on('click', function () {
-            // Quitamos cualquier popover que estuviese abierto
-            $(".popover").remove();
-            $("#especCompra").css('display', 'none');
-            $("#btnComprar").fadeIn('slow');        
-        });
-
-        var a;
-        $(".starRate").on('click', function (e) {
-            var valIndex = $(this).index();
-            $('#ratingControler').css("width",(valIndex*25)+"px");
-            e.preventDefault();
-            $.get('/api/esp_vote.aspx', { nota: valIndex, esp: '<%=espID%>' }, function (data) {
-                console.log(data);
-            });
-        });
-
-        $("#addVenta").live('click', function (e) {
-            $(".asiento.selected").addClass('reserved');
-            $(".asiento.selected").removeClass('selected');
-            $(".popover").remove();
-            e.preventDefault();
-        });
-
+	    var espValues = {
+	        idEspectaculo: '<%=espID%>'
+	    };
     </script>
+    <script src="js/espectaculo.js" type="text/javascript" ></script> 
 </asp:Content>
 
 

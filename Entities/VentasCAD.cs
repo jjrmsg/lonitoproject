@@ -283,7 +283,7 @@ namespace Entities
             }
         }
 
-        public DataSet getVentasEspectaculoId(string id)
+        public DataSet getVentasEspectaculoId(string id, string hora, string fecha)
         {
             SqlConnection conn = null;
             BD bd = new BD();
@@ -292,7 +292,7 @@ namespace Entities
             // Creamos la query.
             String query = "SELECT * ";
             query += "FROM Ventas ";
-            query += "WHERE IDEspectaculo = @idEsp ";
+            query += "WHERE IDEspectaculo = @idEsp and Horario = @horario and FechaVenta = @fech";
 
             // Crea la conexión con la BD y recoge los datos.
             try
@@ -303,6 +303,8 @@ namespace Entities
                 // extraños como comillas.
                 SqlCommand com = new SqlCommand(query, conn);
                 com.Parameters.Add("@idEsp", SqlDbType.Int).Value = id;
+                com.Parameters.Add("@horario", SqlDbType.NVarChar).Value = hora;
+                com.Parameters.Add("@fech", SqlDbType.Date).Value = fecha;
 
                 SqlDataAdapter sqlAdaptader = new SqlDataAdapter();
                 sqlAdaptader.SelectCommand = com;
@@ -320,6 +322,93 @@ namespace Entities
                 if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
             return datosVentas;
+        }
+
+
+
+        public bool Insertar(string idEspectaculo, string idCliente, string fecha, string hora, string numAsiento, string importe)
+        {
+            // Declaramos la conexión,
+            SqlConnection conn = null;
+            BD bd = new BD();
+
+            // Creamos la query a partir de los datos.
+            String comEspectaculo = "INSERT INTO Ventas (IDEspectaculo, IDCliente, FechaVenta, Horario, NumAsiento, Importe)";
+            comEspectaculo += " values (@idEsp, @idCli, @fechVent, @hor, @numAsient, @importe)";
+
+            // Abre la conexión e inserta el espectáculo.
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                // Creamos el comando SQL sustituyendo los valores de forma segura 
+                // escapando carácteres no validos.
+                SqlCommand com = new SqlCommand(comEspectaculo, conn);
+                com.Parameters.Add("@idEsp", SqlDbType.Int).Value = idEspectaculo;
+                com.Parameters.Add("@idCli", SqlDbType.NChar).Value = idCliente;
+                com.Parameters.Add("@fechVent", SqlDbType.Date).Value = fecha;
+                com.Parameters.Add("@hor", SqlDbType.NVarChar).Value = hora;
+                com.Parameters.Add("@numAsient", SqlDbType.NVarChar).Value = numAsiento;
+                com.Parameters.Add("@importe", SqlDbType.Money).Value = importe;
+
+                return com.ExecuteNonQuery() > 1;
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        }
+
+        public bool ExisteVenta(string idEsp, string asiento, string hora, string fecha)
+        {
+            SqlConnection conn = null;
+            BD bd = new BD();
+            bool ocupado = true;
+
+            // Creamos la query.
+            String query = "SELECT count(*) Num FROM Ventas WHERE NumAsiento = @asiento and Horario = @horario and IDEspectaculo = @idEsp and FechaVenta = @fech";
+
+            // Crea la conexión con la BD y recoge los datos.
+            try
+            {
+                conn = bd.Connect();
+                conn.Open();
+
+                // Creamos un SqlCommand y ponemos valor a titulo permitiendo que tenga caracteres
+                // extraños como comillas.
+                SqlCommand com = new SqlCommand(query, conn);
+                com.Parameters.Add("@idEsp", SqlDbType.Int).Value = idEsp;
+                com.Parameters.Add("@asiento", SqlDbType.NVarChar).Value = asiento;
+                com.Parameters.Add("@horario", SqlDbType.NVarChar).Value = hora;
+                com.Parameters.Add("@fech", SqlDbType.Date).Value = fecha;
+
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+
+                int numResults = int.Parse(dr["Num"].ToString());
+                dr.Close();
+
+                if (numResults == 0)
+                {                
+                    ocupado = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Captura la condición general y la reenvía. 
+                throw ex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+            return ocupado;
         }
     }
 }

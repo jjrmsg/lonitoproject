@@ -1,6 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void LinkSearch_Click(object sender, EventArgs e)
+    {
+        if(LinkSearch == (LinkButton)sender)
+            Response.Redirect("busquedaAvanzada.aspx?texto=" + quickSearch.Text);
+    }
+</script>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Events4All</title>
@@ -72,8 +80,14 @@
                             <%
                             } %>
 					    </ul>
-                        <div class="navbar-search pull-right dropdown" id="quickSearchWrap">
-                            <input type="text" id="quickSearch" autocomplete="off" data-provide="typeahead" class="search-query span2" placeholder="Buscar" />
+                        <div class="pull-right dropdown" id="quickSearchWrap">
+                            <asp:TextBox ID="quickSearch" autocomplete="off" size="16" placeholder="Buscar" 
+                                runat="server" CssClass="span2"></asp:TextBox>
+                            <asp:LinkButton ID="LinkSearch" runat="server" CssClass="btn btn-primary" 
+                                onclick="LinkSearch_Click"><i class="icon-search icon-white"></i></asp:LinkButton>
+
+
+                            <!--<input type="text" id="quickSearch" autocomplete="off" data-provide="typeahead" class="search-query span2" placeholder="Buscar" />-->
                             <ul class="dropdown-menu span3" id="quickSearchResults">
 							</ul>
                         </div>
@@ -114,11 +128,7 @@
             <!-- Contenido de la pagina -->
             <asp:ContentPlaceHolder ID="Content1" runat="server">
             </asp:ContentPlaceHolder>             
-       </div> 
-
-            
-
+       </div>
     </form>
-
 </body>
 </html>

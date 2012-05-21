@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="busquedaAvanzada.aspx.cs" Inherits="WEvents4ALL.busquedaAvanzada" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Content1" runat="server">
-<h3>Busqueda Avanzada</h3>
+<h3>Búsqueda Avanzada</h3>
 <br />
 
 <div class="bus_av_busqueda">
